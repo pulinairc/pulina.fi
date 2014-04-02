@@ -29,22 +29,71 @@
 
 <div id="page" class="hfeed site">
 
-	<div class="container">
+<div class="headerarea">
+
+	<div class="container headercontainer">
 
 		<header class="site-header">
 
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-	
-			<nav id="site-navigation" class="main-navigation" role="navigation">
+		<div class="columns alpha three">
 
-				<?php wp_nav_menu(); ?>
+			<div class="padder">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
 
-			</nav><!-- #site-navigation -->
+		</div>
+
+		<div class="columns omega thirteen">
+				
+				<div class="padder">
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+
+<?php 
+$menu_to_count = wp_nav_menu(array(
+'echo' => false
+// ,'theme_location' => 'pulinamenu'
+));
+$menu_items = substr_count($menu_to_count,'class="page_item ');
+$relativewidth = 100/$menu_items;
+?>
+
+<ul>
+<?php $args = array(
+	'authors'      => '',
+	'child_of'     => 0,
+	'date_format'  => get_option('date_format'),
+	'depth'        => 0,
+	'echo'         => 0,
+	'exclude'      => '',
+	'include'      => '',
+	'link_after'   => '',
+	'link_before'  => '',
+	'post_type'    => 'page',
+	'post_status'  => 'publish',
+	'show_date'    => '',
+	'sort_column'  => 'menu_order, post_title',
+	'title_li'     => false,
+	'walker'       => ''
+); ?>
+<?php 
+    $rollenav = wp_list_pages($args);
+    $var1 = '<li';
+    $var2 = '<li style="width:'.$relativewidth.'%"';
+    $rollenav = str_replace($var1, $var2, $rollenav);
+    echo $rollenav;
+ ?>
+</ul>
+
+				</nav>
+				</div>
+
+		</div>
 
 		</header>
 
 	</div>
 
+</div>
 
 	<div id="content" class="site-content">

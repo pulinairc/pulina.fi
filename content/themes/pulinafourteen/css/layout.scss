@@ -190,15 +190,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@include rem(font-size, 50px);
-    font-size: 50px;
+	@include rem(font-size, 40px);
+    font-size: 40px;
 }
 
 h2 {
-	@include rem(font-size, 37px);
-    font-size: 37px;
-    line-height: 40px;
-    @include rem(line-height, 40px);
+	@include rem(font-size, 27px);
+    font-size: 27px;
+    line-height: 30px;
+    @include rem(line-height, 30px);
+}
+
+/* -----------------------------------------------------------------------------
+    Nav
+----------------------------------------------------------------------------- */
+
+#site-navigation ul > li {
+	float:left;
+	position:relative;
+	text-align:center;
+}
+
+#site-navigation ul {
+	overflow:hidden;
+}
+
+#site-navigation ul > li > a,
+#site-navigation ul > li > a:link
+#site-navigation ul > li > a:visited {
+	font-size:15px;
+	@include rem(font-size, 15px);
+	color:#666666;
+	display: inline-block;
+	padding:15px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -210,7 +234,7 @@ a, a:link, a:visited {
 	text-decoration:none;
 }
 
-a:hover, a:focus, a:active {
+p a:hover, p a:focus, p a:active {
 	color:#ffffff;
 	background:$pulinanvihrea;
 }
@@ -250,15 +274,36 @@ h1, h2, h3, h4, h5, h6 {
 	background:none transparent;
 }
 
+.entry-title a {
+	color:#333333;
+}
+
+h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
+	background:none transparent;
+}
+
 /* -----------------------------------------------------------------------------
     Rakenteet
 ----------------------------------------------------------------------------- */
 
 body {
-	background:$pulinankeltainen;
+	background:#ffffff;
+}
+
+.headerarea {
+	background:#f6f0dd;
 }
 
 .container {
 	background:#ffffff;
+}
+
+.padder, .the-page-content {
 	padding:20px;
+	@include rem(padding,20px);
+}
+
+.container.headercontainer {
+	// background:#EFEFEF;
+	background:transparent none;
 }
