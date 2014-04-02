@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e1d96520d71c12340d6a3091323dbe57",
+    "hash": "7cb27095387710ce1edc91f529584eec",
     "packages": [
         {
             "name": "composer/installers",
@@ -481,29 +481,6 @@
             "homepage": "http://wordpress.org/plugins/akismet/"
         },
         {
-            "name": "wpackagist-plugin/mail-subscribe-list",
-            "version": "2.1.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/mail-subscribe-list/",
-                "reference": "tags/2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/mail-subscribe-list.2.1.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/mail-subscribe-list": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/mail-subscribe-list/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "1.5.2.5",
             "source": {
@@ -527,24 +504,27 @@
             "homepage": "http://wordpress.org/plugins/wordpress-seo/"
         },
         {
-            "name": "wpackagist/advanced-custom-fields",
-            "version": "4.3.5",
+            "name": "wpackagist-plugin/wp-post-view",
+            "version": "1.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "url": "http://plugins.svn.wordpress.org/wp-post-view/",
                 "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-post-view.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "composer/installers": "~1.0"
             },
+            "replace": {
+                "wpackagist/wp-post-view": "self.version"
+            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/advanced-custom-fields/"
+            "homepage": "http://wordpress.org/plugins/wp-post-view/"
         },
         {
             "name": "wpackagist/w3-total-cache",

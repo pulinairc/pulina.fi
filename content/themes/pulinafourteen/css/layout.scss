@@ -1,0 +1,264 @@
+/* -----------------------------------------------------------------------------
+    SASS + vars
+----------------------------------------------------------------------------- */
+
+@import url('http://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic');
+
+@mixin opacity($trans) {
+	filter: alpha(opactiy=($trans * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+	-moz-opacity: $trans;
+	-khtml-opacity: $trans;
+	opacity: $trans;
+}
+
+@mixin peruslista() {
+	list-style:none;
+	list-style-type:none;
+}
+
+@mixin leipis() {
+	font-weight:400;
+	color:$pulinanharmaa;
+}
+
+@mixin background-cover() {
+  background: {
+    size:cover;
+	repeat:no-repeat;
+	position:center;
+  }
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -khtml-background-size:cover;
+  -o-background-size:cover;
+}
+
+@mixin background-auto() {
+  background: {
+    size:100% auto;
+	repeat:no-repeat;
+	position:center;
+  }
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+@mixin hiddentext() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+/* Based on:
+http://gregrickaby.com/using-the-golden-ratio-and-rems/ 
+
+*/
+
+// Create REM values with PX fall back
+//
+// Generate a REM with PX fallback from 
+// $baseFontSize. Enter the desired size based
+// on pixels in numerical form. Supports shorthand.
+//
+// Forked from: http://codepen.io/thejameskyle/pen/JmBjc
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include rem($property, $values);
+// Example Usage:
+//    @include rem(font-size, 16px);
+//    @include rem(margin, 0 24px 0 12px);
+//
+// Outputs:
+//    font-size: 16px;
+//    font-size: 1.6rem;
+//    margin: 0 24px 0 12px;
+//    margin: 0 2.4rem 0 1.2rem;
+// ----------------------------------
+$baseFontSize: 10; // Based on HTML reset html { font-size: 62.5%; }
+ 
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+ 
+@mixin rem($property, $values) {
+	$px : (); 
+	$rem: ();
+	
+	$root: $baseFontSize;
+	
+	@each $value in $values {
+		@if $value == 0 or $value == auto {
+			$px : append($px , $value);
+			$rem: append($rem, $value);
+		}
+		
+		@else if type-of($value) == number { 
+			$unit: unit($value);
+			$val: parseInt($value);
+			
+			@if $unit == "px" {
+				$px : append($px,  $value);
+				$rem: append($rem, ($val / $root + rem));
+			}
+			
+			@if $unit == "rem" {
+				$px : append($px,  ($val * $root + px));
+				$rem: append($rem, $value);
+			}
+		}
+		
+		@else {
+			$px : append($px,  $value);
+			$rem: append($rem, $value);
+		}
+	}
+	
+	@if $px == $rem {
+		#{$property}: $px;
+	} @else {
+		#{$property}: $px;
+		#{$property}: $rem;
+	} 
+}
+ 
+@function rem($value) {
+	$root: $baseFontSize;
+	$val: parseInt($value);
+	$return: ();
+	
+	@if unit($value) == "px" {
+		$return: append($return, ($val / $root + rem));
+	} @else {
+		$return: append($return, ($val * $root + px));
+	}
+	
+	@return $return;
+}
+
+html {
+    font-size: 62.5%; /* Our default font is now 10px, which makes math easier. Now, 1.0rem = 10px. This becomes our $rembase. */
+}
+
+$fontit: "Source Sans Pro", Helvetica, sans-serif;
+$otsikot: "gothambold", Helvetica, sans-serif;
+$pulinankeltainen: #DDD4B2;
+$pulinanvihrea: #78A22E;
+$pulinanvaaleanvihrea: #BCEDA3;
+$pulinankeltavihrea: #C8D55D;
+$pulinansininen: #5EADD3;
+$pulinanharmaa: #555555;
+$pulinanpunainen: #CE5455;
+
+$font-size: 20px;
+$line-height: 32px;
+$line-height-titles: 55px;
+$margin-bottom-titles: 12px;
+
+body, p {
+
+/* Calculate:
+http://www.pearsonified.com/typography/ */
+
+	font-size: $font-size;
+	@include rem(font-size, $font-size);
+	line-height: $line-height;
+	@include rem(line-height, $line-height);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: $line-height-titles;
+    @include rem(line-height, $line-height-titles);
+    margin-bottom: $margin-bottom-titles;
+    @include rem(margin-bottom, $margin-bottom-titles);
+}
+
+h1 {
+	@include rem(font-size, 50px);
+    font-size: 50px;
+}
+
+h2 {
+	@include rem(font-size, 37px);
+    font-size: 37px;
+    line-height: 40px;
+    @include rem(line-height, 40px);
+}
+
+/* -----------------------------------------------------------------------------
+    Bascics: Structure, titles, etc.
+----------------------------------------------------------------------------- */
+
+a, a:link, a:visited {
+	color:$pulinanvihrea;
+	text-decoration:none;
+}
+
+a:hover, a:focus, a:active {
+	color:#ffffff;
+	background:$pulinanvihrea;
+}
+
+body {
+	font-family:$fontit;
+	font-weight:300;
+	padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:$otsikot;
+}
+
+.site-title {
+	margin:0;
+	padding:0;
+}
+
+.site-description {
+	font-size:15px;
+	@include rem(font-size,15px);
+	font-family:'gothamlight', Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	color:$pulinanpunainen;
+	line-height: 20px;
+}
+
+.site-title a {
+	font-family: 'Lobster', Helvetica, sans-serif;
+	color:$pulinansininen;
+}
+
+.site-title a:hover {
+	color:#4A88A6;
+	background:none transparent;
+}
+
+/* -----------------------------------------------------------------------------
+    Rakenteet
+----------------------------------------------------------------------------- */
+
+body {
+	background:$pulinankeltainen;
+}
+
+.container {
+	background:#ffffff;
+	padding:20px;
+}
