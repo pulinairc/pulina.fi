@@ -1,0 +1,584 @@
+/* -----------------------------------------------------------------------------
+    SASS + vars
+----------------------------------------------------------------------------- */
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:700');
+@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic');
+
+@mixin opacity($trans) {
+	filter: alpha(opactiy=($trans * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+	-moz-opacity: $trans;
+	-khtml-opacity: $trans;
+	opacity: $trans;
+}
+
+/* Duden sormenjälki: */ 
+
+$dude_logo:#ffffff;
+$dude_teksti:#666666;
+
+a.toteutus-dude {
+	position:relative;
+	margin:0;
+	padding:0;
+	float:right;
+	color:$dude_teksti !important;
+	text-decoration:none;
+	@include opacity(0.5);
+}
+
+a.toteutus-dude span {
+	color:$dude_logo;
+	font-family:"Open Sans";
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+a.toteutus-dude:hover {
+	color:$dude_logo;
+	@include opacity(0.8);
+}
+
+$base-font-size: 13px;
+$base-font: "Lato", sans-serif;
+$base-color: #000000; /* Musta */
+$base-second-color: #EB5E4A; /* Lohenpunainen */
+$alt-color: #555555;
+$nav-color: #ffffff;
+
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin peruslista() {
+	list-style:none;
+	list-style-type:none;
+}
+@mixin paaotsikko() {
+	font-size:em(28px);
+	font-weight:600;
+	text-align:center;
+}
+
+@mixin alasivuotsikko() {
+	font-size:em(22px);
+	font-weight:600;
+	text-align:center;
+	color:$base-color;
+}
+
+@mixin boxotsikko() {
+	font-size:em(19px);
+	font-weight:600;
+	text-align:center;
+	color:#ffffff;
+}
+
+@mixin leipis() {
+	font-weight:400;
+	font-size:em(18px);
+	line-height:em(26px);
+	color:$alt-color;
+}
+
+@mixin background-cover() {
+  background: {
+    size:cover;
+	repeat:no-repeat;
+	position:center;
+  }
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -khtml-background-size:cover;
+  -o-background-size:cover;
+}
+
+@mixin background-auto() {
+  background: {
+    size:100% auto;
+	repeat:no-repeat;
+	position:center;
+  }
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+@mixin hiddentext() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+@mixin bigtitle() {
+	text-transform:uppercase;
+	font-size:em(30px);
+	color:#3D3C3F;
+}
+
+@mixin semibold() {
+	font-weight:400;
+	text-transform:normal;
+	font-size:em(24px);
+	color:#3D3C3F;
+}
+
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+
+/* -----------------------------------------------------------------------------
+    Bascics: Structure, titles, etc.
+----------------------------------------------------------------------------- */
+
+a, a:link, a:visited {
+	color:$base-color;
+	text-decoration:none;
+}
+
+a:hover, a:focus, a:active {
+	color:$base-color;
+}
+
+body {
+	font-family:$base-font;
+	font-weight:normal;
+	padding:0;
+	@include leipis;
+}
+
+.header {
+	padding:0;
+	z-index:100;
+	width:100%;
+}
+
+.site-header {
+	padding:20px 0;
+	margin:0;
+	background:$base-color;
+}
+
+.site-title {
+	margin:0;
+	padding:0;
+}
+
+.site-description {
+	display:none;
+}
+
+.site-title a {
+	@include hiddentext;
+	background-image:url(../images/logo.png);
+	width:120px;
+	height:120px;
+	margin:0;
+	padding:0;
+}
+
+h3 {
+	font-size:em(20px);
+	color:#222222;
+	font-weight:300;
+}
+
+.slide {
+	padding:50px 0;
+	border:0;
+	background-color:#ffffff;
+}
+
+.video-container, .video, .video * {
+	@include vendorize(border-radius,5px);
+	border:0;
+}
+
+.video {
+    position: relative;
+    height: 0;
+}
+
+.video iframe,
+.video object,
+.video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/* -----------------------------------------------------------------------------
+    Forms
+----------------------------------------------------------------------------- */
+
+
+#subscribe {
+	float:right;
+	font-family:$base-font;
+	overflow:hidden;
+}
+
+#subscribe small {
+	font-size:em(13px);
+	color:#c4c3c3;
+	margin:0 0 10px 0;
+	display:inline-block;
+
+}
+#subscribe input[type="text"], .sml_emailinput {
+	background:#efefef;
+	@include vendorize(border-radius,4px);
+	border:0;
+	padding:12px;
+	font-size:em(12px);
+	font-weight:300;
+	float:left;
+	margin:0 10px 0 0;
+}
+
+.sml_email, .sml_submit {
+	float:left;
+}
+
+#subscribe input[type="submit"], .sml_submitbtn {
+	font-size:em(12px);
+	font-weight:300;
+	color:#ffffff;	
+	float:left;
+	padding:10px 20px;
+}
+
+input[type="button"], input[type="submit"], .btn, a.btn {
+	background:#E99023;
+	border-left:0;
+	border-right:0;
+	border-top:0;
+	border-bottom:3px solid $base-second-color;
+	@include vendorize(border-radius,4px);
+	@include vendorize(box-shadow,none);	
+	text-shadow:none;
+	color:#ffffff;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, .btn:hover, a.btn:hover {
+	background:#cf7f00;
+	color:#ffffff;
+	@include vendorize(box-shadow,none);	
+	text-shadow:none;
+	border-color:$base-second-color;
+}
+
+input[type="button"]:focus, input[type="submit"]:active, .btn:active,
+input[type="button"]:focus, input[type="submit"]:focus, .btn:focus {
+	border-bottom:0;
+	margin-top:4px;
+}
+
+/* -----------------------------------------------------------------------------
+    Facebook-feed
+----------------------------------------------------------------------------- */
+
+.status-update {
+	margin:0 0 30px 0;
+}
+
+/* -----------------------------------------------------------------------------
+    Nav
+----------------------------------------------------------------------------- */
+
+.navbar-toggle {
+    background:#ffffff;
+	border:0;
+	@include vendorize(border-radius,0);
+	@include vendorize(box-shadow,none);
+    float: right;
+    margin:8px 15px;
+    padding: 9px 10px;
+    position: relative;
+}
+
+.icon-bar {
+	background: $base-color;
+	height:3px !important;
+}
+
+#site-navigation {
+	margin:0;
+	padding:0;
+}
+
+.navbar-collapse {
+	padding:0;
+}
+
+.dropdown-menu > li > a {
+	padding:6px 20px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	background:$base-second-color;
+	color:#ffffff;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background:#ffffff;
+	color:$base-color;
+}
+
+.main-navigation {
+	float:left;
+	margin:20px 0 0 0;
+	clear:none;
+	display:inline-block;
+	width:auto;
+}
+
+.nav > li > a {
+	text-transform:uppercase;
+	font-size:em(19px);
+	color:$nav-color;
+	font-weight:600;
+	@include vendorize(border-radius,0);
+	padding:15px;
+}
+
+/* -----------------------------------------------------------------------------
+    Blog
+----------------------------------------------------------------------------- */
+
+.entry-meta {
+	overflow:hidden;
+	clear:both;
+	margin:10px 0;
+}
+
+.entry-meta .fa {
+	margin:0 3px 0 0;
+}
+
+.entry-meta, .entry-meta a, .entry-meta span, .entry-date {
+	font-size:em(13px);
+	color:$alt-color;
+}
+
+.entry-content, .entry-content p {
+	color:$alt-color;
+	font-size:em(14px);
+	line-height:28px;
+	font-weight:400;
+}
+
+.entry-content {
+	padding:0;
+	margin:0 0 20px 0;
+}
+
+.entry-content p {
+	margin:0 0 30px 0;
+}
+
+.entry-tags {
+	@include peruslista;
+	margin:0;
+	padding:0;
+}
+
+.meta {
+	float:left;
+	margin:0 10px 0 0;
+}
+
+.entry-tags li {
+	float:left;
+	padding:0 5px 0 0;
+}
+
+.archive-title {
+	background:#e5e5e5;
+	font-size:em(21px);
+	text-transform:uppercase;
+	color:$base-color;
+	padding:40px 0 50px 0;
+}
+
+.feat-image {
+	text-align:center;
+}
+
+
+.success { 
+  padding: 10px; 
+  background: #f0ffc1; 
+  border: 0;
+  outline: 0;
+  margin-bottom: 15px; 
+  color: #819934;
+}
+
+.success h4 {
+  color: #819934; 
+}
+
+.success p { 
+  margin: 0px;
+}
+
+.error { 
+  padding: 10px; 
+  background: #F85A5A; 
+  border: 0;
+  outline: 0;
+  margin-bottom: 15px; 
+  color: #A22C2C;
+}
+
+.error h4 {
+  color: #A22C2C; 
+}
+
+.error p { 
+  margin: 0px;
+}
+
+#emailconfirmation {
+  display:none;
+  display:none !important;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+    Footer
+----------------------------------------------------------------------------- */
+
+.site-footer {
+	background:#333333;
+	padding:50px 0;
+}
+
+/* -----------------------------------------------------------------------------
+    Responsiveness awesomeness!
+----------------------------------------------------------------------------- */
+
+@media(max-width:770px) {
+
+	#site-navigation {
+		float:right;
+		width: 100%;
+	}
+
+	.nav {
+		float:none;
+		width:100%;
+	}
+
+	.header {
+		position:static;
+	}
+
+	.nav > li > a {
+		color:#ffffff;
+	}
+
+	.dropdown-menu > li {
+    	display: block;
+    	position: relative;
+	}
+
+	.navbar-collapse {
+		float:left;
+		width:100%;
+	}
+
+	.dropdown-menu > li > a {
+		text-transform:uppercase;
+		font-size:em(12px);
+		color:#ffffff;
+		font-weight:600;
+		@include vendorize(border-radius,10px);
+		padding:15px;
+	}
+
+	.navbar-toggle {
+		margin-top:-130px;
+	}
+
+	.navbar-collapse {
+		max-height:auto;
+		background:$base-color;
+		margin:20px 0 0 0;
+		padding:0 0 20px 0;	
+		max-height:100%;
+	}
+
+	.nav .dropdown-menu {
+		display:block !important;
+	}
+
+	.dropdown-menu {
+	    background-color: transparent;
+	    border: 0;
+	    -webkit-border-radius: 0;
+	    -moz-border-radius: 0;
+	    border-radius: 0;
+	    -webkit-box-shadow: none;
+	    -moz-box-shadow: none;
+	    box-shadow: none;
+	    display: block;
+	    float: none;
+	    clear:both;
+	    margin: 0;
+	    padding: 0;
+	    position: static;
+	}
+
+	.header {
+		border:0;
+		@include vendorize(border-radius,0);
+		@include vendorize(box-shadow,none);
+	}
+
+	
+	.dropdown-menu > .active > a {
+		background:transparent;
+		color:#ffffff;
+		text-transform:uppercase;
+		font-size:inherit !important;
+		font-weight:600;
+		@include vendorize(border-radius,10px);
+		padding:15px;
+	}
+
+	 .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+		background:$base-color;
+		color:#ffffff;
+	}
+
+	.dropdown-menu, .main-navigation ul ul {
+		@include vendorize(box-shadow,none);
+		background:transparent;
+		position:static;
+	}
+
+	.caret, .nav-title {
+		display:none !important;
+	}
+
+	.navbar-form .input-small, .navbar-form .btn {
+		font-size:18px;
+		height:auto;
+		padding:10px;
+	}
+
+}
