@@ -5,7 +5,6 @@
  * @package pulinafourteen
  */
 ?>
-	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
@@ -32,7 +31,14 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+</div><!--/.main-->
+</div><!-- #content -->
+
 <?php wp_footer(); ?>
+
+    <script>
+      var navigation = responsiveNav("nav", {customToggle: ".nav-toggle"});
+    </script>
 
 </body>
 </html>

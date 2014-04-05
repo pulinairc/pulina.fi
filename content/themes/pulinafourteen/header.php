@@ -31,69 +31,34 @@
 
 <div class="headerarea">
 
-	<div class="container headercontainer">
-
 		<header class="site-header">
 
-		<div class="columns alpha three">
-
-			<div class="padder">
+			<div class="padder logoarea">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 
-		</div>
+				<nav id="nav" class="nav-collapse" role="navigation">
 
-		<div class="columns omega thirteen">
-				
-				<div class="padder">
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-
-<?php 
-$menu_to_count = wp_nav_menu(array(
-'echo' => false
-// ,'theme_location' => 'pulinamenu'
-));
-$menu_items = substr_count($menu_to_count,'class="page_item ');
-$relativewidth = 100/$menu_items;
-?>
-
-<ul>
-<?php $args = array(
-	'authors'      => '',
-	'child_of'     => 0,
-	'date_format'  => get_option('date_format'),
-	'depth'        => 0,
-	'echo'         => 0,
-	'exclude'      => '',
-	'include'      => '',
-	'link_after'   => '',
-	'link_before'  => '',
-	'post_type'    => 'page',
-	'post_status'  => 'publish',
-	'show_date'    => '',
-	'sort_column'  => 'menu_order, post_title',
-	'title_li'     => false,
-	'walker'       => ''
-); ?>
-<?php 
-    $rollenav = wp_list_pages($args);
-    $var1 = '<li';
-    $var2 = '<li style="width:'.$relativewidth.'%"';
-    $rollenav = str_replace($var1, $var2, $rollenav);
-    echo $rollenav;
- ?>
-</ul>
+				<?php wp_nav_menu(); ?>
 
 				</nav>
-				</div>
-
-		</div>
 
 		</header>
 
-	</div>
-
 </div>
 
-	<div id="content" class="site-content">
+<div class="main" role="main">
+
+<a href="#nav" class="nav-toggle">Valikko</a>
+
+<?php
+echo '<div class="topic"><span class="topictext">Topic:</span> ';
+$topicfile=file('http://peikko.us/pulinatopic.php');
+foreach ($topicfile as $topic)  {
+echo $topic;
+}
+echo '</div>';
+?>
+
+<div id="content" class="site-content">

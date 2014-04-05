@@ -155,7 +155,7 @@ html {
 }
 
 $fontit: "Source Sans Pro", Helvetica, sans-serif;
-$otsikot: "gothambold", Helvetica, sans-serif;
+$otsikot: "Source Sans Pro", "gothambold", Helvetica, sans-serif;
 $pulinankeltainen: #DDD4B2;
 $pulinanvihrea: #78A22E;
 $pulinanvaaleanvihrea: #BCEDA3;
@@ -187,6 +187,7 @@ h1, h2, h3, h4, h5, h6 {
     @include rem(line-height, $line-height-titles);
     margin-bottom: $margin-bottom-titles;
     @include rem(margin-bottom, $margin-bottom-titles);
+    color:#333333;
 }
 
 h1 {
@@ -205,25 +206,179 @@ h2 {
     Nav
 ----------------------------------------------------------------------------- */
 
-#site-navigation ul > li {
-	float:left;
-	position:relative;
-	text-align:center;
+.main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  position: fixed;
+  overflow: hidden;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 72%;
+  background: #fff;
 }
 
-#site-navigation ul {
-	overflow:hidden;
+.main::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: rgba(0,0,0, .15);
+  width: 8px;
+  height: 8px;
 }
 
-#site-navigation ul > li > a,
-#site-navigation ul > li > a:link
-#site-navigation ul > li > a:visited {
-	font-size:15px;
-	@include rem(font-size, 15px);
-	color:#666666;
-	display: inline-block;
-	padding:15px;
+.main::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0,0,0, .4);
 }
+
+.nav-collapse {
+  position: absolute;
+  width: 28%;
+  top: 0;
+  left: 0;
+}
+
+.nav-collapse ul {
+  display: block;
+  width: 100%;
+  list-style: none;
+}
+
+.nav-collapse li {
+  width: 90%;
+  display: block;
+  margin:10px auto;
+}
+
+.nav-collapse a {
+  color: #aaa;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background .3s ease;
+  -moz-transition: background .3s ease;
+  transition: background .3s ease;
+  display: block;
+  padding: .6em 2em;
+  width: 100%;
+}
+
+.menu ul li a, .menu ul li a:link, .menu ul li a:visited {
+    background: #E7E2D2;
+    border: 1px solid #EDEDED;
+    @include vendorize(border-radius,9px);
+    color: #9FA437;
+    font-weight:300;
+}
+.menu ul li a:hover {
+    background: #9FA437;
+    border: 1px solid #9FA437;
+    color: #FFFFFF;
+}
+.menu ul li a.selected {
+    background: #9FA437;
+    border: 1px solid #9FA437;
+    color: #FFFFFF;
+}
+.menu ul li a.profiili {
+    background: #9C5F5F;
+    border: 1px solid #9C5F5F;
+    color: #FFFFFF;
+}
+
+.nav-collapse a:hover { background: rgba(255,255,255, .1) }
+.nav-collapse .active a { color: #fff; background: rgba(0,0,0, .3) }
+.nav-collapse li:first-child a { border-top: 0 }
+.nav-collapse li:last-child a { border-bottom: 0 }
+.nav-toggle { display: none }
+
+@media screen and (max-width: 40em) {
+  .js .nav-collapse {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+  }
+  .nav-collapse {
+    top: 0;
+    width: 100%;
+    position: relative;
+  }
+  .nav-collapse.opened { max-height: 9999px }
+  .nav-collapse a:hover { background: transparent }
+  .nav-collapse .active a:hover { color: #fff; background: rgba(0,0,0, .3) }
+  .nav-toggle {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    text-indent: -999px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 55px;
+    display: block;
+    margin: 0 0 5px 0;
+  }
+  .nav-toggle:before {
+    color: #444; /* Edit this to change the icon color */
+    font-family: "responsivenav";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 28px;
+    text-transform: none;
+    position: absolute;
+    content: "\2261";
+    text-indent: 0;
+    text-align: center;
+    line-height: 65px;
+    speak: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .nav-toggle.active:before {
+    font-size: 24px;
+    content: "\78";
+  }
+  .main {
+    -webkit-overflow-scrolling: auto;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .main::-webkit-scrollbar { background-color: transparent }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  body {
+    background-image: url("debut_dark_@2X.png");
+    -webkit-background-size: 200px 200px;
+    -moz-background-size: 200px 200px;
+    -o-background-size: 200px 200px;
+    background-size: 200px 200px;
+  }
+}
+
+@media screen and (min-width: 76em) {
+  .nav-collapse { width: 18em }
+  .main { width: auto; left: 18em }
+}
+
+
 
 /* -----------------------------------------------------------------------------
     Bascics: Structure, titles, etc.
@@ -274,10 +429,6 @@ h1, h2, h3, h4, h5, h6 {
 	background:none transparent;
 }
 
-.entry-title a {
-	color:#333333;
-}
-
 h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 	background:none transparent;
 }
@@ -287,7 +438,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 ----------------------------------------------------------------------------- */
 
 body {
-	background:#ffffff;
+	background:#f6f0dd;
 }
 
 .headerarea {
@@ -307,3 +458,55 @@ body {
 	// background:#EFEFEF;
 	background:transparent none;
 }
+
+.padder.logoarea {
+	@include rem(padding,30px);
+}
+
+
+/* -----------------------------------------------------------------------------
+    Statsihöttö
+----------------------------------------------------------------------------- */
+
+.topic {
+    background: #D5F4C6;
+    color: #46971D;
+    padding: 20px;
+    margin:0 0 20px;
+}
+
+/* -----------------------------------------------------------------------------
+    Blogi
+----------------------------------------------------------------------------- */
+
+.entry-title a {
+	color:#26292C;
+}
+
+.entry-title {
+	font-weight:900;
+	@include rem(font-size,36px);
+	@include rem(line-height,20px);
+}
+
+.entry-time {
+	color:#6c7379;
+	@include rem(font-size,18px);
+	font-family:$fontit;
+	font-weight:normal;
+	line-height:normal;
+}
+
+/* -----------------------------------------------------------------------------
+    Kuvat
+----------------------------------------------------------------------------- */
+
+.size-full {
+	width:100%;
+	height:auto;
+}
+
+/* -----------------------------------------------------------------------------
+    Footer
+----------------------------------------------------------------------------- */
+
