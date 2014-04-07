@@ -63,7 +63,8 @@
     "wpackagist/wp-smushit":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/wordpress-seo":"*",
-    "wpackagist-plugin/wp-post-view":"*"
+    "wpackagist-plugin/wp-post-view":"*",
+    "wpackagist-plugin/the-events-calendar":"*"
   },
   "extra": {
     "installer-paths": {

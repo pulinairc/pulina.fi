@@ -263,7 +263,7 @@ h2 {
   -moz-transition: background .3s ease;
   transition: background .3s ease;
   display: block;
-  padding: .6em 2em;
+  padding: 20px;
   width: 100%;
 }
 
@@ -486,7 +486,7 @@ body {
 .entry-title {
 	font-weight:900;
 	@include rem(font-size,36px);
-	@include rem(line-height,20px);
+	@include rem(line-height,40px);
 }
 
 .entry-time {
