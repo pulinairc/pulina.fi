@@ -1,0 +1,1 @@
+<iframe class="facebooklike" src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(get_permalink()); ?>&amp;layout=standard&amp;show_faces=true&amp;width=560&amp;action=like&amp;colorscheme=light&amp;height=80" style="border:none; overflow:hidden; width:560px; height:80px;"></iframe>

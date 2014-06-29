@@ -1,0 +1,52 @@
+// Compass Vertical Rhythm setup 
+$base-font-size: 20px;
+$base-line-height: 32px;
+$rhythm-unit: "rem";
+$rem-with-px-fallback: true;
+
+// The font family
+$base-font-family: "gothambold", "gothambold", Helvetica, sans-serif; 
+$alt-font-family: "gothambold", Helvetica, sans-serif; 
+
+// The type-scale Map contains the whole type scale.
+// Add your own sizes or modify these, they will be available in the type-scale mixin for use.
+
+$type-prefix: "t-";
+$type-scale: (
+    tiny: (
+        font-size: 13px,
+        base-lines: 0.5
+    ),
+    small: (
+        font-size: 16px,
+        base-lines: 0.75
+    ),
+    base: (
+        font-size: $base-font-size,
+        base-lines: 1
+    ),
+    medium: (
+        font-size: 25px,
+        base-lines: 1.2
+    ),
+    large: (
+        font-size: 31px,
+        base-lines: 1.5
+    ),
+    xlarge: (
+        font-size: 39px,
+        base-lines: 1.5
+    ),
+    xxlarge: (
+        font-size: 49px,
+        base-lines: 2 
+    )
+);
+
+$type-weight: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    bold: 700,
+    black: 900
+);

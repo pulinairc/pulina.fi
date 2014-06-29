@@ -1,0 +1,16 @@
+{
+        "boss": false,
+        "curly": false,
+        "eqeqeq": false,
+        "eqnull": false,
+        "expr": false,
+        "immed": false,
+        "noarg": false,
+        "onevar": false,
+        "quotmark": "double",
+        "smarttabs": false,
+        "trailing": true,
+        "undef": false,
+        "unused": false,
+        "node": false
+}

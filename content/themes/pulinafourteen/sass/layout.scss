@@ -1,0 +1,241 @@
+$responsivenav: 872px;
+
+@import 'http://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic';
+@import 'reset';
+@import 'trunk';
+@import 'font-awesome';
+@import 'compass';
+@import 'jeet/index';
+
+// Typomatic:
+
+// Establish a vertical rhythm
+@include establish-baseline;
+
+// Global imports
+@import "breakpoint";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/hyphenation";
+@import "compass/utilities/general/clearfix";
+
+// Project imports
+@import "config";
+@import "functions";
+@import "typomatic";
+
+$fontit: "Source Sans Pro", Helvetica, sans-serif;
+$otsikot: "Source Sans Pro", "gothambold", Helvetica, sans-serif;
+$pulinankeltainen: #DDD4B2;
+$pulinanvihrea: #78A22E;
+$pulinanvaaleanvihrea: #BCEDA3;
+$pulinankeltavihrea: #C8D55D;
+$pulinansininen: #5EADD3;
+$pulinanharmaa: #555555;
+$pulinanpunainen: #CE5455;
+
+$font-size: 20px;
+$margin-bottom-titles: 12px;
+
+h1, h2, h3, h4, h5, h6 {
+  color:#333333;
+}
+
+/* -----------------------------------------------------------------------------
+    Nav
+----------------------------------------------------------------------------- */
+
+.headcontainer {
+  @media only screen and (min-width: $responsivenav) {
+    @include col(3/4);
+    @include rem(margin,0 auto);
+    @include cf();
+    position:relative;
+    float:none;
+  }
+}
+
+nav li a, nav li a:link, nav li a:visited, nav li a:active, nav li a:focus {
+  color: #9aa6af;
+  @include rem(padding,28px 18px);
+  display: block;
+  @include type-scale(base);
+  color:#888888;
+  @include transition(background-color 0.52s ease-out);
+}
+
+nav li a:hover {
+  color: #ffffff;
+  background:#aaaaaa;
+}
+
+/* -----------------------------------------------------------------------------
+    <header>
+----------------------------------------------------------------------------- */
+
+.topic p {
+  margin:0;
+}
+
+/* -----------------------------------------------------------------------------
+    Basics: Structure, titles, etc.
+----------------------------------------------------------------------------- */
+
+.content-area {
+  @include rem(padding,20px);
+  background:#ffffff;
+}
+
+#page {
+  @include col(3/4);
+  @include rem(margin,0 auto);
+  float:none;
+  @include cf();
+  clear:both;
+}
+
+a, a:link, a:visited {
+	color:$pulinanvihrea;
+	text-decoration:none;
+}
+
+p a:hover, p a:focus, p a:active {
+	color:#ffffff;
+	background:$pulinanvihrea;
+}
+
+body {
+	font-family:$fontit;
+	font-weight:300;
+	padding:0;
+  margin:0;
+  background:#F1F1F1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:$otsikot;
+}
+
+.site-header {
+  margin:0;
+  @include rem(padding,10px);
+  overflow:hidden;
+}
+
+.logoarea {
+  @include vendorize(box-sizing,border-box);
+  @include rem(padding,10px 0 0 10px);
+}
+
+.site-header .site-title {
+	@include rem(margin,0);
+	padding:0;
+  line-height:25px;
+}
+
+.site-description {
+	font-size:15px;
+	font-family:'gothamlight', Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	color:$pulinanpunainen;
+	line-height: 20px;
+}
+
+.site-title a {
+	font-family: 'Lobster', Helvetica, sans-serif;
+	color:$pulinansininen;
+}
+
+.site-title a:hover {
+	color:#4A88A6;
+	background:none transparent;
+}
+
+h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
+	background:none transparent;
+}
+
+/* -----------------------------------------------------------------------------
+    Rakenteet
+----------------------------------------------------------------------------- */
+
+.headerarea {
+	background:#f6f0dd;
+}
+
+.container.headercontainer {
+	// background:#EFEFEF;
+	background:transparent none;
+}
+
+.padder.logoarea {
+	@include rem(padding,30px);
+}
+
+
+/* -----------------------------------------------------------------------------
+    Statsihöttö
+----------------------------------------------------------------------------- */
+
+.topic {
+    background: #D5F4C6;
+    color: #46971D;
+    @include rem(padding,20px);
+    margin:0;
+}
+
+/* -----------------------------------------------------------------------------
+    Blogi
+----------------------------------------------------------------------------- */
+
+.entry-title a {
+	color:#26292C;
+}
+
+.entry-title {
+	font-weight:900;
+}
+
+.entry-time {
+	color:#6c7379;
+	font-family:$fontit;
+	font-weight:normal;
+}
+
+/* -----------------------------------------------------------------------------
+    Kuvat
+----------------------------------------------------------------------------- */
+
+.size-full {
+	width:100%;
+	height:auto;
+}
+
+/* -----------------------------------------------------------------------------
+    Footer
+----------------------------------------------------------------------------- */
+
+.site-footer {
+  background:#333333;
+  background:rgba(0,0,0,0.10);
+  color:#565656;
+  color:rgba(0,0,0,0.6)
+}
+
+.site-footer p {
+  @include type-scale(medium);
+  @include rem(padding,20px);
+}
+
+/* -----------------------------------------------------------------------------
+    Media queries
+----------------------------------------------------------------------------- */
+
+@media(max-width:1018px) {
+  .site-description {
+    @include rem(font-size,12px);
+  }
+  .site-header {
+    height:54px;
+  }
+}

@@ -40,11 +40,11 @@
       "type": "package",
       "package": {
         "name": "wordpress",
-        "version": "3.8.1",
+        "version": "3.9.1",
         "type": "webroot",
         "dist": {
           "type": "zip",
-          "url": "http://sv.wordpress.org/wordpress-3.8.1-fi.zip"
+          "url": "http://sv.wordpress.org/wordpress-3.9.1-fi.zip"
         },
         "require" : {
           "fancyguy/webroot-installer": "1.1.0"
@@ -54,17 +54,15 @@
   ],
   "require": {
     "php": ">=5.3.2",
-    "wordpress": "3.8.1",
+    "wordpress": "3.9.1",
     "fancyguy/webroot-installer": "1.1.0",
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
-    "wpackagist/w3-total-cache":"*",
-    "wpackagist/wp-smushit":"*",
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/wp-post-view":"*",
-    "wpackagist-plugin/the-events-calendar":"*"
+    "wpackagist-plugin/wordpress-seo":"*"
   },
   "extra": {
     "installer-paths": {
