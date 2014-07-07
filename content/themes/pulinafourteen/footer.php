@@ -28,7 +28,7 @@
 
 <?php wp_footer(); ?>
 
-<?php if(is_front_page()) { ?>
+<?php if(is_front_page() || is_home() ) { ?>
 
 <?php
 include_once('inc/simplehtmldom/simple_html_dom.php');
