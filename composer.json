@@ -62,7 +62,7 @@
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/wp-post-view":"*",
-    "wpackagist-plugin/wordpress-seo":"*",
+    "wpackagist-plugin/buddypress":"*",
     "wpackagist-plugin/jetpack":"*"
   },
   "extra": {

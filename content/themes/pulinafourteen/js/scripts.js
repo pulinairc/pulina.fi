@@ -71,5 +71,9 @@ jAnimConsole = function() {
 
 $(".type p").each(jAnimConsole);
 
+$("body").find("a").wrapInner("<span/>")
+$("span").each(function() {
+$(this).attr("data-title", $(this).text());
+});
 
 });

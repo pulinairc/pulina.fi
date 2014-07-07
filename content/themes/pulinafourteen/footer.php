@@ -12,7 +12,7 @@
 					</div>
 
 					<div>
-						<a href="<?php echo get_home_url(); ?>/irkkiin" class="btn">Haluan irkata kehittyneemmin</a>
+						<a href="<?php echo get_home_url(); ?>/irkkiin#paremmin" class="btn">Haluan irkata oikeaoppisesti</a>
 					</div>
 				</div>
 				

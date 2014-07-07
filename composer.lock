@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49555719fdcc527284d760289b9803f3",
+    "hash": "535be407fa68e6de9748d43e1787364f",
     "packages": [
         {
             "name": "composer/installers",
@@ -482,6 +482,29 @@
             "homepage": "http://wordpress.org/plugins/akismet/"
         },
         {
+            "name": "wpackagist-plugin/buddypress",
+            "version": "2.0.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/buddypress/",
+                "reference": "tags/2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/buddypress.2.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/buddypress": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/buddypress/"
+        },
+        {
             "name": "wpackagist-plugin/jetpack",
             "version": "3.0.2",
             "source": {
@@ -503,29 +526,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/jetpack/"
-        },
-        {
-            "name": "wpackagist-plugin/jetpack-markdown",
-            "version": "3.0.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack-markdown/",
-                "reference": "tags/3.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack-markdown.3.0.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "replace": {
-                "wpackagist/jetpack-markdown": "self.version"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/jetpack-markdown/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

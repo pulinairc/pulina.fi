@@ -1,16 +1,10 @@
 <?php
 /**
- * BLOGIN ETUSIVU
- * 
  * @package pulinafourteen
  * Template Name: Blogi
  */
 
 get_header(); ?>
-
-<div class="plakaatti">
-<p>Huom! Blogi on hieman vielä työn alla. Rolle tekee tätä vapaa-ajallaan, joten saattaapi hieman kestää. Kiitos kärsivällisyydestä! <i>&mdash; 8.7.2014</i></p>
-</div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

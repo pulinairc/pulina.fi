@@ -62,8 +62,14 @@ get_header(); ?>
 			foreach($lastposts as $post) : setup_postdata($post); ?>
 				
 				<div class="blog-post">
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					
+
+					<div class="author">
+					<?php echo get_avatar(get_the_author_email(), '50' ); ?>
+					<p><?php echo get_the_author_meta('nickname'); ?></p>
+					</div>
+
+					<div class="excerpt">
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<?php if ( ! has_excerpt() ) { ?>
 					<p><?php 
 					$lause = preg_match('/^([^.!?]*[\.!?]+){0,2}/', strip_tags($post->post_content), $lyhenne);
@@ -72,6 +78,7 @@ get_header(); ?>
 					<?php } else { ?>
 					<?php the_excerpt(''); ?>
 					<?php } ?>
+					</div>
 
 				</div>
 			<?php endforeach; ?>

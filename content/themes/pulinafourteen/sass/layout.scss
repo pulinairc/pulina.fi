@@ -1,8 +1,9 @@
 $responsivenav: 872px;
 $defaultpadding: 30px;
 $container-mobile: 480px;
+$container-ipad: 770px;
 
-@import 'http://fonts.googleapis.com/css?family=Lobster|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300|Noto+Serif:400,700,400italic,700italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic';
+@import 'http://fonts.googleapis.com/css?family=Montserrat:300,400,700|Lobster|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300|Noto+Serif:400,700,400italic,700italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic';
 @import 'reset';
 @import 'font-awesome';
 @import 'compass';
@@ -19,7 +20,7 @@ $container-mobile: 480px;
 // Type scale: tiny, small, base, medium, large, xlarge, xxlarge
 
 // The font family
-$base-font-family: "Open Sans", "gothambold", Helvetica, sans-serif; 
+$base-font-family: "Open Sans", Helvetica, sans-serif; 
 $alt-font-family: "Lato", Helvetica, sans-serif; 
 $blog-font-family: "Noto Serif", Helvetica, sans-serif;
 
@@ -36,6 +37,7 @@ $blog-font-family: "Noto Serif", Helvetica, sans-serif;
 @import "config";
 @import "functions";
 @import "typomatic";
+@import 'base';
 
 $pulinankeltainen: #DDD4B2;
 $pulinanvihrea: #78A22E;
@@ -49,6 +51,40 @@ $margin-bottom-titles: 12px;
 
 h1, h2, h3, h4, h5, h6 {
   color:#333333;
+  @include type-weight(bold);
+}
+
+.logocol {
+  @include col(1/5, $gutter:0);
+}
+
+.logocol img {
+  width:100%;
+  height:auto;
+}
+
+.softa {
+  @include col(4/5, $gutter:0);
+  @include rem(padding,$defaultpadding);
+}
+
+.softa ul a {
+  @include type-weight(bold);
+}
+
+.containercol, .mukaan {
+  clear:both;
+  display:block;
+}
+
+.containercol {
+  background:#E5E5E5;
+  background:rgba(0,0,0,0.10);
+  overflow:hidden;
+}
+
+.containercol ul {
+  @include type-scale(medium);
 }
 
 /* -----------------------------------------------------------------------------
@@ -135,6 +171,8 @@ body {
 	padding:0;
   margin:0;
   background:#ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -217,6 +255,27 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   }
 }
 
+.blog-post {
+  .author {
+    
+    @include col(1/5);
+
+    .avatar {
+      @include vendorize(border-radius,50% 50%);
+    }
+
+    p {
+      clear:both;
+      @include type-scale(small);
+      @include rem(padding,3px 0 0 18px);
+    } 
+  
+  }
+  .excerpt {
+    @include col(4/5);
+  }
+}
+
 .urlit {
   overflow:hidden;
 }
@@ -229,7 +288,6 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 
   a {
     color:#666666;
-    font-family:$blog-font-family;
   }
 }
 
@@ -243,7 +301,6 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   @include rem(margin,0 0 10px 0);
   @include rem(padding,0);
   color:#666666;
-  font-family:$blog-font-family;
   }
   a.url {
     @include type-scale(small);
@@ -365,6 +422,16 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   float:right;
 }
 
+.muuta {
+  @include rem(margin-top,30px);
+}
+
+.join-btn {
+  @include sassy-button("flat", 4px, #009FD9, #007EC9);
+  @include type-scale(large);
+  color:#ffffff !important;
+}
+
 .type .btn {
   @include sassy-button("flat", 4px, #34495e, #34495e);
   @include type-scale(base);
@@ -423,6 +490,17 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
     color: #46971D;
     @include rem(padding,$defaultpadding);
     margin:0;
+}
+
+.plakaatti {
+    background: $pulinankeltainen;
+    color: #46971D;
+    @include rem(padding,$defaultpadding);
+    margin:0;
+    p {
+      color:rgba(0,0,0,0.6);
+      margin:0;
+    }
 }
 
 .paikalla, .numero, .ministatsit, .sukupuolet  {
@@ -552,18 +630,79 @@ span.goalAmount {
     Blogi
 ----------------------------------------------------------------------------- */
 
+.tags {
+  padding:0;
+  @include rem(margin,20px 0);
+  overflow:hidden;
+}
+
+.tags li {
+  display:inline;
+  @include rem(margin,0 10px 10px 0);
+}
+
+.tags li a {
+  @include vendorize(border-radius,4px);
+  background:#ffffff;
+  @include rem(padding,8px 13px);
+  display:inline-block;
+  @include rem(margin,0 0 6px 0);
+  color:#000000;
+}
+
+.tags li a:hover {
+  background:$pulinanvihrea;
+  color:#ffffff;
+}
+
+#author {
+  overflow:hidden;
+  clear:both;
+  background:#7f8c8d;
+  color:#ffffff;
+  @include rem(padding,$defaultpadding);
+}
+
+#author p {
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+#author h3, .generich3 {
+  font-family:$blog-font-family;
+  @include type-scale(base);
+  @include rem(margin,0 0 20px 0);
+  @include rem(padding,0);  
+  color:rgba(255,255,255,0.8);
+}
+
+#author .avatararea {
+  @include col(1/6);
+}
+
+#author .authorinfo {
+  @include col(5/6);  
+}
+
+#author .avatararea img {
+  @include vendorize(border-radius,50% 50%);
+  @include rem(margin,30px 0);
+}
+
 .entry-title a {
 	color:#26292C;
 }
 
 .entry-title {
-	font-weight:900;
+  @include type-scale(xlarge);
+  @include type-weight(bold);
 }
 
 .entry-time {
 	color:#6c7379;
 	font-family:$base-font-family;
-	font-weight:normal;
+  @include type-scale(medium);
+  @include type-weight(light);
 }
 
 /* -----------------------------------------------------------------------------
@@ -648,13 +787,184 @@ span.goalAmount {
   nav li a, nav li a:active, nav li a:focus, nav li a:link, nav li a:visited {
     @include rem(font-size,30px);
     color:#ffffff;
-    color:rgba(255,255,255,0.7);
-    font-weight:900;
+    color:rgba(255,255,255,0.5);
+    text-shadow:none;
+    font-weight:400;
     letter-spacing:0;
+    border-bottom: 1px solid #1e3042;
+    border-top: 1px solid #384a5c;
+  }
+
+  nav li:last-child a {
+    border-bottom:0;
+  }
+
+  nav li a:hover {
+    background:#1e3042;
   }
 
   #page {
     @include col(1/1, $gutter:0);
     @include rem(margin-top,70px);
   }
+}
+
+
+// More practical CSS...
+// using mobile first method (IE8,7 requires respond.js polyfill https://github.com/scottjehl/Respond)
+
+$breakpoint-alpha: $container-ipad; // adjust to your needs
+
+.rwd-table {
+  margin: 0;
+  min-width: 300px; // adjust to your needs
+  
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    // width:25%;
+    display: block; 
+    
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+      display: inline-block;
+      // end options
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  overflow: hidden;
+  tr {
+    border-color: lighten(#34495E, 10%);
+  }
+  th, td {
+    margin: .5em 1em;
+    @media (min-width: $breakpoint-alpha) { 
+      padding: 1em !important; 
+    }
+  }
+  th, td:before {
+    color: #dd5;
+  }
+}
+
+th, td, tr {
+  @include type-scale(base);
+}
+
+.poispaalta {
+  color:#E8534F;
+}
+
+.komennot table code {
+  background-color:#22374C;
+  @include transition(background-color 0.52s ease-out);
+}
+
+.komennot table code:hover {
+  background-color:#111111;
+}
+
+$transition-time: .5s;
+
+p a {
+    color: $pulinanvihrea;
+    display: inline-block;
+    text-decoration: none;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -ms-perspective: 600px;
+    perspective: 600px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+
+    &:hover span {
+      background: $pulinanvihrea;
+      -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+      -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+      -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+      transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    }
+
+    span {
+      display: block;
+      position: relative;
+      padding: 0 3px;
+      -webkit-transition: all $transition-time ease;
+      -moz-transition: all $transition-time ease;
+      -ms-transition: all $transition-time ease;
+      transition: all $transition-time ease;
+      -webkit-transform-origin: 50% 0%;
+      -moz-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      &:after {
+        content: attr(data-title);
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0 3px;
+        color: #fff;
+        background: $pulinanvihrea;
+        -webkit-transform-origin: 50% 0%;
+        -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+      }
+    }
 }
