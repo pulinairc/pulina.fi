@@ -152,7 +152,7 @@ get_header(); ?>
 
 			<h4>iPhone</h4>
 
-			<p>iPhonelle on vähän hankalampi löytää kunnon IRC-clienttiä, ellei ole jailbreakattu iPhone. <a href="https://itunes.apple.com/us/app/prompt/id421507115?mt=8" target="_blank">Prompt</a> on paras niille, joilla on IRC-shelli. iPhone-optimoitua webchattia <a href="http://mibbit.com/" target="_blank">Mibbitiä</a> kannattaa käyttää. Pari hyväksi havaitta iPuhelin-appseja:</p>
+			<p>iPhonelle on vähän hankalampi löytää kunnon IRC-clienttiä, ellei ole jailbreakattu iPhone. <a href="https://itunes.apple.com/us/app/prompt/id421507115?mt=8" target="_blank">Prompt</a> on paras niille, joilla on IRC-shelli. iPhone-optimoitua webchattia <a href="http://mibbit.com/" target="_blank">Mibbitiä</a> kannattaa käyttää. Pari hyväksi havaittuja iPuhelin-appseja:</p>
 					
 			<ul>
 				<li><a href="https://code.google.com/p/colloq/" target="_blank">ColloQ</a></li>
