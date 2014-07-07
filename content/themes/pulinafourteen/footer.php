@@ -18,7 +18,7 @@
 				
 	<footer id="colophon" class="site-footer">
 
-		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivut by <a href="http://rolle.io">rolle</a>.</p>
+		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivujen v. 0.001 by <a href="http://rolle.io">rolle</a>.</p>
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
