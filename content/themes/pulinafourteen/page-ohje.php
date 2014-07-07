@@ -135,7 +135,7 @@ get_header(); ?>
 			<ul>
 				<li><a href="https://play.google.com/store/apps/details?id=com.androirc" target="_blank">AndroIRC</a> - Ihan pätevä kaikin puolin</li>
 				<li><a href="https://play.google.com/store/apps/details?id=net.andchat" target="_blank">AndChat</a> - Yksi parhaista. Rollen suosikki.</li>
-				<li><a href="https://play.google.com/store/apps/details?id=com.tapchatapp.android" target="_blank">AndChat</a> - Nätti ja simppeli, mutta maksullinen.</li>
+				<li><a href="https://play.google.com/store/apps/details?id=com.tapchatapp.android" target="_blank">TapChat</a> - Nätti ja simppeli, mutta maksullinen.</li>
 			</ul>
 					
 		</div><!--/.softa-->
