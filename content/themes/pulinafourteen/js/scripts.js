@@ -76,4 +76,6 @@ $("span").each(function() {
 $(this).attr("data-title", $(this).text());
 });
 
+$(".btn span").contents().unwrap();
+
 });
