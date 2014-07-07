@@ -85,4 +85,5 @@ echo $topic;
 echo '
 </p>
 </div>';
+include ('inc/ilmot.php');
 ?>
