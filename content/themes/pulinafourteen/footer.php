@@ -83,6 +83,16 @@ $naiset_maara = count($naiset_array);
 <script>
 $(document).ready(function() {
 
+$(".progressBar").load('<?php echo get_template_directory_uri(); ?>/inc/tanaan-pulistu.php');
+   var refreshId = setInterval(function() {
+      $(".progressBar").load('<?php echo get_template_directory_uri(); ?>/inc/tanaan-pulistu.php');
+      $(".irclog").load('<?php echo get_template_directory_uri(); ?>/inc/scroller.php');
+   }, 1000);
+   $.ajaxSetup({ cache: true });
+   
+   //Chromelle, ettei lataa loputtomiin:
+   // setTimeout("window.stop()",30000);
+
 $('.paikalla').animateNumber({
 number: '<?php echo strip_tags($numero); ?>',
 easing: 'linear',

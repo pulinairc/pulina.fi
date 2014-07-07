@@ -25,6 +25,7 @@
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/icon-retina.png">
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>

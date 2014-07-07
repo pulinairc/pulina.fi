@@ -1,15 +1,5 @@
 $(document).ready(function() {
 
-$(".progressBar").load('http://pulina.dev/content/themes/pulinafourteen/inc/tanaan-pulistu.php');
-   var refreshId = setInterval(function() {
-      $(".progressBar").load('http://pulina.dev/content/themes/pulinafourteen/inc/tanaan-pulistu.php');
-      $(".irclog").load('http://pulina.dev/content/themes/pulinafourteen/inc/scroller.php');
-   }, 1000);
-   $.ajaxSetup({ cache: true });
-   
-   //Chromelle, ettei lataa loputtomiin:
-   // setTimeout("window.stop()",30000);
-
 if (window.innerWidth > 600) {
 
 $(".kayttajat").css({'height':($(".frontpage").outerHeight()+'px')});
