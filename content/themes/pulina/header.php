@@ -98,7 +98,7 @@ echo '</div>';
 ?>
 
 <div class="statbox">
-<div id="counter">asd</div>
+<div id="counter"></div>
 </div>
 
 <?php include('paikalla.php'); ?>

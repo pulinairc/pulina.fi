@@ -1,7 +1,7 @@
 set :application, "pulina"
 set :repo_url,  "git@bitbucket.org:ronilaukkarinen/pulina.git"
 set :branch, :master
-set :log_level, :info
+set :log_level, :debug
 set :linked_files, %w{.env}
 set :linked_dirs, %w{content/uploads}
 set :composer_install_flags, '--no-dev --prefer-dist --no-scripts --optimize-autoloader'
