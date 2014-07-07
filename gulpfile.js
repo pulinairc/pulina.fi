@@ -26,7 +26,7 @@ gulp.task('compass', function() {
     css: 'content/themes/pulinafourteen/css',
     sass: 'content/themes/pulinafourteen/sass',
     image: 'content/themes/pulinafourteen/images'
-      ,require: ['breakpoint']
+      ,require: ['breakpoint', 'sassy-buttons']
       }))
   .on('error', function(err) {
     // Would like to catch the error here
@@ -37,27 +37,18 @@ gulp.task('compass', function() {
   .pipe(notify({ message: 'Compass complete' }));
     });
 
-gulp.task('validatejs', function() {
-  gulp.src(
-    [
-    'content/themes/pulinafourteen/js/scripts.js'
-    ])
-
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(notify({ message: 'scripts.js validated' }));
-});
-
 gulp.task('scripts', function() {
   //gulp.src('content/themes/pulinafourteen/js/*.js')
   gulp.src(
     [
     'content/themes/pulinafourteen/js/jquery.js',
     'content/themes/pulinafourteen/js/trunk.js',
+    'content/themes/pulinafourteen/js/jquery.animateNumber.js',
+    'content/themes/pulinafourteen/js/goalProgress.js',
     'content/themes/pulinafourteen/js/scripts.js'
     ])
     .pipe(concat('all.js'))
-    .pipe(uglify({preserveComments: false, compress: true, mangle: true}))
+    .pipe(uglify({preserveComments: false, compress: true, mangle: true}).on('error', function(e) { console.log('\x07',e.message); return this.end(); }))
     .pipe(header(banner, {pkg: pkg, currentDate: currentDate}))
     .pipe(gulp.dest('content/themes/pulinafourteen/js/'))
     .pipe(livereload())
@@ -88,11 +79,12 @@ gulp.task('watch', function() {
   livereload.listen();
 
   gulp.watch('content/themes/pulinafourteen/*.php', ['php']);
+  gulp.watch('content/themes/pulinafourteen/inc/*.php', ['php']);
   gulp.watch('content/themes/pulinafourteen/*.html', ['html']);
   gulp.watch('content/themes/pulinafourteen/sass/*.scss', ['compass']);
-  gulp.watch('content/themes/pulinafourteen/js/scripts.js', ['scripts', 'validatejs']);
+  gulp.watch('content/themes/pulinafourteen/js/scripts.js', ['scripts']);
   gulp.watch('content/themes/pulinafourteen/images/*', ['images']);
 
 });
 
-gulp.task('default', function() { gulp.start('compass', 'scripts', 'validatejs', 'images'); });  
+gulp.task('default', function() { gulp.start('compass', 'scripts', 'images'); });  

@@ -62,9 +62,6 @@ register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'pulinafourteen' ),
 ) );
 
-// Bootstrap-valikko:
-require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
-
 // LiveReload/gulp
 if ( getenv('WP_ENV') === 'development' ){
   add_action('wp_head', 'livereload');
@@ -72,3 +69,6 @@ if ( getenv('WP_ENV') === 'development' ){
 function livereload() {
 echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
 }
+
+// Duden bootstrapiin perustuva navwalker:
+require get_template_directory() . '/inc/dude-wp-navwalker.php';

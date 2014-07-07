@@ -10,7 +10,7 @@ $(function() {
     }
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
 
-    var items = $('.slide');
+    var items = $('.navslide');
     var content = $('.content');
 
     function open() {

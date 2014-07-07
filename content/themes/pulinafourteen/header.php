@@ -29,12 +29,12 @@
 
 <body <?php body_class(); ?>>
 
-<div class="headcontainer container">
+<div class="header-container container">
 
-	<header class="site-header slide">
+	<header class="site-header navslide">
 
 			<div class="logoarea">
-				<ul id="navToggle" class="burger slide">
+				<ul id="navToggle" class="burger navslide">
 					<li></li>
 					<li></li>
 					<li></li>
@@ -52,7 +52,7 @@
 					'theme_location'  => '',
 					'menu'            => '',
 					'container'       => 'nav',
-					'container_class' => 'slide',
+					'container_class' => 'navslide',
 					'container_id'    => '',
 					'menu_class'      => 'menu',
 					'menu_id'         => '',
@@ -73,7 +73,7 @@
 
 <div id="page" class="hfeed site">
 
-<div class="content slide">
+<div class="content navslide">
 
 <?php
 echo '<div class="topic">

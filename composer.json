@@ -62,7 +62,8 @@
     "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/wp-post-view":"*",
-    "wpackagist-plugin/wordpress-seo":"*"
+    "wpackagist-plugin/wordpress-seo":"*",
+    "wpackagist-plugin/jetpack":"*"
   },
   "extra": {
     "installer-paths": {

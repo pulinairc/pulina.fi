@@ -1,13 +1,27 @@
 $responsivenav: 872px;
+$defaultpadding: 30px;
+$container-mobile: 480px;
 
-@import 'http://fonts.googleapis.com/css?family=Lobster|Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic';
+@import 'http://fonts.googleapis.com/css?family=Lobster|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300|Noto+Serif:400,700,400italic,700italic|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic';
 @import 'reset';
-@import 'trunk';
 @import 'font-awesome';
 @import 'compass';
 @import 'jeet/index';
+@import 'trunk';
+@import 'sassy-buttons';
+
+// Apply a natural box layout model to all elements
+*, *:before, *:after {
+  @include vendorize(box-sizing,border-box);
+}
 
 // Typomatic:
+// Type scale: tiny, small, base, medium, large, xlarge, xxlarge
+
+// The font family
+$base-font-family: "Open Sans", "gothambold", Helvetica, sans-serif; 
+$alt-font-family: "Lato", Helvetica, sans-serif; 
+$blog-font-family: "Noto Serif", Helvetica, sans-serif;
 
 // Establish a vertical rhythm
 @include establish-baseline;
@@ -23,8 +37,6 @@ $responsivenav: 872px;
 @import "functions";
 @import "typomatic";
 
-$fontit: "Source Sans Pro", Helvetica, sans-serif;
-$otsikot: "Source Sans Pro", "gothambold", Helvetica, sans-serif;
 $pulinankeltainen: #DDD4B2;
 $pulinanvihrea: #78A22E;
 $pulinanvaaleanvihrea: #BCEDA3;
@@ -33,7 +45,6 @@ $pulinansininen: #5EADD3;
 $pulinanharmaa: #555555;
 $pulinanpunainen: #CE5455;
 
-$font-size: 20px;
 $margin-bottom-titles: 12px;
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     Nav
 ----------------------------------------------------------------------------- */
 
-.headcontainer {
+.header-container {
   @media only screen and (min-width: $responsivenav) {
     @include col(3/4);
     @include rem(margin,0 auto);
@@ -68,6 +79,10 @@ nav li a:hover {
   background:#aaaaaa;
 }
 
+.close .menu {
+  display:none;
+}
+
 /* -----------------------------------------------------------------------------
     <header>
 ----------------------------------------------------------------------------- */
@@ -80,9 +95,24 @@ nav li a:hover {
     Basics: Structure, titles, etc.
 ----------------------------------------------------------------------------- */
 
+.entry-content p {
+  color:#444444;
+}
+
+.entry-content p:last-child {
+  margin-bottom:0;
+}
+
 .content-area {
-  @include rem(padding,20px);
-  background:#ffffff;
+  @include rem(padding,$defaultpadding);
+  background:#F7F9FA;
+}
+
+iframe {
+  border:0;
+  width:100%;
+  height:auto;
+  min-height:600px;
 }
 
 #page {
@@ -96,23 +126,19 @@ nav li a:hover {
 a, a:link, a:visited {
 	color:$pulinanvihrea;
 	text-decoration:none;
-}
-
-p a:hover, p a:focus, p a:active {
-	color:#ffffff;
-	background:$pulinanvihrea;
+  @include transition(background-color 0.52s ease-out);
 }
 
 body {
-	font-family:$fontit;
+	font-family:$base-font-family;
 	font-weight:300;
 	padding:0;
   margin:0;
-  background:#F1F1F1;
+  background:#ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family:$otsikot;
+	font-family:$base-font-family;
 }
 
 .site-header {
@@ -163,25 +189,363 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 	background:#f6f0dd;
 }
 
-.container.headercontainer {
-	// background:#EFEFEF;
-	background:transparent none;
-}
-
 .padder.logoarea {
 	@include rem(padding,30px);
 }
 
 
 /* -----------------------------------------------------------------------------
-    Statsihöttö
+    Etusivu + Statsihöttö
 ----------------------------------------------------------------------------- */
+
+.blog-summaries {
+  background:rgba(0,0,0,0.13);
+  @include rem(padding,0);
+  overflow:hidden;
+  @include col(1/1, $gutter:0);
+  @include cf();
+  clear:both;
+  display:block;
+}
+
+.blogposts, .urlit {
+  @include col(1/2, $gutter:0);
+  @include rem(padding,$defaultpadding);
+  @media(max-width:$container-mobile) {
+    @include col(1/1);
+    @include rem(padding,$defaultpadding);
+  }
+}
+
+.urlit {
+  overflow:hidden;
+}
+
+.blogposts h2 {
+  @include type-scale(medium);
+  @include type-weight(bold);
+  @include rem(margin,0 0 10px 0);
+  @include rem(padding,0);
+
+  a {
+    color:#666666;
+    font-family:$blog-font-family;
+  }
+}
+
+.linkkilista {
+  li {
+    @include rem(margin-bottom,30px);
+  }
+  a {
+  @include type-scale(medium);
+  @include type-weight(bold);
+  @include rem(margin,0 0 10px 0);
+  @include rem(padding,0);
+  color:#666666;
+  font-family:$blog-font-family;
+  }
+  a.url {
+    @include type-scale(small);
+    @include type-weight(thin);
+    color:#444444;
+    display:block;
+    font-family:$base-font-family;
+
+    img {
+      display:none;
+    }
+  }
+}
+
+.more, .urlit .more a {
+  @include type-scale(base);
+}
+
+
+.blogposts p, .blog-summaries li {
+  @include type-scale(base);
+  color:#444444;
+}
+
+.topictext {
+  @include type-weight(black);
+}
+
+.topic strong {
+  @include type-weight(base);
+  font-style:italic;
+}
+
+.scroller {
+  clear:both;
+  @include cf();
+  @include rem(padding,$defaultpadding);
+  background:#111111;
+  color:rgba(255,255,255,0.8);  
+}
+
+.type {
+  background:#222222;
+  @include rem(padding,20px 30px);
+  color:#CFCFCF;
+  @include type-scale(medium);
+  overflow:hidden;
+}
+
+.type p {
+  display:block;
+  overflow:hidden;
+  margin:0;
+ @include rem(padding,10px 0);
+}
+
+@keyframes blink
+{
+    0% { visibility:visible; }
+    100% { visibility:hidden; }
+}
+
+@-webkit-keyframes blink {
+    0% { visibility:visible; }
+    100% { visibility:hidden; }
+}
+@-moz-keyframes blink {
+    0% { visibility:visible; }
+    100% { visibility:hidden; }
+}
+
+.cursor {
+  background:#666666;
+  display:inline-block;
+  width:11px;
+  height:19px;
+  @include rem(margin,0 0 -3px 5px);
+  @include animation(blink 1s steps(2, start) infinite);
+}
+
+.normal-user {
+  color:#1abc9c !important;
+}
+
+.scroller ul {
+  @include type-scale(medium);
+}
+
+.ministats div {
+  @include col(1/3, $gutter: 0);
+  @include rem(padding,$defaultpadding);
+}
+
+.sukupuolet {
+  @include col(1/1);
+
+  div {
+    @include col(1/2, $gutter: 0);
+    @include rem(padding,$defaultpadding);
+  }
+  .naiset {
+    background:#c0392b;
+  }
+  .miehet {
+    background:#3498db;
+  }
+}
+
+.mukaan {
+  background:#202020;
+  color:#ffffff;
+  @include rem(padding,$defaultpadding);
+  overflow:auto;
+}
+
+.mukaan .btn {
+  @include sassy-button("flat", 4px, #009FD9, #007EC9);
+  @include type-scale(medium);
+  float:right;
+}
+
+.type .btn {
+  @include sassy-button("flat", 4px, #34495e, #34495e);
+  @include type-scale(base);
+  float:right; 
+}
+
+.mukaan div {
+  @include col(1/2, $gutter:0);
+  @media(max-width:$responsivenav) {
+    @include col(1/1);
+      a.btn {
+        float:none;
+        @include rem(margin,20px 0 0 0);
+      }
+  }
+}
+
+.mukaan a {
+  @include transition(all 0.52s ease-out);
+  color:rgba(255,255,255,0.5);
+}
+
+.mukaan a:hover {
+  color:rgba(255,255,255,0.8);
+}
+
+.mukaan p {
+  padding:0;
+  margin:0;
+}
+.sukupuolet .fa {
+  float:right;
+  color:rgba(255,255,255,0.4);
+}
+
+.frontpage, .infograafit {
+  @include col(1/2, $gutter: 0);
+}
+
+.frontpage {
+  @include rem(padding,$defaultpadding);
+}
+
+.template-front-page-php .post {
+  background:#BDC3C7;
+}
+
+.frontpage-content-area, .the-page-content, .hentry {
+  padding:0;
+  margin:0;
+  overflow:hidden;
+}
 
 .topic {
     background: #D5F4C6;
     color: #46971D;
-    @include rem(padding,20px);
+    @include rem(padding,$defaultpadding);
     margin:0;
+}
+
+.paikalla, .numero, .ministatsit, .sukupuolet  {
+  @include type-scale(xxlarge);
+  font-weight:900;
+}
+
+.infograafit h3, .tanaan {
+  color:#555555;
+  font-family:$blog-font-family;
+  @include type-scale(base);
+  @include rem(margin,0);
+  @include rem(padding,0);  
+}
+
+.tanaan {
+  white-space:nowrap;
+}
+
+.ministatsit {
+  overflow:hidden;
+  clear:both;
+}
+
+.ministatsit h3, .sukupuolet h3, .frontcol h3 {
+  font-family:$blog-font-family;
+  @include type-scale(base);
+  @include rem(margin,0);
+  @include rem(padding,0);  
+}
+
+.online {
+  @include cf();
+  clear:both;
+  overflow:hidden;
+}
+
+.kayttajat {
+  @include col(1/2, $gutter: 0);
+  @include rem(padding,$defaultpadding+10);
+  color:rgba(255,255,255,0.8);
+}
+
+.numero {
+  color:rgba(255,255,255,0.8);
+}
+
+.kayttajat h3, .ministatsit h3, .tanaan, .sukupuolet h3, .frontcol h3 {
+  color:rgba(255,255,255,0.6);
+}
+
+.blog-summaries h3 {
+  color:rgba(0,0,0,0.3);
+}
+
+.kayttajat-yhteensa {
+  background:#2980b9;
+  color:rgba(255,255,255,0.8);
+}
+
+.kanavan-ika {
+  background:#6EB5E5;
+  background:rgba(74,163,223,0.80);
+}
+
+.rivit {
+  background:#8FC6EB;
+  background:rgba(74,163,223,0.62);
+}
+
+.frontpage {
+  background:#7f8c8d;
+}
+
+.frontpage p {
+  color:#ffffff;
+}
+
+.frontpage a {
+  color:rgba(255,255,255,0.5);
+  font-weight:bolder;
+}
+
+.frontpage a:hover {
+  color:rgba(255,255,255,1);
+}
+
+.kayttajat-nyt {
+  background:#95a5a6;
+}
+
+.kayttajat-ennatys {
+  background:#bdc3c7;
+}
+
+.tanaan-pulistu {
+  @include cf();
+  clear:both;
+}
+
+.goalProgress {
+  background:#f1c40f;
+}
+
+div.progressBar {
+  letter-spacing: -1px;
+  display: block;
+  overflow: hidden;
+  width: 20px;
+  color:#f1c40f;
+  @include type-scale(xlarge);
+  font-weight:900;
+  background:#e67e22;
+  @include rem(padding,$defaultpadding);
+}
+
+span.goalAmount {
+  display: none;
+  text-indent: -9999px;
+}
+
+.blog-summaries h3 {
+  @include rem(margin-bottom,20px);
 }
 
 /* -----------------------------------------------------------------------------
@@ -198,7 +562,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 
 .entry-time {
 	color:#6c7379;
-	font-family:$fontit;
+	font-family:$base-font-family;
 	font-weight:normal;
 }
 
@@ -209,6 +573,24 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 .size-full {
 	width:100%;
 	height:auto;
+}
+
+/* -----------------------------------------------------------------------------
+    Sivu
+----------------------------------------------------------------------------- */
+
+.entry-content strong, p strong {
+  @include type-weight(bold);
+}
+
+.entry-content blockquote {
+  @include rem(margin,20px 0);
+  @include rem(padding,10px 20px);
+  border-left:4px solid #cccccc;
+  p {
+    color:#999999;
+    @include type-scale(large);
+  }
 }
 
 /* -----------------------------------------------------------------------------
@@ -224,7 +606,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 
 .site-footer p {
   @include type-scale(medium);
-  @include rem(padding,20px);
+  @include rem(padding,$defaultpadding);
 }
 
 /* -----------------------------------------------------------------------------
@@ -235,7 +617,44 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   .site-description {
     @include rem(font-size,12px);
   }
-  .site-header {
-    height:54px;
+}
+
+@media(max-width:$responsivenav) {
+
+  .kayttajat, .ministats div, .frontpage, .infograafit {
+    @include col(1/1, $gutter:0);
+    clear:both;
+    float:none;
+  }
+
+  .kayttajat, .ministats div, .frontpage {
+    @include rem(padding,$defaultpadding);
+  }
+
+  .site-header .site-title {
+    @include rem(margin,10px 0 20px 0);
+  }
+  nav, nav.close {
+    @include opacity(0);
+  }
+  nav.open {
+    @include opacity(1);
+  }
+
+  nav {
+    background:#2c3e50;
+  }
+
+  nav li a, nav li a:active, nav li a:focus, nav li a:link, nav li a:visited {
+    @include rem(font-size,30px);
+    color:#ffffff;
+    color:rgba(255,255,255,0.7);
+    font-weight:900;
+    letter-spacing:0;
+  }
+
+  #page {
+    @include col(1/1, $gutter:0);
+    @include rem(margin-top,70px);
   }
 }

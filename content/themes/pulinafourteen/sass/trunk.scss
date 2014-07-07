@@ -62,30 +62,7 @@ nav {
 }
 nav li {
 	float: left;
-	
 	display: inline-block;
-}
-
-/*  Removable CSS  */
-
-.header-section,
-.body-section,
-.footer-section 
-{padding: 20px;}
-
-.header-section {background-color: #ffffff;}
-.body-section {background-color: #f4f5f6;}
-.footer-section {background-color: #dadee1;}
-.placefiller {
-	text-align: center;
-	font-size: 20px;
-	border: 1px dashed rgba(190, 196, 202, 0.5);
-}
-.header-section .placefiller {line-height: 300px;}
-.body-section .placefiller {line-height: 900px;}
-.footer-section .placefiller {
-	line-height: 200px;
-	border: 1px dashed rgba(190, 196, 202, 0.9);
 }
 
 @media only screen and (max-width: $responsivenav) {
@@ -100,7 +77,7 @@ body .site-header {
 
 header {
 	z-index: 2;
-	background-color: #060a0c;
+	background-color: #444444;
 	
 	position: fixed;
 	top: 0;
@@ -140,31 +117,19 @@ nav li a {
 nav li a.logo {
 	display: none;
 }
-nav li a.active {
-	color: #fff;
-	background-color: #141e23;
-}
-nav li a:hover {
-	color: #fff;
-	background-color: #19252c;
-}
-nav li:first-child a.active,
-nav li:first-child a:hover 
-{border-radius: 10px 0 0 0;}
 
 .header-section {margin-top: 60px;}
 
 
 /* NAVIGATION ANNIMATION */
 nav {
-	width: 93%;
+	width: 240px;
 	height: 100%;
 	position: fixed;
 	left: 0;
 	top: 0;
 	margin: 0;
-	background-color: #1d2d35;
-	border-radius: 8px;
+	background-color: #34495e;
 	
 	/* starting point */
 	opacity: .3;
