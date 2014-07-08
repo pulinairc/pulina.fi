@@ -31,6 +31,7 @@
 <?php if(is_front_page() || is_home() || is_page('1008') ) { ?>
 
 <?php
+error_reporting(E_ALL);
 include_once('inc/simplehtmldom/simple_html_dom.php');
 
 // Paikalla juuri nyt:
