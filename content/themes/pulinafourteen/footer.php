@@ -21,7 +21,7 @@
 		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivujen v. 0.001 by <a href="http://rolle.io">rolle</a>.</p>
 
 	</footer><!-- #colophon -->
-	
+
 </div>
 
 </div>
@@ -32,7 +32,7 @@
 
 <?php
 error_reporting(E_ALL);
-include_once('inc/simplehtmldom/simple_html_dom.php');
+include_once(TEMPLATEPATH . '/inc/simplehtmldom/simple_html_dom.php');
 
 // Paikalla juuri nyt:
 $paikalla = file_get_html('http://peikko.us/pulina.html');
