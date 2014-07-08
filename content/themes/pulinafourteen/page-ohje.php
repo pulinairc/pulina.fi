@@ -64,7 +64,7 @@ get_header(); ?>
 
 			<h4>Windows</h4>
 
-			<p>Windowsille löytyy IRC-sovelluksia läjäpäin, joista kuitenkin mIRC (<a href="http://ihqdaa.kirjiz.net/" target="_blank">ÄM IRK"</a>) on ollut kautta aikojen yksi suosituimpia.</p>
+			<p>Windowsille löytyy IRC-sovelluksia läjäpäin, joista kuitenkin mIRC (<a href="http://ihqdaa.kirjiz.net/" target="_blank">"ÄM IRK"</a>) on ollut kautta aikojen yksi suosituimpia.</p>
 					
 			<ul>
 				<li><a href="http://www.mirc.com/" target="_blank">mIRC</a> - Ei vaadi selityksiä. Jos haluat nopeat käyttöohjeet, tsekkaa vuonna kivi ja kuokka tekemäni <a href="http://rollemaa.org/irkkiin/helposti.jpg"><i>mIRCin pikaopas</i></a>.</li>
