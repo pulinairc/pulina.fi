@@ -30,12 +30,34 @@ get_header(); ?>
 
 					<div class="kayttajat-nyt kayttajat">
 						<h3>Paikalla juuri nyt</h3>
-						<?php include(TEMPLATEPATH . '/inc/paikalla.php'); ?>
+
+<?php
+$paikalla = file_get_html('http://peikko.us/pulina.html');
+
+foreach($paikalla->find('.paikalla') as $numero) 
+       echo $numero;
+	   
+//echo '<div class="nicklist">';
+//foreach($paikalla->find('.irkkaaja') as $irkkaaja) 
+//	   echo $irkkaaja.', ';
+//	   echo rtrim($irkkaaja, ', ');   
+//echo '</div>';
+?>
+
 					</div>
 
 					<div class="kayttajat-ennatys kayttajat">
 						<h3>Käyttäjäpiikki</h3>
-						<span class="peak numero"><?php include(TEMPLATEPATH . '/inc/peak.php'); ?></span>
+						<span class="peak numero">
+
+<?php
+$peak = file_get_html('http://peikko.us/peak.db');
+$luku = explode('!!!',$peak);
+$oikealuku = explode('@',$luku[1]);
+$numero = $oikealuku[0];
+echo $numero;
+?>
+						</span>
 					</div>
 
 				</div><!--/.online-->
@@ -43,7 +65,15 @@ get_header(); ?>
 			</div><!--/.infograafit-->
 
 				<div class="irclog">
-					<?php include(TEMPLATEPATH . '/inc/scroller.php'); ?>
+<div class="scroller">
+<ul>
+<?php
+$scroller = file_get_html('http://peikko.us/lastlog-pulina-2014.php');
+echo $scroller;
+?>
+</ul>
+</div>
+
 				</div>
 				<div class="type">
 				<a href="<?php echo get_home_url(); ?>/irkkiin" class="btn">Lähetä viesti</a>
@@ -94,7 +124,24 @@ get_header(); ?>
 			<h3>Viimeisimmät linkit kanavalla</h3>
 
 				<ul class="linkkilista">
-					<?php include(TEMPLATEPATH . '/inc/viimeisimmat-urlit.php'); ?>
+
+<?php
+$html = file_get_html('http://peikko.us/pulinalinkit/index.html');
+
+// example: html->find('ul', 0)->find('li', 0);
+$first_level_items = $html->find('ul', 0)->find('li', 0);
+foreach($html->find('ul') as $ul) 
+{
+$i = 0;
+       foreach($ul->find('li') as $li) 
+       {
+       if($i == 5) { break; }
+       echo $li;
+       $i++;
+       }
+}
+?>
+
 				</ul>
 
 			<div class="more">
@@ -107,7 +154,82 @@ get_header(); ?>
 
 
 				<div class="ministatsit">
-					<?php include(TEMPLATEPATH . '/inc/ministats.php'); ?>
+
+<?php
+$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+
+$bold = $filu->find('b');
+$visitors = $bold[0];
+
+preg_match('/Rivien yhteismäärä: (?P<digit>\d+)/', $filu, $matches);
+$pulistumaara = $matches[1];
+
+// Miehet
+$miehet = $filu->find('/html/body/div/table[17]/tbody/tr[2]/td[4]', 0);
+$miehet_array = explode(", ", $miehet);
+$miehet_maara = count($miehet_array);
+
+// Naiset
+$naiset = $filu->find('/html/body/div/table[17]/tbody/tr[3]/td[4]', 0);
+$naiset_array = explode(", ", $naiset);
+$naiset_maara = count($naiset_array);
+
+echo '<div class="ministats">';
+
+echo '<div class="kayttajat-yhteensa">';
+echo '<h3>Käyttäjämäärä yhteensä</h3>';
+echo '<span class="numero">'.$visitors.'</span>';;
+echo '</div>';
+?>
+<?php
+
+// minuutit: / 60;
+// tunnit: / 3600
+// päivät: / 86400
+// viikot: / 604800
+// kuukaudet: / 2678400
+// vuodet: / 31536000
+
+$luomispaiva=08;
+$luomiskuukausi=04;
+$luomisvuosi=2008;
+
+// aika nyt:
+$nyt=time();
+
+$kanavaluotu=mktime(0,0,0,$luomiskuukausi,$luomispaiva,$luomisvuosi);
+$luomispvm=$nyt-$kanavaluotu;
+
+$channelcreated=$luomispvm / 86400; 
+$kanavanikapaivissa=round($channelcreated);
+
+echo '<div class="kanavan-ika">';
+echo '<h3>Kanavan ikä päivissä</h3>';
+echo '<span class="numero">'.$kanavanikapaivissa.'</span>';
+echo '</div>';
+
+echo '<div class="rivit">';
+echo '<h3>Rivejä yhteensä</h3>';
+echo '<span class="numero">'.$pulistumaara.'</span>';
+echo '</div>';
+
+echo '</div>'; //.ministats
+
+echo '<div class="sukupuolet">';
+
+echo '<div class="sukupuoli miehet">';
+echo '<h3>Miehiä</h3>';
+echo '<span class="numero">'.$miehet_maara.'</span><i class="fa fa-male"></i>';
+echo '</div>';
+
+echo '<div class="sukupuoli naiset">';
+echo '<h3>Naisia</h3>';
+echo '<span class="numero">'.$naiset_maara.'</span><i class="fa fa-female"></i>';
+echo '</div>';
+
+echo '</div>';
+
+?>
 				</div>
 
 				<div class="tanaan-pulistu">
