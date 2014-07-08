@@ -30,12 +30,12 @@ get_header(); ?>
 
 					<div class="kayttajat-nyt kayttajat">
 						<h3>Paikalla juuri nyt</h3>
-						<?php include('inc/paikalla.php'); ?>
+						<?php include(TEMPLATEPATH . '/inc/paikalla.php'); ?>
 					</div>
 
 					<div class="kayttajat-ennatys kayttajat">
 						<h3>Käyttäjäpiikki</h3>
-						<span class="peak numero"><?php include('inc/peak.php'); ?></span>
+						<span class="peak numero"><?php include(TEMPLATEPATH . '/inc/peak.php'); ?></span>
 					</div>
 
 				</div><!--/.online-->
@@ -43,7 +43,7 @@ get_header(); ?>
 			</div><!--/.infograafit-->
 
 				<div class="irclog">
-					<?php include('inc/scroller.php'); ?>
+					<?php include(TEMPLATEPATH . '/inc/scroller.php'); ?>
 				</div>
 				<div class="type">
 				<a href="<?php echo get_home_url(); ?>/irkkiin" class="btn">Lähetä viesti</a>
@@ -94,7 +94,7 @@ get_header(); ?>
 			<h3>Viimeisimmät linkit kanavalla</h3>
 
 				<ul class="linkkilista">
-					<?php include('inc/viimeisimmat-urlit.php'); ?>
+					<?php include(TEMPLATEPATH . '/inc/viimeisimmat-urlit.php'); ?>
 				</ul>
 
 			<div class="more">
@@ -107,7 +107,7 @@ get_header(); ?>
 
 
 				<div class="ministatsit">
-					<?php include('inc/ministats.php'); ?>
+					<?php include(TEMPLATEPATH . '/inc/ministats.php'); ?>
 				</div>
 
 				<div class="tanaan-pulistu">

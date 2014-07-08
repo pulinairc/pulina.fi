@@ -1,6 +1,6 @@
 <?php
 try {
-include_once('simplehtmldom/simple_html_dom.php');
+require_once('simplehtmldom/simple_html_dom.php');
 $raakapojot = file_get_html('http://peikko.us/toptod.save');
 $today = date('d-m-Y');
 $numerot = preg_replace('/'.addslashes($today).'/',"", $raakapojot); 

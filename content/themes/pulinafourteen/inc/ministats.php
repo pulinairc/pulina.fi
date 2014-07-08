@@ -1,5 +1,5 @@
 <?php
-include_once('simplehtmldom/simple_html_dom.php');
+require_once('simplehtmldom/simple_html_dom.php');
 $filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
 
 $bold = $filu->find('b');

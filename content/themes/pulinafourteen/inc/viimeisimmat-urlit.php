@@ -1,5 +1,5 @@
 <?php
-include_once('simplehtmldom/simple_html_dom.php');
+require_once('simplehtmldom/simple_html_dom.php');
 
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');
 
