@@ -21,10 +21,10 @@
 		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivujen v. 0.001 by <a href="http://rolle.io">rolle</a>.</p>
 
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+	
+</div>
 
-</div><!--/.main-->
-</div><!-- #content -->
+</div>
 
 <?php wp_footer(); ?>
 
