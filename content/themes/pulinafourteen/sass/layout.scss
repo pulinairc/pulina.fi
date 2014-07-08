@@ -507,7 +507,7 @@ a.join-btn {
     }
 }
 
-.paikalla, .numero, .ministatsit, .sukupuolet, .numero b {
+.paikalla, .numero, .ministatsit, .sukupuolet, .numero b, .sanat b {
   @include type-scale(xxlarge);
   font-weight:900;
 }
