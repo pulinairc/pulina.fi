@@ -742,6 +742,110 @@ h2.entry-time {
   }
 }
 
+
+/* -----------------------------------------------------------------------------
+    Kommentit
+----------------------------------------------------------------------------- */
+
+.comment-respond {
+  @include rem(margin-bottom,30px);
+}
+
+.comment-reply-title {
+  display:none;
+}
+
+.comment-author h3.author {
+  float:left;
+}
+
+.comment-meta a {
+  text-decoration:underline;
+  color:#777777;
+}
+
+.comment-meta, a.comment-time, a:link.comment-time, a:visited.comment-time, .comment-time {
+  @include type-scale(medium);
+  color:#999999;
+  padding:0;
+  text-decoration:none;
+}
+
+.comment-meta a:hover {
+  text-decoration:none;
+}
+
+.comment-meta {
+  display:block;
+  clear:both;
+}
+
+.ping-list {
+  @include rem(margin-bottom,40px);
+}
+
+.ping-list, .ping-list a {
+  @include type-scale(small);
+  color:#888888;
+}
+
+.ping-list cite a {
+  @include rem(margin-right,15px);
+}
+
+.ping-list a {
+  text-decoration:underline;
+}
+
+.ping-list a:hover {
+  text-decoration:none;
+}
+
+.comment-list {
+  @include peruslista;
+  @include rem(margin,20px 0);
+  padding:0;
+}
+
+.comment-list .avatar {
+  overflow:hidden;
+  float:right;
+  @include rem(margin,0 0 0 20px);
+}
+
+.comment-author img {
+  @include vendorize(border-radius,50% 50%);
+}
+
+// .comments-wrap {
+//   background:#F1F1F1;
+// }
+
+.comment {
+  @include rem(margin,30px 0);
+  @include rem(padding,20px 0);
+}
+
+// .comment-author-admin .the-comment p, .comment-author-admin .the-comment a {
+//   color:#b75143 !important;
+// }
+
+// .comment-author-admin .the-comment blockquote {
+//   border-color:#b75143 !important;
+// }
+
+.comment-author-admin .the-comment a {
+  text-decoration:underline;
+}
+
+.comment-author-admin .the-comment a:hover {
+  text-decoration:none;
+}
+
+.the-comment blockquote {
+  border-color:#999999;
+}
+
 /* -----------------------------------------------------------------------------
     Footer
 ----------------------------------------------------------------------------- */

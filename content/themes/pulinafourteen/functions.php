@@ -44,9 +44,15 @@ add_filter( 'wp_title', 'pulinafourteen_wp_title', 10, 2 );
 add_theme_support( 'automatic-feed-links' );
 load_theme_textdomain( 'pulinafourteen', get_template_directory() . '/languages' );
 
-/**
- * Scriptit ja tyylit.
- */
+// Kommentoinnit:
+function acme_post_has( $type, $post_id ) {
+ 
+  $comments = get_comments('status=approve&type=' . $type . '&post_id=' . $post_id );
+  $comments = separate_comments( $comments );
+ 
+  return 0 < count( $comments[ $type ] );
+}
+
 function pulinafourteen_scripts() {
 	wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );

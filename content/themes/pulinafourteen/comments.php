@@ -5,6 +5,9 @@
  * @package pulinafourteen
  */
 
+require('comment-callback.php');
+require('pingback-callback.php');
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -16,42 +19,46 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
+ 
+  <?php 
+    /* Don't forget to check if comments are open 
+     * or if there are comments to display.
+     */
+  ?>
 
-	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( _nx( 'Yksi kommentti', '%1$s kommenttia', get_comments_number(), 'comments title', 'pulinafourteen' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h2>
+  <?php if ( acme_post_has( 'pings', $post->ID ) ) : ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Kommenttien selaus', 'pulinafourteen' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Vanhempia kommentteja', 'pulinafourteen' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Uudempia kommentteja &rarr;', 'pulinafourteen' ) ); ?></div>
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+ 	<h3><?php _e( 'Paluuviitteet', 'pulinafourteen' ); ?></h3> 	
+  <?php endif; ?>
+ 
+		<div class="ping-list">
+		<?php
+			wp_list_comments(
+				array(
+					'type'       => 'pings',
+					'callback'   => 'acme_pings',
+					'avatar_size'=> 64,
+					'style'		 => 'div'
+				)
+			);
+		?>
+		</div><!-- .ping-list -->
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+  <h3><?php comments_number('Ei kommentteja. Kommentoi ensimmäisenä?', 'Vasta yksi kommentti. Vastaa kommenttiin?', '% kommenttia. Lisää omasi joukkoon?' );?></h3>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Kommenttien selaus', 'pulinafourteen' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Vanhempia kommentteja', 'pulinafourteen' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Uudempia kommentteja &rarr;', 'pulinafourteen' ) ); ?></div>
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
-
-	<?php endif; // have_comments() ?>
-
+		<div class="comment-list">
+		<?php
+			wp_list_comments(
+				array(
+					'type'       => 'comment',
+					'callback'   => 'acme_comment',
+					'avatar_size'=> 64,
+					'style'		 => 'div'
+				)
+			);
+		?>
+		</div><!-- .comment-list -->
+	
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
@@ -59,6 +66,11 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Kommentointi on suljettu.', 'pulinafourteen' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+
+$args = array(
+);
+
+	comment_form($args); ?>
 
 </div><!-- #comments -->
