@@ -1,0 +1,71 @@
+Komento 	Käyttö 	Mitä komento tekee?
+!battle 	Komento ja perään vaihtoehdot pilkulla eroteltuna. !battle mustikka,mansikka 	Arpoo prosentit annetuille asioille. Chuck Norris on aina 100%.
+!define 	Komento, sana, lause. !define nakki Pieni makkara. 	Määrittelee asian. Ei vielä täysin testattu.
+!google 	Komento ja hakusana. !google Englannin kuningatar 	Hakee Googlesta ja palauttaa ensimmäisen hakutuloksen.
+!horo 	Komento ja oma horoskooppi. !horo skorpioni. Toimii myös lyhentämällä sanan: !horo sko
+
+	Näyttää päivän horoskoopin.
+!do 	Pelkkä komento riittää. 	Jos on tylsää, tällä komennolla saa tekemisvinkkejä.
+!math 	Komento ja laskutoimitus. Tukee peruslaskutoimitusten lisäksi esim: !math 3043*(202+34), !math sqrt(5)*s(5), !math scale=2; 1/2 	Laskee laskutoimituksen.
+!pvm 	Komento riittää. 	Kertoo päivän ja tietoja päivästä, esim. juhlapyhät ja nimipäivät.
+!quote id 	Tämä sisältää monta muutakin komentoa, joita tosin voi käyttää vain ylläpitäjä. Tällä komennolla voit etsiä quotea !findquote hakusana, tällä etsit quoteja jotka on lisännyt tietty nick: !quoteauth rolle 	Lisää/poistaa/etsii/näyttää quoteja.
+!leffa 	Toimii myös komennolla !elokuva 	Kertoo satunnaisen elokuvan nimen ja osoitteen.
+!muistuta 	Esimerkiksi !muistuta rolle ”tomorrow 10:00″ Soita patelle tai !muistuta rolle ”2009-12-31 23:59″ Hyvää uutta vuotta! tai !muistuta rolle ”10 min” munat pois hellalta. Jos unohdat muistuttajan käytön, kirjoita !muistuttaja 	Muistuttaa asioista haluttuun aikaan halutulle käyttäjälle.
+!päivänquote 	Komento jota Rolle harvemmin päivittää. Riittää itsessään eikä sisällä kuin yhden toiminnon. 	Kertoo jonkun yhden sillä hetkellä asetetun hassunhauskan quoten kanavalta.
+!statsit 	Riittää itsessään. Toimii myös komento !tilastot 	Kertoo statsien osoitteen.
+!statsit2 	Riittää itsessään. 	Kertoo Nicdin ylläpitämien statsien osoitteen.
+!kuukausistatsit 	Riittää itsessään. 	Kertoo osoitteen kuukausitilastoihin.
+!komennot 	Sama komento toimii myös !ohje tai !apua 	Antaa linkin tälle sivulle.
+!linkit 	Toimii myös !urlit tai !urls 	Näyttää linkkisivun osoitteen.
+!miitit 	Riittää itsessään. 	Kertoo miittisivun osoitteen.
+!toptod 	Toimii myös !top tai !pojot 	Kertoo päivän kovimmat pulisijat. Yleisön pyynnöstä heittää noticena ja toimii myös privassa.
+!tv 	Näytä telkkariohjelmat komennolla !tv mtv3/nyt/seur/spoil/notify/sat/today/mon… tai lisää seurantaan (tai poista seurannasta) !tv hakusana nadd/ndel/nlist 	Näyttää tv-ohjelmatietoja halutulle ohjelmalle/kanavalle/ajalle/päivälle.
+!sää 	Komento ja kaupunki. !sää jyväskylä 	Kertoo halutun kaupungin tarkan sään komennon laittamishetkellä.
+!matka 	Komento ja kaupungit välilyönnillä eroteltuna, esim. !matka espoo helsinki Jos haluat tietää matkaan kuluvan ajan, laita perään km/h nopeus pelkkänä numeroarvona, esim. !matka tampere oulu 230 	Kertoo matkan ja ajan.
+!vitsi 	Komento riittää itsessään. 	Kertoo vitsin vitsitietokannasta. Sisältää 1540 vitsiä, joista suurin osa on varmaan viinaan liittyviä.
+Ominaisuudet
+
+Jos haluat jonkun ominaisuuden päälle tai vaikkapa uusia ominaisuuksia, /msg rolle.
+Nimi 	Mitä tekee?
+activechatter 	Antaa voicet aktiivisille pulisijoille, vie voicet idlaajilta.
+aidle 	Rankaisee idlaajia, esimerkiksi herjalla tai viemällä voicet.
+atvoice 	Auto-voicet.
+autovoice 	Auto-voicet hieman laajemmilla ominaisuuksilla.
+av.pubmsg 	Vielä monipuolisemmat auto-voicet.
+battle 	Eri vaihtoehtojen todennäköisyyksiä laskeva toiminto.
+chanstats 	Erilaisia tilastoja käyttäjistä, kuten toplistat ja oma sijoitus.
+cmd_resolve 	Etsii tietoja IP-osoitteesta tai domainnimestä.
+define 	Määrittele asia botin tietokantaan talteen.
+google 	Googletus.
+googletranslate 	Googlen kääntäjä.
+hangman 	Hirsipuu-peli.
+horo 	Kertoo horoskoopin.
+html2 	Tuo tilastoja nettisivuille, esim. etusivun juuri nyt paikalla olevien määrä.
+keksi 	Keksii tekemistä.
+math 	Laskee laskutoimituksia.
+megahal 	Oppiva tekoäly.
+news 	RSS-syötteiden ja uutisten lukija. Pastee uutislinkkejä kanavalle.
+nicklist 	Listaa nickit tekstitiedostoon.
+nickplus 	Listaa nickit tiedostoon.
+oraakkeli 	
+peak 	Kertoo paljonko on eniten koskaan ollut yhtä aikaa irkkaajia paikalla.
+pvm 	Kertoo tietoa päivästä keskiyöllä ja kysyttäessä. Mm. nimipäivät, auringon laskut ym…
+quotes 	Varastoi lainauksia.
+randommovies 	Hakee randomin elokuvan nimen ja linkin tietokannasta.
+remind 	Muistuttaja.
+rolle 	Erilaisia rollen omia scriptejä, lukuisia komentoja statseihin, ohjeisiin, ja niin edelleen.
+rssnews 	Lukee Pulinan blogin syötettä ja päivittää kanavalle otsikon aina kun blogiin on tullut uusi kirjoitus.
+rss-synd 	Lukee Pulinan blogin syötettä ja päivittää kanavalle otsikon aina kun blogiin on tullut uusi kirjoitus.
+saatanaan 	Kertoo sään kysyttäessä.
+sysinfo 	Tottelee joitakin serverin järjestelmäkomentoja, kuten uptime.
+t-2 	Tietovisa.
+tiny_url 	Lyhentää pitkät linkit.
+toptod 	Listaa päivän kovimmat höpöttäjät.
+tproggis 	Kertoo mitä telkkarista tulee.
+twitter 	Tweettaa kanavalta.
+urlmagic 	Näyttää linkeistä otsikot, lyhentää osoitteet, postaa tarvittaessa pulinan Twitteriin.
+urltitle 	Näyttää linkistä vain otsikon.
+valimatkat 	Kertoo kilometreissä matkan suomalaisesta kaupungista toiseen.
+vitsit 	Kertoo satunnaisen vitsin tietokannasta.
+
+rolle muokkasi viimeksi 18.9.2012

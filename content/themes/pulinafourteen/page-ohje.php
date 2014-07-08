@@ -161,7 +161,7 @@ get_header(); ?>
 			</ul>
 
 		
-		<p class="muuta">Tuleeko jotain muuta laitetta mieelen, jolla haluaisit irkata? Voin listata tänne lisääkin. Jos tarvitset apua, heitä ihmeessä <code>/msg rolle Miten irkkaan leivänpaahtimella?</code></p>
+		<p class="muuta">Tuleeko jotain muuta laitetta mielen, jolla haluaisit irkata? Voin listata tänne lisääkin. Jos tarvitset apua, heitä ihmeessä <code>/msg rolle Miten irkkaan leivänpaahtimella?</code></p>
 					
 		</div><!--/.softa-->
 	
