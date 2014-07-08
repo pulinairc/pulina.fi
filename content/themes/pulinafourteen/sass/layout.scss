@@ -358,6 +358,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   overflow:hidden;
   margin:0;
  @include rem(padding,10px 0);
+ white-space:nowrap;
 }
 
 @keyframes blink
@@ -701,12 +702,18 @@ span.goalAmount {
   @include type-weight(bold);
 }
 
-.entry-time {
-	color:#6c7379;
-	font-family:$base-font-family;
-  @include type-scale(medium);
-  @include type-weight(light);
+h2.entry-time {
+  font-family:$blog-font-family;
+  @include type-scale(base);
+  @include rem(margin,0 0 20px 0);
+  @include rem(padding,0);
+  color:rgba(0,0,0,0.5);
 }
+
+.post {
+  @include rem(margin-bottom,$defaultpadding);
+}
+
 
 /* -----------------------------------------------------------------------------
     Kuvat

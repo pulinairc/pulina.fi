@@ -44,6 +44,12 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+		<div class="container">
+			<div class="navigation">
+				<p><?php posts_nav_link(' &#183; ', 'edellinen sivu', 'seuraava sivu'); ?></p>
+			</div>
+		</div>
+		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	

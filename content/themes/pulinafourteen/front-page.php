@@ -105,8 +105,6 @@ get_header(); ?>
 
 			</div>
 
-			</div>
-
 
 				<div class="ministatsit">
 					<?php include('inc/ministats.php'); ?>
