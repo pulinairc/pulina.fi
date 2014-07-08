@@ -32,7 +32,7 @@
 
 <?php
 error_reporting(E_ALL);
-include_once(TEMPLATEPATH . '/inc/simplehtmldom/simple_html_dom.php');
+require_once(TEMPLATEPATH . '/inc/simplehtmldom/simple_html_dom.php');
 
 // Paikalla juuri nyt:
 $paikalla = file_get_html('http://peikko.us/pulina.html');
