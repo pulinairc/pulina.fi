@@ -67,5 +67,6 @@ $(this).attr("data-title", $(this).text());
 });
 
 $(".btn span").contents().unwrap();
+$("a span img").contents().unwrap();
 
 });
