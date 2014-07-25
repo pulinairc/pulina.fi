@@ -44,8 +44,6 @@ if ( post_password_required() ) {
 		?>
 		</div><!-- .ping-list -->
 
-  <h3><?php comments_number('Ei kommentteja. Kommentoi ensimmäisenä?', 'Vasta yksi kommentti. Vastaa kommenttiin?', '% kommenttia. Lisää omasi joukkoon?' );?></h3>
-
 		<div class="comment-list">
 		<?php
 			wp_list_comments(

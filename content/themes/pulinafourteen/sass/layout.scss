@@ -136,6 +136,13 @@ nav li a:hover {
     Basics: Structure, titles, etc.
 ----------------------------------------------------------------------------- */
 
+.blog {
+    .post {
+      @include rem(margin-bottom,80px);
+  }
+}
+
+
 .entry-content p {
   color:#444444;
 }
@@ -145,7 +152,7 @@ nav li a:hover {
 }
 
 .content-area {
-  @include rem(padding,$defaultpadding);
+  @include rem(padding,60px);
   background:#F7F9FA;
 }
 
@@ -701,6 +708,10 @@ span.goalAmount {
   @include rem(margin,30px 0);
 }
 
+.author.fn {
+  @include type-weight(bold);
+}
+
 .entry-title a {
 	color:#26292C;
 }
@@ -772,12 +783,22 @@ h2.entry-time {
   color:#777777;
 }
 
-.comment-meta, a.comment-time, a:link.comment-time, a:visited.comment-time, .comment-time {
+.comment-meta {
   @include type-scale(medium);
   color:#999999;
   padding:0;
   text-decoration:none;
 }
+
+a.comment-time {
+  @include type-scale(small);
+  display:block;
+  clear:both;
+  text-decoration:none;
+  width:auto;
+  color:rgba(#000000,0.32);
+}
+
 
 .comment-meta a:hover {
   text-decoration:none;
@@ -825,9 +846,10 @@ h2.entry-time {
   @include vendorize(border-radius,50% 50%);
 }
 
-// .comments-wrap {
-//   background:#F1F1F1;
-// }
+.comments-wrap {
+  background:#F1F1F1;
+  @include rem(padding,50px);
+}
 
 .comment {
   @include rem(margin,30px 0);
@@ -866,7 +888,7 @@ h2.entry-time {
 }
 
 .site-footer p {
-  @include type-scale(medium);
+  @include type-scale(base);
   @include rem(padding,$defaultpadding);
 }
 
@@ -1106,7 +1128,7 @@ html {
 @media(max-width:$container-ipad) {
 
 html {
-  font-size:90%;
+  font-size:100%;
 }
 
 }
@@ -1114,7 +1136,7 @@ html {
 @media(max-width:$container-mobile) {
 
 html {
-  font-size:70%;
+  font-size:100%;
 }
 
 }

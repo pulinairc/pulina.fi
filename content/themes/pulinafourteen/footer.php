@@ -18,7 +18,7 @@
 				
 	<footer id="colophon" class="site-footer">
 
-		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivujen v. 0.001 by <a href="http://rolle.io">rolle</a>.</p>
+		<p>Kanavalla irkkaavat tekevät Pulinan &mdash; 2008-<?php echo date('Y'); ?> - Sivut tarjoaa <a href="http://rolle.io">rolle</a>, sivutilan <a href="http://lumihosting.fi/">Lumihosting</a>.</p>
 
 	</footer><!-- #colophon -->
 

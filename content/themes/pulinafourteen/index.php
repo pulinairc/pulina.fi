@@ -9,7 +9,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main blog" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,12 +27,16 @@ get_header(); ?>
 					<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 			
 				<div class="entry-content">
-
-				<div class="row">
 				
 					<div class="col-md-12">
-					<?php the_content(); ?>
-					<p><?php edit_post_link( __( 'Muokkaa', 'pulinafourteen' ), '<span class="edit-link">', '</span>' ); ?></p>
+					<?php if ( ! has_excerpt() ) { ?>
+					<p><?php 
+					$lause = preg_match('/^([^.!?]*[\.!?]+){0,4}/', strip_tags($post->post_content), $lyhenne);
+					echo $lyhenne[0];
+					?></p>
+					<?php } else { ?>
+					<?php the_excerpt(''); ?>
+					<?php } ?>
 					</div>
 
 				</div><!-- .entry-content -->

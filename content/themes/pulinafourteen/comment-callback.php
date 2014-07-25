@@ -29,7 +29,8 @@ function acme_comment( $comment, $args, $depth ) {
 				</div>
 
 						<p class="comment-meta">
-							<?php printf(  'Kirjoitti <span class="author fn" rel="author">%s</span>', get_comment_author_link() ); ?> <time datetime="<?php comment_date('c'); ?>"><a class="comment-time" href="#comment-<?php comment_ID() ?>" title="Kommentti lähetetty <?php echo (get_comment_date('j\. F\t\a Y')); ?> kello <?php comment_time('G:i') ?>"><?php if (function_exists('time_since')) { ?><?php echo time_since(abs(strtotime($comment->comment_date_gmt . " GMT")), time()) . " sitten"; ?><?php } else { ?><?php echo (get_comment_date('j\. F\t\a Y')); ?> kello <?php comment_time('G:i') ?><?php } ?></a></time>
+							<?php printf(  '<span class="author fn" rel="author">&lt;%s&gt;</span>', get_comment_author_link() ); ?> 
+							<time datetime="<?php comment_date('c'); ?>"><a class="comment-time" href="#comment-<?php comment_ID() ?>" title="Kommentti lähetetty <?php echo (get_comment_date('j\. F\t\a Y')); ?> kello <?php comment_time('G:i') ?>"><?php if (function_exists('time_since')) { ?><?php echo time_since(abs(strtotime($comment->comment_date_gmt . " GMT")), time()) . " sitten"; ?><?php } else { ?><?php echo (get_comment_date('j\. F\t\a Y')); ?> kello <?php comment_time('G:i') ?><?php } ?></a></time>
 						</p><!-- .comment-meta -->
 
 				<?php edit_comment_link( __( 'Muokkaa kommenttia' ), '<p class="comment-edit-link-wrapper">', '</p>' ); ?>

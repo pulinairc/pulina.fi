@@ -13,85 +13,50 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<div class="archive-title">
-				<div class="container">
-				<h1>
-					<?php
-						if ( is_category() ) :
-							single_cat_title();
+		<?php 
+			$count = 0; 
+			while ( have_posts() ) : the_post();
+			$count++;
+		?>
 
-						elseif ( is_tag() ) :
-							single_tag_title();
+			<div class="container">
+			
+			<div class="the-page-content">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						elseif ( is_author() ) :
-							printf( __( 'Tekijä: %s', 'pulinafourteen' ), '<span class="vcard">' . get_the_author() . '</span>' );
+					<h2 class="entry-time">
 
-						elseif ( is_day() ) :
-							printf( __( 'Päivä: %s', 'pulinafourteen' ), '<span>' . get_the_date() . '</span>' );
+						<meta itemprop="datePublished" content="<?php the_time('Y-m-d') ?>"><?php echo ucfirst(get_the_time('l')) ?>na, <?php the_time('j. F') ?>ta <?php the_time('Y') ?></meta>
 
-						elseif ( is_month() ) :
-							printf( __( 'Kuukausi: %s', 'pulinafourteen' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'THEMENAME' ) ) . '</span>' );
+					</h2>
+					
+					<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+			
+				<div class="entry-content">
+				
+					<div class="col-md-12">
+					<?php if ( ! has_excerpt() ) { ?>
+					<p><?php 
+					$lause = preg_match('/^([^.!?]*[\.!?]+){0,4}/', strip_tags($post->post_content), $lyhenne);
+					echo $lyhenne[0];
+					?></p>
+					<?php } else { ?>
+					<?php the_excerpt(''); ?>
+					<?php } ?>
+					</div>
 
-						elseif ( is_year() ) :
-							printf( __( 'Vuosi: %s', 'pulinafourteen' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'THEMENAME' ) ) . '</span>' );
-
-						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleriat', 'pulinafourteen');
-
-						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Kuvat', 'pulinafourteen');
-
-						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videot', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Lainaukset', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Linkit', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Tilapäivitykset', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Äänet', 'pulinafourteen' );
-
-						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chatit', 'pulinafourteen' );
-
-						else :
-							_e( 'Arkistot', 'pulinafourteen' );
-
-						endif;
-					?>
-				</h1>
-				</div>
-				</div>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				</div><!-- .entry-content -->
+			
+			</article><!-- #post-## -->
+			</div>
+			
+			</div><!--/.container-->
 
 			<?php endwhile; ?>
+
+		<div class="container">
+			<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+		</div>
 
 		<?php else : ?>
 
