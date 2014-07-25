@@ -194,7 +194,7 @@ get_header(); ?>
   </tr>
 
   <tr>
-    <td data-th="Ominaisuus"><i class="feat">eggdrop-fmi</i></td>
+    <td data-th="Ominaisuus"><i class="feat">sää</i></td>
     <td data-th="Komento"><code>!sää</code></td>
     <td data-th="Käyttö">Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia.</td>
     <td data-th="Mitä tapahtuu">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle.</td>
