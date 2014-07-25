@@ -63,7 +63,7 @@
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/wp-post-view":"*",
     "wpackagist-plugin/buddypress":"*",
-    "wpackagist-plugin/jetpack":"*"
+    "wpackagist-plugin/jetpack":"3.0.2"
   },
   "extra": {
     "installer-paths": {
