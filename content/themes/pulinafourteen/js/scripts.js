@@ -2,12 +2,14 @@ $(document).ready(function() {
 
 if (window.innerWidth > 600) {
 
+$(".urlit").css({'height':($(".blogposts").outerHeight()+'px')});
 $(".kayttajat").css({'height':($(".frontpage").outerHeight()+'px')});
 $(".ministats div").css({'height':($(".kayttajat-yhteensa").outerHeight()+'px')});
 
 $(window).on('resize', function() {
 
 	if (window.innerWidth > 600) {
+    $(".urlit").css({'height':($(".blogposts").outerHeight()+'px')});
 		$(".kayttajat").css({'height':($(".frontpage").outerHeight()+'px')});
 		$(".ministats div").css({'height':($(".kayttajat-yhteensa").outerHeight()+'px')});
 	}

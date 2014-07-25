@@ -1,5 +1,6 @@
 $responsivenav: 872px;
 $defaultpadding: 30px;
+$container-desktop: 1170px; /* default: 1170px */
 $container-mobile: 480px;
 $container-ipad: 770px;
 
@@ -85,6 +86,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .containercol ul {
   @include type-scale(medium);
+}
+
+.header-container, .site {
+  max-width:$container-desktop;
 }
 
 /* -----------------------------------------------------------------------------
@@ -281,6 +286,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 
 .urlit {
   overflow:hidden;
+  background:rgba(#ffffff,0.2);
 }
 
 .blogposts h2 {
@@ -299,16 +305,18 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
     @include rem(margin-bottom,30px);
   }
   a {
-  @include type-scale(medium);
-  @include type-weight(bold);
+  @include type-scale(base);
+  @include type-weight(regular);
+  @include rem(font-size,16px);
   @include rem(margin,0 0 10px 0);
   @include rem(padding,0);
-  color:#666666;
+  color:#3498db;
   }
   a.url {
     @include type-scale(small);
+    @include rem(font-size,14px);
     @include type-weight(thin);
-    color:#444444;
+    color:rgba(#3498db,0.5);
     display:block;
     font-family:$base-font-family;
 
@@ -1081,4 +1089,48 @@ p a {
         transform: translate3d( 0px, 106%, 0px ) rotateX( -90deg );
       }
     }
+}
+
+/* -----------------------------------------------------------------------------
+    Media queryt - responsiivisuus
+----------------------------------------------------------------------------- */
+
+@media(max-width:$container-desktop) {
+
+html {
+  font-size:100%;
+}
+
+}
+
+@media(max-width:$container-ipad) {
+
+html {
+  font-size:90%;
+}
+
+}
+
+@media(max-width:$container-mobile) {
+
+html {
+  font-size:70%;
+}
+
+}
+
+@media(min-width:$container-desktop) {
+
+html {
+  font-size:110%;
+}
+
+}
+
+@media(min-width:$container-ipad) {
+
+.frontpage {
+  min-height:145px;
+}
+
 }

@@ -87,7 +87,7 @@ echo $scroller;
 			<h3>Blogissa viimeksi</h3>
 
 			<?php
-			$args = array( 'numberposts' => 3 );
+			$args = array( 'numberposts' => 4 );
 			$lastposts = get_posts( $args );
 			foreach($lastposts as $post) : setup_postdata($post); ?>
 				
@@ -135,7 +135,7 @@ foreach($html->find('ul') as $ul)
 $i = 0;
        foreach($ul->find('li') as $li) 
        {
-       if($i == 5) { break; }
+       if($i == 6) { break; }
        echo $li;
        $i++;
        }
