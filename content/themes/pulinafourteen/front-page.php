@@ -80,6 +80,8 @@ echo $scroller;
 				<p data-list="Moro, olen uusi täällä!;Hei, mitä tyypit?;Mikäs tää pulina on?;Derp derp derp derp derp;Hahahahahaha :D;Gerrye vauhdissa;samiy <3;!battle pulina, jotain muuta"></p>
 				</div>
 
+			<?php if(strtotime('2015-02-16 23:59') > time() ){ ?><!--Expires 16.2.2015!--><div class="ad textad">Pulinat pois ja <a href="http://www.kasinoeuro.net/">casino-onnea</a> kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin netticasinot.  Kasinoeuro bonuskoodilla saat parhaat rahanarvoiset edut, jotka vain hölmö jättää lunastamatta. <a href="http://www.pokerihuoneet.net/">Pokerihuoneiden arvostelut</a> kannattaa myös lukea ennen kuin säntää <a href="http://www.kasinosuomi.com/7red">7rediin pelaamaan!</a></div><?php } ?>
+
 			<div class="blog-summaries frontcol">
 
 			<div class="blogposts">

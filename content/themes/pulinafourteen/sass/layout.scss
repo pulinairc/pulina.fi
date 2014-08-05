@@ -55,6 +55,22 @@ h1, h2, h3, h4, h5, h6 {
   @include type-weight(bold);
 }
 
+.ad {
+  @include rem(padding,$defaultpadding);
+  background:#888888;
+  color:rgba(#ffffff,0.4);
+  @include type-scale(small);
+
+  a, a:link, a:visited {
+    color:rgba(#ffffff,0.8);
+
+    &:hover {
+      color:#ffffff;
+    }
+  }
+
+}
+
 .logocol {
   @include col(1/5, $gutter:0);
 }
