@@ -84,7 +84,7 @@ $(".progressBar").load('<?php echo get_template_directory_uri(); ?>/inc/tanaan-p
    var refreshId = setInterval(function() {
       $(".progressBar").load('<?php echo get_template_directory_uri(); ?>/inc/tanaan-pulistu.php');
       $(".irclog").load('<?php echo get_template_directory_uri(); ?>/inc/scroller.php');
-   }, 1000);
+   }, 10000);
    $.ajaxSetup({ cache: true });
    
    //Chromelle, ettei lataa loputtomiin:
