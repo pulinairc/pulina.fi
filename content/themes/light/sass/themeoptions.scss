@@ -29,6 +29,7 @@
 @include fontFace('Source Sans Pro','../fonts/sourcesanspro-bolditalic-webfont', 700, italic);
 @include fontFace('Source Sans Pro','../fonts/sourcesanspro-black-webfont', 900);
 @include fontFace('Source Sans Pro','../fonts/sourcesanspro-blackitalic-webfont', 900, italic);
+@include fontFace('Menlo','../fonts/menlo-webfont', 400);
 
 /* Headings, titles */
 $headings-font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -38,6 +39,7 @@ $alt-font-family: "Lato", Helvetica, sans-serif;
 
 /* Everything else */
 $base-font-family: "Open Sans", Helvetica, sans-serif; 
+$terminal-font-family: "Menlo";
 
 /* Colors */
 $base-color: #222222;

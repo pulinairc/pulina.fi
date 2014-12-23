@@ -145,7 +145,6 @@ body
             background: transparent;
             text-transform: none;
             box-shadow: none;
-            border: 0;
             @include type-weight(regular);
             border: 3px solid #ffffff;
             width: 65%;
@@ -180,7 +179,7 @@ body
                 @include type-scale(xlarge);
             }
 
-            h2, p, span {
+            h2, p, span, a {
                 color: #ffffff;
                 text-decoration: none;
                 outline: 0 none;
@@ -191,19 +190,32 @@ body
 
         .hover
          {
-             color: rgba(#ffffff,0);
-             text-shadow: 0 0 22px #fff;
-             opacity: 0.5;
-             background: transparent !important;
-             color: transparent !important;
+            color: rgba(#ffffff,0);
+            text-shadow: 0 0 22px #fff;
+            opacity: 0.5;
+            background: transparent !important;
+            color: transparent !important;
+         }
+
+         .hover-btn {
+            color: rgba(#ffffff,0);
+            text-shadow: 0 0 22px #fff;
+            opacity: 0.5;
+            background: transparent !important;
+            color: transparent !important;
+            box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
          }
 
         &:hover {
-            h2, p, span
+            h2, p, span, a
             {
                 color: rgba(#ffffff,0);
                 text-shadow: 0 0 22px #fff;
                 opacity: 0.5;
+            }
+
+            .btn {
+                box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
             }
 
             .shade {
@@ -216,6 +228,68 @@ body
         background: #fdfdfd;
         z-index: 10;
 
+        text-align: center;
+
+        h2 {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            background: transparent;
+            text-transform: none;
+            box-shadow: none;
+            @include type-weight(regular);
+            border: 3px solid $text-color;
+            @media(min-width:$container-ipad) {
+                width: 35%;
+            }
+            color: $text-color;
+
+            &:hover {
+                background: $text-color;
+                color: #ffffff;
+            }
+        }
+
+    }
+
+    &.slide-ohje {
+        text-align: center;
+
+        h2 {
+            font-family: $terminal-font-family;
+        }
+
+        .btn {
+            text-transform: none;
+            box-shadow: none;
+            border: 0;
+            @include type-weight(regular);
+            @media(min-width:$container-ipad) {
+                width: 35%;
+            }
+
+        }
+    }
+
+    &.slide-vaihe-yksi {
+        background: lighten(#87BCDE, 20%);
+
+        h2 {
+            color: darken(#87BCDE, 50%);
+        }
+    }
+
+    &.slide-vaihe-kaksi {
+        background: lighten(#5DA399, 30%);
+    
+        h2 {
+            color: darken(#5DA399, 30%);
+        }
+
+    }
+
+    &.slide-lopetus {
         text-align: center;
     }
 
@@ -436,265 +510,6 @@ img.size-full {
 }
 
 /* -----------------------------------------------------------------------------
-    Footer
------------------------------------------------------------------------------ */
-
-.site-footer
-{
-    overflow: hidden;
-
-    margin: 0;
-    @include rem('padding',$defaultpadding);
-
-    background: $bg_alt;
-
-    .creds-col
-    {
-        @include col(1/2);
-
-        color: rgba(#ffffff,0.3);
-
-        p, a {
-            color: rgba(#ffffff,0.3);
-            @include type-weight(200);
-        }
-
-        p {
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-
-    }
-
-    h2
-    {
-        margin-top: 0;
-    
-        letter-spacing: -1px;
-        word-spacing: 4px;
-        text-transform: uppercase;
-    
-        color: #fff;
-    
-        @include rem('margin-bottom',35px);
-    }
-
-    .site-info
-    {
-        text-align: left;
-    
-        color: #fff;
-    }
-
-    .address
-    {
-        text-align: right;
-    }
-
-}
-
-/* -----------------------------------------------------------------------------
-    Yhteystiedot
------------------------------------------------------------------------------ */
-
-/* Google Maps -oletustyylit: 
-------------------------------- */
-
-#kartta img
-{
-    max-width: none;
-}
-.gmnoprint img
-{
-    max-width: none;
-}
-
-#map, #kartta
-{
-    position: relative;
-
-    overflow: auto;
-
-    width: 100%;
-    min-width: 100%;
-    @include rem('height',300px);
-}
-
-
-
-/* -----------------------------------------------------------------------------
-    Slider
------------------------------------------------------------------------------ */
-
-.slider {
-
-    @media(max-width: $container-mobile) {
-        // margin-top: 130px;
-        max-height: 400px !important;
-    }
-
-    // @media(max-width: $responsivenav) {
-    //     margin-top: 115px;
-    // }
-
-    clear: both;
-    overflow: hidden;
-    margin-bottom: 0;
-
-    .slick-next {
-        right: 10px;
-    }
-
-    .slick-prev {
-        left: 10px;
-    }
-
-    .slick-next, .slick-prev {
-
-        width: 60px;
-        height: 60px; 
-        opacity: 0.3;
-
-        &:before {
-            font-size: 60px;
-        }
-    }
-
-    .slider-slide
-    {
-        // height: 100vh;
-        height: 400px;
-        overflow: hidden;
-
-        background-color: transparent;
-        background-image: url(../images/default_firstslide.jpg);
-        @include background-cover();
-
-            .container {
-                @include rem('padding-top',120px);
-                @include rem('padding-bottom',120px);
-
-                @media(max-width: $container-ipad) {
-                    @include rem('padding-top',60px);
-                    @include rem('padding-bottom',60px);
-                }
-
-            }
-
-        h1 {
-            @include rem('font-size',46px);
-            @media(max-width: $container-mobile) {
-                @include rem('font-size',25px);
-                @include rem('line-height',28px);
-            }
-            @include type-weight(bold);
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 0;
-            clear: both;
-            display: block;
-        }
-    
-        h2
-        {
-            color: #ffffff;
-    
-            @include rem('font-size',20px);
-            @include rem('line-height',28px);
-            @media(max-width: $container-mobile) {
-                @include rem('font-size',19px);
-                @include rem('line-height',24px);
-            }
-            color: #ffffff;
-            display: block;
-            @include type-weight(bold);
-    
-            @include rem('margin-top', 15px);
-            @include rem('margin-bottom', 0);
-            @include col(2/3);
-            clear: both;
-            display: block;
-        }
-
-            .slider-palsta-1 {
-    
-                h2 {
-                    @include col(3/5);
-                    @include rem('margin-top',10px);
-                }
-    
-            }
-    
-        h3 {
-        
-            @include type-weight(regular);
-            @include rem('font-size',27px);
-            @include rem('margin-top', 5px);
-            margin-bottom: 0;
-            color: #ffffff;
-    
-        }
-    
-        p
-        {
-            color: #fff;
-        }
-
-    }
-
-}
-
-
-
-/* -----------------------------------------------------------------------------
-    Mediaqueries
------------------------------------------------------------------------------ */
-
-/* Duden sormenjälki: */
-
-$dude_logo: #fff;
-$dude_teksti: #666;
-
-a.toteutus-dude
-{
-    position: relative;
-
-    margin: 0;
-    padding: 0;
-
-    text-decoration: none;
-
-    opacity: .5;
-    color: $dude_teksti;
-}
-
-@media(min-width: $container-ipad)
-{
-    .creds
-    {
-        text-align: right;
-    }
-}
-
-a.toteutus-dude span
-{
-    font-family: 'Open Sans';
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    color: $dude_logo;
-}
-
-a.toteutus-dude:hover
-{
-    opacity: .8;
-    color: $dude_logo;
-}
-
-
-/* -----------------------------------------------------------------------------
     Kommentit
 ----------------------------------------------------------------------------- */
 
@@ -859,11 +674,46 @@ a:visited.comment-time,
 }
 
 
+
 /* -----------------------------------------------------------------------------
     Extra
 ----------------------------------------------------------------------------- */
 
+.type {
+
+    p {
+        font-family: $terminal-font-family;
+        color: rgba($text-color,0.8);
+        @include type-scale(18);
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+
+@keyframes blink
+{
+    0% { visibility:visible; }
+    100% { visibility:hidden; }
+}
+
+.cursor {
+  background:rgba($text-color,0.6);
+  display:inline-block;
+  width:11px;
+  height:2px;
+  @include rem(margin,0 0 -3px 5px);
+  animation: blink 1s steps(2, start) infinite;
+}
+
 .screen-reader-text
 {
     display: none;
+}
+
+// Responsiivisen typografian poikkeukset:
+@media(max-width:$container-mobile) { 
+    p, .slide p, .slide a, .btn { 
+        font-size: 19px; 
+    } 
 }

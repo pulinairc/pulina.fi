@@ -32,6 +32,16 @@ body {
 		margin:3px 0;
 	}
 
+	&.over-the-edge {
+		li {
+			background: $text-color;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
 	&.open {
 
 		li {
