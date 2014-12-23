@@ -293,6 +293,40 @@ body
         text-align: center;
     }
 
+
+    &.slide-infograafi {
+        background:#f2f2f2;
+        font-family:$alt-font-family;
+        text-align:center;
+    
+        .numero {
+            @include col(1/4);
+
+                @media(max-width:$container-mobile) {
+                    @include stack();
+                    @include rem('margin', 50px 0);
+                }
+        
+            .arvo {
+                @include type-scale(large);
+                @include rem('line-height',70px);
+                @include type-weight(bold);
+
+                display:block;
+                color:rgba(#222222,0.9);
+            }
+    
+            .asia {
+                @include rem('font-size', 16px);
+                @include rem('line-height', 22px);
+                    @media(max-width:$container-mobile) {
+                        @include type-scale(medium);
+                    }   
+                @include type-weight(regular);
+                color:rgba(#222222,0.5);
+            }
+        }
+    }
 }
 
 
@@ -698,7 +732,7 @@ a:visited.comment-time,
 }
 
 .cursor {
-  background:rgba($text-color,0.6);
+  background:rgba($text-color,0.8);
   display:inline-block;
   width:11px;
   height:2px;
@@ -716,4 +750,8 @@ a:visited.comment-time,
     p, .slide p, .slide a, .btn { 
         font-size: 19px; 
     } 
+}
+
+.content-area {
+    @include rem('padding', 50px);
 }

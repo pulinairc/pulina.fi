@@ -18,9 +18,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/icon-ipad.png">
-<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/icon-retina.png">
 
 <!-- HTML5 Shim and Respond.js - IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

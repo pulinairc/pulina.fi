@@ -49,6 +49,53 @@ get_header(); ?>
 
 </div>
 
+
+		<div class="slide slide-infograafi">
+		
+			<div class="container">
+		
+				<div class="wow fadeIn numero" data-wow-delay="0.22s">
+					<span class="arvo meter_1"><?php require_once('inc/simplehtmldom/simple_html_dom.php'); $paikalla = file_get_html('http://peikko.us/pulina.html'); foreach($paikalla->find('.paikalla') as $numero) echo $numero; ?></span>
+					<span class="asia">Paikalla nyt</span>
+				</div>
+		
+				<div class="wow fadeIn numero" data-wow-delay="0.44s">
+					<span class="arvo meter_2"><?php
+$peak = file_get_html('http://peikko.us/peak.db');
+$luku = explode('!!!',$peak);
+$oikealuku = explode('@',$luku[1]);
+$numero = $oikealuku[0];
+echo $numero;
+?></span>
+					<span class="asia">yhtäaikainen käyttäjäennätys</span>
+				</div>
+		
+				<div class="wow fadeIn numero" data-wow-delay="0.66s">
+					<span class="arvo meter_3"><?php
+$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+$bold = $filu->find('b');
+$visitors = $bold[0];
+echo $visitors; ?></span>
+					<span class="asia">käyttäjää yhteensä</span>
+				</div>
+		
+				<div class="wow fadeIn numero" data-wow-delay="0.88s">
+					<span class="arvo meter_4"><?php
+$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+
+$bold = $filu->find('b');
+$visitors = $bold[0];
+
+preg_match('/Rivien yhteismäärä: (?P<digit>\d+)/', $filu, $matches);
+$pulistumaara = $matches[1]; 
+echo $pulistumaara; ?></span>
+					<span class="asia">riviä pulistu</span>
+				</div>
+		
+			</div>
+		
+		</div><!--/.slide-->
+
 <div class="slide slide-miten slide-ohje slide-vaihe-yksi">
 
 	<div class="container">
@@ -67,9 +114,9 @@ get_header(); ?>
 	
 		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
 
-		<p>Luulitko, että pitää vielä jotain säätää? Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
+		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://pulina.stableservers.eu">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Connect</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
 
-		<p><a href="#" class="btn">Boom, irkkiin!</a></p>
+		<p><a href="http://pulina.stableservers.eu" class="btn">Boom, irkkiin!</a></p>
 
 	</div>
 
