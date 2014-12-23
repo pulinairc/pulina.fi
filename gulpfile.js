@@ -1,90 +1,230 @@
-var gulp = require('gulp'),
-    compass = require('gulp-compass'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    header = require('gulp-header');
-    util = require('gulp-util');
-    livereload = require('gulp-livereload'),
-    currentDate = util.date(new Date(), 'dd-mm-yyyy');
-    pkg = require('./package.json');
-    banner = '/*! <%= pkg.name %> <%= currentDate %> - <%= pkg.author %> */\n';
+/* 
 
-// Compass without config.rb:
+REQUIRED STUFF
+==============
+*/
 
-gulp.task('compass', function() {
-  gulp.src('content/themes/pulinafourteen/sass/layout.scss')
-  .pipe(compass({
-    css: 'content/themes/pulinafourteen/css',
-    sass: 'content/themes/pulinafourteen/sass',
-    image: 'content/themes/pulinafourteen/images'
-      ,require: ['breakpoint', 'sassy-buttons']
-      }))
-  .on('error', function(err) {
-    // Would like to catch the error here
-      })
-  .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
-  .pipe(gulp.dest('content/themes/pulinafourteen/css'))
-  .pipe(livereload())
-  .pipe(notify({ message: 'Compass complete' }));
+var changed     = require('gulp-changed');
+var gulp        = require('gulp');
+var imagemin    = require('gulp-imagemin');
+var sass        = require('gulp-sass');
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
+var notify      = require('gulp-notify');
+var prefix      = require('gulp-autoprefixer');
+var minifycss   = require('gulp-minify-css');
+var uglify      = require('gulp-uglify');
+var cache       = require('gulp-cache');
+var concat      = require('gulp-concat');
+var util        = require('gulp-util');
+var header      = require('gulp-header');
+var pixrem      = require('gulp-pixrem');
+var pagespeed   = require('psi');
+
+/* 
+
+ERROR HANDLING
+==============
+*/
+
+var handleErrors = function() {
+module.exports = function() {
+
+  var args = Array.prototype.slice.call(arguments);
+
+  // Send error to notification center with gulp-notify
+  notify.onError({
+    title: "Compile Error",
+    message: "<%= error.message %>"
+  }).apply(this, args);
+
+  // Keep gulp from hanging on this task
+  this.emit('end');
+};
+};
+
+/* 
+
+FILE PATHS
+==========
+*/
+
+var projectName = 'light'
+var themeDir = 'content/themes/'+ projectName;
+var imgSrc = themeDir + '/images/*.{png,jpg,jpeg,gif}';
+var imgDest = themeDir + '/images/optimized';
+var sassSrc = themeDir + '/sass/**/*.{sass,scss}';
+var sassFile = themeDir + '/sass/layout.scss';
+var cssDest = themeDir + '/css';
+var customjs = themeDir + '/js/scripts.js';
+var jsSrc = themeDir + '/js/src/**/*.js';
+var jsDest = themeDir + '/js/';
+var phpSrc = [themeDir + '/**/*.php', !'vendor/**/*.php'];
+
+/* 
+
+BROWSERSYNC
+===========
+*/
+
+var devEnvironment = 'pulina.dev'
+var hostname = 'localhost'
+var localURL = 'http://' + devEnvironment;
+
+gulp.task('browserSync', function () {
+    
+    //declare files to watch + look for files in assets directory (from watch task)
+    var files = [
+    cssDest + '/**/*.{css}',
+    jsSrc + '/**/*.js',
+    imgDest + '/*.{png,jpg,jpeg,gif}',
+    themeDir + '/**/*.php'
+    ];
+
+    browserSync.init(files, {
+    proxy: localURL,
+    host: hostname,
+    agent: false,
+    browser: "Google Chrome Canary"
     });
 
-gulp.task('scripts', function() {
-  //gulp.src('content/themes/pulinafourteen/js/*.js')
-  gulp.src(
-    [
-    'content/themes/pulinafourteen/js/jquery.js',
-    'content/themes/pulinafourteen/js/trunk.js',
-    'content/themes/pulinafourteen/js/jquery.animateNumber.js',
-    'content/themes/pulinafourteen/js/goalProgress.js',
-    'content/themes/pulinafourteen/js/scripts.js'
-    ])
-    .pipe(concat('all.js'))
-    .pipe(uglify({preserveComments: false, compress: true, mangle: true}).on('error', function(e) { console.log('\x07',e.message); return this.end(); }))
-    .pipe(header(banner, {pkg: pkg, currentDate: currentDate}))
-    .pipe(gulp.dest('content/themes/pulinafourteen/js/'))
-    .pipe(livereload())
-    .pipe(notify({ message: 'scripts task complete' }));
 });
+
+
+/* 
+
+SASS
+====
+*/
+
+gulp.task('sass', function() {
+  gulp.src(sassFile)
+
+  .pipe(sass({
+    compass: false,
+    bundleExec: true,
+    sourcemap: false,
+    style: 'compressed'
+  })) 
+
+  .on('error', handleErrors)
+  .on('error', util.log)
+  .on('error', util.beep)
+  .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) //adds browser prefixes (eg. -webkit, -moz, etc.)
+  .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
+  .pipe(pixrem())
+  .pipe(gulp.dest(themeDir + '/css'))
+  .pipe(reload({stream:true}));
+  });
+
+
+/* 
+
+IMAGES
+======
+*/
+
 
 gulp.task('images', function() {
-  return gulp.src('content/themes/pulinafourteen/images/*')
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(livereload())
-    .pipe(gulp.dest('content/themes/pulinafourteen/images/optimized'));
-    });
+  var dest = imgDest;
 
-gulp.task('php', function(){  
-    gulp.src('*.php')
-    .pipe(livereload())
-    .pipe(notify({ message: 'php-file was reloaded' }));
-})
+  return gulp.src(imgSrc)
 
-gulp.task('html', function(){  
-    gulp.src('*.html')
-    .pipe(livereload())
-    .pipe(notify({ message: 'html-file was reloaded' }));
-})
-
-gulp.task('watch', function() {
-
-  livereload.listen();
-
-  gulp.watch('content/themes/pulinafourteen/*.php', ['php']);
-  gulp.watch('content/themes/pulinafourteen/inc/*.php', ['php']);
-  gulp.watch('content/themes/pulinafourteen/*.html', ['html']);
-  gulp.watch('content/themes/pulinafourteen/sass/*.scss', ['compass']);
-  gulp.watch('content/themes/pulinafourteen/js/scripts.js', ['scripts']);
-  gulp.watch('content/themes/pulinafourteen/images/*', ['images']);
+    .pipe(changed(dest)) // Ignore unchanged files
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))) //use cache to only target new/changed files, then optimize the images
+    .pipe(gulp.dest(imgDest));
 
 });
 
-gulp.task('default', function() { gulp.start('compass', 'scripts', 'images'); });  
+
+/* 
+
+SCRIPTS
+=======
+*/
+
+var currentDate   = util.date(new Date(), 'dd-mm-yyyy HH:ss');
+var pkg       = require('./package.json');
+var banner      = '/*! <%= pkg.name %> <%= currentDate %> - <%= pkg.author %> */\n';
+
+gulp.task('js', function() {
+
+      gulp.src(
+        [
+          themeDir + '/js/src/jquery.js',
+          themeDir + '/js/src/jquery.flexnav.js',
+          themeDir + '/js/src/trunk.js',
+          themeDir + '/js/src/prism.js',
+          themeDir + '/js/src/skrollr.js',
+          themeDir + '/js/src/scripts.js'
+        ])
+        .pipe(concat('all.js'))
+        .pipe(uglify({preserveComments: false, compress: true, mangle: true}).on('error',function(e){console.log('\x07',e.message);return this.end();}))
+        .pipe(header(banner, {pkg: pkg, currentDate: currentDate}))
+        .pipe(gulp.dest(jsDest));
+});
+
+
+/*
+
+PAGESPEED
+=====
+
+Notes:
+   - This runs Google PageSpeed Insights just like here http://developers.google.com/speed/pagespeed/insights/
+   - You can use Google Developer API key if you have one, see: http://goo.gl/RkN0vE
+
+*/
+
+gulp.task('pagespeed', pagespeed.bind(null, {
+  url: 'http://' + projectName + '.fi',
+  strategy: 'mobile'
+}));
+
+
+/*
+
+WATCH
+=====
+
+Notes:
+   - browserSync automatically reloads any files
+     that change within the directory it's serving from
+*/
+
+gulp.task('setWatch', function() {
+  global.isWatching = true;
+});
+
+gulp.task('watch', ['setWatch', 'browserSync'], function() {
+  gulp.watch(sassSrc, ['sass']);
+  gulp.watch(imgSrc, ['images']);
+  gulp.watch(jsSrc, ['js', browserSync.reload]);
+});
+
+
+/* 
+
+BUILD
+=====
+*/
+
+gulp.task('build', function(cb) {
+  runSequence('sass', 'images', cb);
+});
+
+/* 
+
+DEFAULT
+=======
+*/
+
+gulp.task('default', function(cb) {
+    runSequence(
+    'images',
+    'sass',
+    'browserSync',
+    'watch',
+    cb
+    );
+});

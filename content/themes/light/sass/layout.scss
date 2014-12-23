@@ -1,0 +1,869 @@
+@import "jeet/index";
+@import "fontface";
+@import "themeoptions";
+@import "base";
+@import "normalize/normalize";
+@import "dudemixins";
+@import "typomatic2/app.scss";
+@import "flexnav";
+@import "trunk";
+@import "font-awesome";
+@import "flat-buttons";
+@import "prism";
+// @import "animate";
+// @import "animate-settings";
+
+/* -----------------------------------------------------------------------------
+    Layout widths
+----------------------------------------------------------------------------- */
+
+.container
+{
+    @include center($max_width: $container-desktop, $pad: $defaultpadding);
+}
+
+a,
+a:link,
+a:visited
+{
+    text-decoration: none;
+
+    color: $alt-color;
+}
+
+a:hover,
+a:focus,
+a:active
+{
+    color: $base-color;
+}
+
+body
+{
+    font-family: $alt-font-family;
+
+    padding: 0;
+}
+
+.header-container
+{
+    position: fixed;
+    z-index: 100;
+
+    overflow: visible;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    .container
+    {
+        position: relative;
+    }
+
+}
+
+
+.rullaa-alas {
+    @include horizontal-align();
+    position: absolute;
+    bottom: 15px;
+    z-index: 10;
+
+    p {
+        margin:0;
+        padding:0;
+        text-align:center;
+        opacity: 0.6;
+        @include type-scale(xxlarge);
+
+        span {
+            transition: 400ms ease 100ms;
+            color: #ffffff;
+        }
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+    Page
+----------------------------------------------------------------------------- */
+
+.shade
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: .7;
+    background: #444;
+}
+
+.irclog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    z-index: 2;
+}
+
+.hidden {
+    display: none;
+}
+
+.slide
+{
+    position: relative;
+
+    color: #fff;
+    border: 0;
+    background-color: #fff;
+
+    @include rem('padding-top',$slidepadding);
+    @include rem('padding-bottom',$slidepadding);
+    @include background-cover;
+    .container
+    {
+        position: relative;
+        z-index: 3;
+    }
+    h1,
+    h2
+    {
+        margin-top: 0;
+    }
+
+    &.slide-irclog {
+    
+        .btn {
+            background: transparent;
+            text-transform: none;
+            box-shadow: none;
+            border: 0;
+            @include type-weight(regular);
+            border: 3px solid #ffffff;
+            width: 65%;
+
+            &:hover {
+                background: #ffffff;
+                color: $text-color;
+            }
+        }
+        .shade
+        {
+            opacity: .6;
+            background: #222222;
+            transition: 400ms ease 100ms;
+        }
+
+        overflow: auto;
+        height: 500px;
+
+        .container {
+            @include centered();
+            position: absolute;
+            text-align: center;
+            max-width: 600px;
+
+            h2 {
+                font-weight: 900;
+                letter-spacing: 0.2em;
+                @include rem('margin-bottom', 20px);
+                position: relative;
+                text-transform: uppercase;
+                @include type-scale(xlarge);
+            }
+
+            h2, p, span {
+                color: #ffffff;
+                text-decoration: none;
+                outline: 0 none;
+                transition: 400ms ease 100ms;
+            }
+
+        }
+
+        .hover
+         {
+             color: rgba(#ffffff,0);
+             text-shadow: 0 0 22px #fff;
+             opacity: 0.5;
+             background: transparent !important;
+             color: transparent !important;
+         }
+
+        &:hover {
+            h2, p, span
+            {
+                color: rgba(#ffffff,0);
+                text-shadow: 0 0 22px #fff;
+                opacity: 0.5;
+            }
+
+            .shade {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.slide-esittely {
+        background: #fdfdfd;
+        z-index: 10;
+
+        text-align: center;
+    }
+
+}
+
+
+/* -----------------------------------------------------------------------------
+    Forms & buttons
+----------------------------------------------------------------------------- */
+
+input[type='button'],
+input[type='submit'],
+.btn,
+.btn-default,
+.button,
+a.btn
+{
+    border-width: 0;
+    box-shadow: none;
+    text-shadow: none;
+
+    @include button(desaturate(darken($alt-color,8),10), false, false, false);
+    color: #fff; // kommentoi tämä pois jos haluat käyttää buttonfilun väriä joka tulee napin taustan perusteella
+
+}
+
+#searchform {
+
+    input[type='text'] {
+        @include rem('padding', 12px);
+        color: $alt-color;
+        border-color: $alt-color;
+        @include rem('margin-right', 5px);
+        border-style: solid;
+        border-width: 2px;
+        float: left;
+    }
+
+    input[type='submit'], input[type='button'] {
+        float: left;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+    Blogi
+----------------------------------------------------------------------------- */
+
+// Blogin muotoilut:
+
+.entry-content {
+    overflow:hidden;
+
+    img {
+        max-width: $container-desktop;
+        height:auto;
+
+        @media(max-width:$container-ipad) {
+            width:100%;
+            height:auto;        
+        }
+
+    }
+
+    blockquote {
+        color: #666;
+
+        @include type-weight(regular);
+        @include rem('padding-left',20px);
+        @include rem('margin-left',0);
+        border-left: 5px solid $alt-color;
+
+        quotes: "\201C""\201D""\20'18""\2019";
+    }
+
+}
+
+img.size-full {
+    width:100%;
+    height:auto;
+}
+
+.alignright {
+    float:right;
+    text-align:right;
+    @include rem('margin-left',20px);
+    @include rem('margin-bottom',20px);
+
+    &.size-full {
+        width: auto;
+        height: auto;
+    }
+    
+}
+
+.alignleft {
+    float:left;
+    text-align:left;
+    @include rem('margin-right',20px);
+    @include rem('margin-bottom',20px);
+}
+
+
+
+.entry-title
+{
+    @include rem('margin-bottom',10px);
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.entry-time
+{
+    display: block;
+
+    color: #bbb;
+
+    @include rem('margin-top',20px);
+    @include rem('margin-bottom',30px);
+}
+
+.post-meta
+{
+    clear: both;
+
+    border-top: 1px solid rgba(#000,.11);
+
+    @include rem('margin-top',50px);
+    @include rem('margin-bottom',50px);
+    .fa
+    {
+        @include rem('margin-right',5px);
+    }
+    .cat a,
+    .tags a,
+    .reply-to-comment a
+    {
+        color: #777;
+    }
+    .cat a:hover,
+    .reply-to-comment a:hover
+    {
+        color: #111;
+    }
+    .fa-tags
+    {
+        float: left;
+
+        @include rem('margin-right',8px);
+    }
+    .tags
+    {
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+        li
+        {
+            display: inline;
+            float: left;
+
+            margin-top: 0;
+            margin-left: 0;
+
+            @include rem('margin-right',10px);
+            @include rem('margin-bottom',10px);
+            @include rem('line-height',20px);
+            a
+            {
+                display: inline-block;
+
+                border-radius: 4px;
+                background: #f0f0f0;
+
+                @include rem('padding-top',4px);
+                @include rem('padding-bottom',4px);
+                @include rem('padding-left',10px);
+                @include rem('padding-right',10px);
+                &:hover
+                {
+                    color: #111;
+                    background: #ddd;
+                }
+            }
+        }
+    }
+}
+
+.jakonapit
+{
+    overflow: auto;
+
+    @include rem('padding-top',$defaultpadding);
+    @include rem('padding-bottom',$defaultpadding);
+}
+.nappi
+{
+    @include col(1/4);
+}
+
+
+/* -----------------------------------------------------------------------------
+    Arkisto ja haku
+----------------------------------------------------------------------------- */
+
+.maintitle {
+    margin-top: 0;
+}
+
+.searchpage {
+
+    article {
+        @include rem('margin-bottom',20px);
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+    Footer
+----------------------------------------------------------------------------- */
+
+.site-footer
+{
+    overflow: hidden;
+
+    margin: 0;
+    @include rem('padding',$defaultpadding);
+
+    background: $bg_alt;
+
+    .creds-col
+    {
+        @include col(1/2);
+
+        color: rgba(#ffffff,0.3);
+
+        p, a {
+            color: rgba(#ffffff,0.3);
+            @include type-weight(200);
+        }
+
+        p {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+    }
+
+    h2
+    {
+        margin-top: 0;
+    
+        letter-spacing: -1px;
+        word-spacing: 4px;
+        text-transform: uppercase;
+    
+        color: #fff;
+    
+        @include rem('margin-bottom',35px);
+    }
+
+    .site-info
+    {
+        text-align: left;
+    
+        color: #fff;
+    }
+
+    .address
+    {
+        text-align: right;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+    Yhteystiedot
+----------------------------------------------------------------------------- */
+
+/* Google Maps -oletustyylit: 
+------------------------------- */
+
+#kartta img
+{
+    max-width: none;
+}
+.gmnoprint img
+{
+    max-width: none;
+}
+
+#map, #kartta
+{
+    position: relative;
+
+    overflow: auto;
+
+    width: 100%;
+    min-width: 100%;
+    @include rem('height',300px);
+}
+
+
+
+/* -----------------------------------------------------------------------------
+    Slider
+----------------------------------------------------------------------------- */
+
+.slider {
+
+    @media(max-width: $container-mobile) {
+        // margin-top: 130px;
+        max-height: 400px !important;
+    }
+
+    // @media(max-width: $responsivenav) {
+    //     margin-top: 115px;
+    // }
+
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .slick-prev {
+        left: 10px;
+    }
+
+    .slick-next, .slick-prev {
+
+        width: 60px;
+        height: 60px; 
+        opacity: 0.3;
+
+        &:before {
+            font-size: 60px;
+        }
+    }
+
+    .slider-slide
+    {
+        // height: 100vh;
+        height: 400px;
+        overflow: hidden;
+
+        background-color: transparent;
+        background-image: url(../images/default_firstslide.jpg);
+        @include background-cover();
+
+            .container {
+                @include rem('padding-top',120px);
+                @include rem('padding-bottom',120px);
+
+                @media(max-width: $container-ipad) {
+                    @include rem('padding-top',60px);
+                    @include rem('padding-bottom',60px);
+                }
+
+            }
+
+        h1 {
+            @include rem('font-size',46px);
+            @media(max-width: $container-mobile) {
+                @include rem('font-size',25px);
+                @include rem('line-height',28px);
+            }
+            @include type-weight(bold);
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 0;
+            clear: both;
+            display: block;
+        }
+    
+        h2
+        {
+            color: #ffffff;
+    
+            @include rem('font-size',20px);
+            @include rem('line-height',28px);
+            @media(max-width: $container-mobile) {
+                @include rem('font-size',19px);
+                @include rem('line-height',24px);
+            }
+            color: #ffffff;
+            display: block;
+            @include type-weight(bold);
+    
+            @include rem('margin-top', 15px);
+            @include rem('margin-bottom', 0);
+            @include col(2/3);
+            clear: both;
+            display: block;
+        }
+
+            .slider-palsta-1 {
+    
+                h2 {
+                    @include col(3/5);
+                    @include rem('margin-top',10px);
+                }
+    
+            }
+    
+        h3 {
+        
+            @include type-weight(regular);
+            @include rem('font-size',27px);
+            @include rem('margin-top', 5px);
+            margin-bottom: 0;
+            color: #ffffff;
+    
+        }
+    
+        p
+        {
+            color: #fff;
+        }
+
+    }
+
+}
+
+
+
+/* -----------------------------------------------------------------------------
+    Mediaqueries
+----------------------------------------------------------------------------- */
+
+/* Duden sormenjälki: */
+
+$dude_logo: #fff;
+$dude_teksti: #666;
+
+a.toteutus-dude
+{
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    opacity: .5;
+    color: $dude_teksti;
+}
+
+@media(min-width: $container-ipad)
+{
+    .creds
+    {
+        text-align: right;
+    }
+}
+
+a.toteutus-dude span
+{
+    font-family: 'Open Sans';
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    color: $dude_logo;
+}
+
+a.toteutus-dude:hover
+{
+    opacity: .8;
+    color: $dude_logo;
+}
+
+
+/* -----------------------------------------------------------------------------
+    Kommentit
+----------------------------------------------------------------------------- */
+
+.comment-respond
+{
+    @include rem('margin-bottom',30px);
+}
+
+.comment-reply-title
+{
+    display: none;
+}
+
+.comment-author h3.author
+{
+    float: left;
+}
+
+.comment-meta a
+{
+    text-decoration: underline;
+
+    color: #777;
+}
+
+.comment-meta,
+a.comment-time,
+a:link.comment-time,
+a:visited.comment-time,
+.comment-time
+{
+    font-family: $alt-font-family;
+
+    padding: 0;
+
+    text-decoration: none;
+
+    color: #999;
+
+    @include rem('font-size',16px);
+    @include rem('line-height',16px+7);
+    @include rem('margin-top',10px);
+    @include rem('margin-left',1px);
+}
+
+.comment-meta a:hover
+{
+    text-decoration: none;
+}
+
+.comment-meta
+{
+    display: block;
+    clear: both;
+}
+
+.ping-list
+{
+    @include rem('margin-bottom',40px);
+}
+
+.ping-list,
+.ping-list a
+{
+    color: #888;
+
+    @include rem('font-size',13px);
+}
+
+.ping-list cite a
+{
+    @include rem('margin-right',15px);
+}
+
+.ping-list a
+{
+    text-decoration: underline;
+}
+
+.ping-list a:hover
+{
+    text-decoration: none;
+}
+
+.comment-list
+{
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+
+    @include peruslista;
+    @include rem('margin-top',20px);
+    @include rem('margin-bottom',20px);
+}
+
+.comment-list .avatar
+{
+    float: right;
+    overflow: hidden;
+
+    @include rem('margin-left',20px);
+}
+
+.comment-author img
+{
+    border-radius: 50% 50%;
+}
+
+.comments-wrap
+{
+    text-align: left;
+
+    background: #fff;
+    ul,
+    ol
+    {
+        text-align: left;
+    }
+}
+
+.comment
+{
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    @include rem('margin-top',30px);
+    @include rem('margin-bottom',30px);
+    @include rem('padding-top',20px);
+    @include rem('padding-bottom',20px);
+}
+
+#commentform code
+{
+    white-space: normal !important;
+}
+
+// Admin comments:
+
+// .comment-author-admin .the-comment p, .comment-author-admin .the-comment a {
+// 	color:#b75143 !important;
+// }
+
+// .comment-author-admin .the-comment blockquote {
+// 	border-color:#b75143 !important;
+// }
+
+.comment-author-admin .the-comment a
+{
+    text-decoration: underline;
+}
+
+.comment-author-admin .the-comment a:hover
+{
+    text-decoration: none;
+}
+
+.the-comment blockquote
+{
+    border-color: #999;
+}
+
+
+/* -----------------------------------------------------------------------------
+    Extra
+----------------------------------------------------------------------------- */
+
+.screen-reader-text
+{
+    display: none;
+}

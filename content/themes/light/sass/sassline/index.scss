@@ -1,0 +1,37 @@
+$weightvalue: (
+  thin:   200,
+  light:  300,
+  regular:  400,
+  bold:   700,
+  black:  900
+);
+
+@mixin type-weight($weight) {
+    font-weight: map-get($weightvalue, $weight);
+}
+
+// esim. 18px = @include type-scale(18, 3);
+// scale 3 on se normaalein
+
+p { @include type-scale(base, 3); }
+
+.tiny { @include sassline(tiny, $headingtype, 1.55, 0, all); }
+.small { @include sassline(small, $headingtype, 1.55, 0, all); }
+.regular { @include sassline(normal, $headingtype, 1.55, 0, all); }
+.normal { @include sassline(normal, $headingtype, 1.55, 0, all); }
+.base { @include type-scale(base, 3); }
+.medium { @include sassline(medium, $headingtype, 2, 0, all); }
+.large { @include sassline(large, $headingtype, 2, 0, all); }
+.xlarge { @include sassline(xlarge, $headingtype, 3, 1, all) }
+.xxlarge { @include sassline(xxlarge, $headingtype, 3, 1, all); }
+.huge { @include sassline($type-scale: huge, $font: $headingtype, $lineheight: 4, $below: 1, $breakpoint: all); }
+
+/* Font smoothing options */
+body {
+	font-smooth: always;
+	font-smoothing: antialiased;
+	text-size-adjust: none;
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	-moz-osx-font-smoothing: grayscale;
+}

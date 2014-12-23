@@ -1,0 +1,169 @@
+/*------------------------------------*\
+    # Typomatic
+\*------------------------------------*/
+
+ // Each loop that outputs all of the type scales as placeholders with their type-prefix
+ // and optionally outputs classes for type
+ // ex. .type--tiny, %type--tiny
+ // ex. .type--small, %type--small
+
+@mixin typomatic-baseline {
+    html {
+        font-size: strip-units($base-font-size) / 16 * 100%;
+        line-height: $base-line-height;
+    }
+}
+@mixin typomatic-init {
+
+    @each $type-scale-size in map-keys($type-scale) {
+
+        // If type-output-classes is set to true generate classes and placeholders, else just placeholders
+        @if $type-output-classes { 
+            $type-class-placeholder-name: '.' + #{$type-prefix}#{$type-class-separator}#{$type-scale-size} + ', %' + #{$type-prefix}#{$type-class-separator}#{$type-scale-size};
+        } @else { 
+            $type-class-placeholder-name: '%' + #{$type-prefix}#{$type-class-separator}#{$type-scale-size};
+        } 
+
+        // Generate a prefixed class and placeholder for each size in the map
+        #{$type-class-placeholder-name} {
+
+            $type-scale-size: map-get($type-scale, $type-scale-size);
+
+            @if map-has-key($type-scale-size, font-size) {
+                @if $type-units == "px" {
+                    font-size: map-get($type-scale-size, font-size);
+                }
+                @elseif $type-units == "rem" {
+                    font-size: rem-calc(map-get($type-scale-size, font-size));
+                }
+            }
+
+            @if map-has-key($type-scale-size, base-lines) {
+                @if $type-units == "px" {
+                    line-height: ceil(map-get($type-scale-size, base-lines) * $base-line-height * strip-units($base-font-size)) + px;
+                }
+                @elseif $type-units == "rem" {
+                    line-height: rem-calc(map-get($type-scale-size, base-lines) * $base-line-height * $base-font-size);
+                }
+                
+            }
+
+        }
+    }
+
+}
+
+// The base type-scale mixin to render out sizes
+// $type-scale-size - the default size in the scale map
+// $extend - whether to extend the placeholder to keep things DRY or just create a class
+// $base-lines - if $extend is false it is possible to override the base-line defined in the map with a custom value
+@mixin type-scale($type-scale-size: base, $extend: true, $base-lines: null) {
+
+    // Usage in media query with $extend: false
+    @if $extend == false {
+
+        $type-scale-size: map-get($type-scale, $type-scale-size);
+
+        @if map-has-key($type-scale-size, font-size) {
+            @if $type-units == "px" {
+                font-size: map-get($type-scale-size, font-size);
+            }
+            @elseif $type-units == "rem" {
+                font-size: rem-calc(map-get($type-scale-size, font-size));
+            }
+        }
+
+        @if map-has-key($type-scale-size, base-lines) {
+            @if $base-lines == null {
+                @if $type-units == "px" {
+                    line-height: ceil(map-get($type-scale-size, base-lines) * $base-line-height * strip-units($base-font-size)) + px;
+                }
+                @if $type-units == "rem" {
+                    line-height: rem-calc(map-get($type-scale-size, base-lines) * $base-line-height * $base-font-size);
+                }
+            } @else {
+                @if $type-units == "px" {
+                    line-height: ceil($base-line-height * $base-lines)  + px;
+                }
+                @if $type-units == "rem" {
+                    line-height: $base-line-height * $base-lines + rem;
+                }
+            }
+        }
+
+    } @else {
+        @extend %#{$type-prefix}#{$type-class-separator}#{$type-scale-size};
+    }
+}
+
+// The base type-weight mixin to render out different weights
+@mixin type-weight($weight, $cssproperty: $type-weight-cssproperty) {
+    #{$cssproperty}: map-get($type-weight, $weight);
+}
+
+// Margins and paddings
+// $lines - the number of base line heights of the margin or padding
+@mixin margin-trailer($lines) {
+    @if $type-units == "px" {
+        margin-bottom: $base-line-height * strip-units($base-font-size) * $lines + px;
+    }
+    @elseif $type-units == "rem" {
+        margin-bottom: $base-line-height * $lines + rem;
+    }
+}
+@mixin margin-leader($lines) {
+    @if $type-units == "px" {
+        margin-top: $base-line-height * strip-units($base-font-size) * $lines + px;
+    }
+    @elseif $type-units == "rem" {
+        margin-top: $base-line-height * $lines + rem;
+    }
+}
+@mixin padding-trailer($lines) {
+    @if $type-units == "px" {
+        padding-bottom: $base-line-height * strip-units($base-font-size) * $lines + px;
+    }
+    @elseif $type-units == "rem" {
+        padding-bottom: $base-line-height * $lines + rem;
+    }
+}
+@mixin padding-leader($lines) {
+    @if $type-units == "px" {
+        padding-top: $base-line-height * strip-units($base-font-size) * $lines + px;
+    }
+    @elseif $type-units == "rem" {
+        padding-top: $base-line-height * $lines + rem;
+    }
+}
+
+// Padding trailer with a border
+@mixin border-trailer($lines: 1, $border-width: 1, $border-style: solid) {
+
+    $border-width-stripped: strip-units($border-width);
+
+    @if $type-units == "px" {
+        padding-bottom: $base-line-height * strip-units($base-font-size) * $lines - $border-width-stripped + px;
+        border-bottom-width: $border-width + px;
+    }
+    @elseif $type-units == "rem" {
+        padding-bottom: $base-line-height * $lines - strip-units(rem-calc($border-width-stripped)) + rem;
+        border-bottom-width: rem-calc($border-width);
+    }
+    border-bottom-style: $border-style;
+}
+
+// Padding leader with a border
+@mixin border-leader($lines: 1, $border-width: 1, $border-style: solid) {
+
+    $border-width-stripped: strip-units($border-width);
+
+    @if $type-units == "px" {
+        padding-top: $base-line-height * strip-units($base-font-size) * $lines - $border-width-stripped + px;
+        border-top-width: $border-width + px;
+    }
+    @elseif $type-units == "rem" {
+        padding-top: $base-line-height * $lines - strip-units(rem-calc($border-width-stripped)) + rem;
+        border-top-width: rem-calc($border-width);
+    }
+    border-top-style: $border-style;
+}

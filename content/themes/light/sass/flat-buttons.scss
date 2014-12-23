@@ -1,0 +1,173 @@
+/* flat-buttons.scss: http://codepen.io/awesomephant/pen/ALrsb */
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/*
+================
+The Icon-object™
+================
+
+The Icon-Object™ that holds the unicode entities for our icons, so we can reference them by name instead of looking up the hex code every time we need one.
+*/
+
+$icons: ('save' '\1F4BE'),
+        ('delete' '\12as'),
+        ('fb' '\F30E'),
+        ('twitter' '\F309'),
+        ('bolt' '\26A1'),
+        ('danger' '\26A0'),
+        ('tick' '\2713');
+
+/*
+Color variables are imported from another pen, just to make stuff easier to read
+*/
+
+
+/*
+=======================
+The Button Mixin.======
+=======================
+
+=It takes 3 arguments:=
+- the background-color ($bg),
+in our case we will pass it the color vars we defined above.
+
+- the icon ($icon),
+takes one of the named icons from the Icon-Object™
+
+- the icon position ($iconPosition)
+Vald values are 'left' and 'right'
+
+=And does fancy stuff=
+1. Figure out the lightness of the passed background-color via the lightness() function and set either a dark or a light text color.
+
+2. Loop over the Icon-Object™ until the name matches the passed $icon parameter and then
+
+  2.1 If $iconPosition == right select the :after element and set the corresponding unicode entity as the 'content' value. 
+*/
+
+@mixin button($bg, $rounded: false, $icon:none, $iconPosition: right){
+  $color: $buttontxtcolor;
+  @include rem(padding-top,$buttonpadding-vertical);
+  @include rem(padding-bottom,$buttonpadding-vertical);
+  @include rem(padding-left,$buttonpadding-horizontal);
+  @include rem(padding-right,$buttonpadding-horizontal);
+  /*
+  Setting the color based on the background, as described above (1)
+  */ 
+  @if lightness($bg) > 68% {
+    $color: desaturate(darken($bg, 35), 70);
+    &:hover, &:focus {
+      background: darken($bg, 5);
+      color: darken($color, 5);
+    }
+  }
+  @else {
+    $color: lighten($bg, 35);
+    &:hover, &:focus {
+      background: darken($bg, 5);
+      color: lighten($color, 5);
+    }
+  }
+  
+  /*
+  Adding the icons, see (2)
+  */
+  @each $thing in $icons{
+    @if nth($thing, 1) == $icon {
+      @if $iconPosition == right {  
+        padding-right: 3.5em;   
+        &:after {
+           content: nth($thing, 2);
+           right: 1.5em;
+        }
+      }
+       
+      @if $iconPosition == left {  
+        padding-left: 3.5em;     
+        &:before {
+           content: nth($thing, 2);
+           left: 1.5em;
+        }
+      }
+    }
+  }
+  
+  color: $color;
+  display: inline-block;
+  background: $bg;
+  transition:.3s;
+  font:{
+    weight: 800;
+    size: .8em;
+  }
+  text:{
+    transform: uppercase;
+    decoration: none;
+  }
+  @if $rounded == true {border-radius: .7em};
+  border-bottom: .2em solid darken($bg, 7);
+  position: relative;
+
+&.not-flat-btn {
+  display: inline-block;
+  @include rem(padding-top,$buttonpadding-vertical);
+  @include rem(padding-bottom,$buttonpadding-vertical);
+  @include rem(padding-left,$buttonpadding-horizontal);
+  @include rem(padding-right,$buttonpadding-horizontal);
+  background: $bg;
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 desaturate(darken($bg, 9),30);
+  text-shadow: 1px 1px 1px rgba(#000000,0.3);
+  transition: none;
+
+  &:hover {
+    background:desaturate(darken($bg, 4),15);
+    box-shadow: 3px 3px 0 desaturate(darken($bg, 8),30);
+  }
+  
+  &:active, &:focus {
+    position: relative;
+    left: 3px;
+    top: 3px;
+    box-shadow: none;
+  }
+
+}
+
+  &:before, &:after{
+    display: inline-block;
+    font-family: entypo;
+    position: absolute;    
+  }
+          
+  &:active {
+    transform:scale .92;
+  }
+  &:hover, &:focus {
+            @if $rounded == true {border-radius: .5em;}
+    // box-shadow: 0 0 0 5px lighten($bg, 20);
+  }
+}
+
+$red:#E74C3C;
+$blue:#347EED;
+$green:#31F042;
+$fb-blue:#344E86;
+$twitter-blue:#4099FF;
+$yellow:#FFEF35;
+
+/*
+Calling the Mixin for the different buttons
+*/
+.danger  { @include button($red, false, 'danger')   ;}
+.signup  { @include button($blue, false, 'tick', left)  ;}
+.save    { @include button($green, false, 'save', right);}
+.fb      { @include button($fb-blue, false, 'fb', left); }
+.twitter { @include button($twitter-blue, false,        'twitter', left); }
+.power { @include button($yellow, 'bolt', right); }
+
+/*
+Base Styles
+*/
+.demo a {margin: 1em;}

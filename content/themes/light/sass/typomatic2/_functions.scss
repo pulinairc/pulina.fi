@@ -1,0 +1,12 @@
+/*------------------------------------*\
+    # Reusable functions
+\*------------------------------------*/
+
+// Strip units
+@function strip-units($value) {
+    @return ($value) / ($value * 0 + 1);
+}
+// Simple REM calculator
+@function rem-calc($size) {
+    @return strip-units($size) / strip-units($base-font-size) * 1rem;
+}
