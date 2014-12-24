@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<p>Suoraviivaisempi kuin Twitter. Reaaliaikaisempi kuin Facebook. "Sosiaalisista medioista" se ensimmäinen. Tervetuloa irkkiin!</p>
 
-			<p><a href="#mukaan" class="btn">Tule mukaan pulisemaan</a></p>
+			<p><a href="http://webchat.quakenet.org/?channels=#pulina" class="btn">Tule mukaan pulisemaan</a></p>
 
 		</div>
 
@@ -149,9 +149,9 @@ echo $pulistumaara; ?></span>
 	
 		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
 
-		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://pulina.stableservers.eu">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Connect</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
+		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://webchat.quakenet.org/?channels=#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Join chat</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
 
-		<p><a href="http://pulina.stableservers.eu" class="btn">Boom, irkkiin!</a></p>
+		<p><a href="http://webchat.quakenet.org/?channels=#pulina" class="btn">Boom, irkkiin!</a></p>
 
 	</div>
 
