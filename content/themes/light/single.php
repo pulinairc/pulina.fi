@@ -19,7 +19,7 @@ get_header(); ?>
 			<div class="the-blog-post">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<h2 class="entry-title"><?php the_title(); ?></h2>
 					<time class="entry-time" datetime="<?php get_the_time('c'); ?>" pubdate="pubdate"><?php echo ucfirst(get_the_time('l')) ?>na, <?php the_time('j. F') ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time>
 
 				<div class="entry-content">
