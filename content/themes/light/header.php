@@ -18,6 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
+<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/screenshot.png">
 
 <!-- HTML5 Shim and Respond.js - IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
