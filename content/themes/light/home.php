@@ -7,11 +7,9 @@
 
 get_header(); ?>
 
-<div class="note">
-<p>Huom. Katselet uusia 24.12.2014 julkaistuja sivuja. Sivut ovat harrastustoimintaa, joten keskeneräisyyttä löytyy. Fiksaillaan kuntoon ajan kanssa. Ei ole niin justiinsa.</p>
-</div>
+<iframe src="http://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area firstcontainer">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -25,8 +23,18 @@ get_header(); ?>
 					<time class="entry-time" datetime="<?php get_the_time('c'); ?>" pubdate="pubdate"><?php echo ucfirst(get_the_time('l')) ?>na, <?php the_time('j. F') ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time>
 
 				<div class="entry-content">
-
-					<?php the_content(); ?>
+	
+					<div class="entry-content">
+						<?php if ( ! has_excerpt() ) { ?>
+						<p><?php 
+						$lause = preg_match('/^([^.!?]*[\.!?]+){0,2}/', strip_tags($post->post_content), $lyhenne);
+						echo $lyhenne[0];
+						?></p>
+						<?php } else { ?>
+						<?php the_excerpt(''); ?>
+						<?php } ?>
+					</div><!-- .entry-content -->
+					
 					<?php edit_post_link( __( 'Muokkaa sivua', 'light' ), '<p class="edit">', '</p>' ); ?>
 
 				</div><!-- .entry-content -->
@@ -39,9 +47,7 @@ get_header(); ?>
 		<?php endwhile; // end of the loop. ?>
 		
 		<div class="container">
-			<div class="navigation">
-				<p><?php posts_nav_link(' &#183; ', 'edellinen sivu', 'seuraava sivu'); ?></p>
-			</div>
+			<?php my_pagination(); ?>
 		</div>
 
 		</main><!-- #main -->
