@@ -7,6 +7,10 @@
 
 get_header(); ?>
 
+<div class="note">
+<p>Huom. Katselet uusia 24.12.2014 julkaistuja sivuja. Sivut ovat harrastustoimintaa, joten keskeneräisyyttä löytyy. Fiksaillaan kuntoon ajan kanssa. Ei ole niin justiinsa.</p>
+</div>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

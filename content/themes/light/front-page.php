@@ -50,12 +50,47 @@ get_header(); ?>
 </div>
 
 
+<div class="slide slide-linkit">
+
+	<div class="container">
+
+		<h2>Viimeisimmät linkit</h2>
+
+
+<ul class="linkkilista">
+<?php
+require_once('inc/simplehtmldom/simple_html_dom.php'); 
+$html = file_get_html('http://peikko.us/pulinalinkit/index.html');
+
+// example: html->find('ul', 0)->find('li', 0);
+$first_level_items = $html->find('ul', 0)->find('li', 0);
+foreach($html->find('ul') as $ul) 
+{
+$i = 0;
+       foreach($ul->find('li') as $li) 
+       {
+       if($i == 6) { break; }
+       echo $li;
+       $i++;
+       }
+}
+?>
+</ul>
+
+			<div class="more">
+				<p><a href="http://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
+			</div>
+
+	</div>
+
+</div>
+
 		<div class="slide slide-infograafi">
 		
 			<div class="container">
 		
 				<div class="wow fadeIn numero" data-wow-delay="0.22s">
-					<span class="arvo meter_1"><?php require_once('inc/simplehtmldom/simple_html_dom.php'); $paikalla = file_get_html('http://peikko.us/pulina.html'); foreach($paikalla->find('.paikalla') as $numero) echo $numero; ?></span>
+					<span class="arvo meter_1"><?php $paikalla = file_get_html('http://peikko.us/pulina.html'); foreach($paikalla->find('.paikalla') as $numero) echo $numero; ?></span>
 					<span class="asia">Paikalla nyt</span>
 				</div>
 		

@@ -253,6 +253,52 @@ body
 
     }
 
+    &.slide-linkit {
+        background: darken(#fdfdfd,2%);
+        text-align: center;
+
+        .linkkilista
+        {
+            text-align: left;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        
+            li
+            {
+                @include rem('margin-bottom',30px);
+            }
+            a
+            {
+                color: #3498db;
+        
+                @include type-scale(base);
+                @include type-weight(regular);
+                @include rem('font-size',16px);
+                @include rem('margin',0 0 10px 0);
+                @include rem('padding',0);
+            }
+            a.url
+            {
+                font-family: $base-font-family;
+        
+                display: block;
+        
+                color: rgba(#3498db,.5);
+        
+                @include type-scale(small);
+                @include rem('font-size',14px);
+                @include type-weight(thin);
+                img
+                {
+                    display: none;
+                }
+            }
+        }
+
+
+    }
+
     &.slide-ohje {
         text-align: center;
 
@@ -308,7 +354,7 @@ body
                 }
         
             .arvo {
-                @include type-scale(large);
+                @include type-scale(xxlarge);
                 @include rem('line-height',70px);
                 @include type-weight(bold);
 
@@ -712,6 +758,13 @@ a:visited.comment-time,
 /* -----------------------------------------------------------------------------
     Extra
 ----------------------------------------------------------------------------- */
+
+.more,
+.urlit .more a
+{
+    @include type-scale(base);
+}
+
 
 .type {
 
