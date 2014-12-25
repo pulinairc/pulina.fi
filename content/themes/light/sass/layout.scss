@@ -156,6 +156,10 @@ body
             border: 3px solid #ffffff;
             width: 65%;
 
+            @media(max-width:$container-ipad) {
+                width: 100%;
+            }
+
             &:hover {
                 background: #ffffff;
                 color: $text-color;
@@ -263,6 +267,7 @@ body
     &.slide-linkit {
         background: darken(#fdfdfd,2%);
         text-align: center;
+        overflow: hidden;
 
         .linkkilista
         {
@@ -985,12 +990,21 @@ a:visited.comment-time,
 
 .type {
 
+    max-height: 100px;
+    height: 100px;
+    overflow: hidden;
+
     p {
         font-family: $terminal-font-family;
         color: rgba($text-color,0.8);
         @include type-scale(18);
         margin-top: 0;
         padding-top: 0;
+        @media(max-width: $container-ipad) {
+            min-height: 50px;
+            overflow: hidden;
+            max-height: 60px;
+        }
     }
 }
 
