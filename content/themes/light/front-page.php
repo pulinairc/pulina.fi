@@ -70,6 +70,9 @@ $i = 0;
        foreach($ul->find('li') as $li) 
        {
        if($i == 6) { break; }
+       $korvattavat = array('/Ã¤/','/Ã¶/');
+	   $tilalle = array('ä','ö');
+	   $li = preg_replace($korvattavat, $tilalle, $li);
        echo $li;
        $i++;
        }
