@@ -113,12 +113,16 @@ nav {
 	/* starting point */
 	opacity: 0;
 	transform: translate3d(5%,0,0)scale(.97);
+	z-index: -1;
+	display: none;
 
 	/* Nav Expanding Open Effect */
 	&.open {
 		opacity: 1;
 		transform:translate3d(0,0,0)scale(1);
 		animation:slideIn .35s ease-in-out;
+		z-index:10;
+		display: block;
 
 		li {
 			a {
