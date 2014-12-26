@@ -1262,3 +1262,10 @@ p a {
       }
     }
 }
+
+
+.mainox {
+    p {
+        @include type-scale(small);
+    }
+}
