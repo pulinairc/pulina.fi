@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b392d6df7c9e8ed20a6ce041f1427b52",
+    "hash": "0bbb7b44e0910e472adce8b7ba169e47",
     "packages": [
         {
             "name": "composer/installers",
@@ -482,26 +482,6 @@
             "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
-            "name": "wpackagist-plugin/buddypress",
-            "version": "2.0.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/buddypress/",
-                "reference": "tags/2.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/buddypress.2.0.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/buddypress/"
-        },
-        {
             "name": "wpackagist-plugin/disqus-comment-system",
             "version": "2.84",
             "source": {
@@ -520,26 +500,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/disqus-comment-system/"
-        },
-        {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "3.0.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.0.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
@@ -562,16 +522,16 @@
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         },
         {
-            "name": "wpackagist-plugin/wp-post-view",
-            "version": "1.1",
+            "name": "wpackagist-plugin/wp-html-compression",
+            "version": "0.5.8",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-post-view/",
-                "reference": "trunk"
+                "url": "http://plugins.svn.wordpress.org/wp-html-compression/",
+                "reference": "tags/0.5.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-post-view.zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-html-compression.0.5.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -579,7 +539,27 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-post-view/"
+            "homepage": "https://wordpress.org/plugins/wp-html-compression/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-super-cache",
+            "version": "1.4.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-super-cache/",
+                "reference": "tags/1.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-super-cache.1.4.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-super-cache/"
         }
     ],
     "packages-dev": [],

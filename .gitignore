@@ -1,3 +1,5 @@
+error.log
+access.log
 .sass-cache/
 wp
 .htaccess
