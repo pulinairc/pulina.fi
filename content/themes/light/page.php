@@ -9,7 +9,7 @@ get_header(); ?>
 
 <iframe src="http://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area firstcontainer">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
