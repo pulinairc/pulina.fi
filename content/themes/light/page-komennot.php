@@ -50,166 +50,138 @@ get_header(); ?>
 
 	<div class="komennot">
 
+<div class="container">
 <table class="rwd-table">
 
   <tr>
   	<th>Ominaisuus</th>
     <th>Komento</th>
-    <th>Käyttö</th>
-    <th>Mitä tapahtuu</th>
-  </tr>
-
-  <tr class="poispaalta">
-  	<td data-th="Ominaisuus"><i class="feat">megahal</i></td>
-    <td data-th="Komento">ks. Käyttö</td>
-    <td data-th="Käyttö">Tekoäly. Puhu kanavalla, puhu botille osoittamalla viestit kummitukselle.</td>
-    <td data-th="Mitä tapahtuu">Oppii kanavalla puhuttuja asioita ja vastailee ihmisille oman mielen mukaan.</td>
+    <th>Tietoa</th>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">remind</i></td>
-    <td data-th="Komento"><code>!muistuta nick aika asia
-    </code></td>
-    <td data-th="Käyttö">Esimerkkejä: <code>!muistuta omanick "tomorrow 10:00" Soita patelle
-    </code> tai <code>!muistuta omanick "2009-12-31 23:59" Hyvää uutta vuotta!</code> tai <code>!muistuta omanick "10 min" Munat pois hellalta</code> tai <code>!muistuta omanick "2 hours" mene töihin</code>. Poista muistutus komennolla <code>!peruuta &lt;id&gt;</code>, aktiiviset muistutukset ja niiden id:t näet komennolla<code>!muistutukset</code>. Jos unohdat tämän, kirjoita <code>!muistuttaja</code>.</td>
-    <td data-th="Mitä tapahtuu">Saat muistutuksen hailaittina haluttuun aikaan.</td>
+    <td data-th="Komento"><code>!muistuta <i>nick aika asia</i></code></td>
+    <td data-th="Tietoa">Saat muistutuksen hailaittina haluttuun aikaan. Voimassaolevat muistutukset näet komennolla <code>!muistutukset</code> ja esimerkkejä komennoista <code>!muistuttaja</code></td>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">math</i></td>
     <td data-th="Komento"><code>!math laskutoimitus</code></td>
-    <td data-th="Käyttö">Esimerkkejä: <code>!math 1+1</code> <code>!math 3043*(202+34)</code>
+    <td data-th="Tietoa">Laskee laskutoimituksen puolestasi. Esimerkkejä: <code>!math 1+1</code> <code>!math 3043*(202+34)</code>
 <code>!math sqrt(5)*s(5)</code> <code>!math scale=2; 1/2</code></td>
-    <td data-th="Mitä tapahtuu">Laskee laskutoimituksen puolestasi</td>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">vitsit</i></td>
     <td data-th="Komento"><code>!vitsi</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!vitsi</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo satunnaisen vitsin massiivisesta vitsitietokannasta. Varoitus: Sisältää enimmäkseen viinavitsejä.</td>
+    <td data-th="Tietoa">Kertoo satunnaisen vitsin massiivisesta vitsitietokannasta. Varoitus: Sisältää enimmäkseen viinavitsejä.</td>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">sano</i></td>
     <td data-th="Komento"><code>!sano jotain</code></td>
-    <td data-th="Käyttö">Esim: <code>!sano Miau</code></td>
-    <td data-th="Mitä tapahtuu">Käskee botin sanomaan jotain. Käytetään lähinnä testailuun.</td>
+    <td data-th="Tietoa">Käskee botin sanomaan jotain. Käytetään lähinnä testailuun. Esim: <code>!sano Miau</code></td>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">linkit</i></td>
     <td data-th="Komento"><code>!linkit</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!linkit</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo irkistä (jokaiselta kanavalta, jolla rolle on) kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös lisää linkkejä, sekä <a href="http://peikko.us/linkit">täältä</a>.</td>
+    <td data-th="Tietoa">Kertoo irkistä (jokaiselta kanavalta, jolla rolle on) kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös lisää linkkejä, sekä <a href="http://peikko.us/linkit">täältä</a>.</td>
   </tr>
 
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">urlit</i></td>
     <td data-th="Komento"><code>!urlit</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!urlit</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo pulinalta kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös.</td>
+    <td data-th="Tietoa">Kertoo pulinalta kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">pics</i></td>
     <td data-th="Komento"><code>!pics</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!pics</code></td>
-    <td data-th="Mitä tapahtuu">Random-irkkikuvat koottuna yhteen paikkaan.</td>
+    <td data-th="Tietoa">Antaa osoitteen paikkaan, josta näkee random-irkkikuvat koottuna yhteen paikkaan.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">kotisivu</i></td>
     <td data-th="Komento"><code>!kotisivu</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!kotisivu</code></td>
-    <td data-th="Mitä tapahtuu">Jos jostain syystä unohdat pulinan kotisivujen osoitteen, tämä kertoo sen (www.pulina.fi).</td>
+    <td data-th="Tietoa">Jos jostain syystä unohdat pulinan kotisivujen osoitteen, tämä kertoo sen (www.pulina.fi).</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">statsit</i></td>
     <td data-th="Komento"><code>!statsit</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!statsit</code></td>
-    <td data-th="Mitä tapahtuu">Kanavan kokonaistilastot.</td>
+    <td data-th="Tietoa">Antaa osoitteen kanavan tilastosivuille.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">kuukausistatsit</i></td>
     <td data-th="Komento"><code>!kuukausistatsit</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!kuukausistatsit</code></td>
-    <td data-th="Mitä tapahtuu">Kanavan tilastot (kuluva kuukausi).</td>
+    <td data-th="Tietoa">Kanavan tilastot (kuluva kuukausi).</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">komennot</i></td>
     <td data-th="Komento"><code>!komennot</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!komennot</code></td>
-    <td data-th="Mitä tapahtuu">Tämän sivun osoite, eli tietoa komennoista.</td>
+    <td data-th="Tietoa">Tämän sivun osoite, eli tietoa komennoista.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">pvm</i></td>
     <td data-th="Komento"><code>!pvm</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!pvm</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo kuluvan päivän sekä nimipäivät. Tekee saman automaattisesti päivän vaihtuessa.</td>
+    <td data-th="Tietoa">Kertoo kuluvan päivän sekä nimipäivät. Tekee saman automaattisesti päivän vaihtuessa.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">toptod</i></td>
     <td data-th="Komento"><code>!toptod</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!toptod</code></td>
-    <td data-th="Mitä tapahtuu">Kuluvan päivän ennätykset, top-lista siitä kuka on ollut eniten äänessä. Tulee vain privaattina noticena käyttäjälle.</td>
+    <td data-th="Tietoa">Kuluvan päivän ennätykset, top-lista siitä kuka on ollut eniten äänessä. Tulee vain privaattina noticena käyttäjälle.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">välimatkat</i></td>
     <td data-th="Komento"><code>!matka</code></td>
-    <td data-th="Käyttö">Esim. <code>!matka helsinki kotka 100</code></td>
-    <td data-th="Mitä tapahtuu">Laskee matkan kahden paikan välillä (Suomen sisällä), sekä keston jos numero on annettu ("Välimatka Helsinki - Kotka on 133 km, ajoaika 100 km/h vauhdilla 1 h 19 minuutti")</td>
+    <td data-th="Tietoa">Laskee matkan kahden paikan välillä (Suomen sisällä), sekä keston jos numero on annettu ("Välimatka Helsinki - Kotka on 133 km, ajoaika 100 km/h vauhdilla 1 h 19 minuutti"). Esim. <code>!matka helsinki kotka 100</code></td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">battle</i></td>
     <td data-th="Komento"><code>!battle</code></td>
-    <td data-th="Käyttö">Esim. <code>!battle kahvi,tee</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo todennäköisyydet eri asioille. Pilkulla voi erottaa vaikka kymmenen eri asiaa. Chuck Norris on aina 100%.</td>
+    <td data-th="Tietoa">Kertoo todennäköisyydet eri asioille. Pilkulla voi erottaa vaikka kymmenen eri asiaa. Chuck Norris on aina 100%. Esim. <code>!battle kahvi,tee</code></td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">keksi</i></td>
     <td data-th="Komento"><code>!do</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!do</code></td>
-    <td data-th="Mitä tapahtuu">Ehdottelee tekemistä, jos vaikka sattuu olemaan tylsää.</td>
+    <td data-th="Tietoa">Ehdottelee tekemistä, jos vaikka sattuu olemaan tylsää.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">horo</i></td>
     <td data-th="Komento"><code>!horo</code></td>
-    <td data-th="Käyttö">Esim. <code>!horo skorpiooni</code> tai jos olet laiska, riittää vain horoskoopin alku, esim. <code>!horo sko</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo päivän horoskoopin Iltalehden sivuilta.</td>
+    <td data-th="Tietoa">Kertoo päivän horoskoopin Iltalehden sivuilta. Esim. <code>!horo skorpiooni</code> tai jos olet laiska, riittää vain horoskoopin alku, esim. <code>!horo sko</code></td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">randommovies</i></td>
     <td data-th="Komento"><code>!leffa</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!leffa</code></td>
-    <td data-th="Mitä tapahtuu">Ehdottaa satunnaista leffaa katsottavaksi.</td>
+    <td data-th="Tietoa">Ehdottaa satunnaista leffaa katsottavaksi.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">sää</i></td>
     <td data-th="Komento"><code>!sää</code></td>
-    <td data-th="Käyttö">Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia.</td>
-    <td data-th="Mitä tapahtuu">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle.</td>
+    <td data-th="Tietoa">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle. Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia.</td>
   </tr>
 
   <tr>
     <td data-th="Ominaisuus"><i class="feat">peak</i></td>
     <td data-th="Komento"><code>!peak</code></td>
-    <td data-th="Käyttö">Kirjoita <code>!peak</code></td>
-    <td data-th="Mitä tapahtuu">Kertoo kanavan käyttäjäennätyksen ja milloin se tapahtui viimeksi.</td>
+    <td data-th="Tietoa">Kertoo kanavan käyttäjäennätyksen ja milloin se tapahtui viimeksi.</td>
   </tr>
 
 </table>
+</div>
 	
 	</div><!--/.containercol-->
 

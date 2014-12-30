@@ -1114,8 +1114,7 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
   min-width: 300px; // adjust to your needs
   
   tr {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border: 0;
   }
   
   th {
@@ -1166,9 +1165,12 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
   
 }
 
+.komennot {
+    background: rgba(#000000,0.03);
+    @include rem('padding', 50px 0);
+}
+
 .rwd-table {
-  background: lighten(#34495E,20%);
-  color: #fff;
   overflow: hidden;
   tr {
     border:0;
@@ -1180,7 +1182,7 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
     }
   }
   th, td:before {
-    color: #dd5;
+    color: #111111;
   }
 }
 
@@ -1193,12 +1195,11 @@ th, td, tr {
 }
 
 .komennot table code {
-  background-color:#22374C;
   transition: background-color 0.52s ease-out;
 }
 
 .komennot table code:hover {
-  background-color:#111111;
+  background-color:#dddddd;
 }
 
 $transition-time: .5s;
