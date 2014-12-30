@@ -169,7 +169,7 @@ body
         {
             opacity: .6;
             background: #222222;
-            transition: 400ms ease 100ms;
+            // transition: 400ms ease 100ms;
         }
 
         overflow: auto;
@@ -217,22 +217,22 @@ body
             box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
          }
 
-        &:hover {
-            h2, p, span, a
-            {
-                color: rgba(#ffffff,0);
-                text-shadow: 0 0 22px #fff;
-                opacity: 0.5;
-            }
+        // &:hover {
+        //     h2, p, span, a
+        //     {
+        //         color: rgba(#ffffff,0);
+        //         text-shadow: 0 0 22px #fff;
+        //         opacity: 0.5;
+        //     }
 
-            .btn {
-                box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
-            }
+        //     .btn {
+        //         box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
+        //     }
 
-            .shade {
-                opacity: 0;
-            }
-        }
+        //     .shade {
+        //         opacity: 0;
+        //     }
+        // }
     }
 
     &.slide-esittely {
