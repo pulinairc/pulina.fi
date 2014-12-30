@@ -233,6 +233,22 @@ body
         //         opacity: 0;
         //     }
         // }
+
+        @media(max-width:$container-mobile) {
+
+            .container {
+                h2 {
+                    @include rem('font-size', 22px);
+                    @include rem('line-height', 30px);
+                }
+
+                p, a {
+                    @include rem('font-size', 16px);
+                    @include rem('line-height', 27px);
+                }
+            }
+
+        }
     }
 
     &.slide-esittely {
@@ -1020,7 +1036,7 @@ a:visited.comment-time,
   display:inline-block;
   width:11px;
   height:2px;
-  @include rem(margin,0 0 -3px 5px);
+  @include rem('margin',0 0 -3px 5px);
   animation: blink 1s steps(2, start) infinite;
 }
 
@@ -1037,7 +1053,8 @@ a:visited.comment-time,
 }
 
 .content-area {
-    @include rem('padding', 50px);
+    @include rem('padding-top', 50px);
+    @include rem('padding-bottom', 50px);
 }
 
 .site-footer {
