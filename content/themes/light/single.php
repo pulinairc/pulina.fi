@@ -28,7 +28,7 @@ get_header(); ?>
     <div id="author">
 
 	        <div class="avatararea">
-	        	<a href="<?php echo get_home_url(); ?>/yritys/#<?php echo strtolower(get_the_author_meta('first_name')); ?>"><?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '82' ); } ?></a>
+	        	<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '82' ); } ?>
 				<h3><?php echo get_the_author_meta('first_name'); ?> <?php echo get_the_author_meta('last_name'); ?></h3>
 				<p><?php the_author_meta('description'); ?></p>
 	        </div>

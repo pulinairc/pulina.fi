@@ -157,6 +157,7 @@ gulp.task('js', function() {
           themeDir + '/js/src/prism.js',
           themeDir + '/js/src/skrollr.js',
           themeDir + '/js/src/waypoints.js',
+          themeDir + '/js/src/wow.js',
           themeDir + '/js/src/scripts.js'
         ])
         .pipe(concat('all.js'))
