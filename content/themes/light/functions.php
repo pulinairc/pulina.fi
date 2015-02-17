@@ -5,6 +5,20 @@
  * @package light
  */
 
+/* -----------------------------------------------------------------------------
+    Kellonaika viimeksi kirjautunut -kohtaan
+----------------------------------------------------------------------------- */
+
+function my_last_login( ) {
+return 'j.m.Y, H:i';
+}
+
+add_filter('wpll_date_format', 'my_last_login');
+
+/* -----------------------------------------------------------------------------
+    Paginaatio
+----------------------------------------------------------------------------- */
+
 if ( ! function_exists( 'my_pagination' ) ) :
 function my_pagination() {
     global $wp_query;

@@ -20,6 +20,8 @@ var util        = require('gulp-util');
 var header      = require('gulp-header');
 var pixrem      = require('gulp-pixrem');
 var pagespeed   = require('psi');
+var minifyhtml  = require('gulp-htmlmin');
+var runSequence = require('run-sequence');
 
 /* 
 
@@ -27,21 +29,25 @@ ERROR HANDLING
 ==============
 */
 
-var handleErrors = function() {
-module.exports = function() {
+// A display error function, to format and make custom errors more uniform
+// Could be combined with gulp-util or npm colors for nicer output
+var displayError = function(error) {
 
-  var args = Array.prototype.slice.call(arguments);
+    // Initial building up of the error
+    var errorString = '[' + error.plugin + ']';
+    errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
 
-  // Send error to notification center with gulp-notify
-  notify.onError({
-    title: "Compile Error",
-    message: "<%= error.message %>"
-  }).apply(this, args);
+    // If the error contains the filename or line number add it to the string
+    if(error.fileName)
+        errorString += ' in ' + error.fileName;
 
-  // Keep gulp from hanging on this task
-  this.emit('end');
-};
-};
+    if(error.lineNumber)
+        errorString += ' on line ' + error.lineNumber;
+
+    // This will output an error like the following:
+    // [gulp-sass] error message in file_name on line 1
+    console.error(errorString);
+}
 
 /* 
 
@@ -104,11 +110,20 @@ gulp.task('sass', function() {
     compass: false,
     bundleExec: true,
     sourcemap: false,
-    style: 'compressed'
+    style: 'compressed',
+    debugInfo: true,
+    lineNumbers: true,
+    errLogToConsole: true,
+    onSuccess: function(){
+      notify().write({ message: "SCSS Compiled successfully!" });
+    },
+    onError: function(err) {
+        util.beep();
+        displayError(err);
+        return notify().write(err);
+    }
   })) 
 
-  .on('error', handleErrors)
-  .on('error', util.log)
   .on('error', util.beep)
   .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) //adds browser prefixes (eg. -webkit, -moz, etc.)
   .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
@@ -201,7 +216,8 @@ gulp.task('setWatch', function() {
 gulp.task('watch', ['setWatch', 'browserSync'], function() {
   gulp.watch(sassSrc, ['sass']);
   gulp.watch(imgSrc, ['images']);
-  gulp.watch(jsSrc, ['js', browserSync.reload]);
+  // gulp.watch(markupSrc, ['minify-html', browserSync.reload]);
+  gulp.watch(jsSrc + '/**/*.js', ['js', browserSync.reload]);
 });
 
 
@@ -225,8 +241,11 @@ gulp.task('default', function(cb) {
     runSequence(
     'images',
     'sass',
+    'js',
+    'minify-html',
     'browserSync',
     'watch',
+    'refresh',
     cb
     );
 });

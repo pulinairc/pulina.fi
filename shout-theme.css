@@ -1,0 +1,15 @@
+#connect > form > div > div:nth-child(1),
+#connect > form > div > div:nth-child(2),
+#connect > form > div > div:nth-child(3),
+#connect > form > div > div:nth-child(4),
+#connect > form > div > div:nth-child(5),
+#connect > form > div > div:nth-child(6),
+#connect > form > div > div:nth-child(7),
+#connect > form > div > div:nth-child(8),
+#connect > form > div > div:nth-child(9),
+#connect > form > div > div:nth-child(10),
+#connect > form > div > div:nth-child(11),
+#connect > form > div > div:nth-child(12),
+#connect > form > div > div:nth-child(13) {
+	display: none !important;
+}

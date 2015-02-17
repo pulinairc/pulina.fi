@@ -63,7 +63,10 @@
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/disqus-comment-system":"*",
     "wpackagist-plugin/wp-html-compression":"*",  
-    "wpackagist-plugin/wp-super-cache":"*"
+    "wpackagist-plugin/wp-super-cache":"*",
+    "wpackagist-plugin/wp-last-login":"*",
+    "wpackagist-plugin/theme-my-login":"*",
+    "wpackagist-plugin/buddypress":"*"
   },
   "extra": {
     "installer-paths": {
