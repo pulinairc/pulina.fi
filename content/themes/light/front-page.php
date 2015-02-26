@@ -45,7 +45,11 @@ get_header(); ?>
 
 		<p><a href="<?php echo get_page_link(6); ?>" class="btn">Lue lisää Pulinan historiasta</a></p>
 
-		<?php if(strtotime('2015-02-16 23:59') > time() ){ // Expires 16.2.2015! ?><div class="mainox ad textad"><p>Pulinat pois ja <a href="http://www.kasinoeuro.net/">casino-onnea</a> kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin netticasinot.  Kasinoeuro bonuskoodilla saat parhaat rahanarvoiset edut, jotka vain hölmö jättää lunastamatta. <a href="http://www.pokerihuoneet.net/">Pokerihuoneiden arvostelut</a> kannattaa myös lukea ennen kuin säntää <a href="http://www.kasinosuomi.com/7red">7rediin pelaamaan!</a></p></div><?php } ?>
+		<?php if(strtotime('2016-02-26 23:59') > time() ){ // Expires 26.2.2016! ?>
+			<div class="mainox ad textad">
+				<p>Pulinat pois ja parhaita <a href="http://www.eurokasinot.net/rahapelit">rahapelejä</a>  kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin <a href="http://casinoarvostelut.com/">netticasinot</a>. Ennen kun alat pelaamaan kannattaa etsiä käsiisi parhaat <a href="http://www.parascasino.com/bonukset">casino bonukset</a>. Älähän uppoudu tähän puuhaan kuitenkaan liika ja jos tuntuu, että mopo karkaa käsistä turvaudu <a href="http://keskustelu.suomi24.fi/terveys/paihteet-ja-riippuvuudet/peliriippuvuus">tukeen ystävälliseen <a href="http://www.peluuri.fi/">apuun</a>.</p>
+			</div>
+		<?php } ?>
 	
 	</div>
 
