@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-03-13 10:46:14+00:00\n"
-"PO-Revision-Date: 2015-03-13 13:35+0000\n"
-"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
+"POT-Creation-Date: 2015-03-18 12:39:45+00:00\n"
+"PO-Revision-Date: 2015-03-16 22:18+0000\n"
+"Last-Translator: Arhi Paivarinta <info@swratkaisut.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/woocommerce/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -623,7 +623,7 @@ msgstr "Raportit"
 
 #: includes/admin/class-wc-admin-menus.php:69
 msgid "Sales Reports"
-msgstr ""
+msgstr "Myyntiraportit"
 
 #: includes/admin/class-wc-admin-menus.php:77
 msgid "WooCommerce Settings"
@@ -1963,7 +1963,7 @@ msgid ""
 "As part of the API, we've introduced a UI for the Webhook system in "
 "WooCommerce 2.3. This makes it easier for 3rd party apps to integrate with "
 "WooCommerce. Read more in our %sdocs%s."
-msgstr ""
+msgstr "WooCommerce versiossa 2.3 tarjoamme käyttöliittymän API:n eli rajapinnan webhook järjestelmälle. Tämä helpottaa kolmannen osapuolen sovellusten liittämistä WooCommerceen. Lue lisää %sohjeista%s."
 
 #: includes/admin/class-wc-admin-welcome.php:271
 msgid "Geo-locating Customer Location"
@@ -4156,13 +4156,13 @@ msgstr "Tässä voit muokata WooCommerce-sähköpostiviestien ilmettä ja sisäl
 
 #: includes/admin/settings/class-wc-settings-emails.php:100
 msgid "Header Image"
-msgstr "Kuva yläpalkissa"
+msgstr "Otsakkeen kuva"
 
 #: includes/admin/settings/class-wc-settings-emails.php:101
 msgid ""
 "Enter a URL to an image you want to show in the email's header. Upload your "
 "image using the <a href=\"%s\">media uploader</a>."
-msgstr "Kirjoita sen kuvan verkko-osoite -=URL- joka sijoitetaan sähköpostiviestin yläpalkkiin. Siirrä kuva käyttäen <a href=\"%s\">Media, Lisää uusi</a> -toimintoa."
+msgstr "Kirjoita sen kuvan verkko-osoite -=URL- joka sijoitetaan sähköpostiviestin otsakkeeseen. Siirrä kuva käyttäen <a href=\"%s\">Media, Lisää uusi</a> -toimintoa."
 
 #: includes/admin/settings/class-wc-settings-emails.php:110
 msgid "Email Footer Text"
@@ -4178,13 +4178,13 @@ msgstr "Moottorina toimii WooCommerce"
 
 #: includes/admin/settings/class-wc-settings-emails.php:120
 msgid "Base Colour"
-msgstr "Yläpalkin väri"
+msgstr "Otsakkeen väri"
 
 #: includes/admin/settings/class-wc-settings-emails.php:121
 msgid ""
 "The base colour for WooCommerce email templates. Default "
 "<code>#557da1</code>."
-msgstr "Sähköpostien yläpalkin väri. Oletuksena <code>#557da1</code>."
+msgstr "Sähköpostien otsakkeen väri. Oletuksena <code>#557da1</code>."
 
 #: includes/admin/settings/class-wc-settings-emails.php:130
 msgid "Background Colour"
@@ -4249,7 +4249,7 @@ msgstr "Määritellyt maat"
 
 #: includes/admin/settings/class-wc-settings-general.php:87
 msgid "Default Customer Address"
-msgstr ""
+msgstr "Asiakkaan oletusosoite"
 
 #: includes/admin/settings/class-wc-settings-general.php:89
 msgid ""
@@ -5507,11 +5507,11 @@ msgstr "Palvelimelle asennetun PHP:n versio."
 msgid ""
 "%s - We recommend a minimum PHP version of 5.4. See: <a href=\"%s\" "
 "target=\"_blank\">How to update your PHP version</a>"
-msgstr ""
+msgstr "%s - Suosittelemme vähintään PHP versiota 5.4. See: <a href=\"%s\" target=\"_blank\">Kuinka PHP päivitetään  uudempaan versioon</a>"
 
 #: includes/admin/views/html-admin-page-status-report.php:121
 msgid "Couldn't determine PHP version because phpversion() doesn't exist."
-msgstr ""
+msgstr "PHP:n versiota ei saatu selville koska phpversion()-toimintoa ei ole."
 
 #: includes/admin/views/html-admin-page-status-report.php:127
 msgid "PHP Post Max Size"
@@ -5553,7 +5553,7 @@ msgid ""
 "unknown vulnerabilities within these applications or the PHP core itself. If"
 " enabled on your server, Suhosin may need to be configured to increase its "
 "data submission limits."
-msgstr ""
+msgstr "Suhosin on PHP asennuksia varten tehty, kehittynyt suojausjärjestelmä. Se suunniteltiin suojaamaan palvelimia tunnetuilta PHP sovellusten ongelmakohdilta ja myös vielä tuntemattomilta mutta mahdollisilta heikkouksilta PHP sovelluksissa tai PHP ytimessä itsessään. Jos Suhosin on käytössä palvelimellasi, niin sen data lähetys rajoja voidaan joutua kasvattamaan."
 
 #: includes/admin/views/html-admin-page-status-report.php:148
 msgid "MySQL Version"
@@ -5658,7 +5658,7 @@ msgstr "Virhe: %s"
 #: includes/admin/views/html-admin-page-status-report.php:242
 #: includes/admin/views/html-admin-page-status-report.php:260
 msgid "Status code: %s"
-msgstr ""
+msgstr "Tilan koodi: %s"
 
 #: includes/admin/views/html-admin-page-status-report.php:248
 msgid "Remote Get"
