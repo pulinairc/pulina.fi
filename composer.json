@@ -66,7 +66,6 @@
     "php": ">=5.3.2",
     "johnpbloch/wordpress": "4.1.1",
     "koodimonni-language/fi": "*",
-    "koodimonni-language/en_gb": "*",
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
