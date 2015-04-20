@@ -122,50 +122,17 @@ msgstr "Uuden käyttäjän %s luominen epäonnistui. Sisällöt merkitään nyky
 msgid "or assign posts to an existing user:"
 msgstr "tai aseta kirjoittajaksi olemassa oleva käyttäjä:"
 
-#: wordpress-importer.php:319
-msgid "- Select -"
-msgstr "- Valitse -"
-
-#: wordpress-importer.php:261
-msgid "Assign Authors"
-msgstr "Määritä kirjoittajat"
-
-#: wordpress-importer.php:994
-msgid "Import WordPress"
-msgstr "WordPress-tuonti"
-
-#: wordpress-importer.php:294
-msgid "Import author:"
-msgstr "Tuo kirjoittaja:"
-
-#: wordpress-importer.php:274
-msgid "Import Attachments"
-msgstr "Tuo liitteet"
-
-#: wordpress-importer.php:277
-msgid "Download and import file attachments"
-msgstr "Lataa ja tuo liitetiedostot"
-
-#: wordpress-importer.php:178
-msgid "All done."
-msgstr "Valmista."
-
-#: wordpress-importer.php:178
-msgid "Have fun!"
-msgstr "Pidä hauskaa!"
-
-#: wordpress-importer.php:871
-msgid "Remote server did not respond"
-msgstr "Etäpalvelin ei vastaa"
-
-#: wordpress-importer.php:134 wordpress-importer.php:143
-#: wordpress-importer.php:194 wordpress-importer.php:202
-msgid "Sorry, there has been an error."
-msgstr "Valitettavasti on tapahtunut virhe."
+#: wordpress-importer.php:884
+msgid "Remote file is incorrect size"
+msgstr "Tiedosto on väärän kokoinen."
 
 #. Author URI of the plugin/theme
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
+
+#: wordpress-importer.php:277
+msgid "Download and import file attachments"
+msgstr "Lataa ja tuo liitetiedostot"
 
 #. Plugin Name of the plugin/theme
 msgid "WordPress Importer"
@@ -175,6 +142,47 @@ msgstr "WordPress-tuontiohjelma"
 msgid "Submit"
 msgstr "Lähetä"
 
+#: wordpress-importer.php:319
+msgid "- Select -"
+msgstr "- Valitse -"
+
+#: wordpress-importer.php:895
+msgid "Remote file is too large, limit is %s"
+msgstr "Tiedosto on liian suuri, raja on %s."
+
+#: wordpress-importer.php:178
+msgid "All done."
+msgstr "Valmista."
+
+#: wordpress-importer.php:178
+msgid "Have fun!"
+msgstr "Pidä hauskaa!"
+
+#: wordpress-importer.php:827
+msgid "Invalid file type"
+msgstr "Tiedoston tyyppi ei kelpaa."
+
+#: wordpress-importer.php:294
+msgid "Import author:"
+msgstr "Tuo kirjoittaja:"
+
+#: wordpress-importer.php:274
+msgid "Import Attachments"
+msgstr "Tuo liitteet"
+
+#: wordpress-importer.php:871
+msgid "Remote server did not respond"
+msgstr "Etäpalvelin ei vastaa"
+
+#: wordpress-importer.php:1091
+msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
+msgstr "Tuo <strong>artikkelit, sivut, kommentit, avainkentät, kategoriat ja avainsanat</strong> WordPress-vientitiedostosta."
+
+#: wordpress-importer.php:134 wordpress-importer.php:143
+#: wordpress-importer.php:194 wordpress-importer.php:202
+msgid "Sorry, there has been an error."
+msgstr "Valitettavasti on tapahtunut virhe."
+
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/wordpress-importer/"
 msgstr "http://wordpress.org/extend/plugins/wordpress-importer/"
@@ -183,22 +191,14 @@ msgstr "http://wordpress.org/extend/plugins/wordpress-importer/"
 msgid "wordpressdotorg"
 msgstr "wordpresspisteorg"
 
-#: wordpress-importer.php:884
-msgid "Remote file is incorrect size"
-msgstr "Tiedosto on väärän kokoinen."
-
-#: wordpress-importer.php:895
-msgid "Remote file is too large, limit is %s"
-msgstr "Tiedosto on liian suuri, raja on %s."
-
-#: wordpress-importer.php:827
-msgid "Invalid file type"
-msgstr "Tiedoston tyyppi ei kelpaa."
-
-#: wordpress-importer.php:1091
-msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
-msgstr "Tuo <strong>artikkelit, sivut, kommentit, avainkentät, kategoriat ja avainsanat</strong> WordPress-vientitiedostosta."
+#: wordpress-importer.php:261
+msgid "Assign Authors"
+msgstr "Määritä kirjoittajat"
 
 #: wordpress-importer.php:1016
 msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
 msgstr "Moikka! Lataa WordPressin eXtended RSS (WXR)-tiedostosi ja tuontiohjelma tuo WordPress-blogistasi kaikki artikkelit, sivut, kommentit, mukautetut kentät, kategoriat ja avainsanat tälle sivustolle."
+
+#: wordpress-importer.php:994
+msgid "Import WordPress"
+msgstr "WordPress-tuonti"

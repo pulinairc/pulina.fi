@@ -34,6 +34,10 @@ msgstr "Näkyy sivuston alatunnisteessa."
 msgid "http://wordpress.org/themes/twentythirteen"
 msgstr "http://wordpress.org/themes/twentythirteen"
 
+#: image.php:38
+msgid "Link to full-size image"
+msgstr "Linkki täysikokoiseen kuvaan"
+
 #: functions.php:231
 msgid "Main Widget Area"
 msgstr "Ensisijainen vimpainalue"
@@ -53,26 +57,6 @@ msgstr "Täysi resoluutio"
 #: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
 msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
 msgstr "Twenty Thirteen vaatii vähintään WordPressin version 3.6. Käytät versiota %s. Päivitä ja yritä uudelleen."
-
-#: image.php:38
-msgid "Link to full-size image"
-msgstr "Linkki täysikokoiseen kuvaan"
-
-#: tag.php:21
-msgid "Tag Archives: %s"
-msgstr "Avainsana-arkisto: %s"
-
-#: search.php:18
-msgid "Search Results for: %s"
-msgstr "Hakutulokset kohteelle: %s"
-
-#. Author of the plugin/theme
-msgid "the WordPress team"
-msgstr "WordPress-tiimi"
-
-#. Theme Name of the plugin/theme
-msgid "Twenty Thirteen"
-msgstr "Twenty Thirteen"
 
 #: 404.php:21
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
@@ -111,6 +95,14 @@ msgstr "Arkistot"
 #: author-bio.php:26
 msgid "About %s"
 msgstr "Tietoja %s"
+
+#: author-bio.php:30
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Näytä kaikki kirjoittajan %s artikkelit <span class=\"meta-nav\">&rarr;</span>"
+
+#: author.php:31
+msgid "All posts by %s"
+msgstr "Kaikki kirjoittajan %s artikkelit"
 
 #: category.php:19
 msgid "Category Archives: %s"
@@ -188,7 +180,7 @@ msgstr "Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen er
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
-#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.4)  #-#-#-#-#
+#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.3)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:19
 msgid "http://wordpress.org/"
@@ -201,6 +193,10 @@ msgstr "Semanttinen, henkilökohtainen julkaisualusta"
 #: footer.php:19
 msgid "Proudly powered by %s"
 msgstr "Voimanlähteenä %s"
+
+#: functions.php:97
+msgid "Navigation Menu"
+msgstr "Navigaatio"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Source Sans Pro, translate this to 'off'. Do not translate
@@ -301,18 +297,22 @@ msgctxt "header image description"
 msgid "Star"
 msgstr "Tähti"
 
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "Hakutulokset kohteelle: %s"
+
+#: tag.php:21
+msgid "Tag Archives: %s"
+msgstr "Avainsana-arkisto: %s"
+
 #: taxonomy-post_format.php:23
 msgid "%s Archives"
 msgstr "Arkisto: %s"
 
-#: functions.php:97
-msgid "Navigation Menu"
-msgstr "Navigaatio"
+#. Theme Name of the plugin/theme
+msgid "Twenty Thirteen"
+msgstr "Twenty Thirteen"
 
-#: author-bio.php:30
-msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Näytä kaikki kirjoittajan %s artikkelit <span class=\"meta-nav\">&rarr;</span>"
-
-#: author.php:31
-msgid "All posts by %s"
-msgstr "Kaikki kirjoittajan %s artikkelit"
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "WordPress-tiimi"

@@ -110,9 +110,13 @@ msgstr "Älä näytä avainsanaa sivulla."
 msgid "In 2014, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier."
 msgstr "Vuoden 2014 oletusteema on mukautuva, moderni ja huoliteltu verkkolehden toteuttamiseen tarkoitettu teema. Voit nostaa etusivulle halutut artikkelit joko ruudukkona (grid) tai karusellina (slider). Teemassa on kolme vimpainaluetta ja kaksi sivupohjaa. Toinen sivupohja mahdollistaa täyslevyisen sivun ilman vimpaimia ja toinen sivupohja esittelee kirjoittajat. Verkkolehden luominen ei ole koskaan ollut helpompaa."
 
-#: functions.php:191
-msgid "Appears in the footer section of the site."
-msgstr "Näkyy sivuston alatunnisteessa."
+#: functions.php:258
+msgid "Previous"
+msgstr "Edellinen"
+
+#: functions.php:259
+msgid "Next"
+msgstr "Seuraava"
 
 #: 404.php:21
 msgid "It looks like nothing was found at this location. Maybe try a search?"
@@ -122,21 +126,30 @@ msgstr "Näyttää siltä että täällä ei ole mitään. Kokeilepa hakua?"
 msgid "All posts by %s"
 msgstr "Kaikki kirjoittajan %s artikkelit"
 
-#: inc/template-tags.php:58
-msgid "Posts navigation"
-msgstr "Artikkelien selaus"
+#: content-aside.php:17 content-audio.php:17 content-featured-post.php:28
+#: content-gallery.php:17 content-image.php:17 content-link.php:17
+#: content-quote.php:17 content-video.php:17 content.php:19
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ", "
 
-#: inc/widgets.php:255
-msgid "Title:"
-msgstr "Otsikko:"
+#: functions.php:182
+msgid "Additional sidebar that appears on the right."
+msgstr "Sivupalkki, joka näkyy oikealla."
 
-#: inc/template-tags.php:91
-msgid "<span class=\"meta-nav\">Previous Post</span>%title"
-msgstr "<span class=\"meta-nav\">Edellinen artikkeli</span>%title"
+#: functions.php:189
+msgid "Footer Widget Area"
+msgstr "Alapalkin vimpainalue"
 
-#: inc/template-tags.php:92
-msgid "<span class=\"meta-nav\">Next Post</span>%title"
-msgstr "<span class=\"meta-nav\">Seuraava artikkeli</span>%title"
+#: functions.php:191
+msgid "Appears in the footer section of the site."
+msgstr "Näkyy sivuston alatunnisteessa."
+
+#: functions.php:376
+msgid "%d Article"
+msgid_plural "%d Articles"
+msgstr[0] "%d Artikkeli"
+msgstr[1] "%d Artikkelia"
 
 #: image.php:65
 msgid "Previous Image"
@@ -146,13 +159,53 @@ msgstr "Edellinen kuva"
 msgid "Next Image"
 msgstr "Seuraava kuva"
 
-#: functions.php:259
-msgid "Next"
-msgstr "Seuraava"
+#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
+msgid "Twenty Fourteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Fourteen vaatii vähintään WordPress-version 3.6. Sinulla on käytössäsi versio %s. Päivitä ja yritä uudestaan."
 
-#: functions.php:258
-msgid "Previous"
-msgstr "Edellinen"
+#: inc/customizer.php:34 inc/customizer.php:35
+msgid "Background may only be visible on wide screens."
+msgstr "Tausta saattaa olla näkyvissä vain isommalla näyttöresoluutiolla."
+
+#: inc/customizer.php:40 inc/featured-content.php:403
+msgid "Featured Content"
+msgstr "Etusivun nostetut artikkelit"
+
+#: inc/customizer.php:56
+msgid "Layout"
+msgstr "Ulkoasu"
+
+#: inc/customizer.php:60
+msgid "Grid"
+msgstr "Ruudukko"
+
+#: inc/customizer.php:61
+msgid "Slider"
+msgstr "Karuselli"
+
+#: inc/customizer.php:109
+msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Twenty Fourteen uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
+msgstr "Paranna sivustosi ulkoasua käyttämällä <a href=\"%s\">artikkelikuvia</a> niihin artikkeleihin, joita haluat korostaa. Twenty Fourteen näyttää artikkelikuvat otsikon yläpuolella ja etusivulla nostettujen artikkelien kohdalla."
+
+#: inc/template-tags.php:58
+msgid "Posts navigation"
+msgstr "Artikkelien selaus"
+
+#: inc/template-tags.php:89
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "<span class=\"meta-nav\">Julkaistu</span>%title"
+
+#: inc/template-tags.php:91
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr "<span class=\"meta-nav\">Edellinen artikkeli</span>%title"
+
+#: inc/template-tags.php:92
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr "<span class=\"meta-nav\">Seuraava artikkeli</span>%title"
+
+#: inc/widgets.php:34
+msgid "Twenty Fourteen Ephemera"
+msgstr "Twenty Fourteen Ephemera"
 
 #: inc/widgets.php:62 taxonomy-post_format.php:39
 msgid "Audio"
@@ -163,6 +216,10 @@ msgid "This gallery contains <a href=\"%1$s\" rel=\"bookmark\">%2$s photo</a>."
 msgid_plural "This gallery contains <a href=\"%1$s\" rel=\"bookmark\">%2$s photos</a>."
 msgstr[0] "Tässä galleriassa on <a href=\"%1$s\" rel=\"bookmark\">%2$s kuva</a>."
 msgstr[1] "Tässä galleriassa on <a href=\"%1$s\" rel=\"bookmark\">%2$s kuvaa</a>."
+
+#: inc/widgets.php:255
+msgid "Title:"
+msgstr "Otsikko:"
 
 #: inc/widgets.php:258
 msgid "Number of posts to show:"
@@ -176,66 +233,17 @@ msgstr "Näytettävät artikkelimuodot:"
 msgid "Contributor Page"
 msgstr "Kirjoittajat-sivu"
 
-#: functions.php:376
-msgid "%d Article"
-msgid_plural "%d Articles"
-msgstr[0] "%d Artikkeli"
-msgstr[1] "%d Artikkelia"
+#: category.php:20
+msgid "Category Archives: %s"
+msgstr "Aihearkisto: %s"
 
-#: inc/customizer.php:34 inc/customizer.php:35
-msgid "Background may only be visible on wide screens."
-msgstr "Tausta saattaa olla näkyvissä vain isommalla näyttöresoluutiolla."
+#: tag.php:22
+msgid "Tag Archives: %s"
+msgstr "Avainsana-arkisto: %s"
 
-#: content-aside.php:17 content-audio.php:17 content-featured-post.php:28
-#: content-gallery.php:17 content-image.php:17 content-link.php:17
-#: content-quote.php:17 content-video.php:17 content.php:19
-msgctxt "Used between list items, there is a space after the comma."
-msgid ", "
-msgstr ", "
-
-#: inc/customizer.php:56
-msgid "Layout"
-msgstr "Ulkoasu"
-
-#: inc/customizer.php:60
-msgid "Grid"
-msgstr "Ruudukko"
-
-#: inc/customizer.php:40 inc/featured-content.php:403
-msgid "Featured Content"
-msgstr "Etusivun nostetut artikkelit"
-
-#: inc/widgets.php:34
-msgid "Twenty Fourteen Ephemera"
-msgstr "Twenty Fourteen Ephemera"
-
-#: inc/template-tags.php:89
-msgid "<span class=\"meta-nav\">Published In</span>%title"
-msgstr "<span class=\"meta-nav\">Julkaistu</span>%title"
-
-#: inc/customizer.php:61
-msgid "Slider"
-msgstr "Karuselli"
-
-#: functions.php:182
-msgid "Additional sidebar that appears on the right."
-msgstr "Sivupalkki, joka näkyy oikealla."
-
-#: functions.php:189
-msgid "Footer Widget Area"
-msgstr "Alapalkin vimpainalue"
-
-#: inc/customizer.php:109
-msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Twenty Fourteen uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
-msgstr "Paranna sivustosi ulkoasua käyttämällä <a href=\"%s\">artikkelikuvia</a> niihin artikkeleihin, joita haluat korostaa. Twenty Fourteen näyttää artikkelikuvat otsikon yläpuolella ja etusivulla nostettujen artikkelien kohdalla."
-
-#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
-msgid "Twenty Fourteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
-msgstr "Twenty Fourteen vaatii vähintään WordPress-version 3.6. Sinulla on käytössäsi versio %s. Päivitä ja yritä uudestaan."
-
-#: footer.php:21
-msgid "Proudly powered by %s"
-msgstr "Voimanlähteenä %s"
+#: archive.php:31
+msgid "Daily Archives: %s"
+msgstr "Arkistot päivän mukaan: %s"
 
 #: archive.php:34
 msgid "Monthly Archives: %s"
@@ -245,35 +253,9 @@ msgstr "Arkistot kuukauden mukaan: %s"
 msgid "Yearly Archives: %s"
 msgstr "Arkistot vuoden mukaan: %s"
 
-#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.3)  #-#-#-#-#
-#. Author URI of the plugin/theme
-#: footer.php:21
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#. Author of the plugin/theme
-msgid "the WordPress team"
-msgstr "WordPress-tiimi"
-
-#: comments.php:36 comments.php:54
-msgid "Newer Comments &rarr;"
-msgstr "Uudemmat kommentit &rarr;"
-
-#: comments.php:35 comments.php:53
-msgid "&larr; Older Comments"
-msgstr "&larr; Vanhemmat kommentit"
-
-#: comments.php:59
-msgid "Comments are closed."
-msgstr "Kommentointi on suljettu."
-
-#: category.php:20
-msgid "Category Archives: %s"
-msgstr "Aihearkisto: %s"
-
-#: comments.php:34 comments.php:52
-msgid "Comment navigation"
-msgstr "Kommenttien selaus"
+#: archive.php:40 taxonomy-post_format.php:51
+msgid "Archives"
+msgstr "Arkistot"
 
 #: comments.php:27
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -281,25 +263,21 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Yksi vastaus artikkeliin &rdquo;%2$s&rdquo;"
 msgstr[1] "%1$s vastausta artikkeliin &rdquo;%2$s&rdquo;"
 
-#: tag.php:22
-msgid "Tag Archives: %s"
-msgstr "Avainsana-arkisto: %s"
+#: comments.php:34 comments.php:52
+msgid "Comment navigation"
+msgstr "Kommenttien selaus"
 
-#: search.php:18
-msgid "Search Results for: %s"
-msgstr "Hakutulokset kohteelle: %s"
+#: comments.php:35 comments.php:53
+msgid "&larr; Older Comments"
+msgstr "&larr; Vanhemmat kommentit"
 
-#: header.php:48
-msgid "Search"
-msgstr "Haku"
+#: comments.php:36 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr "Uudemmat kommentit &rarr;"
 
-#: archive.php:40 taxonomy-post_format.php:51
-msgid "Archives"
-msgstr "Arkistot"
-
-#: inc/widgets.php:127 inc/widgets.php:172
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Lue loppuun <span class=\"meta-nav\">&rarr;</span>"
+#: comments.php:59
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
 
 #: content-aside.php:53 content-audio.php:53 content-gallery.php:53
 #: content-image.php:53 content-link.php:53 content-page.php:22
@@ -314,75 +292,17 @@ msgstr "Sivut:"
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: inc/template-tags.php:51
-msgid "Next &rarr;"
-msgstr "Seuraava &rarr;"
-
-#: inc/template-tags.php:50
-msgid "&larr; Previous"
-msgstr "&larr; Edellinen"
-
-#: functions.php:495
-msgid "Page %s"
-msgstr "Sivu %s"
-
-#: inc/template-tags.php:85
-msgid "Post navigation"
-msgstr "Artikkelien selaus"
-
-#: header.php:52
-msgid "Primary Menu"
-msgstr "Ensisijainen valikko"
-
-#: content-none.php:27
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
-
-#: header.php:53
-msgid "Skip to content"
-msgstr "Siirry sisältöön"
-
-#: archive.php:31
-msgid "Daily Archives: %s"
-msgstr "Arkistot päivän mukaan: %s"
-
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
 msgid "Leave a comment"
 msgstr "Kommentoi"
 
-#: content-none.php:12
-msgid "Nothing Found"
-msgstr "Mitään ei löytynyt"
-
-#: content-none.php:18
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s\">Aloita tästä</a>."
-
-#: inc/template-tags.php:109
-msgid "Sticky"
-msgstr "Kiinnitetty"
-
-#: inc/widgets.php:58 taxonomy-post_format.php:36
-msgid "Videos"
-msgstr "Videot"
-
-#: inc/widgets.php:54 taxonomy-post_format.php:33
-msgid "Images"
-msgstr "Kuvat"
-
-#: inc/widgets.php:74 taxonomy-post_format.php:48
-msgid "Galleries"
-msgstr "Galleriat"
-
-#: inc/widgets.php:70 taxonomy-post_format.php:45
-msgid "Links"
-msgstr "Linkit"
-
-#: inc/widgets.php:66 taxonomy-post_format.php:42
-msgid "Quotes"
-msgstr "Lainaukset"
+#: content-aside.php:37 content-audio.php:37 content-gallery.php:37
+#: content-image.php:37 content-link.php:37 content-quote.php:37
+#: content-video.php:37 content.php:38 inc/widgets.php:194
+msgid "1 Comment"
+msgstr "Yksi kommentti"
 
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
@@ -390,11 +310,19 @@ msgstr "Lainaukset"
 msgid "% Comments"
 msgstr "% kommenttia"
 
-#: content-aside.php:37 content-audio.php:37 content-gallery.php:37
-#: content-image.php:37 content-link.php:37 content-quote.php:37
-#: content-video.php:37 content.php:38 inc/widgets.php:194
-msgid "1 Comment"
-msgstr "Yksi kommentti"
+#: inc/widgets.php:127 inc/widgets.php:172
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lue loppuun <span class=\"meta-nav\">&rarr;</span>"
+
+#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: footer.php:21
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:21
+msgid "Proudly powered by %s"
+msgstr "Voimanlähteenä %s"
 
 #: functions.php:83
 msgid "Top primary menu"
@@ -412,33 +340,105 @@ msgstr "Ensisijainen vimpainalue"
 msgid "Main sidebar that appears on the left."
 msgstr "Sivupalkki, joka sijaitsee vasemmalla."
 
+#: functions.php:180
+msgid "Content Sidebar"
+msgstr "Sisällön sivupalkki"
+
 #: functions.php:213
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
 
-#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.3)  #-#-#-#-#
-#. Theme Name of the plugin/theme
-#: inc/customizer.php:105
-msgid "Twenty Fourteen"
-msgstr "Twenty Fourteen"
+#: functions.php:495
+msgid "Page %s"
+msgstr "Sivu %s"
 
-#: inc/widgets.php:79 taxonomy-post_format.php:30
-msgid "Asides"
-msgstr "Sivuhuomautukset"
+#: header.php:48
+msgid "Search"
+msgstr "Haku"
 
-#. Template Name of the plugin/theme
-msgid "Full Width Page"
-msgstr "Täysi leveys -sivu"
+#: header.php:52
+msgid "Primary Menu"
+msgstr "Ensisijainen valikko"
+
+#: header.php:53
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: inc/template-tags.php:85
+msgid "Post navigation"
+msgstr "Artikkelien selaus"
+
+#: inc/template-tags.php:50
+msgid "&larr; Previous"
+msgstr "&larr; Edellinen"
+
+#: inc/template-tags.php:51
+msgid "Next &rarr;"
+msgstr "Seuraava &rarr;"
+
+#: inc/template-tags.php:109
+msgid "Sticky"
+msgstr "Kiinnitetty"
+
+#: content-none.php:12
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt"
+
+#: content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s\">Aloita tästä</a>."
 
 #: content-none.php:22
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "Pahoittelut mutta mitään ei löytynyt hakuehdoillasi. Kokeile uudelleen joillakin toisilla hakusanoilla."
 
-#: functions.php:180
-msgid "Content Sidebar"
-msgstr "Sisällön sivupalkki"
+#: content-none.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
+
+#: inc/widgets.php:58 taxonomy-post_format.php:36
+msgid "Videos"
+msgstr "Videot"
+
+#: inc/widgets.php:54 taxonomy-post_format.php:33
+msgid "Images"
+msgstr "Kuvat"
 
 #: inc/widgets.php:55
 msgid "More images"
 msgstr "Lisää kuvia"
+
+#: inc/widgets.php:74 taxonomy-post_format.php:48
+msgid "Galleries"
+msgstr "Galleriat"
+
+#: inc/widgets.php:79 taxonomy-post_format.php:30
+msgid "Asides"
+msgstr "Sivuhuomautukset"
+
+#: inc/widgets.php:70 taxonomy-post_format.php:45
+msgid "Links"
+msgstr "Linkit"
+
+#: inc/widgets.php:66 taxonomy-post_format.php:42
+msgid "Quotes"
+msgstr "Lainaukset"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "Hakutulokset kohteelle: %s"
+
+#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.2)  #-#-#-#-#
+#. Theme Name of the plugin/theme
+#: inc/customizer.php:105
+msgid "Twenty Fourteen"
+msgstr "Twenty Fourteen"
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "WordPress-tiimi"
+
+#. Template Name of the plugin/theme
+msgid "Full Width Page"
+msgstr "Täysi leveys -sivu"
