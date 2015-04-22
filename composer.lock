@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "85f45c55ed4a951a4836aa538003fff6",
+    "hash": "5b4207d2f9da5597f5801f9a31f1d0e3",
     "packages": [
         {
             "name": "composer/installers",
@@ -81,16 +81,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "b6a0e3c2ef178f97ce8b709897fd4411420b3ccb"
+                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b6a0e3c2ef178f97ce8b709897fd4411420b3ccb",
-                "reference": "b6a0e3c2ef178f97ce8b709897fd4411420b3ccb",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
+                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-02-18 22:16:06"
+            "time": "2015-04-21 14:31:05"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -584,15 +584,15 @@
         },
         {
             "name": "wpackagist-plugin/buddypress",
-            "version": "2.2.2.1",
+            "version": "2.2.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/buddypress/",
-                "reference": "tags/2.2.2.1"
+                "reference": "tags/2.2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/buddypress.2.2.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/buddypress.2.2.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -644,15 +644,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.0.1",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.0.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.0.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -660,7 +660,8 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/",
+            "time": "2015-04-21 15:48:30"
         },
         {
             "name": "wpackagist-plugin/wp-html-compression",
@@ -726,7 +727,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wpackagist-plugin/wordpress-seo": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
