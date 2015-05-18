@@ -58,10 +58,9 @@
     "wpackagist-plugin/wordpress-seo":"@dev",
     "wpackagist-plugin/disqus-comment-system":"*",
     "wpackagist-plugin/wp-html-compression":"*",  
-    "wpackagist-plugin/wp-super-cache":"*",
-    "wpackagist-plugin/wp-last-login":"*",
-    "wpackagist-plugin/theme-my-login":"*",
-    "wpackagist-plugin/buddypress":"*"
+    "wpackagist-plugin/w3-total-cache":"*",
+    "wpackagist-plugin/google-analyticator":"*",
+    "wpackagist-plugin/simple-history":"*"
   },
   "extra": {
     "dropin-paths": {
