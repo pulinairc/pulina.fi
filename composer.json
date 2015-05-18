@@ -54,10 +54,8 @@
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
-    "wpackagist-plugin/akismet":"*",
     "wpackagist-plugin/wordpress-seo":"@dev",
-    "wpackagist-plugin/disqus-comment-system":"*",
-    "wpackagist-plugin/wp-html-compression":"*",  
+    "wpackagist-plugin/disqus-comment-system":"*", 
     "wpackagist-plugin/w3-total-cache":"*",
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*"
