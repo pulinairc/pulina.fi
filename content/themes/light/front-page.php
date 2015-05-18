@@ -160,7 +160,7 @@ echo $pulistumaara; ?></span>
 
 		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://webchat.quakenet.org/?channels=#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Join chat</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
 
-		<p><a href="http://webchat.quakenet.org/?channels=#pulina" class="btn">Boom, irkkiin!</a></p>
+		<p><a href="http://webchat.quakenet.org/?channels=pulina&amp;uio=MTY9dHJ1ZSYyPXRydWUmOT10cnVlJjExPTE2NCYxNT10cnVl91" class="btn">Boom, irkkiin!</a></p>
 
 	</div>
 
