@@ -1,0 +1,512 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Meetup\n"
+"POT-Creation-Date: 2015-05-22 16:46+0200\n"
+"PO-Revision-Date: 2015-05-22 17:00+0200\n"
+"Last-Translator: Roni Laukkarinen <roni@dude.fi>\n"
+"Language-Team: Roni Laukkarinen <roni@dude.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/admin/attendee-list.php:2
+#, php-format
+msgid "Attendee List: %s"
+msgstr "Osallistujalista: %s"
+
+#: includes/admin/attendee-list.php:7 meetup.php:217
+msgid "Edit Meetup"
+msgstr "Muokkaa miittiä"
+
+#: includes/admin/attendee-list.php:8 meetup.php:214
+msgid "View Meetup"
+msgstr "Näytä miitti"
+
+#: includes/admin/attendee-list.php:12
+msgid "Export Users"
+msgstr "Vie käyttäjät"
+
+#: includes/admin/attendee-list.php:16
+msgid "Booking has been cancelled!"
+msgstr "Varaus on peruutettu!"
+
+#: includes/admin/attendee-list.php:25
+msgid "No attendies has been found!"
+msgstr "Yhtään osallistujaa ei löytynyt!"
+
+#: includes/admin/attendee-list.php:34
+msgid "Name"
+msgstr "Nimi"
+
+#: includes/admin/attendee-list.php:35 includes/admin/metadata.php:72
+msgid "Email"
+msgstr "Sähköpostiosoite"
+
+#: includes/admin/attendee-list.php:36
+msgid "No. of Seat"
+msgstr "Paikan numero"
+
+#: includes/admin/attendee-list.php:37
+msgid "Registered"
+msgstr "Ilmoittautunut"
+
+#: includes/admin/attendee-list.php:55
+msgid "Cancel Booking"
+msgstr "Peruuta varaus"
+
+#: includes/admin/attendee-list.php:58
+msgid "Edit User"
+msgstr "Muokkaa käyttäjää"
+
+#: includes/admin/functions.php:18
+msgid "Attendee List"
+msgstr "Osallistujalista"
+
+#: includes/admin/functions.php:59
+msgid "Name,Email,Seat,Registered\n"
+msgstr "Nimi,sähköpostiosoite,paikka,ilmoittautunut\n"
+
+#: includes/admin/functions.php:104
+msgid "Meetup Name"
+msgstr "Miitin nimi"
+
+#: includes/admin/functions.php:105
+msgid "Date"
+msgstr "Päiväys"
+
+#: includes/admin/functions.php:106 templates/meetup-header.php:52
+msgid "Booked"
+msgstr "Varattu"
+
+#: includes/admin/functions.php:107 templates/meetup-header.php:56
+msgid "Available"
+msgstr "Saatavilla"
+
+#: includes/admin/functions.php:108 includes/admin/metadata.php:24
+#: templates/meetup-header.php:48
+msgid "Capacity"
+msgstr "Kapasiteetti"
+
+#: includes/admin/metadata.php:14
+msgid "Start Time"
+msgstr "Aloitusaika"
+
+#: includes/admin/metadata.php:19
+msgid "End Time"
+msgstr "Päättymisaika"
+
+#: includes/admin/metadata.php:26
+msgid "How many guests can join this meetup?"
+msgstr "Kuinka monta vierasta voi osallistua tähän miittiin?"
+
+#: includes/admin/metadata.php:31
+msgid "Address"
+msgstr "Osoite"
+
+#: includes/admin/metadata.php:33
+msgid "Address of the meetup place"
+msgstr "Miittipaikan osoite"
+
+#: includes/admin/metadata.php:37
+msgid "Registration Start Date"
+msgstr "Ilmoittautumisen aloitusajankohta"
+
+#: includes/admin/metadata.php:42
+msgid "Registration End Date"
+msgstr "Ilmoittautumisen päättymisajankohta"
+
+#: includes/admin/metadata.php:47
+msgid "Per User Booking Limit"
+msgstr "Käyttäjäkohtainen varausraja"
+
+#: includes/admin/metadata.php:49
+msgid "How many seats a user can book?"
+msgstr "Kuinka monta paikkaa yksi käyttäjä voi varata?"
+
+#: includes/admin/metadata.php:56 includes/functions.php:184
+msgid "Speakers"
+msgstr "Puhujat"
+
+#: includes/admin/metadata.php:62
+msgid "Speaker Name"
+msgstr "Puhujan nimi"
+
+#: includes/admin/metadata.php:67
+msgid "Topic Name"
+msgstr "Aiheen nimi"
+
+#: includes/admin/metadata.php:74
+msgid "This email address will be used to pull photo from Gravatar"
+msgstr ""
+"Tätä sähköpostiosoitetta käytetään käyttäjäkuvan hakemiseen Gravatar-"
+"palvelusta"
+
+#: includes/admin/metadata.php:78
+msgid "Website"
+msgstr "Verkkosivu"
+
+#: includes/admin/metadata.php:80
+msgid "Website url of the speaker"
+msgstr "Puhujan kotisivujen osoite"
+
+#: includes/admin/metadata.php:84
+msgid "Speaker Bio"
+msgstr "Puhujan esittely"
+
+#: includes/admin/metadata.php:86
+msgid "Some details about the speaker"
+msgstr "Yksityiskohtaisempia tietoja puhujasta"
+
+#: includes/admin/metadata.php:90
+msgid "Slide URL"
+msgstr "Sliden osoite"
+
+#: includes/admin/metadata.php:92
+msgid "Website url of the slide"
+msgstr "Sliden verkkosivun osoite"
+
+#: includes/admin/metadata.php:100
+msgid "Details"
+msgstr "Tiedot"
+
+#: includes/admin/metadata.php:102
+msgid "Some texts about sponsors"
+msgstr "Esittelytekstiä sponsoreista"
+
+#: includes/admin/metadata.php:106 includes/functions.php:192
+msgid "Sponsors"
+msgstr "Sponsorit"
+
+#: includes/admin/metadata.php:112
+msgid "Sponsor Name"
+msgstr "Sponsorin nimi"
+
+#: includes/admin/metadata.php:117
+msgid "Sponsor Logo"
+msgstr "Sponsorin logo"
+
+#: includes/admin/metadata.php:122 includes/admin/metadata.php:179
+msgid "Sponsor Details"
+msgstr "Sponsorin tiedot"
+
+#: includes/admin/metadata.php:124
+msgid "Additional details about the sponsor"
+msgstr "Lisätietoja sponsorista"
+
+#: includes/admin/metadata.php:133
+msgid "Time Entry"
+msgstr "Aikamerkintä"
+
+#: includes/admin/metadata.php:139 templates/meetup-schedule.php:27
+msgid "Time"
+msgstr "Aika"
+
+#: includes/admin/metadata.php:144 templates/meetup-schedule.php:28
+msgid "Agenda"
+msgstr "Aikataulu"
+
+#: includes/admin/metadata.php:149 templates/meetup-schedule.php:29
+msgid "Comments"
+msgstr "Kommentit"
+
+#: includes/admin/metadata.php:151
+msgid "Additional details about the schedule"
+msgstr "Aikataulun lisätiedot"
+
+#: includes/admin/metadata.php:160
+msgid "Gallery Images"
+msgstr "Galleriakuvat"
+
+#: includes/admin/metadata.php:167
+msgid "Meetup Details"
+msgstr "Miitin tiedot"
+
+#: includes/admin/metadata.php:173
+msgid "Speaker Details"
+msgstr "Puhujan tiedot"
+
+#: includes/admin/metadata.php:185 includes/functions.php:188
+msgid "Schedule"
+msgstr "Aikataulu"
+
+#: includes/admin/metadata.php:191
+msgid "Image Gallery"
+msgstr "Kuvagalleria"
+
+#: includes/admin/settings.php:26
+msgid "Facebook API"
+msgstr "Facebook API"
+
+#: includes/admin/settings.php:34
+msgid "Facebook App ID "
+msgstr "Facebook App ID"
+
+#: includes/admin/settings.php:35
+msgid "Enter the app id from your facebook application"
+msgstr "Anna Facebookin App ID developers.facebook.com Appsisi tiedoista"
+
+#: includes/admin/settings.php:55
+msgid "Settings"
+msgstr "Asetukset"
+
+#: includes/admin/settings.php:56 includes/functions.php:196
+msgid "Attendies"
+msgstr "Osallistujat"
+
+#: includes/admin/settings.php:78
+msgid "No meetup has been found!"
+msgstr "Yhtään miittiä ei löytynyt!"
+
+#: includes/ajax.php:103
+msgid "Please enter a valid seat number"
+msgstr "Anna kelvollinen paikkanumero"
+
+#: includes/ajax.php:130
+msgid "You have successfully booked the seat!"
+msgstr "Sinulle on onnistuneesti varattu paikka!"
+
+#: includes/ajax.php:152
+msgid "Please enter a valid email address"
+msgstr "Ole hyvä ja anna kelvollinen sähköpostiosoite"
+
+#: includes/ajax.php:159
+msgid "You are already registered to our site, please login"
+msgstr "Olet jo rekisteröitynyt, ole hyvä ja kirjaudu sisään"
+
+#: includes/ajax.php:214
+msgid "Your booking has been cancelled!"
+msgstr "Varauksesi on peruutettu!"
+
+#: includes/booking.php:46
+msgid "Sorry, additional seat is not available."
+msgstr "Pahoittelut, ylimääräistä paikkaa ei ole saatavilla."
+
+#: includes/booking.php:66
+msgid "Sorry, your required number of seat(s) are not available."
+msgstr "Pahoittelut, haluamaasi paikkanumeroa ei ole saatavilla."
+
+#: includes/functions.php:180
+msgid "Event Details"
+msgstr "Tapahtuman tiedot"
+
+#: includes/functions.php:200
+msgid "Gallery"
+msgstr "Galleria"
+
+#: includes/functions.php:264
+msgid "Post navigation"
+msgstr "Navigointi"
+
+#: includes/functions.php:265
+msgid "<span class=\"meta-nav\">&larr;</span> Older Meetups"
+msgstr "<span class=\"meta-nav\">&larr;</span> Vanhempia miittejä"
+
+#: includes/functions.php:266
+msgid "Newer Meetups <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Uudempia miittejä <span class=\"meta-nav\">&rarr;</span>"
+
+#: includes/functions.php:316 templates/meetup-content.php:266
+#, php-format
+msgid "For details, link here: %s"
+msgstr "Tässä linkki lisätietoihin: %s"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:361
+msgid "Add New"
+msgstr "Lisää uusi"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:430
+msgid "Add File"
+msgstr "Lisää tiedosto"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:448
+#: lib/Custom-Meta-Boxes/classes.fields.php:508
+msgid "Remove"
+msgstr "Poista"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:496
+msgid "Add Image"
+msgstr "Lisää kuva"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:990
+msgctxt "select field"
+msgid "None"
+msgstr "Ei mitään"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:1011
+msgid "Type to search"
+msgstr "Kirjoita etsiäksesi"
+
+#: lib/Custom-Meta-Boxes/classes.fields.php:1370
+msgid "Add New Group"
+msgstr "Lisää uusi ryhmä"
+
+#: meetup.php:209
+msgctxt "Post Type General Name"
+msgid "Meetups"
+msgstr "Miitit"
+
+#: meetup.php:210
+msgctxt "Post Type Singular Name"
+msgid "Meetup"
+msgstr "Miitti"
+
+#: meetup.php:211 templates/archive-meetup.php:18
+msgid "Meetups"
+msgstr "Miitit"
+
+#: meetup.php:212
+msgid "Parent Meetup:"
+msgstr "Päämiitti:"
+
+#: meetup.php:213
+msgid "All Meetups"
+msgstr "Kaikki miitit"
+
+#: meetup.php:215
+msgid "Create New Meetup"
+msgstr "Luo uusi miitti"
+
+#: meetup.php:216
+msgid "Create New"
+msgstr "Luo uusi"
+
+#: meetup.php:218
+msgid "Update Meetup"
+msgstr "Päivitä miitti"
+
+#: meetup.php:219
+msgid "Search Meetup"
+msgstr "Etsi miittiä"
+
+#: meetup.php:220
+msgid "No meetup found"
+msgstr "Miittiä ei löytynyt"
+
+#: meetup.php:221
+msgid "No meetup found in Trash"
+msgstr "Miittiä ei löytynyt roskakorista"
+
+#: templates/meetup-attendies.php:26
+#, php-format
+msgid "%d Seat"
+msgstr "%d paikka"
+
+#: templates/meetup-attendies.php:35
+msgid "No Attendies found!"
+msgstr "Osallistujia ei löytynyt!"
+
+#: templates/meetup-content.php:37
+msgid "Join the Meetup"
+msgstr "Liity miittiin"
+
+#: templates/meetup-content.php:54
+msgid "Connect to Register"
+msgstr "Yhdistä rekisteröityäksesi"
+
+#: templates/meetup-content.php:58
+msgid "or, register with email"
+msgstr "tai rekisteröidy sähköpostiosoitteella"
+
+#: templates/meetup-content.php:113
+msgid "Register with Facebook"
+msgstr "Rekisteröidy Facebookilla"
+
+#: templates/meetup-content.php:119 templates/meetup-content.php:120
+msgid "First Name"
+msgstr "Etunimi"
+
+#: templates/meetup-content.php:124 templates/meetup-content.php:125
+msgid "Last Name"
+msgstr "Sukunimi"
+
+#: templates/meetup-content.php:131
+msgid "Email Address"
+msgstr "Sähköpostiosoite"
+
+#: templates/meetup-content.php:147 templates/meetup-content.php:172
+msgid "Book My Seat"
+msgstr "Varaa paikka"
+
+#: templates/meetup-content.php:178 templates/meetup-content.php:203
+#, php-format
+msgid "Congratulations! You've booked %d seat(s)."
+msgstr "Onnittelut! Olet varannut paikat miittiin: %d."
+
+#: templates/meetup-content.php:182 templates/meetup-content.php:207
+msgid "Are you sure to cancel the booking?"
+msgstr "Oletko varma että haluat peruuttaa varaamisen?"
+
+#: templates/meetup-content.php:183 templates/meetup-content.php:208
+msgid "Cancel your booking?"
+msgstr "Perutaanko varaus?"
+
+#: templates/meetup-content.php:194
+msgid "We are filled up! No more seat available!"
+msgstr "Täynnä ollaan! vapaita paikkoja ei ole enää jäljellä!"
+
+#: templates/meetup-content.php:219
+msgid "Registration Ends:"
+msgstr "Ilmoittautuminen päättyy:"
+
+#: templates/meetup-content.php:224
+msgid "Registration is closed!"
+msgstr "Ilmoittautuminen on suljettu!"
+
+#: templates/meetup-content.php:230
+msgid "Registration will open at:"
+msgstr "Ilmoittautuminen avautuu"
+
+#: templates/meetup-content.php:257
+msgid "Add to my calendar"
+msgstr "Lisää kalenteriini"
+
+#: templates/meetup-content.php:276
+msgid "Google Calendar"
+msgstr "Google Kalenteri"
+
+#: templates/meetup-content.php:277
+msgid "Apple iCal"
+msgstr "Apple iCal"
+
+#: templates/meetup-content.php:278
+msgid "Microsoft Outlook"
+msgstr "Microsoft Outlook"
+
+#: templates/meetup-gallery.php:27
+msgid "No image has been found!"
+msgstr "Yhtään kuvaa ei löytynyt!"
+
+#: templates/meetup-schedule.php:22
+#, php-format
+msgid "Schedule for: %s"
+msgstr "Aikataulu: %s"
+
+#: templates/meetup-schedule.php:49
+msgid "No schedules have been made yet!"
+msgstr "Aikataulua ei ole vielä tehty."
+
+#: templates/meetup-speakers.php:28
+msgid "by"
+msgstr "käyttäjältä"
+
+#: templates/meetup-speakers.php:38
+msgid "Slide:"
+msgstr "Slide:"
+
+#: templates/meetup-speakers.php:53
+msgid "No speaker found!"
+msgstr "Puhujia ei löytynyt."
+
+#: templates/meetup-sponsors.php:50
+msgid "No sponsor found!"
+msgstr "Sponsoreita ei löytynyt."

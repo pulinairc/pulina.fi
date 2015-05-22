@@ -68,7 +68,7 @@
     "vlucas/phpdotenv": "~1.0.5",
     "wpackagist-plugin/wordpress-seo":"@dev",
     "wpackagist-plugin/disqus-comment-system":"*", 
-    "wpackagist-plugin/meetup":"*",
+    "wpackagist-plugin/meetup":"0.1",
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*",
     "wp-rocket/wp-rocket":"*",
