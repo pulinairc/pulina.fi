@@ -461,8 +461,8 @@ a.btn
     }
 
     img {
-        max-width: $container-desktop;
-        height:auto;
+        // max-width: $container-desktop;
+        // height:auto;
 
         @media(max-width:$container-ipad) {
             width:100%;
@@ -1287,3 +1287,13 @@ p a {
         @include type-scale(small);
     }
 }
+
+.login-logout {
+
+    span {
+        color: rgba(#ffffff,0.8);
+        margin-right: 5px;
+    }
+}
+
+@import "buddypress";

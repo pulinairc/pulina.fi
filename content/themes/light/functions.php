@@ -6,6 +6,32 @@
  */
 
 /* -----------------------------------------------------------------------------
+    Buddypress
+----------------------------------------------------------------------------- */
+
+load_plugin_textdomain('rendez-vous', false, WP_LANG_DIR );
+load_plugin_textdomain('theme-my-login', false, WP_LANG_DIR );
+
+
+function add_login_logout_link($items, $args)
+{
+  if(is_user_logged_in())
+  {
+    $newitems = $items;
+    $newitems .= '<li class="login-logout"><a title="Kirjaudu ulos" href="'. wp_logout_url() .'"><span class="fa fa-power-off"></span> Kirjaudu ulos</a></li>';
+  }
+  else
+  {
+    $newitems = $items;
+    $newitems .= '
+    <li class="login-logout"><a href="'.get_page_link(1049).'"><span class="fa fa-toggle-on"></span> Rekisteröidy</a></li>
+    <li class="login-logout"><a title="Kirjaudu sisään" href="'. wp_login_url() .'"><span class="fa fa-power-off"></span> Kirjaudu sisään</a></li>';
+  }
+  return $newitems;
+}
+add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
+
+/* -----------------------------------------------------------------------------
     Kellonaika viimeksi kirjautunut -kohtaan
 ----------------------------------------------------------------------------- */
 
@@ -117,7 +143,7 @@ load_theme_textdomain( 'light', get_template_directory() . '/languages' );
 if (!is_admin() ) add_action("wp_enqueue_scripts", "oma_jquery", 1);
 function oma_jquery() {
    wp_deregister_script('jquery');
-   // wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/src/jquery.js', array(), '1.10.2', false );
+   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/src/jquery.js', array(), '1.10.2', false );
 }
 
 // Kommentoinnit:

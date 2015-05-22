@@ -1,0 +1,63 @@
+#buddypress form#whats-new-form p.activity-greeting {
+	line-height: 1.5em;
+}
+
+.feed, .pag-count {
+	display: none;
+}
+
+#buddypress {
+
+	img {
+		width: auto !important;
+		height: auto !important;
+	}
+
+	.item-list {
+
+		li {
+
+			// @include col(1/7, $cycle: 7);
+			// @media(max-width: $container-mobile) {
+			// 	@include stack();
+			// 	margin-bottom: 10px;
+			// }
+
+		}
+	}
+
+	.item, .activity, #item-meta {
+		@include type-scale('base');
+		*, .update {
+			@include type-scale('base');
+		}
+	}
+
+	#item-body {
+		h3, h4 {
+			margin-bottom: 0;
+			margin-top: 15px;
+		}
+	}
+
+}
+
+#buddypress ul.item-list li div.item-title span, #buddypress span.activity {
+	@include type-scale('base');
+}
+
+#buddypress ul.item-list li div.item-title, #buddypress ul.item-list li h4 {
+	width: 100%;
+}
+
+.item-header-avatar img, img.avatar {
+	border-radius: 50% 50%;
+}
+
+table {
+	width: 100%;
+}
+
+#buddypress .standard-form label, #buddypress .standard-form span.label, #rendez-vous-single-venue, #rendez-vous-single-duration {
+	display: none;
+}

@@ -72,6 +72,7 @@
     "wpackagist-plugin/rendez-vous":"*",
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*",
+    "wpackagist-plugin/theme-my-login":"*",
     "wp-rocket/wp-rocket":"*",
     "geekpress/wp-rocket-cli":"dev-master"    
   },
