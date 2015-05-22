@@ -2,8 +2,8 @@ set :application, "pulina"
 set :repo_url,  "git@bitbucket.org:ronilaukkarinen/pulina.git"
 set :branch, :master
 set :log_level, :debug
-set :linked_files, %w{.env content/db.php content/advanced-cache.php content/object-cache.php content/plugins/w3tc-wp-loader.php}
-set :linked_dirs, %w{content/uploads content/cache content/w3tc-config}
+set :linked_files, %w{.env}
+set :linked_dirs, %w{media content/cache content/wp-rocket-config}
 set :composer_install_flags, '--no-dev --prefer-dist --no-scripts --optimize-autoloader'
 set :composer_roles, :all
 

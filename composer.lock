@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55436f988a4f3b253b5e686f3c96f3ef",
+    "hash": "793a31e51981b4fb1fd489387c7bf224",
     "packages": [
         {
             "name": "composer/installers",
@@ -78,6 +78,50 @@
                 "zend"
             ],
             "time": "2013-08-20 04:37:09"
+        },
+        {
+            "name": "geekpress/wp-rocket-cli",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ronilaukkarinen/wp-rocket-cli.git",
+                "reference": "b4468f9c7e5b00b7f80f17956e90966fc7872a87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ronilaukkarinen/wp-rocket-cli/zipball/b4468f9c7e5b00b7f80f17956e90966fc7872a87",
+                "reference": "b4468f9c7e5b00b7f80f17956e90966fc7872a87",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "command",
+            "autoload": {
+                "files": [
+                    "wp-rocket-cli.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WP Rocket Team",
+                    "email": "jonathan@wp-rocket.me",
+                    "homepage": "http://wp-rocket.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add a `wp rocket` command to support the WP Rocket plugin",
+            "homepage": "https://github.com/GeekPress/wp-rocket-cli",
+            "keywords": [
+                "cache",
+                "rocket",
+                "wp-cli"
+            ],
+            "time": "2015-05-21 18:17:23"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -563,6 +607,17 @@
             "time": "2013-11-30 13:14:44"
         },
         {
+            "name": "wp-rocket/wp-rocket",
+            "version": "2.5.12",
+            "dist": {
+                "type": "zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.5.12.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
+        },
+        {
             "name": "wpackagist-plugin/disqus-comment-system",
             "version": "2.84",
             "source": {
@@ -603,16 +658,36 @@
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
         },
         {
-            "name": "wpackagist-plugin/simple-history",
-            "version": "2.0.30",
+            "name": "wpackagist-plugin/meetup",
+            "version": "0.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.0.30"
+                "url": "http://plugins.svn.wordpress.org/meetup/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.0.30.zip",
+                "url": "https://downloads.wordpress.org/plugin/meetup.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/meetup/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-history",
+            "version": "2.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/simple-history/",
+                "reference": "tags/2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -621,26 +696,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-history/"
-        },
-        {
-            "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.4.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
@@ -668,7 +723,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wpackagist-plugin/wordpress-seo": 20
+        "wpackagist-plugin/wordpress-seo": 20,
+        "geekpress/wp-rocket-cli": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

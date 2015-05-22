@@ -44,6 +44,18 @@
     {
       "type": "vcs",
       "url": "https://github.com/koodimonni/composer-dropin-installer"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-rocket/wp-rocket",
+        "type": "wordpress-plugin",
+        "version": "2.5.12",
+        "dist": {
+          "type": "zip",
+          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.5.12.zip"
+        }
+      }
     }
   ],
   "require": {
@@ -56,9 +68,11 @@
     "vlucas/phpdotenv": "~1.0.5",
     "wpackagist-plugin/wordpress-seo":"@dev",
     "wpackagist-plugin/disqus-comment-system":"*", 
-    "wpackagist-plugin/w3-total-cache":"*",
+    "wpackagist-plugin/meetup":"*",
     "wpackagist-plugin/google-analyticator":"*",
-    "wpackagist-plugin/simple-history":"*"
+    "wpackagist-plugin/simple-history":"*",
+    "wp-rocket/wp-rocket":"*",
+    "geekpress/wp-rocket-cli":"dev-master"    
   },
   "extra": {
     "dropin-paths": {
