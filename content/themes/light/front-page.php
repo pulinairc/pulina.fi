@@ -146,7 +146,7 @@ echo $pulistumaara; ?></span>
 	
 		<h2>Vaihe 1. Päätä nimimerkki._</h2>
 
-		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Kanavan ylläpitäjiä ovat esimerkiksi rolle ja mustikkasoppa. Irkissä nimimerkki näkyy pienemmyys-suuremmuus-sulkeiden sisällä näin: <code>&lt;rolle&gt;</code>. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
+		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Kanavan ylläpitäjiä ovat esimerkiksi rolle ja mustikkasoppa. Irkissä nimimerkki näkyy perinteisesti pienemmyys-suuremmuus-sulkeiden sisällä näin: <code>&lt;rolle&gt;</code>. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
 
 	</div>
 
@@ -158,7 +158,7 @@ echo $pulistumaara; ?></span>
 	
 		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
 
-		<p>Luulitko, että pitää vielä jotain säätää? <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Join chat</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
+		<p>Luulitko, että pitää vielä jotain säätää? <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Start...</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
 
 		<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="btn">Boom, irkkiin!</a></p>
 
