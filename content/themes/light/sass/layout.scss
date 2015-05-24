@@ -1320,3 +1320,31 @@ input[type="text"], input[type="password"] {
     padding: 15px !important;
     margin-bottom: 20px;
 }
+
+.hentry {
+    .single-tribe_events .tribe-events-content, .tribe-events-single-event-description.tribe-events-content.entry-content.description {
+        @include col(5/7);
+        margin-right: 0 !important;
+    }
+}
+
+.tribe-events-event-image {
+
+    @include col(2/7);
+
+    img {
+        border-radius: 5px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.tribe-events-cal-links {
+    clear: both;
+    display: block;
+}
+
+#tribe-events-pg-template {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
