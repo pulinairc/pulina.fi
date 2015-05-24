@@ -7,8 +7,6 @@
 
 get_header(); ?>
 
-<iframe src="http://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
