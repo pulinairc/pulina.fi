@@ -1297,3 +1297,26 @@ p a {
 }
 
 @import "buddypress";
+
+input[type="text"], input[type="password"] {
+    padding: 15px 20px;
+    @include type-scale('medium');
+    border: 2px solid $alt-color;
+}
+
+#loginform {
+    p {
+        margin: 0;
+    }
+
+    input {
+        @media(max-width: $container-mobile) {
+            width: 100%;
+        }
+    }
+}
+
+.message {
+    padding: 15px !important;
+    margin-bottom: 20px;
+}
