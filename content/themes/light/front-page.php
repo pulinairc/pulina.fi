@@ -65,9 +65,12 @@ get_header(); ?>
 
 <ul class="linkkilista">
 <?php
+
 require_once('inc/simplehtmldom/simple_html_dom.php'); 
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');
 
+if(!isset($html)) :
+try {
 // example: html->find('ul', 0)->find('li', 0);
 $first_level_items = $html->find('ul', 0)->find('li', 0);
 foreach($html->find('ul') as $ul) 
@@ -83,6 +86,12 @@ $i = 0;
        $i++;
        }
 }
+
+} catch (Exception $e) {
+    echo 'Linkkilistaa ei juuri nyt saatu haettua.';
+}
+endif;
+
 ?>
 </ul>
 

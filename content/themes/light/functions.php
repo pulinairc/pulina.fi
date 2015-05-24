@@ -108,27 +108,27 @@ update_option( 'page_for_posts', $blog->ID );
  * @return string The filtered title.
  */
 function light_wp_title( $title, $sep ) {
-	if ( is_feed() ) {
-		return $title;
-	}
-	
-	global $page, $paged;
+  if ( is_feed() ) {
+    return $title;
+  }
+  
+  global $page, $paged;
 
-	// Add the blog name
-	$title .= get_bloginfo( 'name', 'display' );
+  // Add the blog name
+  $title .= get_bloginfo( 'name', 'display' );
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
+  // Add the blog description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $title .= " $sep $site_description";
+  }
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'light' ), max( $paged, $page ) );
-	}
+  // Add a page number if necessary:
+  if ( $paged >= 2 || $page >= 2 ) {
+    $title .= " $sep " . sprintf( __( 'Page %s', 'light' ), max( $paged, $page ) );
+  }
 
-	return $title;
+  return $title;
 }
 add_filter( 'wp_title', 'light_wp_title', 10, 2 );
 
@@ -158,7 +158,11 @@ function acme_post_has( $type, $post_id ) {
 // Skriptit ja tyylit:
 function light_scripts() {
     wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
+    if(is_front_page() ) :
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', false );
+    else :
     wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );
+    endif; 
 }
 add_action( 'wp_enqueue_scripts', 'light_scripts' );
 
@@ -167,7 +171,7 @@ add_theme_support( 'post-thumbnails' );
 
 // Muokattavien valikoiden tuki.
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'light' ),
+  'primary' => __( 'Primary Menu', 'light' ),
 ) );
 
 function custom_comments($comment, $args, $depth) {
