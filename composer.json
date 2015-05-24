@@ -89,7 +89,8 @@
     "geekpress/wp-rocket-cli":"dev-master",
     "wpackagist-plugin/the-events-calendar":"*",
     "moderntribe/events-calendar-pro":"*",
-    "wpackagist-plugin/wordpress-social-login":"*"
+    "wpackagist-plugin/wordpress-social-login":"*",
+    "wpackagist-plugin/lightbox-plus": "*"
   },
   "extra": {
     "dropin-paths": {

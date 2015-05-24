@@ -1362,7 +1362,8 @@ input[type="text"], input[type="password"] {
         margin: 0;
     }
     img {
-        border: 0;
-        margin-right: 10px;
+        border: 0 !important;
+        width: 95% !important;
+        height: auto;
     }
 }

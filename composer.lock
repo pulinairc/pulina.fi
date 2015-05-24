@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5d647e26c33d9154076c9d149c98230e",
+    "hash": "8e16d1ddb9ac2b1c35b00d8dbf4712b3",
     "packages": [
         {
             "name": "composer/installers",
@@ -687,6 +687,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
+        },
+        {
+            "name": "wpackagist-plugin/lightbox-plus",
+            "version": "2.7.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/lightbox-plus/",
+                "reference": "tags/2.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/lightbox-plus.2.7.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/lightbox-plus/"
         },
         {
             "name": "wpackagist-plugin/rendez-vous",
