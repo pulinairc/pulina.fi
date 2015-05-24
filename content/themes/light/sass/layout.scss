@@ -1325,12 +1325,20 @@ input[type="text"], input[type="password"] {
     .single-tribe_events .tribe-events-content, .tribe-events-single-event-description.tribe-events-content.entry-content.description {
         @include col(5/7);
         margin-right: 0 !important;
+        @media(max-width: $container-mobile) {
+            @include stack();
+            margin-bottom: 20px;
+        }
     }
 }
 
 .tribe-events-event-image {
 
     @include col(2/7);
+    @media(max-width: $container-mobile) {
+        @include stack();
+        margin-bottom: 20px;
+    }
 
     img {
         border-radius: 5px;
@@ -1347,4 +1355,14 @@ input[type="text"], input[type="password"] {
 #tribe-events-pg-template {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.gallery {
+    blockquote, dl, h1, h2, h3, h4, h5, h6, ol, p, table, ul {
+        margin: 0;
+    }
+    img {
+        border: 0;
+        margin-right: 10px;
+    }
 }
