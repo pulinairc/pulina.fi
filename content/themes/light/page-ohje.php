@@ -29,9 +29,9 @@ get_header(); ?>
 
 					<p>Jaa että olet kiinnostunut irkkaamisesta, ihan oikeasti? Hieno juttu! Irkkaaminen on kivaa, eikä enää vain se nörttien juttu. Varmaan jo tiesitkin, että IRC on yksi tietokoneiden historian vanhimpia pikaviestimiä, jo 80-luvulla kehitetty suomalaislähtöinen keksintö. Jos et, kannattaa sivistää itseään ja lukea vaikkapa <a href="http://fi.wikipedia.org/wiki/IRC" target="_blank">Wikipedian sivu IRCistä</a>.</p>
 
-					<p>Pulinalle pääsee kaikista nopeiten ja helpoiten tällä hetkellä käyttämällä <a href="http://webchat.quakenet.org/?channels=pulina&amp;uio=MTY9dHJ1ZSYyPXRydWUmOT10cnVlJjExPTE2NCYxNT10cnVl91" target="_blank">webchattia</a>:
+					<p>Pulinalle pääsee kaikista nopeiten ja helpoiten tällä hetkellä käyttämällä <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" target="_blank">webchattia</a>:
 
-					<p><a href="http://webchat.quakenet.org/?channels=pulina&amp;uio=MTY9dHJ1ZSYyPXRydWUmOT10cnVlJjExPTE2NCYxNT10cnVl91" class="btn join-btn">Irkkiin nyt heti!</a></p>
+					<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="btn join-btn">Irkkiin nyt heti!</a></p>
 
 					<p>Webchat on selaimessa toimivaa IRC-sovellus. <strong>Channels:</strong>-kohdassa tulee olla <i>#pulina</i> ja <strong>Nickname:</strong>-kohtaan voit valita oman nimimerkkisi.</p>
 
