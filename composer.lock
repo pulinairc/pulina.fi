@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ad2882cece1ed2def88f6c603827f522",
+    "hash": "5d647e26c33d9154076c9d149c98230e",
     "packages": [
         {
             "name": "composer/installers",
@@ -268,6 +268,17 @@
                 "issues": "https://github.com/Koodimonni/Composer-Dropin-Installer/issues"
             },
             "time": "2015-01-04 10:24:12"
+        },
+        {
+            "name": "moderntribe/events-calendar-pro",
+            "version": "3.9.3",
+            "dist": {
+                "type": "zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.9.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "mustache/mustache",
@@ -718,6 +729,26 @@
             "homepage": "https://wordpress.org/plugins/simple-history/"
         },
         {
+            "name": "wpackagist-plugin/the-events-calendar",
+            "version": "3.9.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/the-events-calendar/",
+                "reference": "tags/3.9.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.3.9.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/the-events-calendar/"
+        },
+        {
             "name": "wpackagist-plugin/theme-my-login",
             "version": "6.3.12",
             "source": {
@@ -757,6 +788,26 @@
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/",
             "time": "2015-04-21 15:48:30"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-social-login",
+            "version": "2.2.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordpress-social-login/",
+                "reference": "tags/2.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-social-login.2.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-social-login/"
         }
     ],
     "packages-dev": [],

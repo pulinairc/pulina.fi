@@ -56,6 +56,18 @@
           "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.5.12.zip"
         }
       }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "moderntribe/events-calendar-pro",
+        "type": "wordpress-plugin",
+        "version": "3.9.3",
+        "dist": {
+          "type": "zip",
+          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.9.3.zip"
+        }
+      }
     }
   ],
   "require": {
@@ -74,7 +86,10 @@
     "wpackagist-plugin/simple-history":"*",
     "wpackagist-plugin/theme-my-login":"*",
     "wp-rocket/wp-rocket":"*",
-    "geekpress/wp-rocket-cli":"dev-master"    
+    "geekpress/wp-rocket-cli":"dev-master",
+    "wpackagist-plugin/the-events-calendar":"*",
+    "moderntribe/events-calendar-pro":"*",
+    "wpackagist-plugin/wordpress-social-login":"*"
   },
   "extra": {
     "dropin-paths": {
