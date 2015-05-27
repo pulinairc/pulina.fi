@@ -180,6 +180,10 @@ body
             position: absolute;
             text-align: center;
             max-width: 600px;
+            @media(max-width: $container-mobile) {
+                padding-left: 0;
+                padding-right: 0;
+            }
 
             h2 {
                 font-weight: 900;
