@@ -10,6 +10,8 @@ $(".menu").flexNav({
     "calcItemWidths": false
 });
 
+$(".wp-social-login-connect-with").replaceWith( "Yhdistä käyttämällä some-tiliäsi:" );
+
 $('.slide-irclog, .irclog, .slide-placeholder').css('height', window.innerHeight);
     $(window).resize(function(){
         $('.slide-irclog, .irclog, .slide-placeholder').css('height', window.innerHeight);

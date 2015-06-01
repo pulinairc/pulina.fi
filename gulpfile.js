@@ -63,8 +63,8 @@ var sassSrc = themeDir + '/sass/**/*.{sass,scss}';
 var sassFile = themeDir + '/sass/layout.scss';
 var cssDest = themeDir + '/css';
 var customjs = themeDir + '/js/scripts.js';
-var jsSrc = themeDir + '/js/src/**/*.js';
-var jsDest = themeDir + '/js/';
+var jsSrc = themeDir + '/js/src';
+var jsDest = themeDir + '/js';
 var phpSrc = [themeDir + '/**/*.php', !'vendor/**/*.php'];
 
 /* 
@@ -157,6 +157,7 @@ gulp.task('images', function() {
 SCRIPTS
 =======
 */
+
 
 var currentDate   = util.date(new Date(), 'dd-mm-yyyy HH:ss');
 var pkg       = require('./package.json');

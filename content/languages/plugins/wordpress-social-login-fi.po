@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Social Login\n"
+"POT-Creation-Date: 2015-06-01 10:58+0200\n"
+"PO-Revision-Date: 2015-06-01 11:02+0200\n"
+"Last-Translator: Roni Laukkarinen <roni@dude.fi>\n"
+"Language-Team: Roni Laukkarinen <roni@dude.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/admin/components/contacts/wsl.components.contacts.list.php:138
+#: includes/admin/components/users/wsl.components.users.list.php:197
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: includes/admin/components/contacts/wsl.components.contacts.list.php:139
+#: includes/admin/components/users/wsl.components.users.list.php:198
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: includes/admin/components/tools/wsl.components.tools.actions.job.php:676
+msgid "There was an error querying Twitter's servers"
+msgstr "Twitterin servereitä querytessa tapahtui virhe"
+
+#: includes/admin/wsl.admin.ui.php:293
+msgid "WordPress Social Login - FAIL!"
+msgstr "WordPressin kirjautuminen - FAIL!"
+
+#: includes/admin/wsl.admin.ui.php:298
+msgid ""
+"Despite the efforts, put into <b>WordPress Social Login</b> in terms of "
+"reliability, portability, and maintenance by the plugin <a href=\"http://"
+"profiles.wordpress.org/miled/\" target=\"_blank\">author</a> and <a href="
+"\"https://github.com/hybridauth/WordPress-Social-Login/graphs/contributors\" "
+"target=\"_blank\">contributors</a>"
+msgstr ""
+"Huolimatta <b>WordPress Social Loginin</b> ponnisteluista, vakaudesta, "
+"yhteensopivuuskikkailusta, ylläpidosta, katso <a href=\"http://profiles."
+"wordpress.org/miled/\" target=\"_blank\">tekijän sivu</a> ja <a href="
+"\"https://github.com/hybridauth/WordPress-Social-Login/graphs/contributors\" "
+"target=\"_blank\">osaa ottaneet kehittäjät</a>."
+
+#: includes/admin/wsl.admin.ui.php:299
+msgid "Your server failed the requirements check for this plugin"
+msgstr "Palvelimesi feilasi pluginin vaatimustarkistuksen"
+
+#: includes/admin/wsl.admin.ui.php:303
+msgid ""
+"These requirements are usually met by default by most \"modern\" web hosting "
+"providers, however some complications may occur with <b>shared hosting</b> "
+"and, or <b>custom wordpress installations</b>"
+msgstr ""
+"Nämä vaatimukset yleensä täytetään monen \"modernin\" hostaajan toimesta, "
+"mutta joitakin komplikaatioita voi esiintyä <b>shared hostingin</b> ja "
+"<b>custom WordPress-asennusten</b> käyttäjillä."
+
+#: includes/services/wsl.mail.notification.php:38
+#, php-format
+msgid "New user registration on your site: %s"
+msgstr "Uuden käyttäjän rekisteröityminen sivuillasi: %s"
+
+#: includes/services/wsl.mail.notification.php:39
+#, php-format
+msgid "Username: %s"
+msgstr "Käyttäjätunnus: %s"
+
+#: includes/services/wsl.mail.notification.php:40
+#, php-format
+msgid "Provider: %s"
+msgstr "Tarjoaja: %s"
+
+#: includes/services/wsl.mail.notification.php:41
+#, php-format
+msgid "Profile: %s"
+msgstr "Profiili: %s"
+
+#: includes/services/wsl.mail.notification.php:42
+#, php-format
+msgid "Email: %s"
+msgstr "Sähköposti: %s"
+
+#: includes/services/wsl.mail.notification.php:47
+#, php-format
+msgid "[%s] New User Registration"
+msgstr "[%s] Uusi rekisteröityminen"
+
+#: includes/settings/wsl.compatibilities.php:239
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since WordPress Social Login %2$s! For "
+"more information, check WSL Developer API - Migration."
+msgstr ""
+"%1$s on <strong>vanhentunut</strong> WordPress Social Login versiosta %2$s! "
+"Lisätietoa WSL Developer API - Migrationista."
+
+#: wp-social-login.php:112
+msgid ""
+"This plugin requires WordPress 3.0 or newer. Please update your WordPress "
+"installation to activate this plugin."
+msgstr ""
+"Tämä lisäosa vaatii WordPressin 3.0 tai uudemman. Ole hyvä ja päivitä "
+"WordPress aktivoidaksesi lisäosan."
+
+#: wp-social-login.php:154
+msgid "Settings"
+msgstr "Asetukset"

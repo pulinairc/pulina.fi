@@ -1371,3 +1371,30 @@ input[type="text"], input[type="password"] {
         height: auto;
     }
 }
+
+.wp-social-login-connect-with {
+    margin-top: 40px !important;
+    clear: both;
+    display: block;
+}
+
+.wp-social-login-provider-list {
+    @include rem('padding-top', 10px);
+    @include rem('padding-bottom', 10px);
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    img {
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+.tml-user-avatar {
+    img {
+        width: auto !important;
+        height: auto !important;
+    }
+}

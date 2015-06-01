@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e16d1ddb9ac2b1c35b00d8dbf4712b3",
+    "hash": "326bf1eafd3649a24ae181ee4befe7e4",
     "packages": [
         {
             "name": "composer/installers",
@@ -423,21 +423,20 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.6.7",
-            "target-dir": "Symfony/Component/Finder",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99"
+                "reference": "ccb8ed8339cf24824f2ef35dacec30d92ff44368"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/704c64c8b12c8882640d5c0330a8414b1e06dc99",
-                "reference": "704c64c8b12c8882640d5c0330a8414b1e06dc99",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/ccb8ed8339cf24824f2ef35dacec30d92ff44368",
+                "reference": "ccb8ed8339cf24824f2ef35dacec30d92ff44368",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "symfony/phpunit-bridge": "~2.7"
@@ -445,11 +444,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
                 }
             },
@@ -469,7 +468,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-05-02 15:18:45"
+            "time": "2015-05-15 14:02:48"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -619,10 +618,10 @@
         },
         {
             "name": "wp-rocket/wp-rocket",
-            "version": "2.5.12",
+            "version": "2.6",
             "dist": {
                 "type": "zip",
-                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.5.12.zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -670,15 +669,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analyticator",
-            "version": "6.4.9",
+            "version": "6.4.9.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analyticator/",
-                "reference": "tags/6.4.9"
+                "reference": "tags/6.4.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.4.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.4.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -730,15 +729,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-history",
-            "version": "2.1",
+            "version": "2.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.1"
+                "reference": "tags/2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -747,6 +746,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-history/"
+        },
+        {
+            "name": "wpackagist-plugin/stop-spammer-registrations-plugin",
+            "version": "6.12",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/stop-spammer-registrations-plugin/",
+                "reference": "tags/6.12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/stop-spammer-registrations-plugin.6.12.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/stop-spammer-registrations-plugin/"
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
