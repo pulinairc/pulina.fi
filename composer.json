@@ -50,10 +50,10 @@
       "package": {
         "name": "wp-rocket/wp-rocket",
         "type": "wordpress-plugin",
-        "version": "2.6",
+        "version": "2.6.2",
         "dist": {
           "type": "zip",
-          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.zip"
+          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.2.zip"
         }
       }
     },
@@ -91,7 +91,8 @@
     "moderntribe/events-calendar-pro":"*",
     "wpackagist-plugin/wordpress-social-login":"*",
     "wpackagist-plugin/lightbox-plus": "*",
-    "wpackagist-plugin/stop-spammer-registrations-plugin": "*"
+    "wpackagist-plugin/stop-spammer-registrations-plugin": "*",
+    "wpackagist-plugin/registration-honeypot": "*"
   },
   "extra": {
     "dropin-paths": {
