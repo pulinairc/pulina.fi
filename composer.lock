@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c050866fa08e0a083ff199904d69d8be",
+    "hash": "463bcb858a963ddf82ccef155c5d371d",
     "packages": [
         {
             "name": "composer/installers",
@@ -621,10 +621,10 @@
         },
         {
             "name": "wp-rocket/wp-rocket",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "dist": {
                 "type": "zip",
-                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.2.zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.3.zip",
                 "reference": null,
                 "shasum": null
             },
