@@ -169,7 +169,7 @@ get_header(); ?>
   <tr>
     <td data-th="Ominaisuus"><i class="feat">eggdrop-fmi</i></td>
     <td data-th="Komento"><code>!sää</code></td>
-    <td data-th="Tietoa">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle. Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia.</td>
+    <td data-th="Tietoa">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle. Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia. <a href="https://github.com/ronilaukkarinen/eggdrop-fmi">Lähdekoodi GitHubissa</a></td>
   </tr>
 
   <tr>
@@ -182,6 +182,12 @@ get_header(); ?>
     <td data-th="Ominaisuus"><i class="feat">seend</i></td>
     <td data-th="Komento"><code>!seen nick</code></td>
     <td data-th="Tietoa">Kertoo milloin käyttäjä nähtiin viimeksi, millä kanavalla ja mikä oli viimeisin viesti.</td>
+  </tr>
+
+  <tr>
+    <td data-th="Ominaisuus"><i class="feat">tv</i></td>
+    <td data-th="Komento"><code>!tv kanava</code></td>
+    <td data-th="Tietoa">Kertoo mitä telkkarista tulee. Käytössä olevat kanavat: tv1, tv2, mtv3, nelonen, subtv, yleteema, jim, mtv, hero, fox, ava. <a href="https://github.com/ronilaukkarinen/telkku">Lähdekoodi GitHubissa</a></td>
   </tr>
 
 </table>
