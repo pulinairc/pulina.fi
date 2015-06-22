@@ -78,7 +78,7 @@
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
-    "wpackagist-plugin/wordpress-seo":"@dev",
+    "wpackagist-plugin/wordpress-seo":"dev-master",
     "wpackagist-plugin/disqus-comment-system":"*", 
     "wpackagist-plugin/buddypress":"*",
     "wpackagist-plugin/rendez-vous":"*",

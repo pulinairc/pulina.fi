@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "463bcb858a963ddf82ccef155c5d371d",
+    "hash": "1bee676bb8616a2c1f9347939efe0691",
     "packages": [
         {
             "name": "composer/installers",
@@ -672,15 +672,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analyticator",
-            "version": "6.4.9.3",
+            "version": "6.4.9.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analyticator/",
-                "reference": "tags/6.4.9.3"
+                "reference": "tags/6.4.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.4.9.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.4.9.4.zip",
                 "reference": null,
                 "shasum": null
             },
