@@ -138,6 +138,8 @@ add_filter( 'wp_title', 'light_wp_title', 10, 2 );
 
 add_theme_support( 'automatic-feed-links' );
 load_theme_textdomain( 'light', get_template_directory() . '/languages' );
+load_plugin_textdomain('tribe-events-calendar', false, WP_LANG_DIR );
+load_plugin_textdomain('tribe-events-calendar-pro', false, WP_LANG_DIR );
 
 // JETPACKISSA TULEE OMA jquery mukana btw
 if (!is_admin() ) add_action("wp_enqueue_scripts", "oma_jquery", 1);
