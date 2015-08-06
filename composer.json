@@ -50,10 +50,10 @@
       "package": {
         "name": "wp-rocket/wp-rocket",
         "type": "wordpress-plugin",
-        "version": "2.6.3",
+        "version": "2.6.7",
         "dist": {
           "type": "zip",
-          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.3.zip"
+          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.7.zip"
         }
       }
     },
@@ -62,10 +62,10 @@
       "package": {
         "name": "moderntribe/events-calendar-pro",
         "type": "wordpress-plugin",
-        "version": "3.9.3",
+        "version": "3.11.1",
         "dist": {
           "type": "zip",
-          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.9.3.zip"
+          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.11.1.zip"
         }
       }
     }
@@ -73,12 +73,12 @@
   "require": {
     "koodimonni/composer-dropin-installer": "*",
     "php": ">=5.3.2",
-    "johnpbloch/wordpress": "4.2.2",
+    "johnpbloch/wordpress": "4.2.4",
     "koodimonni-language/fi": "*",
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
-    "wpackagist-plugin/wordpress-seo":"dev-master",
+    "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/disqus-comment-system":"*", 
     "wpackagist-plugin/buddypress":"*",
     "wpackagist-plugin/rendez-vous":"*",
