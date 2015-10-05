@@ -5,9 +5,29 @@
  * @package light
  */
 
-/* -----------------------------------------------------------------------------
-    Buddypress
------------------------------------------------------------------------------ */
+/*
+ * Facebook embed shortcode
+ */
+
+function facebook_embed_func($atts) {
+    extract(shortcode_atts(array(
+      'href' => ''
+    ), $atts));
+   return '<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fi_FI/sdk.js#xfbml=1&appId=250821831708650&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, \'script\', \'facebook-jssdk\'));</script>
+<div class="fb-post" data-href="'.$href .'" data-width="640"></div>
+';
+}
+
+/*
+ * Buddypress related
+ */
 
 load_plugin_textdomain('rendez-vous', false, WP_LANG_DIR );
 load_plugin_textdomain('theme-my-login', false, WP_LANG_DIR );
@@ -82,23 +102,6 @@ update_option( 'show_on_front', 'page' );
  */
 $blog   = get_page_by_title( 'Blogi' );
 update_option( 'page_for_posts', $blog->ID );
-
-/**
- * Author opengraphs
- */
-
-// if ( ! function_exists('additional_opengraph_tags') ) {
-//   function additional_opengraph_tags() {
-
-//     if ( is_single() and ! is_page()) {
-//     echo '
-//     <meta property="article:publisher" content="https://www.facebook.com/digitoimistodude" />
-//     <meta property="article:author" content="https://www.facebook.com/rollefb" />
-//     ';
-//     }
-//   }
-//   add_action('wp_head', 'additional_opengraph_tags');
-// }
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
