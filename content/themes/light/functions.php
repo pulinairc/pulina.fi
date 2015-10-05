@@ -24,6 +24,7 @@ function facebook_embed_func($atts) {
 <div class="fb-post" data-href="'.$href .'" data-width="640"></div>
 ';
 }
+add_shortcode('facebook_embedded_post', 'facebook_embed_func');
 
 /*
  * Buddypress related
