@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "06b12ae7528b55167217c42e704fba71",
+    "hash": "909674f281f187b5f200dd4b4064050b",
     "packages": [
         {
             "name": "composer/installers",
@@ -274,10 +274,10 @@
         },
         {
             "name": "moderntribe/events-calendar-pro",
-            "version": "3.11.1",
+            "version": "3.12.2",
             "dist": {
                 "type": "zip",
-                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.11.1.zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro_3.12.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -621,10 +621,10 @@
         },
         {
             "name": "wp-rocket/wp-rocket",
-            "version": "2.6.7",
+            "version": "2.6.11",
             "dist": {
                 "type": "zip",
-                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.7.zip",
+                "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.11.zip",
                 "reference": null,
                 "shasum": null
             },
