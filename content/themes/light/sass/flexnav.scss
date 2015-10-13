@@ -35,23 +35,23 @@
 	li {
 		position: relative;
 		overflow: hidden;
-		width:100%;
+		width: 100%;
 
 	}
 	li a {
 		position: relative;
 		display: block;
-		padding: .96em;
+		padding: .50em .96em;
 		z-index: 2;
 		overflow: hidden;
 		color: $menutxt;
 		border-bottom: 1px solid rgba(0,0,0,.15);
+		font-size: 0.95rem;
 	}
 	li ul {
 		width: 100%;   
 		
 		li {
-			font-size: 100%;
 			position: relative;
 			overflow: hidden;		
 		}

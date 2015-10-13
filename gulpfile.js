@@ -43,6 +43,23 @@ var phpSrc = [themeDir + '/**/*.php', !'vendor/**/*.php'];
 
 /* 
 
+ERROR HANDLING
+==============
+*/
+
+var handleError = function(task) {
+  return function(err) {
+    
+      notify.onError({
+        message: task + ' failed, check the logs..'
+      })(err);
+    
+    util.log(util.colors.bgRed(task + ' error:'), util.colors.red(err));
+  };
+};
+
+/* 
+
 BROWSERSYNC
 ===========
 */
@@ -62,10 +79,10 @@ gulp.task('browserSync', function () {
     ];
 
     browserSync.init(files, {
-    proxy: localURL,
-    host: hostname,
-    agent: false,
-    browser: "Google Chrome Canary"
+      proxy: localURL,
+      host: hostname,
+      agent: false,
+      browser: "Google Chrome"
     });
 
 });
@@ -80,23 +97,26 @@ SASS
 gulp.task('sass', function() {
   gulp.src(sassFile)
 
-  .pipe(sass({
-    compass: false,
-    bundleExec: true,
-    sourcemap: false,
-    style: 'compressed',
-    debugInfo: true,
-    lineNumbers: true,
-    errLogToConsole: true
-  })) 
+  gulp.src(sassFile)
 
-  .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) //adds browser prefixes (eg. -webkit, -moz, etc.)
-  .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
-  .pipe(pixrem())
-  .pipe(gulp.dest(themeDir + '/css'))
-  .pipe(reload({stream:true}));
-  });
+    .pipe(sass({
+        compass: false,
+        bundleExec: true,
+        sourcemap: false,
+        style: 'compressed',
+        debugInfo: true,
+        lineNumbers: true,
+        errLogToConsole: true
+      })) 
+  
+    .on('error', handleError('styles'))
+    .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
+    .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
+    .pipe(pixrem())
+    .pipe(gulp.dest(cssDest))
+    .pipe(browserSync.stream());
 
+});
 
 /* 
 

@@ -27,9 +27,9 @@
 	}
 
 	.item, .activity, #item-meta {
-		@include type-scale('base');
+		font-size: 1rem;
 		*, .update {
-			@include type-scale('base');
+			font-size: 1rem;
 		}
 	}
 
@@ -43,7 +43,7 @@
 }
 
 #buddypress ul.item-list li div.item-title span, #buddypress span.activity {
-	@include type-scale('base');
+	font-size: 1rem;
 }
 
 #buddypress ul.item-list li div.item-title, #buddypress ul.item-list li h4 {
