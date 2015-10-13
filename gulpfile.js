@@ -16,38 +16,12 @@ var minifycss   = require('gulp-minify-css');
 var uglify      = require('gulp-uglify');
 var cache       = require('gulp-cache');
 var concat      = require('gulp-concat');
-var util        = require('gulp-util');
 var header      = require('gulp-header');
 var pixrem      = require('gulp-pixrem');
 var pagespeed   = require('psi');
 var minifyhtml  = require('gulp-htmlmin');
 var runSequence = require('run-sequence');
-
-/* 
-
-ERROR HANDLING
-==============
-*/
-
-// A display error function, to format and make custom errors more uniform
-// Could be combined with gulp-util or npm colors for nicer output
-var displayError = function(error) {
-
-    // Initial building up of the error
-    var errorString = '[' + error.plugin + ']';
-    errorString += ' ' + error.message.replace("\n",''); // Removes new line at the end
-
-    // If the error contains the filename or line number add it to the string
-    if(error.fileName)
-        errorString += ' in ' + error.fileName;
-
-    if(error.lineNumber)
-        errorString += ' on line ' + error.lineNumber;
-
-    // This will output an error like the following:
-    // [gulp-sass] error message in file_name on line 1
-    console.error(errorString);
-}
+var util        = require('gulp-util');
 
 /* 
 
@@ -113,18 +87,9 @@ gulp.task('sass', function() {
     style: 'compressed',
     debugInfo: true,
     lineNumbers: true,
-    errLogToConsole: true,
-    onSuccess: function(){
-      notify().write({ message: "SCSS Compiled successfully!" });
-    },
-    onError: function(err) {
-        util.beep();
-        displayError(err);
-        return notify().write(err);
-    }
+    errLogToConsole: true
   })) 
 
-  .on('error', util.beep)
   .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) //adds browser prefixes (eg. -webkit, -moz, etc.)
   .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
   .pipe(pixrem())
