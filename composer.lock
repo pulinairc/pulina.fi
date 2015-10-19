@@ -752,15 +752,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-history",
-            "version": "2.2.4",
+            "version": "2.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.2.4"
+                "reference": "tags/2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -812,15 +812,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-my-login",
-            "version": "6.4",
+            "version": "6.4.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/theme-my-login/",
-                "reference": "tags/6.4"
+                "reference": "tags/6.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.1.zip",
                 "reference": null,
                 "shasum": null
             },
