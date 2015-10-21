@@ -1416,3 +1416,19 @@ input[type="text"], input[type="password"] {
         height: auto !important;
     }
 }
+
+.tribe-events-single-event-description {
+
+    p.meetup-author {
+        margin-top: 30px !important;
+        display: block;
+        line-height: 1.3 !important;
+        opacity: 0.75;
+        transition: all 0.55s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+}
