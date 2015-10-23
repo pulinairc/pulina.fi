@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+<!-- saved from url=(0025)http://mzl.fi/irc/fi.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Type" content="text/html" charset="iso-8859-15&quot;" keywords="ircetiketti" "irc="" etiketti"="" "etiketti"="" "irc"="">
+<title>mzl.fi - IRC-etiketti</title>
+<style type="text/css"></style></head>
+<body>
+
+<h1>IRC-etiketti</h1>
+
+<p>- eli kuinka käyttäytyä IRC:ssä ja miksi</p>
+
+<p>Sinut on luultavasti opastettu tälle sivulle siitä syystä, että olet käytökselläsi
+häirinnyt muita IRC:n käyttäjiä, tai olet uusi IRC:ssä. Älä kuitenkaan huolestu, tämä sivu on olemassa, jotta sinä 
+ja kaltaisesi henkilöt pääsisivät eroon huonoista tavoistaan. Noudattamalla sivun ohjeita
+saavutat suosiota ja arvostusta muiden irkkaajien keskuudessa. Lisäksi ehkäiset 
+turhien, mihinkään johtamattomien, tappeluiden muodostumista.</p>
+
+
+<h3>1. Älä idlaa väärin.</h3>
+
+
+<p>Kun ihmiset kyllästyvät IRC:ssä mölisemiseen, he yleensä tiedottavat 
+muille lähtevänsä pois ja jättävät asiakasohjelman (engl. client) auki. 
+Tämän voi tehdä joko oikein tai väärin.</p>
+
+<p><i>Away nick</i> on kaikkein huonoin vaihtoehto. Sen ideana on siis
+vaihtaa IRC-nickisi sellaiseksi, että se samalla kertoo sinun olevan 
+sinä, mutta poissa IRC:stä:</p>
+
+<tt>*** idiootti is now known as idio|Away</tt><br>
+<tt>*** idio|Away is now known as idio|vessa</tt>
+
+<p>Haitat ovat aivan ilmeiset:</p>
+<ul>
+ <li>Sinua ei tavoita oikealla nickilläsi. Jos kaverisi ei satu olemaan
+    samalla kanavalla kanssasi, hän ei voi tietää nickiäsi; oletko vessassa, 
+    koulussa, vai mahdollisesti jopa jossain muualla.</li>
+ <li>Myös ne, joita se ei kiinnosta pätkääkään, saavat poissaolostasi iloisen ilmoituksen, ja näin he joutuvat vaihtelemaan kanavaikkunoita lukeakseen,
+    että sinä tai joku muu henkilö, jonka menemiset eivät kiinnosta yhtään
+    on nyt nukkumassa, syömässä pizzaa, tai katsomassa televisiota.</li>
+ <li>Siinä missä oikeat away-viestit välitetään muille IRC-palvelimille
+    vain tarvittaessa, tieto nickisi vaihtamisesta välittyy automaattisesti
+    kaikille palvelimille. Tämä ei varmaan kuulosta kovin huolestuttavalta,
+    mutta turhaa liikennettä se on silti.</li>
+ <li>Et pidä omaa nickiäsi varattuna sillä aikaa kun olet poissa, ja joku
+    voi epähuomiossa, tai jopa tarkoituksella, napata sen.</li>
+</ul>
+
+<p>Erilaisten skriptien automaattisesti käyttämät <i>public away:t</i> ovat myös keino, jolla saat varmasti tiedotettua kaikille olevasi poissa, esimerkiksi:</p>
+
+<tt>*** idiootti is away [REASON: tupakka] [MSG LOG: on] [Pager: on]</tt><br>
+<tt>*** idiootti has returned [from: tupakka] [was gone: 0h 04min 45sec] [Left 17.8.2006 13:37]</tt>
+
+<p>Kuten arvata saattoi, tämäkään ei ole hyvästä:</p>
+
+<ul>
+ <li>Ilmoitat liian näkyvästi olevasi poissa, suurinta osaa ihmisistä ei edelleenkään voisi
+    vähempää kiinnostaa.</li>
+ <li>Useimmat skriptit lisäävät rumia värejä (kts. koristelut), lihavointeja ja muita vastaavia
+    kikkailuja away-viesteihinsä. Pelkkä <i>/me menee pois.</i> ei olisi
+    läheskään niin paha kuin esimerkin mielikuvitusskripti, mutta yleisesti
+    ottaen actionien (/me, /action) liikakäyttöä paheksutaan.</li>
+ <li>Sotket kanavan muuta keskustelua tehokkaasti.</li>
+</ul>
+
+<p>Oikeaoppinen vaihtoehto ilmaista olevansa poissa on <i>/away</i>-komennon
+käyttäminen. Poistuessaan koneelta Petteri Perusirkkaaja kirjoittaa
+"<i>/away Nukkumassa</i>". Myöhemmin Petterin kaverilla on asiaa Petterille.
+Kaveri kirjoittaa "<i>/whois irkkaaja</i>" ja saa vastaukseksi esimerkiksi:</p>
+<tt>*** irkkaaja is petteri@petterin.kone.fi (Petteri Perusirkkaaja)<br>
+*** on channels: @#irc @#esimerkki @#roolimalli<br>
+*** Server: irc.song.fi (Song Networks, Finland)<br>
+<b>*** away: Nukkumassa</b><br>
+*** has been idle 3h 32min 23sec<br>
+*** End of whois</tt>
+
+<p>Tästä Petterin kaveri voi hyvin päätellä, ettei Petteri ole juuri nyt
+tavoitettavissa, eikä näköjään ole yli kolmeen tuntiin ollutkaan. Niinpä hän lähettää Petterille yksityisen viestin
+"<i>/msg irkkaaja Mulla on asiaa. Hihkaise kun olet herännyt</i>", jonka
+Petteri lukee herättyään. Palattuaan takaisin irkkiin Petteri
+kirjoittaa "/away" ilman mitään parametrejä, poistaakseen away-statuksen.
+Jos jollain tämän jälkeen sattuu olemaan asiaa Petterille, "<i>/whois irkkaaja</i>"
+ilmoittaa esimerkiksi:</p>
+
+<tt>*** irkkaaja is petteri@petterin.kone.fi (Petteri Perusirkkaaja)<br>
+*** on channels: @#irc @#esimerkki @#roolimalli<br>
+*** Server: irc.song.fi (Song Networks, Finland)<br>
+<b>*** has been idle 0h 0min 17sec</b><br>
+*** End of whois</tt>
+
+<p>Jos käyttäjät ovat eri IRC-palvelimilla, joudut antamaan nickin
+<i>/whois</i>-komennolle kahteen kertaan halutessasi nähdä idleajan
+ja tarkan syyn poissaololle. Muutoin idleaikaa ei näytetä ja syyksi
+ilmoitetaan vain "Gone". Monissa asiakasohjelmissa on myös alias <i>/wii</i>,
+jolle nickiä ei tarvitse antaa kahta kertaa.</p>
+
+
+<h3>2. Älä floodaa.</h3>
+
+
+<p>Floodaamisella tarkoitetaan tekstin kirjoittamista nopeaan tahtiin
+uusille riveille. Floodaamista on on ainakin kahta tyyppiä.
+Ensimmäisessä sama rivi tekstiä syötetään useaan kertaan kanavalle:</p>
+
+<tt>&lt;idiootti&gt; Seuraa!<br>
+&lt;idiootti&gt; Seuraa!<br>
+&lt;idiootti&gt; Seuraa!<br>
+&lt;idiootti&gt; Seuraa!<br>
+&lt;idiootti&gt; Seuraa!<br>
+</tt>
+
+<p>Eiköhän kaikille selvinnyt jo ensimmäisestä viestistä, että idiootti on seuran tarpeessa?</p>
+
+<p>Toisessa tapauksessa asia, joka voidaan kirjoittaa yhteen lauseeseen ja yhdelle riville, pätkitään monelle riville:</p>
+
+<tt>&lt;idiootti&gt; käynpä ulkona<br>
+&lt;idiootti&gt; meen hakee<br>
+&lt;idiootti&gt; pitsaa<br>
+&lt;idiootti&gt; autolla<br>
+&lt;idiootti&gt; hmm moneltakohan tulis takas<br>
+&lt;idiootti&gt; jossai kaheksalt vaikka<br>
+&lt;idiootti&gt; joo kaheksalta<br>
+&lt;idiootti&gt; menen<br>
+&lt;idiootti&gt; moi<br>
+&lt;idiootti&gt; =)</tt>
+
+<p>Haitta on ilmeinen. Taas muut saattavat joutua vaihtelemaan
+kanavaikkunoita jatkuvasti sitä mukaa kuin uusia rivejä tulee. Paljon
+selkeämpää olisi sanoa:</p>
+
+<tt>&lt;irkkaaja&gt; Lähdenpä ulos hakemaan pizzaa autolla. Tuun takas jossain kahdeksalta. Moi :)</tt>
+
+<p>Näin ollen ei tarvitse vilkaista kanavaa kuin kerran ja homma on
+sillä selvä. Lisäksi vältä pasteamasta tai kirjoittamasta kanavalle
+tekstiä, joka ei varmasti kiinnosta ketään, paitsi ehkä itseäsi.</p>
+
+
+<h3>3. Älä käytä ärsyttäviä skriptejä.</h3>
+
+
+<tt>*** idiootti<br>
+[System: Windows 2000 sp2 build 7374]<br> 
+[Uptime: 13h 37min]<br>
+[Graphics card: K-Force MMX 253CXVF Resolution: 1600x1200]<br>
+[CPU: 1700MHz (usage at 60%)<br>
+[Memory: 256] [Icons at Desktop: 27]<br>
+[Hard drives: (C: 50G, free space 2.6G) (D: 120G, free space 37.3G)]<br>
+-X- [3l1tyz0rXz-sCr1p7 1.4b] -X-</tt>
+
+<p>Tämä lienee jokaiselle tuttu näky. Suurinta osaa viestisi näkevistä
+ihmisistä ei kiinnosta koneesi tiedot pätkääkään. Lisäksi näihin
+skripteihin on yleensä liitetty
+ärsyttäviä ja täysin turhia koristeluja. Oma kategoriansa ovat myös
+"now playing"-skriptit:</p>
+
+<tt>*** idiootti &lt;- Kuuntelee: [AmisPopparit - AmisPOP.mp3] [kbps: 128] [KHz: 44,1] [Sijainti: 2:45/6:26]</tt>
+ 
+<p>Tuskin ketään kiinnostaa kappaleen nimen ja artistin lisäksi
+esitetyt tiedot. Monet tälläisiä skriptejä käyttävät eivät edes tiedä
+niiden tarkoitusta. Toki asian voi ilmoittaa hienovaraisemminkin
+esimerkiksi:</p>
+
+<tt>&lt;irkkaaja&gt; np: The Band - The Song</tt>
+
+
+<h3>4. Älä käytä värejä tai muita koristeluita.</h3>
+
+
+<p>Värit, boldit, reverset yms. tekstikoristelut eivät toimi oikein
+kaikissa asiakasohjelmissa, ovat valtaosan mielestä ärsyttäviä ja
+pistävät ikävästi silmään muun tekstin
+joukosta. Myös capsit (=isot kirjaimet) lukeutuvat näihin.</p>
+
+<p>Isoilla kirjaimilla
+kirjoittaminen tarkoittaa huutamista kovaan ääneen. Ethän sinä karju
+kurkku suorana töissä, koulussa, keskustassa tai muussa vastaavassa paikassakaan?</p>
+
+
+<h3>5. Käyttäydy ja kirjoita asiallisesti.</h3>
+
+
+<tt>&lt;idiootti&gt; siis vittuku se oli perkelee hienoo ku se vitun äijä juoksi nii vitu kovaa et helvetti, perkele!</tt>
+
+<p>Jokaisen vähänkään älyllisen pitäisi tiedostaa, että tälläisen kielen käyttäminen on 
+täysin hyödytöntä ja ärsyttävää. Yleisesti luullaan, että voimasanojen käyttö:</p>
+
+<ul>
+<li>Tekee miehekkäämmäksi</li>
+<li>Selvittää, että tekstiä kirjoittaa nyt tosi kova tyyppi (Ei kannata 
+väittää vastaan tai läski tummuu!)</li>
+<li>Korostaa viestin asiaa</li>
+<li>Muodostaa tekstin kirjoittajasta asiallisen kuvan</li>
+</ul>
+
+<p>mutta oikeastaan:</p>
+
+<ul>
+<li>Tekstiä selvästi kirjoittaa murrosiässä oleva ja henkisesti vielä
+kehittymätön yksilö, jonka mielipiteet ja käsitteet muuttuvat
+jatkuvasti, joten tekstiä ei kannata ottaa vakavasti</li>
+<li>Tekstistä tulee hankalasti luettavaa ja pidempää kuin sen tarvitsisi 
+olla</li>
+<li>Voimasanojen yleinen käyttö vähentää niiden merkitystä</li>
+</ul>
+
+<p>Myöskään huuto- ja kysymysmerkkien monistaminen ei lisää niiden merkitystä millään tavalla.</p>
+
+<tt>&lt;idiootti&gt; onx tääl seuraa??!??!?!!!?!?!?!?!</tt>
+
+<p>Kuten näkyy, huuto- ja kysymysmerkkien monistaminen aiheuttaa 
+ainoastaan tekstin muuttumisen rumemmaksi ja hankalammaksi lukea.</p>
+
+<p>Tarkoitusta voisi etsiä myös lauseiden perään kirjoitettaville pisteille:</p>
+
+<tt>&lt;irkkaaja&gt; Hoidetaanko se juttu tänään?<br>
+&lt;idiootti&gt; joo...<br>
+&lt;irkkaaja&gt; Monelta voin tulla hakemaan sut?<br>
+&lt;idiootti&gt; kolmen jälkeen...<br>
+&lt;irkkaaja&gt; Kävisikö mitenkään ennen kolmea? Tulee muuten liian kiire.<br>
+&lt;idiootti&gt; ei... mun pitää ehtiä siivota... ja silleen...
+</tt>
+
+<p>Lisäksi:</p>
+
+<ul>
+<li>Älä sano kenellekään mitään mitä et pystyisi sanomaan samalle henkilölle 
+kasvotusten</li>
+<li>Toisen mielen pahoittaminen ei hyödytä ketään millään tavalla</li>
+</ul>
+<p>Oikeinkirjoitus tekee tekstistäsi paljon mukavampaa luettavaa ja antaa 
+sinusta älykkään vaikutelman:</p>
+
+<tt>&lt;idiootti&gt; vitu idiootti kusi pää!!1 älä valita äidin kielen yhdys sana virheistä koko ajan perkele!!!1</tt>
+
+<p>Liioiteltu hymiöiden käyttäminen ei myöskään ole yhtään hyödyllistä:</p>
+
+<tt>&lt;irkkaaja&gt; (Kuvittele tähän todella hauska ja nauruhermoja kutkuttava vitsi.)<br>
+&lt;idiootti&gt; :D<br>
+&lt;idiootti&gt; ;DDDDDDDDDD<br>
+&lt;idiootti&gt; siis LOL!! :DDD<br>
+&lt;idiootti&gt; vähä repes!!!11<br>
+&lt;idiootti&gt; ;D<br>
+&lt;idiootti&gt; XDDDD<br>
+&lt;idiootti&gt; =)
+</tt>
+
+<p>Eiköhän kaikille selvinnyt jo ensimmäisestä hymiöstä, että pidät vitsiä huvittavana ja naurat sille?</p>
+
+
+<h3>6. Käytä selkeää nickiä.</h3>
+
+
+<p>Nick tulisi valita seuraavien kriteereiden perusteella:</p>
+
+<ul>
+<li>Helposti luettavissa</li>
+<li>Helposti lausuttavissa</li>
+<li>Helposti kirjoitettavissa</li>
+<li>Uniikki, omalaatuinen</li>
+<li>Sisältää vain aakkosia</li>
+<li>Kirjaimien kokovaihtelut ovat käytössä vain syystä (esimerkiksi 
+RipaRyti, mutta ei mIkKoEpAmAlLiKaS)</li>
+</ul>
+
+<p>_^-n1cK-^_\ ei ole hyvä nick. Jos joku muu sattuu käyttämään samaa 
+nickiä kanssasi, voit hyvin lisätä "_"-merkin (alaviiva) sen perään, ei eteen - 
+näin viestien osoittaminen sinulle ei tule turhan hankalaksi.</p> 
+
+<hr>
+
+<h4>Loppusanat</h4>
+
+<p>Ensinnäkin, yllä olevien ohjeiden noudattaminen ei tee IRC:stä tylsää paikkaa! :)</p>
+
+<p>Jos asia ei tullut tästä selväksi, suosittelen IRC:n vaihtamista 
+vaikkapa <a href="http://www.kiss.fi/chat/">täältä</a> löytyvään chattiin tai <a href="http://irc-galleria.net/">tänne</a></p>
+ 
+<p>Kehitysideoita ja lisäyksiä tälle sivulle otetaan vastaan avoimin mielin.</p>
+
+<p>Suurin osa tekstistä on lainattu luvan kanssa lähes suoraan osoitteesta http://anssi.hopto.org/irc-etiketti/.</p>
+
+<p>Nykyaikaistukset, muokkaukset ja parannukset on tehnyt <a href="http://mzl.fi/">MZL</a>.</p>
+
+</body></html>
