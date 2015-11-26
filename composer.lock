@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a5457d8debbd0507f7bb6859823d647",
-    "content-hash": "58b94ad0b73601a92bf6462efc2e4680",
+    "hash": "7eea5af591c294a9a1a8786f040205f0",
+    "content-hash": "07a4434df15b9f6adb4f43ef38354a79",
     "packages": [
         {
             "name": "composer/installers",
@@ -690,6 +690,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
+        },
+        {
+            "name": "wpackagist-plugin/iwp-client",
+            "version": "1.4.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/iwp-client/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/iwp-client.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/iwp-client/"
         },
         {
             "name": "wpackagist-plugin/lightbox-plus",

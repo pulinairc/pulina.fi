@@ -92,7 +92,8 @@
     "wpackagist-plugin/wordpress-social-login":"*",
     "wpackagist-plugin/lightbox-plus": "*",
     "wpackagist-plugin/stop-spammer-registrations-plugin": "*",
-    "wpackagist-plugin/registration-honeypot": "*"
+    "wpackagist-plugin/registration-honeypot": "*",
+    "wpackagist-plugin/iwp-client":"*"
   },
   "extra": {
     "dropin-paths": {
