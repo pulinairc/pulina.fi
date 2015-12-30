@@ -13,12 +13,12 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="container">
-			
+
 			<div class="the-blog-post">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<h2 class="entry-title"><?php the_title(); ?></h2>
-					<time class="entry-time" datetime="<?php get_the_time('c'); ?>" pubdate="pubdate"><?php echo ucfirst(get_the_time('l')) ?>na, <?php the_time('j. F') ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time>
+					<time class="entry-time" datetime="<?php get_the_time('c'); ?>" pubdate="pubdate"><?php echo ucfirst(get_the_time('l')) ?>na, <?php the_time('j.'); ?> <?php the_time('F'); ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time>
 
 				<div class="entry-content">
 					<?php the_content(); ?>
@@ -43,9 +43,9 @@ get_header(); ?>
     </div>
 
 					<?php edit_post_link( __( 'Muokkaa sivua', 'light' ), '<p class="edit">', '</p>' ); ?>
-		
+
 				</div><!-- .entry-content -->
-			
+
 			</article><!-- #post-## -->
 			</div><!--/.the-blog-post-->
 
@@ -53,7 +53,7 @@ get_header(); ?>
 	<p class="cat"><i class="fa fa-list"></i> <?php $category = get_the_category(); if($category[0]){ echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>'; } ?></p>
 	<?php the_tags('<i class="fa fa-tags"></i> <ul class="tags"><li>','</li><li>','</li></ul>'); ?>
 </div>
-			
+
 			</div><!--/.container-->
 
 		<?php endwhile; // end of the loop. ?>
