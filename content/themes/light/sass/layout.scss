@@ -148,7 +148,7 @@ body
     }
 
     &.slide-irclog {
-    
+
         .btn {
             background: transparent;
             text-transform: none;
@@ -296,7 +296,7 @@ body
             list-style: none;
             margin: 0;
             padding: 0;
-        
+
             li
             {
                 @include rem('margin-bottom',30px);
@@ -304,7 +304,7 @@ body
             a
             {
                 color: #3498db;
-        
+
                 font-weight: 400;
                 @include rem('font-size',16px);
                 @include rem('margin',0 0 10px 0);
@@ -313,11 +313,11 @@ body
             a.url
             {
                 font-family: $base-font-family;
-        
+
                 display: block;
-        
+
                 color: rgba(#3498db,.5);
-        
+
                 font-size: 0.8rem;
                 @include rem('font-size',14px);
                 font-weight: 300;
@@ -360,7 +360,7 @@ body
 
     &.slide-vaihe-kaksi {
         background: lighten(#5DA399, 30%);
-    
+
         h2 {
             color: darken(#5DA399, 30%);
         }
@@ -376,7 +376,7 @@ body
         background:#f2f2f2;
         font-family:$alt-font-family;
         text-align:center;
-    
+
         .numero {
             @include col(1/4);
 
@@ -384,7 +384,7 @@ body
                     @include stack();
                     @include rem('margin', 50px 0);
                 }
-        
+
             .arvo {
                 font-size: 2rem;
                 @include rem('line-height',70px);
@@ -393,13 +393,13 @@ body
                 display:block;
                 color:rgba(#222222,0.9);
             }
-    
+
             .asia {
                 @include rem('font-size', 16px);
                 @include rem('line-height', 22px);
                     @media(max-width:$container-mobile) {
                         font-size: 1.2rem;
-                    }   
+                    }
                 font-weight: 400;
                 color:rgba(#222222,0.5);
             }
@@ -470,7 +470,7 @@ a.btn
 
         @media(max-width:$container-ipad) {
             width:100%;
-            height:auto;        
+            height:auto;
         }
 
     }
@@ -503,7 +503,7 @@ img.size-full {
         width: auto;
         height: auto;
     }
-    
+
 }
 
 .alignleft {
@@ -624,14 +624,14 @@ img.size-full {
             font-weight: 400;
             color: #666;
             @include rem(margin,20px 0);
-            
+
             img {
                 border-radius: 50%;
                 margin-bottom: -10px;
                 margin-right: 10px;
                 width: 32px;
                 height: 32px;
-                // margin-left: -30px;      
+                // margin-left: -30px;
             }
         }
 
@@ -654,11 +654,11 @@ img.size-full {
         @include rem(line-height,40px);
         font-weight: 700;
         letter-spacing:-1px;
-    
+
         a {
             border:0;
             color: #333333;
-    
+
             &:hover {
                 color: $alt-color;
             }
@@ -693,7 +693,7 @@ img.size-full {
 
     a {
         border-bottom:1px solid #999999;
-        
+
         &:hover {
             border-color:transparent;
         }
@@ -707,7 +707,7 @@ img.size-full {
             width:100%;
             height:auto;
 
-        @media(min-width:$container-mobile) { 
+        @media(min-width:$container-mobile) {
 
             &.alignright {
                 width: auto;
@@ -1048,10 +1048,10 @@ a:visited.comment-time,
 }
 
 // Responsiivisen typografian poikkeukset:
-@media(max-width:$container-mobile) { 
-    p, .slide p, .slide a, .btn { 
-        font-size: 19px; 
-    } 
+@media(max-width:$container-mobile) {
+    p, .slide p, .slide a, .btn {
+        font-size: 19px;
+    }
 }
 
 .content-area {
@@ -1062,7 +1062,7 @@ a:visited.comment-time,
 .site-footer {
     background: #34495e;
     overflow: hidden;
-    @include rem('padding',10px); 
+    @include rem('padding',10px);
 
     p {
         color: #ffffff;
@@ -1131,19 +1131,19 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
 .rwd-table {
   margin: 0;
   min-width: 300px; // adjust to your needs
-  
+
   tr {
     border: 0;
   }
-  
+
   th {
-    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
   }
-  
+
   td {
     // width:25%;
-    display: block; 
-    
+    display: block;
+
     &:first-child {
       padding-top: .5em;
     }
@@ -1156,32 +1156,32 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
       font-weight: bold;
       display: inline-block;
       // end options
-      
+
       @media (min-width: $breakpoint-alpha) {
         display: none;
       }
     }
   }
-  
+
   th, td {
     text-align: left;
-    
+
     @media (min-width: $breakpoint-alpha) {
       display: table-cell;
       padding: .25em .5em;
-      
+
       &:first-child {
         padding-left: 0;
       }
-      
+
       &:last-child {
         padding-right: 0;
       }
     }
 
   }
-  
-  
+
+
 }
 
 .komennot {
@@ -1196,8 +1196,8 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
   }
   th, td {
     margin: .5em 1em;
-    @media (min-width: $breakpoint-alpha) { 
-      padding: 1em !important; 
+    @media (min-width: $breakpoint-alpha) {
+      padding: 1em !important;
     }
   }
   th, td:before {
@@ -1285,8 +1285,11 @@ p a {
 
 
 .mainox {
+  margin-top: 50px;
+
     p {
-        font-size: 0.5rem;
+        font-size: .85rem;
+        text-align: 1.22;
     }
 }
 

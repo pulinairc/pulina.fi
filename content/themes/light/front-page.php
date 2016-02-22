@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * Etusivun template.
  * Template Name: Front page
  *
@@ -45,12 +45,12 @@ get_header(); ?>
 
 		<p><a href="<?php echo get_page_link(6); ?>" class="btn">Lue lisää Pulinan historiasta</a></p>
 
-		<?php if(strtotime('2016-02-26 23:59') > time() ){ // Expires 26.2.2016! ?>
+		<?php if(strtotime('2017-02-26 23:59') > time() ) { ?>
 			<div class="mainox ad textad">
 				<p>Pulinat pois ja parhaita <a href="http://www.eurokasinot.net/rahapelit">rahapelejä</a>  kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin <a href="http://casinoarvostelut.com/">netticasinot</a>. Ennen kun alat pelaamaan kannattaa etsiä käsiisi parhaat <a href="http://www.parascasino.com/bonukset">casino bonukset</a>. Älähän uppoudu tähän puuhaan kuitenkaan liika ja jos tuntuu, että mopo karkaa käsistä turvaudu <a href="http://keskustelu.suomi24.fi/terveys/paihteet-ja-riippuvuudet/peliriippuvuus">tukeen</a> ystävälliseen <a href="http://www.peluuri.fi/">apuun</a>.</p>
 			</div>
 		<?php } ?>
-	
+
 	</div>
 
 </div>
@@ -66,18 +66,18 @@ get_header(); ?>
 <ul class="linkkilista">
 <?php
 
-    ini_set('display_errors', 1); 
+    ini_set('display_errors', 1);
     error_reporting(E_ALL);
 
-// require_once('inc/simplehtmldom/simple_html_dom.php'); 
+// require_once('inc/simplehtmldom/simple_html_dom.php');
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');
 
 // example: html->find('ul', 0)->find('li', 0);
 $first_level_items = $html->find('ul', 0)->find('li', 0);
-foreach($html->find('ul') as $ul) 
+foreach($html->find('ul') as $ul)
 {
 $i = 0;
-       foreach($ul->find('li') as $li) 
+       foreach($ul->find('li') as $li)
        {
        if($i == 6) { break; }
        $korvattavat = array('/Ã¤/','/Ã¶/', '/â/');
@@ -100,14 +100,14 @@ $i = 0;
 </div>
 
 		<div class="slide slide-infograafi">
-		
+
 			<div class="container">
-		
+
 				<div class="wow fadeIn numero" data-wow-delay="0.22s">
 					<span class="arvo meter_1"><?php $paikalla = file_get_html('http://peikko.us/pulina.html'); foreach($paikalla->find('.paikalla') as $numero) echo $numero; ?></span>
 					<span class="asia">Paikalla nyt</span>
 				</div>
-		
+
 				<div class="wow fadeIn numero" data-wow-delay="0.44s">
 					<span class="arvo meter_2"><?php
 $peak = file_get_html('http://peikko.us/peak.db');
@@ -118,7 +118,7 @@ echo $numero;
 ?></span>
 					<span class="asia">yhtäaikainen käyttäjäennätys</span>
 				</div>
-		
+
 				<div class="wow fadeIn numero" data-wow-delay="0.66s">
 					<span class="arvo meter_3"><?php
 $filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
@@ -127,7 +127,7 @@ $visitors = $bold[0];
 echo $visitors; ?></span>
 					<span class="asia">käyttäjää yhteensä</span>
 				</div>
-		
+
 				<div class="wow fadeIn numero" data-wow-delay="0.88s">
 					<span class="arvo meter_4"><?php
 $filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
@@ -136,19 +136,19 @@ $bold = $filu->find('b');
 $visitors = $bold[0];
 
 preg_match('/Rivien yhteismäärä: (?P<digit>\d+)/', $filu, $matches);
-$pulistumaara = $matches[1]; 
+$pulistumaara = $matches[1];
 echo $pulistumaara; ?></span>
 					<span class="asia">riviä pulistu</span>
 				</div>
-		
+
 			</div>
-		
+
 		</div><!--/.slide-->
 
 <div class="slide slide-miten slide-ohje slide-vaihe-yksi">
 
 	<div class="container">
-	
+
 		<h2>Vaihe 1. Päätä nimimerkki._</h2>
 
 		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Kanavan ylläpitäjiä ovat esimerkiksi rolle ja mustikkasoppa. Irkissä nimimerkki näkyy perinteisesti pienemmyys-suuremmuus-sulkeiden sisällä näin: <code>&lt;rolle&gt;</code>. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
@@ -160,7 +160,7 @@ echo $pulistumaara; ?></span>
 <div class="slide slide-miten slide-ohje slide-vaihe-kaksi">
 
 	<div class="container">
-	
+
 		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
 
 		<p>Luulitko, että pitää vielä jotain säätää? <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Start...</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
@@ -174,7 +174,7 @@ echo $pulistumaara; ?></span>
 <div class="slide slide-lopetus">
 
 	<div class="container">
-	
+
 		<h2>Mitäs muuta?</h2>
 
 		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. Tavoitteena julkaista kuvagalleria, miittien tapaamissysteemi ja jotain muutakin hienoa. Sitten joskus.</p>
