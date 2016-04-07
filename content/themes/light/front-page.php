@@ -56,6 +56,51 @@ get_header(); ?>
 </div>
 
 
+<div class="slide slide-miitit slide-linkit">
+
+	<div class="container">
+
+		<h2>Seuraavat miitit</h2>
+
+
+		<?php
+
+			$events = tribe_get_events( array(
+					'start_date' => new DateTime()
+			) );
+
+			// Loop through the events, displaying the title
+			// and content for each
+			$count = 0; ?>
+
+				<?php
+				// echo '<pre>';
+				// var_dump($events);
+				// echo '</pre>';
+				?>
+
+			<ul class="linkkilista">
+			<?php foreach ( $events as $event ) : ?>
+
+				<?php if($event->EventStartDate < date('Y-m-d')) : continue; endif;  ?>
+
+					<li><a href="<?php echo trailingslashit( home_url() ) . trailingslashit(tribe_get_option('singleEventSlug', 'event')); ?><?php echo $event->post_name; ?>"><?php echo $event->post_title; ?></a>
+					<a class="url" href="<?php echo trailingslashit( home_url() ) . trailingslashit(tribe_get_option('singleEventSlug', 'event')); ?><?php echo $event->post_name; ?>"><?php echo strftime("%e. %B", strtotime($event->EventStartDate)); ?> <?php echo strftime("%Y", strtotime($event->EventStartDate)); ?></a>
+					<?php //echo wpautop($event->post_content); ?>
+				</li>
+
+			<?php if(++$count == 5) break; ?>
+			<?php endforeach; ?>
+		</ul>
+
+			<div class="more">
+				<p><a href="<?php echo tribe_get_events_link(); ?>" class="btn">Kaikki miitit</a></p>
+			</div>
+
+	</div>
+
+</div>
+
 <div class="slide slide-linkit">
 
 	<div class="container">
