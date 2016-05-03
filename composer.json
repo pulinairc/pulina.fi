@@ -78,8 +78,6 @@
     "vlucas/phpdotenv": "~1.0.5",
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/disqus-comment-system":"*", 
-    "wpackagist-plugin/buddypress":"*",
-    "wpackagist-plugin/rendez-vous":"*",
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*",
     "wpackagist-plugin/theme-my-login":"*",
@@ -87,9 +85,6 @@
     "geekpress/wp-rocket-cli":"dev-master",
     "wpackagist-plugin/the-events-calendar":"*",
     "moderntribe/events-calendar-pro":"*",
-    "wpackagist-plugin/wordpress-social-login":"*",
-    "wpackagist-plugin/lightbox-plus": "*",
-    "wpackagist-plugin/stop-spammer-registrations-plugin": "*",
     "wpackagist-plugin/registration-honeypot": "*",
     "wpackagist-plugin/iwp-client":"*"
   },

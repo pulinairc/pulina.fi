@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b8db1fc4ae37b364496e70d6ad905dc",
-    "content-hash": "c7cb392d11c711407d3e8f662dbc59a6",
+    "hash": "bd7769d34beec124c6a37c2671ddf78e",
+    "content-hash": "2105ebf43e4d8564c060892b9e9b5e98",
     "packages": [
         {
             "name": "composer/installers",
@@ -635,26 +635,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "wpackagist-plugin/buddypress",
-            "version": "2.5.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/buddypress/",
-                "reference": "tags/2.5.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/buddypress.2.5.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/buddypress/"
-        },
-        {
             "name": "wpackagist-plugin/disqus-comment-system",
             "version": "2.85",
             "source": {
@@ -715,26 +695,6 @@
             "homepage": "https://wordpress.org/plugins/iwp-client/"
         },
         {
-            "name": "wpackagist-plugin/lightbox-plus",
-            "version": "2.7.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/lightbox-plus/",
-                "reference": "tags/2.7.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/lightbox-plus.2.7.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/lightbox-plus/"
-        },
-        {
             "name": "wpackagist-plugin/registration-honeypot",
             "version": "1.0.0",
             "source": {
@@ -755,26 +715,6 @@
             "homepage": "https://wordpress.org/plugins/registration-honeypot/"
         },
         {
-            "name": "wpackagist-plugin/rendez-vous",
-            "version": "1.4.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/rendez-vous/",
-                "reference": "tags/1.4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/rendez-vous.1.4.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/rendez-vous/"
-        },
-        {
             "name": "wpackagist-plugin/simple-history",
             "version": "2.5.5",
             "source": {
@@ -793,26 +733,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-history/"
-        },
-        {
-            "name": "wpackagist-plugin/stop-spammer-registrations-plugin",
-            "version": "6.15",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/stop-spammer-registrations-plugin/",
-                "reference": "tags/6.15"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stop-spammer-registrations-plugin.6.15.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/stop-spammer-registrations-plugin/"
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
@@ -873,26 +793,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-social-login",
-            "version": "2.3.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-social-login/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-social-login.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-social-login/"
         }
     ],
     "packages-dev": [],
