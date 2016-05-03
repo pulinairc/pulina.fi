@@ -1,9 +1,9 @@
 {
-  "name": "ronilaukkarinen/wpstack-rolle",
+  "name": "ronilaukkarinen/dudestack",
   "type": "project",
   "license": "MIT",
   "description": "A modern WordPress stack",
-  "homepage": "https://github.com/ronilaukkarinen/wpstack-rolle",
+  "homepage": "https://github.com/digitoimistodude/dudestack",
   "authors": [
     {
       "name": "Roni Laukkarinen",
@@ -18,12 +18,10 @@
     "issues": "https://github.com/roots/bedrock/issues",
     "forum": "http://discourse.roots.io/category/bedrock"
   },
-  "require": {
-    "ronilaukkarinen/wpstack-rolle": "dev-master"
-  },
   "config": {
     "preferred-install": "dist",
-    "generate-salts": true
+    "generate-salts": true,
+    "secure-http": false
   },
   "autoload": {
     "psr-0": {"Bedrock\\Installer": "scripts"}
@@ -50,10 +48,10 @@
       "package": {
         "name": "wp-rocket/wp-rocket",
         "type": "wordpress-plugin",
-        "version": "2.6.11",
+        "version": "2.7.4",
         "dist": {
           "type": "zip",
-          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/wp-rocket_2.6.11.zip"
+          "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/wp-rocket_2.7.4.zip"
         }
       }
     },
@@ -62,10 +60,10 @@
       "package": {
         "name": "moderntribe/events-calendar-pro",
         "type": "wordpress-plugin",
-        "version": "3.12.2",
+        "version": "4.1.1",
         "dist": {
           "type": "zip",
-          "url": "http://ronidude:UwaYeLeza0uM@www.dude.fi/plugins/events-calendar-pro.3.12.2.zip"
+          "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/events-calendar-pro.4.1.1.zip"
         }
       }
     }
@@ -73,7 +71,7 @@
   "require": {
     "koodimonni/composer-dropin-installer": "*",
     "php": ">=5.3.2",
-    "johnpbloch/wordpress": "4.3.1",
+    "johnpbloch/wordpress": "4.5.1",
     "koodimonni-language/fi": "*",
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
