@@ -78,5 +78,5 @@
 <div class="content site-content navslide">
 
 <?php if(!is_front_page() ) : ?> 
-	<iframe src="http://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
+	<iframe src="https://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
 <?php endif; ?>
