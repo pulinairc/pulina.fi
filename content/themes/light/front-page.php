@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<p>Suoraviivaisempi kuin Twitter. Reaaliaikaisempi kuin Facebook. "Sosiaalisista medioista" se ensimmäinen. Tervetuloa irkkiin!</p>
 
-			<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="btn">Tule mukaan pulisemaan</a></p>
+			<p><a href="http://chat.pulina.fi" class="btn">Tule mukaan pulisemaan</a></p>
 
 		</div>
 
@@ -61,41 +61,22 @@ get_header(); ?>
 	<div class="container">
 
 		<h2>Seuraavat miitit</h2>
-
-
-		<?php
-
-			$events = tribe_get_events( array(
-					'start_date' => new DateTime()
-			) );
-
-			// Loop through the events, displaying the title
-			// and content for each
-			$count = 0; ?>
-
-				<?php
-				// echo '<pre>';
-				// var_dump($events);
-				// echo '</pre>';
-				?>
-
+		
 			<ul class="linkkilista">
-			<?php foreach ( $events as $event ) : ?>
-
-				<?php if($event->EventStartDate < date('Y-m-d')) : continue; endif;  ?>
-
-					<li><a href="<?php echo trailingslashit( home_url() ) . trailingslashit(tribe_get_option('singleEventSlug', 'event')); ?><?php echo $event->post_name; ?>"><?php echo $event->post_title; ?></a>
-					<a class="url" href="<?php echo trailingslashit( home_url() ) . trailingslashit(tribe_get_option('singleEventSlug', 'event')); ?><?php echo $event->post_name; ?>"><?php echo strftime("%e. %B", strtotime($event->EventStartDate)); ?> <?php echo strftime("%Y", strtotime($event->EventStartDate)); ?></a>
-					<?php //echo wpautop($event->post_content); ?>
-				</li>
-
-			<?php if(++$count == 5) break; ?>
-			<?php endforeach; ?>
-		</ul>
+			<?php if ( have_rows( 'miitit_toistuva', 'option' ) ) : ?>
+			  <?php while( have_rows( 'miitit_toistuva', 'option' ) ) : the_row(); ?>
+			    <?php if ( get_sub_field( 'miitin_otsikko' ) && get_sub_field( 'miitin_doodle-linkki' ) ) : ?>
+			      <li style="text-align: center;"><a href="<?php echo get_sub_field( 'miitin_doodle-linkki' ); ?>"><?php echo get_sub_field( 'miitin_otsikko' ); ?></a></li>
+			    <?php endif; ?>                 
+			  <?php endwhile; ?>                    
+			<?php endif; ?>
+			</ul>
 
 			<div class="more">
-				<p><a href="<?php echo tribe_get_events_link(); ?>" class="btn">Kaikki miitit</a></p>
+				<p><a href="<?php echo tribe_get_events_link(); ?>" class="btn">Vanhat miitit ja kuvagalleriat</a></p>
 			</div>
+
+			<p><small><a href="<?php echo get_admin_url(); ?>admin.php?page=miittikentat">Lisää uusi miitti</a></small></p>
 
 	</div>
 
@@ -114,7 +95,7 @@ get_header(); ?>
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 
-// require_once('inc/simplehtmldom/simple_html_dom.php');
+require_once('inc/simplehtmldom/simple_html_dom.php');
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');
 
 // example: html->find('ul', 0)->find('li', 0);
@@ -208,9 +189,9 @@ echo $pulistumaara; ?></span>
 
 		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
 
-		<p>Luulitko, että pitää vielä jotain säätää? <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina">Tästä</a> tai alta napista, sitten nimimerkin täydennys ja <code>Start...</code>. Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
+		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://chat.pulina.fi">chat.pulina.fi</a> tai alta napista, sitten nimimerkin täydennys ja olet irkissä! Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
 
-		<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="btn">Boom, irkkiin!</a></p>
+		<p><a href="http://chat.pulina.fi" class="btn">Boom, irkkiin!</a></p>
 
 	</div>
 

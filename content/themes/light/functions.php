@@ -6,9 +6,23 @@
  */
 
 /*
+ * ACF options page
+ */
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_page(array(
+    'page_title'  => 'Miitit',
+    'menu_title'  => 'Miitit',
+    'menu_slug'   => 'miittikentat',
+    'capability'  => 'edit_posts',
+    'redirect'    => false
+  ));
+
+}
+
+/*
  * Facebook embed shortcode
  */
-
 function facebook_embed_func($atts) {
     extract(shortcode_atts(array(
       'href' => ''
