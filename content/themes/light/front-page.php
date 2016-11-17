@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<iframe src="https://peikko.us/irclog.php" frameborder="0" class="irclog"></iframe>
+<iframe src="https://www.pulina.fi/irclog.php" frameborder="0" class="irclog"></iframe>
 
 <div class="slide slide-irclog">
 	<div class="shade"></div>
