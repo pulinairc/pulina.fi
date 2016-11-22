@@ -1,7 +1,3 @@
-.container {
-  @include center($max_width: $container-desktop, $pad: 100);
-}
-
 a,
 a:link,
 a:visited {
@@ -46,9 +42,9 @@ body {
     opacity: .6;
     font-size: 3rem;
 
-    span {
+    svg {
       transition: 400ms ease 100ms;
-      color: #fff;
+      fill: #fff;
     }
   }
 }

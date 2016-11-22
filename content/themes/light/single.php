@@ -35,10 +35,10 @@ get_header(); ?>
 
 	<div class="post-navigation">
     	<div class="prev">
-    		<?php previous_post_link( '<span class="fa fa-chevron-left"></span> %link' ); ?>
+    		<?php previous_post_link( '&lt; %link' ); ?>
     	</div>
     	<div class="next">
-    		<?php next_post_link( '%link <span class="fa fa-chevron-right"></span>' ); ?>
+    		<?php next_post_link( '%link &gt;' ); ?>
     	</div>
     </div>
 
@@ -51,7 +51,7 @@ get_header(); ?>
 
 <div class="post-meta">
 	<p class="cat"><i class="fa fa-list"></i> <?php $category = get_the_category(); if($category[0]){ echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>'; } ?></p>
-	<?php the_tags('<i class="fa fa-tags"></i> <ul class="tags"><li>','</li><li>','</li></ul>'); ?>
+	<?php the_tags('<ul class="tags"><li>','</li><li>','</li></ul>'); ?>
 </div>
 
 			</div><!--/.container-->
