@@ -142,12 +142,9 @@ gulp.task('js', function() {
       gulp.src(
         [
           themeDir + '/js/src/jquery.js',
-          themeDir + '/js/src/jquery.flexnav.js',
-          themeDir + '/js/src/trunk.js',
           themeDir + '/js/src/prism.js',
           themeDir + '/js/src/skrollr.js',
-          themeDir + '/js/src/waypoints.js',
-          themeDir + '/js/src/wow.js',
+          themeDir + '/js/src/navigation.js',
           themeDir + '/js/src/scripts.js'
         ])
         .pipe(concat('all.js'))

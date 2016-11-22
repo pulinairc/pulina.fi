@@ -1,0 +1,193 @@
+.nav-trigger {
+  background: transparent;
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  cursor: pointer;
+
+  @media(max-width: $container-mobile) {
+    right: 35px;
+    top: 49px;
+  }
+
+  &:hover,
+  &:focus {
+    background: transparent;
+  }
+
+  .burger-icon {
+    @include burger(30px, 5px, 5px, $color-navigation-toggle);
+    cursor: pointer;
+  }
+
+  &[aria-expanded="true"] .burger-icon {
+    @include burger-to-cross;
+  }
+}
+
+.nav {
+  display: block;
+  float: right;
+  height: 100%;
+}
+
+// Sidebar
+.side-nav {
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 380px;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $color-navigation-bg;
+  visibility: hidden;
+  overflow: auto;
+  padding-top: 50px;
+  transition: opacity .2s 0s, visibility 0s .2s;
+  margin: -30px -30px 0;
+  height: calc(100vh + 45px);
+  max-height: calc(100vh + 45px);
+
+  @media(max-width: 380px) {
+    width: 100%;
+  }
+
+  // iPhone
+  @media(max-width: 330px) {
+    height: 120px;
+    max-height: 100%;
+    min-height: 0;
+    overflow: scroll;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0 0 30px;
+    margin: 0;
+    float: left;
+    width: 300px;
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    max-height: none;
+
+    &.sidebar-menu {
+      margin-bottom: 45px;
+    }
+  }
+
+  &.is-fixed {
+    position: fixed;
+  }
+
+  a {
+    display: block;
+    padding: 2px 50px;
+    position: relative;
+    color: #fff;
+
+    &:hover {
+      color: $color-links;
+    }
+  }
+
+  > ul {
+    padding: 0;
+    margin: 0;
+
+    &:last-child {
+      padding: 0 0 50px;
+    }
+
+    ul {
+      list-style: none;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+
+      li {
+        margin: 0;
+        text-align: left;
+
+        a {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+#sidenav {
+  outline: 0;
+  min-height: 100vh;
+  backface-visibility: hidden;
+  position: fixed;
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+  transition: all .8s;
+
+  // iOS 8 / Safari 8 fix
+  width: 0;
+
+  @media(max-width: $container-mobile) {
+    height: 10000px;
+    overflow: scroll;
+    margin: 0;
+    z-index: 99999;
+    min-height: 10000px;
+  }
+
+  &.open {
+    visibility: visible;
+    transition: transform .5s;
+    transform: translate3d(0, 0, 0);
+    z-index: 9999999;
+    min-height: 0;
+    overflow: scroll;
+    width: 380px;
+
+    @media(max-width: $container-mobile) {
+      max-width: 380px;
+      width: 100%;
+    }
+  }
+
+  // Nav trigger styles inside the navigation
+  .nav-trigger {
+    top: 85px;
+    right: 60px;
+  }
+}
+
+.site-wrapper {
+  transition: all .5s;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+body {
+  &.main-navigation-open {
+    // Prevent body scrolling when navigation is open
+    overflow: hidden;
+
+    .site-wrapper {
+      transform: translate3d(-310px, 0, 0);
+
+      // Prevent body scrolling when navigation is open
+      overflow: hidden;
+    }
+  }
+
+  &.main-navigation-touched {
+    overflow-x: hidden;
+    z-index: 0;
+  }
+}

@@ -1,15 +1,5 @@
 $(document).ready(function(){
 
-// Valikko
-$(".menu").flexNav({
-    "hover": true,
-    "hoverIntent": false,
-    "hoverIntentTimeout": 0,
-    "animationSpeed": 0,
-    "transitionOpacity": false,
-    "calcItemWidths": false
-});
-
 $(".wp-social-login-connect-with").replaceWith( "Yhdistä käyttämällä some-tiliäsi:" );
 
 $('.slide-irclog, .irclog, .slide-placeholder').css('height', window.innerHeight);
