@@ -61,16 +61,17 @@ get_header(); ?>
 	<div class="container">
 
 		<h2>Seuraavat miitit</h2>
-		
-			<ul class="linkkilista">
-			<?php if ( have_rows( 'miitit_toistuva', 'option' ) ) : ?>
-			  <?php while( have_rows( 'miitit_toistuva', 'option' ) ) : the_row(); ?>
-			    <?php if ( get_sub_field( 'miitin_otsikko' ) && get_sub_field( 'miitin_doodle-linkki' ) ) : ?>
-			      <li style="text-align: center;"><a href="<?php echo get_sub_field( 'miitin_doodle-linkki' ); ?>"><?php echo get_sub_field( 'miitin_otsikko' ); ?></a></li>
-			    <?php endif; ?>                 
-			  <?php endwhile; ?>                    
-			<?php endif; ?>
-			</ul>
+
+      <ul class="linkkilista">
+          <?php if ( have_rows( 'miitit_toistuva', 'option' ) ) :
+            while( have_rows( 'miitit_toistuva', 'option' ) ) : the_row();
+            if ( get_sub_field( 'miitin_otsikko' ) && get_sub_field( 'miitin_doodle-linkki' ) ) : ?>
+                <li><a href="<?php echo get_sub_field( 'miitin_doodle-linkki' ); ?>"><?php echo get_sub_field( 'miitin_otsikko' ); ?></a></li>
+              <?php endif;
+            endwhile;
+          endif;
+        ?>
+      </ul>
 
 			<div class="more">
 				<p><a href="<?php echo tribe_get_events_link(); ?>" class="btn">Vanhat miitit ja kuvagalleriat</a></p>
@@ -91,9 +92,6 @@ get_header(); ?>
 
 <ul class="linkkilista">
 <?php
-
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
 
 require_once('inc/simplehtmldom/simple_html_dom.php');
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');

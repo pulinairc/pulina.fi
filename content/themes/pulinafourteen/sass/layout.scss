@@ -21,8 +21,8 @@ $container-ipad: 770px;
 // Type scale: tiny, small, base, medium, large, xlarge, xxlarge
 
 // The font family
-$base-font-family: "Open Sans", Helvetica, sans-serif; 
-$alt-font-family: "Lato", Helvetica, sans-serif; 
+$base-font-family: "Open Sans", Helvetica, sans-serif;
+$alt-font-family: "Lato", Helvetica, sans-serif;
 $blog-font-family: "Noto Serif", Helvetica, sans-serif;
 
 // Establish a vertical rhythm
@@ -288,7 +288,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   clear:both;
   overflow:hidden;
   .author {
-    
+
     @include col(1/5);
 
     .avatar {
@@ -299,8 +299,8 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
       clear:both;
       @include type-scale(small);
       @include rem(padding,3px 0 0 18px);
-    } 
-  
+    }
+
   }
   .excerpt {
     @include col(4/5);
@@ -325,6 +325,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
 
 .linkkilista {
   li {
+    text-align: center;
     @include rem(margin-bottom,30px);
   }
   a {
@@ -373,7 +374,7 @@ h1 a,h2 a,h3 a,h4 a,h4 a,h5 a, {
   @include cf();
   @include rem(padding,$defaultpadding);
   background:#111111;
-  color:rgba(255,255,255,0.8);  
+  color:rgba(255,255,255,0.8);
 }
 
 .type {
@@ -470,7 +471,7 @@ a.join-btn {
 .type .btn {
   @include sassy-button("flat", 4px, #34495e, #34495e);
   @include type-scale(base);
-  float:right; 
+  float:right;
 }
 
 .mukaan div {
@@ -548,7 +549,7 @@ a.join-btn {
   font-family:$blog-font-family;
   @include type-scale(base);
   @include rem(margin,0);
-  @include rem(padding,0);  
+  @include rem(padding,0);
 }
 
 .tanaan {
@@ -564,7 +565,7 @@ a.join-btn {
   font-family:$blog-font-family;
   @include type-scale(base);
   @include rem(margin,0);
-  @include rem(padding,0);  
+  @include rem(padding,0);
 }
 
 .online {
@@ -707,7 +708,7 @@ span.goalAmount {
   font-family:$blog-font-family;
   @include type-scale(base);
   @include rem(margin,0 0 20px 0);
-  @include rem(padding,0);  
+  @include rem(padding,0);
   color:rgba(255,255,255,0.8);
 }
 
@@ -716,7 +717,7 @@ span.goalAmount {
 }
 
 #author .authorinfo {
-  @include col(5/6);  
+  @include col(5/6);
 }
 
 #author .avatararea img {
@@ -978,20 +979,20 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
 .rwd-table {
   margin: 0;
   min-width: 300px; // adjust to your needs
-  
+
   tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
   }
-  
+
   th {
-    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
   }
-  
+
   td {
     // width:25%;
-    display: block; 
-    
+    display: block;
+
     &:first-child {
       padding-top: .5em;
     }
@@ -1004,32 +1005,32 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
       font-weight: bold;
       display: inline-block;
       // end options
-      
+
       @media (min-width: $breakpoint-alpha) {
         display: none;
       }
     }
   }
-  
+
   th, td {
     text-align: left;
-    
+
     @media (min-width: $breakpoint-alpha) {
       display: table-cell;
       padding: .25em .5em;
-      
+
       &:first-child {
         padding-left: 0;
       }
-      
+
       &:last-child {
         padding-right: 0;
       }
     }
 
   }
-  
-  
+
+
 }
 
 .rwd-table {
@@ -1041,8 +1042,8 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
   }
   th, td {
     margin: .5em 1em;
-    @media (min-width: $breakpoint-alpha) { 
-      padding: 1em !important; 
+    @media (min-width: $breakpoint-alpha) {
+      padding: 1em !important;
     }
   }
   th, td:before {
