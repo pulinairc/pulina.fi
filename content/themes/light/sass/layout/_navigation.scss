@@ -177,13 +177,10 @@
 
 body {
   &.main-navigation-open {
-    // Prevent body scrolling when navigation is open
     overflow: hidden;
 
     .site-wrapper {
       transform: translate3d(-310px, 0, 0);
-
-      // Prevent body scrolling when navigation is open
       overflow: hidden;
     }
   }

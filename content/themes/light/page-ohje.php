@@ -29,7 +29,7 @@ get_header(); ?>
 
 					<p>Pulinalle pääsee kaikista nopeiten ja helpoiten tällä hetkellä käyttämällä <a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" target="_blank">webchattia</a>:
 
-					<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="btn join-btn">Irkkiin nyt heti!</a></p>
+					<p><a href="https://kiwiirc.com/client/irc.quakenet.org/?&channels=list&theme=relaxed#pulina" class="button join-button">Irkkiin nyt heti!</a></p>
 
 					<p>Webchat on selaimessa toimivaa IRC-sovellus. <strong>Channels:</strong>-kohdassa tulee olla <i>#pulina</i> ja <strong>Nickname:</strong>-kohtaan voit valita oman nimimerkkisi.</p>
 

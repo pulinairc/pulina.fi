@@ -1,0 +1,420 @@
+// Blog
+.entry-content {
+  overflow: hidden;
+  clear: both;
+  display: block;
+
+  iframe {
+    border: 0;
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+  }
+
+  img {
+    @media (max-width: $container-ipad) {
+      width: 100%;
+      height: auto;
+    }
+
+    width: 100%;
+    height: auto;
+
+    @media (min-width: $container-mobile) {
+      &.alignright {
+        width: auto;
+        height: auto;
+        float: right;
+        margin: 0 0 15px 15px;
+      }
+
+      &.alignleft {
+        width: auto;
+        height: auto;
+        float: left;
+        margin: 0 15px 15px 0;
+      }
+    }
+
+    &.aligncenter {
+      width: auto;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  blockquote {
+    color: #666;
+    font-weight: 400;
+    padding-left: 20px;
+    margin-left: 0;
+    letter-spacing: .01rem;
+    font-style: italic;
+    border-left: 3px solid rgba(#000, .65);
+    padding: 0 0 0 30px;
+    margin: 30px 0 30px -33px;
+  }
+
+  p {
+    font-family: $font-base;
+    color: $color-text;
+
+    a {
+      border-bottom: 1px solid #999;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  a img {
+    border: 0;
+    vertical-align: top;
+  }
+}
+
+img.size-full {
+  width: 100%;
+  height: auto;
+}
+
+.alignright {
+  float: right;
+  text-align: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+  &.size-full {
+    width: auto;
+    height: auto;
+  }
+}
+
+.alignleft {
+  float: left;
+  text-align: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.entry-title {
+  margin-bottom: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.entry-time {
+  display: block;
+  color: #bbb;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.post-meta {
+  clear: both;
+  border-top: 1px solid rgba(#000, .11);
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .fa {
+    margin-right: 5px;
+  }
+
+  .cat a,
+  .tags a,
+  .reply-to-comment a {
+    color: #777;
+  }
+
+  .cat a:hover,
+  .reply-to-comment a:hover {
+    color: #111;
+  }
+
+  .fa-tags {
+    float: left;
+    margin-right: 8px;
+  }
+
+  .tags {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      float: left;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      line-height: 20px;
+
+      a {
+        display: inline-block;
+        border-radius: 4px;
+        background: #f0f0f0;
+        padding: 4px 10px;
+
+        &:hover {
+          color: #111;
+          background: #ddd;
+        }
+      }
+    }
+  }
+}
+
+.jakonapit {
+  overflow: auto;
+  padding: 100px 0;
+}
+
+h3.author {
+  // text-align: center;
+  font-size: .5rem;
+  font-weight: 400;
+  color: #666;
+  margin: 20px 0;
+
+  img {
+    border-radius: 50%;
+    margin-bottom: -10px;
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.blog-page {
+  padding-top: 50px;
+
+  .the-blog-entry-content {
+    margin-top: 30px;
+  }
+
+  .container {
+    max-width: $container-ipad;
+    padding-bottom: 30px;
+  }
+
+  .entry-title {
+    padding: 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    a {
+      border: 0;
+      color: #333;
+
+      &:hover {
+        color: $color-alt;
+      }
+    }
+  }
+
+  .entry-time {
+    padding: 0;
+    font-family: $font-base;
+    color: rgba($color-text, .6);
+  }
+}
+
+#author {
+  font-size: .6rem;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: auto;
+  width: 100%;
+  border-radius: 4px;
+
+  .avatararea {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: #444;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  h4,
+  p {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 400;
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+.post-navigation {
+  padding: 10px 0;
+
+  .next,
+  .prev {
+    font-size: 1rem;
+  }
+
+  .next {
+    @media (min-width: $container-ipad) {
+      @include span(1/2);
+      text-align: right;
+    }
+
+    .fa {
+      margin-left: 3px;
+    }
+  }
+
+  .prev {
+    @media (min-width: $container-ipad) {
+      @include span(1/2);
+      text-align: left;
+    }
+
+    .fa {
+      margin-right: 3px;
+    }
+  }
+
+  .fa {
+    color: #777;
+    font-size: .5rem;
+  }
+}
+
+// Archive etc.
+.maintitle {
+  margin-top: 0;
+}
+
+.searchpage {
+  article {
+    margin-bottom: 20px;
+  }
+}
+
+// Comments
+.comment-respond {
+  margin-bottom: 30px;
+}
+
+.comment-reply-title {
+  display: none;
+}
+
+.comment-author h3.author {
+  float: left;
+}
+
+.comment-meta a {
+  text-decoration: underline;
+  color: #777;
+  display: block;
+  clear: both;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.comment-meta,
+a.comment-time,
+a:link.comment-time,
+a:visited.comment-time,
+.comment-time {
+  font-family: $font-alt;
+  padding: 0;
+  text-decoration: none;
+  color: #999;
+}
+
+.ping-list,
+.ping-list a {
+  color: #888;
+}
+
+.ping-list a {
+  text-decoration: underline;
+}
+
+.ping-list a:hover {
+  text-decoration: none;
+}
+
+.comment-list {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+
+  .avatar {
+    float: right;
+    overflow: hidden;
+    margin-left: 20px;
+  }
+}
+
+.comment-author img {
+  border-radius: 50%;
+}
+
+.comments-wrap {
+  text-align: left;
+  background: #fff;
+
+  ul,
+  ol {
+    text-align: left;
+  }
+}
+
+.comment {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#commentform code {
+  white-space: normal !important;
+}
+
+// Admin comments:
+// .comment-author-admin .the-comment p, .comment-author-admin .the-comment a {
+//  color:#b75143 !important;
+// }
+// .comment-author-admin .the-comment blockquote {
+//  border-color:#b75143 !important;
+// }
+.comment-author-admin .the-comment a {
+  text-decoration: underline;
+}
+
+.comment-author-admin .the-comment a:hover {
+  text-decoration: none;
+}
+
+.the-comment blockquote {
+  border-color: #999;
+}
