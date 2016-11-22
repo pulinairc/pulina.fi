@@ -1,0 +1,71 @@
+// Colors
+$color-pulinankeltainen: #ddd4b2;
+$color-pulinanvihrea: #78a22e;
+$color-pulinanvaaleanvihrea: #bceda3;
+$color-pulinankeltavihrea: #c8d55d;
+$color-pulinansininen: #5eadd3;
+$color-pulinanharmaa: #555;
+$color-pulinanpunainen: #ce5455;
+
+$color-menutxt: #fff;
+$color-trunk_bg: #1f2028;
+$color-trunk_txt: #fff;
+$color-bg_alt: #26292c;
+$color-menuhover: rgba($color-menutxt, .5);
+$color-nav_bg: #333;
+$color-top_level: $color-bg_alt;
+$color-second_level: lighten($color-nav_bg, 2);
+$color-third_level: lighten($color-nav_bg, 4);
+$color-fourth_level: lighten($color-nav_bg, 6);
+$color-base: #222;
+$color-alt: #5eadd3;
+$color-text: #555;
+$color-links: #4a98be;
+$color-menuactive: $color-alt;
+$color-hover: $color-alt;
+
+$menuheight: 50px;
+$menupadding: 0;
+
+$color-menutxtsize: base;
+
+// Font settings
+// You can use these font stacks normally with `font-family: $font-sans;` for instance.`
+$font-base: 'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif;
+$font-alt: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
+$font-monospace: 'Menlo', 'Courier', monospace;
+
+// Font settings
+$font-min-size: 16px; // Minimum font size, on mobile (default: 16px)
+$font-max-size: 20px; // Maximum font size, on desktop (default: 21px)
+$font-base-line-height: 1.78; // Line height for paragraphs
+$font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
+$headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
+$headings-line-height-forced: 1.22; // This is effective only if force is chosen in $headings-line-height-setup
+$headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty well
+$headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
+
+// Form settings
+$color-button-bg: #262626;
+$color-button-text: #fff;
+$color-forms: #cfd9db;
+$color-forms-text: #666;
+$color-forms-bg: #fff;
+$forms-border-radius: 3px;
+$forms-border-focus: darken(#cfd9db, 25%);
+
+// Breakpoints
+$grid-type: fluid; // 'fluid' or 'snappy'
+$layout-max-width: 100%;
+
+// Container settings
+$container-default-pad: 4rem; // Default padding between containers, mostly vertically. Tweak _containers.scss.
+$grid-base-size: 960px; // Layout max width on desktop. This is default .container size
+$container-mobile: 480px;
+$container-desktop: 1200px;
+$container-ipad: 770px;
+$container-ipad-landscape: 1024px;
+
+// Where navigation transforms into responsive
+$responsivenav: 872px;

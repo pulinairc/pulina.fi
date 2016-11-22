@@ -94,22 +94,34 @@ gulp.task('sass', function() {
 
   gulp.src(sassFile)
 
-    .pipe(sass({
-        compass: false,
-        bundleExec: true,
-        sourcemap: false,
-        style: 'compressed',
-        debugInfo: true,
-        lineNumbers: true,
-        errLogToConsole: true
-      }))
+  .pipe(sass({
+    compass: false,
+    bundleExec: true,
+    sourcemap: false,
+    style: 'compressed',
+    debugInfo: true,
+    lineNumbers: true,
+    errLogToConsole: true,
+    includePaths: [
+      themeDir + '/node_modules/',
+      'node_modules/',
+      // 'bower_components/',
+      // require('node-bourbon').includePaths
+    ],
+  }))
 
-    .on('error', handleError('styles'))
-    .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
-    .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
-    .pipe(pixrem())
-    .pipe(gulp.dest(cssDest))
-    .pipe(browserSync.stream());
+  .on('error', handleError('styles'))
+  .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+  .pipe(pixrem())
+  .pipe(minifycss({
+    advanced: true,
+    keepBreaks: false,
+    keepSpecialComments: 0,
+    mediaMerging: true,
+    sourceMap: true
+  }))
+  .pipe(gulp.dest(cssDest))
+  .pipe(browserSync.stream());
 
 });
 

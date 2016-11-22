@@ -1,41 +1,22 @@
-@import 'jeet/index';
-@import 'fontface';
-@import 'themeoptions';
-@import 'base';
-@import 'normalize/normalize';
-@import 'dudemixins';
-@import 'flexnav';
-@import 'trunk';
-@import 'font-awesome';
-@import 'flat-buttons';
-@import 'prism';
-@import '../../../../vendor/bower_components/sassline/assets/sass/base/variables';
-@import '../../../../vendor/bower_components/sassline/assets/sass/base/modular-scale';
-@import '../../../../vendor/bower_components/sassline/assets/sass/base/mixins';
-@import '../../../../vendor/bower_components/sassline/assets/sass/base/typography';
-
-/* -----------------------------------------------------------------------------
-    Layout widths
------------------------------------------------------------------------------ */
 .container {
-  @include center($max_width: $container-desktop, $pad: $defaultpadding);
+  @include center($max_width: $container-desktop, $pad: 100px);
 }
 
 a,
 a:link,
 a:visited {
   text-decoration: none;
-  color: $alt-color;
+  color: $color-alt;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: $base-color;
+  color: $color-base;
 }
 
 body {
-  font-family: $alt-font-family;
+  font-family: $font-alt;
   padding: 0;
 }
 
@@ -62,19 +43,17 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    opacity: 0.6;
+    opacity: .6;
     font-size: 3rem;
 
     span {
       transition: 400ms ease 100ms;
-      color: #ffffff;
+      color: #fff;
     }
   }
 }
 
-/* -----------------------------------------------------------------------------
-    Page
------------------------------------------------------------------------------ */
+// Page
 .shade {
   position: absolute;
   z-index: 2;
@@ -92,15 +71,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  @include rem('min-height', 500px);
+  min-height: 500px;
   z-index: 2;
 }
 
 .irclog-page {
   width: 100%;
-  @include rem('height', 300px);
-  @include rem('min-height', 300px);
-  @include rem('max-height', 300px);
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
 }
 
 .hidden {
@@ -108,14 +87,13 @@ body {
 }
 
 .slide {
+  @include background-cover();
   position: relative;
   color: #fff;
   border: 0;
   background-color: #fff;
-
-  @include rem('padding-top', $slidepadding);
-  @include rem('padding-bottom', $slidepadding);
-  @include background-cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
   .container {
     position: relative;
@@ -128,12 +106,15 @@ body {
   }
 
   &.slide-irclog {
+    overflow: auto;
+    height: 500px;
+
     .btn {
       background: transparent;
       text-transform: none;
       box-shadow: none;
       font-weight: 400;
-      border: 3px solid #ffffff;
+      border: 3px solid #fff;
       width: 65%;
 
       @media (max-width: $container-ipad) {
@@ -141,19 +122,15 @@ body {
       }
 
       &:hover {
-        background: #ffffff;
-        color: $text-color;
+        background: #fff;
+        color: $color-text;
       }
     }
 
     .shade {
       opacity: .6;
-      background: #222222;
-
-      // transition: 400ms ease 100ms;
+      background: #222;
     }
-    overflow: auto;
-    height: 500px;
 
     .container {
       @include centered();
@@ -168,8 +145,8 @@ body {
 
       h2 {
         font-weight: 900;
-        letter-spacing: 0.2em;
-        @include rem('margin-bottom', 20px);
+        letter-spacing: .2em;
+        margin-bottom: 20px;
         position: relative;
         text-transform: uppercase;
         font-size: 2rem;
@@ -179,7 +156,7 @@ body {
       p,
       span,
       a {
-        color: #ffffff;
+        color: #fff;
         text-decoration: none;
         outline: 0 none;
         transition: 400ms ease 100ms;
@@ -187,49 +164,20 @@ body {
     }
 
     .hover {
-      color: rgba(#ffffff, 0);
+      color: rgba(#fff, 0);
       text-shadow: 0 0 22px #fff;
-      opacity: 0.5;
+      opacity: .5;
       background: transparent !important;
       color: transparent !important;
     }
 
     .hover-btn {
-      color: rgba(#ffffff, 0);
+      color: rgba(#fff, 0);
       text-shadow: 0 0 22px #fff;
-      opacity: 0.5;
+      opacity: .5;
       background: transparent !important;
       color: transparent !important;
       box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
-    }
-
-    // &:hover {
-    //     h2, p, span, a
-    //     {
-    //         color: rgba(#ffffff,0);
-    //         text-shadow: 0 0 22px #fff;
-    //         opacity: 0.5;
-    //     }
-    //     .btn {
-    //         box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
-    //     }
-    //     .shade {
-    //         opacity: 0;
-    //     }
-    // }
-    @media (max-width: $container-mobile) {
-      .container {
-        h2 {
-          @include rem('font-size', 22px);
-          @include rem('line-height', 30px);
-        }
-
-        p,
-        a {
-          @include rem('font-size', 16px);
-          @include rem('line-height', 27px);
-        }
-      }
     }
   }
 
@@ -247,16 +195,16 @@ body {
       text-transform: none;
       box-shadow: none;
       font-weight: 400;
-      border: 3px solid $text-color;
+      border: 3px solid $color-text;
 
       @media (min-width: $container-ipad) {
         width: 35%;
       }
-      color: $text-color;
+      color: $color-text;
 
       &:hover {
-        background: $text-color;
-        color: #ffffff;
+        background: $color-text;
+        color: #fff;
       }
     }
   }
@@ -277,23 +225,19 @@ body {
       padding: 0;
 
       li {
-        @include rem('margin-bottom', 30px);
+        margin-bottom: 30px;
       }
 
       a {
         color: #3498db;
         font-weight: 400;
-        @include rem('font-size', 16px);
-        @include rem('margin', 0 0 10px 0);
-        @include rem('padding', 0);
       }
 
       a.url {
-        font-family: $base-font-family;
+        font-family: $font-base;
         display: block;
         color: rgba(#3498db, .5);
-        font-size: 0.8rem;
-        @include rem('font-size', 14px);
+        font-size: .8rem;
         font-weight: 300;
 
         img {
@@ -307,7 +251,7 @@ body {
     text-align: center;
 
     h2 {
-      font-family: $terminal-font-family;
+      font-family: $font-monospace;
     }
 
     .btn {
@@ -344,62 +288,45 @@ body {
 
   &.slide-infograafi {
     background: #f2f2f2;
-    font-family: $alt-font-family;
+    font-family: $font-alt;
     text-align: center;
 
     .numero {
-      @include col(1/4);
+      @include column(1/4);
 
       @media (max-width: $container-mobile) {
         @include stack();
-        @include rem('margin', 50px 0);
+        margin: 50px 0;
       }
 
       .arvo {
         font-size: 2rem;
-        @include rem('line-height', 70px);
+        line-height: 70px;
         font-weight: 700;
         display: block;
-        color: rgba(#222222, 0.9);
+        color: rgba(#222, .9);
       }
 
       .asia {
-        @include rem('font-size', 16px);
-        @include rem('line-height', 22px);
+        font-size: 16px;
+        line-height: 22px;
 
         @media (max-width: $container-mobile) {
           font-size: 1.2rem;
         }
         font-weight: 400;
-        color: rgba(#222222, 0.5);
+        color: rgba(#222, .5);
       }
     }
   }
 }
 
-/* -----------------------------------------------------------------------------
-    Forms & buttons
------------------------------------------------------------------------------ */
-input[type='button'],
-input[type='submit'],
-.btn,
-.btn-default,
-.button,
-a.btn {
-  border-width: 0;
-  box-shadow: none;
-  text-shadow: none;
-
-  @include button(desaturate(darken($alt-color, 8), 10), false, false, false);
-  color: #fff; // kommentoi tämä pois jos haluat käyttää buttonfilun väriä joka tulee napin taustan perusteella
-}
-
 #searchform {
   input[type='text'] {
-    @include rem('padding', 12px);
-    color: $alt-color;
-    border-color: $alt-color;
-    @include rem('margin-right', 5px);
+    padding: 12px;
+    color: $color-alt;
+    border-color: $color-alt;
+    margin-right: 5px;
     border-style: solid;
     border-width: 2px;
     float: left;
@@ -427,8 +354,6 @@ a.btn {
   }
 
   img {
-    // max-width: $container-desktop;
-    // height:auto;
     @media (max-width: $container-ipad) {
       width: 100%;
       height: auto;
@@ -438,9 +363,9 @@ a.btn {
   blockquote {
     color: #666;
     font-weight: 400;
-    @include rem('padding-left', 20px);
-    @include rem('margin-left', 0);
-    border-left: 5px solid $alt-color;
+    padding-left: 20px;
+    margin-left: 0;
+    border-left: 5px solid $color-alt;
   }
 }
 
@@ -452,8 +377,8 @@ img.size-full {
 .alignright {
   float: right;
   text-align: right;
-  @include rem('margin-left', 20px);
-  @include rem('margin-bottom', 20px);
+  margin-left: 20px;
+  margin-bottom: 20px;
 
   &.size-full {
     width: auto;
@@ -464,12 +389,12 @@ img.size-full {
 .alignleft {
   float: left;
   text-align: left;
-  @include rem('margin-right', 20px);
-  @include rem('margin-bottom', 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .entry-title {
-  @include rem('margin-bottom', 10px);
+  margin-bottom: 10px;
 
   &:first-child {
     margin-top: 0;
@@ -480,19 +405,19 @@ img.size-full {
   display: block;
   color: #bbb;
 
-  @include rem('margin-top', 20px);
-  @include rem('margin-bottom', 30px);
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .post-meta {
   clear: both;
   border-top: 1px solid rgba(#000, .11);
 
-  @include rem('margin-top', 50px);
-  @include rem('margin-bottom', 50px);
+  margin-top: 50px;
+  margin-bottom: 50px;
 
   .fa {
-    @include rem('margin-right', 5px);
+    margin-right: 5px;
   }
 
   .cat a,
@@ -508,8 +433,7 @@ img.size-full {
 
   .fa-tags {
     float: left;
-
-    @include rem('margin-right', 8px);
+    margin-right: 8px;
   }
 
   .tags {
@@ -522,20 +446,15 @@ img.size-full {
       float: left;
       margin-top: 0;
       margin-left: 0;
-
-      @include rem('margin-right', 10px);
-      @include rem('margin-bottom', 10px);
-      @include rem('line-height', 20px);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      line-height: 20px;
 
       a {
         display: inline-block;
         border-radius: 4px;
         background: #f0f0f0;
-
-        @include rem('padding-top', 4px);
-        @include rem('padding-bottom', 4px);
-        @include rem('padding-left', 10px);
-        @include rem('padding-right', 10px);
+        padding: 4px 10px;
 
         &:hover {
           color: #111;
@@ -548,13 +467,11 @@ img.size-full {
 
 .jakonapit {
   overflow: auto;
-
-  @include rem('padding-top', $defaultpadding);
-  @include rem('padding-bottom', $defaultpadding);
+  padding: 100px 0;
 }
 
 .nappi {
-  @include col(1/4);
+  @include column(1/4);
 }
 
 .blog .site-content {
@@ -563,10 +480,10 @@ img.size-full {
 
 h3.author {
   // text-align: center;
-  font-size: 0.5rem;
+  font-size: .5rem;
   font-weight: 400;
   color: #666;
-  @include rem(margin, 20px 0);
+  margin: 20px 0;
 
   img {
     border-radius: 50%;
@@ -574,27 +491,23 @@ h3.author {
     margin-right: 10px;
     width: 32px;
     height: 32px;
-
-    // margin-left: -30px;
   }
 }
 
 .blog-page {
-  @include rem(padding-top, 50px);
+  padding-top: 50px;
 
   .the-blog-entry-content {
-    @include rem(margin-top, 30px);
+    margin-top: 30px;
   }
 
   .container {
     max-width: $container-ipad;
-    @include rem(padding-bottom, 30px);
+    padding-bottom: 30px;
   }
 
   .entry-title {
     padding: 0;
-    @include rem(font-size, 30px);
-    @include rem(line-height, 40px);
     font-weight: 700;
     letter-spacing: -1px;
 
@@ -603,15 +516,15 @@ h3.author {
       color: #333;
 
       &:hover {
-        color: $alt-color;
+        color: $color-alt;
       }
     }
   }
 
   .entry-time {
     padding: 0;
-    font-family: $base-font-family;
-    color: rgba($text-color, .6);
+    font-family: $font-base;
+    color: rgba($color-text, .6);
   }
 }
 
@@ -620,17 +533,17 @@ h3.author {
   display: block;
 
   blockquote {
-    letter-spacing: 0.01rem;
+    letter-spacing: .01rem;
     font-weight: 400;
     font-style: italic;
-    border-left: 3px solid rgba(#000000, 0.65);
-    @include rem('padding', 0 0 0 30px);
-    @include rem('margin', 30px 0 30px -33px);
+    border-left: 3px solid rgba(#000000, .65);
+    padding: 0 0 0 30px;
+    margin: 30px 0 30px -33px;
   }
 
   p {
-    font-family: $base-font-family;
-    color: $text-color;
+    font-family: $font-base;
+    color: $color-text;
 
     a {
       border-bottom: 1px solid #999999;
@@ -655,16 +568,14 @@ h3.author {
         width: auto;
         height: auto;
         float: right;
-        @include rem('margin-left', 15px);
-        @include rem('margin-bottom', 15px);
+        margin: 0 0 15px 15px;
       }
 
       &.alignleft {
         width: auto;
         height: auto;
         float: left;
-        @include rem('margin-left', 15px);
-        @include rem('margin-bottom', 15px);
+        margin: 0 15px 15px 0;
       }
     }
 
@@ -678,10 +589,10 @@ h3.author {
 }
 
 #author {
-  font-size: 0.6rem;
+  font-size: .6rem;
   padding: 20px;
-  @include rem('margin-top', 30px);
-  @include rem('margin-bottom', 30px);
+  margin-top: 30px;
+  margin-bottom: 30px;
   overflow: auto;
   width: 100%;
   border-radius: 4px;
@@ -701,7 +612,7 @@ h3.author {
     color: #444444;
     font-weight: 400;
     margin-bottom: 0;
-    @include rem('margin-top', 20px);
+    margin-top: 20px;
   }
 
   h4,
@@ -715,12 +626,11 @@ h3.author {
 }
 
 .post-navigation {
-  @include rem('padding', 10px 0);
+  padding: 10px 0;
 
   .next,
   .prev {
     font-size: 1rem;
-    @include rem('line-height', 25px);
   }
 
   .next {
@@ -747,7 +657,7 @@ h3.author {
 
   .fa {
     color: #777777;
-    font-size: 0.5rem;
+    font-size: .5rem;
   }
 }
 
@@ -760,7 +670,7 @@ h3.author {
 
 .searchpage {
   article {
-    @include rem('margin-bottom', 20px);
+    margin-bottom: 20px;
   }
 }
 
@@ -768,7 +678,7 @@ h3.author {
     Kommentit
 ----------------------------------------------------------------------------- */
 .comment-respond {
-  @include rem('margin-bottom', 30px);
+  margin-bottom: 30px;
 }
 
 .comment-reply-title {
@@ -789,15 +699,10 @@ a.comment-time,
 a:link.comment-time,
 a:visited.comment-time,
 .comment-time {
-  font-family: $alt-font-family;
+  font-family: $font-alt;
   padding: 0;
   text-decoration: none;
   color: #999;
-
-  @include rem('font-size', 16px);
-  @include rem('line-height', 16px+7);
-  @include rem('margin-top', 10px);
-  @include rem('margin-left', 1px);
 }
 
 .comment-meta a:hover {
@@ -809,19 +714,9 @@ a:visited.comment-time,
   clear: both;
 }
 
-.ping-list {
-  @include rem('margin-bottom', 40px);
-}
-
 .ping-list,
 .ping-list a {
   color: #888;
-
-  @include rem('font-size', 13px);
-}
-
-.ping-list cite a {
-  @include rem('margin-right', 15px);
 }
 
 .ping-list a {
@@ -836,21 +731,17 @@ a:visited.comment-time,
   margin-right: 0;
   margin-left: 0;
   padding: 0;
-
-  @include peruslista;
-  @include rem('margin-top', 20px);
-  @include rem('margin-bottom', 20px);
 }
 
 .comment-list .avatar {
   float: right;
   overflow: hidden;
 
-  @include rem('margin-left', 20px);
+  margin-left: 20px;
 }
 
 .comment-author img {
-  border-radius: 50% 50%;
+  border-radius: 50%;
 }
 
 .comments-wrap {
@@ -869,10 +760,10 @@ a:visited.comment-time,
   padding-right: 0;
   padding-left: 0;
 
-  @include rem('margin-top', 30px);
-  @include rem('margin-bottom', 30px);
-  @include rem('padding-top', 20px);
-  @include rem('padding-bottom', 20px);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #commentform code {
@@ -912,8 +803,8 @@ a:visited.comment-time,
   overflow: hidden;
 
   p {
-    font-family: $terminal-font-family;
-    color: rgba($text-color, 0.8);
+    font-family: $font-monospace;
+    color: rgba($color-text, .8);
     font-size: 1rem;
     margin-top: 0;
     padding-top: 0;
@@ -937,11 +828,11 @@ a:visited.comment-time,
 }
 
 .cursor {
-  background: rgba($text-color, 0.8);
+  background: rgba($color-text, .8);
   display: inline-block;
   width: 11px;
   height: 2px;
-  @include rem('margin', 0 0 -3px 5px);
+  margin: 0 0 -3px 5px;
   animation: blink 1s steps(2, start) infinite;
 }
 
@@ -960,26 +851,26 @@ a:visited.comment-time,
 }
 
 .content-area {
-  @include rem('padding-top', 50px);
-  @include rem('padding-bottom', 50px);
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .site-footer {
   background: #34495e;
   overflow: hidden;
-  @include rem('padding', 10px);
+  padding: 10px;
 
   p {
-    color: #ffffff;
+    color: #fff;
     margin: 0;
 
     code {
-      background: rgba(#222222, 0.8);
+      background: rgba(#222, .8);
     }
   }
 
   .col {
-    @include col(1/2);
+    @include column(1/2);
 
     &:nth-child(2) {
       text-align: right;
@@ -993,7 +884,7 @@ a:visited.comment-time,
 }
 
 .logocol {
-  @include col(1/5, $gutter: 0);
+  @include column(1/5, $gutter: 0);
 }
 
 .logocol img {
@@ -1002,8 +893,8 @@ a:visited.comment-time,
 }
 
 .softa {
-  @include col(4/5, $gutter: 0);
-  @include rem(padding, $defaultpadding);
+  @include column(4/5, $gutter: 0);
+  padding: 100px;
 }
 
 .softa ul a {
@@ -1018,7 +909,7 @@ a:visited.comment-time,
 
 .containercol {
   background: #e5e5e5;
-  background: rgba(0, 0, 0, 0.10);
+  background: rgba(0, 0, 0, .10);
   overflow: hidden;
 }
 
@@ -1084,8 +975,8 @@ $breakpoint-alpha: $container-ipad; // adjust to your needs
 }
 
 .komennot {
-  background: rgba(#000000, 0.03);
-  @include rem('padding', 50px 0);
+  background: rgba(#000000, .03);
+  padding: 50px 0;
 }
 
 .rwd-table {
@@ -1121,7 +1012,7 @@ tr {
 }
 
 .komennot table code {
-  transition: background-color 0.52s ease-out;
+  transition: background-color .52s ease-out;
 }
 
 .komennot table code:hover {
@@ -1130,7 +1021,7 @@ tr {
 $transition-time: .5s;
 
 p a {
-  color: $pulinanvihrea;
+  color: $color-pulinanvihrea;
   display: inline-block;
   text-decoration: none;
   overflow: hidden;
@@ -1145,7 +1036,7 @@ p a {
   perspective-origin: 50% 50%;
 
   &:hover span {
-    background: $pulinanvihrea;
+    background: $color-pulinanvihrea;
     -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
     -moz-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
     -ms-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
@@ -1177,7 +1068,7 @@ p a {
       top: 0;
       padding: 0 3px;
       color: #fff;
-      background: $pulinanvihrea;
+      background: $color-pulinanvihrea;
       -webkit-transform-origin: 50% 0%;
       -moz-transform-origin: 50% 0%;
       -ms-transform-origin: 50% 0%;
@@ -1201,17 +1092,16 @@ p a {
 
 .login-logout {
   span {
-    color: rgba(#ffffff, 0.8);
+    color: rgba(#fff, .8);
     margin-right: 5px;
   }
 }
-@import 'buddypress';
 
 input[type='text'],
 input[type='password'] {
   padding: 15px 20px;
   font-size: 1.2rem;
-  border: 2px solid $alt-color;
+  border: 2px solid $color-alt;
 }
 
 #loginform {
@@ -1254,7 +1144,7 @@ input[type='password'] {
 .hentry {
   .single-tribe_events .tribe-events-content,
   .tribe-events-single-event-description.tribe-events-content.entry-content.description {
-    @include col(5/7);
+    @include column(5/7);
     margin-right: 0 !important;
 
     @media (max-width: $container-mobile) {
@@ -1265,7 +1155,7 @@ input[type='password'] {
 }
 
 .tribe-events-event-image {
-  @include col(2/7);
+  @include column(2/7);
 
   @media (max-width: $container-mobile) {
     @include stack();
@@ -1319,8 +1209,8 @@ input[type='password'] {
 }
 
 .wp-social-login-provider-list {
-  @include rem('padding-top', 10px);
-  @include rem('padding-bottom', 10px);
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -1344,8 +1234,8 @@ input[type='password'] {
     margin-top: 30px !important;
     display: block;
     line-height: 1.3 !important;
-    opacity: 0.75;
-    transition: all 0.55s;
+    opacity: .75;
+    transition: all .55s;
 
     &:hover {
       opacity: 1;
