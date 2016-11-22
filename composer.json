@@ -37,7 +37,7 @@
     },
     {
       "type": "composer",
-      "url": "http://languages.koodimonni.fi"
+      "url": "https://wp-languages.github.io"
     },
     {
       "type": "vcs",
@@ -47,13 +47,13 @@
   "require": {
     "koodimonni/composer-dropin-installer": "*",
     "php": ">=5.3.2",
-    "johnpbloch/wordpress": "4.5.1",
+    "johnpbloch/wordpress": "4.6.1",
     "koodimonni-language/fi": "*",
     "composer/installers": "v1.0.6",
     "wp-cli/wp-cli": "v0.13.0",
     "vlucas/phpdotenv": "~1.0.5",
     "wpackagist-plugin/wordpress-seo":"*",
-    "wpackagist-plugin/disqus-comment-system":"*", 
+    "wpackagist-plugin/disqus-comment-system":"*",
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*",
     "wpackagist-plugin/theme-my-login":"*",
