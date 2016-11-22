@@ -24,3 +24,4 @@ bin
 config/deploy/
 dandelion.yml
 .config.codekit
+media
