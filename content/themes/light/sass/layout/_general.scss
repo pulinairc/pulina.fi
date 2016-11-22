@@ -16,305 +16,6 @@ body {
   padding: 0;
 }
 
-.header-container {
-  position: fixed;
-  z-index: 100;
-  overflow: visible;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  .container {
-    position: relative;
-  }
-}
-
-.rullaa-alas {
-  @include horizontal-align();
-  position: absolute;
-  bottom: 15px;
-  z-index: 10;
-
-  p {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    opacity: .6;
-    font-size: 3rem;
-
-    svg {
-      transition: 400ms ease 100ms;
-      fill: #fff;
-    }
-  }
-}
-
-// Page
-.shade {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: .7;
-  background: #444;
-}
-
-.irclog {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 500;
-  z-index: 2;
-}
-
-.irclog-page {
-  width: 100%;
-  height: 300;
-  min-height: 300;
-  max-height: 300;
-}
-
-.hidden {
-  display: none;
-}
-
-.slide {
-  @include background-cover();
-  position: relative;
-  color: #fff;
-  border: 0;
-  background-color: #fff;
-  padding-top: 100;
-  padding-bottom: 100;
-
-  .container {
-    position: relative;
-    z-index: 3;
-  }
-
-  h1,
-  h2 {
-    margin-top: 0;
-  }
-
-  &.slide-irclog {
-    overflow: auto;
-    height: 500;
-
-    .button {
-      background: transparent;
-      text-transform: none;
-      box-shadow: none;
-      font-weight: 400;
-      border: 3px solid #fff;
-      width: 65%;
-
-      @media (max-width: $container-ipad) {
-        width: 100%;
-      }
-
-      &:hover {
-        background: #fff;
-        color: $color-text;
-      }
-    }
-
-    .shade {
-      opacity: .6;
-      background: #222;
-    }
-
-    .container {
-      @include centered();
-      position: absolute;
-      text-align: center;
-      max-width: 600;
-
-      @media (max-width: $container-mobile) {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      h2 {
-        font-weight: 900;
-        letter-spacing: .2em;
-        margin-bottom: 20;
-        position: relative;
-        text-transform: uppercase;
-        font-size: 2rem;
-      }
-
-      h2,
-      p,
-      span,
-      a {
-        color: #fff;
-        text-decoration: none;
-        outline: 0 none;
-        transition: 400ms ease 100ms;
-      }
-    }
-
-    .hover {
-      text-shadow: 0 0 22px #fff;
-      opacity: .5;
-      background: transparent;
-      color: transparent;
-    }
-
-    .hover-button {
-      text-shadow: 0 0 22px #fff;
-      opacity: .5;
-      background: transparent;
-      color: transparent;
-      box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
-    }
-  }
-
-  &.slide-esittely {
-    background: #fdfdfd;
-    z-index: 10;
-    text-align: center;
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    .button {
-      background: transparent;
-      text-transform: none;
-      box-shadow: none;
-      font-weight: 400;
-      border: 3px solid $color-text;
-      color: $color-text;
-
-      @media (min-width: $container-ipad) {
-        width: 35%;
-      }
-
-      &:hover {
-        background: $color-text;
-        color: #fff;
-      }
-    }
-  }
-
-  &.slide-linkit {
-    background: darken(#fdfdfd, 2%);
-    text-align: center;
-    overflow: hidden;
-
-    &.slide-miitit {
-      background: darken(#fdfdfd, 8%);
-    }
-
-    .linkkilista {
-      text-align: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        margin-bottom: 30;
-      }
-
-      a {
-        color: #3498db;
-        font-weight: 400;
-
-        &.url {
-          font-family: $font-base;
-          display: block;
-          color: rgba(#3498db, .5);
-          font-size: .8rem;
-          font-weight: 300;
-
-          img {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-
-  &.slide-ohje {
-    text-align: center;
-
-    h2 {
-      font-family: $font-monospace;
-    }
-
-    .button {
-      text-transform: none;
-      box-shadow: none;
-      border: 0;
-      font-weight: 400;
-
-      @media (min-width: $container-ipad) {
-        width: 35%;
-      }
-    }
-  }
-
-  &.slide-vaihe-yksi {
-    background: lighten(#87bcde, 20%);
-
-    h2 {
-      color: darken(#87bcde, 50%);
-    }
-  }
-
-  &.slide-vaihe-kaksi {
-    background: lighten(#5da399, 30%);
-
-    h2 {
-      color: darken(#5da399, 30%);
-    }
-  }
-
-  &.slide-lopetus {
-    text-align: center;
-  }
-
-  &.slide-infograafi {
-    background: #f2f2f2;
-    font-family: $font-alt;
-    text-align: center;
-
-    .numero {
-      @include column(1/4);
-
-      @media (max-width: $container-mobile) {
-        @include stack();
-        margin: 50 0;
-      }
-
-      .arvo {
-        font-size: 2rem;
-        line-height: 70;
-        font-weight: 700;
-        display: block;
-        color: rgba(#222, .9);
-      }
-
-      .asia {
-        font-size: 16px;
-        line-height: 22px;
-        font-weight: 400;
-        color: rgba(#222, .5);
-
-        @media (max-width: $container-mobile) {
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-}
-
 #searchform {
   input[type='text'] {
     padding: 12px;
@@ -380,10 +81,6 @@ body {
   height: 2px;
   margin: 0 0 -3px 5px;
   animation: blink 1s steps(2, start) infinite;
-}
-
-.screen-reader-text {
-  display: none;
 }
 
 // Responsiivisen typografian poikkeukset:
@@ -592,9 +289,21 @@ p a {
 }
 
 .login-logout {
-  span {
+  svg {
     color: rgba(#fff, .8);
     margin-right: 5px;
+    padding: 1px;
+    position: relative;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    svg,
+    path {
+      fill: $color-pulinansininen;
+    }
   }
 }
 

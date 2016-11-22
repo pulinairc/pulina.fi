@@ -47,8 +47,8 @@
   padding-top: 50px;
   transition: opacity .2s 0s, visibility 0s .2s;
   margin: -30px -30px 0;
-  height: calc(100vh + 45px);
-  max-height: calc(100vh + 45px);
+  height: calc(100vh + 100px);
+  max-height: calc(100vh + 100px);
 
   @media(max-width: 300px) {
     width: 100%;
@@ -74,7 +74,8 @@
     max-height: none;
 
     &.sidebar-menu {
-      margin-bottom: 45px;
+      margin-top: 50px;
+      margin-bottom: 100px;
     }
   }
 
@@ -84,7 +85,8 @@
 
   a {
     display: block;
-    padding: 2px 50px;
+    padding: 5px 50px;
+    border-bottom: 1px solid rgba(#fff, .05);
     position: relative;
     color: #fff;
 
@@ -156,8 +158,8 @@
 
   // Nav trigger styles inside the navigation
   .nav-trigger {
-    top: 85px;
-    left: 60px;
+    top: 52px;
+    left: 52px;
   }
 }
 
