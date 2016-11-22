@@ -16,7 +16,7 @@
 @import '../layout/typography';
 @import '../layout/containers';
 // @import '../layout/site-footer';
-// @import '../layout/forms';
+@import '../layout/forms';
 @import '../layout/navigation';
 
 // Global features
@@ -25,5 +25,3 @@
 // Views
 @import '../views/front-page';
 @import '../views/blog';
-// @import '../views/single';
-// @import '../views/comments';

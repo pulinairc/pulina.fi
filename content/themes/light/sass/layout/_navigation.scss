@@ -1,179 +1,198 @@
 @import '../base/burger';
 
-.nav-trigger {
-  background: transparent;
-  position: absolute;
-  left: 22px;
-  top: 22px;
-  display: block;
-  padding: 0;
-  margin: 0;
-  z-index: 1000;
-  cursor: pointer;
-  border: 0;
-
-  &:hover,
-  &:focus {
+body {
+  .nav-trigger {
     background: transparent;
-  }
-
-  .burger-icon {
-    @include burger(30px, 5px, 5px, $color-navigation-toggle);
-    cursor: pointer;
-  }
-
-  &[aria-expanded="true"] .burger-icon {
-    @include burger-to-cross;
-  }
-}
-
-.nav {
-  display: block;
-  float: left;
-  height: 100%;
-}
-
-// Sidebar
-.side-nav {
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 300px;
-  padding-left: 0;
-  padding-right: 0;
-  background-color: $color-navigation-bg;
-  visibility: hidden;
-  overflow: auto;
-  padding-top: 50px;
-  transition: opacity .2s 0s, visibility 0s .2s;
-  margin: -30px -30px 0;
-  height: calc(100vh + 100px);
-  max-height: calc(100vh + 100px);
-
-  @media(max-width: 300px) {
-    width: 100%;
-  }
-
-  // iPhone
-  @media(max-width: 330px) {
-    height: 120px;
-    max-height: 100%;
-    min-height: 0;
-    overflow: scroll;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0 0 30px;
-    margin: 0;
-    float: left;
-    width: 300px;
-    visibility: visible;
-    opacity: 1;
-    overflow: visible;
-    max-height: none;
-
-    &.sidebar-menu {
-      margin-top: 50px;
-      margin-bottom: 100px;
-    }
-  }
-
-  &.is-fixed {
-    position: fixed;
-  }
-
-  a {
+    position: absolute;
+    left: 22px;
+    top: 22px;
     display: block;
-    padding: 5px 50px;
-    border-bottom: 1px solid rgba(#fff, .05);
-    position: relative;
-    color: #fff;
-
-    &:hover {
-      color: $color-links;
-    }
-  }
-
-  > ul {
     padding: 0;
     margin: 0;
+    z-index: 1000;
+    cursor: pointer;
+    border: 0;
 
-    &:last-child {
-      padding: 0 0 50px;
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+
+    .burger-icon {
+      @include burger(30px, 5px, 5px, $color-navigation-toggle);
+      cursor: pointer;
+    }
+
+    &[aria-expanded="true"] .burger-icon {
+      @include burger-to-cross;
+    }
+  }
+
+  .nav {
+    display: block;
+    float: left;
+    height: 100%;
+  }
+
+  // Sidebar
+  .side-nav {
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 300px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: $color-navigation-bg;
+    visibility: hidden;
+    overflow: auto;
+    padding-top: 50px;
+    transition: opacity .2s 0s, visibility 0s .2s;
+    margin: -30px -30px 0;
+    height: calc(100vh + 100px);
+    max-height: calc(100vh + 100px);
+
+    @media(max-width: 300px) {
+      width: 100%;
+    }
+
+    // iPhone
+    @media(max-width: 330px) {
+      height: 120px;
+      max-height: 100%;
+      min-height: 0;
+      overflow: scroll;
     }
 
     ul {
       list-style: none;
-      text-align: left;
-      margin-left: 0;
-      padding-left: 0;
+      padding: 0 0 30px;
+      margin: 0;
+      float: left;
+      width: 300px;
+      visibility: visible;
+      opacity: 1;
+      overflow: visible;
+      max-height: none;
 
-      li {
-        margin: 0;
+      .login-logout {
+        svg {
+          color: rgba(#fff, .8);
+          margin-right: 5px;
+          padding: 1px;
+          position: relative;
+          top: 3px;
+          width: 18px;
+          height: 18px;
+        }
+
+        &:hover {
+          svg,
+          path {
+            fill: $color-pulinansininen;
+          }
+        }
+      }
+
+      &.sidebar-menu {
+        margin-top: 50px;
+        margin-bottom: 100px;
+      }
+    }
+
+    &.is-fixed {
+      position: fixed;
+    }
+
+    a {
+      display: block;
+      padding: 5px 50px;
+      border-bottom: 1px solid rgba(#fff, .05);
+      position: relative;
+      color: #fff;
+
+      &:hover {
+        color: $color-links;
+      }
+    }
+
+    > ul {
+      padding: 0;
+      margin: 0;
+
+      &:last-child {
+        padding: 0 0 50px;
+      }
+
+      ul {
+        list-style: none;
         text-align: left;
+        margin-left: 0;
+        padding-left: 0;
 
-        a {
+        li {
+          margin: 0;
           text-align: left;
+
+          a {
+            text-align: left;
+          }
         }
       }
     }
   }
-}
 
-#sidenav {
-  outline: 0;
-  min-height: 100vh;
-  backface-visibility: hidden;
-  position: fixed;
-  visibility: hidden;
-  transform: translate3d(-100%, 0, 0);
-  transition: all .8s;
+  #sidenav {
+    outline: 0;
+    min-height: 100vh;
+    backface-visibility: hidden;
+    position: fixed;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+    transition: all .8s;
 
-  // iOS 8 / Safari 8 fix
-  width: 0;
-
-  @media(max-width: $container-mobile) {
-    height: 10000px;
-    overflow: scroll;
-    margin: 0;
-    z-index: 99999;
-    min-height: 10000px;
-  }
-
-  &.open {
-    visibility: visible;
-    transition: transform .5s;
-    transform: translate3d(0, 0, 0);
-    z-index: 9999999;
-    min-height: 0;
-    overflow: scroll;
-    width: 300px;
+    // iOS 8 / Safari 8 fix
+    width: 0;
 
     @media(max-width: $container-mobile) {
-      max-width: 300px;
-      width: 100%;
+      height: 10000px;
+      overflow: scroll;
+      margin: 0;
+      z-index: 99999;
+      min-height: 10000px;
+    }
+
+    &.open {
+      visibility: visible;
+      transition: transform .5s;
+      transform: translate3d(0, 0, 0);
+      z-index: 9999999;
+      min-height: 0;
+      overflow: scroll;
+      width: 300px;
+
+      @media(max-width: $container-mobile) {
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+
+    // Nav trigger styles inside the navigation
+    .nav-trigger {
+      top: 52px;
+      left: 52px;
     }
   }
 
-  // Nav trigger styles inside the navigation
-  .nav-trigger {
-    top: 52px;
-    left: 52px;
+  .site-wrapper {
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    position: relative;
   }
-}
 
-.site-wrapper {
-  transition: all .5s;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 100vh;
-  position: relative;
-}
-
-body {
   &.main-navigation-open {
     overflow: hidden;
 

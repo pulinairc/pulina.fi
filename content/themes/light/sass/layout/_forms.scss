@@ -1,0 +1,205 @@
+// Buttons
+button:not(.nav-trigger),
+input[type="reset"]:not(.nav-toggle),
+input[type="submit"]:not(.nav-toggle),
+input[type="button"]:not(.nav-toggle),
+.button:not(.nav-trigger) {
+    background: $color-button-bg;
+    color: $color-button-text;
+    width: auto;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: $forms-border-radius;
+    transition: .22s linear all;
+    appearance: none;
+    border: 3px solid $color-button-bg;
+
+    &.button:not(.button-ghost) {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-button-bg;
+      background: transparent;
+      border-color: $color-button-bg;
+    }
+}
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Fields
+body {
+
+  .site,
+  .gform_wrapper,
+  .gform_wrapper .gform_body .gform_fields {
+    textarea,
+    select,
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    input[type="number"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="search"],
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+      color: $color-forms-text;
+      border: 1px solid $color-forms;
+      background: $color-forms-bg;
+      border-radius: $forms-border-radius;
+      padding: 16px;
+      text-decoration: none;
+      position: relative;
+      transition: 150ms linear all;
+      appearance: none;
+      margin-bottom: 0;
+
+      &:focus {
+        outline: 0;
+        border: 1px solid $forms-border-focus;
+      }
+    }
+
+    select {
+      background-color: $color-forms-bg;
+      background-image: url('../svg/select.svg');
+      background-repeat: no-repeat;
+      background-position: right center;
+      color: $color-forms-text;
+      padding-right: 40px;
+      transition: none;
+      border: 1px solid $color-forms;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+
+      &:hover,
+      &:focus {
+        border: 1px solid #222;
+      }
+    }
+  }
+
+  // General
+  form {
+    p {
+      margin-bottom: 20px;
+
+      &.form-submit {
+        margin-bottom: 0;
+      }
+    }
+
+    // Search form
+    &.search-form {
+      .search-field {
+        float: left;
+        margin-right: 5px;
+      }
+
+      .search-submit {
+        padding: 16px 1.75em;
+      }
+    }
+  }
+
+  // Gravity Forms
+  .gform_wrapper {
+    margin: 0;
+
+    form {
+      .ginput_container,
+      .top_label {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .gfield {
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 0;
+      }
+
+      .ginput_container {
+        select,
+        input,
+        input.medium {
+          width: 100% !important; // Gravity forms uses !important here, so no choice
+          margin-right: 0;
+        }
+      }
+
+      textarea
+      textarea.medium {
+        margin-bottom: 0;
+
+        @media(max-width: $container-mobile) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Initial comment form styles
+.comment-respond {
+  label[for="comment"],
+  label[for="author"],
+  label[for="email"],
+  label[for="url"] {
+    display: block;
+  }
+
+  p {
+
+    &.form-submit {
+      display: block;
+      clear: both;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    &.comment-form-url {
+      margin-bottom: 0;
+    }
+
+    &.comment-form-comment {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .comment-form-comment {
+    @include column(1/2);
+    margin-right: 2.6em;
+
+    @media(max-width: $container-ipad) {
+      @include stack();
+    }
+  }
+
+  input {
+    @media(max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    width: 100%;
+  }
+}

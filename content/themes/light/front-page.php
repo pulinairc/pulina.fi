@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<p>Suoraviivaisempi kuin Twitter. Reaaliaikaisempi kuin Facebook. "Sosiaalisista medioista" se ensimmäinen. Tervetuloa irkkiin!</p>
 
-			<p><a href="http://chat.pulina.fi" class="button">Tule mukaan pulisemaan</a></p>
+			<p><a href="http://chat.pulina.fi" class="button button-ghost">Tule mukaan pulisemaan</a></p>
 
 		</div>
 
@@ -43,7 +43,7 @@ get_header(); ?>
 
 		<p>Näin <code>#pulina</code> sai alkunsa.</p>
 
-		<p><a href="<?php echo get_page_link(6); ?>" class="button">Lue lisää Pulinan historiasta</a></p>
+		<p><a href="<?php echo get_page_link(6); ?>" class="button button-ghost">Lue lisää Pulinan historiasta</a></p>
 
 		<?php if(strtotime('2017-02-26 23:59') > time() ) { ?>
 			<div class="mainox ad textad">
@@ -73,11 +73,11 @@ get_header(); ?>
         ?>
       </ul>
 
-			<div class="more">
-				<p><a href="<?php echo tribe_get_events_link(); ?>" class="button">Vanhat miitit ja kuvagalleriat</a></p>
-			</div>
+			<p><a href="<?php echo tribe_get_events_link(); ?>" class="button">Vanhat miitit ja kuvagalleriat</a></p>
 
-			<p><small><a href="<?php echo get_admin_url(); ?>admin.php?page=miittikentat">Lisää uusi miitti</a></small></p>
+      <div class="more">
+				<p><a href="<?php echo get_admin_url(); ?>admin.php?page=miittikentat">Lisää uusi miitti &raquo;</a></p>
+			</div>
 
 	</div>
 

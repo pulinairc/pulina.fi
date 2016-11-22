@@ -104,30 +104,37 @@
         color: $color-text;
       }
 
-      &.blur-button {
-        text-shadow: 0 0 22px #fff;
-        opacity: .5;
-        background: transparent;
-        color: transparent;
-        box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
+      @media(min-width: $container-mobile) {
+        &.blur-button {
+          text-shadow: 0 0 22px #fff;
+          opacity: .5;
+          background: transparent;
+          color: transparent;
+          box-shadow: 0 0 17px 8px #fff, #fff 0 0 17px 8px inset;
+        }
       }
     }
 
     .shade {
       opacity: .6;
       background: #222;
+      transition: all .55s;
+
+      @media(min-width: $container-mobile) {
+        &.hovered {
+          opacity: 0;
+        }
+      }
+
+      @media(max-width: $container-mobile) {
+        opacity: .8;
+      }
     }
 
     .container {
-      @include centered();
-      position: absolute;
+      @include vertical-align();
       text-align: center;
       max-width: 600px;
-
-      @media (max-width: $container-mobile) {
-        padding-left: 0;
-        padding-right: 0;
-      }
 
       h2 {
         font-weight: 900;
@@ -137,11 +144,13 @@
         text-transform: uppercase;
         font-size: 2rem;
 
-        &.blur {
-          text-shadow: 0 0 22px #fff;
-          opacity: .5;
-          background: transparent;
-          color: transparent;
+        @media(min-width: $container-mobile) {
+          &.blur {
+            text-shadow: 0 0 22px #fff;
+            opacity: .5;
+            background: transparent;
+            color: transparent;
+          }
         }
       }
 
@@ -156,11 +165,13 @@
       }
 
       p {
-        &.blur {
-          text-shadow: 0 0 22px #fff;
-          opacity: .5;
-          background: transparent;
-          color: transparent;
+        @media(min-width: $container-mobile) {
+          &.blur {
+            text-shadow: 0 0 22px #fff;
+            opacity: .5;
+            background: transparent;
+            color: transparent;
+          }
         }
       }
     }
@@ -192,10 +203,6 @@
       border: 3px solid $color-text;
       color: $color-text;
 
-      @media (min-width: $container-ipad) {
-        width: 35%;
-      }
-
       &:hover {
         background: $color-text;
         color: #fff;
@@ -210,16 +217,20 @@
 
     &.slide-miitit {
       background: darken(#fdfdfd, 8%);
+
+      .linkkilista {
+        text-align: center;
+      }
     }
 
     .linkkilista {
-      text-align: center;
+      text-align: left;
       list-style: none;
       margin: 0;
       padding: 0;
 
       li {
-        margin-bottom: 30;
+        margin-bottom: 30px;
       }
 
       a {
@@ -246,17 +257,6 @@
 
     h2 {
       font-family: $font-monospace;
-    }
-
-    .button {
-      text-transform: none;
-      box-shadow: none;
-      border: 0;
-      font-weight: 400;
-
-      @media (min-width: $container-ipad) {
-        width: 35%;
-      }
     }
   }
 
@@ -290,7 +290,7 @@
 
       @media (max-width: $container-mobile) {
         @include stack();
-        margin: 50 0;
+        margin: 50px 0;
       }
 
       .arvo {

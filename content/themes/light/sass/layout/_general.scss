@@ -38,9 +38,17 @@ body {
     }
 
     // Extra
-    .more,
-    .urlit .more a {
-      font-size: 1rem;
+    .container {
+      .more {
+        a {
+          font-size: .95rem;
+          color: $color-alt;
+
+          &:hover {
+            color: lighten($color-pulinansininen, 10%);
+          }
+        }
+      }
     }
 
     .type {
@@ -157,7 +165,6 @@ body {
         font-size: 1rem;
       }
     }
-    $breakpoint-alpha: $container-ipad;
 
     .rwd-table {
       margin: 0;
@@ -246,7 +253,6 @@ body {
       text-decoration: none;
       overflow: hidden;
       vertical-align: top;
-      perspective: 600;
       perspective-origin: 50% 50%;
 
       &:hover span {
@@ -283,25 +289,6 @@ body {
       p {
         font-size: .85rem;
         text-align: 1.22;
-      }
-    }
-
-    .login-logout {
-      svg {
-        color: rgba(#fff, .8);
-        margin-right: 5px;
-        padding: 1px;
-        position: relative;
-        top: 3px;
-        width: 18px;
-        height: 18px;
-      }
-
-      &:hover {
-        svg,
-        path {
-          fill: $color-pulinansininen;
-        }
       }
     }
 

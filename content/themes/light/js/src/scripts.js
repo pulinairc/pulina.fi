@@ -12,21 +12,21 @@
   $(".irclog").hover(function () {
     $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").addClass("blur");
     $(".slide-irclog .button").addClass("blur-button");
-    $(".slide-irclog .shade").fadeOut();
+    $(".slide-irclog .shade").addClass("hovered");
   }, function () {
     $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").removeClass("blur");
     $(".slide-irclog .button").removeClass("blur-button");
-    $(".slide-irclog .shade").fadeIn();
+    $(".slide-irclog .shade").removeClass("hovered");
   });
 
   $(".slide-irclog .container").hover(function () {
     $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").removeClass("blur");
     $(".slide-irclog .button").removeClass("blur-button");
-    $(".slide-irclog .shade").fadeIn();
+    $(".slide-irclog .shade").removeClass("hovered");
   }, function () {
     $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").addClass("blur");
     $(".slide-irclog .button").addClass("blur-button");
-    $(".slide-irclog .shade").fadeOut();
+    $(".slide-irclog .shade").addClass("hovered");
   });
 
   $('.firstcontainer').waypoint(function(){
