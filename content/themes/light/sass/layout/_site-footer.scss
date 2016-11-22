@@ -1,0 +1,30 @@
+body {
+  .site-footer {
+    background: #34495e;
+    overflow: hidden;
+    padding: 10px;
+
+    p {
+      font-size: 14px;
+      color: #fff;
+      margin: 0;
+
+      code {
+        background: rgba(#222, .8);
+      }
+    }
+
+    .col {
+      @include column(1/2);
+
+      &:nth-child(2) {
+        text-align: right;
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: left;
+      }
+    }
+  }
+}
