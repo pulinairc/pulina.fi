@@ -1,454 +1,454 @@
-a,
-a:link,
-a:visited {
-  text-decoration: none;
-  color: $color-alt;
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: $color-base;
-}
-
 body {
   font-family: $font-alt;
   padding: 0;
-}
 
-#searchform {
-  input[type='text'] {
-    padding: 12px;
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
     color: $color-alt;
-    border-color: $color-alt;
-    margin-right: 5px;
-    border-style: solid;
-    border-width: 2px;
-    float: left;
   }
 
-  input[type='submit'],
-  input[type='button'] {
-    float: left;
+  a:hover,
+  a:focus,
+  a:active {
+    color: $color-base;
   }
-}
 
-.nappi {
-  @include column(1/4);
-}
+  .site-wrapper {
+    #searchform {
+      input[type='text'] {
+        padding: 12px;
+        color: $color-alt;
+        border-color: $color-alt;
+        margin-right: 5px;
+        border-style: solid;
+        border-width: 2px;
+        float: left;
+      }
 
+      input[type='submit'],
+      input[type='button'] {
+        float: left;
+      }
+    }
 
-// Extra
-.more,
-.urlit .more a {
-  font-size: 1rem;
-}
+    .nappi {
+      @include column(1/4);
+    }
 
-.type {
-  max-height: 100;
-  height: 100;
-  overflow: hidden;
+    // Extra
+    .more,
+    .urlit .more a {
+      font-size: 1rem;
+    }
 
-  p {
-    font-family: $font-monospace;
-    color: rgba($color-text, .8);
-    font-size: 1rem;
-    margin-top: 0;
-    padding-top: 0;
-
-    @media (max-width: $container-ipad) {
-      min-height: 50;
+    .type {
+      max-height: 100;
+      height: 100;
       overflow: hidden;
-      max-height: 60;
-    }
-  }
-}
 
-@keyframes blink {
-  0% {
-    visibility: visible;
-  }
+      p {
+        font-family: $font-monospace;
+        color: rgba($color-text, .8);
+        font-size: 1rem;
+        margin-top: 0;
+        padding-top: 0;
 
-  100% {
-    visibility: hidden;
-  }
-}
-
-.cursor {
-  background: rgba($color-text, .8);
-  display: inline-block;
-  width: 11px;
-  height: 2px;
-  margin: 0 0 -3px 5px;
-  animation: blink 1s steps(2, start) infinite;
-}
-
-// Responsiivisen typografian poikkeukset:
-@media (max-width: $container-mobile) {
-  p,
-  .slide p,
-  .slide a,
-  .button {
-    font-size: 19px;
-  }
-}
-
-.content-area {
-  padding-top: 50;
-  padding-bottom: 50;
-}
-
-.site-footer {
-  background: #34495e;
-  overflow: hidden;
-  padding: 10;
-
-  p {
-    color: #fff;
-    margin: 0;
-
-    code {
-      background: rgba(#222, .8);
-    }
-  }
-
-  .col {
-    @include column(1/2);
-
-    &:nth-child(2) {
-      text-align: right;
+        @media (max-width: $container-ipad) {
+          min-height: 50;
+          overflow: hidden;
+          max-height: 60;
+        }
+      }
     }
 
-    @media (max-width: $container-mobile) {
-      @include stack();
-      text-align: left;
-    }
-  }
-}
+    @keyframes blink {
+      0% {
+        visibility: visible;
+      }
 
-.logocol {
-  @include column(1/5, $gutter: 0);
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.softa {
-  @include column(4/5, $gutter: 0);
-  padding: 100;
-
-  ul a {
-    font-weight: 700;
-  }
-}
-
-.containercol,
-.mukaan {
-  clear: both;
-  display: block;
-}
-
-.containercol {
-  background: rgba(#000, .10);
-  overflow: hidden;
-
-  ul {
-    font-size: 1rem;
-  }
-}
-
-$breakpoint-alpha: $container-ipad;
-
-.rwd-table {
-  margin: 0;
-  min-width: 300px;
-  overflow: hidden;
-
-  tr {
-    border: 0;
-  }
-
-  th {
-    display: none;
-  }
-
-  td {
-    // width:25%;
-    display: block;
-
-    &:first-child {
-      padding-top: .5em;
+      100% {
+        visibility: hidden;
+      }
     }
 
-    &:last-child {
-      padding-bottom: .5em;
-    }
-
-    &:before {
-      content: attr(data-th)': ';
-      font-weight: bold;
+    .cursor {
+      background: rgba($color-text, .8);
       display: inline-block;
+      width: 11px;
+      height: 2px;
+      margin: 0 0 -3px 5px;
+      animation: blink 1s steps(2, start) infinite;
+    }
 
-      // end options
-      @media (min-width: $breakpoint-alpha) {
+    // Responsiivisen typografian poikkeukset:
+    @media (max-width: $container-mobile) {
+      p,
+      .slide p,
+      .slide a,
+      .button {
+        font-size: 19px;
+      }
+    }
+
+    .content-area {
+      padding-top: 50;
+      padding-bottom: 50;
+    }
+
+    .site-footer {
+      background: #34495e;
+      overflow: hidden;
+      padding: 10;
+
+      p {
+        color: #fff;
+        margin: 0;
+
+        code {
+          background: rgba(#222, .8);
+        }
+      }
+
+      .col {
+        @include column(1/2);
+
+        &:nth-child(2) {
+          text-align: right;
+        }
+
+        @media (max-width: $container-mobile) {
+          @include stack();
+          text-align: left;
+        }
+      }
+    }
+
+    .logocol {
+      @include column(1/5, $gutter: 0);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .softa {
+      @include column(4/5, $gutter: 0);
+      padding: 100;
+
+      ul a {
+        font-weight: 700;
+      }
+    }
+
+    .containercol,
+    .mukaan {
+      clear: both;
+      display: block;
+    }
+
+    .containercol {
+      background: rgba(#000, .10);
+      overflow: hidden;
+
+      ul {
+        font-size: 1rem;
+      }
+    }
+    $breakpoint-alpha: $container-ipad;
+
+    .rwd-table {
+      margin: 0;
+      min-width: 300px;
+      overflow: hidden;
+
+      tr {
+        border: 0;
+      }
+
+      th {
         display: none;
       }
-    }
-  }
 
-  th,
-  td {
-    text-align: left;
+      td {
+        // width:25%;
+        display: block;
 
-    @media (min-width: $breakpoint-alpha) {
-      display: table-cell;
-      padding: .25em .5em;
+        &:first-child {
+          padding-top: .5em;
+        }
 
-      &:first-child {
-        padding-left: 0;
+        &:last-child {
+          padding-bottom: .5em;
+        }
+
+        &:before {
+          content: attr(data-th)': ';
+          font-weight: bold;
+          display: inline-block;
+
+          // end options
+          @media (min-width: $breakpoint-alpha) {
+            display: none;
+          }
+        }
       }
 
-      &:last-child {
-        padding-right: 0;
+      th,
+      td {
+        text-align: left;
+
+        @media (min-width: $breakpoint-alpha) {
+          display: table-cell;
+          padding: .25em .5em;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
       }
     }
-  }
-}
 
-.komennot {
-  background: rgba(#000, .03);
-  padding: 50 0;
+    .komennot {
+      background: rgba(#000, .03);
+      padding: 50 0;
 
-  table {
-    code {
-      transition: background-color .52s ease-out;
+      table {
+        code {
+          transition: background-color .52s ease-out;
+
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+    }
+
+    th,
+    td,
+    tr {
+      font-size: 1rem;
+    }
+
+    .poispaalta {
+      color: #e8534f;
+    }
+
+    p a {
+      color: $color-pulinanvihrea;
+      display: inline-block;
+      text-decoration: none;
+      overflow: hidden;
+      vertical-align: top;
+      perspective: 600;
+      perspective-origin: 50% 50%;
+
+      &:hover span {
+        background: $color-pulinanvihrea;
+        transform: translate3d(0, 0, -30) rotateX(90deg);
+      }
+
+      span {
+        display: block;
+        position: relative;
+        padding: 0 3px;
+        transition: all .5s ease;
+        transform-origin: 50% 0%;
+        transform-style: preserve-3d;
+
+        &:after {
+          content: attr(data-title);
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 0 3px;
+          color: #fff;
+          background: $color-pulinanvihrea;
+          transform-origin: 50% 0%;
+          transform: translate3d(0, 106%, 0) rotateX(-90deg);
+        }
+      }
+    }
+
+    .mainox {
+      margin-top: 50;
+
+      p {
+        font-size: .85rem;
+        text-align: 1.22;
+      }
+    }
+
+    .login-logout {
+      svg {
+        color: rgba(#fff, .8);
+        margin-right: 5px;
+        padding: 1px;
+        position: relative;
+        top: 3px;
+        width: 18px;
+        height: 18px;
+      }
 
       &:hover {
-        background-color: #ddd;
+        svg,
+        path {
+          fill: $color-pulinansininen;
+        }
       }
     }
-  }
-}
 
-th,
-td,
-tr {
-  font-size: 1rem;
-}
+    input[type='text'],
+    input[type='password'] {
+      padding: 15px 20;
+      font-size: 1.2rem;
+      border: 2px solid $color-alt;
+    }
 
-.poispaalta {
-  color: #e8534f;
-}
+    #loginform {
+      p {
+        margin: 0;
 
-p a {
-  color: $color-pulinanvihrea;
-  display: inline-block;
-  text-decoration: none;
-  overflow: hidden;
-  vertical-align: top;
-  perspective: 600;
-  perspective-origin: 50% 50%;
+        &.forgetmetnot {
+          margin-top: 0;
+          margin-bottom: 20;
 
-  &:hover span {
-    background: $color-pulinanvihrea;
-    transform: translate3d(0, 0, -30) rotateX(90deg);
-  }
+          label {
+            display: inline-block;
+            clear: none;
+          }
+        }
+      }
 
-  span {
-    display: block;
-    position: relative;
-    padding: 0 3px;
-    transition: all .5s ease;
-    transform-origin: 50% 0%;
-    transform-style: preserve-3d;
+      label {
+        display: block;
+        clear: both;
+        padding: 10 0;
+      }
 
-    &:after {
-      content: attr(data-title);
+      input {
+        @media (max-width: $container-mobile) {
+          width: 100%;
+        }
+      }
+    }
+
+    .wp-social-login-widget {
+      margin-top: 40;
+    }
+
+    .message {
+      padding: 15px !important;
+      margin-bottom: 20;
+    }
+
+    .hentry {
+      .single-tribe_events .tribe-events-content,
+      .tribe-events-single-event-description.tribe-events-content.entry-content.description {
+        @include column(5/7);
+        margin-right: 0 !important;
+
+        @media (max-width: $container-mobile) {
+          @include stack();
+          margin-bottom: 20;
+        }
+      }
+    }
+
+    .tribe-events-event-image {
+      @include column(2/7);
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        margin-bottom: 20;
+      }
+
+      img {
+        border-radius: 5px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .tribe-events-cal-links {
+      clear: both;
       display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      padding: 0 3px;
-      color: #fff;
-      background: $color-pulinanvihrea;
-      transform-origin: 50% 0%;
-      transform: translate3d(0, 106%, 0) rotateX(-90deg);
     }
-  }
-}
 
-.mainox {
-  margin-top: 50;
-
-  p {
-    font-size: .85rem;
-    text-align: 1.22;
-  }
-}
-
-.login-logout {
-  svg {
-    color: rgba(#fff, .8);
-    margin-right: 5px;
-    padding: 1px;
-    position: relative;
-    top: 3px;
-    width: 18px;
-    height: 18px;
-  }
-
-  &:hover {
-    svg,
-    path {
-      fill: $color-pulinansininen;
+    #tribe-events-pg-template {
+      margin-top: 50;
+      margin-bottom: 50;
     }
-  }
-}
 
-input[type='text'],
-input[type='password'] {
-  padding: 15px 20;
-  font-size: 1.2rem;
-  border: 2px solid $color-alt;
-}
+    .gallery {
+      blockquote,
+      dl,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ol,
+      p,
+      table,
+      ul {
+        margin: 0;
+      }
 
-#loginform {
-  p {
-    margin: 0;
+      img {
+        border: 0 !important;
+        width: 95% !important;
+        height: auto;
+      }
+    }
 
-    &.forgetmetnot {
+    .wp-social-login-connect-with {
+      margin-top: 40 !important;
+      clear: both;
+      display: block;
+    }
+
+    .wp-social-login-provider-list {
+      padding-top: 10;
+      padding-bottom: 10;
+      padding-left: 0;
+      padding-right: 0;
       margin-top: 0;
       margin-bottom: 20;
 
-      label {
-        display: inline-block;
-        clear: none;
+      img {
+        width: auto !important;
+        height: auto !important;
       }
     }
-  }
 
-  label {
-    display: block;
-    clear: both;
-    padding: 10 0;
-  }
-
-  input {
-    @media (max-width: $container-mobile) {
-      width: 100%;
+    .tml-user-avatar {
+      img {
+        width: auto !important;
+        height: auto !important;
+      }
     }
-  }
-}
 
-.wp-social-login-widget {
-  margin-top: 40;
-}
+    .tribe-events-single-event-description {
+      p.meetup-author {
+        margin-top: 30 !important;
+        display: block;
+        line-height: 1.3 !important;
+        opacity: .75;
+        transition: all .55s;
 
-.message {
-  padding: 15px !important;
-  margin-bottom: 20;
-}
-
-.hentry {
-  .single-tribe_events .tribe-events-content,
-  .tribe-events-single-event-description.tribe-events-content.entry-content.description {
-    @include column(5/7);
-    margin-right: 0 !important;
-
-    @media (max-width: $container-mobile) {
-      @include stack();
-      margin-bottom: 20;
-    }
-  }
-}
-
-.tribe-events-event-image {
-  @include column(2/7);
-
-  @media (max-width: $container-mobile) {
-    @include stack();
-    margin-bottom: 20;
-  }
-
-  img {
-    border-radius: 5px;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.tribe-events-cal-links {
-  clear: both;
-  display: block;
-}
-
-#tribe-events-pg-template {
-  margin-top: 50;
-  margin-bottom: 50;
-}
-
-.gallery {
-  blockquote,
-  dl,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ol,
-  p,
-  table,
-  ul {
-    margin: 0;
-  }
-
-  img {
-    border: 0 !important;
-    width: 95% !important;
-    height: auto;
-  }
-}
-
-.wp-social-login-connect-with {
-  margin-top: 40 !important;
-  clear: both;
-  display: block;
-}
-
-.wp-social-login-provider-list {
-  padding-top: 10;
-  padding-bottom: 10;
-  padding-left: 0;
-  padding-right: 0;
-  margin-top: 0;
-  margin-bottom: 20;
-
-  img {
-    width: auto !important;
-    height: auto !important;
-  }
-}
-
-.tml-user-avatar {
-  img {
-    width: auto !important;
-    height: auto !important;
-  }
-}
-
-.tribe-events-single-event-description {
-  p.meetup-author {
-    margin-top: 30 !important;
-    display: block;
-    line-height: 1.3 !important;
-    opacity: .75;
-    transition: all .55s;
-
-    &:hover {
-      opacity: 1;
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 }

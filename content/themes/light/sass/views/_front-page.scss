@@ -70,8 +70,8 @@
   color: #fff;
   border: 0;
   background-color: #fff;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
 
   .container {
     position: relative;
@@ -170,6 +170,15 @@
     background: #fdfdfd;
     z-index: 10;
     text-align: center;
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .type {
+      margin-bottom: 80px;
+    }
 
     h2 {
       margin-bottom: 0;
