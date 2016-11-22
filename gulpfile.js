@@ -8,8 +8,7 @@ var changed     = require('gulp-changed');
 var gulp        = require('gulp');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
+var browserSync = require('browser-sync').create();
 var notify      = require('gulp-notify');
 var prefix      = require('gulp-autoprefixer');
 var minifycss   = require('gulp-minify-css');
@@ -60,68 +59,60 @@ BROWSERSYNC
 ===========
 */
 
-var devEnvironment = 'pulina.dev'
-var hostname = 'localhost'
-var localURL = 'http://' + devEnvironment;
+gulp.task('browsersync', function() {
 
-gulp.task('browserSync', function () {
+  var files = [
+    themeDir + '/**/*.php',
+    jsSrc
+  ];
 
-    //declare files to watch + look for files in assets directory (from watch task)
-    var files = [
-    cssDest + '/**/*.{css}',
-    jsSrc + '/**/*.js',
-    themeDir + '/**/*.php'
-    ];
-
-    browserSync.init(files, {
-      proxy: localURL,
-      host: hostname,
-      agent: false,
-      browser: "Google Chrome"
-    });
+  browserSync.init(files, {
+    proxy: "pulina.dev",
+    browser: "Google Chrome",
+    notify: true
+  });
 
 });
 
 
 /*
 
-SASS
-====
+STYLES
+======
 */
 
-gulp.task('sass', function() {
-  gulp.src(sassFile)
+gulp.task('styles', function() {
 
   gulp.src(sassFile)
 
-  .pipe(sass({
-    compass: false,
-    bundleExec: true,
-    sourcemap: false,
-    style: 'compressed',
-    debugInfo: true,
-    lineNumbers: true,
-    errLogToConsole: true,
-    includePaths: [
-      themeDir + '/node_modules/',
-      'node_modules/',
-      // 'bower_components/',
-      // require('node-bourbon').includePaths
-    ],
-  }))
+    .pipe(sass({
+      compass: false,
+      bundleExec: true,
+      sourcemap: false,
+      style: 'compressed',
+      debugInfo: true,
+      lineNumbers: true,
+      errLogToConsole: true,
+      includePaths: [
+        themeDir + '/node_modules/',
+        'node_modules/',
+        // 'bower_components/',
+        // require('node-bourbon').includePaths
+      ],
+    }))
 
-  .on('error', handleError('styles'))
-  .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-  .pipe(pixrem())
-  .pipe(minifycss({
-    advanced: true,
-    keepBreaks: false,
-    keepSpecialComments: 0,
-    mediaMerging: true,
-    sourceMap: true
-  }))
-  .pipe(gulp.dest(cssDest))
-  .pipe(browserSync.stream());
+    .on('error', handleError('styles'))
+    .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
+    .pipe(pixrem())
+    .pipe(minifycss({
+      advanced: true,
+      keepBreaks: false,
+      keepSpecialComments: 0,
+      mediaMerging: true,
+      sourceMap: true
+    }))
+    .pipe(gulp.dest(cssDest))
+    .pipe(browserSync.stream());
 
 });
 
@@ -160,46 +151,13 @@ gulp.task('js', function() {
 WATCH
 =====
 
-Notes:
-   - browserSync automatically reloads any files
-     that change within the directory it's serving from
 */
 
-gulp.task('setWatch', function() {
-  global.isWatching = true;
-});
+// Run the JS task followed by a reload
+gulp.task('js-watch', ['js'], browserSync.reload);
+gulp.task('watch', ['browsersync'], function() {
 
-gulp.task('watch', ['setWatch', 'browserSync'], function() {
-  gulp.watch(sassSrc, ['sass']);
-  gulp.watch(jsSrc + '/**/*.js', ['js', browserSync.reload]);
-});
+  gulp.watch(sassSrc, ['styles']);
+  gulp.watch(jsSrc, ['js-watch']);
 
-
-/*
-
-BUILD
-=====
-*/
-
-gulp.task('build', function(cb) {
-  runSequence('sass', cb);
-});
-
-/*
-
-DEFAULT
-=======
-*/
-
-gulp.task('default', function(cb) {
-    runSequence(
-    'images',
-    'sass',
-    'js',
-    'minify-html',
-    'browserSync',
-    'watch',
-    'refresh',
-    cb
-    );
 });

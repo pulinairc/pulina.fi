@@ -3,18 +3,14 @@
 .nav-trigger {
   background: transparent;
   position: absolute;
-  right: 60px;
-  top: 60px;
+  left: 22px;
+  top: 22px;
   display: block;
   padding: 0;
   margin: 0;
   z-index: 1000;
   cursor: pointer;
-
-  @media(max-width: $container-mobile) {
-    right: 35px;
-    top: 49px;
-  }
+  border: 0;
 
   &:hover,
   &:focus {
@@ -33,16 +29,16 @@
 
 .nav {
   display: block;
-  float: right;
+  float: left;
   height: 100%;
 }
 
 // Sidebar
 .side-nav {
   z-index: 1;
-  right: 0;
+  left: 0;
   top: 0;
-  width: 380px;
+  width: 300px;
   padding-left: 0;
   padding-right: 0;
   background-color: $color-navigation-bg;
@@ -54,7 +50,7 @@
   height: calc(100vh + 45px);
   max-height: calc(100vh + 45px);
 
-  @media(max-width: 380px) {
+  @media(max-width: 300px) {
     width: 100%;
   }
 
@@ -129,7 +125,7 @@
   backface-visibility: hidden;
   position: fixed;
   visibility: hidden;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: all .8s;
 
   // iOS 8 / Safari 8 fix
@@ -150,10 +146,10 @@
     z-index: 9999999;
     min-height: 0;
     overflow: scroll;
-    width: 380px;
+    width: 300px;
 
     @media(max-width: $container-mobile) {
-      max-width: 380px;
+      max-width: 300px;
       width: 100%;
     }
   }
@@ -161,7 +157,7 @@
   // Nav trigger styles inside the navigation
   .nav-trigger {
     top: 85px;
-    right: 60px;
+    left: 60px;
   }
 }
 
@@ -180,7 +176,7 @@ body {
     overflow: hidden;
 
     .site-wrapper {
-      transform: translate3d(-310px, 0, 0);
+      transform: translate3d(250px, 0, 0);
       overflow: hidden;
     }
   }

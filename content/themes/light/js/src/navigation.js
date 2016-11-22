@@ -30,11 +30,6 @@
       menuToggle.attr( 'aria-expanded', 'false' );
       mainNav.attr( 'aria-expanded', 'false' );
 
-      // iPhone SE
-      // $('body').on('click', 'body', function() {
-      //   $( 'body' ).css('border', '10px solid red');
-      // });
-
       menuToggle.on( 'click', function( event ) {
 
         $( '.nav-trigger .burger' ).toggleClass('opened');
