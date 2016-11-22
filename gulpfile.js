@@ -1,4 +1,4 @@
-/* 
+/*
 
 REQUIRED STUFF
 ==============
@@ -18,30 +18,26 @@ var cache       = require('gulp-cache');
 var concat      = require('gulp-concat');
 var header      = require('gulp-header');
 var pixrem      = require('gulp-pixrem');
-var pagespeed   = require('psi');
 var minifyhtml  = require('gulp-htmlmin');
 var runSequence = require('run-sequence');
 var util        = require('gulp-util');
 
-/* 
+/*
 
 FILE PATHS
 ==========
 */
 
-var projectName = 'light'
-var themeDir = 'content/themes/'+ projectName;
-var imgSrc = themeDir + '/images/*.{png,jpg,jpeg,gif}';
-var imgDest = themeDir + '/images/optimized';
+var themeDir = 'content/themes/light';
 var sassSrc = themeDir + '/sass/**/*.{sass,scss}';
-var sassFile = themeDir + '/sass/layout.scss';
+var sassFile = themeDir + '/sass/base/global.scss';
 var cssDest = themeDir + '/css';
 var customjs = themeDir + '/js/scripts.js';
 var jsSrc = themeDir + '/js/src';
 var jsDest = themeDir + '/js';
 var phpSrc = [themeDir + '/**/*.php', !'vendor/**/*.php'];
 
-/* 
+/*
 
 ERROR HANDLING
 ==============
@@ -49,16 +45,16 @@ ERROR HANDLING
 
 var handleError = function(task) {
   return function(err) {
-    
+
       notify.onError({
         message: task + ' failed, check the logs..'
       })(err);
-    
+
     util.log(util.colors.bgRed(task + ' error:'), util.colors.red(err));
   };
 };
 
-/* 
+/*
 
 BROWSERSYNC
 ===========
@@ -69,12 +65,11 @@ var hostname = 'localhost'
 var localURL = 'http://' + devEnvironment;
 
 gulp.task('browserSync', function () {
-    
+
     //declare files to watch + look for files in assets directory (from watch task)
     var files = [
     cssDest + '/**/*.{css}',
     jsSrc + '/**/*.js',
-    imgDest + '/*.{png,jpg,jpeg,gif}',
     themeDir + '/**/*.php'
     ];
 
@@ -88,7 +83,7 @@ gulp.task('browserSync', function () {
 });
 
 
-/* 
+/*
 
 SASS
 ====
@@ -107,8 +102,8 @@ gulp.task('sass', function() {
         debugInfo: true,
         lineNumbers: true,
         errLogToConsole: true
-      })) 
-  
+      }))
+
     .on('error', handleError('styles'))
     .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
     .pipe(minifycss({keepBreaks:false,keepSpecialComments:0,}))
@@ -118,26 +113,8 @@ gulp.task('sass', function() {
 
 });
 
-/* 
 
-IMAGES
-======
-*/
-
-
-gulp.task('images', function() {
-  var dest = imgDest;
-
-  return gulp.src(imgSrc)
-
-    .pipe(changed(dest)) // Ignore unchanged files
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))) //use cache to only target new/changed files, then optimize the images
-    .pipe(gulp.dest(imgDest));
-
-});
-
-
-/* 
+/*
 
 SCRIPTS
 =======
@@ -170,23 +147,6 @@ gulp.task('js', function() {
 
 /*
 
-PAGESPEED
-=====
-
-Notes:
-   - This runs Google PageSpeed Insights just like here http://developers.google.com/speed/pagespeed/insights/
-   - You can use Google Developer API key if you have one, see: http://goo.gl/RkN0vE
-
-*/
-
-gulp.task('pagespeed', pagespeed.bind(null, {
-  url: 'http://' + projectName + '.fi',
-  strategy: 'mobile'
-}));
-
-
-/*
-
 WATCH
 =====
 
@@ -201,23 +161,21 @@ gulp.task('setWatch', function() {
 
 gulp.task('watch', ['setWatch', 'browserSync'], function() {
   gulp.watch(sassSrc, ['sass']);
-  gulp.watch(imgSrc, ['images']);
-  // gulp.watch(markupSrc, ['minify-html', browserSync.reload]);
   gulp.watch(jsSrc + '/**/*.js', ['js', browserSync.reload]);
 });
 
 
-/* 
+/*
 
 BUILD
 =====
 */
 
 gulp.task('build', function(cb) {
-  runSequence('sass', 'images', cb);
+  runSequence('sass', cb);
 });
 
-/* 
+/*
 
 DEFAULT
 =======

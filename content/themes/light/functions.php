@@ -1,11 +1,11 @@
 <?php
 /**
- * Funktiot ja määreet.
+ * WordPress functions.
  *
  * @package light
  */
 
-/*
+/**
  * ACF options page
  */
 if( function_exists('acf_add_options_page') ) {
@@ -20,7 +20,7 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-/*
+/**
  * Facebook embed shortcode
  */
 function facebook_embed_func($atts) {
@@ -40,51 +40,38 @@ function facebook_embed_func($atts) {
 }
 add_shortcode('facebook_embedded_post', 'facebook_embed_func');
 
-/*
+/**
  * Buddypress related
  */
-
-load_plugin_textdomain('rendez-vous', false, WP_LANG_DIR );
 load_plugin_textdomain('theme-my-login', false, WP_LANG_DIR );
 
-
-function add_login_logout_link($items, $args)
-{
-  if(is_user_logged_in())
-  {
+/**
+ * Log in/out links to navigation
+ */
+function add_login_logout_link( $items, $args ) {
+  if( is_user_logged_in() ) {
     $newitems = $items;
     $newitems .= '<li class="login-logout"><a title="Kirjaudu ulos" href="'. wp_logout_url() .'"><span class="fa fa-power-off"></span> Kirjaudu ulos</a></li>';
   }
-  else
-  {
+  else {
     $newitems = $items;
     $newitems .= '
     <li class="login-logout"><a href="'.get_page_link(1049).'"><span class="fa fa-toggle-on"></span> Rekisteröidy</a></li>
     <li class="login-logout"><a title="Kirjaudu sisään" href="'. wp_login_url() .'"><span class="fa fa-power-off"></span> Kirjaudu sisään</a></li>';
   }
+
   return $newitems;
 }
-add_filter('wp_nav_menu_items', 'add_login_logout_link', 10, 2);
+add_filter( 'wp_nav_menu_items', 'add_login_logout_link', 10, 2 );
 
-/* -----------------------------------------------------------------------------
-    Kellonaika viimeksi kirjautunut -kohtaan
------------------------------------------------------------------------------ */
-
-function my_last_login( ) {
-return 'j.m.Y, H:i';
-}
-
-add_filter('wpll_date_format', 'my_last_login');
-
-/* -----------------------------------------------------------------------------
-    Paginaatio
------------------------------------------------------------------------------ */
-
+/**
+ * Custom pagination
+ */
 if ( ! function_exists( 'my_pagination' ) ) :
 function my_pagination() {
     global $wp_query;
 
-    $big = 999999999; // need an unlikely integer
+    $big = 999999999; // Need an unlikely integer
 
     echo paginate_links( array(
         'base'        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -98,7 +85,7 @@ function my_pagination() {
 endif;
 
 /**
- * Custom uploads-kansio (media)
+ * Custom uploads directory
  */
 update_option( 'upload_path', untrailingslashit( str_replace( 'wp', 'media', ABSPATH ) ) );
 update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media', get_site_url() ) ) );
@@ -106,15 +93,11 @@ define( 'uploads', ''.'media' );
 add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 /**
- * Oletus etusivu
+ * Default pages
  */
 $etusivu = get_page_by_title( 'Etusivu' );
 update_option( 'page_on_front', $etusivu->ID );
 update_option( 'show_on_front', 'page' );
-
-/**
- * Oletus blogisivu
- */
 $blog   = get_page_by_title( 'Blogi' );
 update_option( 'page_for_posts', $blog->ID );
 
@@ -129,7 +112,7 @@ function light_wp_title( $title, $sep ) {
   if ( is_feed() ) {
     return $title;
   }
-  
+
   global $page, $paged;
 
   // Add the blog name
@@ -150,49 +133,41 @@ function light_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'light_wp_title', 10, 2 );
 
-/* -----------------------------------------------------------------------------
-    DUDE-scriptit
------------------------------------------------------------------------------ */
+/**
+ * Scripts
+ */
+function light_scripts() {
+    wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/global.css' );
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'light_scripts' );
 
+/**
+ * Theme supports
+ */
+add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 load_theme_textdomain( 'light', get_template_directory() . '/languages' );
 load_plugin_textdomain('tribe-events-calendar', false, WP_LANG_DIR );
 load_plugin_textdomain('tribe-events-calendar-pro', false, WP_LANG_DIR );
 
-// JETPACKISSA TULEE OMA jquery mukana btw
-if (!is_admin() ) add_action("wp_enqueue_scripts", "oma_jquery", 1);
-function oma_jquery() {
-   wp_deregister_script('jquery');
-   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/src/jquery.js', array(), '1.10.2', false );
-}
-
-// Kommentoinnit:
-function acme_post_has( $type, $post_id ) {
- 
-  $comments = get_comments('status=approve&type=' . $type . '&post_id=' . $post_id );
-  $comments = separate_comments( $comments );
- 
-  return 0 < count( $comments[ $type ] );
-}
-
-// Skriptit ja tyylit:
-function light_scripts() {
-    wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
-    if(is_front_page() ) :
-    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', false );
-    else :
-    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );
-    endif; 
-}
-add_action( 'wp_enqueue_scripts', 'light_scripts' );
-
-// Artikkelikuva-tuki:
-add_theme_support( 'post-thumbnails' );
-
-// Muokattavien valikoiden tuki.
+/**
+ * Editable menus
+ */
 register_nav_menus( array(
   'primary' => __( 'Primary Menu', 'light' ),
 ) );
+
+/**
+ * Custom comments
+ */
+ function acme_post_has( $type, $post_id ) {
+
+   $comments = get_comments('status=approve&type=' . $type . '&post_id=' . $post_id );
+   $comments = separate_comments( $comments );
+
+   return 0 < count( $comments[ $type ] );
+ }
 
 function custom_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;
@@ -252,16 +227,6 @@ function commenter_link() {
     echo $avatar . ' <span class="fn n">' . $commenter . '</span>';
 } // end commenter_link
 
-// Remove WordPress Admin Bar (http://davidwalsh.name/remove-wordpress-admin-bar-css)
-add_action('get_header', 'remove_admin_login_header');
-function remove_admin_login_header() {
-        remove_action('wp_head', '_admin_bar_bump_cb');
-}
-show_admin_bar(false);
-
-// Duden bootstrapiin perustuva navwalker:
-require get_template_directory() . '/inc/dude-wp-navwalker.php';
-
 /**
  * Don't count pingbacks or trackbacks when determining
  * the number of comments on a post.
@@ -280,6 +245,25 @@ function comment_count( $count ) {
 
 add_filter( 'get_comments_number', 'comment_count', 0 );
 
+/**
+ * Remove WordPress Admin Bar
+ *
+ * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
+ */
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() {
+        remove_action('wp_head', '_admin_bar_bump_cb');
+}
+show_admin_bar(false);
+
+/**
+ * Navigation walker
+ */
+require get_template_directory() . '/inc/dude-wp-navwalker.php';
+
+/**
+ * Search form
+ */
 function dude_search_form( $form ) {
     $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
     <div><label class="screen-reader-text" for="s">' . __( 'Haku:' ) . '</label>
