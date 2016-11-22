@@ -31,52 +31,32 @@
 
 <body <?php body_class(); ?>>
 
-<div class="header-container">
+<button id="nav-trigger" class="nav-trigger" aria-controls="nav"><span class="burger-icon burger"></span> <span id="nav-toggle-label" class="screen-reader-text"><?php esc_html_e( 'Menu', 'light' ); ?></span></button>
+<nav id="sidenav" class="side-nav sidenav s-container ps-active-y" aria-expanded="false" tabindex="-1">
 
-	<div class="container">
+  <button class="nav-trigger" aria-controls="nav"><span class="burger-icon burger"></span> <span id="nav-toggle-label" class="screen-reader-text"><?php esc_html_e( 'Menu', 'light' ); ?></span></button>
 
-		<header class="site-header navslide">
-	
-				<div class="logoarea">
-					<ul id="navToggle" class="burger navslide">
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-	
-				</div>
-	
-		</header>
+  <?php
+    wp_nav_menu( array(
+      'theme_location'    => 'primary',
+      'container'       	=> false,
+      'depth'             => 2,
+      'menu_class'        => 'sidebar-menu',
+      'menu_id' 					=> 'menu',
+      'echo'            	=> true,
+      'fallback_cb'       => 'wp_page_menu',
+      'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
+      'walker'            => new Pulina_Walker(),
+      )
+    );
+  ?>
 
-		<div class="menu-button one-page"><i class="fa fa-bars"></i></div>
-
-		<div class="menu-container">
-	        <?php
-    		wp_nav_menu( array(
-    		    'menu'              => 'primary',
-    		    'theme_location'    => 'primary',
-    		    'container'       	=> 'nav',
-    		    'depth'             => 2,
-    		    'container_class'   => 'navslide nav nav-collapse',
-    		    'menu_class'        => 'menu',
-                'menu_id' 			=> 'menu',
-                'echo'            	=> true,
-    		    'fallback_cb'       => 'wp_page_menu',
-    		    // breakpointin pitää olla sama kuin layout.scss:n $responsivenav!
-    		    'items_wrap'      	=> '<ul class="%2$s" id="%1$s" data-breakpoint="872">%3$s</ul>',
-    		    'walker'            => new dude_navwalker())
-    		);
-            ?>
-        </div>
-
-	</div><!--/.container-->
-	
-</div><!--/.header-container-->
+</nav><!-- #sidenav -->
 
 <div id="page" class="hfeed site">
 
 <div class="content site-content navslide">
 
-<?php if(!is_front_page() ) : ?> 
+<?php if(!is_front_page() ) : ?>
 	<iframe src="https://peikko.us/irclog.php" frameborder="0" class="irclog-page"></iframe>
 <?php endif; ?>

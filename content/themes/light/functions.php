@@ -134,11 +134,19 @@ function light_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'light_wp_title', 10, 2 );
 
 /**
- * Scripts
+ * Enqueue scripts and styles.
  */
 function light_scripts() {
-    wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/global.css' );
-    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );
+
+  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/global.css' );
+  wp_enqueue_script( 'jquery-core' );
+  wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '', true );
+  wp_localize_script( 'scripts', 'screenReaderTexts', array(
+		'expandMenu'            => esc_html__( 'Avaa', 'light' ),
+		'collapseMenu'          => esc_html__( 'Sulje', 'light' ),
+		'expandSubMenu'         => '<span class="screen-reader-text">' . esc_html__( 'Open sub menu', 'light' ) . '</span>',
+		'collapseSubMenu'       => '<span class="screen-reader-text">' . esc_html__( 'Close sub menu', 'light' ) . '</span>',
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'light_scripts' );
 
@@ -259,7 +267,7 @@ show_admin_bar(false);
 /**
  * Navigation walker
  */
-require get_template_directory() . '/inc/dude-wp-navwalker.php';
+require get_template_directory() . '/nav.php';
 
 /**
  * Search form

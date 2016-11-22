@@ -93,7 +93,7 @@ get_header(); ?>
 <ul class="linkkilista">
 <?php
 
-require_once('inc/simplehtmldom/simple_html_dom.php');
+require_once('inc/simple_html_dom.php');
 $html = file_get_html('http://peikko.us/pulinalinkit/index.html');
 
 // example: html->find('ul', 0)->find('li', 0);
