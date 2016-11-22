@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bd7769d34beec124c6a37c2671ddf78e",
-    "content-hash": "2105ebf43e4d8564c060892b9e9b5e98",
+    "hash": "8b1a8134770fcf6bc1ae91b0117f03cd",
+    "content-hash": "65871949d1811c737edcfb323a49d1f5",
     "packages": [
         {
             "name": "composer/installers",
@@ -79,50 +79,6 @@
                 "zend"
             ],
             "time": "2013-08-20 04:37:09"
-        },
-        {
-            "name": "geekpress/wp-rocket-cli",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ronilaukkarinen/wp-rocket-cli.git",
-                "reference": "b4468f9c7e5b00b7f80f17956e90966fc7872a87"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ronilaukkarinen/wp-rocket-cli/zipball/b4468f9c7e5b00b7f80f17956e90966fc7872a87",
-                "reference": "b4468f9c7e5b00b7f80f17956e90966fc7872a87",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "command",
-            "autoload": {
-                "files": [
-                    "wp-rocket-cli.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "WP Rocket Team",
-                    "email": "jonathan@wp-rocket.me",
-                    "homepage": "http://wp-rocket.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Add a `wp rocket` command to support the WP Rocket plugin",
-            "homepage": "https://github.com/GeekPress/wp-rocket-cli",
-            "keywords": [
-                "cache",
-                "rocket",
-                "wp-cli"
-            ],
-            "time": "2015-05-21 18:17:23"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -233,16 +189,16 @@
         },
         {
             "name": "koodimonni/composer-dropin-installer",
-            "version": "1.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Koodimonni/Composer-Dropin-Installer.git",
-                "reference": "717d992bccb9e5b1fded44136333704d4e61a4ae"
+                "reference": "e8fcc1862926f4587a137edf240b1e3741f98e7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/717d992bccb9e5b1fded44136333704d4e61a4ae",
-                "reference": "717d992bccb9e5b1fded44136333704d4e61a4ae",
+                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/e8fcc1862926f4587a137edf240b1e3741f98e7a",
+                "reference": "e8fcc1862926f4587a137edf240b1e3741f98e7a",
                 "shasum": ""
             },
             "require": {
@@ -266,15 +222,16 @@
             "authors": [
                 {
                     "name": "Onni Hakala",
-                    "email": "onni@koodimonni.fi"
+                    "email": "onni@koodimonni.fi",
+                    "role": "Developer"
                 }
             ],
-            "description": "Do what the fuck you want with your composer packages aka. Composer Dropin installer. Install packages or part of packages into custom paths without overwriting existing stuff.",
+            "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
             "support": {
-                "source": "https://github.com/Koodimonni/Composer-Dropin-Installer/tree/1.0",
+                "source": "https://github.com/Koodimonni/Composer-Dropin-Installer/tree/1.0.2",
                 "issues": "https://github.com/Koodimonni/Composer-Dropin-Installer/issues"
             },
-            "time": "2015-06-11 14:15:20"
+            "time": "2016-10-30 19:22:35"
         },
         {
             "name": "moderntribe/events-calendar-pro",
@@ -289,23 +246,23 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.10.0",
+            "version": "v2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "0bb2f76e2f34a8864a32be34c4ec66274d76c05e"
+                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/0bb2f76e2f34a8864a32be34c4ec66274d76c05e",
-                "reference": "0bb2f76e2f34a8864a32be34c4ec66274d76c05e",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/a3f6d55996dd28b58f3a909d474189a3c1aa693f",
+                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "~1.6",
+                "friendsofphp/php-cs-fixer": "~1.11",
                 "phpunit/phpunit": "~3.7|~4.0|~5.0"
             },
             "type": "library",
@@ -331,7 +288,7 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2016-02-27 19:22:46"
+            "time": "2016-07-31 06:18:27"
         },
         {
             "name": "rhumsaa/array_column",
@@ -381,23 +338,23 @@
         },
         {
             "name": "rmccue/requests",
-            "version": "v1.6.1",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmccue/Requests.git",
-                "reference": "6aac485666c2955077d77b796bbdd25f0013a4ea"
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmccue/Requests/zipball/6aac485666c2955077d77b796bbdd25f0013a4ea",
-                "reference": "6aac485666c2955077d77b796bbdd25f0013a4ea",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
             },
             "require-dev": {
-                "satooshi/php-coveralls": "dev-master"
+                "requests/test-server": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -426,20 +383,20 @@
                 "iri",
                 "sockets"
             ],
-            "time": "2014-05-18 04:59:02"
+            "time": "2016-10-13 00:11:37"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.5",
+            "version": "v2.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1"
+                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/ca24cf2cd4e3826f571e0067e535758e73807aa1",
-                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/0023b024363dfc0cd21262e556f25a291fe8d7fd",
+                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd",
                 "shasum": ""
             },
             "require": {
@@ -475,7 +432,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-10 10:53:53"
+            "time": "2016-11-03 07:52:58"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -624,27 +581,16 @@
             "time": "2013-11-30 13:14:44"
         },
         {
-            "name": "wp-rocket/wp-rocket",
-            "version": "2.7.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/wp-rocket_2.7.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "wordpress-plugin"
-        },
-        {
             "name": "wpackagist-plugin/disqus-comment-system",
-            "version": "2.85",
+            "version": "2.86",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disqus-comment-system/",
-                "reference": "trunk"
+                "reference": "tags/2.86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.zip",
+                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.2.86.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -656,15 +602,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analyticator",
-            "version": "6.4.9.7",
+            "version": "6.5.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analyticator/",
-                "reference": "tags/6.4.9.7"
+                "reference": "tags/6.5.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.4.9.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.5.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -673,26 +619,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
-        },
-        {
-            "name": "wpackagist-plugin/iwp-client",
-            "version": "1.5.1.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/iwp-client/",
-                "reference": "tags/1.5.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/iwp-client.1.5.1.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/iwp-client/"
         },
         {
             "name": "wpackagist-plugin/registration-honeypot",
@@ -716,15 +642,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-history",
-            "version": "2.5.5",
+            "version": "2.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.5.5"
+                "reference": "tags/2.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.5.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.12.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -736,15 +662,15 @@
         },
         {
             "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.1.3",
+            "version": "4.3.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.1.3"
+                "reference": "tags/4.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.1.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.3.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -756,15 +682,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-my-login",
-            "version": "6.4.4",
+            "version": "6.4.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/theme-my-login/",
-                "reference": "tags/6.4.4"
+                "reference": "tags/6.4.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -776,15 +702,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.2.4",
+            "version": "3.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.2.4"
+                "reference": "tags/3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -798,9 +724,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "geekpress/wp-rocket-cli": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

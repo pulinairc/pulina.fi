@@ -42,30 +42,6 @@
     {
       "type": "vcs",
       "url": "https://github.com/koodimonni/composer-dropin-installer"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "wp-rocket/wp-rocket",
-        "type": "wordpress-plugin",
-        "version": "2.7.4",
-        "dist": {
-          "type": "zip",
-          "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/wp-rocket_2.7.4.zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "moderntribe/events-calendar-pro",
-        "type": "wordpress-plugin",
-        "version": "4.1.1",
-        "dist": {
-          "type": "zip",
-          "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/events-calendar-pro.4.1.1.zip"
-        }
-      }
     }
   ],
   "require": {
@@ -81,12 +57,9 @@
     "wpackagist-plugin/google-analyticator":"*",
     "wpackagist-plugin/simple-history":"*",
     "wpackagist-plugin/theme-my-login":"*",
-    "wp-rocket/wp-rocket":"*",
-    "geekpress/wp-rocket-cli":"dev-master",
     "wpackagist-plugin/the-events-calendar":"*",
     "moderntribe/events-calendar-pro":"*",
-    "wpackagist-plugin/registration-honeypot": "*",
-    "wpackagist-plugin/iwp-client":"*"
+    "wpackagist-plugin/registration-honeypot": "*"
   },
   "extra": {
     "dropin-paths": {
