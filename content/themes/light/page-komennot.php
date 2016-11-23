@@ -12,16 +12,16 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="container">
-			
+
 			<div class="the-page-content">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-			
+
 				<div class="entry-content">
 
 				<div class="row">
-				
+
 					<div class="col-md-12">
 					<?php the_content(); ?>
 
@@ -31,14 +31,16 @@ get_header(); ?>
 
 					<p><span class="poispaalta">Punaisella</span> näkyvät ovat pois päältä. Ominaisuudet näkyvät listassa siinä järjestyksessä kun ne on ladattu bottiin.</p>
 
+          <p>Jos joku mättää, botin keskeisimmät toiminnot löytyvät <a href="https://github.com/pulinairc/kummitus">avoimena lähdekoodina GitHubista</a>, joten siitä vaan koodaamaan paranteluja.</p>
+
 					<p><?php edit_post_link( __( 'Muokkaa', 'light' ), '<span class="edit-link">', '</span>' ); ?></p>
 					</div>
 
 				</div><!-- .entry-content -->
-			
+
 			</article><!-- #post-## -->
 			</div>
-			
+
 			</div><!--/.container-->
 
 		<?php endwhile; // end of the loop. ?>
@@ -192,7 +194,7 @@ get_header(); ?>
 
 </table>
 </div>
-	
+
 	</div><!--/.containercol-->
 
 <?php get_footer(); ?>
