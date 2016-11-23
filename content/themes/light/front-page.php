@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<p>Suoraviivaisempi kuin Twitter. Reaaliaikaisempi kuin Facebook. "Sosiaalisista medioista" se ensimmäinen. Tervetuloa irkkiin!</p>
 
-			<p><a href="http://chat.pulina.fi" class="button button-ghost">Tule mukaan pulisemaan</a></p>
+			<p><a href="#aloita" class="button button-ghost">Tule mukaan pulisemaan</a></p>
 
 		</div>
 
@@ -37,9 +37,9 @@ get_header(); ?>
 		<h2>Paras paikka keskustelulle.</h2>
 		<div class="type"><p data-list="Tuo tuossa yläpuolella on muuten suora lähetys.;Etkö usko?;Kannattais uskoa. Koska se on.;Pulinalla on parhaat jutut.;Pulinalla on myös parhaat tyypit.;Me miittaillaankin joskus.;Tutustu mehin, hopi hopi?;Voit olla anonyymi, jos haluat, ei haittaa.;Tule sellaisena kuin olet."></p></div>
 
-		<p>Suomalainen keksintö, chattiverkosto IRC (puhekielessä "irkki") on ollut olemassa vuodesta 1988. Keskustelukanavia luotiin pääosin omista mielenkiinnonkohteista, esimerkiksi <code>#tietokoneet</code>.</p>
+		<p>Suomalainen keksintö, chattiverkosto IRC (puhekielessä "irkki") on ollut olemassa vuodesta 1988. Keskustelukanavia luotiin pääosin omista mielenkiinnonkohteista, esimerkiksi <i>#tietokoneet</i>.</p>
 
-		<p>90-luvulla IRCistä kiinnostunut <i>rolle</i> huomasi, että kanavilla saatetaan keskustella ihan mistä vaan, vaikka kanavan aihe olisi rajattu johonkin piiriin. Nimellä ei siis oikeastaan ollut enää väliä ja rönsyileviä kanavia alkoi olla liikaa. Toisaalta ei myöskään ollut yhtä selkeää kanavaa kaikille, jossa sai jauhaa ihan mistä halusi.</p>
+		<p>90-luvulla IRCistä kiinnostunut <i>rolle</i> huomasi, että kanavilla saatetaan keskustella ihan mistä vaan, vaikka kanavan aihe olisi rajattu johonkin tiettyyn. Nimellä ei siis oikeastaan ollut enää väliä ja rönsyileviä kanavia alkoi olla liikaa. Toisaalta ei myöskään ollut yhtä selkeää kanavaa kaikille, jossa sai jauhaa ihan mistä halusi.</p>
 
 		<p>Näin <code>#pulina</code> sai alkunsa.</p>
 
@@ -196,32 +196,6 @@ echo $pulistumaara; ?></span>
 
 		</div><!--/.slide-->
 
-<div class="slide slide-miten slide-ohje slide-vaihe-yksi">
-
-	<div class="container">
-
-		<h2>Vaihe 1. Päätä nimimerkki._</h2>
-
-		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Kanavan ylläpitäjiä ovat esimerkiksi rolle ja mustikkasoppa. Irkissä nimimerkki näkyy perinteisesti pienemmyys-suuremmuus-sulkeiden sisällä näin: <code>&lt;rolle&gt;</code>. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
-
-	</div>
-
-</div>
-
-<div class="slide slide-miten slide-ohje slide-vaihe-kaksi">
-
-	<div class="container">
-
-		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
-
-		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://chat.pulina.fi">chat.pulina.fi</a> tai alta napista, sitten nimimerkin täydennys ja olet irkissä! Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
-
-		<p><a href="http://chat.pulina.fi" class="button">Boom, irkkiin!</a></p>
-
-	</div>
-
-</div>
-
 <div class="slide slide-github">
 
   <div class="container">
@@ -247,6 +221,32 @@ echo $pulistumaara; ?></span>
     <p><a href="https://www.twitter.com/pulinainfo" target="_new" class="button button-ghost">Seuraa Twitterissä</a></p>
 
   </div><!-- .container -->
+
+</div>
+
+<div class="slide slide-miten slide-ohje slide-vaihe-yksi" id="aloita">
+
+	<div class="container">
+
+		<h2>Vaihe 1. Päätä nimimerkki._</h2>
+
+		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
+
+	</div>
+
+</div>
+
+<div class="slide slide-miten slide-ohje slide-vaihe-kaksi">
+
+	<div class="container">
+
+		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
+
+		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://chat.pulina.fi">chat.pulina.fi</a> tai alta napista, sitten nimimerkin täydennys ja olet irkissä! Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
+
+		<p><a href="http://chat.pulina.fi" class="button">Boom, irkkiin!</a></p>
+
+	</div>
 
 </div>
 
