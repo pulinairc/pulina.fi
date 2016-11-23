@@ -121,7 +121,6 @@ get_header(); ?>
 
 		<h2>Viimeisimmät linkit</h2>
 
-
 <ul class="linkkilista">
 <?php
 
