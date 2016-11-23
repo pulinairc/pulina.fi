@@ -310,9 +310,48 @@
       border-color: #fff;
       background: transparent;
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &:active {
         background: #fff;
         color: #4078c0;
+      }
+    }
+
+    p {
+      color: #fff;
+    }
+
+    svg {
+      width: 300px;
+      height: 100px;
+      fill: #fff;
+
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &.slide-twitter {
+    background: #1da1f2;
+    color: #fff;
+    text-align: center;
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .button {
+      border-color: #fff;
+      background: transparent;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: #fff;
+        color: #1da1f2;
       }
     }
 
