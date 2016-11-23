@@ -20,6 +20,46 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
+// Time sitten function
+function time2str($ts) {
+    if(!ctype_digit($ts)) {
+        $ts = strtotime($ts);
+    }
+    $diff = time() - $ts;
+    if($diff == 0) {
+        return 'nyt';
+    } elseif($diff > 0) {
+        $day_diff = floor($diff / 86400);
+        if($day_diff == 0) {
+            if($diff < 60) return 'juuri nyt';
+            if($diff < 120) return '1 minuutti sitten';
+            if($diff < 3600) return floor($diff / 60) . ' minuuttia sitten';
+            if($diff < 7200) return '1 tunti sitten';
+            if($diff < 86400) return floor($diff / 3600) . ' tuntia sitten';
+        }
+        if($day_diff == 1) { return 'eilen'; }
+        if($day_diff < 7) { return $day_diff . ' päivää sitten'; }
+        if($day_diff < 31) { return ceil($day_diff / 7) . ' viikkoa sitten'; }
+        if($day_diff < 60) { return 'viime kuussa'; }
+        return date('F Y', $ts);
+    } else {
+        $diff = abs($diff);
+        $day_diff = floor($diff / 86400);
+        if($day_diff == 0) {
+            if($diff < 120) { return 'minuutissa'; }
+            if($diff < 3600) { return ' ' . floor($diff / 60) . ' minuutissa'; }
+            if($diff < 7200) { return 'tunnissa'; }
+            if($diff < 86400) { return ' ' . floor($diff / 3600) . ' tunnissa'; }
+        }
+        if($day_diff == 1) { return 'huomenna'; }
+        if($day_diff < 4) { return date('l', $ts); }
+        if($day_diff < 7 + (7 - date('w'))) { return 'seuraavalla viikolla'; }
+        if(ceil($day_diff / 7) < 4) { return ' ' . ceil($day_diff / 7) . ' viikossa'; }
+        if(date('n', $ts) == date('n') + 1) { return 'seuraavassa kuussa'; }
+        return date('F Y', $ts);
+    }
+}
+
 /**
  * Facebook embed shortcode
  */

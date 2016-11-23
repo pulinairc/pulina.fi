@@ -56,6 +56,35 @@ get_header(); ?>
 </div>
 
 
+<div class="slide slide-telegram">
+
+  <div class="container">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><defs><linearGradient id="a" x1=".667" y1=".167" x2=".417" y2=".75"><stop stop-color="#37aee2" offset="0"/><stop stop-color="#1e96c8" offset="1"/></linearGradient><linearGradient id="b" x1=".66" y1=".437" x2=".851" y2=".802"><stop stop-color="#eff7fc" offset="0"/><stop stop-color="#fff" offset="1"/></linearGradient></defs><circle cx="120" cy="120" r="120" fill="url(#a)"/><path fill="#c8daea" d="M98 175c-3.888 0-3.227-1.468-4.568-5.17L82 132.207 170 80"/><path fill="#a9c9dd" d="M98 175c3 0 4.325-1.372 6-3l16-15.558-19.958-12.035"/><path fill="url(#b)" d="M100.04 144.41l48.36 35.729c5.519 3.045 9.501 1.468 10.876-5.123l19.685-92.763c2.015-8.08-3.08-11.746-8.36-9.349l-115.59 44.571c-7.89 3.165-7.843 7.567-1.438 9.528l29.663 9.259 68.673-43.325c3.242-1.966 6.218-.91 3.776 1.258"/></svg>
+
+    <p><a href="https://telegram.org/" target="_new">Telegram</a> on kuin WhatsApp, mutta avoin alusta ja toimii joka laitteella. Telegram-ryhmästä on tullut eräänlainen "varjopulina" tien päällä sekä kuvien jakamiseen (vaikka <a href="https://www.irccloud.com/">IRCCloud</a> toimisi tähän lähes yhtä hyvin). Telegrammissa on aktiivinen 30+ käyttäjän rypäs pulinalaisia. Jos haluat mukaan, pistä kanavalla viestiä niin kutsumme sinut.</p>
+
+    <p class="activity">Viimeksi hölisty <strong><?php
+
+    $telegram_bot_api_url = file_get_contents('https://api.telegram.org/' . getenv('TELEGRAM_BOTTOKEN') . '/getUpdates');
+    $data = json_decode($telegram_bot_api_url, true);
+
+    $count = 0;
+    foreach ( array_reverse($data['result']) as $result ) :
+      // Test data:
+      // echo var_dump($result['message']['date']) . '<br /><br />';
+
+      echo time2str( $result['message']['date'] );
+      if (++$count == 1) break;
+    endforeach; ?></strong></p>
+
+    <p><a href="http://chat.pulina.fi" target="_new" class="button button-ghost">Pyydä kutsua IRC-kanavalla</a></p>
+
+  </div><!-- .container -->
+
+</div>
+
+
 <div class="slide slide-miitit slide-linkit">
 
 	<div class="container">
@@ -229,7 +258,7 @@ echo $pulistumaara; ?></span>
 
 		<h2>Mitäs muuta?</h2>
 
-		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. Tavoitteena julkaista kuvagalleria, miittien tapaamissysteemi ja jotain muutakin hienoa. Sitten joskus.</p>
+		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. On meillä <a href="https://www.facebook.com/pulinairc/">Facebookkikin</a> ja joitakin ryhmiäkin siellä, mutta se on niin kuollutta ja lamea että siitä ei puhuta.</p>
 
 		<p>Sivut loi <a href="http://roni.laukkarinen.info">Rolle</a>.
 

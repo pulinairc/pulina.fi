@@ -370,6 +370,58 @@
     }
   }
 
+  &.slide-telegram {
+    background: lighten(#38b0e2, 5%);
+    color: #fff;
+    text-align: center;
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      a:not(.button),
+      a:link:not(.button),
+      a:visited:not(.button),
+      p a:not(.button),
+      p a:link:not(.button),
+      p a:visited:not(.button) {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+
+        &:hover {
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+
+    .button {
+      border-color: #fff;
+      background: transparent;
+      text-decoration: none !important;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: #fff;
+        color: #38b0e2;
+      }
+    }
+
+    p {
+      color: #fff;
+    }
+
+    svg {
+      width: 300px;
+      height: 100px;
+      fill: #fff;
+
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
   &.slide-lopetus {
     text-align: center;
   }
