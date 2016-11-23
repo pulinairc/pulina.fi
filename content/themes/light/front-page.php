@@ -66,16 +66,14 @@ get_header(); ?>
 
     <p class="activity">Viimeksi hölisty <strong><?php
 
-    $telegram_bot_api_url = file_get_contents('https://api.telegram.org/' . getenv('TELEGRAM_BOTTOKEN') . '/getUpdates');
+    $telegram_bot_api_url = file_get_contents('https://api.telegram.org/' . getenv('TELEGRAM_BOTTOKEN') . '/getUpdates?offset=-1&limit=1');
     $data = json_decode($telegram_bot_api_url, true);
 
-    $count = 0;
     foreach ( array_reverse($data['result']) as $result ) :
       // Test data:
       // echo var_dump($result['message']['date']) . '<br /><br />';
 
       echo time2str( $result['message']['date'] );
-      if (++$count == 1) break;
     endforeach; ?></strong></p>
 
     <p><a href="http://chat.pulina.fi" target="_new" class="button button-ghost">Pyydä kutsua IRC-kanavalla</a></p>
