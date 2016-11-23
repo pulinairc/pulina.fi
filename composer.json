@@ -55,11 +55,7 @@
     "wpackagist-plugin/wordpress-seo":"*",
     "wpackagist-plugin/disqus-comment-system":"*",
     "wpackagist-plugin/google-analyticator":"*",
-    "wpackagist-plugin/simple-history":"*",
-    "wpackagist-plugin/theme-my-login":"*",
-    "wpackagist-plugin/the-events-calendar":"*",
-    "moderntribe/events-calendar-pro":"*",
-    "wpackagist-plugin/registration-honeypot": "*"
+    "wpackagist-plugin/simple-history":"*"
   },
   "extra": {
     "dropin-paths": {

@@ -13,27 +13,27 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="container">
-			
+
 			<div class="the-page-content">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<h2 class="entry-title"><?php the_title(); ?></h2>
-			
+
 				<div class="entry-content">
 
 					<?php the_content(); ?>
 					<?php edit_post_link( __( 'Muokkaa sivua', 'light' ), '<p class="edit">', '</p>' ); ?>
 
 				</div><!-- .entry-content -->
-			
+
 			</article><!-- #post-## -->
 			</div>
-			
+
 			</div><!--/.container-->
 
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	
+
 <?php get_footer(); ?>

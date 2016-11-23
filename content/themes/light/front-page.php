@@ -92,15 +92,20 @@ get_header(); ?>
       <ul class="linkkilista">
           <?php if ( have_rows( 'miitit_toistuva', 'option' ) ) :
             while( have_rows( 'miitit_toistuva', 'option' ) ) : the_row();
-            if ( get_sub_field( 'miitin_otsikko' ) && get_sub_field( 'miitin_doodle-linkki' ) ) : ?>
-                <li><a href="<?php echo get_sub_field( 'miitin_doodle-linkki' ); ?>"><?php echo get_sub_field( 'miitin_otsikko' ); ?></a></li>
+            if ( get_sub_field( 'miitin_otsikko' ) ) : ?>
+                <?php if ( ! get_sub_field( 'miitti_on_mennyt' ) ) : ?>
+                  <li><?php if ( get_sub_field( 'miitin_doodle-linkki' ) ) : ?><a href="<?php echo get_sub_field( 'miitin_doodle-linkki' ); ?>" target="_new"><?php endif; ?>
+                    <?php echo get_sub_field( 'miitin_otsikko' ); ?>
+                    <?php if ( get_sub_field( 'miitin_doodle-linkki' ) ) : ?></a><?php endif; ?>
+                  </li>
+                <?php endif; ?>
               <?php endif;
             endwhile;
           endif;
         ?>
       </ul>
 
-			<p><a href="<?php echo tribe_get_events_link(); ?>" class="button">Vanhat miitit ja kuvagalleriat</a></p>
+			<p><a href="<?php echo get_page_link(1236); ?>" class="button">Vanhat miitit</a></p>
 
       <div class="more">
 				<p><a href="<?php echo get_admin_url(); ?>admin.php?page=miittikentat">Lisää uusi miitti &raquo;</a></p>
