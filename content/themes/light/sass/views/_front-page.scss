@@ -215,6 +215,11 @@
     text-align: center;
     overflow: hidden;
 
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     &.slide-miitit {
       background: darken(#fdfdfd, 8%);
 
@@ -255,6 +260,11 @@
   &.slide-ohje {
     text-align: center;
 
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     h2 {
       font-family: $font-monospace;
     }
@@ -262,6 +272,11 @@
 
   &.slide-vaihe-yksi {
     background: lighten(#87bcde, 20%);
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
 
     h2 {
       color: darken(#87bcde, 50%);
@@ -271,8 +286,48 @@
   &.slide-vaihe-kaksi {
     background: lighten(#5da399, 30%);
 
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     h2 {
       color: darken(#5da399, 30%);
+    }
+  }
+
+  &.slide-github {
+    background: #4078c0;
+    color: #fff;
+    text-align: center;
+
+    .container {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .button {
+      border-color: #fff;
+      background: transparent;
+
+      &:hover {
+        background: #fff;
+        color: #4078c0;
+      }
+    }
+
+    p {
+      color: #fff;
+    }
+
+    svg {
+      width: 300px;
+      height: 100px;
+      fill: #fff;
+
+      path {
+        fill: #fff;
+      }
     }
   }
 
