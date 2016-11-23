@@ -53,7 +53,58 @@ get_header(); ?>
 
 	</div>
 
-</div>
+</div><!-- .slide-esittely -->
+
+
+<div class="slide slide-halloffame">
+  <div class="bg"></div>
+
+	<div class="container">
+
+		<h2>Hall of fame</h2>
+
+		<p>Tässä näet tämän päivän kovimmat pulisijat. Lista päivittyy lähes reaaliajassa. Reaaliaikaiset tilastot näet myös kanavakomennolla <i>!toptod</i>.</p>
+
+    <?php
+    	$html = file_get_contents('http://peikko.us/toptod.html');
+    	$items = explode(' ', $html);
+
+    	echo '<ol>';
+
+    	foreach ($items as $key => $item) {
+    		$list_item = trim($item);
+
+    		if ( $list_item === '' || $list_item === ' ' || empty( $list_item ) ) :
+    		else :
+
+    			$get_points = explode('(', $list_item);
+    			$point_raw = explode(')', $get_points[1]);
+    			$point_success = explode(')', $point_raw[0]);
+    			$points = $point_success[0];
+    			$nick = $get_points[0];
+
+    			// Progress calculation
+    			$maxpoints = '2000';
+    			$count_percent_part1 = $points * 100;
+    			$percent = $count_percent_part1 / $maxpoints;
+          $nearest_ten = ceil($percent / 10) * 10;
+
+    			if ( ! preg_match('/\./', $item) ) :
+    	    		echo '<li>
+    	    		<div class="points">
+    	    			<div class="bar"><div class="progress progress-' . $nearest_ten . '" style="width: ' . $percent . '%;"><b>' . $nick . '</b> <span class="value">' . $points . '</span></div></div>
+    	    		</div>
+    	    		</li>';
+    	    	endif;
+
+    		endif;
+    	}
+    	echo '</ol>';
+    	?>
+
+	</div>
+
+</div><!-- .slide-halloffame -->
 
 
 <div class="slide slide-telegram">
