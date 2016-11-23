@@ -3,7 +3,7 @@
 body {
   .nav-trigger {
     background: transparent;
-    position: absolute;
+    position: fixed;
     left: 22px;
     top: 22px;
     display: block;
@@ -21,6 +21,10 @@ body {
     .burger-icon {
       @include burger(30px, 5px, 5px, $color-navigation-toggle);
       cursor: pointer;
+
+      &.invert:not(.opened) {
+        @include burger(30px, 5px, 5px, #232426);
+      }
     }
 
     &[aria-expanded="true"] .burger-icon {

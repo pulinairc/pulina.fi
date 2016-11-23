@@ -44,7 +44,7 @@
 
     // Fixed navigation waypoint
     $('.firstcontainer').waypoint(function(){
-        $('.burger').toggleClass('over-the-edge');
+        $('.burger').toggleClass('invert');
     }, { offset: '0' } );
 
     // Ticker animation effect
