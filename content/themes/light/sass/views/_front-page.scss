@@ -94,6 +94,7 @@
       font-weight: 400px;
       border: 3px solid #fff;
       width: 65%;
+      transition: none !important;
 
       @media (max-width: $container-ipad) {
         width: 100%;
@@ -118,7 +119,6 @@
     .shade {
       opacity: .6;
       background: #222;
-      transition: all .55s;
 
       @media (min-width: $container-mobile) {
         &.hovered {
