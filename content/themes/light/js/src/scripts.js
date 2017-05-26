@@ -23,28 +23,25 @@
     });
 
     // Fade/blur effect
-    var timer;
-    var delay = 1500, setTimeoutConst;
-
-    $(window).on('mousemove', function () {
-
-      setTimeoutConst = setTimeout(function(){
+    $(".irclog").hover(function () {
         $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").addClass("blur");
         $(".slide-irclog .button").addClass("blur-button");
-        $(".slide-irclog .shade").fadeOut();
-      }, delay);
-
-  	  try {
-  	    clearTimeout(timer);
-  	  } catch (e) {}
-  	  timer = setTimeout(function () {
-
+        $(".slide-irclog .shade").addClass("hovered");
+      }, function () {
         $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").removeClass("blur");
         $(".slide-irclog .button").removeClass("blur-button");
-        $(".slide-irclog .shade").fadeIn();
+        $(".slide-irclog .shade").removeClass("hovered");
+      });
 
-  	  }, 3000);
-  	});
+      $(".slide-irclog .container").hover(function () {
+        $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").removeClass("blur");
+        $(".slide-irclog .button").removeClass("blur-button");
+        $(".slide-irclog .shade").removeClass("hovered");
+      }, function () {
+        $(".slide-irclog h2, .slide-irclog p, .slide-irclog span").addClass("blur");
+        $(".slide-irclog .button").addClass("blur-button");
+        $(".slide-irclog .shade").addClass("hovered");
+      });          
 
     // Fixed navigation waypoint
     $('.firstcontainer').waypoint(function(){
