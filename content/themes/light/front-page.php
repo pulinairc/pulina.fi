@@ -45,6 +45,7 @@ get_header(); ?>
 
 		<p><a href="<?php echo get_page_link(6); ?>" class="button button-ghost">Lue lisää Pulinan historiasta</a></p>
 
+    <div id="placement">
 		<?php if(strtotime('2018-03-26 23:59') > time() ) { ?>
 
       <?php // Automatically expires 26.3.2018
@@ -54,6 +55,7 @@ get_header(); ?>
 				<p>Pulinat pois ja parhaita <a href="http://www.eurokasinot.net/rahapelit">rahapelejä</a>  kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin <a href="http://casinoarvostelut.com/">netticasinot</a>. Ennen kun alat pelaamaan kannattaa etsiä käsiisi parhaat <a href="http://www.parascasino.com/bonukset">casino bonukset</a>. Älähän uppoudu tähän puuhaan kuitenkaan liika ja jos tuntuu, että mopo karkaa käsistä turvaudu <a href="http://keskustelu.suomi24.fi/terveys/paihteet-ja-riippuvuudet/peliriippuvuus">tukeen</a> ystävälliseen <a href="http://www.peluuri.fi/">apuun</a>.</p>
 			</div>
 		<?php } ?>
+    </div>
 
 	</div>
 
