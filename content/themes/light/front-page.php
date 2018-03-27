@@ -46,9 +46,9 @@ get_header(); ?>
 		<p><a href="<?php echo get_page_link(6); ?>" class="button button-ghost">Lue lisää Pulinan historiasta</a></p>
 
     <div id="placement">
-		<?php if(strtotime('2018-03-26 23:59') > time() ) { ?>
+		<?php if(strtotime('2019-04-22 23:59') > time() ) { ?>
 
-      <?php // Automatically expires 26.3.2018
+      <?php // Automatically expires 22.4.2019
 			// Ostaja: marina.r@max-exposure.com, 1200 € (yksinoikeus + sis. pulina.fi) ?>
 
 			<div class="mainox ad textad">
