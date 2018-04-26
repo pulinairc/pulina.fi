@@ -86,17 +86,7 @@ get_header(); ?>
 
     <p><a href="https://telegram.org/" target="_new">Telegram</a> on kuin WhatsApp, mutta avoin alusta ja toimii joka laitteella. Telegram-ryhmästä on tullut eräänlainen "varjopulina" tien päällä sekä kuvien jakamiseen. Telegrammissa on aktiivinen 30+ käyttäjän rypäs pulinalaisia. Jos haluat mukaan, pistä kanavalla viestiä niin kutsumme sinut.</p>
 
-    <p class="activity">Viimeksi hölisty <strong><?php
-
-    $telegram_bot_api_url = file_get_contents('https://api.telegram.org/' . getenv('TELEGRAM_BOTTOKEN') . '/getUpdates?offset=-1&limit=1');
-    $data = json_decode($telegram_bot_api_url, true);
-
-    foreach ( array_reverse($data['result']) as $result ) :
-      // Test data:
-      // echo var_dump($result['message']['date']) . '<br /><br />';
-
-      echo time2str( $result['message']['date'] );
-    endforeach; ?></strong></p>
+    <p class="activity">Viimeksi hölisty <strong><?php get_template_part( 'template-parts/telegram' ); ?></strong></p>
 
     <p><a href="http://chat.pulina.fi" target="_new" class="button button-ghost">Pyydä kutsua IRC-kanavalla</a></p>
 
@@ -143,81 +133,22 @@ get_header(); ?>
 
 		<h2>Viimeisimmät linkit</h2>
 
-<ul class="linkkilista">
-<?php
+    <ul class="linkkilista">
+      <?php get_template_part( 'template-parts/links' ); ?>
+    </ul>
 
-require_once('inc/simple_html_dom.php');
-$html = file_get_html('http://peikko.us/pulinalinkit/index.html');
+    <div class="more">
+      <p><a href="http://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
+    </div>
 
-// example: html->find('ul', 0)->find('li', 0);
-$first_level_items = $html->find('ul', 0)->find('li', 0);
-foreach($html->find('ul') as $ul)
-{
-$i = 0;
-       foreach($ul->find('li') as $li)
-       {
-       if($i == 6) { break; }
-       $korvattavat = array('/Ã¤/','/Ã¶/', '/â/');
-	   $tilalle = array('ä','ö', '-');
-	   $li = preg_replace($korvattavat, $tilalle, $li);
-       echo $li;
-       $i++;
-       }
-}
-
-?>
-</ul>
-
-			<div class="more">
-				<p><a href="http://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
-			</div>
-
-	</div>
+  </div>
 
 </div>
 
 		<div class="slide slide-infograafi">
 
 			<div class="container">
-
-				<div class="wow fadeIn numero" data-wow-delay="0.22s">
-					<span class="arvo meter_1"><?php $paikalla = file_get_html('http://peikko.us/pulina.html'); foreach($paikalla->find('.paikalla') as $numero) echo $numero; ?></span>
-					<span class="asia">Paikalla nyt</span>
-				</div>
-
-				<div class="wow fadeIn numero" data-wow-delay="0.44s">
-					<span class="arvo meter_2"><?php
-$peak = file_get_html('http://peikko.us/peak.db');
-$luku = explode('!!!',$peak);
-$oikealuku = explode('@',$luku[1]);
-$numero = $oikealuku[0];
-echo $numero;
-?></span>
-					<span class="asia">yhtäaikainen käyttäjäennätys</span>
-				</div>
-
-				<div class="wow fadeIn numero" data-wow-delay="0.66s">
-					<span class="arvo meter_3"><?php
-$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
-$bold = $filu->find('b');
-$visitors = $bold[0];
-echo $visitors; ?></span>
-					<span class="asia">käyttäjää yhteensä</span>
-				</div>
-
-				<div class="wow fadeIn numero" data-wow-delay="0.88s">
-					<span class="arvo meter_4"><?php
-$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
-
-$bold = $filu->find('b');
-$visitors = $bold[0];
-
-preg_match('/Rivien yhteismäärä: (?P<digit>\d+)/', $filu, $matches);
-$pulistumaara = $matches[1];
-echo $pulistumaara; ?></span>
-					<span class="asia">riviä pulistu</span>
-				</div>
-
+        <?php get_template_part( 'template-parts/numbers' ); ?>
 			</div>
 
 		</div><!--/.slide-->

@@ -1,6 +1,6 @@
 <?php
 /**
- * Untappd module
+ * Toptod module
  *
  * This module retrieves data from toptod.
  *
