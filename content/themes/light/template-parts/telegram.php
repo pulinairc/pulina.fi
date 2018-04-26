@@ -11,7 +11,7 @@ $telegram_bot_api_url = 'https://api.telegram.org/' . getenv('TELEGRAM_BOTTOKEN'
 
 // Fetch data and set up simple cache
 $telegram_cachefile = get_theme_file_path( 'inc/cache/telegram.json' );
-$telegram_cachetime = 1800; // 30 minutes
+$telegram_cachetime = 60; // 1 minute
 
 // If cache file does not exist, let's create it
 if ( ! file_exists( $telegram_cachefile ) ) {
