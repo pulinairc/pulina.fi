@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95d12d3034cd93ca548d3a45fd5d6129",
-    "content-hash": "4203be02cb0b0866eb788e850c2abe38",
+    "content-hash": "d5f36d4216d786230d520566f4a2a999",
     "packages": [
         {
             "name": "composer/installers",
@@ -78,27 +77,28 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-08-20 04:37:09"
+            "time": "2013-08-20T04:37:09+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6.1",
+            "version": "4.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
+                "reference": "c0d69bde6fc373270766a00db333c64f35496d67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/c0d69bde6fc373270766a00db333c64f35496d67",
+                "reference": "c0d69bde6fc373270766a00db333c64f35496d67",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core-installer": "~0.2",
+                "johnpbloch/wordpress-core": "4.9.5",
+                "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
-            "type": "wordpress-core",
+            "type": "package",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
@@ -113,22 +113,63 @@
             "homepage": "http://wordpress.org/",
             "keywords": [
                 "blog",
-                "cms"
+                "cms",
+                "wordpress"
             ],
-            "time": "2016-09-07 15:01:47"
+            "time": "2018-04-03T22:47:48+00:00"
         },
         {
-            "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.2.1",
+            "name": "johnpbloch/wordpress-core",
+            "version": "4.9.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
+                "url": "https://github.com/johnpbloch/wordpress-core.git",
+                "reference": "442ae6c761e3b20cc6a000bee8fefcde5dbab3fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
-                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/442ae6c761e3b20cc6a000bee8fefcde5dbab3fa",
+                "reference": "442ae6c761e3b20cc6a000bee8fefcde5dbab3fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "provide": {
+                "wordpress/core-implementation": "4.9.5"
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2018-04-03T22:47:40+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core-installer",
+            "version": "1.0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +179,8 @@
                 "composer/installers": "<1.0.6"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev"
+                "composer/composer": "^1.0",
+                "phpunit/phpunit": ">=4.8.35"
             },
             "type": "composer-plugin",
             "extra": {
@@ -163,7 +205,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2018-01-29T14:49:29+00:00"
         },
         {
             "name": "koodimonni-language/fi",
@@ -185,20 +227,20 @@
                 "url": "http://translate.wordpress.org/projects/wp/dev/fi/default"
             },
             "description": "Wordpress language files for Finnish",
-            "time": "2014-12-18 13:27:43"
+            "time": "2014-12-18T13:27:43+00:00"
         },
         {
             "name": "koodimonni/composer-dropin-installer",
-            "version": "1.0.2",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Koodimonni/Composer-Dropin-Installer.git",
-                "reference": "e8fcc1862926f4587a137edf240b1e3741f98e7a"
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/e8fcc1862926f4587a137edf240b1e3741f98e7a",
-                "reference": "e8fcc1862926f4587a137edf240b1e3741f98e7a",
+                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/a749f19e3a3bc05529190961ed7529592b20138e",
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e",
                 "shasum": ""
             },
             "require": {
@@ -216,6 +258,12 @@
                     "Koodimonni\\Composer\\": "src"
                 }
             },
+            "scripts": {
+                "test": [
+                    "composer install --working-dir=./tests/move/ && vendor/bin/phpunit ./tests/move/*.php",
+                    "composer install --working-dir=./tests/copy/ && vendor/bin/phpunit ./tests/copy/*.php"
+                ]
+            },
             "license": [
                 "WTFPL"
             ],
@@ -228,34 +276,23 @@
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
             "support": {
-                "source": "https://github.com/Koodimonni/Composer-Dropin-Installer/tree/1.0.2",
+                "source": "https://github.com/Koodimonni/Composer-Dropin-Installer/tree/1.2",
                 "issues": "https://github.com/Koodimonni/Composer-Dropin-Installer/issues"
             },
-            "time": "2016-10-30 19:22:35"
-        },
-        {
-            "name": "moderntribe/events-calendar-pro",
-            "version": "4.1.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://ronidude:UwaYeLeza0uM@plugins.dude.fi/events-calendar-pro.4.1.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "wordpress-plugin"
+            "time": "2018-02-04T10:52:01+00:00"
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.11.1",
+            "version": "v2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f"
+                "reference": "fe8fe72e9d580591854de404cc59a1b83ca4d19e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/a3f6d55996dd28b58f3a909d474189a3c1aa693f",
-                "reference": "a3f6d55996dd28b58f3a909d474189a3c1aa693f",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/fe8fe72e9d580591854de404cc59a1b83ca4d19e",
+                "reference": "fe8fe72e9d580591854de404cc59a1b83ca4d19e",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +325,7 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2016-07-31 06:18:27"
+            "time": "2017-07-11T12:54:05+00:00"
         },
         {
             "name": "rhumsaa/array_column",
@@ -334,7 +371,7 @@
                 "column"
             ],
             "abandoned": "ramsey/array_column",
-            "time": "2015-03-20 22:07:39"
+            "time": "2015-03-20T22:07:39+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -383,20 +420,20 @@
                 "iri",
                 "sockets"
             ],
-            "time": "2016-10-13 00:11:37"
+            "time": "2016-10-13T00:11:37+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.14",
+            "version": "v2.8.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd"
+                "reference": "423746fc18ccf31f9abec43e4f078bb6e024b2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/0023b024363dfc0cd21262e556f25a291fe8d7fd",
-                "reference": "0023b024363dfc0cd21262e556f25a291fe8d7fd",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/423746fc18ccf31f9abec43e4f078bb6e024b2d5",
+                "reference": "423746fc18ccf31f9abec43e4f078bb6e024b2d5",
                 "shasum": ""
             },
             "require": {
@@ -432,7 +469,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-11-03 07:52:58"
+            "time": "2018-04-04T13:38:31+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -483,7 +520,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2014-10-16 14:50:21"
+            "time": "2014-10-16T14:50:21+00:00"
         },
         {
             "name": "wp-cli/php-cli-tools",
@@ -528,7 +565,7 @@
                 "cli",
                 "console"
             ],
-            "time": "2013-06-14 16:35:34"
+            "time": "2013-06-14T16:35:34+00:00"
         },
         {
             "name": "wp-cli/wp-cli",
@@ -578,20 +615,20 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2013-11-30 13:14:44"
+            "time": "2013-11-30T13:14:44+00:00"
         },
         {
             "name": "wpackagist-plugin/disqus-comment-system",
-            "version": "2.86",
+            "version": "3.0.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disqus-comment-system/",
-                "reference": "tags/2.86"
+                "reference": "tags/3.0.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.2.86.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/disqus-comment-system.3.0.15.zip",
+                "reference": "tags/3.0.15",
                 "shasum": null
             },
             "require": {
@@ -602,16 +639,16 @@
         },
         {
             "name": "wpackagist-plugin/google-analyticator",
-            "version": "6.5.0.0",
+            "version": "6.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analyticator/",
-                "reference": "tags/6.5.0.0"
+                "reference": "tags/6.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.5.0.0.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.5.4.zip",
+                "reference": "tags/6.5.4",
                 "shasum": null
             },
             "require": {
@@ -621,37 +658,17 @@
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
         },
         {
-            "name": "wpackagist-plugin/registration-honeypot",
-            "version": "1.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/registration-honeypot/",
-                "reference": "tags/1.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/registration-honeypot.1.0.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/registration-honeypot/"
-        },
-        {
             "name": "wpackagist-plugin/simple-history",
-            "version": "2.12",
+            "version": "2.20",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-history/",
-                "reference": "tags/2.12"
+                "reference": "tags/2.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-history.2.12.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/simple-history.2.20.zip",
+                "reference": "tags/2.20",
                 "shasum": null
             },
             "require": {
@@ -661,57 +678,17 @@
             "homepage": "https://wordpress.org/plugins/simple-history/"
         },
         {
-            "name": "wpackagist-plugin/the-events-calendar",
-            "version": "4.3.3",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/the-events-calendar/",
-                "reference": "tags/4.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/the-events-calendar.4.3.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/the-events-calendar/"
-        },
-        {
-            "name": "wpackagist-plugin/theme-my-login",
-            "version": "6.4.6",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/theme-my-login/",
-                "reference": "tags/6.4.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/theme-my-login/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.8",
+            "version": "7.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.8"
+                "reference": "tags/7.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.8.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.7.3.zip",
+                "reference": "tags/7.3",
                 "shasum": null
             },
             "require": {
