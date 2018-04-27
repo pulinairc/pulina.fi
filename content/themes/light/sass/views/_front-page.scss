@@ -546,11 +546,6 @@
       p a:link:not(.button),
       p a:visited:not(.button) {
         color: #fff;
-        border-bottom: 1px solid #fff;
-
-        &:hover {
-          border-bottom: 1px solid transparent;
-        }
       }
     }
 
@@ -616,3 +611,94 @@
     }
   }
 }
+
+.slide-irc-clients.slide {
+  .col {
+    @include column(1/2, $offset: 1/2);
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+    @media(max-width: 700px) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media(max-width: 480px) {
+      @include stack();
+      padding-left: 25%;
+      padding-top: 0;
+    }
+  }
+
+  @keyframes animatedwindow {
+    from { margin-top: 100px; opacity: 0; }
+    to { margin-top: 0; opacity: 1; }
+  }
+
+  img {
+    position: absolute;
+    left: -5%;
+    transition: all .55s;
+
+    &.animate {
+      animation: animatedwindow 2s normal forwards ease-in-out;
+    }
+    
+    @media(max-width: 1560px) {
+      left: -10%;
+    }
+
+    @media(max-width: 1450px) {
+      left: -20%;
+    }
+
+    @media(max-width: 1260px) {
+      left: -30%;
+    }
+
+    @media(max-width: 1030px) {
+      left: -40%;
+    }
+
+    @media(max-width: 910px) {
+      left: -50%;
+    }
+
+    @media(max-width: 700px) {
+      left: -55%;
+    }
+
+    @media(max-width: 480px) {
+      left: -75%;
+    }
+  }
+
+  svg {
+    margin-right: 2rem;
+    height: 50px;
+    width: auto;
+
+    @media(max-width: 940px) {
+      height: 30px;
+    }
+
+    &.mirc {
+      margin-right: 1rem;
+    }
+
+    &.irssi {
+      margin-right: 0;
+    }
+  }
+
+  .link {
+    filter: grayscale(100%);
+    opacity: .6;
+
+    &:hover {
+      filter: none;
+      opacity: 1;
+    }
+  }
+}
+

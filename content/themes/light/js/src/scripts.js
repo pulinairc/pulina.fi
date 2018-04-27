@@ -2,6 +2,20 @@
 
   $(document).ready(function(){
 
+    $(window).scroll(function(){
+      // This is then function used to detect if the element is scrolled into view
+      function elementScrolled(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+      }
+    
+      if(elementScrolled('.screenshot')) {
+        $('.screenshot').addClass('animate');
+      }
+    });
+
     // Smooth scroll to ID on any anchor link
     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();

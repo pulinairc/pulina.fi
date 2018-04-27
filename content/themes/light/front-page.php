@@ -31,15 +31,20 @@ get_header(); ?>
 </div>
 
 <div class="slide slide-irc-clients" id="aloita">
+
+  <img class="screenshot" src="<?php echo get_template_directory_uri(); ?>/images/irccloud.png" alt="IRCCloud-kuvankaappaus" />
+
   <div class="container">
-    <h2>Irkkaaminen on helppoa!</h2>
+    <div class="col">
+      <h2>Irkkaaminen on helppoa!</h2>
 
-    <p>IRC on melkein yhtä vanha keksintö kuin sähköposti ja sinne pääsee monella eri tavalla. Pulinalle helpointa on mennä osoitteesta <a href="http://chat.pulina.fi">chat.pulina.fi</a>, mutta on paljon mukavampiakin tapoja irkata kuin selaimella.</p>
+      <p>IRC on melkein yhtä vanha keksintö kuin sähköposti ja sinne pääsee monella eri tavalla. Pulinalle helpointa on mennä osoitteesta <a href="http://chat.pulina.fi">chat.pulina.fi</a>, mutta on paljon mukavampiakin tapoja irkata kuin selaimella.</p>
 
-    <p>Pulinan käyttäjien lemppareita ovat seuraavat:</p>
-
-
-
+      <p>Pulinan käyttäjien lemppareita ovat seuraavat:</p>
+      <a class="link" href="https://www.irccloud.com"><?php include get_theme_file_path( '/svg/irccloud.svg' ); ?></a>
+      <a class="link" href="https://www.mirc.com/"><?php include get_theme_file_path( '/svg/mirc.svg' ); ?></a>
+      <a class="link" href="https://irssi.org/"><?php include get_theme_file_path( '/svg/irssi.svg' ); ?></a>
+    </div>
   </div>
 </div>
 

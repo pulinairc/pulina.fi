@@ -5,7 +5,7 @@ body {
   a:link,
   a:visited {
     text-decoration: none;
-    color: $color-alt;
+    color: #555;
   }
 
   a:hover,
@@ -42,6 +42,7 @@ body {
         .more {
           a {
             color: $color-alt;
+            text-decoration: none;
 
             &:hover {
               color: lighten($color-pulinansininen, 10%);
@@ -50,8 +51,8 @@ body {
         }
 
         .type {
-          max-height: 100px;
-          height: 100px;
+          max-height: 50px;
+          height: 50px;
           overflow: hidden;
 
           p {
@@ -87,16 +88,6 @@ body {
         height: 2px;
         margin: 0 0 -3px 5px;
         animation: blink 1s steps(2, start) infinite;
-      }
-
-      // Responsiivisen typografian poikkeukset:
-      @media (max-width: $container-mobile) {
-        p,
-        .slide p,
-        .slide a,
-        .button {
-          font-size: 19px;
-        }
       }
 
       .content-area {
@@ -244,12 +235,16 @@ body {
       }
 
       p a:not(.button) {
-        color: $color-pulinanvihrea;
+        color: #666;
         display: inline-block;
-        text-decoration: none;
+        text-decoration: underline;
         overflow: hidden;
         vertical-align: top;
         perspective-origin: 50% 50%;
+
+        &:hover {
+          color: #000;
+        }
 
         &:hover span {
           background: $color-pulinanvihrea;
