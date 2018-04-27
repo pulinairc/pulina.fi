@@ -140,9 +140,11 @@
         margin-bottom: 20;
         position: relative;
         text-transform: uppercase;
-        font-size: 4rem;
+        font-size: 2.5rem;
 
         @media (min-width: $container-mobile) {
+          font-size: 4rem;
+
           &.blur {
             text-shadow: 0 0 22px #fff;
             opacity: .5;
