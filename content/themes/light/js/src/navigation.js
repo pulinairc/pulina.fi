@@ -2,7 +2,7 @@
 
   $(window).load(function() {
 
-  // Navigation:
+    // Navigation:
     var body, page, mainNav, menuButton, menuToggle;
 
     // Accessibility
@@ -18,7 +18,7 @@
      * Set up the off canvas navigation toggle. This sets
      * up a toggle for off canvas sidebar navigation.
      */
-    ( function() {
+     ( function() {
       var menuToggleAccessible = page.find( '.nav-trigger #nav-toggle-label' );
 
       // Return early if menuToggle is missing.
@@ -29,10 +29,39 @@
       // Add an initial values for the attribute.
       menuToggle.attr( 'aria-expanded', 'false' );
       mainNav.attr( 'aria-expanded', 'false' );
-
       menuToggle.on( 'click', function( event ) {
 
         $( '.nav-trigger .burger' ).toggleClass('opened');
+
+        var findInsiders = function(elem) {
+
+          var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+
+          var firstTabbable = tabbable.first();
+          var lastTabbable = tabbable.last();
+          firstTabbable.focus();
+
+          lastTabbable.on('keydown', function (e) {
+           if ((e.which === 9 && !e.shiftKey)) {
+             e.preventDefault();
+             firstTabbable.focus();
+           }
+         });
+
+          firstTabbable.on('keydown', function (e) {
+            if ((e.which === 9 && e.shiftKey)) {
+              e.preventDefault();
+              lastTabbable.focus();
+            }
+          });
+
+          elem.on('keyup', function(e){
+            if (e.keyCode === 27 ) {
+              elem.hide();
+            };
+          });
+        };
+        findInsiders($('#sidenav'));
 
         // Toggle classes.
         $( 'html' ).toggleClass( 'disable-scroll' );
@@ -71,8 +100,8 @@
     /**
      * Closes the off canvas sidebar navigation when
      * the esc key is pressed.
-    */
-    $( document ).keyup( function( event ) {
+     */
+     $( document ).keyup( function( event ) {
       var menuToggleAccessible = page.find( '.nav-trigger .screen-reader-text' );
 
       if ( event.keyCode == 27 ) {
@@ -145,10 +174,10 @@
     // Call for onResizeFocus function.
     $( document ).ready( function() {
       $( window )
-        .on( 'load', onResizeFocus )
-        .on( 'resize', function() {
-          onResizeFocus();
-        } );
+      .on( 'load', onResizeFocus )
+      .on( 'resize', function() {
+        onResizeFocus();
+      } );
     } );
 
   });

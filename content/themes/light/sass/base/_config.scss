@@ -6,6 +6,7 @@ $color-pulinankeltavihrea: #c8d55d;
 $color-pulinansininen: #5eadd3;
 $color-pulinanharmaa: #555;
 $color-pulinanpunainen: #ce5455;
+$color-body: #333;
 
 $color-menutxt: #fff;
 $color-trunk_txt: #fff;
@@ -30,9 +31,9 @@ $color-menutxtsize: base;
 
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
-$font-base: 'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif;
-$font-alt: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-$font-headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
+$font-base: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
+$font-alt: $font-base;
+$font-headings: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings

@@ -1,5 +1,4 @@
 body {
-  font-family: $font-alt;
   padding: 0;
 
   a,
@@ -42,7 +41,6 @@ body {
       .container {
         .more {
           a {
-            font-size: .95rem;
             color: $color-alt;
 
             &:hover {
@@ -59,15 +57,14 @@ body {
           p {
             font-family: $font-monospace;
             color: rgba($color-text, .8);
-            font-size: 1rem;
             margin-top: 0;
             padding-top: 0;
+            font-size: 1.4rem;
 
             @media (max-width: $container-ipad) {
               min-height: 50px;
               overflow: hidden;
               max-height: 60px;
-              font-size: .8rem;
             }
           }
         }
@@ -125,7 +122,7 @@ body {
         }
 
         h4 {
-          @extend .h2;
+          @extend %h2;
         }
 
         ul {
@@ -286,7 +283,7 @@ body {
         margin-top: 50;
 
         p {
-          font-size: .85rem;
+          font-size: 1.4rem;
           text-align: 1.22;
         }
       }
@@ -294,7 +291,7 @@ body {
       input[type='text'],
       input[type='password'] {
         padding: 15px 20;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         border: 2px solid $color-alt;
       }
 

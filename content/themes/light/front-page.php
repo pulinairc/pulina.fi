@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<iframe src="https://www.pulina.fi/irclog.php" frameborder="0" class="irclog"></iframe>
+<iframe src="https://www.pulina.fi/irclog.php" frameborder="0" class="irclog" tabindex="-1"></iframe>
 
 <div class="slide slide-irclog">
 	<div class="shade"></div>
@@ -29,6 +29,27 @@ get_header(); ?>
 </div>
 
 </div>
+
+<div class="slide slide-irc-clients" id="aloita">
+  <div class="container">
+    <h2>Irkkaaminen on helppoa!</h2>
+
+    <p>IRC on melkein yhtä vanha keksintö kuin sähköposti ja sinne pääsee monella eri tavalla. Pulinalle helpointa on mennä osoitteesta <a href="http://chat.pulina.fi">chat.pulina.fi</a>, mutta on paljon mukavampiakin tapoja irkata kuin selaimella.</p>
+
+    <p>Pulinan käyttäjien lemppareita ovat seuraavat:</p>
+
+
+
+  </div>
+</div>
+
+<div class="slide slide-infograafi">
+
+  <div class="container">
+    <?php get_template_part( 'template-parts/numbers' ); ?>
+  </div>
+
+</div><!--/.slide-->
 
 <div class="slide slide-esittely firstcontainer">
 
@@ -143,15 +164,7 @@ get_header(); ?>
 
   </div>
 
-</div>
-
-		<div class="slide slide-infograafi">
-
-			<div class="container">
-        <?php get_template_part( 'template-parts/numbers' ); ?>
-			</div>
-
-		</div><!--/.slide-->
+</div>		
 
 <div class="slide slide-github">
 
@@ -181,41 +194,15 @@ get_header(); ?>
 
 </div>
 
-<div class="slide slide-miten slide-ohje slide-vaihe-yksi" id="aloita">
-
-	<div class="container">
-
-		<h2>Vaihe 1. Päätä nimimerkki._</h2>
-
-		<p>Valitse helposti tunnistettava sinuun yhdistettävä nimimerkki. Käyttäjän koko tiedot näet komennolla <code>/whois rolle</code>. Näillä pääset jo pitkälle.</p>
-
-	</div>
-
-</div>
-
-<div class="slide slide-miten slide-ohje slide-vaihe-kaksi">
-
-	<div class="container">
-
-		<h2>Vaihe 2. Yhdistä kanavalle._</h2>
-
-		<p>Luulitko, että pitää vielä jotain säätää? <a href="http://chat.pulina.fi">chat.pulina.fi</a> tai alta napista, sitten nimimerkin täydennys ja olet irkissä! Kyllä on tehty irkkaaminen helpoksi nykyään.</p>
-
-		<p><a href="http://chat.pulina.fi" class="button">Boom, irkkiin!</a></p>
-
-	</div>
-
-</div>
-
 <div class="slide slide-lopetus">
 
 	<div class="container">
 
 		<h2>Mitäs muuta?</h2>
 
-		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. On meillä <a href="https://www.facebook.com/pulinairc/">Facebookkikin</a> ja joitakin ryhmiäkin siellä, mutta se on niin kuollutta ja lamea että siitä ei puhuta.</p>
+		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. On meillä <a href="https://www.facebook.com/pulinairc/">Facebookikin</a> ja joitakin ryhmiäkin siellä, mutta se on niin kuollutta ja lamea että siitä ei puhuta.</p>
 
-		<p>Sivut loi <a href="http://roni.laukkarinen.info">Rolle</a>.
+		<p>Sivut loi <a href="https://rolle.design">Rolle</a>.
 
 	</div>
 
