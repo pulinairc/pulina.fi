@@ -104,6 +104,21 @@ get_header(); ?>
 
 </div><!-- .slide-halloffame -->
 
+<div class="slide slide-community">
+
+  <img class="screenshot" src="<?php echo get_template_directory_uri(); ?>/images/telegram.png" alt="Kuvankaappaus Telegram-kanavasta" />
+
+  <div class="container">
+    <div class="col">
+      <h2>Yhteisö jokaiselle</h2>
+
+      <p>Pulina on enemmän kuin vain IRC. Se on <b>yhteisö</b>, paikka ihmisille, joilla ei välttämättä ole luonnollista kompetenssia olla sosiaalinen. Ilman Pulinaa osa ihmisistä ei olisi välttämättä tavannut toisiaan.</p>
+
+      <p>Pulina elää ja voi hyvin myös IRCin ulkopuolella, Telegram-kanavalla sekä ihmisten järjestämissä miiteissä eri puolella Suomea.</p>
+    </div>    
+  </div>
+
+</div>
 
 <div class="slide slide-telegram">
 
