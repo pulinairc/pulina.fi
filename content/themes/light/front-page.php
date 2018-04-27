@@ -44,6 +44,7 @@ get_header(); ?>
       <a class="link" href="https://www.irccloud.com"><?php include get_theme_file_path( '/svg/irccloud.svg' ); ?></a>
       <a class="link" href="https://www.mirc.com/"><?php include get_theme_file_path( '/svg/mirc.svg' ); ?></a>
       <a class="link" href="https://irssi.org/"><?php include get_theme_file_path( '/svg/irssi.svg' ); ?></a>
+      <a class="link" href="https://weechat.org/"><?php include get_theme_file_path( '/svg/weechat.svg' ); ?></a>
     </div>
   </div>
 </div>

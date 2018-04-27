@@ -675,18 +675,28 @@
 
   svg {
     margin-right: 2rem;
-    height: 50px;
+    height: 45px;
     width: auto;
 
     @media(max-width: 940px) {
       height: 30px;
+      margin-right: 1rem;
+    }
+
+    @media(max-width: 600px) {
+      height: 22px;
+      margin-right: 1rem;
     }
 
     &.mirc {
       margin-right: 1rem;
+
+      @media(max-width: 940px) {
+        margin-right: .5rem;
+      }
     }
 
-    &.irssi {
+    &.weechat {
       margin-right: 0;
     }
   }

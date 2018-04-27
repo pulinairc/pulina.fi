@@ -59,14 +59,6 @@
   p {
     font-family: $font-base;
     color: $color-text;
-
-    a {
-      border-bottom: 1px solid #999;
-
-      &:hover {
-        border-color: transparent;
-      }
-    }
   }
 
   a img {
