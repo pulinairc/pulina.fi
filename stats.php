@@ -416,7 +416,7 @@ $users = $bold[0];
   <div><span>Viestejä</span> <?php echo $messages; ?></div>
   <div><span>Paikalla nyt</span> <?php foreach( $numbers->find('.paikalla') as $numero ) echo $numero; ?></div>
   <div class="users"><span>Käyttäjiä</span> <?php $bold = $stats->find('b'); $visitors = $bold[0]; echo $visitors; ?></div>
-  <div><span>Days</span> <?php echo $days; ?></div>
+  <div><span>Päiviä</span> <?php echo $days; ?></div>
 </div>
 
 <div id="charts">
