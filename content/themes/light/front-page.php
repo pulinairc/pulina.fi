@@ -169,6 +169,7 @@ get_header(); ?>
 
 </div>
 
+<?php if ( getenv( 'WP_ENV' ) !== 'development' ) : ?>
 <div class="slide slide-linkit">
 
 	<div class="container">
@@ -185,7 +186,8 @@ get_header(); ?>
 
   </div>
 
-</div>		
+</div>	
+<?php endif; ?>	
 
 <div class="slide slide-github">
 
