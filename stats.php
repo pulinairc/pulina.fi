@@ -88,7 +88,7 @@ header hr {
 
 @media (max-width: 500px) {
   .activity-numbers div {
-    min-width: 140px;
+    min-width: 150px;
     flex: 1 1 0;
   }
 }
@@ -371,12 +371,42 @@ footer {
 .paikalla {
   font-weight: 300 !important;
 }
+
+.stats-bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+  padding: 0;
+  opacity :.5;
+  transition: all .6s;
+}
+
+.stats-bar:hover {
+  opacity: 1;
+}
+
+.stats-bar a:link,
+.stats-bar a:active,
+.stats-bar a:visited,
+.stats-bar a:focus {
+  color: #888;
+  text-decoration: underline;
+}
+
+body .stats-bar a:hover {
+  text-decoration: none;
+}
 </style>
 <noscript>
   <style> body { opacity: 1; } </style>
 </noscript>
 </head>
 <body id="body">
+
+<p class="stats-bar"><a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a></p>
 
 <?php
 ini_set('display_errors', 1);
@@ -405,9 +435,9 @@ $users = $bold[0];
 ?>
 
 <main role="main">
-<header>
+<header style="display: none;">
   <h1>Pulina</h1>
-  <p><a href="https://www.pulina.fi" style="text-decoration: underline;">#pulina</a> on suomalainen IRC-kanava QuakeNetissä, joka on ollut pystyssä jo vuodesta 2008. Lisää tilastoja: <a href="http://peikko.us/statsit/pulina/" style="text-decoration: underline;">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a>.</p>
+  <p><a href="https://www.pulina.fi">#pulina</a> on suomalainen IRC-kanava QuakeNetissä, joka on ollut pystyssä jo vuodesta 2008.</p>
   <hr>
 </header>
 
