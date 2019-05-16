@@ -407,7 +407,7 @@ $users = $bold[0];
 <main role="main">
 <header>
   <h1>Pulina</h1>
-  <p><a href="https://www.pulina.fi" style="text-decoration: underline;">#pulina</a> on suomalainen IRC-kanava QuakeNetissä, joka on ollut pystyssä jo vuodesta 2008. Lisää tilastoja käyttäjien kasaamana: <a href="http://peikko.us/statsit/pulina/" style="text-decoration: underline;">rolle</a>, <a href="http://ircstats.nytsoi.net/pulina-month.html" style="text-decoration: underline;">Nicd</a>.</p>
+  <p><a href="https://www.pulina.fi" style="text-decoration: underline;">#pulina</a> on suomalainen IRC-kanava QuakeNetissä, joka on ollut pystyssä jo vuodesta 2008. Lisää tilastoja käyttäjien kasaamana: <a href="http://peikko.us/statsit/pulina/" style="text-decoration: underline;">rolle</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">Nicd</a>.</p>
   <hr>
 </header>
 
