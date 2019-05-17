@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -452,9 +451,59 @@ $users = $bold[0];
 <div id="charts">
   <div class="chart">
 
-    <hr>
-    <h2>Kovimmat pulisijat tänään</h2>
-    <p>Löytyy toistaiseksi <a href="http://peikko.us/toptod.php">täältä</a>. Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p>
+<hr>
+<h2 style="margin-bottom: 10px !important;">Top 10 tänään</h2>
+<table id="active-users">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Sanamäärä</th>
+  </tr>
+  </thead>
+  <tbody>
+
+<?php
+// Fetch data and set up simple cache
+$toptod_fetch_url = 'http://peikko.us/toptod.html';
+
+// Set up fetchable data
+$html = file_get_contents( $toptod_fetch_url );
+$items = explode(') ', $html);
+
+// Start
+foreach ($items as $key => $item) {
+  $list_item = trim($item);
+
+  if ( $list_item === '' || $list_item === ' ' || empty( $list_item ) ) :
+  else :
+
+    $get_points = explode('(', $list_item);
+    $point_raw = explode(')', $get_points[1]);
+    $nick_raw = explode('. ', $get_points[0]);
+    $points = $get_points[1];
+    $nick = $nick_raw[1];
+
+    // Progress calculation
+    $maxpoints = '2000';
+    $count_percent_part1 = $points * 100;
+    $percent = $count_percent_part1 / $maxpoints;
+    $nearest_ten = ceil($percent / 10) * 10;
+
+      echo '<tr class="progress progress-' . $nearest_ten . ' percent-' . $percent . '"">
+    <td data="r3volution11"><a href=""><img src="avatars/dn/r3volution11.jpg" alt="">' . $nick . '</a></td>
+    <td data="' . $points . '">' . $points . '</td>
+  </tr>';
+
+  endif;
+}
+?>  
+  </tbody>
+</table>
+
+<p style="text-align: left;">Listaan lasketaan tänään aktiivisena olleet. Päivittyy täysin reaaliajassa.</p>
+
+    <h2>Lisää tilastoja tulossa</h2>
+    <p>Löytyy toistaiseksi <a href="http://peikko.us/toptod.php">täältä</a>. Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
 
   </div>
 </div>
