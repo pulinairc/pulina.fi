@@ -452,7 +452,7 @@ $users = $bold[0];
   <div class="chart">
 
 <hr>
-<h2 style="margin-bottom: 10px !important;">Top 10 tänään</h2>
+<h2 style="margin-bottom: 10px !important;">Aktiivisimmat tänään</h2>
 <table id="active-users">
   <thead>
   <tr>
@@ -489,10 +489,13 @@ foreach ($items as $key => $item) {
     $percent = $count_percent_part1 / $maxpoints;
     $nearest_ten = ceil($percent / 10) * 10;
 
+    // Ignore bot
+    if ( $nick != 'kummitus' ) :
       echo '<tr class="progress progress-' . $nearest_ten . ' percent-' . $percent . '"">
-    <td data="r3volution11"><a href=""><img src="avatars/dn/r3volution11.jpg" alt="">' . $nick . '</a></td>
-    <td data="' . $points . '">' . $points . '</td>
-  </tr>';
+      <td data="r3volution11"><a href=""><img src="avatars/dn/r3volution11.jpg" alt="">' . $nick . '</a></td>
+      <td data="' . $points . '">' . $points . '</td>
+    </tr>';
+    endif;
 
   endif;
 }
