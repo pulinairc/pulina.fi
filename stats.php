@@ -43,7 +43,7 @@ h1,h2 {
   text-align: center;
 }
 h2 {
-  margin: 100px 0 50px;
+  margin: 50px 0 50px;
 }
 h4 {
   text-align: center;
@@ -66,7 +66,7 @@ p {
   margin: auto;
 }
 header p {
-  max-width: 400px;
+  max-width: 500px;
   font-size: 16px;
   color: #333;
 }
@@ -406,7 +406,7 @@ body .stats-bar a:hover {
 </head>
 <body id="body">
 
-<p class="stats-bar"><a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a></p>
+<!-- <p class="stats-bar"><a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a></p> -->
 
 <?php
 ini_set('display_errors', 1);
@@ -435,9 +435,9 @@ $users = $bold[0];
 ?>
 
 <main role="main">
-<header style="display: none;">
-  <h1>Pulina</h1>
-  <p><a href="https://www.pulina.fi">#pulina</a> on suomalainen IRC-kanava QuakeNetissä, joka on ollut pystyssä jo vuodesta 2008.</p>
+<header>
+  <h1>Pulina - tilastot</h1>
+  <p>Tämä sivusto sisältää nopean katsauksen <a href="https://www.pulina.fi">#pulina</a>-kanavan tilastoista. Muita tilastoja: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a>.</p>
   <hr>
 </header>
 
@@ -454,7 +454,7 @@ $users = $bold[0];
 
     <hr>
     <h2>Kovimmat pulisijat tänään</h2>
-    <p>Löytyy toistaiseksi <a href="http://peikko.us/toptod.php" style="text-decoration: underline;">täältä</a>. Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten...</p>
+    <p>Löytyy toistaiseksi <a href="http://peikko.us/toptod.php">täältä</a>. Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p>
 
   </div>
 </div>
