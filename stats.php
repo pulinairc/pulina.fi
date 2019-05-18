@@ -474,22 +474,6 @@ $items = explode(') ', $html);
 foreach ($items as $key => $item) {
   $list_item = trim($item);
 
-    // User data:
-    // if ( 'mustikkasoppa' === $nick ) :
-    //   $nick_link = 'https://twitter.com/mustikkasoppa';
-    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/978120084219670529/-NOTa6ss_400x400.jpg';
-    // endif;
-
-    // if ( 'rolle' === $nick ) :
-    //   $nick_link = 'https://twitter.com/rolle';
-    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/656061105152724992/m2V64UH9_400x400.jpg';
-    // endif;
-    
-    // if ( 'samiy' === $nick ) :
-    //   $nick_link = 'https://twitter.com/samiylitalo';
-    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/1122114586734399488/GbU40dJE_400x400.png';
-    // endif;
-
   if ( $list_item === '' || $list_item === ' ' || empty( $list_item ) ) :
   else :
 
@@ -505,10 +489,12 @@ foreach ($items as $key => $item) {
     $percent = $count_percent_part1 / $maxpoints;
     $nearest_ten = ceil($percent / 10) * 10;
 
+    // Add: ( ( $nick == 'mustikkasoppa' ) ? 'https://twitter.com/mustikkasoppa' : "" )
+
     // Ignore bot
     if ( $nick != 'kummitus' ) :
       echo '<tr class="progress progress-' . $nearest_ten . ' percent-' . $percent . '"">
-      <td><a href="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://twitter.com/mustikkasoppa' :  ( ( $nick == 'samiy' ) ? 'https://twitter.com/samiylitalo' : "" ) ) . '"><img src="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://pbs.twimg.com/profile_images/978120084219670529/-NOTa6ss_400x400.jpg' : ( ( $nick == 'samiy' ) ? 'https://pbs.twimg.com/profile_images/1122114586734399488/GbU40dJE_400x400.png' : "" ) ) . '" alt="">' . $nick . '</a></td>
+      <td><a href="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://twitter.com/mustikkasoppa' :  ( ( $nick == 'samiy' ) ? 'https://twitter.com/samiylitalo' : ( ( $nick == 'rolle' ) ? 'https://twitter.com/rolle' : "" ) ) ) . '"><img src="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://pbs.twimg.com/profile_images/978120084219670529/-NOTa6ss_400x400.jpg' : ( ( $nick == 'samiy' ) ? 'https://pbs.twimg.com/profile_images/1122114586734399488/GbU40dJE_400x400.png' : ( ( $nick == 'rolle' ) ? 'https://pbs.twimg.com/profile_images/656061105152724992/m2V64UH9_400x400.jpg' : "" ) ) ) . '" alt="">' . $nick . '</a></td>
       <td data="' . $points . '">' . $points . '</td>
     </tr>';
     endif;
