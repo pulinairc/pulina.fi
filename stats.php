@@ -474,6 +474,22 @@ $items = explode(') ', $html);
 foreach ($items as $key => $item) {
   $list_item = trim($item);
 
+    // User data:
+    // if ( 'mustikkasoppa' === $nick ) :
+    //   $nick_link = 'https://twitter.com/mustikkasoppa';
+    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/978120084219670529/-NOTa6ss_400x400.jpg';
+    // endif;
+
+    // if ( 'rolle' === $nick ) :
+    //   $nick_link = 'https://twitter.com/rolle';
+    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/656061105152724992/m2V64UH9_400x400.jpg';
+    // endif;
+    
+    // if ( 'samiy' === $nick ) :
+    //   $nick_link = 'https://twitter.com/samiylitalo';
+    //   $nick_avatar = 'https://pbs.twimg.com/profile_images/1122114586734399488/GbU40dJE_400x400.png';
+    // endif;
+
   if ( $list_item === '' || $list_item === ' ' || empty( $list_item ) ) :
   else :
 
@@ -492,7 +508,7 @@ foreach ($items as $key => $item) {
     // Ignore bot
     if ( $nick != 'kummitus' ) :
       echo '<tr class="progress progress-' . $nearest_ten . ' percent-' . $percent . '"">
-      <td data="r3volution11"><a href=""><img src="avatars/dn/r3volution11.jpg" alt="">' . $nick . '</a></td>
+      <td><a href="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://twitter.com/mustikkasoppa' :  ( ( $nick == 'samiy' ) ? 'https://twitter.com/samiylitalo' : "" ) ) . '"><img src="'. ( ( $nick == 'mustikkasoppa' ) ? 'https://pbs.twimg.com/profile_images/978120084219670529/-NOTa6ss_400x400.jpg' : ( ( $nick == 'samiy' ) ? 'https://pbs.twimg.com/profile_images/1122114586734399488/GbU40dJE_400x400.png' : "" ) ) . '" alt="">' . $nick . '</a></td>
       <td data="' . $points . '">' . $points . '</td>
     </tr>';
     endif;
@@ -506,7 +522,7 @@ foreach ($items as $key => $item) {
 <p style="text-align: left;">Listaan lasketaan tänään aktiivisena olleet. Päivittyy täysin reaaliajassa.</p>
 
     <h2>Lisää tilastoja tulossa</h2>
-    <p>Löytyy toistaiseksi <a href="http://peikko.us/toptod.php">täältä</a>. Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
+    <p>Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
 
   </div>
 </div>
