@@ -1,6 +1,6 @@
 <?php
 require_once('simplehtmldom/simple_html_dom.php');
-$paikalla = file_get_html('http://peikko.us/pulina.html');
+$paikalla = file_get_html('https://www.pulina.fi/statsit/index.html');
 
 foreach($paikalla->find('.paikalla') as $numero) 
        echo $numero;

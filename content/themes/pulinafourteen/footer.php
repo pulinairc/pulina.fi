@@ -31,7 +31,7 @@
 <?php if(is_front_page() || is_home() || is_page('1008') ) { ?>
 <?php 
 // Paikalla juuri nyt:
-$paikalla = file_get_html('http://peikko.us/pulina.html');
+$paikalla = file_get_html('https://www.pulina.fi/statsit/index.html');
 foreach($paikalla->find('.paikalla') as $numero);
 
 // Käyttäjäpiikki:

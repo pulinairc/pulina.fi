@@ -9,7 +9,7 @@
 
 // Fetch data and set up simple cache
 require_once( get_theme_file_path( 'inc/simple_html_dom.php') );
-$numbers_url = 'http://peikko.us/pulina.html';
+$numbers_url = 'https://www.pulina.fi/statsit/index.html';
 $numbers_cachefile = get_theme_file_path( 'inc/cache/numbers.html' );
 $numbers_cachetime = 28800; // 8 hours
 

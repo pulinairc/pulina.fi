@@ -417,7 +417,7 @@ $stats_url = 'http://peikko.us/statsit/pulina/index.html';
 $stats = file_get_html( $stats_url );
 $peak_url = 'http://peikko.us/peak.db';
 $peak = file_get_html( $peak_url );
-$numbers_url = 'http://peikko.us/pulina.html';
+$numbers_url = 'https://www.pulina.fi/statsit/index.html';
 $numbers = file_get_html( $numbers_url );
 
 // Viestejä

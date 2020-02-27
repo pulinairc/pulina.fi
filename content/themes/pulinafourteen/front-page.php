@@ -32,7 +32,7 @@ get_header(); ?>
 						<h3>Paikalla juuri nyt</h3>
 
 <?php
-$paikalla = file_get_html('http://peikko.us/pulina.html');
+$paikalla = file_get_html('https://www.pulina.fi/statsit/index.html');
 
 foreach($paikalla->find('.paikalla') as $numero) 
        echo $numero;
