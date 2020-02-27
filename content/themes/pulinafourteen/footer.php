@@ -49,7 +49,7 @@ $piste = explode(" ", $nummerot);
 $todaystats = array_sum($piste);
 
 // Käyttäjämäärä yhteensä
-$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+$filu = file_get_html('https://www.pulina.fi/statsit/index.html');
 $bold = $filu->find('b');
 $visitors = $bold[0];
 

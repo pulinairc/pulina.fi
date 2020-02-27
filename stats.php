@@ -413,7 +413,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once( 'simplehtmldom/simple_html_dom.php' );
-$stats_url = 'http://peikko.us/statsit/pulina/index.html';
+$stats_url = 'https://www.pulina.fi/statsit/index.html';
 $stats = file_get_html( $stats_url );
 $peak_url = 'http://peikko.us/peak.db';
 $peak = file_get_html( $peak_url );

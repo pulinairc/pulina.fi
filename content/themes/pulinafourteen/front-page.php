@@ -158,7 +158,7 @@ $i = 0;
 				<div class="ministatsit">
 
 <?php
-$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+$filu = file_get_html('https://www.pulina.fi/statsit/index.html');
 
 $bold = $filu->find('b');
 $visitors = $bold[0];

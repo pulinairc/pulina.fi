@@ -13,7 +13,7 @@ include_once('/home/web_70/sites/pulina.fi/www/simplehtmldom/simple_html_dom.php
 // Koodia parannellut rolle 2.4.2011
 // Simple HTML Dom rocks!
 
-$filu = file_get_html('http://peikko.us/statsit/pulina/index.html');
+$filu = file_get_html('https://www.pulina.fi/statsit/index.html');
 
 $bold = $filu->find('b');
 $visitors = $bold[0];

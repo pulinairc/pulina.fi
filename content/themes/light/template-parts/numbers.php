@@ -17,7 +17,7 @@ $peak_url = 'http://peikko.us/peak.db';
 $peak_cachefile = get_theme_file_path( 'inc/cache/peak.db' );
 $peak_cachetime = 40000;
 
-$stats_url = 'http://peikko.us/statsit/pulina/index.html';
+$stats_url = 'https://www.pulina.fi/statsit/index.html';
 $stats_cachefile = get_theme_file_path( 'inc/cache/stats.html' );
 $stats_cachetime = 60000;
 
