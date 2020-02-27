@@ -35,13 +35,13 @@ $paikalla = file_get_html('https://www.pulina.fi/statsit/index.html');
 foreach($paikalla->find('.paikalla') as $numero);
 
 // Käyttäjäpiikki:
-$peak = file_get_html('http://peikko.us/peak.db');
+$peak = file_get_html('https://peikko.us/peak.db');
 $luku = explode('!!!',$peak);
 $oikealuku = explode('@',$luku[1]);
 $peaknumero = $oikealuku[0];
 
 // Tänään sanoja kertynyt
-$raakapojot = file_get_html('http://peikko.us/toptod.save');
+$raakapojot = file_get_html('https://peikko.us/toptod.save');
 $today = date('d-m-Y');
 $numerot = preg_replace('/'.addslashes($today).'/',"", $raakapojot); 
 $nummerot = preg_replace("/[^0-9]/"," ", $numerot); 

@@ -8,7 +8,7 @@
  */
 
 // Fetch data and set up simple cache
-$toptod_fetch_url = 'http://peikko.us/toptod.html';
+$toptod_fetch_url = 'https://peikko.us/toptod.html';
 $toptod_cachefile = get_theme_file_path( 'inc/cache/toptod.html' );
 $toptod_cachetime = 1800; // 30 minutes
 

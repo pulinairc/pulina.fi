@@ -1,7 +1,7 @@
 <?php
 try {
 require_once('simplehtmldom/simple_html_dom.php');
-$raakapojot = file_get_html('http://peikko.us/toptod.save');
+$raakapojot = file_get_html('https://peikko.us/toptod.save');
 $today = date('d-m-Y');
 $numerot = preg_replace('/'.addslashes($today).'/',"", $raakapojot); 
 $nummerot = preg_replace("/[^0-9]/"," ", $numerot); 

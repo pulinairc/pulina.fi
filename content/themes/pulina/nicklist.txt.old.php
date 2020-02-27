@@ -2,7 +2,7 @@
 
 echo '<div class="users">';
 
-$lines = file ('http://peikko.us/irc-nicklist.txt');
+$lines = file ('https://peikko.us/irc-nicklist.txt');
 
 // Siirretty ministats.php-tiedostoon.
 //

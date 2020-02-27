@@ -9,7 +9,7 @@
 
 // Fetch data and set up simple cache
 require_once( get_theme_file_path( 'inc/simple_html_dom.php') );
-$links_url = 'http://peikko.us/pulinalinkit/index.html';
+$links_url = 'https://peikko.us/pulinalinkit/index.html';
 $links_cachefile = get_theme_file_path( 'inc/cache/links.html' );
 $links_cachetime = 3600; // 60 minutes
 

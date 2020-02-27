@@ -1,7 +1,7 @@
 <?php
 
 echo '<div class="scroller">';
-$scroller=file('http://peikko.us/lastlog-pulina.php');
+$scroller=file('https://peikko.us/lastlog-pulina.php');
 foreach ($scroller as $scrolleri)  {
 echo nl2br($scrolleri);
 }

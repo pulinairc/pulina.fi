@@ -23,7 +23,7 @@
 <p class="terveiset">Rolle<p>
 
 <?php
-$fp = fopen('http://peikko.us/pulinamiitit.php', 'r');
+$fp = fopen('https://peikko.us/pulinamiitit.php', 'r');
 $data = '';
 while(!feof($fp)) 
    $data .= fread($fp, 4092); 

@@ -1,7 +1,7 @@
 <?php
 require_once('simplehtmldom/simple_html_dom.php');
 
-$html = file_get_html('http://peikko.us/pulinalinkit/index.html');
+$html = file_get_html('https://peikko.us/pulinalinkit/index.html');
 
 // example: html->find('ul', 0)->find('li', 0);
 $first_level_items = $html->find('ul', 0)->find('li', 0);

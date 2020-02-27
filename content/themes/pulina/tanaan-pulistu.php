@@ -4,7 +4,7 @@
 include_once('/home/web_70/sites/pulina.fi/www/simplehtmldom/simple_html_dom.php');
 
 // Haetaan toptod.save-tiedostosta sanamäärien pojot
-$raakapojot = file_get_html('http://peikko.us/toptod.save');
+$raakapojot = file_get_html('https://peikko.us/toptod.save');
 // Poistetaan päiväys pois numeroista
 $today = date('d-m-Y');
 $numerot = preg_replace('/'.addslashes($today).'/',"", $raakapojot); 
@@ -21,7 +21,7 @@ echo '</div>';
 // Käyttäjät:
 
 echo '<div class="scroller">';
-$scroller = file_get_html('http://peikko.us/lastlog-pulina.php');
+$scroller = file_get_html('https://peikko.us/lastlog-pulina.php');
 echo $scroller;
 echo '</div>';
 ?>

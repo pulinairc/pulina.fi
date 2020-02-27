@@ -79,7 +79,7 @@ $('a,b,span').tooltip({
 <?php 
 echo '. Pelkkää pulinaa jo <b>';
 include_once ('pulina.php');
-echo "</b>. <a href=\"http://peikko.us/statsit/pulina\">Lisää tilastoja &rarr;</a></div>";
+echo "</b>. <a href=\"https://peikko.us/statsit/pulina\">Lisää tilastoja &rarr;</a></div>";
 ?>
 <?php //echo '<div class="ministats">Nippelitiedot latailevat akkuja. Kokonaistilastot ovat <a href="http://rolle.tux.fi/statsit/pulina">täällä</a>.</div>'; ?>
 </div>
@@ -90,7 +90,7 @@ echo "</b>. <a href=\"http://peikko.us/statsit/pulina\">Lisää tilastoja &rarr;
 
 <?php
 echo '<div class="topic"><span class="topictext">Topic:</span> ';
-$topicfile=file('http://peikko.us/pulinatopic.php');
+$topicfile=file('https://peikko.us/pulinatopic.php');
 foreach ($topicfile as $topic)  {
 echo $topic;
 }

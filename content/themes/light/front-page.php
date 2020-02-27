@@ -96,7 +96,7 @@ get_header(); ?>
 
 		<h2>Hall of fame</h2>
 
-		<p>Tässä näet tämän päivän kovimmat pulisijat. Lista päivittyy lähes reaaliajassa. Reaaliaikaiset tilastot näet myös kanavakomennolla <i>!toptod</i>. Kanavan viralliset kokonaistilastot löytyvät <a href="http://peikko.us/statsit/pulina/">täältä</a> ja lisää tilastolinkkejä saa komennolla <i>!statsit</i>.</p>
+		<p>Tässä näet tämän päivän kovimmat pulisijat. Lista päivittyy lähes reaaliajassa. Reaaliaikaiset tilastot näet myös kanavakomennolla <i>!toptod</i>. Kanavan viralliset kokonaistilastot löytyvät <a href="https://peikko.us/statsit/pulina/">täältä</a> ja lisää tilastolinkkejä saa komennolla <i>!statsit</i>.</p>
 
     <?php get_template_part( 'template-parts/toptod' ); ?>
 
@@ -181,7 +181,7 @@ get_header(); ?>
     </ul>
 
     <div class="more">
-      <p><a href="http://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
+      <p><a href="https://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
     </div>
 
   </div>

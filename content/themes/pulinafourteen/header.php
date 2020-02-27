@@ -83,7 +83,7 @@ require_once(TEMPLATEPATH . '/inc/simplehtmldom/simple_html_dom.php');
 <?php
 echo '<div class="topic">
 <p><span class="topictext">Topic:</span> ';
-$topicfile=file('http://peikko.us/pulinatopic.php');
+$topicfile=file('https://peikko.us/pulinatopic.php');
 foreach ($topicfile as $topic)  {
 echo $topic;
 }

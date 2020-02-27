@@ -4,8 +4,8 @@ include_once('/home/web_70/sites/pulina.fi/www/simplehtmldom/simple_html_dom.php
 
 <div class="sukupuolet">
 <ul>
-<li class="miehet">Miehiä: <b><?php echo file_get_html('http://peikko.us/pisg_males.txt'); ?></b></li>
-<li class="naiset">Naisia: <b><?php echo file_get_html('http://peikko.us/pisg_females.txt'); ?></b></li>
+<li class="miehet">Miehiä: <b><?php echo file_get_html('https://peikko.us/pisg_males.txt'); ?></b></li>
+<li class="naiset">Naisia: <b><?php echo file_get_html('https://peikko.us/pisg_females.txt'); ?></b></li>
 </ul>
 </div>
 
@@ -46,6 +46,6 @@ $channelcreated=$luomispvm / 86400;
 
 echo 'sen <b><span class="iso">' . round($channelcreated) . '</span> päivän elinaikana</b>, jonka aikana rivejä on kertynyt yhteensä <span class="iso"><b>' . $pulistumaara . '</b></span>';
 
-////$lines = file ('http://peikko.us/irc-nicklist.txt'); $count = count($lines); echo 'Juuri nyt kanavalla on <strong>'.$count.'</strong> ihmi'; if ($count == 1) { echo 'nen'; } else { echo 'stä'; } echo ". <a href=\"javascript:show_hide('pulisijat');\">Ketä?</a>";
+////$lines = file ('https://peikko.us/irc-nicklist.txt'); $count = count($lines); echo 'Juuri nyt kanavalla on <strong>'.$count.'</strong> ihmi'; if ($count == 1) { echo 'nen'; } else { echo 'stä'; } echo ". <a href=\"javascript:show_hide('pulisijat');\">Ketä?</a>";
 
 /* Works out the time since the entry post, takes a an argument in unix time (seconds) */

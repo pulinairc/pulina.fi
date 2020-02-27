@@ -51,7 +51,7 @@ foreach($paikalla->find('.paikalla') as $numero)
 						<span class="peak numero">
 
 <?php
-$peak = file_get_html('http://peikko.us/peak.db');
+$peak = file_get_html('https://peikko.us/peak.db');
 $luku = explode('!!!',$peak);
 $oikealuku = explode('@',$luku[1]);
 $numero = $oikealuku[0];
@@ -68,7 +68,7 @@ echo $numero;
 <div class="scroller">
 <ul>
 <?php
-$scroller = file_get_html('http://peikko.us/lastlog-pulina-2014.php');
+$scroller = file_get_html('https://peikko.us/lastlog-pulina-2014.php');
 echo $scroller;
 ?>
 </ul>
@@ -128,7 +128,7 @@ echo $scroller;
 				<ul class="linkkilista">
 
 <?php
-$html = file_get_html('http://peikko.us/pulinalinkit/index.html');
+$html = file_get_html('https://peikko.us/pulinalinkit/index.html');
 
 // example: html->find('ul', 0)->find('li', 0);
 $first_level_items = $html->find('ul', 0)->find('li', 0);
@@ -147,7 +147,7 @@ $i = 0;
 				</ul>
 
 			<div class="more">
-				<p><a href="http://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
+				<p><a href="https://peikko.us/pulinalinkit">Lisää linkkejä &rsaquo;</a></p>
 			</div>
 
 			</div>

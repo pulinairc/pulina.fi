@@ -87,7 +87,7 @@ get_header(); ?>
   <tr>
   	<td data-th="Ominaisuus"><i class="feat">linkit</i></td>
     <td data-th="Komento"><code>!linkit</code></td>
-    <td data-th="Tietoa">Kertoo irkistä (jokaiselta kanavalta, jolla rolle on) kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös lisää linkkejä, sekä <a href="http://peikko.us/linkit">täältä</a>.</td>
+    <td data-th="Tietoa">Kertoo irkistä (jokaiselta kanavalta, jolla rolle on) kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös lisää linkkejä, sekä <a href="https://peikko.us/linkit">täältä</a>.</td>
   </tr>
 
   <tr>

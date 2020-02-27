@@ -405,7 +405,7 @@ body .stats-bar a:hover {
 </head>
 <body id="body">
 
-<!-- <p class="stats-bar"><a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a></p> -->
+<!-- <p class="stats-bar"><a href="https://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/" style="text-decoration: underline;">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html" style="text-decoration: underline;">mIRCStats</a></p> -->
 
 <?php
 ini_set('display_errors', 1);
@@ -415,7 +415,7 @@ error_reporting(E_ALL);
 require_once( 'simplehtmldom/simple_html_dom.php' );
 $stats_url = 'https://www.pulina.fi/statsit/index.html';
 $stats = file_get_html( $stats_url );
-$peak_url = 'http://peikko.us/peak.db';
+$peak_url = 'https://peikko.us/peak.db';
 $peak = file_get_html( $peak_url );
 $numbers_url = 'https://www.pulina.fi/statsit/index.html';
 $numbers = file_get_html( $numbers_url );
@@ -436,7 +436,7 @@ $users = $bold[0];
 <main role="main">
 <header>
   <h1>Pulina - tilastot</h1>
-  <p>Tämä sivusto sisältää nopean katsauksen <a href="https://www.pulina.fi">#pulina</a>-kanavan tilastoista. Muita tilastoja: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a>.</p>
+  <p>Tämä sivusto sisältää nopean katsauksen <a href="https://www.pulina.fi">#pulina</a>-kanavan tilastoista. Muita tilastoja: <a href="https://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a>.</p>
   <hr>
 </header>
 
@@ -464,7 +464,7 @@ $users = $bold[0];
 
 <?php
 // Fetch data and set up simple cache
-$toptod_fetch_url = 'http://peikko.us/toptod.html';
+$toptod_fetch_url = 'https://peikko.us/toptod.html';
 
 // Set up fetchable data
 $html = file_get_contents( $toptod_fetch_url );
@@ -508,7 +508,7 @@ foreach ($items as $key => $item) {
 <p style="text-align: left;">Listaan lasketaan tänään aktiivisena olleet. Päivittyy täysin reaaliajassa.</p>
 
     <h2>Lisää tilastoja tulossa</h2>
-    <p>Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="http://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
+    <p>Lisää tilastoja tulossa tälle sivulle kunhan rollen aika antaa myöten... Katso odotellessa nämä: <a href="https://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
 
   </div>
 </div>
