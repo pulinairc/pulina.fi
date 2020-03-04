@@ -622,12 +622,12 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
 
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       @include stack();
       padding-left: 25%;
       padding-top: 0;
@@ -635,8 +635,15 @@
   }
 
   @keyframes animatedwindow {
-    from { margin-top: 100px; opacity: 0; }
-    to { margin-top: 0; opacity: 1; }
+    from {
+      margin-top: 100px;
+      opacity: 0;
+    }
+
+    to {
+      margin-top: 0;
+      opacity: 1;
+    }
   }
 
   img {
@@ -647,32 +654,32 @@
     &.animate {
       animation: animatedwindow 2s normal forwards ease-in-out;
     }
-    
-    @media(max-width: 1560px) {
+
+    @media (max-width: 1560px) {
       left: -10%;
     }
 
-    @media(max-width: 1450px) {
+    @media (max-width: 1450px) {
       left: -20%;
     }
 
-    @media(max-width: 1260px) {
+    @media (max-width: 1260px) {
       left: -30%;
     }
 
-    @media(max-width: 1030px) {
+    @media (max-width: 1030px) {
       left: -40%;
     }
 
-    @media(max-width: 910px) {
+    @media (max-width: 910px) {
       left: -50%;
     }
 
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       left: -55%;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       left: -75%;
     }
   }
@@ -682,12 +689,12 @@
     height: 45px;
     width: auto;
 
-    @media(max-width: 940px) {
+    @media (max-width: 940px) {
       height: 30px;
       margin-right: 1rem;
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       height: 22px;
       margin-right: 1rem;
     }
@@ -695,7 +702,7 @@
     &.mirc {
       margin-right: 1rem;
 
-      @media(max-width: 940px) {
+      @media (max-width: 940px) {
         margin-right: .5rem;
       }
     }
@@ -724,12 +731,12 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
 
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       @include stack();
       padding-right: 25%;
       padding-top: 0;
@@ -737,8 +744,15 @@
   }
 
   @keyframes animatedwindow {
-    from { margin-top: 100px; opacity: 0; }
-    to { margin-top: 0; opacity: 1; }
+    from {
+      margin-top: 100px;
+      opacity: 0;
+    }
+
+    to {
+      margin-top: 0;
+      opacity: 1;
+    }
   }
 
   img {
@@ -750,37 +764,134 @@
       animation: animatedwindow 2s normal forwards ease-in-out;
     }
 
-    @media(max-width: 1600px) {
+    @media (max-width: 1600px) {
       right: 0;
     }
-    
-    @media(max-width: 1560px) {
+
+    @media (max-width: 1560px) {
       right: -5%;
     }
 
-    @media(max-width: 1450px) {
+    @media (max-width: 1450px) {
       right: -10%;
     }
 
-    @media(max-width: 1260px) {
+    @media (max-width: 1260px) {
       right: -20%;
     }
 
-    @media(max-width: 1030px) {
+    @media (max-width: 1030px) {
       right: -30%;
     }
 
-    @media(max-width: 910px) {
+    @media (max-width: 910px) {
       right: -40%;
     }
 
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       right: -50%;
     }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       right: -75%;
     }
   }
 }
 
+.slide.slide-games {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &:after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #333;
+    opacity: .5;
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    z-index: 2;
+
+    a:not(.button),
+    a:link:not(.button),
+    a:visited:not(.button),
+    p a:not(.button),
+    p a:link:not(.button),
+    p a:visited:not(.button) {
+      color: #fff;
+    }
+  }
+
+  .button {
+    border-color: #fff;
+    background: transparent;
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #fff;
+      color: #222;
+    }
+  }
+
+  p,
+  h2 {
+    color: #fff;
+  }
+
+  svg {
+    width: 300px;
+    height: 100px;
+    fill: #fff;
+
+    path {
+      fill: #fff;
+    }
+  }
+
+  .background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 0;
+    padding-bottom: 66.25%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .video-overlay {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity .5s cubic-bezier(.250, .460, .450, .940), visibility 0.5s linear;
+
+    &--fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+}
