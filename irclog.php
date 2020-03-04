@@ -240,8 +240,8 @@ function htmlline($str) {
 
     $str = irc2html($str);
 
-    $str = eregi_replace( "([[:alnum:]]+)://([^[:space:]]*)([[:alnum:]#?/&=])", "<a href=\"\\1://\\2\\3\" target=\"_blank\">\\1://\\2\\3</a>", $str);
-    $str = eregi_replace( "(([a-z0-9_]|\\-|\\.)+@([^[:space:]]*)([[:alnum:]-]))", "<a href=\"mailto:\\1%s\" >\\1</a>", $str);
+    $str = preg_replace( "/([[:alnum:]]+):\/\/([^[:space:]]*)([[:alnum:]#?\/&=])/i", "<a href=\"\\1://\\2\\3\" target=\"_blank\">\\1://\\2\\3</a>", $str);
+    $str = preg_replace( "/(([a-z0-9_]|\\-|\\.)+@([^[:space:]]*)([[:alnum:]-]))/i", "<a href=\"mailto:\\1%s\" >\\1</a>", $str);
     return $str;
 }
 
