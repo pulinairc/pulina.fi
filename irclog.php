@@ -245,7 +245,15 @@ function htmlline($str) {
     return $str;
 }
 
+// Create a pseudo anonymous nick from the original nickname
+function nickToAnon($nick){
+    return 'anon'.substr(crc32(md5($nick)), 0, 5);
+}
+
 function formatNick($nick) {
+    // Anonymize the nick
+    $nick = nickToAnon($nick);
+
     return htmlentities($nick, ENT_QUOTES);
 }
 
