@@ -1,0 +1,537 @@
+# Translation of Themes - Twenty Twenty in Finnish
+# This file is distributed under the same license as the Themes - Twenty Twenty package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-12-19 02:20:20+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fi\n"
+"Project-Id-Version: Themes - Twenty Twenty\n"
+
+#. Description of the theme
+msgid "Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors."
+msgstr "Vuoden 2020 oletusteemamme on suunniteltu ottamaan kaikki tehot irti lohkomuokkaimesta. Yrityksillä  ja järjestöillä on paremmat mahdollisuudet luoda dynaamisia laskeutumissivuja loputtomilla erilaisilla asetteluilla käyttäen ryhmä- ja palstalohkoja. Keskitetty sisältöpalsta ja hiottu typografia tekevät teemasta täydellisen myös perinteisille blogeille. Täydelliset muokkaintyylit antavat sinulle hyvän kuvan siitä, miltä sisältösi näyttää jo ennen kuin julkaiset sen. Voit antaa sivustollesi henkilökohtaisen kosketuksen vaihtamalla teeman värejä Muokkaimessa. Kaikkien sivuston elementtien värit lasketaan automaattisesti valitsemistasi tausta- ja korostusväreistä, mikä takaa kävijöillesi korkean ja saavutettavan värikontrastin."
+
+#. Theme Name of the theme
+msgid "Twenty Twenty"
+msgstr "Twenty Twenty"
+
+#: classes/class-twentytwenty-customize.php:246
+msgid "Show author bio"
+msgstr "Näytä kirjoittaja"
+
+#: template-parts/entry-author-bio.php:29
+msgid "View Archive <span aria-hidden=\"true\">&rarr;</span>"
+msgstr "Näytä arkisto <span aria-hidden=\"true\">&rarr;</span>"
+
+#: inc/starter-content.php:38
+msgctxt "Theme starter content"
+msgid "The New UMoMA Opens its Doors"
+msgstr "Uusi UMoMA avaa ovensa"
+
+#: inc/template-tags.php:393
+msgctxt "A string that is output before one or more categories"
+msgid "In"
+msgstr "Kategoriat: "
+
+#: inc/starter-content.php:150
+msgid "Join the Club"
+msgstr "Liity kerhoon"
+
+#: inc/starter-content.php:147
+msgid "Members get access to exclusive exhibits and sales. Our memberships cost $99.99 and are billed annually."
+msgstr "Jäsenet pääsevät käsiksi yksinoikeusnäyttelyihin ja myynteihin. Jäsenyys maksaa $99.99 ja laskutetaan vuosittain."
+
+#: inc/starter-content.php:144
+msgid "Become a Member and Get Exclusive Offers!"
+msgstr "Liity jäseneksi ja saa yksinoikeusetuja!"
+
+#: inc/starter-content.php:136
+msgid "The exhibitions are produced by UMoMA in collaboration with artists and museums around the world and they often attract international attention. UMoMA has received a Special Commendation from the European Museum of the Year, and was among the top candidates for the Swedish Museum of the Year Award as well as for the Council of Europe Museum Prize."
+msgstr "Näyttelyt tuottaa UMoMA yhteistyössä taiteilijoiden ja muiden museoiden kanssa ja ne saavat usein kansainvälistä huomiota. UMoMA on saanut Euroopan Vuoden museo -palkinnon erikoismaininnan ja oli myös Ruotsin Vuoden museo -palkinnon ja Euroopan neuvoston Museopalkinnon kärkiehdokkaita."
+
+#: inc/starter-content.php:113
+msgid "From Signac to Matisse"
+msgstr "Signac'sta Matisseen"
+
+#: inc/starter-content.php:133
+msgid "With seven floors of striking architecture, UMoMA shows exhibitions of international contemporary art, sometimes along with art historical retrospectives. Existential, political and philosophical issues are intrinsic to our programme. As visitor you are invited to guided tours artist talks, lectures, film screenings and other events with free admission"
+msgstr "UMoMAn seitsemän kerrosta upeaa arkkitehtuuria esittelee kansainvälistä nykytaidetta ja joskus taidehistoriallisia retrospektiivejä. Käsittelemme usein eksistentiaalisia, poliittisia ja filosofisia kysymyksiä. Vieraanamme kutsumme sinut opastetuille kierroksille, taiteilijoiden puheenvuoroihin, luennoille, elokuvanäytöksiin ja muihin tapahtumiin, ilmaiseksi."
+
+#: inc/starter-content.php:129
+msgid "”Cyborgs, as the philosopher Donna Haraway established, are not reverent. They do not remember the cosmos.”"
+msgstr "\"Cyborgit, kuten filosofi Donna Haraway määritteli, eivät tunne kunnioitusta. Ne eivät muista kosmosta.\""
+
+#: inc/starter-content.php:98
+msgid "The Life I Deserve"
+msgstr "The Life I Deserve"
+
+#: inc/starter-content.php:84 inc/starter-content.php:116
+msgid "October 1 -- December 1"
+msgstr "1. lokakuuta – 1. joulukuuta"
+
+#: inc/starter-content.php:81
+msgid "Theatre of Operations"
+msgstr "Theatre of Operations"
+
+#: inc/starter-content.php:72 inc/starter-content.php:87
+#: inc/starter-content.php:104 inc/starter-content.php:119
+msgid "Read More"
+msgstr "Lue lisää"
+
+#: inc/starter-content.php:69 inc/starter-content.php:101
+msgid "August 1 -- December 1"
+msgstr "1. elokuuta – 1. joulukuuta"
+
+#: inc/starter-content.php:66
+msgid "Works and Days"
+msgstr "Työt ja päivät"
+
+#: inc/starter-content.php:55
+msgid "The premier destination for modern art in Northern Sweden. Open from 10 AM to 6 PM every day during the summer months."
+msgstr "Nykytaiteen ykköskohde Pohjois-Ruotsissa. Avoinna 10–18 joka päivä kesäkuukausina."
+
+#: inc/starter-content.php:47
+msgid "The New UMoMA Opens its Doors"
+msgstr "Uusi UMoMA avaa ovensa"
+
+#: classes/class-twentytwenty-customize.php:395
+msgid "Overlay Opacity"
+msgstr "Peitteen läpinäkyvyys"
+
+#: classes/class-twentytwenty-customize.php:374
+msgid "Overlay Text Color"
+msgstr "Peitteen tekstin väri"
+
+#: classes/class-twentytwenty-customize.php:375
+msgid "The color used for the text in the overlay."
+msgstr "Peitteessä olevan tekstin väri."
+
+#: classes/class-twentytwenty-customize.php:353
+msgid "The color used for the overlay. Defaults to the accent color."
+msgstr "Peitteen taustaväri. Oletuksena teeman korostusväri."
+
+#: classes/class-twentytwenty-customize.php:352
+msgid "Overlay Background Color"
+msgstr "Peitteen taustaväri"
+
+#: classes/class-twentytwenty-customize.php:283
+msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
+msgstr "Asetukset \"Kansilehti\"-sivupohjalle. Artikkelikuvaa käytetään kansilehden taustakuvana."
+
+#: classes/class-twentytwenty-customize.php:183
+msgid "Apply a custom color for links, buttons, featured images."
+msgstr "Käytä mukautettua väriä linkeille, painikkeille, artikkelikuville."
+
+#: classes/class-twentytwenty-customize.php:126
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: classes/class-twentytwenty-customize.php:125
+msgid "Default"
+msgstr "Oletusasetus"
+
+#: classes/class-twentytwenty-customize.php:123
+msgid "Primary Color"
+msgstr "Ensisijainen väri"
+
+#. translators: %s: HTML character for up arrow
+#: footer.php:43
+msgid "To the top %s"
+msgstr "Ylös %s"
+
+#: template-parts/modal-search.php:20 searchform.php:24
+msgid "Search for:"
+msgstr "Haku:"
+
+#: index.php:99
+msgid "search again"
+msgstr "hae uudestaan"
+
+#. translators: %s: Number of search results
+#: index.php:39
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] "Löysimme %s hakutuloksen."
+msgstr[1] "Löysimme %s hakutulosta."
+
+#. translators: %s: HTML character for up arrow
+#: footer.php:49
+msgid "Up %s"
+msgstr "Ylös %s"
+
+#. translators: Copyright date format, see https://secure.php.net/date
+#: footer.php:25
+msgctxt "copyright date format"
+msgid "Y"
+msgstr "Y"
+
+#: 404.php:24
+msgid "404 not found"
+msgstr "404 sivua ei löytynyt"
+
+#. Translators: 1 = comment date, 2 = comment time
+#: classes/class-twentytwenty-walker-comment.php:69
+msgid "%1$s at %2$s"
+msgstr "%1$s, klo %2$s"
+
+#: classes/class-twentytwenty-walker-comment.php:77
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: classes/class-twentytwenty-walker-comment.php:92
+msgid "Your comment is awaiting moderation."
+msgstr "Kommenttisi odottaa tarkastusta."
+
+#: comments.php:34
+msgid "Leave a comment"
+msgstr "Kommentoi"
+
+#. translators: %s: post title
+#: comments.php:37
+msgctxt "comments title"
+msgid "One reply on &ldquo;%s&rdquo;"
+msgstr "Yksi vastaus aiheeseen &ldquo;%s&rdquo;"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s reply on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s vastaus aiheeseen &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s vastausta aiheeseen &ldquo;%2$s&rdquo;"
+
+#: comments.php:88
+msgid "Comments"
+msgstr "Kommentit"
+
+#: comments.php:127
+msgid "Comments are closed."
+msgstr "Kommentit on suljettu."
+
+#: functions.php:491 inc/starter-content.php:176 inc/starter-content.php:186
+msgid "Primary"
+msgstr "Ensisijainen"
+
+#: inc/starter-content.php:196
+msgid "Social Links Menu"
+msgstr "Some-valikko"
+
+#. translators: %s: Post title. Only visible to screen readers.
+#: inc/template-tags.php:206
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Muokkaa <span class=\"screen-reader-text\">%s</span>"
+
+#: functions.php:258
+msgid "Footer Menu"
+msgstr "Alatunnisteen valikko"
+
+#: template-parts/content.php:48 template-parts/content-cover.php:138
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: template-parts/footer-menus-widgets.php:37
+msgid "Footer"
+msgstr "Alatunniste"
+
+#: template-parts/content.php:48 template-parts/content-cover.php:138
+msgid "Page"
+msgstr "Sivu"
+
+#: functions.php:496
+msgid "Secondary"
+msgstr "Toissijainen"
+
+#. translators: %s: Author name
+#: template-parts/entry-author-bio.php:20 inc/template-tags.php:354
+msgid "By %s"
+msgstr "Kirjoittanut %s"
+
+#: footer.php:33
+msgid "Powered by WordPress"
+msgstr "Voimanlähteenä WordPress"
+
+#: functions.php:338
+msgid "Skip to the content"
+msgstr "Siirry sisältöön"
+
+#: template-parts/modal-menu.php:21
+msgid "Close Menu"
+msgstr "Sulje valikko"
+
+#: template-parts/modal-search.php:26
+msgid "Close search"
+msgstr "Sulje haku"
+
+#: header.php:76 header.php:137
+msgid "Menu"
+msgstr "Valikko"
+
+#. Template Name of the theme
+msgid "Full Width Template"
+msgstr "Täysleveä sivupohja"
+
+#: template-parts/pagination.php:25
+msgid "Older <span class=\"nav-short\">Posts</span>"
+msgstr "Vanhemmat <span class=\"nav-short\">artikkelit</span>"
+
+#: template-parts/pagination.php:21
+msgid "Newer <span class=\"nav-short\">Posts</span>"
+msgstr "Uudemmat <span class=\"nav-short\">artikkelit</span>"
+
+#: template-parts/navigation.php:25
+msgid "Post"
+msgstr "Artikkeli"
+
+#: template-parts/modal-menu.php:117
+msgid "Expanded Social links"
+msgstr "Laajennetut somelinkit"
+
+#: template-parts/modal-menu.php:73
+msgid "Mobile"
+msgstr "Mobiililaite"
+
+#: template-parts/modal-menu.php:48
+msgid "Expanded"
+msgstr "Laajennettu"
+
+#: template-parts/footer-menus-widgets.php:57
+msgid "Social links"
+msgstr "Somelinkit"
+
+#: template-parts/content-cover.php:88
+msgid "Scroll Down"
+msgstr "Vieritä alas"
+
+#: searchform.php:27
+msgctxt "submit button"
+msgid "Search"
+msgstr "Hae"
+
+#: searchform.php:25
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Hae &hellip;"
+
+#: index.php:48
+msgid "We could not find any results for your search. You can give it another try through the search form below."
+msgstr "Emme löytäneet tuloksia haullasi. Voit kokeilla uudestaan alla olevalla hakulomakkeella."
+
+#: index.php:32
+msgid "Search:"
+msgstr "Haku:"
+
+#: inc/template-tags.php:445
+msgid "Sticky post"
+msgstr "Kiinnitetty artikkeli"
+
+#: inc/template-tags.php:407
+msgid "Tags"
+msgstr "Avainsanat"
+
+#: template-parts/content-cover.php:70 template-parts/entry-header.php:36
+#: inc/template-tags.php:389
+msgid "Categories"
+msgstr "Kategoriat"
+
+#: inc/template-tags.php:371
+msgid "Post date"
+msgstr "Julkaisupäivämäärä"
+
+#: inc/template-tags.php:347
+msgid "Post author"
+msgstr "Kirjoittaja"
+
+#: header.php:88
+msgid "Horizontal"
+msgstr "Vaakasuora"
+
+#: header.php:53 header.php:157
+msgid "Search"
+msgstr "Haku"
+
+#: template-parts/content.php:36
+msgid "Continue reading"
+msgstr "Lue lisää"
+
+#: functions.php:548
+msgctxt "Short name of the larger font size in the block editor."
+msgid "XL"
+msgstr "XL"
+
+#: functions.php:547
+msgctxt "Name of the larger font size in the block editor"
+msgid "Larger"
+msgstr "Suurempi"
+
+#: functions.php:542
+msgctxt "Short name of the large font size in the block editor."
+msgid "L"
+msgstr "L"
+
+#: functions.php:541
+msgctxt "Name of the large font size in the block editor"
+msgid "Large"
+msgstr "Suuri"
+
+#: functions.php:536
+msgctxt "Short name of the regular font size in the block editor."
+msgid "M"
+msgstr "M"
+
+#: functions.php:535
+msgctxt "Name of the regular font size in the block editor"
+msgid "Regular"
+msgstr "Tavallinen"
+
+#: functions.php:530
+msgctxt "Short name of the small font size in the block editor."
+msgid "S"
+msgstr "S"
+
+#: functions.php:529
+msgctxt "Name of the small font size in the block editor"
+msgid "Small"
+msgstr "Pieni"
+
+#: functions.php:514
+msgid "Background Color"
+msgstr "Taustaväri"
+
+#: functions.php:501
+msgid "Subtle Background"
+msgstr "Hillitty taustaväri"
+
+#: functions.php:486
+msgid "Accent Color"
+msgstr "Pääväri"
+
+#: functions.php:377
+msgid "Widgets in this area will be displayed in the second column in the footer."
+msgstr "Tämän alueen vimpaimet näytetään alapalkin toisessa palstassa."
+
+#: functions.php:375
+msgid "Footer #2"
+msgstr "Alapalkki #2"
+
+#: functions.php:365
+msgid "Widgets in this area will be displayed in the first column in the footer."
+msgstr "Tämän alueen vimpaimet näytetään alapalkin ensimmäisessä palstassa."
+
+#: functions.php:363
+msgid "Footer #1"
+msgstr "Alapalkki #1"
+
+#: functions.php:259
+msgid "Social Menu"
+msgstr "Somevalikko"
+
+#: functions.php:257
+msgid "Mobile Menu"
+msgstr "Mobiilivalikko"
+
+#: functions.php:256
+msgid "Desktop Expanded Menu"
+msgstr "Laajennettu valikko isommilla ruuduilla"
+
+#: functions.php:255
+msgid "Desktop Horizontal Menu"
+msgstr "Vaakasuora valikko isommilla ruuduilla"
+
+#: comments.php:75
+msgid "Older Comments"
+msgstr "Vanhemmat kommentit"
+
+#: comments.php:74
+msgid "Newer Comments"
+msgstr "Uudemmat kommentit"
+
+#: classes/class-twentytwenty-walker-page.php:134 inc/template-tags.php:555
+msgid "Show sub menu"
+msgstr "Näytä alavalikko"
+
+#. translators: %d: ID of a post
+#: classes/class-twentytwenty-walker-page.php:82
+msgid "#%d (no title)"
+msgstr "#%d (ei otsikkoa)"
+
+#: classes/class-twentytwenty-walker-comment.php:127
+msgid "By Post Author"
+msgstr "Artikkelin kirjoittajalta"
+
+#: classes/class-twentytwenty-walker-comment.php:56
+msgid "says:"
+msgstr "sanoo:"
+
+#: classes/class-twentytwenty-customize.php:396
+msgid "Make sure that the contrast is high enough so that the text is readable."
+msgstr "Varmista, että kontrasti on riittävän korkea, jotta teksti on helppolukuista."
+
+#: classes/class-twentytwenty-customize.php:306
+msgid "Creates a parallax effect when the visitor scrolls."
+msgstr "Luo parallaksitehosteen kun käyttäjä vierittää ruutua."
+
+#: classes/class-twentytwenty-customize.php:305
+msgid "Fixed Background Image"
+msgstr "Kiinnitetty taustakuva"
+
+#. Template Name of the theme
+#: classes/class-twentytwenty-customize.php:281
+msgid "Cover Template"
+msgstr "Kansilehti-sivupohja"
+
+#: classes/class-twentytwenty-customize.php:270
+msgid "Summary"
+msgstr "Poiminta"
+
+#: classes/class-twentytwenty-customize.php:269
+msgid "Full text"
+msgstr "Koko teksti"
+
+#: classes/class-twentytwenty-customize.php:267
+msgid "On archive pages, posts show:"
+msgstr "Arkistosivuilla artikkeleistä näytetään:"
+
+#: classes/class-twentytwenty-customize.php:225
+msgid "Show search in header"
+msgstr "Näytä haku otsakkeessa"
+
+#: classes/class-twentytwenty-customize.php:202
+msgid "Theme Options"
+msgstr "Teeman asetukset"
+
+#: classes/class-twentytwenty-customize.php:101
+msgid "Header &amp; Footer Background Color"
+msgstr "Otsakkeen ja alapalkin taustaväri"
+
+#: classes/class-twentytwenty-customize.php:82
+msgid "Scales the logo to half its uploaded size, making it sharp on high-res screens."
+msgstr "Skaalaa logon puoleen alkuperäisestä koosta, tehden siitä terävämmän näköisen korkearesoluutioisilla näytöillä."
+
+#: classes/class-twentytwenty-customize.php:81
+msgid "Retina logo"
+msgstr "Retina-logo"
+
+#: 404.php:19
+msgid "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
+msgstr "Sivua, jota etsit, ei löytynyt. Se on voitu poistaa, nimetä uudelleen tai ehkä sitä ei koskaan ollutkaan."
+
+#: 404.php:17
+msgid "Page Not Found"
+msgstr "Sivua ei löytynyt"
+
+#. Author URI of the theme
+#: footer.php:32
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#. Author of the theme
+msgid "the WordPress team"
+msgstr "WordPress-tiimi"
+
+#. Theme URI of the theme
+msgid "https://wordpress.org/themes/twentytwenty/"
+msgstr "https://wordpress.org/themes/twentytwenty/"

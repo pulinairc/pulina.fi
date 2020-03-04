@@ -1,0 +1,51 @@
+# Translation of Plugins - ManageWP Worker - Development (trunk) in English (UK)
+# This file is distributed under the same license as the Plugins - ManageWP Worker - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-01-07 04:19:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - ManageWP Worker - Development (trunk)\n"
+
+#. Author of the plugin/theme
+msgid "ManageWP"
+msgstr "ManageWP"
+
+#. Description of the plugin/theme
+msgid "ManageWP Worker plugin allows you to manage your WordPress sites from one dashboard. Visit <a href=\"https://managewp.com\">ManageWP.com</a> for more information."
+msgstr "ManageWP Worker plugin allows you to manage your WordPress sites from one dashboard. Visit <a href=\"https://managewp.com\">ManageWP.com</a> for more information."
+
+#. #-#-#-#-#  tmp-worker.pot (ManageWP - Worker 4.1.17)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  tmp-worker.pot (ManageWP - Worker 4.1.17)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "https://managewp.com"
+msgstr "https://managewp.com"
+
+#. Plugin Name of the plugin/theme
+msgid "ManageWP - Worker"
+msgstr "ManageWP - Worker"
+
+#: src/MWP/EventListener/PublicRequest/AutomaticLogin.php:95
+msgid "User <strong>%s</strong> could not be found."
+msgstr "User <strong>%s</strong> could not be found."
+
+#: src/MWP/EventListener/PublicRequest/AutomaticLogin.php:89
+msgid "The automatic login token is invalid. Please check if this website is properly connected with your dashboard, or, if this keeps happening, contact support."
+msgstr "The automatic login token is invalid. Please check if this website is properly connected with your dashboard, or, if this keeps happening, contact support."
+
+#: src/MWP/EventListener/PublicRequest/AutomaticLogin.php:78
+msgid "The automatic login token was already used. Please try again, or, if this keeps happening, contact support."
+msgstr "The automatic login token was already used. Please try again, or, if this keeps happening, contact support."
+
+#: src/MWP/EventListener/PublicRequest/AutomaticLogin.php:76
+msgid "The automatic login token has expired. Please try again, or, if this keeps happening, contact support."
+msgstr "The automatic login token has expired. Please try again, or, if this keeps happening, contact support."
+
+#: src/MWP/EventListener/PublicRequest/AutomaticLogin.php:74
+msgid "The automatic login token is invalid. Please try again, or, if this keeps happening, contact support."
+msgstr "The automatic login token is invalid. Please try again, or, if this keeps happening, contact support."

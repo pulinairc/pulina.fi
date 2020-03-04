@@ -67,6 +67,7 @@ $stats = file_get_html( $stats_cachefile );
   $oikealuku = explode( '@', $luku[1] );
   $numero = $oikealuku[0];
   echo $numero;
+  var_dump( $luku );
   ?></span>
   <span class="asia">yhtäaikainen käyttäjäennätys</span>
 </div>
