@@ -52,7 +52,7 @@ if ( time() - filemtime( $stats_cachefile ) > 2 * $stats_cachetime ) {
 
 // Set up data
 $html_numbers = file_get_html( $numbers_cachefile );
-$peak = file_get_html( $peak_cachefile );
+$peak = file_get_contents( $peak_cachefile );
 $stats = file_get_html( $stats_cachefile );
 ?>
 
@@ -67,7 +67,6 @@ $stats = file_get_html( $stats_cachefile );
   $oikealuku = explode( '@', $luku[1] );
   $numero = $oikealuku[0];
   echo $numero;
-  var_dump( $luku );
   ?></span>
   <span class="asia">yhtäaikainen käyttäjäennätys</span>
 </div>
