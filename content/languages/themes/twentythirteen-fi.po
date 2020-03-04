@@ -1,0 +1,314 @@
+# Translation of Themes - Twenty Thirteen in Finnish
+# This file is distributed under the same license as the Themes - Twenty Thirteen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-07-18 10:52:41+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fi\n"
+"Project-Id-Version: Themes - Twenty Thirteen\n"
+
+#. Description of the plugin/theme
+msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
+msgstr "2013-teema palaa bloggaamisen ytimeen, tarjoten täyden kokoelman erilaisia artikkelimuotoja, joista jokaisella on oma yksilöllinen esitystapansa. Teemassa on useita tyylikkäitä yksityiskohtia: pirteä väriskaala, yhteensopivat otsakekuvat, upea typografia ja ikonit, sekä ulkoasu joka mukautuu kaiken kokoisiin laitteisiin."
+
+#. Theme Name of the plugin/theme
+msgid "Twenty Thirteen"
+msgstr "Twenty Thirteen"
+
+#: taxonomy-post_format.php:23
+msgid "%s Archives"
+msgstr "Arkisto: %s"
+
+#: tag.php:21
+msgid "Tag Archives: %s"
+msgstr "Avainsana-arkisto: %s"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "Hakutulokset kohteelle: %s"
+
+#: inc/custom-header.php:60
+msgctxt "header image description"
+msgid "Star"
+msgstr "Tähti"
+
+#: inc/custom-header.php:55
+msgctxt "header image description"
+msgid "Diamond"
+msgstr "Timantti"
+
+#: inc/custom-header.php:50
+msgctxt "header image description"
+msgid "Circle"
+msgstr "Ympyrä"
+
+#: inc/back-compat.php:37 inc/back-compat.php:48 inc/back-compat.php:62
+msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Thirteen vaatii vähintään WordPressin version 3.6. Käytät versiota %s. Päivitä ja yritä uudelleen."
+
+#: image.php:62
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Seuraava <span class=\"meta-nav\">&rarr;</span>"
+
+#: image.php:61
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Edellinen"
+
+#: image.php:49
+msgid "Full resolution"
+msgstr "Täysi resoluutio"
+
+#: image.php:48
+msgid "Link to full-size image"
+msgstr "Linkki täysikokoiseen kuvaan"
+
+#: image.php:29
+msgid "<span class=\"attachment-meta\">Published on <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Return to %4$s\" rel=\"gallery\">%5$s</a></span>"
+msgstr "<span class=\"attachment-meta\">Julkaistu <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> artikkeliin <a href=\"%3$s\" title=\"Palaa artikkeliin %4$s\" rel=\"gallery\">%5$s</a></span>"
+
+#: header.php:44
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: header.php:43
+msgid "Menu"
+msgstr "Valikko"
+
+#: functions.php:433
+msgid "Permalink to %s"
+msgstr "Kestolinkki: %s"
+
+#: functions.php:425
+msgctxt "1: post format name. 2: date"
+msgid "%1$s on %2$s"
+msgstr "%1$s %2$s"
+
+#: functions.php:405
+msgid "View all posts by %s"
+msgstr "Näytä kaikki artikkelit kirjoittajalta %s"
+
+#. Translators: used between list items, there is a space after the comma.
+#: functions.php:389 functions.php:395
+msgid ", "
+msgstr ", "
+
+#: functions.php:381
+msgid "Sticky"
+msgstr "Kiinnitetty"
+
+#: functions.php:363
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:362
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: functions.php:359
+msgid "Post navigation"
+msgstr "Artikkelien selaus"
+
+#: functions.php:332
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Uudemmat artikkelit <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:328
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Vanhemmat artikkelit"
+
+#: functions.php:324
+msgid "Posts navigation"
+msgstr "Artikkelien selaus"
+
+#: functions.php:299
+msgid "Appears on posts and pages in the sidebar."
+msgstr "Näytetään artikkelien ja sivujen sivupalkissa."
+
+#: functions.php:297
+msgid "Secondary Widget Area"
+msgstr "Vimpainalue 2"
+
+#: functions.php:287
+msgid "Appears in the footer section of the site."
+msgstr "Näkyy sivuston alatunnisteessa."
+
+#: functions.php:285
+msgid "Main Widget Area"
+msgstr "Ensisijainen vimpainalue"
+
+#: functions.php:270
+msgid "Page %s"
+msgstr "Sivu %s"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own language.
+#: functions.php:155
+msgctxt "Bitter font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Source Sans Pro, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:149
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:115
+msgid "Navigation Menu"
+msgstr "Navigaatiovalikko"
+
+#: footer.php:25
+msgid "Proudly powered by %s"
+msgstr "Voimanlähteenä %s"
+
+#: content-none.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
+
+#: content-none.php:22
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Hakusi ei valitettavasti tuottanut yhtään tulosta. Yritä uudelleen eri hakusanoilla."
+
+#: content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Oletko valmis julkaisemaan ensimmäisen kirjoituksesi? <a href=\"%1$s\">Aloita tästä</a>."
+
+#: content-none.php:12
+msgid "Nothing Found"
+msgstr "Mitään ei löytynyt."
+
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
+msgid "View all % comments"
+msgstr "Näytä kaikki % kommenttia"
+
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
+msgid "One comment so far"
+msgstr "Yksi kommentti tällä hetkellä"
+
+#: content-gallery.php:52 content-image.php:48 content-quote.php:38
+#: content-video.php:48 content.php:65
+msgid "Leave a comment"
+msgstr "Jätä kommentti"
+
+#: content-aside.php:36 content-aside.php:44 content-audio.php:47
+#: content-chat.php:45 content-gallery.php:55 content-image.php:51
+#: content-link.php:19 content-quote.php:41 content-status.php:35
+#: content-video.php:51 content.php:31 image.php:54 page.php:51
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: content-aside.php:24 content-audio.php:35 content-chat.php:34
+#: content-gallery.php:35 content-image.php:34 content-link.php:35
+#: content-quote.php:24 content-status.php:24 content-video.php:34
+#: content.php:52 image.php:83 page.php:41
+msgid "Pages:"
+msgstr "Sivut:"
+
+#. translators: %s: Name of current post
+#: content-aside.php:17 content-audio.php:28 content-chat.php:27
+#: content-gallery.php:28 content-image.php:27 content-link.php:28
+#: content-quote.php:17 content-status.php:17 content-video.php:27
+#: content.php:45 functions.php:547
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Jatka lukemista %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr "Uudemmat kommentit &rarr;"
+
+#: comments.php:51
+msgid "&larr; Older Comments"
+msgstr "&larr; Vanhemmat kommentit"
+
+#: comments.php:50
+msgid "Comment navigation"
+msgstr "Kommenttien selaus"
+
+#: comments.php:27
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Yksi kommentti artikkeliin &rdquo;%2$s&rdquo;"
+msgstr[1] "%1$s kommenttia artikkeliin &rdquo;%2$s&rdquo;"
+
+#: category.php:19
+msgid "Category Archives: %s"
+msgstr "Aihearkisto: %s"
+
+#: author.php:31
+msgid "All posts by %s"
+msgstr "Kaikki kirjoittajan %s artikkelit"
+
+#: author-bio.php:30
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Katso kaikki artikkelit kirjoittajalta %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: author-bio.php:26
+msgid "About %s"
+msgstr "Tietoja %s"
+
+#: archive.php:36
+msgid "Archives"
+msgstr "Arkistot"
+
+#: archive.php:34
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Yearly Archives: %s"
+msgstr "Arkistot vuoden mukaan: %s"
+
+#: archive.php:32
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:32
+msgid "Monthly Archives: %s"
+msgstr "Arkistot kuukauden mukaan: %s"
+
+#: archive.php:30
+msgid "Daily Archives: %s"
+msgstr "Arkistot päivämäärän mukaan: %s"
+
+#: 404.php:22
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Näyttää siltä että täällä ei ole mitään. Kokeilepa hakua?"
+
+#: 404.php:21
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Tämäpä on jokseenkin noloa."
+
+#: 404.php:16
+msgid "Not Found"
+msgstr "Ei löytynyt"
+
+#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 2.4)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: footer.php:24
+msgid "https://wordpress.org/"
+msgstr "https://fi.wordpress.org/"
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "WordPress-tiimi"
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/twentythirteen/"
+msgstr "https://wordpress.org/themes/twentythirteen/"
