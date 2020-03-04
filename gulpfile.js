@@ -137,6 +137,7 @@ gulp.task('js', function() {
           themeDir + '/js/src/skrollr.js',
           themeDir + '/js/src/navigation.js',
           themeDir + '/js/src/waypoints.js',
+          themeDir + '/js/src/jquery.mb.YTPlayer.js',
           'node_modules/what-input/dist/what-input.js',
           themeDir + '/js/src/scripts.js'
         ])
