@@ -821,6 +821,11 @@
     padding-bottom: 100px;
     z-index: 2;
 
+    @media (max-width: 660px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
     a:not(.button),
     a:link:not(.button),
     a:visited:not(.button),
@@ -868,6 +873,16 @@
     padding-bottom: 66.25%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+
+    @media (max-width: 900px) {
+      width: 200%;
+      padding-bottom: 100%;
+    }
+
+    @media (max-width: 660px) {
+      width: 300%;
+      padding-bottom: 180%;
+    }
   }
 
   .video-overlay {
