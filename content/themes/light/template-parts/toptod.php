@@ -44,7 +44,13 @@ foreach ($items as $key => $item) {
 
           // Progress calculation
     $maxpoints = '2000';
-    $count_percent_part1 = $points * 100;
+
+    if ( ! empty( $points ) ) {
+      $count_percent_part1 = $points * 100;
+    } else {
+      $count_percent_part1 = 100 * 100;
+    }
+
     $percent = $count_percent_part1 / $maxpoints;
     $nearest_ten = ceil($percent / 10) * 10;
 
