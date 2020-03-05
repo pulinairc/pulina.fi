@@ -424,8 +424,8 @@ samp {
 
 // Code block.
 code {
-  color: #c7254e;
-  background-color: #f9f2f4;
+  background: none;
+  color: lighten(#c7254e, 20%);
   font-family: $font-monospace;
   line-height: 1;
   padding: .375rem .5rem;

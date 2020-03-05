@@ -5,6 +5,7 @@
 @import 'jeet/scss/index';
 
 // Theme options
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono&display=swap');
 @import 'config';
 
 // Helpers
@@ -25,3 +26,4 @@
 // Views
 @import '../views/front-page';
 @import '../views/blog';
+@import '../views/commands';

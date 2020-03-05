@@ -1059,15 +1059,6 @@ th, td, tr {
   color:#E8534F;
 }
 
-.komennot table code {
-  background-color:#22374C;
-  @include transition(background-color 0.52s ease-out);
-}
-
-.komennot table code:hover {
-  background-color:#111111;
-}
-
 $transition-time: .5s;
 
 p a {

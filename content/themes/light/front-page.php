@@ -243,7 +243,7 @@ get_header(); ?>
 
 		<h2>Mitäs muuta?</h2>
 
-		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. On meillä <a href="https://www.facebook.com/pulinairc/">Facebookikin</a> ja joitakin ryhmiäkin siellä, mutta se on niin kuollutta ja lamea että siitä ei puhuta.</p>
+		<p>No ei kai tässä sitten muuta kuin keskustelu käyntiin? Pulinan sivuilta löydät <a href="<?php echo get_page_link(6); ?>">tietoa kanavasta</a>, <a href="<?php echo get_page_link(25); ?>">Pulina-paidoista</a>, <a href="<?php echo get_page_link(21); ?>">komennoista</a>. Meillä on myös <a href="<?php echo get_page_link(1010); ?>">blogi</a>. On meillä <a href="https://www.facebook.com/pulinairc/">Facebookikin</a>, mutta kuka sitä jaksaa.</p>
 
 		<p>Sivut loi <a href="https://rolle.design">Rolle</a>.
 

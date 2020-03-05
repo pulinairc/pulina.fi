@@ -6,195 +6,150 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area firstcontainer">
-		<main id="main" class="site-main" role="main">
+<section class="block block-commands">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+  <div class="row">
+    <p><code>!komennot</code>
+      <span class="description">Antaa tämän sivun linkin.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/commands.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-			<div class="container">
+  <div class="row">
+    <p>
+      <code>!battle <span>kaljaa, kahvia</span></code>
+      <span class="description">Kertoo annetuista vaihtoehdoista todennäköisyydet.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/battle.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-			<div class="the-page-content">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div class="row">
+    <p>
+      <code>!do</code>
+      <span class="description">Keksii tekemistä.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/do.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+  <div class="row">
+    <p>
+      <code>!sää <span>kaupunki</span></code>
+      <span class="description">Hakee sään ilmatieteen laitokselta.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/fmi.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-				<div class="entry-content">
+  <div class="row">
+    <p>
+      <code>!asetasää <span>kaupunki</span></code>
+      <span class="description">Asettaa sään käyttäjällesi, jotta voit jatkossa kirjoittaa vain !sää.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/fmi.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-				<div class="row">
+  <div class="row">
+    <p>
+      <code>!horo <span>skorpioni</span></code>
+      <span class="description">Näyttää Iltalehden päivän horoskoopin.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/horo.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<div class="col-md-12">
-					<?php the_content(); ?>
+  <div class="row">
+    <p>
+      <code>!lmgtfy <span>sana</span></code>
+      <span class="description">Googlaa sanan sarkastiseen sävyyn.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/lmgtfy.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<p>IRC-botit eli kanavan ylläpitäjän ohjelmoimat muiden käyttäjien komentoihin ja viesteihin vastaavat ohjelmat ovat hauskuuttaneet IRC-kanavia vuosikaudet. Ilman botteja IRC ei olisi niin hauska paikka.</p>
+  <div class="row">
+    <p>
+      <code>!matka <span>helsinki riihimaki</span></code>
+      <span class="description">Kertoo kahden kaupungin välisen matkan. Ei tue ääkkösiä juuri nyt.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/matka.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<p>Pulinalla on yksi botti, nimeltään <strong>kummitus</strong>. Botissa on lukuisia toimintoja. Lisää saa pyytämällä. Tältä sivulta pitäisi löytyä kaikki käytössä olevat kätevät komennot.</p>
+  <div class="row">
+    <p>
+      <code>!olenaa</code>
+      <span class="description">Joo mäki oon servu. :P</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/olenaa.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<p><span class="poispaalta">Punaisella</span> näkyvät ovat pois päältä. Ominaisuudet näkyvät listassa siinä järjestyksessä kun ne on ladattu bottiin.</p>
+  <div class="row">
+    <p>
+      <code>!muistuta <span>02:00 nukkumaan</span></code>
+      <span class="description">Muistuttaa asioista haluttuun aikaan.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/remind.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-          <p>Jos joku mättää, botin keskeisimmät toiminnot löytyvät <a href="https://github.com/pulinairc/kummitus">avoimena lähdekoodina GitHubista</a>, joten siitä vaan koodaamaan paranteluja.</p>
+  <div class="row">
+    <p>
+      <code>!säännöt</code>
+      <span class="description">Antaa linkin kanavan sääntöihin.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/rules.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-					<p><?php edit_post_link( __( 'Muokkaa', 'light' ), '<span class="edit-link">', '</span>' ); ?></p>
-					</div>
+  <div class="row">
+    <p>
+      <code>!statsit</code>
+      <span class="description">Antaa linkin kanavan tilastoihin. Toimii myös komennolla !tilastot.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/statsurl.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-				</div><!-- .entry-content -->
+  <div class="row">
+    <p>
+      <code>!vitsi</code>
+      <span class="description">Kertoo vitsin.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/vitsi.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-			</article><!-- #post-## -->
-			</div>
+  <div class="row">
+    <p>
+      <code>!pvm</code>
+      <span class="description">Kertoo päivän, viikon ja nimipäivät.</span>
+      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/pvm.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-			</div><!--/.container-->
+  <div class="row">
+    <p>
+      <code>!toptod</code>
+      <span class="description">Kertoo päivän kovimmat pulisijat.</span>
+      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/toptod.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-		<?php endwhile; // end of the loop. ?>
+  <div class="row">
+    <p>
+      <code>!peak</code>
+      <span class="description">Kertoo kanavan käyttäjäennätyksen.</span>
+      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/peak.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  <div class="row">
+    <p>
+      <code>!peak</code>
+      <span class="description">Kertoo kanavan käyttäjäennätyksen.</span>
+      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/peak.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
 
-	<div class="komennot">
-
-<div class="container">
-<table class="rwd-table">
-
-  <tr>
-  	<th>Ominaisuus</th>
-    <th>Komento</th>
-    <th>Tietoa</th>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">remind</i></td>
-    <td data-th="Komento"><code>!muistuta <i>nick aika asia</i></code></td>
-    <td data-th="Tietoa">Saat muistutuksen hailaittina haluttuun aikaan. Voimassaolevat muistutukset näet komennolla <code>!muistutukset</code> ja esimerkkejä komennoista <code>!muistuttaja</code></td>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">math</i></td>
-    <td data-th="Komento"><code>!math laskutoimitus</code></td>
-    <td data-th="Tietoa">Laskee laskutoimituksen puolestasi. Esimerkkejä: <code>!math 1+1</code> <code>!math 3043*(202+34)</code>
-<code>!math sqrt(5)*s(5)</code> <code>!math scale=2; 1/2</code></td>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">vitsit</i></td>
-    <td data-th="Komento"><code>!vitsi</code></td>
-    <td data-th="Tietoa">Kertoo satunnaisen vitsin massiivisesta vitsitietokannasta. Varoitus: Sisältää enimmäkseen viinavitsejä.</td>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">sano</i></td>
-    <td data-th="Komento"><code>!sano jotain</code></td>
-    <td data-th="Tietoa">Käskee botin sanomaan jotain. Käytetään lähinnä testailuun. Esim: <code>!sano Miau</code></td>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">linkit</i></td>
-    <td data-th="Komento"><code>!linkit</code></td>
-    <td data-th="Tietoa">Kertoo irkistä (jokaiselta kanavalta, jolla rolle on) kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös lisää linkkejä, sekä <a href="https://peikko.us/linkit">täältä</a>.</td>
-  </tr>
-
-  <tr>
-  	<td data-th="Ominaisuus"><i class="feat">urlit</i></td>
-    <td data-th="Komento"><code>!urlit</code></td>
-    <td data-th="Tietoa">Kertoo pulinalta kerättyjen linkkien osoitteen. Huom, Pulinan etusivulta näkee myös.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">pics</i></td>
-    <td data-th="Komento"><code>!pics</code></td>
-    <td data-th="Tietoa">Antaa osoitteen paikkaan, josta näkee random-irkkikuvat koottuna yhteen paikkaan.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">kotisivu</i></td>
-    <td data-th="Komento"><code>!kotisivu</code></td>
-    <td data-th="Tietoa">Jos jostain syystä unohdat pulinan kotisivujen osoitteen, tämä kertoo sen (www.pulina.fi).</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">statsit</i></td>
-    <td data-th="Komento"><code>!statsit</code></td>
-    <td data-th="Tietoa">Antaa osoitteen kanavan tilastosivuille.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">kuukausistatsit</i></td>
-    <td data-th="Komento"><code>!kuukausistatsit</code></td>
-    <td data-th="Tietoa">Kanavan tilastot (kuluva kuukausi).</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">komennot</i></td>
-    <td data-th="Komento"><code>!komennot</code></td>
-    <td data-th="Tietoa">Tämän sivun osoite, eli tietoa komennoista.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">pvm</i></td>
-    <td data-th="Komento"><code>!pvm</code></td>
-    <td data-th="Tietoa">Kertoo kuluvan päivän sekä nimipäivät. Tekee saman automaattisesti päivän vaihtuessa.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">toptod</i></td>
-    <td data-th="Komento"><code>!toptod</code></td>
-    <td data-th="Tietoa">Kuluvan päivän ennätykset, top-lista siitä kuka on ollut eniten äänessä. Tulee vain privaattina noticena käyttäjälle.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">välimatkat</i></td>
-    <td data-th="Komento"><code>!matka</code></td>
-    <td data-th="Tietoa">Laskee matkan kahden paikan välillä (Suomen sisällä), sekä keston jos numero on annettu ("Välimatka Helsinki - Kotka on 133 km, ajoaika 100 km/h vauhdilla 1 h 19 minuutti"). Esim. <code>!matka helsinki kotka 100</code></td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">battle</i></td>
-    <td data-th="Komento"><code>!battle</code></td>
-    <td data-th="Tietoa">Kertoo todennäköisyydet eri asioille. Pilkulla voi erottaa vaikka kymmenen eri asiaa. Chuck Norris on aina 100%. Esim. <code>!battle kahvi,tee</code></td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">keksi</i></td>
-    <td data-th="Komento"><code>!do</code></td>
-    <td data-th="Tietoa">Ehdottelee tekemistä, jos vaikka sattuu olemaan tylsää.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">horo</i></td>
-    <td data-th="Komento"><code>!horo</code></td>
-    <td data-th="Tietoa">Kertoo päivän horoskoopin Iltalehden sivuilta. Esim. <code>!horo skorpiooni</code> tai jos olet laiska, riittää vain horoskoopin alku, esim. <code>!horo sko</code></td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">randommovies</i></td>
-    <td data-th="Komento"><code>!leffa</code></td>
-    <td data-th="Tietoa">Ehdottaa satunnaista leffaa katsottavaksi.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">eggdrop-fmi</i></td>
-    <td data-th="Komento"><code>!sää</code></td>
-    <td data-th="Tietoa">Kertoo päivän sään Ilmatieteenlaitoksen sivuilta, päivän pituuden, auringonnousun sekä laskun ja antaa ennusteen huomiselle. Esim. <code>!sää helsinki</code> tai jos ei jostain syystä toimi tai sinulla on ongelmia ääkkösten kanssa, myös <code>!keli helsinki</code> pitäisi toimia. <a href="https://github.com/ronilaukkarinen/eggdrop-fmi">Lähdekoodi löytyy GitHubista</a>.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">peak</i></td>
-    <td data-th="Komento"><code>!peak</code></td>
-    <td data-th="Tietoa">Kertoo kanavan käyttäjäennätyksen ja milloin se tapahtui viimeksi.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">seend</i></td>
-    <td data-th="Komento"><code>!seen nick</code></td>
-    <td data-th="Tietoa">Kertoo milloin käyttäjä nähtiin viimeksi, millä kanavalla ja mikä oli viimeisin viesti.</td>
-  </tr>
-
-  <tr>
-    <td data-th="Ominaisuus"><i class="feat">telkku</i></td>
-    <td data-th="Komento"><code>!tv kanava</code></td>
-    <td data-th="Tietoa">Kertoo mitä telkkarista tulee. Käytössä olevat kanavat: tv1, tv2, mtv3, nelonen, subtv, yleteema, jim, mtv, hero, fox, ava. <a href="https://github.com/ronilaukkarinen/telkku">Lähdekoodi löytyy GitHubista</a>.</td>
-  </tr>
-
-</table>
-</div>
-
-	</div><!--/.containercol-->
+  <div class="row">
+    <p>
+      <code>!seen <span>rolle</span></code>
+      <span class="description">Kertoo milloin käyttäjä on nähty viimeksi ja mitä hän sanoi viimeksi.</span>
+      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/sseen.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
+</section>
 
 <?php get_footer(); ?>

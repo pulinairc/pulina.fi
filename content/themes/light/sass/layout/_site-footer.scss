@@ -1,16 +1,21 @@
 body {
   .site-footer {
-    background: #34495e;
+    background: darken(#34495e, 20%);
     overflow: hidden;
-    padding: 10px;
+    padding: 30px;
 
     p {
-      font-size: 14px;
+      font-size: 22px;
       color: #fff;
       margin: 0;
 
+      @media (max-width: $container-ipad) {
+        font-size: 16px;
+      }
+
       code {
-        background: rgba(#222, .8);
+        background: none !important;
+        color: lighten(#c7254e, 20%);
       }
     }
 
@@ -21,7 +26,7 @@ body {
         text-align: right;
       }
 
-      @media (max-width: $container-mobile) {
+      @media (max-width: $container-ipad) {
         @include stack();
         text-align: left;
       }
