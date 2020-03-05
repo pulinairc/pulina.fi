@@ -137,14 +137,6 @@ get_header(); ?>
 
   <div class="row">
     <p>
-      <code>!peak</code>
-      <span class="description">Kertoo kanavan käyttäjäennätyksen.</span>
-      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/peak.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
-    </p>
-  </div>
-
-  <div class="row">
-    <p>
       <code>!seen <span>rolle</span></code>
       <span class="description">Kertoo milloin käyttäjä on nähty viimeksi ja mitä hän sanoi viimeksi.</span>
       <a href="https://github.com/pulinairc/statbot/blob/master/scripts/sseen.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
