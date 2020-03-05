@@ -68,8 +68,10 @@ gulp.task('browsersync', function() {
 
   browserSync.init(files, {
     proxy: "pulina.test",
-    browser: null,
-    notify: true
+    browser: "Google Chrome",
+    open: false,
+    notify: true,
+    reloadDelay: 1000
   });
 
 });
