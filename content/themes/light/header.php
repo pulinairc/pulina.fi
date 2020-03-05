@@ -19,7 +19,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.pulina.fi/favicons/apple-touch-icon.png">
-<link rel="manifest" href="https://www.pulina.fi/favicons/manifest.json">
 <link rel="mask-icon" href="https://www.pulina.fi/favicons/safari-pinned-tab.svg" color="#5bbad5">
 <link rel="shortcut icon" href="https://www.pulina.fi/favicons/favicon.ico">
 

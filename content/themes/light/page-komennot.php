@@ -1,7 +1,9 @@
 <?php
 /**
- * @package light
+ *
  * Template Name: Komennot
+ *
+ * @package light
  */
 
 get_header(); ?>

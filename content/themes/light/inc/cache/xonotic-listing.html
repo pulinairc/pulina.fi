@@ -1,0 +1,165 @@
+<!doctype html>
+
+		<!--
+	    If you use a web platform that lets you include external web content, you can include this listing on your site.
+	    These are all the configuration options which you can use:
+	    
+		php vars:
+
+		Universal (both Master and Server lookup):
+
+		css= url to css file to use
+			*examples can be taken from:
+			http://dpmaster.deathmask.net/game/transfusion.css
+			http://dpmaster.deathmask.net/game/nexuiz.css
+			http://dpmaster.deathmask.net/game/openarena.css
+			http://dpmaster.deathmask.net/game/warsow.css
+			http://dpmaster.deathmask.net/game/warfork.css
+			http://dpmaster.deathmask.net/game/quake.css
+		xml= [1/0] [default: 0] output as QStat's XML instead of pure HTML.  Note: colored names will still be updated
+				to HTML codes unless nocolors is defined.  (Note: many variables below do not apply to xml output.)
+		xmlcarets= [1/0] [default: 0] output carets instead of converted fonts when using xml=1
+		json= [1/0] [default: 0] output as QStat's JSON instead of pure HTML.  Note: colored names will still be updated
+				to HTML codes unless nocolors is defined.  (Note: many variables below do not apply to json output.)
+		jsoncarets= [1/0] [default: 0] output carets instead of converted fonts when using json=1
+		nocolors= [1/0] [default: 0] don't display HTML colors, hide carrets
+		hidehtmltags= [1/0] [default: 0] don't display <html>/<head>/<body> tags
+		utf8= [1/0] [default: 1] display names with UTF8 instead of ASCII.
+
+
+		Master Server lookups:
+
+		master= master server address [defaut: dpmaster.deathmask.net]
+		game= game to look up (transfusion, xonotic, nexuiz, openarena, warsow, warfork, quake, urbanterror, tremulous, steelstorm, wolfet)
+		showping= [1/0] [default 0] hidden feature, show pings relative to Atlanta, GA, USA
+		sort= [ping,address,players,pass,map,gametype,name,no] [default: players], ping is local to Atlanta, GA, USA,
+				no = natural order (oldest first), pass & gametype only if the game supports it.
+
+		showall= show unresponsive servers [1/0] [default: 0]
+		hide= [full, empty, both] [default: N/A] hide full or empty servers (both hides full and empty)
+		hidegames= [1/0] [default: 0] hide link to gametype lookup (top of screen)
+		showonlylist= [1/0] [default: 0] show only the server list
+		showplayers= [1/0] [default: 0] show players on listing
+		oldprotocol= [#] [default: N/A] use previous protcol version (this is for games with changing protocols and must be
+				manually setup on the webserver [leave blank/don't use for current protocol])
+		hidepassworded= [1/0] [default: 0] hide servers requiring a password
+		hideheader= [1/0] [default: 0] hide the opening section with game logo, master info
+		hideinstagib= [1/0] [default: 0] hide instagib servers, only works with select games.
+
+
+		Single Server lookups:
+
+		game=game to look up (transfusion, xonotic, nexuiz, openarena, warsow, warfork, quake, urbanterror, tremulous, steelstorm, wolfet)
+		server= query a server rather than a master server [server address in form of ip:port or hostname:port , requires game]
+		hidegames= [1/0] [default 0] hide link to gametype lookup
+			*players are automatically sorted by frags, I don't feel this should need to be changed, but could be if really needed.
+		hideheader= [1/0] [default: 0] - hide the opening section with map picture and general info
+		hideplayers= [1/0] [default: 0] - hides players
+		hiderules= [1/0] [default: 0] - hides the server rules
+		showonlylist= [1/0] [default: 0] show only the server information line
+
+		*showonlylist will be the easiest way to just get a raw listing
+		
+		**if something is out of date or needs fixing, email to willis [ -at- ] deathR-E-M-O-V-E-M-Emask.net with "dpmaster" in the subject.
+	!-->
+
+	<head>
+		<meta name="ROBOTS" content="NOFOLLOW,NOARCHIVE,NOSNIPET,NOIMAGEINDEX,NOCACHE">
+		<title>Real-time Xonotic Listings for Server 139.59.208.244:26000</title> <!-- this won't show up if it was previously set by inclusion -->
+		<link rel="stylesheet" href="game/xonotic.css" type="text/css">
+		<link rel="shortcut icon" type="icon" href="game/xonotic.ico">
+
+		
+		<script type="text/javascript">
+			function showplayers(id)
+			{
+				document.getElementById("players_" + id).style.display = "inline";
+				document.getElementById("show_" + id).style.display = "none";
+				document.getElementById("hide_" + id).style.display = "inline";
+			}
+			function hideplayers(id)
+			{
+				document.getElementById("players_" + id).style.display = "none";
+				document.getElementById("show_" + id).style.display = "inline";
+				document.getElementById("hide_" + id).style.display = "none";
+			}
+			var mp = "players_";
+			var ms = "show_";
+			var mh = "hide_";
+			function showallplayers()
+			{
+				var divs = document.getElementsByTagName('div');
+				for (var i=0;i<divs.length;i++)
+				{
+					if ((divs[i].id.length >= mp.length)&&(divs[i].id.substring(0,mp.length) == mp))
+						divs[i].style.display = "inline";
+				}
+				var ahrefs = document.getElementsByTagName('a');
+				for (var i=0;i<ahrefs.length;i++)
+				{
+					if ((ahrefs[i].id.length >= ms.length)&&(ahrefs[i].id.substring(0,ms.length) == ms))
+						ahrefs[i].style.display = "none";
+					else if ((ahrefs[i].id.length >= mh.length)&&(ahrefs[i].id.substring(0,mh.length) == mh))
+						ahrefs[i].style.display = "inline";
+				}
+				if (document.getElementById("showplayers")) document.getElementById("showplayers").style.display = "none";
+				if (document.getElementById("hideplayers")) document.getElementById("hideplayers").style.display = "inline";
+			}
+			function hideallplayers()
+			{
+				var divs = document.getElementsByTagName('div');
+				for (var i=0;i<divs.length;i++)
+				{
+					if ((divs[i].id.length >= mp.length)&&(divs[i].id.substring(0,mp.length) == mp))
+						divs[i].style.display = "none";
+				}
+				var ahrefs = document.getElementsByTagName('a');
+				for (var i=0;i<ahrefs.length;i++)
+				{
+					if ((ahrefs[i].id.length >= ms.length)&&(ahrefs[i].id.substring(0,ms.length) == ms))
+						ahrefs[i].style.display = "inline";
+					else if ((ahrefs[i].id.length >= mh.length)&&(ahrefs[i].id.substring(0,mh.length) == mh))
+						ahrefs[i].style.display = "none";
+				}
+				if (document.getElementById("showplayers")) document.getElementById("showplayers").style.display = "inline";
+				if (document.getElementById("hideplayers")) document.getElementById("hideplayers").style.display = "none";
+			}
+			function showheader() { document.getElementById("server_header").style.display = "inline"; }
+			function hideheader() { document.getElementById("server_header").style.display = "none"; }
+			function showrules() { document.getElementById("server_rules").style.display = "inline"; }
+			function hiderules() { document.getElementById("server_rules").style.display = "none"; }
+		</script>
+	
+	
+	</head>
+	<body class="fullpage"> <!-- hack, this is only used if your page doesn't have it set already, and it better! !-->
+
+		
+
+		<div class="serverlist">
+
+	
+		<p class="header">Game Selection: <a href="?game=transfusion">Transfusion</a> - <a href="?game=xonotic">Xonotic</a> - <a href="?game=nexuiz">Nexuiz</a> - <a href="?game=openarena">Open Arena</a> - <a href="?game=warsow">Warsow</a> - <a href="?game=warfork">Warfork</a> - <a href="?game=quake">Quake</a> - <a href="?game=urbanterror">Urban Terror</a> - <a href="?game=tremulous">Tremulous</a></p>
+
+		<div id="server_header"><div style="float: left; width: 385px; text-align: center;"><p style="vertical-align: middle;"><img src="game/xonotic.png" title="Xonotic: spillway_q3" alt="Xonotic: spillway_q3" /></p></div><div style="float: left; width: 385px;"><p style="vertical-align: middle;" class="serverlist"><div style="float: left; width: 100px;">Server:</div><div>139.59.208.244:26000</div><div style="float: left; width: 100px;">Game:</div><div><a href=http://xonotic.org>Xonotic</a></div><div style="float: left; width: 100px;">Map:</div><div>spillway_q3</div><div style="float: left; width: 100px;">Header:</div><div>[<a href="javascript:showheader()">show</a>, <a href="javascript:hideheader()">hide</a>]</div><div style="float: left; width: 100px;">Players:</div><div>[<a href="javascript:showallplayers()">show</a>, <a href="javascript:hideallplayers()">hide</a>]</div><div style="float: left; width: 100px;">Rules:</div><div>[<a href="javascript:showrules()">show</a>, <a href="javascript:hiderules()">hide</a>]</div></p></div></div><div style="clear: both;">Server reply:<br />
+<div style="float: left;">&nbsp;&nbsp;&nbsp;</div><div id="address" class="serverlistheader"><a href="?game=xonotic&sort=address">ADDRESS</a></div><div id="players" class="serverlistheader"><a href="?game=xonotic">PLAYERS</a></div><div id="map" class="serverlistheader"><a href="?game=xonotic&sort=map">MAP</a></div><div id="gametype" class="serverlistheader"><a href="?game=xonotic&sort=gametype">GAMETYPE</a></div><div id="name" class="serverlistheader"><a href="?game=xonotic&sort=name">NAME</a></div><br />
+<div style="clear: both;"><a id="show_1" href="javascript:showplayers(1)" style="float: left; display: none;">+&nbsp;</a><a id="hide_1" href="javascript:hideplayers(1)" style="float: left;">-&nbsp;</a><a href="xonotic://139.59.208.244:26000"><span><div id="address">139.59.208.244:26000</div><div id="players">0/20</div><div id="map">spillway_q3</div><div id="gametype">dm</div><div id="name">Pulina.fi [Votable + Hooks + Jet pack + Vehicles]</div></span></a></div><br />
+<br />
+<div id="players_1"></div>
+<br /><div id="server_rules">
+Server Rules:<br />
+<div style="float: left; width: 150px;">bots</div><div>0</div>
+<div style="float: left; width: 150px;">d0_blind_id</div><div>1 ymwzIFAq2HfU3Bm9yenrxGPgH6OYZ+yVkCTKPVf8sg4=@Xon//KssdlzGkFKdnnN4sgg8H+koTbBn5JTi37BAW1Q= @~XHub/MCjSOklCBU4ADlHX3+EcTjC0xhJ6odguyTvGp0=</div>
+<div style="float: left; width: 150px;">gamename</div><div>Xonotic</div>
+<div style="float: left; width: 150px;">gameversion</div><div>802</div>
+<div style="float: left; width: 150px;">hostname</div><div>Pulina.fi [Votable + Hooks + Jet pack + Vehicles]</div>
+<div style="float: left; width: 150px;">modname</div><div>data</div>
+<div style="float: left; width: 150px;">protocol</div><div>3</div>
+<div style="float: left; width: 150px;">qcstatus</div><div>dm:git:P1:S20:F5:MXonotic::score!!</div>
+</div><p style="size: -1;">Powered by QStat 2.11 & dpmaster.deathmask.net Master Server list</p>
+
+		</div>
+ 
+	</body>
+</html>
+	

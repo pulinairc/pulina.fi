@@ -1,4 +1,4 @@
-/*! pulina 04-03-2020 18:41 - Roni Laukkarinen */
+/*! pulina 05-03-2020 19:07 - Roni Laukkarinen */
 /*! jQuery v1.10.2 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery-latest.min.map
 */
@@ -6913,7 +6913,6 @@ const playerOptions = {
   // And playlist value equal to your currently playing video
   loop: 1,
   playlist: bgVideoID,
-  
 }
 
 // Get the video overlay, to mask it when the video is loaded
@@ -6921,7 +6920,6 @@ const videoOverlay = document.querySelector('.js-video-overlay');
 
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.
-let ytPlayer;
 function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player('yt-player', {
     width: '1280',
@@ -6931,6 +6929,64 @@ function onYouTubeIframeAPIReady() {
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
+    }
+  });
+
+  ytPlayer = new YT.Player('yt-player-xonotic', {
+    width: '1280',
+    height: '720',
+    videoId: 'DKvh_IwG7o4',
+    playerVars: {
+      // Autoplay + mute has to be activated (value = 1) if you want to autoplay it everywhere 
+      // Chrome/Safari/Mobile
+      autoplay: 1,
+      mute: 1,
+      autohide: 1, 
+      modestbranding: 1, 
+      rel: 0, 
+      showinfo: 0, 
+      controls: 0, 
+      disablekb: 1, 
+      enablejsapi: 1, 
+      iv_load_policy: 3,
+      startAt: 260,
+      // For looping video you have to have loop to 1
+      // And playlist value equal to your currently playing video
+      loop: 1,
+      playlist: 'DKvh_IwG7o4',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    }
+  });
+
+  ytPlayer = new YT.Player('yt-player-skribbl', {
+    width: '1280',
+    height: '720',
+    videoId: '_SQmdP-Dvag',
+    playerVars: {
+      // Autoplay + mute has to be activated (value = 1) if you want to autoplay it everywhere 
+      // Chrome/Safari/Mobile
+      autoplay: 1,
+      mute: 1,
+      autohide: 1, 
+      modestbranding: 1, 
+      rel: 0, 
+      showinfo: 0, 
+      controls: 0, 
+      disablekb: 1, 
+      enablejsapi: 1, 
+      iv_load_policy: 3,
+      startAt: 0,
+      // For looping video you have to have loop to 1
+      // And playlist value equal to your currently playing video
+      loop: 1,
+      playlist: '_SQmdP-Dvag',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
     }
   });
 }
@@ -6970,6 +7026,7 @@ function onPlayerStateChange(event) {
 
   $(document).ready(function(){
 
+    if($('.screenshot').length) {
     $(window).scroll(function(){
       // This is then function used to detect if the element is scrolled into view
       function elementScrolled(elem) {
@@ -6983,7 +7040,9 @@ function onPlayerStateChange(event) {
         $('.screenshot').addClass('animate');
       }
     });
+    }
 
+    if($('a[href^="#"]').length) {
     // Smooth scroll to ID on any anchor link
     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
@@ -6997,6 +7056,7 @@ function onPlayerStateChange(event) {
             window.location.hash = target;
         });
     });
+    }
 
     // IRC-scroller
     $('.slide-irclog, .irclog, .slide-placeholder').css('height', window.innerHeight);
