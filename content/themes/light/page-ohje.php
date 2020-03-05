@@ -57,7 +57,7 @@ get_header(); ?>
 	<div class="containercol">
 					
 		<div class="logocol">
-			<img src="<?php echo get_home_url(); ?>/content/uploads/2010/06/Microsoft_windows_8_logo_by_n_studios_2-d5keldy-150x150.png	" alt="Softan logo" />
+			<img src="<?php echo get_template_directory_uri(); ?>/images/windows.png" alt="Softan logo" />
 		</div>					
 	
 		<div class="softa">
@@ -79,7 +79,7 @@ get_header(); ?>
 	<div class="containercol">
 					
 		<div class="logocol">
-			<img src="<?php echo get_home_url(); ?>/content/uploads/2010/06/Apple_gray_logo-150x150.png" alt="Softan logo" />
+			<img src="<?php echo get_template_directory_uri(); ?>/images/apple.png" alt="Softan logo" />
 		</div>					
 	
 		<div class="softa">
@@ -123,7 +123,7 @@ get_header(); ?>
 	<div class="containercol">
 					
 		<div class="logocol">
-			<img src="<?php echo get_home_url(); ?>/content/uploads/2010/06/android-icon-150x150.png" alt="android-icon" width="150" height="150" class="alignleft size-thumbnail wp-image-1022" />
+			<img src="<?php echo get_template_directory_uri(); ?>/images/android.png" alt="android-icon" width="150" height="150" class="alignleft size-thumbnail wp-image-1022" />
 		</div>					
 					
 		<div class="softa">
