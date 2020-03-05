@@ -68,7 +68,7 @@ gulp.task('browsersync', function() {
 
   browserSync.init(files, {
     proxy: "pulina.test",
-    browser: "Chromium",
+    browser: null,
     notify: true
   });
 
@@ -168,3 +168,10 @@ gulp.task('watch', ['browsersync'], function() {
   gulp.watch(jsSrc, ['js-watch']);
 
 });
+
+/*
+DEFAULT
+=====
+*/
+
+gulp.task('default', ['watch']);
