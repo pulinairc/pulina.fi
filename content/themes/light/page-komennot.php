@@ -144,6 +144,14 @@ get_header(); ?>
       <a href="https://github.com/pulinairc/statbot/blob/master/scripts/sseen.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
   </div>
+
+  <div class="row">
+    <p>
+      <code>!pelit</code>
+      <span class="description">Ohjaa Pelit-sivulle.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/games.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>  
 </section>
 
 <?php get_footer(); ?>
