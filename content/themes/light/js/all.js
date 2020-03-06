@@ -6909,7 +6909,7 @@ const playerOptions = {
   disablekb: 1, 
   enablejsapi: 1, 
   iv_load_policy: 3,
-  startAt: 260,
+  start: 260,
   // For looping video you have to have loop to 1
   // And playlist value equal to your currently playing video
   loop: 1,
@@ -6962,6 +6962,32 @@ function onYouTubeIframeAPIReady() {
     }
   });
 
+  ytPlayer = new YT.Player('yt-player-red-alert-2', {
+    width: '1280',
+    height: '720',
+    videoId: 'BmYE3JDL59g',
+    playerVars: {
+      // Autoplay + mute has to be activated (value = 1) if you want to autoplay it everywhere 
+      // Chrome/Safari/Mobile
+      autoplay: 1,
+      mute: 1,
+      autohide: 1, 
+      modestbranding: 1, 
+      rel: 0, 
+      start: 30,
+      showinfo: 0, 
+      controls: 0, 
+      disablekb: 1, 
+      enablejsapi: 1, 
+      iv_load_policy: 3,
+      startAt: 30,
+      // For looping video you have to have loop to 1
+      // And playlist value equal to your currently playing video
+      loop: 1,
+      playlist: 'BmYE3JDL59g'
+    }
+  });
+
   ytPlayer = new YT.Player('yt-player-skribbl', {
     width: '1280',
     height: '720',
@@ -6979,7 +7005,7 @@ function onYouTubeIframeAPIReady() {
       disablekb: 1, 
       enablejsapi: 1, 
       iv_load_policy: 3,
-      startAt: 0,
+      start: 0,
       // For looping video you have to have loop to 1
       // And playlist value equal to your currently playing video
       loop: 1,

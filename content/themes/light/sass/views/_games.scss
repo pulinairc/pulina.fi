@@ -73,8 +73,8 @@
   }
 
   &.shade-darker:after {
-    opacity: .66;
-    background: #333;
+    opacity: .8;
+    background: rgba(#222, .8);
   }
 
   &.shade-even-darker:after {
@@ -168,6 +168,26 @@
     }
   }
 
+  .background.background-high {
+    padding-bottom: 200%;
+    width: 200%;
+
+    @media (max-width: 1340px) {
+      width: 300%;
+      padding-bottom: 400%;
+    }
+
+    @media (max-width: 900px) {
+      width: 400%;
+      padding-bottom: 500%;
+    }
+
+    @media (max-width: 660px) {
+      width: 900%;
+      padding-bottom: 1050%;
+    }
+  }
+
   .video-overlay {
     top: 0;
     position: absolute;
@@ -200,6 +220,14 @@
   width: auto;
   margin: 0 auto;
   display: inline-block;
+
+  a {
+    text-decoration: underline !important;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
 
   h3 {
     font-size: 80px;

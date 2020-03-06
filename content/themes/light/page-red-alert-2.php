@@ -1,7 +1,17 @@
+<?php
+/**
+ *
+ * Template Name: Red Alert 2
+ *
+ * @package light
+ */
+
+get_header(); ?>
+
 <section class="slide slide-games slide-red-alert-2 shade-darker">
 
   <div data-video="BmYE3JDL59g" class="video js-background-video">
-    <div class="background">
+    <div class="background background-high">
       <div id="yt-player-red-alert-2"></div>
     </div>
   </div>
@@ -31,9 +41,26 @@
       </div>
     </div>
 
+    <div class="how-to">
+      <h3>Näin pelaat</h3>
+
+      <ol>
+        <li>/msg rolle</li>
+        <li>Kerää porukka kasaan IRCissä</li>
+        <li>Asenna Red Alert 2 ja Yuri's Revenge</li>
+        <li><a href="http://mentalomega.com/">Asenna Mental Omega</a></li>
+        <li><a href="http://cncnet.org/red-alert-2">Asenna CnCNet</a></li>
+        <li>Päivitä CncNet</li>
+        <li>Liity huoneeseen #pulina</li>
+        <li>Valitse asetukset ja pelaa</li>
+      </ol>
+    </div>    
+
     <div class="content">
-    <p><a href="<?php echo get_home_url(); ?>/red-alert-2" class="button button-ghost">Näin pelaat</a></p>
+    <p><a href="http://cncnet.org/red-alert-2" class="button button-ghost">Lataa CnCNet</a></p>
     </div>
   </div>
 
 </section><!--/.slide-->
+
+<?php get_footer(); ?>

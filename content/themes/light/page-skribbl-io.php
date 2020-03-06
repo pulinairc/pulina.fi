@@ -26,7 +26,7 @@ get_header(); ?>
       <h3>Näin pelaat</h3>
 
       <ol>
-        <li>Kerää porukka kasaan IRCissä</li></ul>
+        <li>Kerää porukka kasaan IRCissä</li>
         <li>Luo huone</li>
         <li>Sitten vaan peliä!</li>
       </ol>

@@ -29,7 +29,7 @@ $html_listing_url = file_get_html( $xonotic_listing_cachefile );
 <section class="slide slide-games slide-xonotic shade-even-darker">
 
   <div data-video="DKvh_IwG7o4" class="video js-background-video">
-    <div class="background">
+    <div class="background background-high">
       <div id="yt-player-xonotic"></div>
     </div>
   </div>
@@ -68,7 +68,7 @@ $html_listing_url = file_get_html( $xonotic_listing_cachefile );
       <h3>Näin pelaat</h3>
 
       <ol>
-        <li>Kerää porukka kasaan IRCissä</li></ul>
+        <li>Kerää porukka kasaan IRCissä</li>
         <li>Avaa Xonotic</li>
         <li>Hae Pulina.fi</li>
         <li>Liity ja pelaa</li>
