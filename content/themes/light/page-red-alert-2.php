@@ -50,7 +50,7 @@ get_header(); ?>
         <li>Asenna Red Alert 2 ja Yuri's Revenge</li>
         <li><a href="http://mentalomega.com/">Asenna Mental Omega</a></li>
         <li><a href="http://cncnet.org/red-alert-2">Asenna CnCNet</a></li>
-        <li>Päivitä CncNet</li>
+        <li>Päivitä CnCNet</li>
         <li>Liity huoneeseen #pulina</li>
         <li>Valitse asetukset ja pelaa</li>
       </ol>
