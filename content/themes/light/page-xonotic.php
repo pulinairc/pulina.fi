@@ -1,4 +1,14 @@
 <?php
+/**
+ *
+ * Template Name: Xonotic
+ *
+ * @package light
+ */
+
+get_header(); ?>
+
+<?php
 require_once( get_theme_file_path( 'inc/simple_html_dom.php') );
 $xonotic_listing_url = 'http://dpmaster.deathmask.net/?game=xonotic&server=139.59.208.244:26000';
 $xonotic_listing_cachefile = get_theme_file_path( 'inc/cache/xonotic-listing.html' );
@@ -16,7 +26,7 @@ if ( time() - filemtime( $xonotic_listing_cachefile ) > 2 * $xonotic_listing_cac
 
 $html_listing_url = file_get_html( $xonotic_listing_cachefile );
 ?>
-<section class="slide slide-games slide-xonotic shade-darker">
+<section class="slide slide-games slide-xonotic shade-even-darker">
 
   <div data-video="DKvh_IwG7o4" class="video js-background-video">
     <div class="background">
@@ -54,9 +64,22 @@ $html_listing_url = file_get_html( $xonotic_listing_cachefile );
       </div>
     </div>
 
+    <div class="how-to">
+      <h3>Näin pelaat</h3>
+
+      <ol>
+        <li>Kerää porukka kasaan IRCissä</li></ul>
+        <li>Avaa Xonotic</li>
+        <li>Hae Pulina.fi</li>
+        <li>Liity ja pelaa</li>
+      </ol>
+    </div>
+
     <div class="content">
-    <p><a href="<?php echo get_home_url(); ?>/xonotic" class="button button-ghost">Näin pelaat</a></p>
+      <p><a href="https://xonotic.org" class="button button-ghost">Lataa Xonotic</a></p>
     </div>
   </div>
 
 </section><!--/.slide-->
+
+<?php get_footer(); ?>
