@@ -201,7 +201,7 @@ function onPlayerStateChange(event) {
 
     // Fixed navigation waypoint
     $('.firstcontainer').waypoint(function(){
-        $('.burger').toggleClass('invert');
+        $('.hamburger-box').toggleClass('invert');
     }, { offset: '0' } );
 
     // Ticker animation effect

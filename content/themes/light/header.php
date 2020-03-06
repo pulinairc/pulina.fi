@@ -43,10 +43,21 @@
 
 <body <?php body_class(); ?>>
 
-<button id="nav-trigger" class="nav-trigger" aria-controls="nav"><span class="burger-icon burger"></span> <span id="nav-toggle-label" class="screen-reader-text"><?php esc_html_e( 'Menu', 'light' ); ?></span></button>
+<button id="nav-toggle" class="nav-toggle nav-trigger hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+  <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
+</button>
+
 <nav id="sidenav" class="side-nav sidenav s-container ps-active-y" aria-expanded="false" tabindex="-1">
 
-  <button class="nav-trigger" aria-controls="nav"><span class="burger-icon burger"></span> <span id="nav-toggle-label" class="screen-reader-text"><?php esc_html_e( 'Menu', 'light' ); ?></span></button>
+  <button id="nav-toggle" class="nav-toggle nav-trigger hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
+  </button>
 
   <?php
     wp_nav_menu( array(

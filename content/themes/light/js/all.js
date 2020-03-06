@@ -1,4 +1,4 @@
-/*! pulina 05-03-2020 19:07 - Roni Laukkarinen */
+/*! pulina 06-03-2020 08:02 - Roni Laukkarinen */
 /*! jQuery v1.10.2 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 //@ sourceMappingURL=jquery-latest.min.map
 */
@@ -2748,7 +2748,7 @@ Prism.languages.git = {
     // Set up vars.
     page       = $( 'body' );
     mainNav    = page.find( '#sidenav' );
-    menuButton = page.find( '#nav-trigger' );
+    menuButton = page.find( '#nav-toggle' );
     menuToggle = page.find( '.nav-trigger' );
 
     /**
@@ -2769,6 +2769,7 @@ Prism.languages.git = {
       menuToggle.on( 'click', function( event ) {
 
         $( '.nav-trigger .burger' ).toggleClass('opened');
+        $( '.nav-trigger' ).toggleClass('is-active');
 
         var findInsiders = function(elem) {
 
@@ -7087,7 +7088,7 @@ function onPlayerStateChange(event) {
 
     // Fixed navigation waypoint
     $('.firstcontainer').waypoint(function(){
-        $('.burger').toggleClass('invert');
+        $('.hamburger-box').toggleClass('invert');
     }, { offset: '0' } );
 
     // Ticker animation effect

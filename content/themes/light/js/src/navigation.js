@@ -11,7 +11,7 @@
     // Set up vars.
     page       = $( 'body' );
     mainNav    = page.find( '#sidenav' );
-    menuButton = page.find( '#nav-trigger' );
+    menuButton = page.find( '#nav-toggle' );
     menuToggle = page.find( '.nav-trigger' );
 
     /**
@@ -32,6 +32,7 @@
       menuToggle.on( 'click', function( event ) {
 
         $( '.nav-trigger .burger' ).toggleClass('opened');
+        $( '.nav-trigger' ).toggleClass('is-active');
 
         var findInsiders = function(elem) {
 
