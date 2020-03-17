@@ -28,7 +28,7 @@ body {
 
       @media (max-width: $container-ipad) {
         @include stack();
-        text-align: left;
+        text-align: left !important;
       }
     }
   }
