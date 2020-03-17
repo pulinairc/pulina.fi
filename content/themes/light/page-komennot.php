@@ -151,7 +151,63 @@ get_header(); ?>
       <span class="description">Ohjaa Pelit-sivulle.</span>
       <a href="https://github.com/pulinairc/kummitus/blob/master/modules/games.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
-  </div>  
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!corona <span>finland</span></code>
+      <span class="description">Hakee koronavirukseen (COVID-19) liittyviä määriä.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/corona.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>    
+
+  <div class="row">
+    <p>
+      <code>!ud <span>word</span></code>
+      <span class="description">Selittää englanninkielisen sanan Urban Dictionarysta.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/ud.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!us <span>sana</span></code>
+      <span class="description">Selittää suomenkielisen sanan Urbaanista Sanakirjasta.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/urbaanisanakirja.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!sk <span>:fi :en käännettävä lause</span></code>
+      <span class="description">Kääntää lauseita eri kielille maatunnuksia hyödyntämällä.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/sanakirja-org.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!bmi <span>60 1.90</span></code>
+      <span class="description">Kertoo painoindeksin painon ja pituuden perusteella.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/bmi.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>     
+
+  <div class="row">
+    <p>
+      <code>!np <span>rolle-</span></code>
+      <span class="description">Kertoo mitä juuri nyt soi, jos Last.fm käytössä.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/lastfm.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>   
+
+  <div class="row">
+    <p>
+      <code>!kuha</code>
+      <span class="description">Satunnainen lannistajakuha.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/kuha.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>   
 </section>
 
 <?php get_footer(); ?>
