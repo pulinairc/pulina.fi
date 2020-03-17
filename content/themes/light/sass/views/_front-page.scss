@@ -588,6 +588,11 @@
     font-family: $font-alt;
     text-align: center;
 
+    .container,
+    * {
+      overflow: visible;
+    }
+
     .numero {
       @include column(1/4);
 
