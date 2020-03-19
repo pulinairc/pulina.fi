@@ -60,7 +60,7 @@ get_header(); ?>
   <div class="row">
     <p>
       <code>!lmgtfy <span>sana</span></code>
-      <span class="description">Googlaa sanan sarkastiseen sävyyn.</span>
+      <span class="description">Myös !kvg. Googlaa sanan sarkastiseen sävyyn.</span>
       <a href="https://github.com/pulinairc/kummitus/blob/master/modules/lmgtfy.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
   </div>
@@ -116,8 +116,8 @@ get_header(); ?>
   <div class="row">
     <p>
       <code>!pvm</code>
-      <span class="description">Kertoo päivän, viikon ja nimipäivät.</span>
-      <a href="https://github.com/pulinairc/statbot/blob/master/scripts/pvm.tcl" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      <span class="description">Kertoo päivän, viikon ja nimipäivät. Toimii myös !tänään.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/almanakka.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
   </div>
 
@@ -207,7 +207,15 @@ get_header(); ?>
       <span class="description">Satunnainen lannistajakuha.</span>
       <a href="https://github.com/pulinairc/kummitus/blob/master/modules/kuha.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
-  </div>   
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!moti</code>
+      <span class="description">Satunnainen motivaatiovalas.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/motivaatiovalas.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>    
 </section>
 
 <?php get_footer(); ?>
