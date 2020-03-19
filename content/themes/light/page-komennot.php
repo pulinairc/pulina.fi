@@ -216,6 +216,14 @@ get_header(); ?>
       <a href="https://github.com/pulinairc/kummitus/blob/master/modules/motivaatiovalas.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
   </div>    
+
+  <div class="row">
+    <p>
+      <code>!pakko</code>
+      <span class="description">Pakko ottaa.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/pakko.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>   
 </section>
 
 <?php get_footer(); ?>
