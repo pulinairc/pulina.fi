@@ -507,8 +507,7 @@ foreach ($items as $key => $item) {
 
 <p style="text-align: left;">Listaan lasketaan tänään aktiivisena olleet. Päivittyy täysin reaaliajassa.</p>
 
-    <h2>Lisää tilastoja</h2>
-    <p>Katso myös nämä: <a href="https://peikko.us/statsit/pulina/">pisg</a>, <a href="https://pulina.fi/sss/">superseriousstats</a>, <a href="http://ircstats.nytsoi.net/pulina.html">mIRCStats</a></p><br /><br />
+    <br /><br /><br /><br />
 
   </div>
 </div>
