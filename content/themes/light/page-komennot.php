@@ -223,7 +223,16 @@ get_header(); ?>
       <span class="description">Pakko ottaa.</span>
       <a href="https://github.com/pulinairc/kummitus/blob/master/modules/pakko.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
     </p>
-  </div>   
+  </div>
+
+  <div class="row">
+    <p>
+      <code>!imdb <span>elokuvan nimi</span></code>
+      <span class="description">Kertoo leffan tiedot.</span>
+      <a href="https://github.com/pulinairc/kummitus/blob/master/modules/imdb.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+    </p>
+  </div>  
+
 </section>
 
 <?php get_footer(); ?>
