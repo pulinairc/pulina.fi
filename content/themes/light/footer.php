@@ -11,7 +11,7 @@
 		<p>Kanavalla irkkaavat tekevät pulinan.</p>
 	</div>
 	<div class="col">
-		<p>Est 2008. <code>/join #pulina</code></p>
+		<p><span class="mode">Channel settings: +stnNTl. #pulina is created Tue Apr  8 13:11:22 2008.</span> <code>/join #pulina</code></p>
 	</div>	
 </footer>
 
