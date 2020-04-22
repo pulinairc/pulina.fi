@@ -75,12 +75,61 @@ get_header(); ?>
 		<p><a href="<?php echo get_page_link(6); ?>" class="button button-ghost">Lue lisää Pulinan historiasta</a></p>
 
     <div id="placement">
-		<?php if(strtotime('2020-04-22 23:59') > time() ) { ?>
+      <?php $args = array(
+        'post_type' => 'ads',
+        'posts_per_page' => 1,
+        'no_found_rows' => true,
+        'post_status' => 'publish',
+      );
 
-			<div class="mainox ad textad">
-				<p>Pulinat pois ja parhaita <a href="http://www.eurokasinot.net/rahapelit">rahapelejä</a>  kokeilemaan. Siis paras mesta pelailla rahapelejä jos sellainen harrastus kiinnostaa, on tietenkin <a href="http://casinoarvostelut.com/">netticasinot</a>. Ennen kun alat pelaamaan kannattaa etsiä käsiisi parhaat <a href="http://www.parascasino.com/bonukset">casino bonukset</a>. Älähän uppoudu tähän puuhaan kuitenkaan liika ja jos tuntuu, että mopo karkaa käsistä turvaudu <a href="http://keskustelu.suomi24.fi/terveys/paihteet-ja-riippuvuudet/peliriippuvuus">tukeen</a> ystävälliseen <a href="http://www.peluuri.fi/">apuun</a>.</p>
-			</div>
-		<?php } ?>
+      $ad = new WP_Query( $args );
+      if ( $ad->have_posts() ) :
+        while ( $ad->have_posts() ) :
+          $ad->the_post();
+
+          if ( 'etusivu' === get_field( 'slotti' ) ) :
+            if ( strtotime( get_field( 'eraantymispaiva' ) ) > time() ) : ?>
+
+              <div class="advertisement ad advert textad">
+                <div class="ad-top ad textad">
+                  <?php echo get_field( 'mainoskoodi' ); // WPCS: XSS OK. ?>
+                </div><!-- .textad -->
+              </div><!-- .ad -->
+
+              <?php
+            endif;
+          endif;
+        endwhile;
+      endif; ?>
+    </div>
+
+    <div id="placement">
+      <?php $args = array(
+        'post_type' => 'ads',
+        'posts_per_page' => 1,
+        'no_found_rows' => true,
+        'post_status' => 'publish',
+      );
+
+      $ad = new WP_Query( $args );
+      if ( $ad->have_posts() ) :
+        while ( $ad->have_posts() ) :
+          $ad->the_post();
+
+          if ( 'etusivu' === get_field( 'slotti' ) ) :
+            if ( strtotime( get_field( 'eraantymispaiva' ) ) > time() ) : ?>
+
+              <div class="advertisement ad advert textad">
+                <div class="ad-top ad textad">
+                  <?php echo get_field( 'mainoskoodi' ); // WPCS: XSS OK. ?>
+                </div><!-- .textad -->
+              </div><!-- .ad -->
+
+              <?php
+            endif;
+          endif;
+        endwhile;
+      endif; ?>
     </div>
 
 	</div>
