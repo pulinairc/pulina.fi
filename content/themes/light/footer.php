@@ -11,7 +11,7 @@
 		<p>Kanavalla irkkaavat tekevät pulinan.</p>
 	</div>
 	<div class="col">
-		<p><span class="mode">Channel settings: +stnNTl. #pulina is created Tue Apr  8 13:11:22 2008.</span> <code>/join #pulina</code></p>
+		<p>Est 2008. <code>/join #pulina</code></p>
 	</div>	
 </footer>
 
@@ -20,6 +20,19 @@
 <?php wp_footer(); ?>
 
 </div><!-- #content -->
+
+<script>
+$( document ).ready(function() {
+$('#toptod-content').fadeIn();
+$("#toptod-content").load('https://peikko.us/toptod-content.php');
+var refreshId = setInterval(function() {
+$("#toptod-content").load('https://peikko.us/toptod-content.php',
+  function() {
+    $("#content").fadeIn();
+}
+);}, 1000);
+});
+</script>
 
 </body>
 </html>
