@@ -23,10 +23,10 @@
 
 <script>
 $( document ).ready(function() {
-$('#toptod-content').fadeIn();
-$("#toptod-content").load('https://peikko.us/toptod-content.php');
+$('#toptod').fadeIn();
+$("#toptod").load('https://peikko.us/toptod-content.php');
 var refreshId = setInterval(function() {
-$("#toptod-content").load('https://peikko.us/toptod-content.php',
+$("#toptod").load('https://peikko.us/toptod-content.php',
   function() {
     $("#content").fadeIn();
 }

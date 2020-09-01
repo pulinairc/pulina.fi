@@ -107,7 +107,7 @@ get_header(); ?>
 
 </div><!-- .slide-esittely -->
 
-<div id="toptod-content">
+<div id="toptod">
 <div class="slide slide-halloffame">
   <div class="bg"></div>
 
