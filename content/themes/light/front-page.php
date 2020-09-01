@@ -44,7 +44,7 @@ get_header(); ?>
       <a class="link" href="https://www.mirc.com/" aria-label="mIRC"><?php include get_theme_file_path( '/svg/mirc.svg' ); ?></a>
       <a class="link" href="https://irssi.org/" aria-label="Irssi"><?php include get_theme_file_path( '/svg/irssi.svg' ); ?></a>
       <!-- <a class="link" href="https://weechat.org/" aria-label="WeeChat"><?php include get_theme_file_path( '/svg/weechat.svg' ); ?></a> -->
-      <a class="link" href="https://chat.pulina.fi" aria-label="The Lounge"><?php include get_theme_file_path( '/svg/thelounge.svg' ); ?></a>
+      <a class="link thelounge" href="https://chat.pulina.fi" aria-label="The Lounge"><?php include get_theme_file_path( '/svg/thelounge.svg' ); ?></a>
     </div>
   </div>
 </div>

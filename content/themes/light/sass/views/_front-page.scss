@@ -626,6 +626,12 @@
     overflow: visible;
   }
 
+  .link.thelounge {
+    @media (min-width: 480px) { 
+      margin-left: -10px;
+    }
+  }
+
   .col {
     @include column(1/2, $offset: 1/2);
     overflow: visible;
