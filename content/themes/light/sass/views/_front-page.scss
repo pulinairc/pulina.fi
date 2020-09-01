@@ -622,8 +622,13 @@
 .slide-irc-clients.slide {
   overflow: hidden;
 
+  .container {
+    overflow: visible;
+  }
+
   .col {
     @include column(1/2, $offset: 1/2);
+    overflow: visible;
     padding-top: 7rem;
     padding-bottom: 7rem;
 
