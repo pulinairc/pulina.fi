@@ -627,6 +627,11 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
 
+    @media (min-width: 480px) { 
+      width: 55.5%;
+      margin-left: 47.5%;
+    }
+
     @media (max-width: 700px) {
       padding-top: 3rem;
       padding-bottom: 3rem;
