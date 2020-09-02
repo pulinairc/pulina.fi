@@ -235,6 +235,55 @@ get_header(); ?>
         <a href="https://github.com/pulinairc/kummitus/blob/master/modules/imdb.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
       </p>
     </div>
+
+    <div class="row">
+      <p>
+        <code>!next <span>The Walking Dead</span></code>
+        <span class="description">Kertoo seuraavan episodin ilmestymisajankohdan.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/tvmaze.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row">
+      <p>
+        <code>!puhu</code>
+        <span class="description">Tekoäly/talkbot.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/talk.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row">
+      <p>
+        <code>!shrug</code>
+        <span class="description">\_(ツ)_/</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/shrug.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row">
+      <p>
+        <code>!nfact</code>
+        <span class="description">Satunnainen numerofakta.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/nfact.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row">
+      <p>
+        <code>!tfact</code>
+        <span class="description">Tähän päivään liittyvä fakta.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/tfact.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row" style="display: none;">
+      <p>
+        <code>!nsfw</code>
+        <span class="description">Tarkistaa onko linkki <i>not safe for work</i> eli vääränlainen avata työpaikalla.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/nsfw.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
   </div>
 
 </section>
