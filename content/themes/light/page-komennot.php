@@ -87,7 +87,7 @@ get_header(); ?>
     <div class="row">
       <p>
         <code>!muistuta <span>02:00 nukkumaan</span></code>
-        <span class="description">Muistuttaa asioista haluttuun aikaan.</span>
+        <span class="description">Muistuttaa asioista haluttuun aikaan. Toimii myös esim. !muistuta 2min mikro</span>
         <a href="https://github.com/pulinairc/kummitus/blob/master/modules/remind.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
       </p>
     </div>
@@ -281,6 +281,14 @@ get_header(); ?>
         <code>!nsfw</code>
         <span class="description">Tarkistaa onko linkki <i>not safe for work</i> eli vääränlainen avata työpaikalla.</span>
         <a href="https://github.com/pulinairc/kummitus/blob/master/modules/nsfw.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
+      </p>
+    </div>
+
+    <div class="row">
+      <p>
+        <code>!yt hakusana</code>
+        <span class="description">Hakee ensimmäisenä hakusanalla löytyvän YouTube-videon.</span>
+        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/yt-haku.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
       </p>
     </div>
 
