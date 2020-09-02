@@ -28,3 +28,7 @@ dandelion.yml
 .config.codekit
 media
 public_html
+.DS_Store
+content/.DS_Store
+content/themes/.DS_Store
+content/themes/light/.DS_Store

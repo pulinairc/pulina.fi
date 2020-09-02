@@ -31,7 +31,7 @@ get_header(); ?>
 </div>
 
 <div class="slide slide-irc-clients" id="aloita">    
-  <img class="screenshot" src="<?php echo get_template_directory_uri(); ?>/images/irccloud.png" alt="IRCCloud-kuvankaappaus" />
+  <img class="screenshot" src="<?php echo get_template_directory_uri(); ?>/images/thelounge.png" alt="Kuvankaappaus The Lounge IRC-clientistä" />
 
   <div class="container">    
     <div class="col">
