@@ -246,14 +246,6 @@ get_header(); ?>
 
     <div class="row">
       <p>
-        <code>!puhu</code>
-        <span class="description">Tekoäly/talkbot.</span>
-        <a href="https://github.com/pulinairc/kummitus/blob/master/modules/talk.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
-      </p>
-    </div>
-
-    <div class="row">
-      <p>
         <code>!shrug</code>
         <span class="description">\_(ツ)_/</span>
         <a href="https://github.com/pulinairc/kummitus/blob/master/modules/shrug.py" aria-label="Lähdekoodi"><?php include get_theme_file_path( '/svg/github.svg' ); ?></a>
