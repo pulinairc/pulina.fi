@@ -70,8 +70,7 @@ $html_listing_url = file_get_html( $xonotic_listing_cachefile );
       <ol>
         <li>Kerää porukka kasaan IRCissä</li>
         <li>Avaa Xonotic</li>
-        <li>Hae Pulina.fi</li>
-        <li>Liity ja pelaa</li>
+        <li>Liity <a style="margin-left: 7px; margin-right: 7px;" href="http://dpmaster.deathmask.net/?game=xonotic&server=135.181.93.2:26000">palvelimelle</a> ja pelaa!</li>
       </ol>
     </div>
 
