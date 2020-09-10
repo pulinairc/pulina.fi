@@ -10,7 +10,7 @@ get_header(); ?>
 
 <?php
 require_once( get_theme_file_path( 'inc/simple_html_dom.php') );
-$xonotic_listing_url = 'http://dpmaster.deathmask.net/?game=xonotic&server=139.59.208.244:26000';
+$xonotic_listing_url = 'http://dpmaster.deathmask.net/?game=xonotic&server=135.181.93.2:26000';
 $xonotic_listing_cachefile = get_theme_file_path( 'inc/cache/xonotic-listing.html' );
 $xonotic_listing_cachetime = 900;
 
