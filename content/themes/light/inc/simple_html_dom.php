@@ -2043,6 +2043,7 @@ class simple_html_dom
                     if ($this->char != '>') { $this->char = $this->doc[--$this->pos]; } // prev
                 }
 
+ini_set('memory_limit', '-1');
                 $node->_[HDOM_INFO_SPACE][] = $space;
 
                 // prepare for next attribute
@@ -2120,8 +2121,10 @@ class simple_html_dom
             $value = trim($value);
         }
 
+ini_set('memory_limit', '-1');
         if (!$is_duplicate) {
             $node->_[HDOM_INFO_QUOTE][] = $quote_type;
+ini_set('memory_limit', '-1');
             $node->attr[$name] = $value;
         }
     }
@@ -2131,6 +2134,7 @@ class simple_html_dom
         $node->parent = $this->parent;
         $this->parent->nodes[] = $node;
         if ($is_child) {
+ini_set('memory_limit', '-1');
             $this->parent->children[] = $node;
         }
     }
