@@ -180,6 +180,10 @@ body {
     height: calc(100vh + 100px);
     max-height: calc(100vh + 100px);
 
+    @media (max-width: $container-mobile) {
+      padding-top: 20px;
+    }
+
     @media (max-width: 300px) {
       width: 100%;
     }
@@ -238,6 +242,10 @@ body {
       border-bottom: 1px solid rgba(#fff, .05);
       position: relative;
       color: #fff;
+
+      @media (max-width: $container-mobile) {
+        padding: 5px 20px;
+      }
 
       &:hover {
         color: $color-links;
@@ -332,6 +340,11 @@ body {
     .nav-trigger {
       top: 52px;
       left: 52px;
+
+      @media (max-width: $container-mobile) {
+        top: 20px;
+        left: 20px;
+      }
     }
   }
 
