@@ -805,10 +805,9 @@ if(isset($_GET['time'])) {
 }
 
 body {
-    font-family: "Menlo", Monospace, Courier, "Courier New";
-    font-size: 12px;
-    color: #cccccc;
-    background: #26292C;
+    font: 14px -apple-system, 'Menlo', 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
+    color: rgba(248, 248, 242, 0.77);
+    background: #282a36;
 }
 
 span.message {
@@ -817,14 +816,9 @@ span.message {
     overflow:hidden;
 }
 
-p, td {
-    font-family: "Menlo", Monospace, Courier, "Courier New";
-    font-size: 12px;
-    color: #cccccc;
-}
 /* Timestamp */
-td:first-child {
-    color: #454849;
+.timestamp {
+    color: #6272a4 !important;
 }
 
 a:link, a:visited, a:active {
@@ -913,7 +907,7 @@ function buildLayout() {
         setStyle(workTR);
 
         var timeTD=document.createElement("TD");
-        setText(timeTD, "["+unixtimetodate(xmlResult[1][f])+"]");
+        setText(timeTD, "<span class='timestamp'>["+unixtimetodate(xmlResult[1][f])+"]</span>");
         workTR.appendChild(timeTD);
 
         var nickTD=document.createElement("TD");
