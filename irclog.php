@@ -1,4 +1,10 @@
 <?php
+
+// array of first names
+define('NAMES', explode("\n", file_get_contents(__DIR__.'/scroller_data/nimilista.txt')));
+// name count minus one to ignore empty name at the end of the name list
+define('NAME_COUNT', count(NAMES) - 1);
+
 // kate: space-indent true; encoding utf-8; indent-width 4;
 $rev = '$Id$';
 
@@ -245,14 +251,14 @@ function htmlline($str) {
     return $str;
 }
 
-// Create a pseudo anonymous nick from the original nickname
-function nickToAnon($nick){
-    return 'anon'.substr(crc32(md5($nick)), 0, 5);
+// Get a first name from the original nickname
+function nickToFirstName($nick){
+  return NAMES[(int)(substr(crc32(md5($nick)), 0, 5)) % NAME_COUNT];
 }
 
 function formatNick($nick) {
-    // Anonymize the nick
-    $nick = nickToAnon($nick);
+    // Convert the nick
+    $nick = nickToFirstName($nick);
 
     return htmlentities($nick, ENT_QUOTES);
 }
