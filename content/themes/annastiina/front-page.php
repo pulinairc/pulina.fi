@@ -24,12 +24,20 @@ get_header(); ?>
 
 <section class="block block-hero block-hero-fp">
 
-  <div class="irclog-wrapper">
-    <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php" frameborder="0" class="irclog" tabindex="-1"></iframe>
-  </div>
-
   <div class="container">
-    <h1>Pulina</h1>
+    <div class="cols">
+      <div class="col">
+        <h1>Keskustelun taikaa</h1>
+        <p><b>IRCissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa pulinalle!</p>
+      </div>
+
+      <div class="col">
+        <div class="irclog-wrapper">
+          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irclog" tabindex="-1"></iframe>
+          <?php include get_theme_file_path( '/svg/repo-terminal-glow.svg' ); ?>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
