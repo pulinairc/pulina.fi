@@ -48,6 +48,11 @@
   position: relative;
 }
 
+// Whole site
+body {
+  background-color: $color-black;
+}
+
 // Containers
 .container {
   margin: 0 auto;

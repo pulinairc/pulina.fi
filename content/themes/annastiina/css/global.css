@@ -335,7 +335,7 @@ template {
   .screen-reader-text:focus, .gform_body .gform_validation_container:focus {
     background-color: #f5f5f5;
     border-radius: 0;
-    box-shadow: 0 0 2px 2px rgba(34, 34, 34, 0.6);
+    box-shadow: 0 0 2px 2px rgba(7, 7, 7, 0.6);
     clip: auto;
     -webkit-clip-path: none;
             clip-path: none;
@@ -1233,6 +1233,9 @@ a.is-external-link.no-external-link-indicator::after {
   overflow: hidden;
   position: relative; }
 
+body {
+  background-color: #070707; }
+
 .container {
   margin: 0 auto;
   margin-left: auto;
@@ -1572,8 +1575,8 @@ pre {
   .site-footer input[type="submit"].button-ghost,
   .site-footer input[type="button"].button-ghost {
     background-color: transparent;
-    border: 2px solid #222;
-    color: #222; }
+    border: 2px solid #070707;
+    color: #070707; }
   .site-main button.button-small,
   .site-main .button.button-small,
   .site-main input[type="reset"].button-small,
@@ -1718,10 +1721,10 @@ input[type="search"] {
     border: 2px solid #bababa;
     outline: 0; }
     textarea:focus::-moz-placeholder, select:focus::-moz-placeholder, input[type="text"]:focus::-moz-placeholder, input[type="tel"]:focus::-moz-placeholder, input[type="url"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="number"]:focus::-moz-placeholder, input[type="month"]:focus::-moz-placeholder, input[type="week"]:focus::-moz-placeholder, input[type="email"]:focus::-moz-placeholder, input[type="search"]:focus::-moz-placeholder {
-      color: #222;
+      color: #070707;
       opacity: .8; }
     textarea:focus:-ms-input-placeholder, select:focus:-ms-input-placeholder, input[type="text"]:focus:-ms-input-placeholder, input[type="tel"]:focus:-ms-input-placeholder, input[type="url"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, input[type="number"]:focus:-ms-input-placeholder, input[type="month"]:focus:-ms-input-placeholder, input[type="week"]:focus:-ms-input-placeholder, input[type="email"]:focus:-ms-input-placeholder, input[type="search"]:focus:-ms-input-placeholder {
-      color: #222;
+      color: #070707;
       opacity: .8; }
     textarea:focus::placeholder,
     select:focus::placeholder,
@@ -1734,7 +1737,7 @@ input[type="search"] {
     input[type="week"]:focus::placeholder,
     input[type="email"]:focus::placeholder,
     input[type="search"]:focus::placeholder {
-      color: #222;
+      color: #070707;
       opacity: .8; }
 
 select:focus {
@@ -1836,7 +1839,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: #222;
+    color: #070707;
     display: inline-block;
     font-size: var(--font-size-small);
     margin-bottom: .5rem;
@@ -2142,7 +2145,7 @@ ul.tags {
       border-style: solid;
       border-width: 1px 1px 2px;
       box-shadow: none;
-      color: #222;
+      color: #070707;
       display: inline-block;
       font-size: 14px;
       margin-right: .4em;
@@ -2158,7 +2161,7 @@ ul.tags {
   .site-footer .top svg {
     align-items: center;
     display: flex;
-    fill: #222;
+    fill: #070707;
     height: 18px;
     justify-content: center;
     margin: 0;
@@ -2183,7 +2186,7 @@ ul.tags {
   transition: opacity 0.22s 0s, visibility 0s 0.22s;
   z-index: 9999; }
   .site-footer .back-to-top.has-light-bg svg {
-    fill: #222; }
+    fill: #070707; }
   .site-footer .back-to-top.has-dark-bg svg {
     fill: #fff; }
   .site-footer .back-to-top.is-visible, .site-footer .back-to-top.fade-out {
