@@ -21,7 +21,16 @@ $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS[
 get_header(); ?>
 
 <main class="site-main">
-  
+
+<section class="block block-hero">
+
+<iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php" frameborder="0" class="irclog" tabindex="-1"></iframe>
+
+  <div class="container">
+    <h1>Pulina</h1>
+  </div>
+</section>
+
 </main>
 
 <?php get_footer();

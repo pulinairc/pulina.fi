@@ -1,5 +1,7 @@
-// Front page
-//
-// The most important page on the website goes here.
-// You can force the styles by defining them inside
-// the body.
+.irclog {
+  backface-visibility: hidden;
+  border-radius: 10rem;
+  height: 800px;
+  overflow: hidden;
+  width: 100%;
+}
