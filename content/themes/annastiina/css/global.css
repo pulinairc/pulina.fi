@@ -1200,7 +1200,7 @@ a.is-external-link.no-external-link-indicator::after {
       color: white; }
 
 .block {
-  background-color: #fff;
+  background-color: #070707;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2402,7 +2402,7 @@ body *[aria-invalid="true"] {
   overflow: hidden;
   width: 100%; }
 
-.block {
+.block h1 {
   display: none; }
 
 .block-search,
