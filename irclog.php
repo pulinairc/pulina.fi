@@ -820,12 +820,32 @@ if(isset($_GET['time'])) {
        url('fonts/sfmono-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'SF Mono';
+  font-weight: 700;
+  src: url('fonts/sfmono-bold.eot'); /* IE9 Compat Modes */
+  src: url('fonts/sfmono-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/sfmono-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/sfmono-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/sfmono-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/sfmono-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-weight: 300;
+  src: url('fonts/sfmono-light.eot'); /* IE9 Compat Modes */
+  src: url('fonts/sfmono-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/sfmono-light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/sfmono-light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/sfmono-light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/sfmono-light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 body {
     font: 14px 'SF Mono', 'Menlo', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
     color: rgba(248, 248, 242, 0.77);
     background: #0c162d;
 }
-
 span.message {
     /* width: 95%; */
     display:block;
@@ -833,10 +853,12 @@ span.message {
 }
 
 /* Timestamp */
+/* #6272a4 */
 .timestamp {
-    color: #6272a4 !important;
+    color: rgba(98, 114, 164, .5) !important;
 }
 .time-td {
+    font-weight: 300;
     order: 3;
     padding-right: 20px;
     justify-self: flex-end;
@@ -844,6 +866,7 @@ span.message {
 }
 
 .nick-td {
+    font-weight: 700;
     order: 1;
     width: 120px;
     min-width: 120px;
@@ -852,6 +875,7 @@ span.message {
 }
 
 .msg-td {
+    font-weight: 300;
     order: 2;
     display: flex;
     flex-wrap: wrap;
