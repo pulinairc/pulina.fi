@@ -1,7 +1,15 @@
+/* stylelint-disable a11y/no-display-none */
 .irclog {
   backface-visibility: hidden;
   border-radius: 10rem;
+
+  // Temp
+  display: none;
   height: 800px;
   overflow: hidden;
   width: 100%;
+}
+
+.block {
+  display: none;
 }

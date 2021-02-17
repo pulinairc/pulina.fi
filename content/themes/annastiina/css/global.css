@@ -2389,13 +2389,18 @@ body *[aria-invalid="true"] {
   width: 100%; }
 
 /* stylelint-enable selector-class-pattern */
+/* stylelint-disable a11y/no-display-none */
 .irclog {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-radius: 10rem;
+  display: none;
   height: 800px;
   overflow: hidden;
   width: 100%; }
+
+.block {
+  display: none; }
 
 .block-search,
 .block-search-results {
@@ -2436,14 +2441,6 @@ body *[aria-invalid="true"] {
 .block-error-404 h1 {
   font-size: 42px;
   margin-bottom: 2rem; }
-
-.irclog {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  border-radius: 10rem;
-  height: 800px;
-  overflow: hidden;
-  width: 100%; }
 
 .wp-block.is-style-boxed,
 .is-style-boxed {

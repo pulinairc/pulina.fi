@@ -12,17 +12,15 @@ namespace Air_Light;
 <div class="site-branding">
 
   <?php if ( is_front_page() ) : ?>
-    <h1 class="site-title">
+    <h1 class="site-title screen-reader-text">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
-        <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
       </a>
     </h1>
   <?php else : ?>
-    <p class="site-title">
+    <p class="site-title screen-reader-text">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
-        <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
       </a>
     </p>
   <?php endif;
