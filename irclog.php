@@ -836,6 +836,39 @@ span.message {
 .timestamp {
     color: #6272a4 !important;
 }
+.time-td {
+    order: 3;
+    padding-right: 20px;
+    justify-self: flex-end;
+    margin-left: auto;
+}
+
+.nick-td {
+    order: 1;
+    width: 120px;
+    min-width: 120px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.msg-td {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+table,
+td,
+tr {
+    line-height: 1.4;
+}
+
+.work-tr {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 600px;
+    margin: 2px 0;
+}
 
 a:link, a:visited, a:active {
     text-decoration: none;
@@ -920,13 +953,16 @@ function buildLayout() {
         // Array begins with offset 0
 
         workTR=document.createElement("TR");
+        workTR.className = "work-tr";
         setStyle(workTR);
 
         var timeTD=document.createElement("TD");
-        setText(timeTD, "<span class='timestamp'>["+unixtimetodate(xmlResult[1][f])+"]</span>");
+        timeTD.className = "time-td";
+        setText(timeTD, "<span class='timestamp'>"+unixtimetodate(xmlResult[1][f])+"</span>");
         workTR.appendChild(timeTD);
 
         var nickTD=document.createElement("TD");
+        nickTD.className = "nick-td";
         if ( xmlResult[2][f] == "PRIVMSG" ) {
             setText(nickTD, "&lt;"+xmlResult[3][f]+"&gt;");
             nickTD.style.color=colorNick(xmlResult[3][f]);
@@ -939,6 +975,7 @@ function buildLayout() {
         workTR.appendChild(nickTD);
 
         var msgTD=document.createElement("TD");
+        msgTD.className = "msg-td";
         switch (xmlResult[2][f]) {
             case "NICK" :
                 setText(msgTD, "is now known as <span style=\"color: "+colorNick(xmlResult[4][f])+"\">"+xmlResult[4][f]+"</span>");
