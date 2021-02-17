@@ -817,7 +817,7 @@ body {
 }
 
 span.message {
-    width: 95%;
+    /* width: 95%; */
     display:block;
     overflow:hidden;
 }
