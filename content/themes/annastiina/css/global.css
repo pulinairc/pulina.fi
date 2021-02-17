@@ -1502,15 +1502,28 @@ samp {
   font-family: "SF Pro Mono", "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; }
 
 code {
-  background-color: #f9f2f4;
-  border-radius: .3rem;
-  color: #c7254e;
+  background-color: #0b152b;
+  border: 1px solid #252c38;
+  border-radius: 4px;
+  color: #7686a5;
+  display: inline-block;
   font-family: "SF Pro Mono", "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-  font-size: inherit;
-  padding: .37rem .5rem; }
+  font-size: 16px;
+  margin-top: -3px;
+  max-height: 20em;
+  max-width: 95%;
+  overflow-x: auto;
+  padding: 0 3px;
+  transition: all 0.22s;
+  vertical-align: middle; }
   pre code {
     display: inline-block;
     padding: 1.15rem 1rem .85rem; }
+
+code:hover,
+code:focus {
+  background-color: #0b152b;
+  border-color: rgba(118, 134, 165, 0.3); }
 
 pre {
   border-radius: .3rem;
@@ -2448,7 +2461,7 @@ body *[aria-invalid="true"] {
         .block-hero-fp .cols > div:nth-child(2n+2) {
           margin-right: 0; } }
 
-.block-hero-fp .col {
+.block-hero-fp .col-content {
   align-items: center;
   display: flex; }
 
@@ -2463,7 +2476,7 @@ body *[aria-invalid="true"] {
   background-clip: text;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  font-size: 70px;
+  font-size: 72px;
   font-weight: 700;
   -webkit-text-fill-color: transparent; }
 
@@ -2475,28 +2488,32 @@ body *[aria-invalid="true"] {
     color: #fff;
     font-weight: 700; }
 
-.irclog-wrapper {
+.block-hero-fp code {
+  font-size: 22px;
+  padding: 1px 10px; }
+
+.irc-scroller-wrapper {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   background-color: #0c162d;
   border-radius: 6px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 34px 65px #0c162d, 0 2.76726px 2.21381px rgba(0, 0, 0, 0.07), 0 6.6501px 5.32008px rgba(0, 0, 0, 0.04317), 0 12.5216px 10.0172px rgba(0, 0, 0, 0.0339075), 0 22.3363px 17.869px rgba(0, 0, 0, 0.0282784), 0 41.7776px 33.4221px rgba(0, 0, 0, 0.0235573), 0 100px 80px rgba(0, 0, 0, 0.0174624);
-  height: 400px;
+  height: 768px;
   overflow: visible;
   position: relative;
-  width: 620px; }
-  .irclog-wrapper .irclog {
+  width: calc(50vw - 100px); }
+  .irc-scroller-wrapper .irc-scroller {
     height: 100%;
-    position: relative;
-    width: 620px;
+    position: absolute;
+    width: 100%;
     z-index: 2; }
-  .irclog-wrapper .repo-terminal-glow {
-    left: 0;
+  .irc-scroller-wrapper .repo-terminal-glow {
+    left: -40%;
     margin: 0;
     position: absolute;
     top: 25%;
     transform: translateY(-50%);
-    width: 100%;
+    width: 170%;
     z-index: 1; }
 
 .nav-container {

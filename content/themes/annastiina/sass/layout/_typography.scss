@@ -266,16 +266,30 @@ samp {
 // Code block.
 code {
   background-color: $color-code-blocks-background;
-  border-radius: .3rem;
+  border: 1px solid $color-code-blocks-border;
+  border-radius: 4px;
   color: $color-code-blocks;
+  display: inline-block;
   font-family: $font-monospace;
-  font-size: inherit; // normalize.css sets this as 1em by default
-  padding: .37rem .5rem;
+  font-size: 16px;
+  margin-top: -3px;
+  max-height: 20em;
+  max-width: 95%;
+  overflow-x: auto;
+  padding: 0 3px;
+  transition: all $transition-duration;
+  vertical-align: middle;
 
   pre & {
     display: inline-block;
     padding: 1.15rem 1rem .85rem;
   }
+}
+
+code:hover,
+code:focus {
+  background-color: $color-code-blocks-background-hover;
+  border-color: $color-code-blocks-border-hover;
 }
 
 // Preformatted text.

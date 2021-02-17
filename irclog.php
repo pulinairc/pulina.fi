@@ -866,8 +866,9 @@ tr {
 .work-tr {
     display: flex;
     justify-content: flex-start;
-    max-width: 600px;
+    max-width: 100%;
     margin: 2px 0;
+    padding-right: 10px;
 }
 
 a:link, a:visited, a:active {

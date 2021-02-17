@@ -26,16 +26,17 @@ get_header(); ?>
 
   <div class="container">
     <div class="cols">
-      <div class="col">
+      <div class="col col-content">
         <div class="content">
-          <h1>Keskustelun taikaa</h1>
-          <p><b>IRCissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa pulinalle!</p>
+          <h1>IRC ei kuole koskaan, jos se meistä on kiinni</h1>
+          <p><b>Irkissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa kanavalle!</p>
+          <p><code>/join #pulina</code></p>
         </div>
       </div>
 
       <div class="col">
-        <div class="irclog-wrapper">
-          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irclog" tabindex="-1"></iframe>
+        <div class="irc-scroller-wrapper">
+          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
           <?php include get_theme_file_path( '/svg/repo-terminal-glow.svg' ); ?>
         </div>
       </div>
