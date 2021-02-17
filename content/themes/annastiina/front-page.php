@@ -22,9 +22,11 @@ get_header(); ?>
 
 <main class="site-main">
 
-<section class="block block-hero">
+<section class="block block-hero block-hero-fp">
 
-<iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php" frameborder="0" class="irclog" tabindex="-1"></iframe>
+  <div class="irclog-wrapper">
+    <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php" frameborder="0" class="irclog" tabindex="-1"></iframe>
+  </div>
 
   <div class="container">
     <h1>Pulina</h1>

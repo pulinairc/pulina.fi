@@ -1200,7 +1200,7 @@ a.is-external-link.no-external-link-indicator::after {
       color: white; }
 
 .block {
-  background-color: #070707;
+  background-color: #060d21;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2392,16 +2392,26 @@ body *[aria-invalid="true"] {
   width: 100%; }
 
 /* stylelint-enable selector-class-pattern */
-/* stylelint-disable a11y/no-display-none */
+/* stylelint-disable a11y/no-display-none, number-max-precision */
 .irclog {
+  height: 100%;
+  width: 620px; }
+
+.block-hero-fp {
+  height: 80vh; }
+
+.irclog-wrapper {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  border-radius: 10rem;
-  display: none;
-  height: 800px;
+  background-color: #0c162d;
+  border-radius: .375rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 34px 65px #040d21, 0 2.76726px 2.21381px rgba(0, 0, 0, 0.07), 0 6.6501px 5.32008px rgba(0, 0, 0, 0.04317), 0 12.5216px 10.0172px rgba(0, 0, 0, 0.0339075), 0 22.3363px 17.869px rgba(0, 0, 0, 0.0282784), 0 41.7776px 33.4221px rgba(0, 0, 0, 0.0235573), 0 100px 80px rgba(0, 0, 0, 0.0174624);
+  height: 400px;
+  max-width: 640px;
   overflow: hidden;
   width: 100%; }
 
+.nav-container,
 .block h1 {
   display: none; }
 

@@ -1,15 +1,36 @@
-/* stylelint-disable a11y/no-display-none */
+/* stylelint-disable a11y/no-display-none, number-max-precision */
 .irclog {
-  backface-visibility: hidden;
-  border-radius: 10rem;
+  height: 100%;
+  width: 620px;
+}
 
-  // Temp
-  display: none;
-  height: 800px;
+.block-hero-fp {
+  height: 80vh;
+}
+
+.irclog-wrapper {
+  backface-visibility: hidden;
+  background-color: $color-dark-blue;
+  border-radius: .375rem;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .1), 0 34px 65px #040d21, 0 2.76726px 2.21381px rgba(0, 0, 0, .07), 0 6.6501px 5.32008px rgba(0, 0, 0, .04317), 0 12.5216px 10.0172px rgba(0, 0, 0, .0339075), 0 22.3363px 17.869px rgba(0, 0, 0, .0282784), 0 41.7776px 33.4221px rgba(0, 0, 0, .0235573), 0 100px 80px rgba(0, 0, 0, .0174624);
+  height: 400px;
+  max-width: 640px;
   overflow: hidden;
   width: 100%;
 }
 
+.nav-container,
 .block h1 {
   display: none;
 }
+
+// .text-gradient-coral-yellow-dark, .text-gradient-mint-blue-dark {
+//   -webkit-text-fill-color: transparent;
+//   -webkit-box-decoration-break: clone;
+// }
+// .text-gradient-mint-blue-dark {
+//   background: -webkit-linear-gradient(
+// -70deg
+// ,#a2facf,#64acff);
+//   -webkit-background-clip: text;
+//   background-clip: text;

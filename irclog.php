@@ -813,7 +813,7 @@ if(isset($_GET['time'])) {
 body {
     font: 12px 'Menlo', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
     color: rgba(248, 248, 242, 0.77);
-    background: #282a36;
+    background: #0c162d;
 }
 
 span.message {
