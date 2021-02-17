@@ -1,0 +1,289 @@
+// Typography
+//
+// Everything around fonts, font size definitions and typeset
+// presets. No modular scale, but a sophisticated viewport
+// based responsive mixin can be found in _helpers.scss
+
+// Set root size for rems
+/* stylelint-disable declaration-property-unit-allowed-list */
+:root {
+  font-size: 62.5%;
+}
+/* stylelint-enable declaration-property-unit-allowed-list */
+
+// Start typography settings
+body {
+  color: $color-paragraphs;
+  font-family: $font-paragraphs;
+  font-size: var(--font-size-medium);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $font-weight-paragraphs;
+  text-rendering: geometricPrecision;
+  text-size-adjust: none;
+}
+
+// Links
+a {
+  color: $color-links;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-hover;
+  }
+}
+
+// Special link styles for example in blog posts, use with @extend
+%textlink {
+  border-bottom: 1px solid $color-links;
+  box-shadow: inset 0 -.1rem 0 $color-links;
+  color: $color-paragraphs;
+  display: inline-flex;
+  font-weight: 700;
+  overflow: visible;
+  position: relative;
+  text-decoration: none;
+  transition: all .18s ease-in-out;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -100px 0 $color-links;
+    color: $color-white;
+  }
+}
+
+// Defaults
+p,
+dd,
+dt,
+figcaption,
+hr,
+small,
+ol,
+ul,
+li,
+blockquote,
+kbd,
+pre,
+samp,
+code,
+th,
+td,
+table,
+tr,
+%default {
+  font-size: var(--font-size-small);
+  line-height: $line-height-paragraphs;
+
+  @media (min-width: 770px) {
+    @include responsive-font($font-size-min, $font-size-max);
+  }
+}
+
+// Heading defaults
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-headings;
+  font-family: $font-headings;
+  font-weight: $font-weight-headings;
+  margin-bottom: 2.7rem;
+  margin-top: 2.7rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $line-height-headings;
+}
+
+// Define heading scales
+// Current: Perfect fourth: https://type-scale.com/
+h1,
+%h1 {
+  @include responsive-font($font-size-min-h1, $font-size-max-h1);
+}
+
+h2,
+%h2 {
+  @include responsive-font($font-size-min-h2, $font-size-max-h2);
+}
+
+h3,
+%h3 {
+  @include responsive-font($font-size-min-h3, $font-size-max-h3);
+}
+
+h4,
+%h4 {
+  @include responsive-font($font-size-min-h4, $font-size-max-h4);
+}
+
+h5,
+%h5 {
+  @include responsive-font($font-size-min-h5, $font-size-max-h5);
+}
+
+h6,
+%h6 {
+  @include responsive-font($font-size-min-h6, $font-size-max-h6);
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+// Lists
+ul {
+  list-style: disc outside;
+  padding-left: 1.9rem;
+
+  li {
+    padding-left: 0;
+  }
+}
+
+ol {
+  padding-left: 1.9rem;
+}
+
+// Bold.
+b,
+strong {
+  font-weight: 700;
+}
+
+// Italic.
+em,
+i {
+  font-style: italic;
+}
+
+// Inline small text.
+small {
+  font-size: .87em;
+}
+
+// Default paragraphs
+p {
+  margin-bottom: 2.9rem;
+  margin-top: 2.9rem;
+}
+
+// Quotes.
+blockquote {
+  border: 0 none;
+  clear: both;
+  margin: 0;
+  padding-bottom: 3rem;
+  position: relative;
+
+  p {
+    color: $color-blockquotes;
+    font-style: italic;
+    margin-bottom: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  @media (min-width: $container-ipad) {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 4px;
+    left: 0;
+    max-width: 147px;
+    position: absolute;
+    top: 0;
+
+    @media (min-width: $container-mobile) {
+      width: 30%;
+    }
+  }
+}
+
+cite {
+  display: block;
+  font-style: italic;
+}
+
+// No margin top on first paragraph
+p:first-child {
+  margin-top: 0;
+}
+
+// No margin bottom on last paragraph
+p:last-child {
+  margin-bottom: 0;
+}
+
+// images
+img {
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+// Figures and captions
+figure {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  position: relative;
+}
+
+// Figcaption.
+figcaption {
+  font-style: normal;
+  font-weight: $font-weight-paragraphs;
+  margin-top: 0;
+}
+
+kbd,
+pre,
+samp {
+  font-family: $font-monospace;
+}
+
+// Code block.
+code {
+  background-color: $color-code-blocks-background;
+  border-radius: .3rem;
+  color: $color-code-blocks;
+  font-family: $font-monospace;
+  font-size: inherit; // normalize.css sets this as 1em by default
+  padding: .37rem .5rem;
+
+  pre & {
+    display: inline-block;
+    padding: 1.15rem 1rem .85rem;
+  }
+}
+
+// Preformatted text.
+pre {
+  border-radius: .3rem;
+  display: block;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}

@@ -1,0 +1,152 @@
+// General
+//
+// This file is meant for general styles and containers
+// that apply everywhere throughout the website. Add more
+// always repeating elements right below.
+
+// Default structural element
+.block {
+  background-color: $color-white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: $width-max-layout;
+  position: relative;
+}
+
+// Default shade on top of blocks
+.shade {
+  background-color: $color-main;
+  height: 100%;
+  left: 0;
+  opacity: .35;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+// Global link helper
+// This is useful in services -type of areas where the whole block is a link
+// Remember to define aria-label or screen-reader-text for accessibility
+.global-link {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+// Site wrapper
+.site {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+// Containers
+.container {
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-grid-base;
+  padding-bottom: var(--padding-container-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  padding-top: var(--padding-container-vertical);
+}
+
+// Clear block containers by default
+.site-main .container {
+  clear: both;
+  overflow: hidden;
+}
+
+// Meta actions
+.entry-footer {
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+// Better edit link
+.edit-link {
+  clear: both;
+  display: block;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: all $transition-duration;
+  width: 100%;
+
+  a {
+    background-color: $color-background-edit-link;
+    border: 2px dashed $color-edit-link;
+    clear: both;
+    color: $color-edit-link;
+    display: block;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all $transition-duration;
+  }
+
+  &:focus,
+  a:hover {
+    background-color: $color-background-hover-edit-link;
+    color: $color-edit-link;
+  }
+}
+
+// Hide/show helpers
+.hide-on-desktop {
+  @media (min-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
+    /* stylelint-disable declaration-no-important */
+    display: none !important;
+    /* stylelint-enable */
+  }
+}
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+/* stylelint-disable declaration-no-important, a11y/no-display-none */
+.hide-on-mobile {
+  @media (max-width: $container-mobile) {
+    display: none !important;
+  }
+}
+/* stylelint-enable */
+
+// Only function of these is to force hide content based on the view
+// Forced to use important here, because makes no sense to write too specific selectors here
+/* stylelint-disable declaration-no-important, a11y/no-display-none */
+.hide-on-mobile-nav-view {
+  @media (max-width: $width-max-mobile) {
+    display: none !important;
+  }
+}
+/* stylelint-enable */
+// Forced to use important here, because makes no sense to write too specific selectors here
+/* stylelint-disable declaration-no-important, a11y/no-display-none */
+.hide-on-desktop-nav-view {
+  @media (min-width: $width-max-mobile) {
+    display: none !important;
+  }
+}
+/* stylelint-enable */
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+/* stylelint-disable declaration-no-important, a11y/no-display-none */
+.hide-completely {
+  display: none !important;
+}
+/* stylelint-enable */

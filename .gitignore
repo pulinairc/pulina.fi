@@ -1,3 +1,5 @@
+content/languages/
+content/languages/*
 pul/
 error.log
 access.log

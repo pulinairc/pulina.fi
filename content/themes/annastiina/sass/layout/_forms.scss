@@ -1,0 +1,271 @@
+// Forms and input fields
+//
+// All the forms on the site. General styles. Supports most of
+// the Gravity Forms styles out of the box.
+
+// Variables
+$border-radius: 3px;
+$border-width: 2px;
+$button-font-weight: 700;
+$background-inputs: $color-white;
+$color-checkboxes: $color-paragraphs;
+
+// CSS Variables for radios and checkboxes
+:root {
+  --checkbox-radio-size: 16px;
+  --checkbox-radio-gap: 10px;
+  --checkbox-radio-border-width: 2px;
+  --checkbox-radio-line-height: var(--body-line-height);
+  --radio-marker-size: 8px;
+  --checkbox-marker-size: 12px;
+  --checkbox-radius: 4px;
+}
+
+// Buttons
+.button-wrapper {
+  margin-bottom: 0;
+}
+
+// Buttons
+.site-main,
+.site-footer {
+  button,
+  .button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    appearance: none;
+    background-color: $color-darkgrey;
+    border: 0;
+    border-radius: $border-radius;
+    color: $color-white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-paragraphs;
+    font-size: var(--font-size-small);
+    font-weight: $button-font-weight;
+    line-height: 1;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    position: relative;
+    text-decoration: none;
+    transition: 150ms linear background;
+    width: auto;
+
+    // Button styles
+    &.button-ghost {
+      background-color: transparent;
+      border: $border-width solid $color-buttons;
+      color: $color-buttons;
+    }
+
+    // Button sizes
+    &.button-small {
+      font-size: var(--font-size-small);
+      padding-bottom: 12px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 12px;
+    }
+
+    &.button-medium {
+      font-size: var(--font-size-medium);
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 15px;
+    }
+
+    &.button-large {
+      font-size: var(--font-size-extra-large);
+      padding: 21px 35px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-buttons-hover;
+      border-color: $color-buttons-hover;
+      color: $color-white;
+    }
+  }
+}
+
+// Select drop downs
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('../svg/select.svg');
+  background-position: right 0 center;
+  background-repeat: no-repeat;
+  background-size: 40px auto;
+  border: $border-width solid $color-border-forms;
+  border-radius: 0;
+  color: $color-paragraphs;
+  font-size: var(--font-size-medium);
+  line-height: 24px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 15px;
+  text-indent: 1px;
+  transition: none;
+  width: 100%;
+}
+
+// Form input elements and textareas
+textarea,
+select,
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"] {
+  @extend %default;
+  appearance: none;
+  background-color: $background-inputs;
+  border: solid $border-width $color-border-forms;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-family: $font-paragraphs;
+  font-size: var(--font-size-medium);
+  line-height: 24px;
+  margin-bottom: 0;
+  padding: 15px;
+  position: relative;
+  text-decoration: none;
+  transition: background .55s;
+
+  &::placeholder {
+    color: $color-paragraphs;
+    opacity: .4;
+  }
+
+  &:focus {
+    background-color: $background-inputs;
+    border: $border-width solid darken(#d9d9d9, 12%);
+    outline: 0;
+
+    &::placeholder {
+      color: $color-black;
+      opacity: .8;
+    }
+  }
+}
+
+select:focus {
+  background-color: $background-inputs;
+  border: $border-width solid darken(#d9d9d9, 12%);
+}
+
+// Radio buttons and checkboxes
+input[type="radio"],
+input[type="checkbox"] {
+  height: var(--checkbox-radio-size);
+  margin: 0;
+  margin-top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+  // Hide native buttons
+  position: absolute;
+  width: var(--checkbox-radio-size);
+}
+
+// Labels for radio buttons and checkboxes
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  align-items: flex-start;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: var(--checkbox-radio-line-height);
+  user-select: none;
+}
+
+// Custom buttons - basic style
+input[type="radio"] + label::before,
+input[type="checkbox"] + label::before {
+  align-self: center;
+  background-color: $color-white;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: $color-checkboxes;
+  border-style: solid;
+  border-width: var(--checkbox-radio-border-width);
+  content: '';
+  display: inline-flex;
+  flex-shrink: 0;
+  height: var(--checkbox-radio-size);
+  margin-right: var(--checkbox-radio-gap);
+  position: relative;
+  top: calc(var(--checkbox-radio-border-width) / 2);
+  transition: transform .2s, border .2s;
+  width: var(--checkbox-radio-size);
+}
+
+// Radio only style
+input[type="radio"] + label::before {
+  border-radius: 50%;
+}
+
+// Checkbox only style
+input[type="checkbox"] + label::before {
+  border-radius: var(--checkbox-radius);
+}
+
+// Radio button and checkbox checked states
+input[type="radio"]:checked + label::before,
+input[type="checkbox"]:checked + label::before {
+  background-color: $color-checkboxes;
+  border-color: $color-checkboxes;
+  box-shadow: none;
+  transition: transform .2s;
+}
+
+// Radio button and checkbox active states
+input[type="radio"]:active + label::before,
+input[type="checkbox"]:active + label::before {
+  transform: scale(.8);
+  transition: transform .2s;
+}
+
+// Radio button icon
+input[type="radio"]:checked + label::before {
+  background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  background-size: var(--radio-marker-size);
+}
+
+// Checkbox button icon
+input[type="checkbox"]:checked + label::before {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: var(--checkbox-marker-size);
+}
+
+// Radio button and checkbox focus states
+input[type="radio"]:focus + label::before,
+input[type="checkbox"]:focus + label::before,
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
+  border-color: $color-checkboxes;
+  box-shadow: 0 0 0 3px rgba($color-checkboxes, .2);
+}
+
+// Radio button and checkbox checked + active states
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
+  transform: none;
+  transition: none;
+}
+
+// Radio button and checkbox hovers
+/* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
+input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
+  border-color: lighten($color-checkboxes, 15%);
+}
+/* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */

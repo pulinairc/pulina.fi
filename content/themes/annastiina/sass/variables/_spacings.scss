@@ -1,0 +1,36 @@
+// CSS Variables for responsive paddings and margins
+:root {
+  // Paddings
+  --padding-container-horizontal: 2rem;
+  --padding-container-vertical: 6.4rem;
+  --padding-site-header-vertical: 2rem;
+  --padding-block: 8rem;
+
+  // Margins
+  --margin-between-text-elements: 4rem;
+
+  // Mid-sized screens
+  @media (max-width: $width-grid-base + 150px) {
+    --padding-container-horizontal: 2rem;
+  }
+
+  // When navigation transforms to a responsive hamburger menu
+  @media (max-width: $width-max-mobile) {
+    --padding-site-header-vertical: 2rem;
+  }
+
+  // iPad
+  @media (max-width: $container-ipad) {
+    --padding-container-vertical: 5rem;
+  }
+
+  // Between iPad and a mobile phone
+  @media (max-width: 600px) {
+    --padding-block: 6rem;
+  }
+
+  // Vars in mobile
+  @media (max-width: $container-mobile) {
+    --padding-container-vertical: 4rem;
+  }
+}
