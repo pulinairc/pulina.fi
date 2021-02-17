@@ -13,7 +13,7 @@ import './modules/gutenberg-helpers';
 import 'what-input';
 
 // Navigation
-import './modules/navigation.js';
+import hcOffcanvasNav from 'hc-offcanvas-nav';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
