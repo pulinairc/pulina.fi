@@ -1,7 +1,7 @@
 // Font family settings
-$font-paragraphs: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
-$font-headings: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
-$font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+$font-paragraphs: 'Alliance No. 1', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-headings: 'Alliance No. 1', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-monospace: 'SF Pro Mono', 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
 
 // Font size settings
 $font-size-tiny: 14px;
@@ -69,7 +69,10 @@ $font-weight-headings: 700;
 
 // Self-hosted fonts
 // Remember to add these to gutenberg/variables/_fonts as well with their relative paths
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-regular', 400);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-italic', 400, italic);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-semibold', 500);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-bold', 700);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-extrabold', 800);
+@include fontFace('Alliance No. 1', '../fonts/allianceno1-black', 900);
+@include fontFace('SF Mono', '../fonts/sfmono-regular', 400);

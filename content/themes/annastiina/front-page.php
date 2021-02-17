@@ -27,8 +27,10 @@ get_header(); ?>
   <div class="container">
     <div class="cols">
       <div class="col">
-        <h1>Keskustelun taikaa</h1>
-        <p><b>IRCissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa pulinalle!</p>
+        <div class="content">
+          <h1>Keskustelun taikaa</h1>
+          <p><b>IRCissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa pulinalle!</p>
+        </div>
       </div>
 
       <div class="col">

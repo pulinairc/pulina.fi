@@ -810,8 +810,18 @@ if(isset($_GET['time'])) {
        url('fonts/menlo-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+  font-family: 'SF Mono';
+  src: url('fonts/sfmono-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/sfmono-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/sfmono-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/sfmono-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/sfmono-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/sfmono-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
-    font: 12px 'Menlo', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
+    font: 14px 'SF Mono', 'Menlo', -apple-system, 'Roboto', 'Rubik', system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial;
     color: rgba(248, 248, 242, 0.77);
     background: #0c162d;
 }
