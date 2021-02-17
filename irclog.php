@@ -1058,9 +1058,8 @@ function getTimer() {
 function setStyle(tag) {
     /* Jos haluat rivin nÃ¤kymÃ¤Ã¤n kokonaan,
      * kommentoi/poista seuraava rivi */
-    tag.style.wordWrap="break-word";
-
-    tag.style.whiteSpace="pre";
+    // tag.style.wordWrap="break-word";
+    // tag.style.whiteSpace="pre";
     tag.style.zIndex="5";
 }
 
