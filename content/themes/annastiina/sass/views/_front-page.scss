@@ -2,7 +2,7 @@
 
 .block-hero-fp {
   .cols {
-    @include grid(2, $gutter_x: 80px, $gutter_y: 80px);
+    @include grid(2, $gutter_x: 120px, $gutter_y: 120px);
     overflow: visible;
   }
 
@@ -66,7 +66,7 @@
   }
 
   h1 {
-    background: linear-gradient(-70deg, #a2facf, #64acff);
+    background: linear-gradient(-70deg, #a4ebc8, #6caefa);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-box-decoration-break: clone;
@@ -111,12 +111,14 @@
   }
 
   .repo-terminal-glow {
-    left: -40%;
+    height: 84vh;
+    left: 0;
     margin: 0;
+    opacity: .8;
     position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
-    width: 170%;
+    top: 15%;
+    transform: translateY(-40%) translateX(-18%);
+    width: 65vw;
     z-index: 1;
   }
 }

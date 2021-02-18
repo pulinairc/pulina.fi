@@ -2472,8 +2472,8 @@ body *[aria-invalid="true"] {
   display: grid;
   /* autoprefixer: off */
   grid-auto-rows: minmax(0, auto);
-  grid-column-gap: 80px;
-  grid-row-gap: 80px;
+  grid-column-gap: 120px;
+  grid-row-gap: 120px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   overflow: visible; }
   @supports not (display: grid) {
@@ -2482,9 +2482,9 @@ body *[aria-invalid="true"] {
       flex-wrap: wrap;
       overflow: hidden; }
       .block-hero-fp .cols > div {
-        margin-bottom: 80px;
-        margin-right: 80px;
-        width: calc(50% - 80px); }
+        margin-bottom: 120px;
+        margin-right: 120px;
+        width: calc(50% - 120px); }
         .block-hero-fp .cols > div:nth-child(2n+2) {
           margin-right: 0; } }
   @supports (-ms-ime-align: auto) {
@@ -2493,9 +2493,9 @@ body *[aria-invalid="true"] {
       flex-wrap: wrap;
       overflow: hidden; }
       .block-hero-fp .cols > div {
-        margin-bottom: 80px;
-        margin-right: 80px;
-        width: calc(50% - 80px); }
+        margin-bottom: 120px;
+        margin-right: 120px;
+        width: calc(50% - 120px); }
         .block-hero-fp .cols > div:nth-child(2n+2) {
           margin-right: 0; } }
 
@@ -2553,7 +2553,7 @@ body *[aria-invalid="true"] {
   padding-top: var(--padding-block); }
 
 .block-hero-fp h1 {
-  background: linear-gradient(-70deg, #a2facf, #64acff);
+  background: linear-gradient(-70deg, #a4ebc8, #6caefa);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-box-decoration-break: clone;
@@ -2590,12 +2590,14 @@ body *[aria-invalid="true"] {
     width: 100%;
     z-index: 2; }
   .irc-scroller-wrapper .repo-terminal-glow {
-    left: -40%;
+    height: 84vh;
+    left: 0;
     margin: 0;
+    opacity: .8;
     position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
-    width: 170%;
+    top: 15%;
+    transform: translateY(-40%) translateX(-18%);
+    width: 65vw;
     z-index: 1; }
 
 .nav-container {
@@ -3305,9 +3307,9 @@ body *[aria-invalid="true"] {
       flex-wrap: wrap;
       overflow: hidden; }
       .block-hero-fp .cols > div {
-        margin-bottom: 80px;
-        margin-right: 80px;
-        width: calc(50% - 80px); }
+        margin-bottom: 120px;
+        margin-right: 120px;
+        width: calc(50% - 120px); }
         .block-hero-fp .cols > div:nth-child(2n+2) {
           margin-right: 0; } }
 
