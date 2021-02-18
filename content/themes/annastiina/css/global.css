@@ -2559,6 +2559,13 @@ body *[aria-invalid="true"] {
   font-size: 42px;
   margin-bottom: 2rem; }
 
+.block-hall-of-fame {
+  background: transparent;
+  padding-top: 0; }
+  .block-hall-of-fame .container {
+    margin-top: -200px;
+    padding-top: 0; }
+
 .wp-block.is-style-boxed,
 .is-style-boxed {
   border: 2px solid #545773;
