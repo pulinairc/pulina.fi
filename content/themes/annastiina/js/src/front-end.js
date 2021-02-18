@@ -8,8 +8,7 @@ import LazyLoad from 'vanilla-lazyload';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 import './modules/gutenberg-helpers';
-// import './modules/sticky-nav.js'
-// import slick from 'slick-carousel';
+import './modules/webchat-login-form';
 import 'what-input';
 
 // Navigation
@@ -129,5 +128,3 @@ document.addEventListener('DOMContentLoaded', function () {
     moveTo.registerTrigger(triggers[i]);
   }
 });
-
-

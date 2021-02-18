@@ -6,6 +6,54 @@
     overflow: visible;
   }
 
+  .form-join {
+    display: flex;
+    margin-top: 4.2rem;
+    overflow: hidden;
+
+    input,
+    button {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 15px 20px;
+      transition: all $transition-duration;
+    }
+
+    button {
+      background: linear-gradient(-180deg, #34b859, #2ea44f);
+      background-color: #2ea44f;
+      border: 1px solid rgba($color-white, .05);
+      border-bottom-left-radius: 0;
+      border-left: 0;
+      border-top-left-radius: 0;
+      color: $color-white;
+    }
+
+    input[type="text"] {
+      background-color: transparent;
+      border: 1px solid rgba($color-white, .3);
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+      color: $color-white;
+
+      &::placeholder {
+        color: rgba($color-white, .7);
+        opacity: 1;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: rgba($color-white, .4);
+
+        &::placeholder {
+          color: rgba($color-white, 1);
+        }
+      }
+    }
+  }
+
   .col-content {
     align-items: center;
     display: flex;
@@ -18,7 +66,7 @@
   }
 
   h1 {
-    background: -webkit-linear-gradient(-70deg, #a2facf, #64acff);
+    background: linear-gradient(-70deg, #a2facf, #64acff);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-box-decoration-break: clone;
