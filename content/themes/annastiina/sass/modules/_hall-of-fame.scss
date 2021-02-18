@@ -1,9 +1,62 @@
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+.home {
+  background-color: $color-deep-blue;
+}
+
 .block-hall-of-fame {
-  background: transparent;
+  background-color: transparent;
   padding-top: 0;
 
   .container {
-    margin-top: -200px;
+    margin-top: -220px;
+    overflow: visible;
     padding-top: 0;
+  }
+
+  .cols {
+    @include grid(2, $gutter_x: 120px, $gutter_y: 120px);
+    overflow: visible;
+  }
+
+  .col-content {
+    margin-bottom: 110px;
+    margin-left: -200px;
+    margin-top: 8rem;
+  }
+
+  .block-title {
+    background: linear-gradient(-70deg, #fff, #a4ebc8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-size: 52px;
+    font-weight: 700;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: rgba($color-white, .8);
+    font-size: 18px;
+    font-weight: 500;
+
+    &.larger {
+      color: $color-white;
+      font-size: 22px;
+    }
+  }
+
+  .how-to {
+    color: rgba($color-white, .4);
+    margin-top: 4rem;
+    max-width: 400px;
+  }
+
+  .clients {
+    color: rgba($color-white, .4);
+
+    svg {
+      margin-right: 1.2rem;
+    }
   }
 }

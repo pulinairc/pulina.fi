@@ -2512,12 +2512,12 @@ body *[aria-invalid="true"] {
     transition: all 0.22s; }
   .block-hero-fp .form-join button {
     background: linear-gradient(-180deg, #34b859, #2ea44f);
-    background-color: #2ea44f;
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom-left-radius: 0;
     border-left: 0;
     border-top-left-radius: 0;
-    color: #fff; }
+    color: #fff;
+    transition: all 0.22s; }
   .block-hero-fp .form-join input[type="text"] {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -2545,7 +2545,9 @@ body *[aria-invalid="true"] {
 
 .block-hero-fp .col-content {
   align-items: center;
-  display: flex; }
+  display: flex;
+  position: relative;
+  z-index: 2; }
 
 .block-hero-fp .container {
   overflow: visible;
@@ -2581,6 +2583,7 @@ body *[aria-invalid="true"] {
   border-radius: 6px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 34px 65px #0c162d, 0 2.76726px 2.21381px rgba(0, 0, 0, 0.07), 0 6.6501px 5.32008px rgba(0, 0, 0, 0.04317), 0 12.5216px 10.0172px rgba(0, 0, 0, 0.0339075), 0 22.3363px 17.869px rgba(0, 0, 0, 0.0282784), 0 41.7776px 33.4221px rgba(0, 0, 0, 0.0235573), 0 100px 80px rgba(0, 0, 0, 0.0174624);
   height: 768px;
+  max-width: 1024px;
   overflow: visible;
   position: relative;
   width: calc(50vw - 100px); }
@@ -2643,12 +2646,138 @@ body *[aria-invalid="true"] {
   font-size: 42px;
   margin-bottom: 2rem; }
 
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity, a11y/font-size-is-readable */
+.toptod {
+  background-color: #050505;
+  border: 1px solid #20283c;
+  border-radius: 8px;
+  margin-left: -100px;
+  padding: 3rem;
+  width: 420px; }
+  .toptod h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 3rem; }
+  .toptod ol {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .toptod li {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    margin: 1rem 0;
+    padding: 0; }
+    .toptod li:nth-child(1) .progress::after {
+      background-color: #88dea0; }
+    .toptod li:nth-child(2) .progress::after {
+      background-color: #60d380; }
+    .toptod li:nth-child(3) .progress::after {
+      background-color: #38c861; }
+    .toptod li:nth-child(5) .progress::after {
+      background-color: #2ca04d; }
+    .toptod li:nth-child(6) .progress::after {
+      background-color: #21783a; }
+    .toptod li:nth-child(7) .progress::after {
+      background-color: #1c6430; }
+  .toptod .bar {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative; }
+  .toptod .bar::after,
+  .toptod .progress::after {
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 4px;
+    position: relative; }
+  .toptod .bar::after {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 100%; }
+  .toptod .progress::after {
+    background-color: #1c6430;
+    top: 4px; }
+  .toptod b {
+    display: block;
+    margin-bottom: 5px; }
+  .toptod .value {
+    font-size: 13px;
+    opacity: .3;
+    position: absolute;
+    right: 0;
+    top: 2px; }
+
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+.home {
+  background-color: #060d21; }
+
 .block-hall-of-fame {
-  background: transparent;
+  background-color: transparent;
   padding-top: 0; }
   .block-hall-of-fame .container {
-    margin-top: -200px;
+    margin-top: -220px;
+    overflow: visible;
     padding-top: 0; }
+  .block-hall-of-fame .cols {
+    display: grid;
+    /* autoprefixer: off */
+    grid-auto-rows: minmax(0, auto);
+    grid-column-gap: 120px;
+    grid-row-gap: 120px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible; }
+    @supports not (display: grid) {
+      .block-hall-of-fame .cols {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        .block-hall-of-fame .cols > div {
+          margin-bottom: 120px;
+          margin-right: 120px;
+          width: calc(50% - 120px); }
+          .block-hall-of-fame .cols > div:nth-child(2n+2) {
+            margin-right: 0; } }
+    @supports (-ms-ime-align: auto) {
+      .block-hall-of-fame .cols {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        .block-hall-of-fame .cols > div {
+          margin-bottom: 120px;
+          margin-right: 120px;
+          width: calc(50% - 120px); }
+          .block-hall-of-fame .cols > div:nth-child(2n+2) {
+            margin-right: 0; } }
+  .block-hall-of-fame .col-content {
+    margin-bottom: 110px;
+    margin-left: -200px;
+    margin-top: 8rem; }
+  .block-hall-of-fame .block-title {
+    background: linear-gradient(-70deg, #fff, #a4ebc8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-size: 52px;
+    font-weight: 700;
+    -webkit-text-fill-color: transparent; }
+  .block-hall-of-fame p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 500; }
+    .block-hall-of-fame p.larger {
+      color: #fff;
+      font-size: 22px; }
+  .block-hall-of-fame .how-to {
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 4rem;
+    max-width: 400px; }
+  .block-hall-of-fame .clients {
+    color: rgba(255, 255, 255, 0.4); }
+    .block-hall-of-fame .clients svg {
+      margin-right: 1.2rem; }
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
@@ -3311,7 +3440,17 @@ body *[aria-invalid="true"] {
         margin-right: 120px;
         width: calc(50% - 120px); }
         .block-hero-fp .cols > div:nth-child(2n+2) {
-          margin-right: 0; } }
+          margin-right: 0; }
+      .block-hall-of-fame .cols {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        .block-hall-of-fame .cols > div {
+          margin-bottom: 120px;
+          margin-right: 120px;
+          width: calc(50% - 120px); }
+          .block-hall-of-fame .cols > div:nth-child(2n+2) {
+            margin-right: 0; } }
 
 @media (min-width: 1024px) {
     .block-search-results > .container {

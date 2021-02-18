@@ -22,12 +22,12 @@
 
     button {
       background: linear-gradient(-180deg, #34b859, #2ea44f);
-      background-color: #2ea44f;
       border: 1px solid rgba($color-white, .05);
       border-bottom-left-radius: 0;
       border-left: 0;
       border-top-left-radius: 0;
       color: $color-white;
+      transition: all $transition-duration;
     }
 
     input[type="text"] {
@@ -57,6 +57,8 @@
   .col-content {
     align-items: center;
     display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   .container {
@@ -99,6 +101,7 @@
   border-radius: 6px;
   box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .1), 0 34px 65px $color-dark-blue, 0 2.76726px 2.21381px rgba(0, 0, 0, .07), 0 6.6501px 5.32008px rgba(0, 0, 0, .04317), 0 12.5216px 10.0172px rgba(0, 0, 0, .0339075), 0 22.3363px 17.869px rgba(0, 0, 0, .0282784), 0 41.7776px 33.4221px rgba(0, 0, 0, .0235573), 0 100px 80px rgba(0, 0, 0, .0174624);
   height: 768px;
+  max-width: 1024px;
   overflow: visible;
   position: relative;
   width: calc(50vw - 100px);

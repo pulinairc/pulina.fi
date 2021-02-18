@@ -71,52 +71,27 @@ get_header(); ?>
 <section class="block block-hall-of-fame">
   <div class="container">
 
-    <!-- Toptod markup here, TODO: Add correct screen-reader-text markup to peikko.us/toptod.php -->
-    <h2>!toptod, eli päivän aktiivisimmat</h2>
+    <div class="cols">
+      <div class="col">
+        <?php get_template_part( 'template-parts/toptod' ); ?>
+      </div>
+      <div class="col col-content">
+        <h2 class="block-title">Pala nostalgiaa</h2>
+        <p class="larger">Muistatko ajat, jolloin netissä ei ollut naamakuvia tai oikeita nimiä, vaan kaikki keskustelivat nimimerkeillä? Muistatko Kiss.fm chatin, jossa oli aina vilkasta? Muistatko sen, kun ei tarvinnut tuntea ketään netin keskusteluhuoneessa tai miettiä erityisemmin mitä sanoo, kunhan on kohtelias muita kohtaan? Sitä on pulina.</p>
 
-      <ol><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-120" style="width: 120%;"><b>mustikkasoppa</b> <span class="value">2400</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-50" style="width: 45.2%;"><b>Nefastos</b> <span class="value">904</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-50" style="width: 43.1%;"><b>ivy_</b> <span class="value">862</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-40" style="width: 33.55%;"><b>kummitus</b> <span class="value">671</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-30" style="width: 25.8%;"><b>rolle</b> <span class="value">516</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 18.15%;"><b>lapyo</b> <span class="value">363</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 13%;"><b>hendrix</b> <span class="value">260</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 12.2%;"><b>nmr</b> <span class="value">244</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 11.35%;"><b>R1NN1</b> <span class="value">227</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-10" style="width: 7.6%;"><b>LM-</b> <span class="value">152</span></div></div>
-          </div>
-          </li></ol>
+        <p>Vuonna 1988 kehitetty ja edelleen kehittyvä IRC on täynnä nostalgiaa ja palauttaa hyvät vanhat chat-ajat mieleen. Vaikka et olisikaan ns. Internet-dinosaurus tai "vanhan polven irkkaaja", IRCissä on sitä jotain. Pulina on vapautettu, eikä sen laatua tai määrää ei rajoiteta turhaan käyttäytymissääntöjen puitteissa. Jokainen on tervetullut ja vapaa olemaan sellainen kuin on.</p>
+
+        <p class="how-to">Irkkiin pääsee selaimella, Windowsilla, Macilla, Linuxilla, iPhonella ja Androidilla.</p>
+        <div class="clients">
+          <?php include get_theme_file_path( '/svg/platform-windows.svg' ); ?>
+          <?php include get_theme_file_path( '/svg/platform-apple.svg' ); ?>
+          <?php include get_theme_file_path( '/svg/platform-linux.svg' ); ?>
+          <?php include get_theme_file_path( '/svg/platform-google.svg' ); ?>
+          <?php include get_theme_file_path( '/svg/platform-chrome.svg' ); ?>
+        </div>
+
+      </div>
     </div>
-    <!-- Toptod markup ends -->
 
   </div>
 </section>

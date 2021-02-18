@@ -1,0 +1,94 @@
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity, a11y/font-size-is-readable */
+
+.toptod {
+  background-color: #050505;
+  border: 1px solid #20283c;
+  border-radius: 8px;
+  margin-left: -100px;
+  padding: 3rem;
+  width: 420px;
+
+  h2 {
+    color: $color-white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 3rem;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    color: $color-white;
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    margin: 1rem 0;
+    padding: 0;
+
+    &:nth-child(1) .progress::after {
+      background-color: lighten(#32b457, 25%);
+    }
+
+    &:nth-child(2) .progress::after {
+      background-color: lighten(#32b457, 15%);
+    }
+
+    &:nth-child(3) .progress::after {
+      background-color: lighten(#32b457, 5%);
+    }
+
+    &:nth-child(5) .progress::after {
+      background-color: darken(#32b457, 5%);
+    }
+
+    &:nth-child(6) .progress::after {
+      background-color: darken(#32b457, 15%);
+    }
+
+    &:nth-child(7) .progress::after {
+      background-color: darken(#32b457, 20%);
+    }
+  }
+
+  .bar {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar::after,
+  .progress::after {
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 4px;
+    position: relative;
+  }
+
+  .bar::after {
+    background-color: rgba($color-white, .15);
+    width: 100%;
+  }
+
+  .progress::after {
+    background-color: darken(#32b457, 20%);
+    top: 4px;
+  }
+
+  b {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .value {
+    font-size: 13px;
+    opacity: .3;
+    position: absolute;
+    right: 0;
+    top: 2px;
+  }
+}

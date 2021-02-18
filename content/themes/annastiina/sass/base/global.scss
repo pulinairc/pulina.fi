@@ -33,7 +33,6 @@
 @import '../navigation/nav-mobile';
 
 // Structure
-
 @import '../layout/general';
 @import '../layout/print';
 @import '../layout/typography';
@@ -53,6 +52,9 @@
 @import '../views/front-page';
 @import '../views/search';
 @import '../views/404';
+
+// Parts
+@import '../parts/toptod';
 
 // Modules
 @import '../modules/hall-of-fame';
