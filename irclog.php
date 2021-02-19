@@ -21,7 +21,12 @@ $channel = "#pulina";
 //
 
 ini_set( 'date.timezone', 'Europe/Helsinki' );
-$logfile = '/var/www/pulina.fi/public_html/pulina-days/pul-'.strftime('%Y-%m-%d').'.log';
+
+if ( file_exists( '/var/www/pulina/test.log' ) ) {
+    $logfile = '/var/www/pulina/test.log';
+} else {
+    $logfile = '/var/www/pulina.fi/public_html/pulina-days/pul-'.strftime('%Y-%m-%d').'.log';
+}
 
 // Starting offset in bytes (how many bytes are readed from end of file?)
 $startoffsetbytes = 7200;

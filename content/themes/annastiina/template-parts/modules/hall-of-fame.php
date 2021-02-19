@@ -14,7 +14,9 @@ namespace Air_Light;
 
     <div class="cols">
       <div class="col">
-        <?php get_template_part( 'template-parts/modules/toptod' ); ?>
+        <div id="toptod">
+          <?php get_template_part( 'template-parts/modules/toptod' ); ?>
+        </div>
       </div>
       <div class="col col-content">
         <h2 class="block-title">Pala nostalgiaa</h2>

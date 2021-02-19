@@ -104,7 +104,17 @@ annastiina_LazyLoad.update();
 
   // Document ready start
   $(function () {
-    // Your JavaScript here
+
+    // Toptod polling
+    // $('#toptod').fadeIn();
+    // $("#toptod").load('https://peikko.us/toptod-content-annastiina.php');
+    //   var refreshId = setInterval(function() {
+    // $("#toptod").load('https://peikko.us/toptod-content-annastiina.php',
+    //   function() {
+    //     $("#content").fadeIn();
+    //   }
+    // );}, 1000);
+
   });
 })(jQuery);
 
