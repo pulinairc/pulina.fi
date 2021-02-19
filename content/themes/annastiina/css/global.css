@@ -3202,11 +3202,11 @@ body *[aria-invalid="true"] {
       background-color: #60d380; }
     .toptod li:nth-child(3) .progress::after {
       background-color: #38c861; }
-    .toptod li:nth-child(5) .progress::after {
+    .toptod li:nth-child(4) .progress::after {
       background-color: #2ca04d; }
-    .toptod li:nth-child(6) .progress::after {
+    .toptod li:nth-child(5) .progress::after {
       background-color: #21783a; }
-    .toptod li:nth-child(7) .progress::after {
+    .toptod li:nth-child(6) .progress::after {
       background-color: #1c6430; }
   .toptod .bar {
     border-radius: 2px;

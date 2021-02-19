@@ -44,15 +44,15 @@ $white: #fff;
       background-color: lighten(#32b457, 5%);
     }
 
-    &:nth-child(5) .progress::after {
+    &:nth-child(4) .progress::after {
       background-color: darken(#32b457, 5%);
     }
 
-    &:nth-child(6) .progress::after {
+    &:nth-child(5) .progress::after {
       background-color: darken(#32b457, 15%);
     }
 
-    &:nth-child(7) .progress::after {
+    &:nth-child(6) .progress::after {
       background-color: darken(#32b457, 20%);
     }
   }
