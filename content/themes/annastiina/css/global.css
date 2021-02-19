@@ -1161,8 +1161,8 @@ body.hc-nav-open {
   transition-delay: .12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.toggle-open .hamburger-inner::before {
-    top: 0;
     opacity: 0;
+    top: 0;
     transition: top .1s ease-out, opacity .1s .12s ease-out; }
   .hamburger--spin-r.toggle-open .hamburger-inner::after {
     bottom: 0;
