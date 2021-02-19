@@ -3349,6 +3349,61 @@ body *[aria-invalid="true"] {
     .block-hall-of-fame .clients svg {
       margin-right: 1.2rem; }
 
+.block-infographics .container {
+  overflow: visible;
+  padding-top: 0; }
+
+.block-infographics .cols {
+  display: grid;
+  /* autoprefixer: off */
+  grid-auto-rows: minmax(0, auto);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @supports not (display: grid) {
+    .block-infographics .cols {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .block-infographics .cols > div {
+        margin-bottom: 50px;
+        margin-right: 50px;
+        width: calc(25% - 50px); }
+        .block-infographics .cols > div:nth-child(4n+4) {
+          margin-right: 0; } }
+  @supports (-ms-ime-align: auto) {
+    .block-infographics .cols {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .block-infographics .cols > div {
+        margin-bottom: 50px;
+        margin-right: 50px;
+        width: calc(25% - 50px); }
+        .block-infographics .cols > div:nth-child(4n+4) {
+          margin-right: 0; } }
+
+.block-infographics .col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.block-infographics span {
+  color: #fff;
+  width: 100%; }
+
+.block-infographics .label {
+  font-size: var(--font-size-small);
+  margin-left: .4rem;
+  order: 2; }
+
+.block-infographics .number {
+  color: #20ffa7;
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  order: 1; }
+
 .wp-block.is-style-boxed,
 .is-style-boxed {
   border: 2px solid #545773;
@@ -3723,7 +3778,17 @@ body *[aria-invalid="true"] {
           margin-right: 120px;
           width: calc(50% - 120px); }
           .block-hall-of-fame .cols > div:nth-child(2n+2) {
-            margin-right: 0; } }
+            margin-right: 0; }
+    .block-infographics .cols {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .block-infographics .cols > div {
+        margin-bottom: 50px;
+        margin-right: 50px;
+        width: calc(25% - 50px); }
+        .block-infographics .cols > div:nth-child(4n+4) {
+          margin-right: 0; } }
 
 @media (min-width: 1024px) {
     .block-search-results > .container {

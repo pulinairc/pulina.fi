@@ -6,6 +6,7 @@
  */
 
 namespace Air_Light;
+
 ?>
 <section class="block block-hero block-hero-fp">
   <div class="container">

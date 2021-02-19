@@ -1,4 +1,7 @@
+
 content/languages/
+content/themes/annastiina/inc/cache/*
+!content/themes/annastiina/inc/cache/.gitkeep
 content/languages/*
 pul/
 error.log
