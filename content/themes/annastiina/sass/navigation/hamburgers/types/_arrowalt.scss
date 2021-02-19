@@ -17,13 +17,13 @@
       .hamburger-inner {
         &::before {
           top: 0;
-          transform: translate3d($hamburger-layer-width * -0.2, $hamburger-layer-width * -0.25, 0) rotate(-45deg) scale(.7, 1);
+          transform: translate3d($hamburger-layer-width * -.2, $hamburger-layer-width * -.25, 0) rotate(-45deg) scale(.7, 1);
           transition: top .1s ease, transform .1s .1s cubic-bezier(.895, .03, .685, .22);
         }
 
         &::after {
           bottom: 0;
-          transform: translate3d($hamburger-layer-width * -0.2, $hamburger-layer-width * .25, 0) rotate(45deg) scale(.7, 1);
+          transform: translate3d($hamburger-layer-width * -.2, $hamburger-layer-width * .25, 0) rotate(45deg) scale(.7, 1);
           transition: bottom .1s ease, transform .1s .1s cubic-bezier(.895, .03, .685, .22);
         }
       }

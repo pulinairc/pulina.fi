@@ -6,7 +6,7 @@
     .hamburger-inner {
       top: $hamburger-layer-height / 2;
       transition-duration: .275s;
-      transition-timing-function: cubic-bezier(.68, -0.55, .265, 1.55);
+      transition-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
 
       &::before {
         top: $hamburger-layer-height + $hamburger-layer-spacing;
@@ -15,7 +15,7 @@
 
       &::after {
         top: ($hamburger-layer-height * 2) + ($hamburger-layer-spacing * 2);
-        transition: transform .275s cubic-bezier(.68, -0.55, .265, 1.55);
+        transition: transform .275s cubic-bezier(.68, -.55, .265, 1.55);
       }
     }
 
@@ -26,8 +26,8 @@
         transition-delay: .075s;
 
         &::before {
-          transition-delay: 0s;
           opacity: 0;
+          transition-delay: 0s;
         }
 
         &::after {

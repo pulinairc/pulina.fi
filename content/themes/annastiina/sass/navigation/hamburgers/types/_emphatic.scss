@@ -1,3 +1,5 @@
+/* stylelint-disable */
+
 @if index($hamburger-types, emphatic) {
   /*
    * Emphatic
@@ -14,17 +16,17 @@
       }
 
       &::after {
-        top: ($hamburger-layer-height) + ($hamburger-layer-spacing);
         right: 0;
+        top: ($hamburger-layer-height) + ($hamburger-layer-spacing);
         transition: transform .125s cubic-bezier(.6, .04, .98, .335), top .05s .125s linear, right .125s .175s ease-in;
       }
     }
 
     &.toggle-open {
       .hamburger-inner {
+        background-color: transparent !important;
         transition-delay: 0s;
         transition-timing-function: ease-out;
-        background-color: transparent !important;
 
         &::before {
           left: $hamburger-layer-width * -2;
