@@ -14,9 +14,9 @@ namespace Air_Light;
 
     <div class="cols">
       <div class="col">
-        <?php get_template_part( 'template-parts/toptod' ); ?>
+        <?php get_template_part( 'template-parts/modules/toptod' ); ?>
       </div>
-      <div class="col col-content"> 
+      <div class="col col-content">
         <h2 class="block-title">Pala nostalgiaa</h2>
         <p class="larger">Muistatko ajat, jolloin netissä ei ollut naamakuvia tai oikeita nimiä, vaan kaikki keskustelivat nimimerkeillä? Muistatko Kiss.fm chatin, jossa oli aina vilkasta? Muistatko sen, kun ei tarvinnut tuntea ketään netin keskusteluhuoneessa tai miettiä erityisemmin mitä sanoo, kunhan on kohtelias muita kohtaan? Sitä on pulina.</p>
 
