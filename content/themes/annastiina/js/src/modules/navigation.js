@@ -23,18 +23,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     }
 
     menuToggle.on('click', function () {
-      // Change collapse style for burger
-      if (this.className.indexOf('is-active') !== -1) {
-        this.className = this.className.replace(' is-active', '');
-      } else {
-        this.className += ' is-active';
-      }
-
       // Change screen reader expanded state
       $(this).attr(
         'aria-expanded',
         $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
-      );
+      ); amb;
 
       // Change screen reader open/close labels
       $('#nav-toggle-label').text(

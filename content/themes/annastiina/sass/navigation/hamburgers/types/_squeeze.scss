@@ -1,0 +1,39 @@
+@if index($hamburger-types, squeeze) {
+  /*
+   * Squeeze
+   */
+  .hamburger--squeeze {
+    .hamburger-inner {
+      transition-duration: .075s;
+      transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+
+      &::before {
+        transition: top .075s .12s ease, opacity .075s ease;
+      }
+
+      &::after {
+        transition: bottom .075s .12s ease, transform .075s cubic-bezier(.55, .055, .675, .19);
+      }
+    }
+
+    &.toggle-open {
+      .hamburger-inner {
+        transform: rotate(45deg);
+        transition-delay: .12s;
+        transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+
+        &::before {
+          top: 0;
+          opacity: 0;
+          transition: top .075s ease, opacity .075s .12s ease;
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom .075s ease, transform .075s .12s cubic-bezier(.215, .61, .355, 1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@if index($hamburger-types, emphatic) {
+  /*
+   * Emphatic
+   */
+  .hamburger--emphatic {
+    overflow: hidden;
+
+    .hamburger-inner {
+      transition: background-color .125s .175s ease-in;
+
+      &::before {
+        left: 0;
+        transition: transform .125s cubic-bezier(.6, .04, .98, .335), top .05s .125s linear, left .125s .175s ease-in;
+      }
+
+      &::after {
+        top: ($hamburger-layer-height) + ($hamburger-layer-spacing);
+        right: 0;
+        transition: transform .125s cubic-bezier(.6, .04, .98, .335), top .05s .125s linear, right .125s .175s ease-in;
+      }
+    }
+
+    &.toggle-open {
+      .hamburger-inner {
+        transition-delay: 0s;
+        transition-timing-function: ease-out;
+        background-color: transparent !important;
+
+        &::before {
+          left: $hamburger-layer-width * -2;
+          top: $hamburger-layer-width * -2;
+          transform: translate3d($hamburger-layer-width * 2, $hamburger-layer-width * 2, 0) rotate(45deg);
+          transition: left .125s ease-out, top .05s .125s linear, transform .125s .175s cubic-bezier(.075, .82, .165, 1);
+        }
+
+        &::after {
+          right: $hamburger-layer-width * -2;
+          top: $hamburger-layer-width * -2;
+          transform: translate3d($hamburger-layer-width * -2, $hamburger-layer-width * 2, 0) rotate(-45deg);
+          transition: right .125s ease-out, top .05s .125s linear, transform .125s .175s cubic-bezier(.075, .82, .165, 1);
+        }
+      }
+    }
+  }
+}

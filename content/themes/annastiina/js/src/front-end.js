@@ -114,11 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var Nav = new hcOffcanvasNav('#nav', {
     disableAt: false,
     customToggle: '.nav-toggle',
-    navTitle: 'All Categories',
+    navTitle: false,
     levelTitles: true,
     levelTitleAsBack: true,
     position: 'right',
     pushContent: '#page',
+    insertClose: false,
+    labelBack: 'Takaisin',
   });
 
   // Moveto triggers

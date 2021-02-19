@@ -1,0 +1,38 @@
+@if index($hamburger-types, stand-r) {
+  /*
+   * Stand Reverse
+   */
+  .hamburger--stand-r {
+    .hamburger-inner {
+      transition: transform .075s .15s cubic-bezier(.55, .055, .675, .19), background-color 0s .075s linear;
+
+      &::before {
+        transition: top .075s .075s ease-in, transform .075s 0s cubic-bezier(.55, .055, .675, .19);
+      }
+
+      &::after {
+        transition: bottom .075s .075s ease-in, transform .075s 0s cubic-bezier(.55, .055, .675, .19);
+      }
+    }
+
+    &.toggle-open {
+      .hamburger-inner {
+        transform: rotate(-90deg);
+        background-color: transparent !important;
+        transition: transform .075s 0s cubic-bezier(.215, .61, .355, 1), background-color 0s .15s linear;
+
+        &::before {
+          top: 0;
+          transform: rotate(-45deg);
+          transition: top .075s .1s ease-out, transform .075s .15s cubic-bezier(.215, .61, .355, 1);
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(45deg);
+          transition: bottom .075s .1s ease-out, transform .075s .15s cubic-bezier(.215, .61, .355, 1);
+        }
+      }
+    }
+  }
+}

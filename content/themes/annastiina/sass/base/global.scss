@@ -30,8 +30,8 @@
 
 // Navigation
 @import 'hc-offcanvas-nav/src/scss/core';
-@import 'hc-offcanvas-nav/src/scss/theme-default';
-@import '../navigation/navigation';
+@import '../navigation/nav-toggle';
+@import '../navigation/hc-theme';
 
 // Structure
 @import '../layout/general';
