@@ -1,4 +1,6 @@
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity, a11y/font-size-is-readable */
+$red-live: #ea2429;
+$white: #fff;
 
 .toptod {
   background-color: #050505;
@@ -6,6 +8,7 @@
   border-radius: 8px;
   margin-left: -100px;
   padding: 3rem;
+  position: relative;
   width: 420px;
 
   h2 {
@@ -90,5 +93,53 @@
     position: absolute;
     right: 0;
     top: 2px;
+  }
+}
+
+.circle {
+  background-color: $color-white;
+  border-radius: 50%;
+  display: inline-block;
+  height: 9px;
+  min-width: 9px;
+  position: relative;
+  width: 9px;
+  z-index: 2;
+}
+
+.live-indicator-block {
+  display: inline-flex;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+
+  .live-indicator {
+    background: $red-live;
+    border-radius: 6px;
+    color: $white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 6px 7px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: auto;
+
+    .blink {
+      animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+      font-size: 10px;
+      margin-right: 5px;
+    }
+  }
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
