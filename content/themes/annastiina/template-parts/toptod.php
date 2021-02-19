@@ -8,7 +8,7 @@ namespace Air_Light;
 
 <!-- Toptod markup here, TODO: Add correct screen-reader-text markup to peikko.us/toptod.php -->
 <div class="toptod">
-    <h2>!toptod, eli päivän aktiivisimmat</h2>
+    <h2>Päivän aktiivisimmat</h2>
 
       <ol><li>
           <div class="points">

@@ -884,7 +884,7 @@ span.message {
 table,
 td,
 tr {
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .work-tr {
