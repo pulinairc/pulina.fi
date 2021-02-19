@@ -27,7 +27,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       $(this).attr(
         'aria-expanded',
         $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
-      ); amb;
+      );
 
       // Change screen reader open/close labels
       $('#nav-toggle-label').text(

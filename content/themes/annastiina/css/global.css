@@ -266,7 +266,7 @@ template {
   --padding-container-horizontal: 2rem;
   --padding-container-vertical: 6.4rem;
   --padding-site-header-vertical: 2rem;
-  --padding-block: 20rem;
+  --padding-block: 15rem;
   --margin-between-text-elements: 4rem; }
 
 :root {
@@ -3023,7 +3023,7 @@ body *[aria-invalid="true"] {
 
 .block-hero-fp .container {
   overflow: visible;
-  padding-bottom: var(--padding-block);
+  padding-bottom: 8rem;
   padding-top: var(--padding-block); }
 
 .block-hero-fp h1 {
