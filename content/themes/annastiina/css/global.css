@@ -2025,6 +2025,7 @@ pre {
   word-break: break-all;
   word-wrap: break-word; }
 
+/* stylelint-disable sh-waqar/declaration-use-variable */
 .site-header {
   align-items: center;
   display: flex;
