@@ -2717,7 +2717,6 @@ body *[aria-invalid="true"] {
   background-color: transparent;
   padding-top: 0; }
   .block-hall-of-fame .container {
-    margin-top: -220px;
     overflow: visible;
     padding-top: 0; }
   .block-hall-of-fame .cols {
