@@ -29,8 +29,9 @@
 @import 'accessibility';
 
 // Navigation
-@import '../navigation/nav-desktop';
-@import '../navigation/nav-mobile';
+@import 'hc-offcanvas-nav/src/scss/core';
+@import 'hc-offcanvas-nav/src/scss/theme-default';
+@import '../navigation/navigation';
 
 // Structure
 @import '../layout/general';

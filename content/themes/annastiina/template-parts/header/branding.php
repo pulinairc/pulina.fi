@@ -12,13 +12,13 @@ namespace Air_Light;
 <div class="site-branding">
 
   <?php if ( is_front_page() ) : ?>
-    <h1 class="site-title screen-reader-text">
+    <h1 class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
       </a>
     </h1>
   <?php else : ?>
-    <p class="site-title screen-reader-text">
+    <p class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
       </a>

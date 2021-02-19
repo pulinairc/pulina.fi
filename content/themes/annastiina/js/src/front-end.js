@@ -13,6 +13,7 @@ import 'what-input';
 
 // Navigation
 import hcOffcanvasNav from 'hc-offcanvas-nav';
+import './modules/navigation';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -108,6 +109,19 @@ annastiina_LazyLoad.update();
 })(jQuery);
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  // Side nav
+  var Nav = new hcOffcanvasNav('#nav', {
+    disableAt: false,
+    customToggle: '.nav-toggle',
+    navTitle: 'All Categories',
+    levelTitles: true,
+    levelTitleAsBack: true,
+    position: 'right',
+    pushContent: '#page',
+  });
+
+  // Moveto triggers
   const easeFunctions = {
     easeInQuad: function (t, b, c, d) {
       t /= d;
