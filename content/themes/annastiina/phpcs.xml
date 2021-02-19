@@ -25,6 +25,11 @@
      <!-- Include the WordPress ruleset, with exclusions. -->
      <rule ref="WordPress">
 
+        <!-- Ignore old stuff -->
+        <exclude-pattern type="relative-root">^/pulinafourteen/*</exclude-pattern>
+        <exclude-pattern type="relative-root">^/pulina/*</exclude-pattern>
+        <exclude-pattern type="relative-root">^/light/*</exclude-pattern>
+
         <!-- Nazi-strict intendation rules we want to exclude -->
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />

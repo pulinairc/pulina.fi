@@ -2,3 +2,6 @@ node_modules
 bin
 *.*
 !*.scss
+content/themes/light
+content/themes/pulina
+content/themes/pulinafourteen

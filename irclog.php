@@ -1,5 +1,5 @@
 <?php
-
+// phpcs:disable
 // array of first names
 define('NAMES', explode("\n", file_get_contents(__DIR__.'/scroller_data/nimilista.txt')));
 // name count minus one to ignore empty name at the end of the name list

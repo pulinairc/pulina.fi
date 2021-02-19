@@ -11,6 +11,11 @@
     "stylelint-config-standard",
     "stylelint-config-recommended-scss"
   ],
+  "ignoreFiles": [
+      "content/themes/pulinafourteen",
+      "content/themes/pulina",
+      "content/themes/light"
+  ],  
   "rules": {
     "csstools/value-no-unknown-custom-properties": [true, {
       "importFrom": [

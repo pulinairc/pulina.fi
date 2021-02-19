@@ -1,9 +1,12 @@
 <?php
 /**
  * Top tod.
+ *
+ * @package annastiina
  */
 
 namespace Air_Light;
+
 ?>
 
 <!-- Toptod markup here, TODO: Add correct screen-reader-text markup to peikko.us/toptod.php -->
