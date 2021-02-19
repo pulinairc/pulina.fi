@@ -26,7 +26,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^13.0.0",
     "gulp-util": "^3.0.8",
-    "hc-offcanvas-nav": "^6.1.1",
+    "hc-offcanvas-nav": "^6.1.2",
     "mqpacker": "^7.0.0",
     "postcss": "^8.1.1",
     "stylelint": "^13.7.2",

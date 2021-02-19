@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pushContent: '#page',
     insertClose: false,
     labelBack: 'Takaisin',
+    activeToggleClass: 'is-active',
   });
 
   // Moveto triggers

@@ -20,6 +20,7 @@ get_header(); ?>
   <?php get_template_part( 'template-parts/hero-fp' ); ?>
   <?php get_template_part( 'template-parts/modules/hall-of-fame' ); ?>
   <?php get_template_part( 'template-parts/modules/infographics' ); ?>
+  <?php // get_template_part( 'template-parts/modules/recent-links' ); ?>
 </main>
 
 <?php get_footer();
