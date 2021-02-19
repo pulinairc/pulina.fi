@@ -890,9 +890,9 @@ tr {
 .work-tr {
     display: flex;
     justify-content: flex-start;
-    max-width: 100%;
     margin: 2px 0;
     padding-right: 10px;
+    max-width: 100vw;
 }
 
 a:link, a:visited, a:active {
@@ -917,6 +917,18 @@ a:hover {
 
 #foo {
     background:inherit;
+}
+
+@media (max-width: 760px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 12px;
+    }
 }
 
         </style>

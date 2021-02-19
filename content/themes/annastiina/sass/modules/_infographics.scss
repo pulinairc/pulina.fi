@@ -2,10 +2,19 @@
   .container {
     overflow: visible;
     padding-top: 0;
+
+    @media (min-width: 800px) and (max-width: 1500px) {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
   }
 
   .cols {
     @include grid(4, $gutter_x: 50px, $gutter_y: 50px);
+
+    @media (max-width: 800px) {
+      @include grid(2, $gutter_x: 50px, $gutter_y: 50px);
+    }
   }
 
   .col {
@@ -31,5 +40,22 @@
     font-weight: 800;
     margin-bottom: 2rem;
     order: 1;
+
+    @media (max-width: 1200px) {
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1045px) {
+      font-size: 42px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 38px;
+    }
+
+    @media (max-width: 430px) {
+      font-size: 32px;
+    }
   }
 }

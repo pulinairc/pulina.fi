@@ -6,10 +6,22 @@ $white: #fff;
   background-color: #050505;
   border: 1px solid #20283c;
   border-radius: 8px;
-  margin-left: -100px;
   padding: 3rem;
   position: relative;
   width: 420px;
+
+  @media (min-width: 1555px) {
+    margin-left: -100px;
+  }
+
+  @media (max-width: 1000px) {
+    width: 280px;
+  }
+
+  @media (max-width: 760px) {
+    margin-bottom: 5rem;
+    width: calc(100% - 6rem);
+  }
 
   h2 {
     color: $color-white;
