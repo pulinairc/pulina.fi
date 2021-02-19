@@ -14,13 +14,15 @@ namespace Air_Light;
   <?php if ( is_front_page() ) : ?>
     <h1 class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        <?php include get_theme_file_path( '/svg/logo.svg' ); ?>
+        <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
       </a>
     </h1>
   <?php else : ?>
     <p class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        <?php include get_theme_file_path( '/svg/logo.svg' ); ?>
+        <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></
       </a>
     </p>
   <?php endif;

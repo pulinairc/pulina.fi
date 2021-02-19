@@ -22,15 +22,43 @@
   line-height: 0;
   margin: 0;
 
+  svg {
+    height: auto;
+    width: 150px;
+  }
+
   a {
     align-items: center;
-    color: $color-white;
+    animation-direction: alternate;
+    animation-duration: .15s;
+    animation-iteration-count: infinite;
+    animation-name: arcade;
+    animation-timing-function: ease-in-out;
+    color: $color-retro-green;
     display: flex;
     font-size: 18px;
+
+    &:hover,
+    &:focus {
+      animation-play-state: paused;
+    }
   }
 }
 
-// Nav container visibility fix
-.nav-container {
-  z-index: 10;
+@keyframes arcade {
+  0% {
+    color: #20ffa7;
+  }
+
+  35% {
+    color: #4de0a5;
+  }
+
+  50% {
+    color: #21f5a0;
+  }
+
+  100% {
+    color: #57b992;
+  }
 }

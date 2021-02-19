@@ -265,7 +265,7 @@ template {
 :root {
   --padding-container-horizontal: 2rem;
   --padding-container-vertical: 6.4rem;
-  --padding-site-header-vertical: 2rem;
+  --padding-site-header-vertical: 3rem;
   --padding-block: 15rem;
   --margin-between-text-elements: 4rem; }
 
@@ -2042,14 +2042,47 @@ pre {
 .site-title {
   line-height: 0;
   margin: 0; }
+  .site-title svg {
+    height: auto;
+    width: 150px; }
   .site-title a {
     align-items: center;
-    color: #fff;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-duration: .15s;
+            animation-duration: .15s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: arcade;
+            animation-name: arcade;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    color: #20ffa7;
     display: flex;
     font-size: 18px; }
+    .site-title a:hover, .site-title a:focus {
+      -webkit-animation-play-state: paused;
+              animation-play-state: paused; }
 
-.nav-container {
-  z-index: 10; }
+@-webkit-keyframes arcade {
+  0% {
+    color: #20ffa7; }
+  35% {
+    color: #4de0a5; }
+  50% {
+    color: #21f5a0; }
+  100% {
+    color: #57b992; } }
+
+@keyframes arcade {
+  0% {
+    color: #20ffa7; }
+  35% {
+    color: #4de0a5; }
+  50% {
+    color: #21f5a0; }
+  100% {
+    color: #57b992; } }
 
 :root {
   --checkbox-radio-size: 16px;
