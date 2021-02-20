@@ -7,7 +7,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:33:49
  * @Last Modified by:   Your name
- * @Last Modified time: 2021-02-20 14:57:41
+ * @Last Modified time: 2021-02-20 22:41:15
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package annastiina
@@ -25,7 +25,7 @@ namespace Air_Light;
     <p>
       <a href="https://chat.pulina.fi"><code>/join #pulina</code></a>
       <br />
-      Kanavalla irkkaajat tekevät pulinan. Vuodesta 2008.
+      Kanavalla irkkaavat tekevät pulinan. Vuodesta 2008.
     </p>
 
     <ul class="social">
