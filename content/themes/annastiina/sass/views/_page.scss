@@ -44,7 +44,7 @@
     overflow: visible;
     position: relative;
     text-decoration: none;
-    transition: all .18s ease-in-out;
+    transition: all .08s;
     z-index: 1;
 
     &::after {
@@ -53,6 +53,7 @@
 
     &:hover,
     &:focus {
+      animation: none;
       box-shadow: inset 0 -3.3rem 0 $color-retro-green;
       color: $color-deep-blue;
 

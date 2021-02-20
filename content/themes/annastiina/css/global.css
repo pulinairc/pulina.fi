@@ -3295,11 +3295,13 @@ body *[aria-invalid="true"] {
     overflow: visible;
     position: relative;
     text-decoration: none;
-    transition: all .18s ease-in-out;
+    transition: all .08s;
     z-index: 1; }
     .block-page a::after {
       background-image: url("../svg/external-link-white.svg"); }
     .block-page a:hover, .block-page a:focus {
+      -webkit-animation: none;
+              animation: none;
       box-shadow: inset 0 -3.3rem 0 #20ffa7;
       color: #060d21; }
       .block-page a:hover::after, .block-page a:focus::after {
@@ -3413,7 +3415,7 @@ body *[aria-invalid="true"] {
   to {
     opacity: 0; } }
 
-/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-unknown-animations, no-descending-specificity */
 .home {
   background-color: #060d21; }
 
