@@ -886,6 +886,10 @@ span.message {
     flex-wrap: wrap;
 }
 
+.msg-td span {
+    margin-left: 9px;
+}
+
 table,
 td,
 tr {
