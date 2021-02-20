@@ -3560,6 +3560,21 @@ body *[aria-invalid="true"] {
   to {
     opacity: 0; } }
 
+/* stylelint-disable */
+.textad.advertisement {
+  background-color: #060607;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  max-width: 500px;
+  opacity: .5;
+  transition: all 0.22s; }
+  .textad.advertisement:hover {
+    opacity: 1; }
+  .textad.advertisement p {
+    font-size: 14px; }
+
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-unknown-animations, no-descending-specificity */
 .home {
   background-color: #060d21; }

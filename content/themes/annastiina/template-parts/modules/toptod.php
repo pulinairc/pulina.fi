@@ -9,7 +9,6 @@ namespace Air_Light;
 
 ?>
 
-<!-- Toptod markup here, TODO: Add correct screen-reader-text markup to peikko.us/toptod.php -->
 <div class="toptod">
 
   <div class="live-indicator-block"><span class="live-indicator"><span class="circle blink" aria-hidden="true"></span>Live</span></div>

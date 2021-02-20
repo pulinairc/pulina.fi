@@ -1,0 +1,19 @@
+/* stylelint-disable */
+.textad.advertisement {
+  background-color: #060607;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  max-width: 500px;
+  opacity: .5;
+  transition: all $transition-duration;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
