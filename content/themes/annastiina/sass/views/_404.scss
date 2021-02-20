@@ -9,6 +9,11 @@
 
   h1 {
     @include responsive-font(42px, 200px);
+    color: $color-retro-green;
     margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: $color-white;
   }
 }

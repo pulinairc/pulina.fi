@@ -3137,7 +3137,11 @@ body *[aria-invalid="true"] {
 
 .block-error-404 h1 {
   font-size: 42px;
+  color: #20ffa7;
   margin-bottom: 2rem; }
+
+.block-error-404 h2 {
+  color: #fff; }
 
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
 .block-hero-fp .cols {
@@ -3655,6 +3659,7 @@ p.how-to {
   margin-bottom: 2rem;
   order: 1; }
 
+/* stylelint-disable a11y/no-display-none, property-disallowed-list */
 .block-title {
   background: linear-gradient(-70deg, #fff, #a4ebc8);
   -webkit-background-clip: text;
