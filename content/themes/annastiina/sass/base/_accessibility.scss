@@ -23,8 +23,8 @@
     margin: 5px;
 
     &:focus {
-      background-color: $color-main;
-      color: choose-contrast-color($color-main);
+      background-color: $color-retro-green;
+      color: choose-contrast-color($color-retro-green);
     }
   }
 

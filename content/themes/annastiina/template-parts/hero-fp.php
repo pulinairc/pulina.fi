@@ -13,7 +13,7 @@ namespace Air_Light;
     <div class="cols">
       <div class="col col-content">
         <div class="content">
-          <h1>IRC ei kuole koskaan, jos se meistä on kiinni</h1>
+          <h1 id="content">IRC ei kuole koskaan, jos se meistä on kiinni</h1>
           <p><b>Irkissä on sitä jotain.</b> Pulinan ideana on ollut alusta asti pitää hengissä IRCin taikaa. Tervetuloa kanavalle!</p>
 
           <!-- defaults: {

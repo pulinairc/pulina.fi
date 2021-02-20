@@ -25,6 +25,7 @@
     border: 0;
     font-family: $font-monospace;
     font-size: 28px;
+    font-weight: 300;
     letter-spacing: -.05;
     line-height: 1.2;
     margin-bottom: 2rem;
@@ -48,7 +49,7 @@
   }
 
   p {
-    color: rgba($color-code-blocks, .7);
+    color: rgba(#7686a5, .7);
   }
 
   .social {
@@ -74,7 +75,7 @@
     }
 
     a {
-      color: rgba($color-code-blocks, .6);
+      color: rgba(#7686a5, .6);
     }
 
     a:hover,

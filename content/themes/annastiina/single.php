@@ -18,7 +18,7 @@ get_header(); ?>
 <main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
-  <section class="block block-single has-light-bg">
+  <section class="block block-single has-dark-bg">
     <div class="gutenberg-content">
 
       <?php the_content();

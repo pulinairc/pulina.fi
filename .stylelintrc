@@ -58,7 +58,7 @@
     "comment-whitespace-inside": "always",
     "indentation": 2,
     "linebreaks": "unix",
-    "selector-max-specificity": "0,4,4",
+    "selector-max-specificity": "0,5,5",
     "block-no-empty": true,
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": "never",

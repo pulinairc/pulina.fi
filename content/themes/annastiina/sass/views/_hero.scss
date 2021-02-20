@@ -1,0 +1,38 @@
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+
+.block.block-hero-fp.block-hero-sub-page {
+  .container {
+    padding-bottom: 0;
+    padding-top: 15rem;
+
+    @media (min-width: 760px) {
+      padding-top: 0;
+    }
+  }
+
+  .irc-scroller-wrapper {
+    height: 400px;
+    width: 100%;
+
+    iframe {
+      height: 398px;
+    }
+  }
+
+  .col {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  h1 {
+    background: linear-gradient(-70deg, #97c8f6, #20ffa7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 0;
+    -webkit-text-fill-color: transparent;
+  }
+}

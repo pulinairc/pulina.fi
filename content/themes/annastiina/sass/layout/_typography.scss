@@ -267,17 +267,17 @@ samp {
 code {
   background-color: $color-code-blocks-background;
   border: 1px solid $color-code-blocks-border;
-  border-radius: 4px;
+  border-radius: 6px;
   color: $color-code-blocks;
   display: inline-block;
   font-family: $font-monospace;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: -3px;
   max-height: 20em;
   max-width: 95%;
   overflow-x: auto;
-  padding: 0 3px;
+  padding: 0 4px;
   transition: all $transition-duration;
   vertical-align: middle;
 

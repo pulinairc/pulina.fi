@@ -22,15 +22,16 @@ get_header(); ?>
 <main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
-  <section class="block block-page has-light-bg">
+  <section class="block block-page has-dark-bg">
     <div class="container">
 
-      <h1 id="content"><?php the_title(); ?></h1>
-      <?php the_content(); ?>
+      <div class="content">
+        <?php the_content(); ?>
 
-      <?php if ( get_edit_post_link() ) {
-        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'annastiina' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
-      } ?>
+        <?php if ( get_edit_post_link() ) {
+          edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'annastiina' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+        } ?>
+      </div>
 
     </div><!-- .container -->
   </section>
