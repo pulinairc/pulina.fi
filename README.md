@@ -1,4 +1,4 @@
-# pulina
+# Pulina
 ![based_on_air_version 6.6.9_](https://img.shields.io/badge/based_on_air_version-6.6.9_-brightgreen.svg?style=flat-square) ![project_created 17_Feb_2021](https://img.shields.io/badge/project_created-17_Feb_2021-blue.svg?style=flat-square) ![Tested_up_to WordPress_5.5](https://img.shields.io/badge/Tested_up_to-WordPress_5.5-blue.svg?style=flat-square) ![Compatible_with PHP_7.2](https://img.shields.io/badge/Compatible_with-PHP_7.2-green.svg?style=flat-square)
 
 ## Stack
