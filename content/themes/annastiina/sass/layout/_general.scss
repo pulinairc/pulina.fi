@@ -78,39 +78,6 @@ body {
   overflow: hidden;
 }
 
-// Better edit link
-.edit-link {
-  clear: both;
-  display: block;
-  margin-bottom: 0;
-  margin-top: 2rem;
-  max-width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  text-align: left;
-  transition: all $transition-duration;
-  width: 100%;
-
-  a {
-    background-color: $color-background-edit-link;
-    border: 2px dashed $color-edit-link;
-    clear: both;
-    color: $color-edit-link;
-    display: block;
-    margin: 0;
-    padding: 2rem;
-    text-align: center;
-    text-decoration: none;
-    transition: all $transition-duration;
-  }
-
-  &:focus,
-  a:hover {
-    background-color: $color-background-hover-edit-link;
-    color: $color-edit-link;
-  }
-}
-
 // Hide/show helpers
 .hide-on-desktop {
   @media (min-width: $container-mobile) {

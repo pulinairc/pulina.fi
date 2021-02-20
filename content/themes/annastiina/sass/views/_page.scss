@@ -5,6 +5,48 @@
   position: relative;
   z-index: 2;
 
+  ul,
+  ol {
+    margin-left: 1rem;
+  }
+
+  li {
+    color: $color-white;
+    font-size: 22px;
+  }
+
+  .pros-and-cons {
+    margin-left: 0;
+    padding-left: 0;
+
+    .pro::before {
+      background-image: url('../svg/thumbs-up.svg');
+    }
+
+    .con::before {
+      background-image: url('../svg/thumbs-down.svg');
+    }
+
+    li {
+      align-items: flex-start;
+      display: flex;
+      list-style: none;
+      width: 100%;
+    }
+
+    li::before {
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      height: 24px;
+      margin-right: 1rem;
+      min-width: 24px;
+      position: relative;
+      top: 4px;
+      width: 24px;
+    }
+  }
+
   .cols {
     @include grid(2, $gutter_x: 150px, $gutter_y: 75px);
 

@@ -1763,33 +1763,6 @@ body {
   justify-content: space-between;
   overflow: hidden; }
 
-.edit-link {
-  clear: both;
-  display: block;
-  margin-bottom: 0;
-  margin-top: 2rem;
-  max-width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  text-align: left;
-  transition: all 0.22s;
-  width: 100%; }
-  .edit-link a {
-    background-color: #fafafa;
-    border: 2px dashed #999;
-    clear: both;
-    color: #999;
-    display: block;
-    margin: 0;
-    padding: 2rem;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.22s; }
-  .edit-link:focus,
-  .edit-link a:hover {
-    background-color: #efefef;
-    color: #999; }
-
 /* stylelint-disable declaration-no-important, a11y/no-display-none */
 
 /* stylelint-enable */
@@ -3248,6 +3221,34 @@ body *[aria-invalid="true"] {
   background-color: transparent;
   position: relative;
   z-index: 2; }
+  .block-page ul,
+  .block-page ol {
+    margin-left: 1rem; }
+  .block-page li {
+    color: #fff;
+    font-size: 22px; }
+  .block-page .pros-and-cons {
+    margin-left: 0;
+    padding-left: 0; }
+    .block-page .pros-and-cons .pro::before {
+      background-image: url("../svg/thumbs-up.svg"); }
+    .block-page .pros-and-cons .con::before {
+      background-image: url("../svg/thumbs-down.svg"); }
+    .block-page .pros-and-cons li {
+      align-items: flex-start;
+      display: flex;
+      list-style: none;
+      width: 100%; }
+    .block-page .pros-and-cons li::before {
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      height: 24px;
+      margin-right: 1rem;
+      min-width: 24px;
+      position: relative;
+      top: 4px;
+      width: 24px; }
   .block-page .cols {
     display: grid;
     /* autoprefixer: off */
