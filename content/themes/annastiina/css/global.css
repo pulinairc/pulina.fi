@@ -1824,10 +1824,20 @@ body {
           text-size-adjust: none; }
 
 a {
-  color: #2a2d3e;
+  color: #fff;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #2a2d3e; }
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-duration: .15s;
+            animation-duration: .15s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: arcade;
+            animation-name: arcade;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    color: #20ffa7; }
 
 p,
 dd,
@@ -2650,7 +2660,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
     margin-bottom: 0; }
   .gutenberg-content > blockquote,
   .gutenberg-content > blockquote.wp-block-quote {
-    border-left: 2px solid #2a2d3e;
+    border-left: 2px solid #fff;
     line-height: 1.77;
     margin-bottom: 4rem;
     margin-left: auto;
@@ -2662,7 +2672,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
       text-align: left; }
     .gutenberg-content > blockquote > p,
     .gutenberg-content > blockquote.wp-block-quote > p {
-      color: #2a2d3e;
+      color: #fff;
       line-height: 1.77; }
   .gutenberg-content div[style="width: 640px;"],
   .gutenberg-content .wp-video {
@@ -3187,7 +3197,7 @@ body *[aria-invalid="true"] {
   padding-top: var(--padding-block); }
 
 .block-hero-fp h1 {
-  background: linear-gradient(-70deg, #a4ebc8, #6caefa);
+  background: linear-gradient(-70deg, #97c8f6, #20ffa7);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-box-decoration-break: clone;
@@ -3436,14 +3446,16 @@ body *[aria-invalid="true"] {
     .block-hall-of-fame p.larger {
       color: #fff;
       font-size: 22px; }
-  .block-hall-of-fame .how-to {
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 4rem;
-    max-width: 400px; }
-  .block-hall-of-fame .clients {
-    color: rgba(255, 255, 255, 0.4); }
-    .block-hall-of-fame .clients svg {
-      margin-right: 1.2rem; }
+
+.how-to {
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4rem;
+  max-width: 400px; }
+
+.clients {
+  color: rgba(255, 255, 255, 0.4); }
+  .clients svg {
+    margin-right: 1.2rem; }
 
 .block-infographics .container {
   overflow: visible;

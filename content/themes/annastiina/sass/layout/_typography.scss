@@ -30,7 +30,12 @@ a {
 
   &:hover,
   &:focus {
-    color: $color-hover;
+    animation-direction: alternate;
+    animation-duration: .15s;
+    animation-iteration-count: infinite;
+    animation-name: arcade;
+    animation-timing-function: ease-in-out;
+    color: $color-retro-green;
   }
 }
 
