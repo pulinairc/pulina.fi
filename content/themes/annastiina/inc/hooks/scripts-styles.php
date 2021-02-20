@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Your name
- * @Last Modified time: 2021-02-20 19:12:25
+ * @Last Modified time: 2021-02-20 19:36:01
  */
 
 namespace Air_Light;
@@ -61,8 +61,9 @@ function enqueue_theme_scripts() {
     'annastiina_externalLinkDomains',
     [
       'localhost:3000',
-      'airdev.test',
-      'dudetest.xyz',
+      'pulina.test',
+      'pulina.fi',
+      'www.pulina.fi',
     ]
   );
 } // end annastiina_scripts
