@@ -1336,9 +1336,9 @@ body.hc-nav-open {
     bottom: 0;
     transform: rotate(-90deg); }
 
-.hamburger.toggle-open .hamburger-inner,
-.hamburger.toggle-open .hamburger-inner::before,
-.hamburger.toggle-open .hamburger-inner::after {
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
   background-color: white;
   color: white; }
 
@@ -1363,17 +1363,17 @@ body.hc-nav-open {
   width: auto;
   z-index: 100000;
   /* stylelint-disable a11y/no-display-none */ }
-  .nav-toggle:not(.toggle-open) .hamburger-inner::after {
+  .nav-toggle:not(.is-active) .hamburger-inner::after {
     transition: width 0.22s;
     width: 18px; }
-  .nav-toggle.toggle-open .hamburger-inner::after,
+  .nav-toggle.is-active .hamburger-inner::after,
   .nav-toggle:hover .hamburger-inner::after,
   .nav-toggle:focus .hamburger-inner::after {
     width: 3.5rem; }
   .nav-toggle span {
     color: white;
     font-size: 1.2em; }
-  .nav-toggle.toggle-open span {
+  .nav-toggle.is-active span {
     color: white; }
   .nav-toggle:hover, .nav-toggle:active {
     color: white; }
@@ -1386,25 +1386,25 @@ body.hc-nav-open {
     background-color: white; }
   .nav-toggle:not(.has-visible-label) .nav-toggle-label {
     display: none; }
-  .nav-toggle.toggle-open {
+  .nav-toggle.is-active {
     color: white; }
-  .nav-toggle.toggle-open .hamburger-box .hamburger-inner {
+  .nav-toggle.is-active .hamburger-box .hamburger-inner {
     background-color: white; }
-  .nav-toggle.toggle-open .hamburger-box .hamburger-inner::after {
+  .nav-toggle.is-active .hamburger-box .hamburger-inner::after {
     background-color: white; }
-  .nav-toggle.toggle-open .focus .hamburger-inner,
-  .nav-toggle.toggle-open span:focus .hamburger-inner {
+  .nav-toggle.is-active .focus .hamburger-inner,
+  .nav-toggle.is-active span:focus .hamburger-inner {
     background-color: white; }
-  .nav-toggle.toggle-open .focus .hamburger-inner::after,
-  .nav-toggle.toggle-open span:focus .hamburger-inner::after {
+  .nav-toggle.is-active .focus .hamburger-inner::after,
+  .nav-toggle.is-active span:focus .hamburger-inner::after {
     background-color: white; }
-  .nav-toggle.toggle-open span:focus,
-  .nav-toggle.toggle-open span:hover,
-  .nav-toggle.toggle-open span:active {
+  .nav-toggle.is-active span:focus,
+  .nav-toggle.is-active span:hover,
+  .nav-toggle.is-active span:active {
     color: white; }
-    .nav-toggle.toggle-open span:focus span,
-    .nav-toggle.toggle-open span:hover span,
-    .nav-toggle.toggle-open span:active span {
+    .nav-toggle.is-active span:focus span,
+    .nav-toggle.is-active span:hover span,
+    .nav-toggle.is-active span:active span {
       color: white; }
 
 /* stylelint-disable sh-waqar/declaration-use-variable, no-descending-specificity, selector-max-combinators, selector-max-pseudo-class, selector-max-class, selector-max-compound-selectors, selector-max-specificity, declaration-no-important, max-nesting-depth, no-duplicate-selectors */

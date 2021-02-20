@@ -44,9 +44,9 @@ $nav-open-from-direction: top;
 
 // Nav toggle settings
 // Hamburger menu icon specific
-.hamburger.toggle-open .hamburger-inner,
-.hamburger.toggle-open .hamburger-inner::before,
-.hamburger.toggle-open .hamburger-inner::after {
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
   background-color: $color-hamburger-active;
   color: $color-hamburger-active;
 }
@@ -70,12 +70,12 @@ $nav-open-from-direction: top;
   z-index: 100000;
 
   // Modern stuff (::after is first line, without ::after is first)
-  &:not(.toggle-open) .hamburger-inner::after {
+  &:not(.is-active) .hamburger-inner::after {
     transition: width $transition-duration;
     width: 18px;
   }
 
-  &.toggle-open .hamburger-inner::after,
+  &.is-active .hamburger-inner::after,
   &:hover .hamburger-inner::after,
   &:focus .hamburger-inner::after {
     width: $hamburger-layer-width;
@@ -86,7 +86,7 @@ $nav-open-from-direction: top;
     font-size: 1.2em;
   }
 
-  &.toggle-open span {
+  &.is-active span {
     color: $color-hamburger-active;
   }
 
@@ -144,11 +144,11 @@ $nav-open-from-direction: top;
   }
 
   // Separate active colors for opened state
-  &.toggle-open {
+  &.is-active {
     color: $color-hamburger-active;
   }
 
-  &.toggle-open .hamburger-box {
+  &.is-active .hamburger-box {
     .hamburger-inner {
       background-color: $color-hamburger-active;
     }
@@ -158,8 +158,8 @@ $nav-open-from-direction: top;
     }
   }
 
-  &.toggle-open .focus,
-  &.toggle-open span:focus {
+  &.is-active .focus,
+  &.is-active span:focus {
     .hamburger-inner {
       background-color: $color-hamburger-active;
     }
@@ -169,9 +169,9 @@ $nav-open-from-direction: top;
     }
   }
 
-  &.toggle-open span:focus,
-  &.toggle-open span:hover,
-  &.toggle-open span:active {
+  &.is-active span:focus,
+  &.is-active span:hover,
+  &.is-active span:active {
     color: $color-hamburger-active;
 
     span {

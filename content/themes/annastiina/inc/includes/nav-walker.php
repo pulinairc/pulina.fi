@@ -9,10 +9,10 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:58:30
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2021-02-20 14:09:32
  *
- * @package annastiina
+ * @package air-light
  */
 
 namespace Air_Light;
@@ -61,7 +61,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     } else {
       $class_names = $value = '';
       $classes     = empty( $item->classes ) ? array() : (array) $item->classes;
-      $classes[]   = 'greencare-menu-item menu-item-' . $item->ID;
+      $classes[]   = 'air-light-menu-item menu-item-' . $item->ID;
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
       if ( $args->has_children && isset( $args->has_dropdown ) && $args->has_dropdown ) {
