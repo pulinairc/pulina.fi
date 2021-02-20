@@ -2077,6 +2077,11 @@ pre {
   100% {
     color: #57b992; } }
 
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
 /* stylelint-disable sh-waqar/declaration-use-variable, a11y/no-display-none, no-unknown-animations */
 .site-footer {
   background-color: #070707;

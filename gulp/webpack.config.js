@@ -32,7 +32,7 @@ module.exports = {
   externals: {
     jquery: 'jQuery' // Available and loaded through WordPress.
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [{
       test: /.js$/,

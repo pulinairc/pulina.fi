@@ -10,14 +10,23 @@
  * @Last Modified time: 2021-01-12 16:00:20
  * @package annastiina
  */
-
-// Block settings
-$block_class = is_front_page() ? ' block-front' : ' block-' . get_post_type();
-
-// Featured image
-$featured_image = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : THEME_SETTINGS['default_featured_image'];
 ?>
 
-<section class="block block-hero<?php echo esc_attr( $block_class ); ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
-  <div class="shade" aria-hidden="true"></div>
+<section class="block block-hero block-hero-fp">
+  <div class="container">
+    <div class="cols">
+      <div class="col col-content">
+        <div class="content">
+          <h1><?php the_title(); ?></h1>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="irc-scroller-wrapper">
+          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
+          <?php include get_theme_file_path( '/svg/repo-terminal-glow.svg' ); ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

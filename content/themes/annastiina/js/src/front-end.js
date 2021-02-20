@@ -12,10 +12,7 @@ import './modules/webchat-login-form';
 import 'what-input';
 
 // Navigation
-// import hcOffcanvasNav from 'hc-offcanvas-nav';
-import 'hc-offcanvas-nav/src/js/hc-offcanvas-nav';
-import 'hc-offcanvas-nav/src/js/hc-offcanvas-nav.helpers';
-import './modules/navigation';
+import hcOffcanvasNav from 'hc-offcanvas-nav';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
