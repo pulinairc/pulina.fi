@@ -5,11 +5,10 @@
 // based responsive mixin can be found in _helpers.scss
 
 // Set root size for rems
-/* stylelint-disable declaration-property-unit-allowed-list */
+/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations */
 :root {
   font-size: 62.5%;
 }
-/* stylelint-enable declaration-property-unit-allowed-list */
 
 // Start typography settings
 body {

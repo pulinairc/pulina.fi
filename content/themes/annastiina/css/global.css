@@ -1806,11 +1806,10 @@ body {
 /* stylelint-enable */
 /* stylelint-disable a11y/no-display-none */
 
-/* stylelint-disable declaration-property-unit-allowed-list */
+/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations */
 :root {
   font-size: 62.5%; }
 
-/* stylelint-enable declaration-property-unit-allowed-list */
 body {
   color: rgba(255, 255, 255, 0.8);
   font-family: "Alliance No. 1", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
@@ -3286,6 +3285,7 @@ body *[aria-invalid="true"] {
     box-decoration-break: clone;
     font-weight: 600;
     -webkit-text-fill-color: transparent; }
+  .block-page li a,
   .block-page p a {
     border-bottom: 1px solid #20ffa7;
     box-shadow: inset 0 -0.1rem 0 #20ffa7;
@@ -3297,14 +3297,19 @@ body *[aria-invalid="true"] {
     text-decoration: none;
     transition: all .08s;
     z-index: 1; }
+    .block-page li a::after,
     .block-page p a::after {
       background-image: url("../svg/external-link-white.svg"); }
-    .block-page p a:hover, .block-page p a:focus {
+    .block-page li a:hover, .block-page li a:focus,
+    .block-page p a:hover,
+    .block-page p a:focus {
       -webkit-animation: none;
               animation: none;
       box-shadow: inset 0 -3.3rem 0 #20ffa7;
       color: #060d21; }
-      .block-page p a:hover::after, .block-page p a:focus::after {
+      .block-page li a:hover::after, .block-page li a:focus::after,
+      .block-page p a:hover::after,
+      .block-page p a:focus::after {
         background-image: url("../svg/external-link.svg"); }
 
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity, a11y/font-size-is-readable */
