@@ -29,7 +29,7 @@ if ( file_exists( '/var/www/pulina/test.log' ) ) {
 }
 
 // Starting offset in bytes (how many bytes are readed from end of file?)
-$startoffsetbytes = 7200;
+$startoffsetbytes = 6000;
 
 // Format of logfile. Currently supported:
 // * mirc - For those who use m-IRC (or compatible logfile format)
@@ -1209,7 +1209,7 @@ function scrollme(){
     var mypos=window.innerHeight+window.pageYOffset;
     if (mypos<document.getElementById("foo").offsetHeight) {
         if(smoothScroll == true) {
-            window.scrollBy(0,2);
+            window.scrollBy(0,6);
             setTimeout("scrollme()",50);
         } else {
             window.scrollTo(0,mypos);
