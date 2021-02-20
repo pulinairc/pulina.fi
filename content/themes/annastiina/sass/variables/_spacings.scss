@@ -24,6 +24,10 @@
     --padding-container-vertical: 5rem;
   }
 
+  @media (max-width: 760px) {
+    --padding-block: 4rem;
+  }
+
   // Between iPad and a mobile phone
   @media (max-width: 600px) {
     --padding-block: 6rem;

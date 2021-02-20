@@ -2,7 +2,7 @@
 //
 // The styles for most of the TinyMCE produced
 // classes and WordPress Gutenberg editor formatting.
-/* stylelint-disable no-descending-specificity, property-disallowed-list */
+/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity */
 // Blog post category styles
 .cat,
 body .gutenberg-content .cat {

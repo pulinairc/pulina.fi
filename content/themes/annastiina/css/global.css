@@ -2479,7 +2479,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   border-color: rgba(255, 255, 255, 0.8); }
 
 /* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
-/* stylelint-disable no-descending-specificity, property-disallowed-list */
+/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity */
 .cat,
 body .gutenberg-content .cat {
   margin-bottom: .5rem;
@@ -3202,7 +3202,7 @@ body *[aria-invalid="true"] {
   font-size: 22px;
   padding: 1px 10px; }
 
-/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, selector-max-class, selector-max-specificity */
 .block.block-hero-fp.block-hero-sub-page::before {
   background: linear-gradient(0deg, rgba(6, 13, 33, 0) 0%, #060d21 100%);
   content: '';
@@ -3215,13 +3215,15 @@ body *[aria-invalid="true"] {
 
 .block.block-hero-fp.block-hero-sub-page .container {
   padding-bottom: 0;
-  padding-top: 15rem; }
+  padding-top: 0; }
 
 .block.block-hero-fp.block-hero-sub-page .irc-scroller-wrapper {
   height: 400px;
   width: 100%; }
   .block.block-hero-fp.block-hero-sub-page .irc-scroller-wrapper iframe {
-    height: 398px; }
+    height: 398px;
+    max-width: 100%;
+    width: 100%; }
 
 .block.block-hero-fp.block-hero-sub-page .col {
   align-items: flex-end;
@@ -3671,6 +3673,55 @@ p.how-to {
     :root {
       --font-size-extra-large: 17px; } }
 
+@media (max-width: 760px) {
+    :root {
+      --padding-block: 4rem; }
+    .block.block-hero-fp.block-hero-sub-page .irc-scroller-wrapper {
+      margin-top: -100px; }
+  .block.block-hero-fp.block-hero-sub-page {
+    margin-bottom: 2rem; }
+    .block.block-hero-fp.block-hero-sub-page::before {
+      background: linear-gradient(0deg, rgba(6, 13, 33, 0) 0%, #060d21 100%);
+      content: '';
+      height: 150px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 4; }
+    .block.block-hero-fp.block-hero-sub-page .cols {
+      display: grid;
+      grid-template-columns: 100%; }
+      .block.block-hero-fp.block-hero-sub-page .cols .col:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        order: 2;
+        text-align: center; }
+      .block.block-hero-fp.block-hero-sub-page .cols .col:nth-child(2) {
+        order: 1; }
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      margin-bottom: 0;
+      margin-top: 6rem; }
+      .block.block-hero-fp.block-hero-blog .irc-scroller-wrapper {
+        height: 400px;
+        margin-top: -100px; }
+        .block.block-hero-fp.block-hero-blog .irc-scroller-wrapper iframe {
+          height: 398px; }
+      .block.block-hero-fp.block-hero-blog h1 {
+        margin-bottom: 0;
+        margin-top: 6rem; }
+      .block-page .cols {
+        display: block; }
+        .block-page .cols .col {
+          margin-bottom: 5rem; }
+        .block-page .cols .col:last-child {
+          margin-bottom: 0; }
+    .toptod {
+      margin-bottom: 5rem;
+      width: calc(100% - 6rem); }
+      .block-hall-of-fame .cols {
+        display: block; } }
+
 @media (max-width: 600px) {
     :root {
       --padding-block: 6rem; }
@@ -3698,7 +3749,9 @@ p.how-to {
     .page-numbers.next,
     .page-numbers.prev {
       padding-left: 10px;
-      padding-right: 10px; } }
+      padding-right: 10px; }
+  .block.block-hero-fp.block-hero-sub-page {
+    margin-bottom: 0; } }
 
 @media (max-width: 480px) {
     :root {
@@ -3754,8 +3807,8 @@ p.how-to {
     :root {
       --font-size-nav-toggle-label: 13px;
       --font-size-extra-large: 16px;
-      --font-size-tiny: 14px;
-      --font-size-small: 14px; } }
+      --font-size-tiny: 16px;
+      --font-size-small: 16px; } }
 
 @media (max-width: 959px) {
     .nav-toggle {
@@ -4080,8 +4133,6 @@ p.how-to {
             width: calc(50% - 80px); }
             .block-hero-fp .cols > div:nth-child(2n+2) {
               margin-right: 0; } }
-    .block.block-hero-fp.block-hero-sub-page .container {
-      padding-top: 0; }
       .block.block-hero-fp.block-hero-blog .container {
         padding-top: 0; } }
 
@@ -4158,7 +4209,59 @@ p.how-to {
 
 @media (max-width: 1300px) {
     .block-hero-fp h1 {
-      font-size: 52px; }
+      font-size: 52px; } }
+
+@media (max-width: 1100px) {
+    .block-hero-fp h1 {
+      font-size: 42px; }
+      .block-hall-of-fame .block-title {
+        font-size: 42px; }
+    .block-title {
+      font-size: 42px; } }
+
+@media (min-width: 1200px) and (max-width: 1430px) {
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      font-size: 60px; } }
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      font-size: 50px; } }
+
+@media (min-width: 670px) and (max-width: 1000px) {
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      font-size: 42px; } }
+
+@media (max-width: 670px) {
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      font-size: 32px; } }
+
+@media (max-width: 900px) {
+      .block.block-hero-fp.block-hero-blog h1 {
+        font-size: 62px; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .block-page .cols {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; }
+        .block-page .cols > div {
+          margin-bottom: 75px;
+          margin-right: 150px;
+          width: calc(50% - 150px); }
+          .block-page .cols > div:nth-child(2n+2) {
+            margin-right: 0; }
+    .block-infographics .cols {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .block-infographics .cols > div {
+        margin-bottom: 50px;
+        margin-right: 50px;
+        width: calc(25% - 50px); }
+        .block-infographics .cols > div:nth-child(4n+4) {
+          margin-right: 0; } }
+
+@media (min-width: 760px) and (max-width: 1300px) {
       .block-page .cols {
         display: grid;
         /* autoprefixer: off */
@@ -4189,62 +4292,7 @@ p.how-to {
               .block-page .cols > div:nth-child(2n+2) {
                 margin-right: 0; } } }
 
-@media (max-width: 1100px) {
-    .block-hero-fp h1 {
-      font-size: 42px; }
-      .block-hall-of-fame .block-title {
-        font-size: 42px; }
-    .block-title {
-      font-size: 42px; } }
-
-@media (max-width: 760px) {
-      .block.block-hero-fp.block-hero-blog .irc-scroller-wrapper {
-        height: 400px;
-        margin-top: -100px; }
-        .block.block-hero-fp.block-hero-blog .irc-scroller-wrapper iframe {
-          height: 398px; }
-      .block.block-hero-fp.block-hero-blog h1 {
-        margin-bottom: 0;
-        margin-top: 6rem; }
-      .block-page .cols {
-        display: block; }
-        .block-page .cols .col {
-          margin-bottom: 5rem; }
-        .block-page .cols .col:last-child {
-          margin-bottom: 0; }
-    .toptod {
-      margin-bottom: 5rem;
-      width: calc(100% - 6rem); }
-      .block-hall-of-fame .cols {
-        display: block; } }
-
-@media (max-width: 900px) {
-      .block.block-hero-fp.block-hero-blog h1 {
-        font-size: 62px; } }
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .block-page .cols {
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden; }
-        .block-page .cols > div {
-          margin-bottom: 75px;
-          margin-right: 150px;
-          width: calc(50% - 150px); }
-          .block-page .cols > div:nth-child(2n+2) {
-            margin-right: 0; }
-    .block-infographics .cols {
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden; }
-      .block-infographics .cols > div {
-        margin-bottom: 50px;
-        margin-right: 50px;
-        width: calc(25% - 50px); }
-        .block-infographics .cols > div:nth-child(4n+4) {
-          margin-right: 0; } }
-
-@media all and (max-width: 1300px) and (-ms-high-contrast: none), (max-width: 1300px) and (-ms-high-contrast: active) {
+@media all and (min-width: 760px) and (max-width: 1300px) and (-ms-high-contrast: none), (min-width: 760px) and (max-width: 1300px) and (-ms-high-contrast: active) {
     .block-page .cols {
       display: flex;
       flex-wrap: wrap;
