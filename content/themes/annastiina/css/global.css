@@ -3396,6 +3396,16 @@ body *[aria-invalid="true"] {
     box-decoration-break: clone;
     font-weight: 600;
     -webkit-text-fill-color: transparent; }
+  .block-page h3,
+  .block-page h4,
+  .block-page h5 {
+    background: linear-gradient(-20deg, #97c8f6, #20ffa7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-weight: 600;
+    -webkit-text-fill-color: transparent; }
 
 .block-page li a,
 .block-page p a,
@@ -3794,6 +3804,8 @@ p.how-to {
         margin-bottom: 3rem; }
       .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
         margin-top: 6rem; }
+      .block-page li {
+        font-size: var(--font-size-medium); }
       .block-page .cols {
         display: block; }
         .block-page .cols .col {

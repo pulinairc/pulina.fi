@@ -13,6 +13,10 @@
   li {
     color: $color-white;
     font-size: 22px;
+
+    @media (max-width: 760px) {
+      font-size: var(--font-size-medium);
+    }
   }
 
   .pros-and-cons {
@@ -68,6 +72,18 @@
   }
 
   h2 {
+    background: linear-gradient(-20deg, #97c8f6, #20ffa7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    font-weight: 600;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3,
+  h4,
+  h5 {
     background: linear-gradient(-20deg, #97c8f6, #20ffa7);
     -webkit-background-clip: text;
     background-clip: text;
