@@ -16,46 +16,71 @@ namespace Air_Light;
 
     <h2>Päivän aktiivisimmat</h2>
 
-      <ol><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-120" style="width: 120%;"><b>mustikkasoppa</b> <span class="value">2400</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-50" style="width: 45.2%;"><b>Nefastos</b> <span class="value">904</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-50" style="width: 43.1%;"><b>ivy_</b> <span class="value">862</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-40" style="width: 33.55%;"><b>kummitus</b> <span class="value">671</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-30" style="width: 25.8%;"><b>rolle</b> <span class="value">516</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 18.15%;"><b>lapyo</b> <span class="value">363</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 13%;"><b>hendrix</b> <span class="value">260</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 12.2%;"><b>nmr</b> <span class="value">244</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-20" style="width: 11.35%;"><b>R1NN1</b> <span class="value">227</span></div></div>
-          </div>
-          </li><li>
-          <div class="points">
-            <div class="bar"><div class="progress progress-10" style="width: 7.6%;"><b>LM-</b> <span class="value">152</span></div></div>
-          </div>
-          </li></ol>
+      <div id="toptod">
+          <?php
+            // This same code is on peikko.us/toptod-content-annastiina.php where it's polled via JS
+            // Fetch data and set up simple cache
+            $toptod_fetch_url = 'https://peikko.us/toptod.html';
+            $toptod_cachefile = get_theme_file_path( 'inc/cache/toptod.html' );
+            $toptod_cachetime = 1800; // 30 minutes
+
+            // If cache file does not exist, let's create it
+            if ( ! file_exists( $toptod_cachefile ) ) {
+              touch( $toptod_cachefile );
+              copy( $toptod_fetch_url, $toptod_cachefile );
+            }
+
+            // Set up fetchable data
+            // phpcs:disable
+            $html = file_get_contents( $toptod_cachefile );
+            $items = explode( ' ', $html );
+
+            // Start
+            echo '<ol>';
+
+            // If file is older than cache time, overwrite file
+            if ( time() - filemtime( $toptod_cachefile ) > 2 * $toptod_cachetime ) {
+              copy( $toptod_fetch_url, $toptod_cachefile );
+            }
+
+            foreach ( $items as $key => $item ) {
+            $list_item = trim( $item );
+
+            if ( $list_item === '' || $list_item === ' ' || empty( $list_item ) ) : // phpcs:ignore
+            else :
+
+            $get_points = explode( '(', $list_item );
+            $point_raw = explode( ')', $get_points[1] );
+            $point_success = explode( ')', $point_raw[0] );
+            $points = $point_success[0];
+            $nick = $get_points[0];
+
+            // Progress calculation
+            $maxpoints = '2000';
+
+            if ( ! empty( $points ) ) {
+              $count_percent_part1 = $points * 100;
+            } else {
+              $count_percent_part1 = 100 * 100;
+            }
+
+            $percent = $count_percent_part1 / $maxpoints;
+            $nearest_ten = ceil( $percent / 10 ) * 10;
+
+            if ( ! preg_match( '/\./', $item ) ) :
+            // phpcs:disable
+            echo '<li>
+            <div class="points">
+              <div class="bar"><div class="progress progress-' . $nearest_ten . '" style="width: ' . $percent . '%;"><b>' . $nick . '</b> <span class="value">' . $points . '</span></div></div>
+            </div>
+            </li>';
+            endif;
+            endif;
+            }
+          echo '</ol>';
+          ?>
+
+      </div>
+
     </div>
     <!-- Toptod markup ends -->

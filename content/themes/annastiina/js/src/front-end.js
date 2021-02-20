@@ -105,14 +105,14 @@ annastiina_LazyLoad.update();
   $(function () {
 
     // Toptod polling
-    // $('#toptod').fadeIn();
-    // $("#toptod").load('https://peikko.us/toptod-content-annastiina.php');
-    //   var refreshId = setInterval(function() {
-    // $("#toptod").load('https://peikko.us/toptod-content-annastiina.php',
-    //   function() {
-    //     $("#content").fadeIn();
-    //   }
-    // );}, 1000);
+    $('#toptod').fadeIn();
+    $("#toptod").load('https://peikko.us/toptod-content-annastiina.php');
+      var refreshId = setInterval(function() {
+    $("#toptod").load('https://peikko.us/toptod-content-annastiina.php',
+      function() {
+        $("#content").fadeIn();
+      }
+    );}, 1000);
 
   });
 })(jQuery);

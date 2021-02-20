@@ -19,11 +19,22 @@
     min-width: 768px;
   }
 
+  @media (max-width: 760px) {
+    height: 400px;
+    margin-top: -100px;
+  }
+
   .irc-scroller {
     height: 100%;
     position: absolute;
     width: 100%;
     z-index: 2;
+
+    @media (max-width: 760px) {
+      height: 398px;
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   .repo-terminal-glow {

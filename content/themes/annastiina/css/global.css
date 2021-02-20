@@ -3676,6 +3676,34 @@ p.how-to {
 @media (max-width: 760px) {
     :root {
       --padding-block: 4rem; }
+    .irc-scroller-wrapper {
+      height: 400px;
+      margin-top: -100px; }
+      .irc-scroller-wrapper .irc-scroller {
+        height: 398px;
+        max-width: 100%;
+        width: 100%; }
+    .block-hero-fp .cols {
+      display: grid;
+      grid-template-columns: 100%; }
+      .block-hero-fp .cols .col:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        order: 2;
+        text-align: center; }
+      .block-hero-fp .cols .col:nth-child(2) {
+        order: 1; }
+  .block-hero-fp::before {
+    background: linear-gradient(0deg, rgba(6, 13, 33, 0) 0%, #060d21 100%);
+    content: '';
+    height: 150px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 4; }
+    .block-hero-fp .form-join {
+      justify-content: center; }
     .block.block-hero-fp.block-hero-sub-page .irc-scroller-wrapper {
       margin-top: -100px; }
   .block.block-hero-fp.block-hero-sub-page {
@@ -4203,21 +4231,30 @@ p.how-to {
       font-size: 60px;
       font-weight: 700; } }
 
-@media (max-width: 1350px) {
+@media (min-width: 1300px) and (max-width: 1350px) {
     .block-hero-fp h1 {
       font-size: 62px; } }
 
-@media (max-width: 1300px) {
+@media (min-width: 1100px) and (max-width: 1300px) {
     .block-hero-fp h1 {
       font-size: 52px; } }
 
-@media (max-width: 1100px) {
+@media (min-width: 760px) and (max-width: 1100px) {
     .block-hero-fp h1 {
-      font-size: 42px; }
-      .block-hall-of-fame .block-title {
-        font-size: 42px; }
-    .block-title {
       font-size: 42px; } }
+
+@media (min-width: 670px) and (max-width: 760px) {
+    .block-hero-fp h1 {
+      font-size: 42px;
+      margin-bottom: 0;
+      margin-top: 5rem; } }
+
+@media (max-width: 670px) {
+    .block-hero-fp h1 {
+      font-size: 32px;
+      margin-top: 5rem; }
+    .block.block-hero-fp.block-hero-sub-page h1 {
+      font-size: 32px; } }
 
 @media (min-width: 1200px) and (max-width: 1430px) {
     .block.block-hero-fp.block-hero-sub-page h1 {
@@ -4230,10 +4267,6 @@ p.how-to {
 @media (min-width: 670px) and (max-width: 1000px) {
     .block.block-hero-fp.block-hero-sub-page h1 {
       font-size: 42px; } }
-
-@media (max-width: 670px) {
-    .block.block-hero-fp.block-hero-sub-page h1 {
-      font-size: 32px; } }
 
 @media (max-width: 900px) {
       .block.block-hero-fp.block-hero-blog h1 {
@@ -4308,21 +4341,25 @@ p.how-to {
     .toptod {
       margin-left: -100px; } }
 
-@media (max-width: 1000px) {
+@media (min-width: 760px) and (max-width: 1000px) {
     .toptod {
-      width: 280px; } }
+      width: 280px; }
+      .block-hall-of-fame .cols {
+        grid-template-columns: 340px 3fr; } }
 
 @media (min-width: 1000px) and (max-width: 1555px) {
       .block-hall-of-fame .cols {
         grid-template-columns: 480px 3fr; } }
 
-@media (min-width: 760px) and (max-width: 1000px) {
-      .block-hall-of-fame .cols {
-        grid-template-columns: 340px 3fr; } }
-
 @media (min-width: 1180px) {
       .block-hall-of-fame .col-content {
         margin-top: 8rem; } }
+
+@media (max-width: 1100px) {
+      .block-hall-of-fame .block-title {
+        font-size: 42px; }
+    .block-title {
+      font-size: 42px; } }
 
 @media (min-width: 800px) and (max-width: 1500px) {
     .block-infographics .container {

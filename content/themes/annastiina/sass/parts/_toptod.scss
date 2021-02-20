@@ -14,7 +14,7 @@ $white: #fff;
     margin-left: -100px;
   }
 
-  @media (max-width: 1000px) {
+  @media (min-width: 760px) and (max-width: 1000px) {
     width: 280px;
   }
 
