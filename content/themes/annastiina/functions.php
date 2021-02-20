@@ -76,7 +76,7 @@ $theme_settings = [
 // TODO Instructions how to add post types
 
   'post_types' => [
-  // 'your-post-type' => 'Your_Post_Type',
+    'ad' => 'Ad',
   ],
 
   /**

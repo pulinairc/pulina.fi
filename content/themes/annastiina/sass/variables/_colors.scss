@@ -42,6 +42,6 @@ $color-success: lighten(#2d6426, 40%);
 $color-warning: lighten(#8e440b, 40%);
 $color-error: lighten(#903a37, 40%);
 $color-disabled: #bbb;
-$color-captions: rgba(#4b4b5a, .9);
+$color-captions: $color-code-blocks;
 $color-buttons: $color-black;
 $color-buttons-hover: $color-main;

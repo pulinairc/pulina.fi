@@ -38,7 +38,7 @@ body .gutenberg-content .cat {
   padding-bottom: var(--padding-block);
   padding-left: 0;
   padding-right: 0;
-  padding-top: var(--padding-block);
+  padding-top: 0;
 
   .blocks-gallery-grid {
     display: grid;
@@ -556,4 +556,8 @@ ul.tags {
     }
     /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
   }
+}
+
+.author-information {
+  text-align: center;
 }

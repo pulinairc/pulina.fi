@@ -17,7 +17,7 @@ get_header(); ?>
 
 <main class="site-main">
 
-  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+  <?php get_template_part( 'template-parts/hero-blog' ); ?>
   <section class="block block-single has-dark-bg">
     <div class="gutenberg-content">
 
@@ -32,6 +32,12 @@ get_header(); ?>
         edit_post_link( sprintf( wp_kses( __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'annastiina' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
       }
       ?>
+
+        <div class="author-information">
+          <?php echo get_avatar( get_the_author_meta( 'email' ), '82' ); ?>
+          <h3><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></h3>
+          <p><?php the_author_meta( 'description' ); ?></p>
+        </div>
 
     </div>
   </section>

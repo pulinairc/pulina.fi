@@ -2512,7 +2512,7 @@ body .gutenberg-content .cat {
   padding-bottom: var(--padding-block);
   padding-left: 0;
   padding-right: 0;
-  padding-top: var(--padding-block);
+  padding-top: 0;
   /* stylelint-disable selector-max-compound-selectors */
   /* stylelint-enable selector-max-compound-selectors */
   /* stylelint-disable no-descending-specificity */ }
@@ -2591,7 +2591,7 @@ body .gutenberg-content .cat {
   .gutenberg-content cite,
   .gutenberg-content small {
     border: 0;
-    color: rgba(75, 75, 90, 0.9);
+    color: #94a7cc;
     font-size: 15px;
     font-style: normal;
     margin-bottom: 6rem;
@@ -2815,6 +2815,9 @@ ul.tags {
       border-color: rgba(255, 255, 255, 0);
       box-shadow: inset 0 -3.3rem 0 #20ffa7;
       color: #060d21; }
+
+.author-information {
+  text-align: center; }
 
 .site-footer .top {
   background-color: transparent;
@@ -3290,6 +3293,12 @@ body *[aria-invalid="true"] {
     margin-right: auto;
     margin-top: 2rem;
     -webkit-text-fill-color: transparent; }
+  .block.block-hero-fp.block-hero-blog.block-hero-single .time {
+    margin-bottom: 5rem; }
+  .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
+    font-size: 62px;
+    margin-bottom: 1rem;
+    margin-top: 0; }
 
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity */
 .block-page {
@@ -3412,6 +3421,7 @@ body *[aria-invalid="true"] {
     margin-bottom: 5rem; }
 
 .time {
+  color: #fff;
   font-size: 20px;
   margin-top: 0;
   opacity: .7; }
@@ -3737,6 +3747,10 @@ p.how-to {
           height: 398px; }
       .block.block-hero-fp.block-hero-blog h1 {
         margin-bottom: 0;
+        margin-top: 6rem; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single .time {
+        margin-bottom: 3rem; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
         margin-top: 6rem; }
       .block-page .cols {
         display: block; }
@@ -4254,19 +4268,27 @@ p.how-to {
       font-size: 32px;
       margin-top: 5rem; }
     .block.block-hero-fp.block-hero-sub-page h1 {
-      font-size: 32px; } }
+      font-size: 32px; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
+        font-size: 32px; } }
 
 @media (min-width: 1200px) and (max-width: 1430px) {
     .block.block-hero-fp.block-hero-sub-page h1 {
-      font-size: 60px; } }
+      font-size: 60px; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
+        font-size: 60px; } }
 
 @media (min-width: 1000px) and (max-width: 1200px) {
     .block.block-hero-fp.block-hero-sub-page h1 {
-      font-size: 50px; } }
+      font-size: 50px; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
+        font-size: 50px; } }
 
 @media (min-width: 670px) and (max-width: 1000px) {
     .block.block-hero-fp.block-hero-sub-page h1 {
-      font-size: 42px; } }
+      font-size: 42px; }
+      .block.block-hero-fp.block-hero-blog.block-hero-single h1 {
+        font-size: 42px; } }
 
 @media (max-width: 900px) {
       .block.block-hero-fp.block-hero-blog h1 {

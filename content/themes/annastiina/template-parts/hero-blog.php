@@ -13,12 +13,17 @@
 
 ?>
 
-<section class="block block-hero block-hero-fp block-hero-blog">
+<section class="block block-hero block-hero-fp block-hero-blog<?php if ( is_singular( 'post' ) ) : ?> block-hero-single<?php endif; ?>">
   <div class="container">
     <div class="cols">
       <div class="col col-content">
         <div class="content">
-          <h1 id="content">Blogi</h1>
+          <?php if ( is_singular( 'post' ) ) : ?>
+            <h1 id="content"><?php the_title(); ?></h1>
+            <p class="time"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
+          <?php else : ?>
+            <h1 id="content">Blogi</h1>
+          <?php endif; ?>
         </div>
       </div>
 

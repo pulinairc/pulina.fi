@@ -1,0 +1,156 @@
+{
+    "key": "group_597c6a9595592",
+    "title": "Mainokset",
+    "fields": [
+        {
+            "key": "field_597c6aa43ea18",
+            "label": "Mainoksen ostaja",
+            "name": "mainoksen_ostaja",
+            "type": "text",
+            "instructions": "Mainoksen ostajan nimi itselle ylös.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_597c6acc3ea19",
+            "label": "Mainoksen ostajan sähköpostiosoite",
+            "name": "mainoksen_ostajan_sahkopostiosoite",
+            "type": "text",
+            "instructions": "Meiliosoite itselle ylös.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_597c6ad23ea1a",
+            "label": "Viestiketjun otsikot",
+            "name": "viestiketjun_otsikko",
+            "type": "text",
+            "instructions": "Jotta löytyy helpommin sähköpostista.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_597c6be64ca06",
+            "label": "Erääntymispäivä",
+            "name": "eraantymispaiva",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "Y-m-d 23:59",
+            "return_format": "Y-m-d 23:59",
+            "first_day": 1
+        },
+        {
+            "key": "field_597c6dbf71e45",
+            "label": "Slotti",
+            "name": "slotti",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "etusivu": "Etusivu"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_597c6b183ea1b",
+            "label": "Mainoskoodi",
+            "name": "mainoskoodi",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 15,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "ad"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1613848080
+}
