@@ -12,7 +12,9 @@ import './modules/webchat-login-form';
 import 'what-input';
 
 // Navigation
-import hcOffcanvasNav from 'hc-offcanvas-nav';
+// import hcOffcanvasNav from 'hc-offcanvas-nav';
+import 'hc-offcanvas-nav/src/js/hc-offcanvas-nav';
+import 'hc-offcanvas-nav/src/js/hc-offcanvas-nav.helpers';
 import './modules/navigation';
 
 // Define Javascript is active by changing the body class
@@ -105,6 +107,19 @@ annastiina_LazyLoad.update();
   // Document ready start
   $(function () {
 
+    $('#nav').hcOffcanvasNav({
+      disableAt: false,
+      customToggle: '.nav-toggle',
+      navTitle: false,
+      levelTitles: true,
+      levelTitleAsBack: true,
+      position: 'right',
+      pushContent: '#page',
+      insertClose: false,
+      labelBack: 'Takaisin',
+      activeToggleClass: 'is-active',
+    });
+
     // Toptod polling
     // $('#toptod').fadeIn();
     // $("#toptod").load('https://peikko.us/toptod-content-annastiina.php');
@@ -119,20 +134,6 @@ annastiina_LazyLoad.update();
 })(jQuery);
 
 document.addEventListener('DOMContentLoaded', function () {
-
-  // Side nav
-  var Nav = new hcOffcanvasNav('#nav', {
-    disableAt: false,
-    customToggle: '.nav-toggle',
-    navTitle: false,
-    levelTitles: true,
-    levelTitleAsBack: true,
-    position: 'right',
-    pushContent: '#page',
-    insertClose: false,
-    labelBack: 'Takaisin',
-    activeToggleClass: 'is-active',
-  });
 
   // Moveto triggers
   const easeFunctions = {

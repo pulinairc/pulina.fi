@@ -51,7 +51,6 @@
     "roots/wp-config": "^1.0",
     "johnpbloch/wordpress": "5.6.1",
     "wpackagist-plugin/wordpress-seo": "*",
-    "wpackagist-plugin/google-analyticator": "*",
     "wpackagist-plugin/simple-history": "*",
     "wpackagist-plugin/so-clean-up-wp-seo": "*"
   },
