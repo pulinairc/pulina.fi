@@ -16,24 +16,25 @@ get_header(); ?>
 <main class="site-main">
   <div class="container">
 
-    <?php get_template_part( 'template-parts/hero', get_post_type() );
-    if ( have_posts() ) : ?>
-      <header class="entry-header">
-        <?php
-          the_archive_title( '<h1 class="entry-title" id="content">', '</h1>' );
-          the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-      </header><!-- .entry-header -->
+    <?php get_template_part( 'template-parts/hero-blog' ); ?>
 
-      <?php while ( have_posts() ) {
-        the_post();
-        get_template_part( 'template-parts/content', get_post_type() );
-      }
+    <section class="block block-blog has-dark-bg">
+      <div class="container">
+      <?php while ( have_posts() ) : the_post(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
+          <p class="time"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
 
-      the_posts_pagination();
-    endif; ?>
-
-  </div><!-- .container -->
+          <div class="content">
+            <?php
+              the_excerpt();
+              entry_footer();
+            ?>
+          </div>
+        </article>
+      <?php endwhile; ?>
+      </div>
+    </section>
 
 </main>
 

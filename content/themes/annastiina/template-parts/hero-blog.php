@@ -21,6 +21,8 @@
           <?php if ( is_singular( 'post' ) ) : ?>
             <h1 id="content"><?php the_title(); ?></h1>
             <p class="time"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
+          <?php elseif ( is_archive() ) : ?>
+            <h1 id="content"><?php echo wp_kses_post( substr( get_the_archive_title(), strpos( get_the_archive_title(), ': ' ) + 2 ) ); ?></h1>
           <?php else : ?>
             <h1 id="content">Blogi</h1>
           <?php endif; ?>
