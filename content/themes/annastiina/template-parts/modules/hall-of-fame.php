@@ -25,22 +25,23 @@ namespace Air_Light;
         <p>Vuonna 1988 kehitetty ja edelleen kehittyvä IRC on täynnä nostalgiaa ja palauttaa hyvät vanhat chat-ajat mieleen. Vaikka et olisikaan ns. Internet-dinosaurus tai "vanhan polven irkkaaja", IRCissä on sitä jotain. Pulina on vapautettu, eikä sen laatua tai määrää ei rajoiteta turhaan käyttäytymissääntöjen puitteissa. Jokainen on tervetullut ja vapaa olemaan sellainen kuin on.</p>
 
         <p class="how-to">Irkkiin pääsee selaimella, Windowsilla, Macilla, Linuxilla, iPhonella ja Androidilla.</p>
+
         <div class="clients">
-          <a href="<?php echo esc_url( get_page_link(1367) ); ?>">
+          <a href="<?php echo esc_url( get_page_link( 1367 ) ); ?>">
             <?php include get_theme_file_path( '/svg/platform-windows.svg' ); ?>
           </a>
-          <a href="<?php echo esc_url( get_page_link(1369) ); ?>">
+          <a href="<?php echo esc_url( get_page_link( 1369 ) ); ?>">
             <?php include get_theme_file_path( '/svg/platform-apple.svg' ); ?>
           </a>
-          <a href="<?php echo esc_url( get_page_link(1371) ); ?>">
+          <a href="<?php echo esc_url( get_page_link( 1371 ) ); ?>">
             <?php include get_theme_file_path( '/svg/platform-linux.svg' ); ?>
           </a>
-          <a href="<?php echo esc_url( get_page_link(1324) ); ?>">
+          <a href="<?php echo esc_url( get_page_link( 1324 ) ); ?>">
             <?php include get_theme_file_path( '/svg/platform-google.svg' ); ?>
           </a>
-          <a href="<?php echo esc_url( get_page_link(1375) ); ?>">
+          <a href="<?php echo esc_url( get_page_link( 1375 ) ); ?>">
             <?php include get_theme_file_path( '/svg/platform-chrome.svg' ); ?>
-</a>
+          </a>
         </div>
 
       </div>

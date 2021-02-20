@@ -28,6 +28,28 @@ get_header(); ?>
       <div class="content">
         <?php the_content(); ?>
 
+        <?php if ( is_page( 10 ) ) { ?>
+          <p class="how-to">Irkkiin pääsee selaimella, Windowsilla, Macilla, Linuxilla, iPhonella ja Androidilla.</p>
+
+          <div class="clients">
+            <a href="<?php echo esc_url( get_page_link( 1367 ) ); ?>">
+              <?php include get_theme_file_path( '/svg/platform-windows.svg' ); ?>
+            </a>
+            <a href="<?php echo esc_url( get_page_link( 1369 ) ); ?>">
+              <?php include get_theme_file_path( '/svg/platform-apple.svg' ); ?>
+            </a>
+            <a href="<?php echo esc_url( get_page_link( 1371 ) ); ?>">
+              <?php include get_theme_file_path( '/svg/platform-linux.svg' ); ?>
+            </a>
+            <a href="<?php echo esc_url( get_page_link( 1324 ) ); ?>">
+              <?php include get_theme_file_path( '/svg/platform-google.svg' ); ?>
+            </a>
+            <a href="<?php echo esc_url( get_page_link( 1375 ) ); ?>">
+              <?php include get_theme_file_path( '/svg/platform-chrome.svg' ); ?>
+            </a>
+          </div>
+        <?php } ?>
+
         <?php if ( get_edit_post_link() ) {
           edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'annastiina' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
         } ?>
