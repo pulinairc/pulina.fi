@@ -5,9 +5,10 @@
  * @package annastiina
  */
 
-$hc_nav_menu_walker;
+namespace Air_Light;
 
-class HC_Walker_Nav_Menu extends Walker_Nav_Menu { //phpcs:ignore
+$hc_nav_menu_walker;
+class HC_Walker_Nav_Menu extends \Walker_Nav_Menu { //phpcs:ignore
 
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         global $hc_nav_menu_walker;
@@ -43,8 +44,7 @@ class HC_Walker_Nav_Menu extends Walker_Nav_Menu { //phpcs:ignore
     }
 }
 
-add_filter(
-    'wp_nav_menu_args', function ( $args ) {
+add_filter( __NAMESPACE__ . '\wp_nav_menu_args', function ( $args ) {
         global $hc_nav_menu_walker;
 
         if ( ! empty( $args['walker'] ) ) {
