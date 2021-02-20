@@ -415,7 +415,7 @@ a.is-external-link {
   display: inline-flex;
   justify-content: space-between; }
   a.is-external-link::after {
-    background-image: url("../svg/external-link.svg");
+    background-image: url("../svg/external-link-white.svg");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 14px 14px;
