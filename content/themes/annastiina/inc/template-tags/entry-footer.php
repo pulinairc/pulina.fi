@@ -10,7 +10,7 @@ namespace Air_Light;
 function entry_footer() {
   echo '<div class="entry-footer">';
 
-  if ( 'post' === get_post_type() ) :
+  if ( 'post' === get_post_type() && is_singular() ) :
     if ( has_category() ) : ?>
       <div class="entry-categories">
         <p class="cat">

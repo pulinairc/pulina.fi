@@ -1,4 +1,4 @@
-/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity */
 
 .block-page {
   background-color: transparent;
@@ -76,7 +76,11 @@
     font-weight: 600;
     -webkit-text-fill-color: transparent;
   }
+}
 
+// Text links
+.blog-page,
+.gutenberg-content {
   li a,
   p a {
     border-bottom: 1px solid $color-retro-green;

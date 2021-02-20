@@ -2,32 +2,33 @@
 //
 // The styles for most of the TinyMCE produced
 // classes and WordPress Gutenberg editor formatting.
-
+/* stylelint-disable no-descending-specificity, property-disallowed-list */
 // Blog post category styles
-.cat {
+.cat,
+body .gutenberg-content .cat {
   margin-bottom: .5rem;
   margin-top: 4rem;
 
   a {
     background-color: transparent;
     border-color: $color-cat-borders;
-    border-radius: 5px;
+    border-radius: 0;
     border-style: solid;
-    border-width: 1px 1px 2px;
+    border-width: 1px;
     box-shadow: none;
-    color: $color-black;
+    color: $color-white;
     display: inline-block;
     font-size: var(--font-size-small);
     margin-bottom: .5rem;
     margin-right: .5em;
-    padding: .2em .6em;
+    padding: .1em .6em;
     transition: all $transition-duration;
   }
 
   a:hover,
   a:focus {
     /* stylelint-disable sh-waqar/declaration-use-variable */
-    border-color: rgba($color-blog-tags, .4);
+    border-color: rgba($color-blog-tags, 0);
     /* stylelint-enable sh-waqar/declaration-use-variable */
   }
 }
@@ -245,6 +246,7 @@
     }
   }
 
+  /* stylelint-disable no-descending-specificity */
   a:hover,
   &:focus {
     text-decoration: none;
@@ -531,22 +533,26 @@ ul.tags {
     a:not(.button):not(.no-text-link) {
       background-color: transparent;
       border-color: $color-tag-borders;
-      border-radius: 5px;
+      border-radius: 0;
       border-style: solid;
-      border-width: 1px 1px 2px;
+      border-width: 1px;
       box-shadow: none;
-      color: $color-black;
+      color: $color-white;
       display: inline-block;
       font-size: $font-size-tiny;
       margin-right: .4em;
-      padding: .2em .6em;
+      padding: .1em .6em;
       transition: all $transition-duration;
     }
 
+    /* stylelint-disable no-descending-specificity, property-disallowed-list */
     /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
     a:not(.button):not(.no-text-link):hover,
     a:not(.button):not(.no-text-link):focus {
-      border-color: rgba($color-blog-tags, .4);
+      animation: none;
+      border-color: rgba($color-white, 0);
+      box-shadow: inset 0 -3.3rem 0 $color-retro-green;
+      color: $color-deep-blue;
     }
     /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
   }

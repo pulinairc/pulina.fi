@@ -20,7 +20,7 @@ get_header(); ?>
 
 <main class="site-main">
 
-  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+  <?php get_template_part( 'template-parts/hero-blog' ); ?>
   <section class="block block-blog has-dark-bg">
     <div class="container">
 
@@ -33,11 +33,11 @@ get_header(); ?>
         <?php while ( have_posts() ) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
-            <p><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
+            <p class="time"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
 
             <div class="content">
               <?php
-                the_content();
+                the_excerpt();
                 entry_footer();
               ?>
             </div>

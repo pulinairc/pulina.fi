@@ -1,0 +1,22 @@
+.block-blog {
+  background-color: transparent;
+  z-index: 2;
+
+  .container {
+    max-width: $width-max-article;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .post {
+    margin-bottom: 5rem;
+  }
+}
+
+.time {
+  font-size: 20px;
+  margin-top: 0;
+  opacity: .7;
+}

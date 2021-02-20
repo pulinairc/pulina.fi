@@ -19,12 +19,12 @@
 
 .page-numbers {
   align-items: center;
-  background-color: $color-white;
-  border-bottom: 2px solid #ece6f2;
-  border-left: 1px solid #ece6f2;
-  border-right: 1px solid #ece6f2;
-  border-top: 2px solid #ece6f2;
-  color: $color-main;
+  background-color: $color-black;
+  border-bottom: 2px solid $color-black;
+  border-left: 1px solid $color-black;
+  border-right: 1px solid $color-black;
+  border-top: 2px solid $color-black;
+  color: $color-white;
   display: flex;
   font-weight: 500;
   height: 35px;

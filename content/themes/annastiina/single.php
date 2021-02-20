@@ -31,13 +31,7 @@ get_header(); ?>
       if ( get_edit_post_link() ) {
         edit_post_link( sprintf( wp_kses( __( 'Muokkaa <span class="screen-reader-text">%s</span>', 'annastiina' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
       }
-
-      the_post_navigation();
-
-  		// If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) {
-        comments_template();
-      } ?>
+      ?>
 
     </div>
   </section>
