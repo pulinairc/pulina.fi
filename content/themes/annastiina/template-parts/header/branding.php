@@ -22,7 +22,7 @@ namespace Air_Light;
     <p class="site-title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <?php include get_theme_file_path( '/svg/logo.svg' ); ?>
-        <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></
+        <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
       </a>
     </p>
   <?php endif;
