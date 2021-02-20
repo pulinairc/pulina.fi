@@ -2,7 +2,7 @@
 //
 // The styles for most of the TinyMCE produced
 // classes and WordPress Gutenberg editor formatting.
-/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity */
+/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity, sh-waqar/declaration-use-variable */
 // Blog post category styles
 .cat,
 body .gutenberg-content .cat {
@@ -27,9 +27,7 @@ body .gutenberg-content .cat {
 
   a:hover,
   a:focus {
-    /* stylelint-disable sh-waqar/declaration-use-variable */
     border-color: rgba($color-blog-tags, 0);
-    /* stylelint-enable sh-waqar/declaration-use-variable */
   }
 }
 
@@ -554,10 +552,42 @@ ul.tags {
       box-shadow: inset 0 -3.3rem 0 $color-retro-green;
       color: $color-deep-blue;
     }
-    /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
   }
 }
 
 .author-information {
+  margin-top: 5rem;
   text-align: center;
+
+  h3 {
+    color: darken($color-retro-green, 15%);
+    font-family: $font-monospace;
+
+    &::after {
+      content: '>';
+    }
+
+    &::before {
+      content: '<';
+    }
+  }
+
+  p {
+    color: lighten($color-code-blocks, 8%);
+    font-size: var(--font-size-small);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 82px;
+    width: 82px;
+
+    @media (max-width: 500px) {
+      height: 64px;
+      width: 64px;
+    }
+  }
 }

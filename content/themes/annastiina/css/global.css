@@ -2479,7 +2479,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   border-color: rgba(255, 255, 255, 0.8); }
 
 /* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
-/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity */
+/* stylelint-disable no-descending-specificity, property-disallowed-list, selector-max-specificity, sh-waqar/declaration-use-variable */
 .cat,
 body .gutenberg-content .cat {
   margin-bottom: .5rem;
@@ -2503,9 +2503,7 @@ body .gutenberg-content .cat {
   .cat a:focus,
   body .gutenberg-content .cat a:hover,
   body .gutenberg-content .cat a:focus {
-    /* stylelint-disable sh-waqar/declaration-use-variable */
-    border-color: rgba(6, 22, 41, 0);
-    /* stylelint-enable sh-waqar/declaration-use-variable */ }
+    border-color: rgba(6, 22, 41, 0); }
 
 .gutenberg-content {
   max-width: 100%;
@@ -2793,8 +2791,7 @@ ul.tags {
     margin-top: 0;
     padding-left: 0;
     /* stylelint-disable no-descending-specificity, property-disallowed-list */
-    /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
-    /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */ }
+    /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */ }
     ul.tags li a:not(.button):not(.no-text-link) {
       background-color: transparent;
       border-color: rgba(255, 255, 255, 0.1);
@@ -2817,7 +2814,25 @@ ul.tags {
       color: #060d21; }
 
 .author-information {
+  margin-top: 5rem;
   text-align: center; }
+  .author-information h3 {
+    color: #00d37f;
+    font-family: "SF Mono", "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; }
+    .author-information h3::after {
+      content: '>'; }
+    .author-information h3::before {
+      content: '<'; }
+  .author-information p {
+    color: #b0bed9;
+    font-size: var(--font-size-small);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px; }
+  .author-information img {
+    border-radius: 50%;
+    height: 82px;
+    width: 82px; }
 
 .site-footer .top {
   background-color: transparent;
@@ -4138,6 +4153,13 @@ p.how-to {
   .gutenberg-content .is-style-boxed {
     transform: translate(2rem, 0); } }
 
+@media (max-width: 500px) {
+      .author-information img {
+        height: 64px;
+        width: 64px; }
+    .block-infographics .number {
+      font-size: 38px; } }
+
 @media (min-width: 1500px) {
     .irc-scroller-wrapper {
       width: calc(50vw - 100px); } }
@@ -4403,10 +4425,6 @@ p.how-to {
 @media (max-width: 1045px) {
     .block-infographics .number {
       font-size: 42px; } }
-
-@media (max-width: 500px) {
-    .block-infographics .number {
-      font-size: 38px; } }
 
 @media (max-width: 430px) {
     .block-infographics .number {
