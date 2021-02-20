@@ -3101,7 +3101,14 @@ body *[aria-invalid="true"] {
 
 .block-search,
 .block-search-results {
-  background-color: #fff; }
+  background-color: transparent; }
+  .block-search h1,
+  .block-search h2,
+  .block-search h3,
+  .block-search-results h1,
+  .block-search-results h2,
+  .block-search-results h3 {
+    color: #fff; }
 
 .block-search form {
   display: grid;

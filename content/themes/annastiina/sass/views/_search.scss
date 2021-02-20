@@ -2,7 +2,13 @@
 
 .block-search,
 .block-search-results {
-  background-color: $color-white;
+  background-color: transparent;
+
+  h1,
+  h2,
+  h3 {
+    color: $color-white;
+  }
 }
 
 .block-search form {
