@@ -29,7 +29,7 @@
     "hc-offcanvas-nav": "^6.1.2",
     "mqpacker": "^7.0.0",
     "postcss": "^8.1.1",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.11.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
@@ -45,6 +45,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "anchor-js": "^4.3.0",
     "airbnb-browser-shims": "^3.3.0",
     "hamburgers": "^1.1.3",
     "moveto": "^1.8.2",

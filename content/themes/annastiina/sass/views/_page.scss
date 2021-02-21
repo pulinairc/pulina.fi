@@ -33,9 +33,14 @@
 
     li {
       align-items: flex-start;
-      display: flex;
+      display: inline-flex;
       list-style: none;
+      margin: 2px 0;
       width: 100%;
+
+      a {
+        margin: 0 9px;
+      }
     }
 
     li::before {

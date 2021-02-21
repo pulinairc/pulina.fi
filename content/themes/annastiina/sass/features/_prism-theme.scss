@@ -1,0 +1,97 @@
+/* stylelint-disable */
+/**
+ * Github-like theme for Prism.js
+ * @author Luke Askew http://github.com/lukeaskew
+ */
+
+// color vars
+$code-colors: (
+  blue: #005cc5,
+  teal: #005cc5,
+  black: $color-code-blocks,
+  purple: #d73a49,
+  maroon: #6f42c1,
+  green: #005cc5,
+  light-gray: $color-code-blocks-background,
+  dark-gray: $color-code-blocks
+);
+
+// base
+code[class*='language-'],
+pre[class*='language-'] {
+  color: map-get($code-colors, black);
+  cursor: text;
+  direction: ltr;
+  font-family: $font-monospace;
+  hyphens: none;
+  line-height: 1.4;
+  tab-size: 4;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+}
+
+// code blocks
+pre[class*='language-'] {
+  border-radius: 3px;
+  margin: 1em 0;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+
+  code {
+    max-width: 100%;
+    background-color: $color-code-blocks-background;
+  }
+}
+
+// token colors
+.token {
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: map-get($code-colors, dark-gray);
+  }
+
+  &.punctuation,
+  &.string,
+  &.atrule,
+  &.attr-value {
+    color: map-get($code-colors, blue);
+  }
+
+  &.property,
+  &.tag {
+    color: map-get($code-colors, green);
+  }
+
+  &.boolean,
+  &.number {
+    color: map-get($code-colors, teal);
+  }
+
+  &.selector,
+  &.attr-name,
+  &.attr-value .punctuation:first-child,
+  &.keyword,
+  &.regex,
+  &.important {
+    color: map-get($code-colors, maroon);
+  }
+
+  &.operator,
+  &.entity,
+  &.url,
+  .language-css &.string {
+    color: map-get($code-colors, purple);
+  }
+
+  &.entity {
+    cursor: help;
+  }
+}
+
+.namespace {
+  opacity: .7;
+}

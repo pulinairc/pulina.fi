@@ -9,7 +9,10 @@ import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 import './modules/gutenberg-helpers';
 import './modules/webchat-login-form';
+import './modules/prism';
+import './modules/copy-to-clipboard';
 import 'what-input';
+import AnchorJS from 'anchor-js';
 
 // Navigation
 import hcOffcanvasNav from 'hc-offcanvas-nav';
@@ -118,6 +121,30 @@ annastiina_LazyLoad.update();
 })(jQuery);
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  // Anchors
+  const headingAnchors = new AnchorJS();
+  headingAnchors.options = {
+    placement: 'left',
+    visible: 'always',
+    truncate: 20,
+  };
+
+  const paragraphAnchors = new AnchorJS();
+  paragraphAnchors.options = {
+    placement: 'right',
+    visible: 'hover',
+    icon: '¶',
+    truncate: 20,
+  };
+
+  headingAnchors.add('.has-anchors h1');
+  headingAnchors.add('.has-anchors h2');
+  headingAnchors.add('.has-anchors h3');
+  headingAnchors.add('.has-anchors h4');
+  headingAnchors.add('.has-anchors h5');
+  headingAnchors.add('.has-anchors h6');
+  paragraphAnchors.add('.has-anchors p');
 
   // Side nav
   var Nav = new hcOffcanvasNav('#nav', {

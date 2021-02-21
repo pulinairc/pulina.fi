@@ -25,7 +25,7 @@ get_header(); ?>
   <section class="block block-page has-dark-bg">
     <div class="container">
 
-      <div class="content">
+      <div class="content has-anchors">
         <?php the_content(); ?>
 
         <?php if ( is_page( 10 ) ) { ?>

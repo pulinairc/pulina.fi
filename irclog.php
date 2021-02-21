@@ -873,8 +873,8 @@ span.message {
 .nick-td {
     font-weight: 700;
     order: 1;
-    width: 120px;
-    min-width: 120px;
+    width: 125px;
+    min-width: 125px;
     overflow: hidden;
     margin-right: 10px;
 }

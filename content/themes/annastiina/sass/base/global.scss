@@ -48,6 +48,9 @@
 @import '../features/lazyload';
 @import '../features/pagination';
 @import '../features/gravity-forms';
+@import '../features/prism';
+@import '../features/prism-theme';
+@import '../features/anchors';
 
 // Views
 @import '../views/front-page';
@@ -57,6 +60,7 @@
 @import '../views/hero';
 @import '../views/hero-blog';
 @import '../views/page';
+@import '../views/page-commands';
 @import '../views/archive';
 
 // Parts
