@@ -16,7 +16,7 @@ namespace Air_Light;
 
 <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-  <nav id="nav" class="nav-primary" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
+  <nav style="display: none;" id="nav" class="nav-primary" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
 
     <?php wp_nav_menu( array(
       'theme_location' => 'primary',

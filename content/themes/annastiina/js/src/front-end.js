@@ -120,6 +120,7 @@ annastiina_LazyLoad.update();
   });
 })(jQuery);
 
+// window.addEventListener('load', function () {
 document.addEventListener('DOMContentLoaded', function () {
 
   // Anchors
