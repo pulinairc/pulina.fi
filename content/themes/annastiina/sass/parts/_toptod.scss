@@ -36,6 +36,10 @@ $white: #fff;
     padding: 0;
   }
 
+  b {
+    font-weight: 500;
+  }
+
   li {
     color: $color-white;
     display: block;
@@ -131,7 +135,7 @@ $white: #fff;
     color: $white;
     display: inline-block;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
     padding: 6px 7px;
     text-transform: uppercase;

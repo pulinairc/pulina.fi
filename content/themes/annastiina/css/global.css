@@ -3768,6 +3768,8 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     list-style: none;
     margin: 0;
     padding: 0; }
+  .toptod b {
+    font-weight: 500; }
   .toptod li {
     color: #fff;
     display: block;
@@ -3835,7 +3837,7 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     color: #fff;
     display: inline-block;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
     padding: 6px 7px;
     text-transform: uppercase;
