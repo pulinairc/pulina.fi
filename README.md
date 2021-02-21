@@ -1,7 +1,6 @@
-# pulina
+# Pulina
 ![based_on_air_version 6.6.9_](https://img.shields.io/badge/based_on_air_version-6.6.9_-brightgreen.svg?style=flat-square) ![project_created 17_Feb_2021](https://img.shields.io/badge/project_created-17_Feb_2021-blue.svg?style=flat-square) ![Tested_up_to WordPress_5.5](https://img.shields.io/badge/Tested_up_to-WordPress_5.5-blue.svg?style=flat-square) ![Compatible_with PHP_7.2](https://img.shields.io/badge/Compatible_with-PHP_7.2-green.svg?style=flat-square)
 
-This project is hand made for customer.
 ## Stack
 
 This project is built on [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack), [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light), [digitoimistodude/marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) or [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup), [digitoimistodude/devpackages](https://github.com/digitoimistodude/devpackages) which are documented at their corresponding locations. This is a guide on:
@@ -20,7 +19,7 @@ Green checkmarks show if the environment is already set up and running, red cros
 
 ✅  Development: [pulina.test](http://pulina.test)<br>
 ❌  Staging: [pulina.vaiheessa.fi](https://pulina.vaiheessa.fi)<br>
-❌  Production: [pulina.fi](https://pulina.fi/)
+✅  Production: [pulina.fi](https://www.pulina.fi/)
 
 ## Setting it up initially
 
