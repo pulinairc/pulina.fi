@@ -32,11 +32,9 @@
     }
 
     li {
-      align-items: flex-start;
-      display: inline-flex;
+      display: inline-block;
       list-style: none;
       margin: 2px 0;
-      width: 100%;
 
       a {
         margin: 0 9px;
@@ -46,7 +44,7 @@
     li::before {
       background-repeat: no-repeat;
       content: '';
-      display: block;
+      display: inline-block;
       height: 24px;
       margin-right: 1rem;
       min-width: 24px;

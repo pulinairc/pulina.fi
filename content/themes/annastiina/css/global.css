@@ -3594,17 +3594,15 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     .block-page .pros-and-cons .con::before {
       background-image: url("../svg/thumbs-down.svg"); }
     .block-page .pros-and-cons li {
-      align-items: flex-start;
-      display: inline-flex;
+      display: inline-block;
       list-style: none;
-      margin: 2px 0;
-      width: 100%; }
+      margin: 2px 0; }
       .block-page .pros-and-cons li a {
         margin: 0 9px; }
     .block-page .pros-and-cons li::before {
       background-repeat: no-repeat;
       content: '';
-      display: block;
+      display: inline-block;
       height: 24px;
       margin-right: 1rem;
       min-width: 24px;
