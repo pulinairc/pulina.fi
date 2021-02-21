@@ -135,12 +135,6 @@ $nav-open-from-direction: top;
         display: none;
       }
     }
-
-    @media (min-width: 411px) {
-      .hamburger-box {
-        margin-right: 2rem;
-      }
-    }
   }
 
   // Separate active colors for opened state
