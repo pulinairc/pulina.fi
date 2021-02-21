@@ -1,3 +1,6 @@
+content/autoptimize_404_handler.php
+content/themes/annastiina/node_modules
+content/cache/autoptimize
 test.log
 content/languages/
 content/themes/annastiina/inc/cache/*
