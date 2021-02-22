@@ -641,12 +641,13 @@ body.hc-nav-open {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+/* stylelint-disable */
 .hamburger {
   padding: 4rem 1.5rem;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: .15s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -681,7 +682,7 @@ body.hc-nav-open {
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
-    transition-duration: 0.15s;
+    transition-duration: .15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -729,6 +730,7 @@ body.hc-nav-open {
   .hamburger--3dx-r.is-active .hamburger-inner::after {
     transform: translate3d(0, -0.9rem, 0) rotate(-45deg); }
 
+/* stylelint-disable */
 /*
    * 3DY
    */
@@ -1140,25 +1142,26 @@ body.hc-nav-open {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
+/* stylelint-disable */
 /*
    * Spin Reverse
    */
 .hamburger--spin-r .hamburger-inner {
-  transition-duration: 0.22s;
+  transition-duration: .22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    transition: top .1s .25s ease-in, opacity .1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--spin-r.is-active .hamburger-inner {
   transform: rotate(-225deg);
-  transition-delay: 0.12s;
+  transition-delay: .12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    transition: top .1s ease-out, opacity .1s .12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
@@ -2032,10 +2035,34 @@ pre {
             animation-timing-function: ease-in-out;
     color: #20ffa7;
     display: flex;
+    filter: drop-shadow(0 0 10px #20ffa7);
     font-size: 18px; }
-    .site-title a:hover, .site-title a:focus {
+    .site-title a::after {
+      -webkit-animation-direction: normal;
+              animation-direction: normal;
+      -webkit-animation-duration: 1.25s;
+              animation-duration: 1.25s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-name: cursor-blink;
+              animation-name: cursor-blink;
+      -webkit-animation-timing-function: steps(1);
+              animation-timing-function: steps(1);
+      background-color: #20ffa7;
+      box-shadow: 0 0 15px rgba(32, 255, 167, 0.1);
+      content: '';
+      display: inline-block;
+      height: 1em;
+      margin-left: 6px;
+      width: .75em; }
+    .site-title a:hover::after, .site-title a:hover, .site-title a:focus {
       -webkit-animation-play-state: paused;
               animation-play-state: paused; }
+
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100%; }
 
 @-webkit-keyframes arcade {
   0% {
@@ -2057,10 +2084,21 @@ pre {
   100% {
     color: #57b992; } }
 
-.nav-container {
-  position: absolute;
-  top: 0;
-  width: 100%; }
+@-webkit-keyframes cursor-blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 /* stylelint-disable sh-waqar/declaration-use-variable, a11y/no-display-none, no-unknown-animations */
 .site-footer {

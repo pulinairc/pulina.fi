@@ -37,13 +37,36 @@
     animation-timing-function: ease-in-out;
     color: $color-retro-green;
     display: flex;
+    filter: drop-shadow(0 0 10px rgba(32, 255, 167, 1));
     font-size: 18px;
 
+    &::after {
+      animation-direction: normal;
+      animation-duration: 1.25s;
+      animation-iteration-count: infinite;
+      animation-name: cursor-blink;
+      animation-timing-function: steps(1);
+      background-color: $color-retro-green;
+      box-shadow: 0 0 15px rgba($color-retro-green, .1);
+      content: '';
+      display: inline-block;
+      height: 1em;
+      margin-left: 6px;
+      width: .75em;
+    }
+
+    &:hover::after,
     &:hover,
     &:focus {
       animation-play-state: paused;
     }
   }
+}
+
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 @keyframes arcade {
@@ -64,8 +87,16 @@
   }
 }
 
-.nav-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
