@@ -5,7 +5,7 @@
 // based responsive mixin can be found in _helpers.scss
 
 // Set root size for rems
-/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations */
+/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations, number-max-precision, property-disallowed-list, font-family-name-quotes, sh-waqar/declaration-use-variable */
 :root {
   font-size: 62.5%;
 }
@@ -265,6 +265,14 @@ kbd,
 pre,
 samp {
   font-family: $font-monospace;
+}
+
+kbd {
+  background-color: $color-black;
+  border-radius: .285714286em;
+  color: #f8f8ff;
+  font: 500 .875em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: .214285714em .642857143em;
 }
 
 // Code block.

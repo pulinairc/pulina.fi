@@ -641,13 +641,12 @@ body.hc-nav-open {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-/* stylelint-disable */
 .hamburger {
   padding: 4rem 1.5rem;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: .15s;
+  transition-duration: 0.15s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -682,7 +681,7 @@ body.hc-nav-open {
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
-    transition-duration: .15s;
+    transition-duration: 0.15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -730,7 +729,6 @@ body.hc-nav-open {
   .hamburger--3dx-r.is-active .hamburger-inner::after {
     transform: translate3d(0, -0.9rem, 0) rotate(-45deg); }
 
-/* stylelint-disable */
 /*
    * 3DY
    */
@@ -1142,26 +1140,25 @@ body.hc-nav-open {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-/* stylelint-disable */
 /*
    * Spin Reverse
    */
 .hamburger--spin-r .hamburger-inner {
-  transition-duration: .22s;
+  transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top .1s .25s ease-in, opacity .1s ease-in; }
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--spin-r.is-active .hamburger-inner {
   transform: rotate(-225deg);
-  transition-delay: .12s;
+  transition-delay: 0.12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top .1s ease-out, opacity .1s .12s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
@@ -1780,7 +1777,7 @@ body {
 /* stylelint-enable */
 /* stylelint-disable a11y/no-display-none */
 
-/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations */
+/* stylelint-disable declaration-property-unit-allowed-list, no-unknown-animations, number-max-precision, property-disallowed-list, font-family-name-quotes, sh-waqar/declaration-use-variable */
 :root {
   font-size: 62.5%; }
 
@@ -1966,6 +1963,13 @@ kbd,
 pre,
 samp {
   font-family: "SF Mono", "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace; }
+
+kbd {
+  background-color: #070707;
+  border-radius: .285714286em;
+  color: #f8f8ff;
+  font: 500 .875em/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: .214285714em .642857143em; }
 
 code {
   background-color: #000;
@@ -2777,19 +2781,6 @@ strong {
 
 dfn {
   font-style: italic; }
-
-kbd {
-  background-color: #eaf1f8;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-  color: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-  padding: 0 .5rem;
-  text-shadow: 0 1px 0 #fff;
-  white-space: nowrap; }
 
 pre {
   background-color: #2b303c;
