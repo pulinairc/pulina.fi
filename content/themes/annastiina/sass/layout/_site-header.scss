@@ -59,6 +59,7 @@
     &:hover,
     &:focus {
       animation-play-state: paused;
+      color: $color-retro-green;
     }
   }
 }

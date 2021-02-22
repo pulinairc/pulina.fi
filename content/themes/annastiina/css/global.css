@@ -2057,7 +2057,8 @@ pre {
       width: .75em; }
     .site-title a:hover::after, .site-title a:hover, .site-title a:focus {
       -webkit-animation-play-state: paused;
-              animation-play-state: paused; }
+              animation-play-state: paused;
+      color: #20ffa7; }
 
 .nav-container {
   position: absolute;
