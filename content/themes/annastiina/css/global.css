@@ -641,12 +641,13 @@ body.hc-nav-open {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+/* stylelint-disable */
 .hamburger {
   padding: 4rem 1.5rem;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: .15s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -681,7 +682,7 @@ body.hc-nav-open {
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
-    transition-duration: 0.15s;
+    transition-duration: .15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -729,6 +730,7 @@ body.hc-nav-open {
   .hamburger--3dx-r.is-active .hamburger-inner::after {
     transform: translate3d(0, -0.9rem, 0) rotate(-45deg); }
 
+/* stylelint-disable */
 /*
    * 3DY
    */
@@ -1140,25 +1142,26 @@ body.hc-nav-open {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
+/* stylelint-disable */
 /*
    * Spin Reverse
    */
 .hamburger--spin-r .hamburger-inner {
-  transition-duration: 0.22s;
+  transition-duration: .22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    transition: top .1s .25s ease-in, opacity .1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--spin-r.is-active .hamburger-inner {
   transform: rotate(-225deg);
-  transition-delay: 0.12s;
+  transition-delay: .12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    transition: top .1s ease-out, opacity .1s .12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
@@ -3727,10 +3730,10 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
       background-image: url("../svg/external-link.svg"); }
 
 /* stylelint-disable */
-.block-commands {
+.page-id-21 .block-page {
   background-color: transparent;
   z-index: 2; }
-  .block-commands .cols {
+  .page-id-21 .block-page .cols {
     display: grid;
     /* autoprefixer: off */
     grid-auto-rows: minmax(0, auto);
@@ -3738,30 +3741,32 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     grid-row-gap: 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr)); }
     @supports not (display: grid) {
-      .block-commands .cols {
+      .page-id-21 .block-page .cols {
         display: flex;
         flex-wrap: wrap;
         overflow: hidden; }
-        .block-commands .cols > div {
+        .page-id-21 .block-page .cols > div {
           margin-bottom: 20px;
           margin-right: 50px;
           width: calc(50% - 50px); }
-          .block-commands .cols > div:nth-child(2n+2) {
+          .page-id-21 .block-page .cols > div:nth-child(2n+2) {
             margin-right: 0; } }
     @supports (-ms-ime-align: auto) {
-      .block-commands .cols {
+      .page-id-21 .block-page .cols {
         display: flex;
         flex-wrap: wrap;
         overflow: hidden; }
-        .block-commands .cols > div {
+        .page-id-21 .block-page .cols > div {
           margin-bottom: 20px;
           margin-right: 50px;
           width: calc(50% - 50px); }
-          .block-commands .cols > div:nth-child(2n+2) {
+          .page-id-21 .block-page .cols > div:nth-child(2n+2) {
             margin-right: 0; } }
-  .block-commands .command a::after {
+  .page-id-21 .block-page .command a::after {
     display: none; }
-  .block-commands .command svg {
+  .page-id-21 .block-page .command + p {
+    display: none; }
+  .page-id-21 .block-page .command svg {
     width: 22px;
     height: 22px; }
 
@@ -4133,11 +4138,11 @@ p.how-to {
           margin-bottom: 5rem; }
         .block-page .cols .col:last-child {
           margin-bottom: 0; }
-      .block-commands .cols {
+      .page-id-21 .block-page .cols {
         display: block; }
-        .block-commands .cols .col {
+        .page-id-21 .block-page .cols .col {
           margin-bottom: 5rem; }
-        .block-commands .cols .col:last-child {
+        .page-id-21 .block-page .cols .col:last-child {
           margin-bottom: 0; }
     .toptod {
       margin-bottom: 5rem;
@@ -4692,15 +4697,15 @@ p.how-to {
           width: calc(50% - 150px); }
           .block-page .cols > div:nth-child(2n+2) {
             margin-right: 0; }
-      .block-commands .cols {
+      .page-id-21 .block-page .cols {
         display: flex;
         flex-wrap: wrap;
         overflow: hidden; }
-        .block-commands .cols > div {
+        .page-id-21 .block-page .cols > div {
           margin-bottom: 20px;
           margin-right: 50px;
           width: calc(50% - 50px); }
-          .block-commands .cols > div:nth-child(2n+2) {
+          .page-id-21 .block-page .cols > div:nth-child(2n+2) {
             margin-right: 0; }
     .block-infographics .cols {
       display: flex;
@@ -4743,7 +4748,7 @@ p.how-to {
               width: calc(50% - 75px); }
               .block-page .cols > div:nth-child(2n+2) {
                 margin-right: 0; } }
-      .block-commands .cols {
+      .page-id-21 .block-page .cols {
         display: grid;
         /* autoprefixer: off */
         grid-auto-rows: minmax(0, auto);
@@ -4751,26 +4756,26 @@ p.how-to {
         grid-row-gap: 50px;
         grid-template-columns: repeat(2, minmax(0, 1fr)); }
         @supports not (display: grid) {
-          .block-commands .cols {
+          .page-id-21 .block-page .cols {
             display: flex;
             flex-wrap: wrap;
             overflow: hidden; }
-            .block-commands .cols > div {
+            .page-id-21 .block-page .cols > div {
               margin-bottom: 50px;
               margin-right: 50px;
               width: calc(50% - 50px); }
-              .block-commands .cols > div:nth-child(2n+2) {
+              .page-id-21 .block-page .cols > div:nth-child(2n+2) {
                 margin-right: 0; } }
         @supports (-ms-ime-align: auto) {
-          .block-commands .cols {
+          .page-id-21 .block-page .cols {
             display: flex;
             flex-wrap: wrap;
             overflow: hidden; }
-            .block-commands .cols > div {
+            .page-id-21 .block-page .cols > div {
               margin-bottom: 50px;
               margin-right: 50px;
               width: calc(50% - 50px); }
-              .block-commands .cols > div:nth-child(2n+2) {
+              .page-id-21 .block-page .cols > div:nth-child(2n+2) {
                 margin-right: 0; } } }
 
 @media all and (min-width: 760px) and (max-width: 1300px) and (-ms-high-contrast: none), (min-width: 760px) and (max-width: 1300px) and (-ms-high-contrast: active) {
@@ -4784,15 +4789,15 @@ p.how-to {
         width: calc(50% - 75px); }
         .block-page .cols > div:nth-child(2n+2) {
           margin-right: 0; }
-    .block-commands .cols {
+    .page-id-21 .block-page .cols {
       display: flex;
       flex-wrap: wrap;
       overflow: hidden; }
-      .block-commands .cols > div {
+      .page-id-21 .block-page .cols > div {
         margin-bottom: 50px;
         margin-right: 50px;
         width: calc(50% - 50px); }
-        .block-commands .cols > div:nth-child(2n+2) {
+        .page-id-21 .block-page .cols > div:nth-child(2n+2) {
           margin-right: 0; } }
 
 @media (min-width: 1555px) {

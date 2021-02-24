@@ -1,5 +1,5 @@
 /* stylelint-disable */
-.block-commands {
+.page-id-21 .block-page {
   background-color: transparent;
   z-index: 2;
 
@@ -24,6 +24,11 @@
   }
 
   .command a::after {
+    display: none;
+  }
+
+  // Remove empty paragraphs
+  .command + p {
     display: none;
   }
 
