@@ -120,11 +120,13 @@ h2,
   @include responsive-font($font-size-min-h2, $font-size-max-h2);
 }
 
+.h3,
 h3,
 %h3 {
   @include responsive-font($font-size-min-h3, $font-size-max-h3);
 }
 
+.h4,
 h4,
 %h4 {
   @include responsive-font($font-size-min-h4, $font-size-max-h4);

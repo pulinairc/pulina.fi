@@ -1869,9 +1869,11 @@ h1 {
 h2 {
   font-size: 24px; }
 
+.h3,
 h3 {
   font-size: 21px; }
 
+.h4,
 h4 {
   font-size: 18px; }
 
@@ -3353,6 +3355,34 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
 .edit-link .anchorjs-link {
   display: none !important; }
 
+.has-anchors h1,
+.has-anchors h2,
+.has-anchors h3,
+.has-anchors h4,
+.has-anchors h5,
+.has-anchors h6 {
+  position: relative; }
+  .has-anchors h1 a::after,
+  .has-anchors h2 a::after,
+  .has-anchors h3 a::after,
+  .has-anchors h4 a::after,
+  .has-anchors h5 a::after,
+  .has-anchors h6 a::after {
+    opacity: .5; }
+  .has-anchors h1 a:hover::after,
+  .has-anchors h2 a:hover::after,
+  .has-anchors h3 a:hover::after,
+  .has-anchors h4 a:hover::after,
+  .has-anchors h5 a:hover::after,
+  .has-anchors h6 a:hover::after {
+    opacity: 1; }
+
+.site-main .container {
+  overflow: visible; }
+
+[data-anchorjs-icon]::after {
+  -webkit-text-fill-color: #fff; }
+
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable */
 .irc-scroller-wrapper {
   -webkit-backface-visibility: hidden;
@@ -4401,8 +4431,10 @@ p.how-to {
       font-size: calc(32px + 19 * ((100vw - 320px) / 1600)); }
     h2 {
       font-size: calc(24px + 14 * ((100vw - 320px) / 1600)); }
+    .h3,
     h3 {
       font-size: calc(21px + 7 * ((100vw - 320px) / 1600)); }
+    .h4,
     h4 {
       font-size: calc(18px + 3 * ((100vw - 320px) / 1600)); }
     h5 {
@@ -4421,8 +4453,10 @@ p.how-to {
       font-size: 51px; }
     h2 {
       font-size: 38px; }
+    .h3,
     h3 {
       font-size: 28px; }
+    .h4,
     h4 {
       font-size: 21px; }
     h5 {

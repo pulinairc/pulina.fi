@@ -32,3 +32,30 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
 .edit-link .anchorjs-link {
   display: none !important;
 }
+
+.has-anchors {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+
+    a::after {
+      opacity: .5;
+    }
+
+    a:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+.site-main .container {
+  overflow: visible;
+}
+
+[data-anchorjs-icon]::after {
+  -webkit-text-fill-color: $color-white;
+}
