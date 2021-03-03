@@ -45,3 +45,20 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_editor_styles' );
  */
 require get_theme_file_path( 'inc/hooks/forms.php' );
 add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\dequeue_gf_stylesheets', 999 );
+
+/**
+ * Last updated date
+ */
+function last_updated_date( $content ) {
+  $u_time = get_the_time( 'U' );
+  $u_modified_time = get_the_modified_time( 'U' );
+  $custom_content = '';
+  if ( $u_modified_time >= $u_time + 86400 ) {
+     $updated_date = get_the_modified_time( 'j.n.Y' );
+     $updated_time = get_the_modified_time( 'H:i' );
+     $custom_content .= '<p class="last-updated">Sivua päivitetty viimeksi ' . $updated_date . ' klo ' . $updated_time .'.</p>';
+   }
+  $custom_content .= $content;
+  return $custom_content;
+}
+add_filter( 'the_content', __NAMESPACE__ . '\last_updated_date' );
