@@ -15,13 +15,16 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-page has-dark-bg">
-    <div class="container has-anchors">
+    <div class="container">
 
       <div class="content">
         <?php the_content(); ?>
 
-        <h2>Tilastot</h2>
-        <p>Tilastot päivittyvät tälle sivulle 8 tunnin välein.</p>
+        <div class="has-anchors">
+          <h2>Tilastot</h2>
+          <p>Tilastot päivittyvät tälle sivulle 8 tunnin välein.</p>
+        </div>
+
         <div class="cols">
           <div class="col">
             <?php get_template_part( 'template-parts/modules/trivia-weekly' ); ?>
