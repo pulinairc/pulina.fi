@@ -23,7 +23,7 @@ namespace Air_Light;
       copy( $triviastats_monthly_url, $triviastats_monthly_cachefile );
     }
 
-    $html_monthly = file_get_html( $triviastats_monthly_url );
+    $html_monthly = file_get_html( $triviastats_monthly_cachefile );
     $table = $html_monthly->find('table', 1);
     $rowData = array();
 

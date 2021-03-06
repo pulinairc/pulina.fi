@@ -22,7 +22,7 @@ get_header(); ?>
 
         <div class="has-anchors" style="margin-top: 4rem;">
           <h2>Tilastot</h2>
-          <p style="margin-bottom: 4rem; !important">Tilastot päivittyvät tälle sivulle muutaman minuutin välein.</p>
+          <p style="margin-bottom: 4rem; !important">Tilastot päivittyvät tälle sivulle tunnin välein.</p>
         </div>
 
         <div class="cols">
