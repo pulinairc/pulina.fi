@@ -29,7 +29,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
     // Fetch data and set up simple cache
     $triviastats_url = 'https://trivia.pulina.fi/tweek.html';
     $triviastats_cachefile = get_theme_file_path( 'inc/cache/trivia_tweek.html' );
-    $triviastats_cachetime = 28800; // 8 hours
+    $triviastats_cachetime = 3600; // 1 hour
 
     // If cache file does not exist, let's create it
     if ( ! file_exists( $triviastats_cachefile ) ) {
