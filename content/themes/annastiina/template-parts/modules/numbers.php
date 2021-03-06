@@ -7,7 +7,8 @@
  * @package annastiina
  */
 
-require get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_dom.php' );
+ // Require Simple HTML DOM
+require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_dom.php' );
 
 // Fetch data and set up simple cache
 $numbers_url = 'https://peikko.us/pulina.html';

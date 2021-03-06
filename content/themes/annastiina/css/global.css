@@ -641,13 +641,12 @@ body.hc-nav-open {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-/* stylelint-disable */
 .hamburger {
   padding: 4rem 1.5rem;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: .15s;
+  transition-duration: 0.15s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -682,7 +681,7 @@ body.hc-nav-open {
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
-    transition-duration: .15s;
+    transition-duration: 0.15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -730,7 +729,6 @@ body.hc-nav-open {
   .hamburger--3dx-r.is-active .hamburger-inner::after {
     transform: translate3d(0, -0.9rem, 0) rotate(-45deg); }
 
-/* stylelint-disable */
 /*
    * 3DY
    */
@@ -1142,26 +1140,25 @@ body.hc-nav-open {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-/* stylelint-disable */
 /*
    * Spin Reverse
    */
 .hamburger--spin-r .hamburger-inner {
-  transition-duration: .22s;
+  transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top .1s .25s ease-in, opacity .1s ease-in; }
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--spin-r.is-active .hamburger-inner {
   transform: rotate(-225deg);
-  transition-delay: .12s;
+  transition-delay: 0.12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top .1s ease-out, opacity .1s .12s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
@@ -3817,6 +3814,7 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
   opacity: .7; }
 
 /* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-descending-specificity, a11y/font-size-is-readable */
+.trivia,
 .toptod {
   background-color: #050505;
   border: 1px solid #20283c;
@@ -3824,17 +3822,25 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
   padding: 3rem;
   position: relative;
   width: 420px; }
+  .trivia h2,
   .toptod h2 {
     color: #fff;
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 3rem; }
+  .trivia ul,
+  .trivia ol,
+  .toptod ul,
   .toptod ol {
     list-style: none;
     margin: 0;
     padding: 0; }
+  .trivia b,
   .toptod b {
-    font-weight: 500; }
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px; }
+  .trivia li,
   .toptod li {
     color: #fff;
     display: block;
@@ -3842,22 +3848,35 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     line-height: 1;
     margin: 1rem 0;
     padding: 0; }
+    .trivia li:nth-child(1) .progress::after,
     .toptod li:nth-child(1) .progress::after {
       background-color: #88dea0; }
+    .trivia li:nth-child(2) .progress::after,
     .toptod li:nth-child(2) .progress::after {
       background-color: #60d380; }
+    .trivia li:nth-child(3) .progress::after,
     .toptod li:nth-child(3) .progress::after {
       background-color: #38c861; }
+    .trivia li:nth-child(4) .progress::after,
     .toptod li:nth-child(4) .progress::after {
       background-color: #2ca04d; }
+    .trivia li:nth-child(5) .progress::after,
     .toptod li:nth-child(5) .progress::after {
       background-color: #21783a; }
+    .trivia li:nth-child(6) .progress::after,
     .toptod li:nth-child(6) .progress::after {
       background-color: #1c6430; }
+  .trivia .progress::after,
+  .toptod .progress::after {
+    background-color: #1c6430;
+    top: 4px; }
+  .trivia .bar,
   .toptod .bar {
     border-radius: 2px;
     overflow: hidden;
     position: relative; }
+  .trivia .bar::after,
+  .trivia .progress::after,
   .toptod .bar::after,
   .toptod .progress::after {
     border-radius: 2px;
@@ -3865,15 +3884,11 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
     display: block;
     height: 4px;
     position: relative; }
+  .trivia .bar::after,
   .toptod .bar::after {
     background-color: rgba(255, 255, 255, 0.15);
     width: 100%; }
-  .toptod .progress::after {
-    background-color: #1c6430;
-    top: 4px; }
-  .toptod b {
-    display: block;
-    margin-bottom: 5px; }
+  .trivia .value,
   .toptod .value {
     font-size: 13px;
     opacity: .3;
@@ -3950,6 +3965,7 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
   padding-top: 0; }
   .block-hall-of-fame .container {
     overflow: visible;
+    padding-bottom: 0;
     padding-top: 0; }
   .block-hall-of-fame .cols {
     display: grid;
@@ -4047,22 +4063,79 @@ p.how-to {
   margin-bottom: 2rem;
   order: 1; }
 
-/* stylelint-disable a11y/no-display-none, property-disallowed-list */
-.block-title {
-  background: linear-gradient(-70deg, #fff, #a4ebc8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  font-size: 52px;
-  font-weight: 700;
-  -webkit-text-fill-color: transparent; }
-
-.block-recent-links li a:first-child {
-  display: none; }
-
-.block-recent-links img {
-  display: none; }
+/* stylelint-disable a11y/no-display-none, number-max-precision, property-disallowed-list, sh-waqar/declaration-use-variable, no-unknown-animations, no-descending-specificity, a11y/font-size-is-readable */
+.block.block-trivia {
+  padding-top: 0; }
+  .block.block-trivia .cols {
+    display: grid;
+    grid-gap: 80px;
+    grid-template-columns: 3fr 420px;
+    overflow: visible; }
+  .block.block-trivia .container {
+    padding-top: 0; }
+  .block.block-trivia .answers {
+    display: none; }
+  .block.block-trivia .nick {
+    font-weight: 500; }
+  .block.block-trivia .block-title {
+    align-items: center;
+    background: linear-gradient(-70deg, #fff, #ebe4a4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    display: inline-flex;
+    font-size: 52px;
+    font-weight: 700;
+    -webkit-text-fill-color: transparent; }
+    .block.block-trivia .block-title svg {
+      fill: #ebe4a4;
+      margin-left: -2rem;
+      margin-right: 2rem; }
+  .block.block-trivia .button-wrapper {
+    margin-top: 4rem; }
+    .block.block-trivia .button-wrapper .button {
+      background-color: #0c162d;
+      border: 2px solid #fff;
+      color: #fff; }
+    .block.block-trivia .button-wrapper .button:hover,
+    .block.block-trivia .button-wrapper .button:focus {
+      -webkit-animation: none;
+              animation: none;
+      background-color: #20ffa7;
+      border-color: #20ffa7;
+      color: #0c162d; }
+  .block.block-trivia .trivia {
+    margin-left: 0; }
+  .block.block-trivia .trivia li {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    margin: 1rem 0;
+    padding: 0; }
+    .block.block-trivia .trivia li:nth-child(1) .progress::after {
+      background-color: #dedd88; }
+    .block.block-trivia .trivia li:nth-child(2) .progress::after {
+      background-color: #d3d160; }
+    .block.block-trivia .trivia li:nth-child(3) .progress::after {
+      background-color: #c8c538; }
+    .block.block-trivia .trivia li:nth-child(4) .progress::after {
+      background-color: #a09e2c; }
+    .block.block-trivia .trivia li:nth-child(5) .progress::after {
+      background-color: #787721; }
+    .block.block-trivia .trivia li:nth-child(6) .progress::after {
+      background-color: #64631c; }
+  .block.block-trivia .trivia .progress::after {
+    background-color: #64631c;
+    top: 4px; }
+  .block.block-trivia p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 500; }
+    .block.block-trivia p.larger {
+      color: #fff;
+      font-size: 22px; }
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
@@ -4174,11 +4247,18 @@ p.how-to {
           margin-bottom: 5rem; }
         .page-id-21 .block-page .cols .col:last-child {
           margin-bottom: 0; }
+    .trivia,
     .toptod {
       margin-bottom: 5rem;
       width: calc(100% - 6rem); }
       .block-hall-of-fame .cols {
-        display: block; } }
+        display: block; }
+      .block.block-trivia .cols {
+        display: block; }
+      .block.block-trivia .block-title {
+        font-size: 32px; }
+      .block.block-trivia .trivia {
+        margin-top: 4rem; } }
 
 @media (max-width: 600px) {
     :root {
@@ -4517,7 +4597,11 @@ p.how-to {
             margin-right: 50px;
             width: calc(50% - 50px); }
             .block-infographics .cols > div:nth-child(2n+2) {
-              margin-right: 0; } } }
+              margin-right: 0; } }
+      .block.block-trivia p {
+        font-size: 16px; }
+        .block.block-trivia p.larger {
+          font-size: 80px; } }
 
 @media (max-width: 840px) {
     .gutenberg-content {
@@ -4669,7 +4753,9 @@ p.how-to {
           font-size: 20px; }
     .block-infographics .number {
       font-size: 60px;
-      font-weight: 700; } }
+      font-weight: 700; }
+        .block.block-trivia p.larger {
+          font-size: 20px; } }
 
 @media (min-width: 1300px) and (max-width: 1350px) {
     .block-hero-fp h1 {
@@ -4681,7 +4767,9 @@ p.how-to {
 
 @media (min-width: 760px) and (max-width: 1100px) {
     .block-hero-fp h1 {
-      font-size: 42px; } }
+      font-size: 42px; }
+      .block.block-trivia .block-title {
+        font-size: 42px; } }
 
 @media (min-width: 670px) and (max-width: 760px) {
     .block-hero-fp h1 {
@@ -4835,18 +4923,28 @@ p.how-to {
           margin-right: 0; } }
 
 @media (min-width: 1555px) {
+    .trivia,
     .toptod {
-      margin-left: -100px; } }
+      margin-left: -100px; }
+      .block.block-trivia .trivia {
+        float: right;
+        margin-left: 0;
+        margin-right: -150px; } }
 
 @media (min-width: 760px) and (max-width: 1000px) {
+    .trivia,
     .toptod {
       width: 280px; }
       .block-hall-of-fame .cols {
-        grid-template-columns: 340px 3fr; } }
+        grid-template-columns: 340px 3fr; }
+      .block.block-trivia .cols {
+        grid-template-columns: 3fr 340px; } }
 
 @media (min-width: 1000px) and (max-width: 1555px) {
       .block-hall-of-fame .cols {
-        grid-template-columns: 480px 3fr; } }
+        grid-template-columns: 480px 3fr; }
+      .block.block-trivia .cols {
+        grid-template-columns: 3fr 480px; } }
 
 @media (min-width: 1180px) {
       .block-hall-of-fame .col-content {
@@ -4854,9 +4952,7 @@ p.how-to {
 
 @media (max-width: 1100px) {
       .block-hall-of-fame .block-title {
-        font-size: 42px; }
-    .block-title {
-      font-size: 42px; } }
+        font-size: 42px; } }
 
 @media (min-width: 800px) and (max-width: 1500px) {
     .block-infographics .container {

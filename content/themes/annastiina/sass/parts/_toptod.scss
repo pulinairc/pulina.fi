@@ -2,6 +2,7 @@
 $red-live: #ea2429;
 $white: #fff;
 
+.trivia,
 .toptod {
   background-color: #050505;
   border: 1px solid #20283c;
@@ -30,6 +31,7 @@ $white: #fff;
     margin: 0 0 3rem;
   }
 
+  ul,
   ol {
     list-style: none;
     margin: 0;
@@ -37,7 +39,9 @@ $white: #fff;
   }
 
   b {
+    display: block;
     font-weight: 500;
+    margin-bottom: 5px;
   }
 
   li {
@@ -73,6 +77,11 @@ $white: #fff;
     }
   }
 
+  .progress::after {
+    background-color: darken(#32b457, 20%);
+    top: 4px;
+  }
+
   .bar {
     border-radius: 2px;
     overflow: hidden;
@@ -91,16 +100,6 @@ $white: #fff;
   .bar::after {
     background-color: rgba($color-white, .15);
     width: 100%;
-  }
-
-  .progress::after {
-    background-color: darken(#32b457, 20%);
-    top: 4px;
-  }
-
-  b {
-    display: block;
-    margin-bottom: 5px;
   }
 
   .value {
