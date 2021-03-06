@@ -4009,8 +4009,7 @@ p.how-to {
     margin-right: 1.2rem; }
 
 .block-infographics .container {
-  overflow: visible;
-  padding-top: 0; }
+  overflow: visible; }
 
 .block-infographics .cols {
   display: grid;
@@ -4258,6 +4257,7 @@ p.how-to {
       .block.block-trivia .block-title {
         font-size: 32px; }
       .block.block-trivia .trivia {
+        margin-bottom: 0;
         margin-top: 4rem; } }
 
 @media (max-width: 600px) {
