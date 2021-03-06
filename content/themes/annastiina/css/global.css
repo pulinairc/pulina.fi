@@ -3698,7 +3698,7 @@ body .block a.anchorjs-link:not(.github):not(.no-text-link):not(.post-edit-link)
           width: calc(50% - 150px); }
           .block-page .cols > div:nth-child(2n+2) {
             margin-right: 0; } }
-  .block-page h2 {
+  .block-page h2:not(.trivia-title) {
     background: linear-gradient(-20deg, #97c8f6, #20ffa7);
     -webkit-background-clip: text;
     background-clip: text;
@@ -4106,28 +4106,6 @@ p.how-to {
       color: #0c162d; }
   .block.block-trivia .trivia {
     margin-left: 0; }
-  .block.block-trivia .trivia li {
-    color: #fff;
-    display: block;
-    font-size: 14px;
-    line-height: 1;
-    margin: 1rem 0;
-    padding: 0; }
-    .block.block-trivia .trivia li:nth-child(1) .progress::after {
-      background-color: #dedd88; }
-    .block.block-trivia .trivia li:nth-child(2) .progress::after {
-      background-color: #d3d160; }
-    .block.block-trivia .trivia li:nth-child(3) .progress::after {
-      background-color: #c8c538; }
-    .block.block-trivia .trivia li:nth-child(4) .progress::after {
-      background-color: #a09e2c; }
-    .block.block-trivia .trivia li:nth-child(5) .progress::after {
-      background-color: #787721; }
-    .block.block-trivia .trivia li:nth-child(6) .progress::after {
-      background-color: #64631c; }
-  .block.block-trivia .trivia .progress::after {
-    background-color: #64631c;
-    top: 4px; }
   .block.block-trivia p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
@@ -4135,6 +4113,51 @@ p.how-to {
     .block.block-trivia p.larger {
       color: #fff;
       font-size: 22px; }
+
+.block .trivia li {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  margin: 1rem 0;
+  padding: 0; }
+  .block .trivia li:nth-child(1) .progress::after {
+    background-color: #dedd88; }
+  .block .trivia li:nth-child(2) .progress::after {
+    background-color: #d3d160; }
+  .block .trivia li:nth-child(3) .progress::after {
+    background-color: #c8c538; }
+  .block .trivia li:nth-child(4) .progress::after {
+    background-color: #a09e2c; }
+  .block .trivia li:nth-child(5) .progress::after {
+    background-color: #787721; }
+  .block .trivia li:nth-child(6) .progress::after {
+    background-color: #64631c; }
+
+.block .trivia .progress::after {
+  background-color: #64631c;
+  top: 4px; }
+
+.block.block-page .trivia.trivia-weekly {
+  margin-left: 0;
+  width: calc(100% - 6rem); }
+  .block.block-page .trivia.trivia-weekly h2 {
+    color: #fff;
+    -webkit-text-fill-color: none; }
+
+.block.block-page li span {
+  font-size: var(--font-size-small); }
+  .block.block-page li span.answers, .block.block-page li span.value {
+    font-size: 15px; }
+
+.block.block-page .answers {
+  opacity: .2;
+  position: absolute;
+  right: 100px;
+  top: 0;
+  transition: all .22s; }
+  .block.block-page .answers:hover, .block.block-page .answers:focus {
+    opacity: .5; }
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
@@ -4646,7 +4669,11 @@ p.how-to {
         height: 64px;
         width: 64px; }
     .block-infographics .number {
-      font-size: 38px; } }
+      font-size: 38px; }
+      .block.block-page li span.answers, .block.block-page li span.value {
+        font-size: 13px; }
+    .block.block-page .answers {
+      right: 80px; } }
 
 @media (min-width: 1500px) {
     .irc-scroller-wrapper {
@@ -4929,7 +4956,7 @@ p.how-to {
       .block.block-trivia .trivia {
         float: right;
         margin-left: 0;
-        margin-right: -150px; } }
+        margin-right: -100px; } }
 
 @media (min-width: 760px) and (max-width: 1000px) {
     .trivia,

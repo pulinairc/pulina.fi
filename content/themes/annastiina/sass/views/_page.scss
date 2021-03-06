@@ -74,7 +74,7 @@
     }
   }
 
-  h2 {
+  h2:not(.trivia-title) {
     background: linear-gradient(-20deg, #97c8f6, #20ffa7);
     -webkit-background-clip: text;
     background-clip: text;
