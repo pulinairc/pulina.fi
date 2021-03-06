@@ -15,7 +15,7 @@ namespace Air_Light;
     // Fetch data and set up simple cache
     $triviastats_url = 'https://trivia.pulina.fi/tweek.html';
     $triviastats_cachefile = get_theme_file_path( 'inc/cache/trivia_tweek.html' );
-    $triviastats_cachetime = 28800; // 8 hours
+    $triviastats_cachetime = 3600; // 1 hour
 
     // If cache file does not exist, let's create it
     if ( ! file_exists( $triviastats_cachefile ) ) {
@@ -23,7 +23,7 @@ namespace Air_Light;
       copy( $triviastats_url, $triviastats_cachefile );
     }
 
-    $html = file_get_html( $triviastats_cachefile );
+    $html = file_get_html( $triviastats_url );
     $table = $html->find('table', 1);
     $rowData = array();
 

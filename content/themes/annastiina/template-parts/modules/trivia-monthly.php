@@ -13,18 +13,18 @@ namespace Air_Light;
     require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_dom.php' );
 
     // Fetch data and set up simple cache
-    $triviastats_url = 'https://trivia.pulina.fi/tmonth.html';
-    $triviastats_cachefile = get_theme_file_path( 'inc/cache/trivia_tmonth.html' );
-    $triviastats_cachetime = 28800; // 8 hours
+    $triviastats_monthly_url = 'https://trivia.pulina.fi/tmonth.html';
+    $triviastats_monthly_cachefile = get_theme_file_path( 'inc/cache/trivia_tmonth.html' );
+    $triviastats_monthly_cachetime = 3600; // 1 hour
 
     // If cache file does not exist, let's create it
-    if ( ! file_exists( $triviastats_cachefile ) ) {
-      touch( $triviastats_cachefile );
-      copy( $triviastats_url, $triviastats_cachefile );
+    if ( ! file_exists( $triviastats_monthly_cachefile ) ) {
+      touch( $triviastats_monthly_cachefile );
+      copy( $triviastats_monthly_url, $triviastats_monthly_cachefile );
     }
 
-    $html = file_get_html( $triviastats_cachefile );
-    $table = $html->find('table', 1);
+    $html_monthly = file_get_html( $triviastats_monthly_url );
+    $table = $html_monthly->find('table', 1);
     $rowData = array();
 
     foreach ( $table->find('tr') as $row ) {
