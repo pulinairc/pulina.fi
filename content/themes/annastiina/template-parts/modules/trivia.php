@@ -20,7 +20,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
 
   <p>Trivia on IRCissä klassikkopeli, jota on ajettu aikoinaan mm. #trivia-nimisellä kanavalla. Näiden kuitenkin hiljalleen lopettaessa toimintansa Pulina lähti elvyttämään omaa triviaansa, joka pyöri hetken ajan joskus vuosien 2008-2010 välissä. Laadukkaita suomenkielisiä tietovisakysymyksiä on ladattu botin kysymystietokantaan yhteensä 83347 kpl.</p>
 
-  <p class="button-wrapper"><a href="#" class="button button-large">Lue pulinatriviasta lisää</a></p>
+  <p class="button-wrapper"><a href="<?php echo esc_url( get_page_link( 1655 ) ); ?>" class="button button-large">Lue pulinatriviasta lisää</a></p>
 </div>
 
 <div class="col">

@@ -15,7 +15,7 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-page has-dark-bg">
-    <div class="container">
+    <div class="container has-anchors">
 
       <div class="content">
         <?php the_content(); ?>
