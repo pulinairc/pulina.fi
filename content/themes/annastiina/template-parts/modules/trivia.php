@@ -55,8 +55,8 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
   <div class="trivia trivia-top-week">
     <h2>Viikon parhaat pelaajat</h2>
   <ul>
-  <?php $c = 0; foreach ( $rowData as $row => $tr ) : ?>
-    <?php if ( 0 !== $c && 1 !== $c ) { ?><li><div class="points"><div class="bar"><?php } ?>
+  <?php $c = 0; foreach ( array_slice( $rowData, 0, 12 ) as $row => $tr ) : ?>
+    <li><div class="points"><div class="bar">
       <?php $i = 0; foreach ( $tr as $td ) : ?>
         <?php if (
           strpos( $td['plaintext'], '#' ) === false &&
@@ -79,7 +79,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
           <?php } ?>
         <?php endif; ?>
       <?php $i++; endforeach; ?>
-    <?php if ( 0 !== $c && 1 !== $c ) { ?></div></div></li><?php } ?>
+    </div></div></li>
   <?php $c++; endforeach; ?>
   </ul>
   </div>

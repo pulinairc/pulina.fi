@@ -81,6 +81,11 @@
   .trivia {
     margin-left: 0;
 
+    &.trivia-top-week > ul > li:nth-child(1),
+    &.trivia-top-week > ul > li:nth-child(2) {
+      display: none;
+    }
+
     @media (min-width: 1555px) {
       float: right;
       margin-left: 0;

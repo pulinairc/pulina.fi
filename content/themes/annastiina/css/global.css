@@ -4106,6 +4106,9 @@ p.how-to {
       color: #0c162d; }
   .block.block-trivia .trivia {
     margin-left: 0; }
+    .block.block-trivia .trivia.trivia-top-week > ul > li:nth-child(1),
+    .block.block-trivia .trivia.trivia-top-week > ul > li:nth-child(2) {
+      display: none; }
   .block.block-trivia p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 18px;
