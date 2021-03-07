@@ -37,7 +37,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
       copy( $triviastats_url, $triviastats_cachefile );
     }
 
-    $html = file_get_html( $triviastats_cachefile );
+    $html = file_get_html( $triviastats_url );
     $table = $html->find('table', 1);
     $rowData = array();
 
