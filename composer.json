@@ -52,7 +52,8 @@
     "johnpbloch/wordpress": "5.6.1",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/simple-history": "*",
-    "wpackagist-plugin/so-clean-up-wp-seo": "*"
+    "wpackagist-plugin/so-clean-up-wp-seo": "*",
+    "fabpot/goutte": "^4.0"
   },
   "extra": {
     "dropin-paths": {

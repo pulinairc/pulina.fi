@@ -43,11 +43,6 @@ module.exports = {
       notify: true,
       snippetOptions: {
         blacklist: ["/irclog.php"]
-      },
-      // Generate with: mkdir -p /var/www/certs && cd /var/www/certs && mkcert localhost 192.168.x.xxx ::1
-      https: {
-        key: "/var/www/certs/localhost+2-key.pem",
-        cert: "/var/www/certs/localhost+2.pem",
       }
     },
     watch: [
