@@ -11,7 +11,7 @@ namespace Air_Light;
 
 <div id="placement" class="advertisement ad advert textad mainos">
   <?php $args = array(
-    'post_type' => 'ads',
+    'post_type' => 'ad',
     'posts_per_page' => 1,
     'no_found_rows' => true,
     'post_status' => 'publish',
