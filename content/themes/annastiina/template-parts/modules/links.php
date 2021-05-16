@@ -8,7 +8,7 @@
 namespace Air_Light;
 
 // Fetch data and set up simple cache
-$links_url = 'https://peikko.us/pulinalinkit/index.html';
+$links_url = 'https://botit.pulina.fi/pulinalinkit/index.html';
 $links_cachefile = get_theme_file_path( 'inc/cache/links.html' );
 $links_cachetime = 3600; // 60 minutes
 
@@ -47,7 +47,7 @@ $first_level_items = $html->find( 'ul', 0 )->find( 'li', 0 ); ?>
 </ul>
 
 <p class="more-links">
-  <a href="https://peikko.us/pulinalinkit">
+  <a href="https://botit.pulina.fi/pulinalinkit">
     Lisää linkkejä
   </a>
 </p>

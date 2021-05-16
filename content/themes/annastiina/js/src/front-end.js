@@ -109,9 +109,9 @@ annastiina_LazyLoad.update();
 
     // Toptod polling
     $('#toptod').fadeIn();
-    $("#toptod").load('https://peikko.us/toptod-content-annastiina.php');
+    $("#toptod").load('https://botit.pulina.fi/toptod-content-annastiina.php');
       var refreshId = setInterval(function() {
-    $("#toptod").load('https://peikko.us/toptod-content-annastiina.php',
+    $("#toptod").load('https://botit.pulina.fi/toptod-content-annastiina.php',
       function() {
         $("#content").fadeIn();
       }

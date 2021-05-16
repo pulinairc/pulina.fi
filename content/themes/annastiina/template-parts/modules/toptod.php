@@ -17,9 +17,9 @@ namespace Air_Light;
 
       <div id="toptod">
           <?php
-            // This same code is on peikko.us/toptod-content-annastiina.php where it's polled via JS
+            // This same code is on https://botit.pulina.fi/toptod-content-annastiina.php where it's polled via JS
             // Fetch data and set up simple cache
-            $toptod_fetch_url = 'https://peikko.us/toptod.html';
+            $toptod_fetch_url = 'https://botit.pulina.fi/toptod.html';
             $toptod_cachefile = get_theme_file_path( 'inc/cache/toptod.html' );
             $toptod_cachetime = 1800; // 30 minutes
 
