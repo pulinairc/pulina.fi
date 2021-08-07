@@ -27,9 +27,9 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
     <?php
     // Simplepie already declared before
     // Fetch data and set up simple cache
-    $triviastats_url = 'https://trivia.pulina.fi/tweek.html';
-    $triviastats_cachefile = get_theme_file_path( 'inc/cache/trivia_tweek.html' );
-    $triviastats_cachetime = 3600; // 1 hour
+    $triviastats_url = 'https://trivia.pulina.fi/ever.html';
+    $triviastats_cachefile = get_theme_file_path( 'inc/cache/trivia_ever.html' );
+    $triviastats_cachetime = 43200; // 12 hours
 
     // If cache file does not exist, let's create it
     if ( ! file_exists( $triviastats_cachefile ) ) {
@@ -53,7 +53,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
       $rowData[] = $keeper;
   } ?>
   <div class="trivia trivia-top-week">
-    <h2>Viikon parhaat pelaajat</h2>
+    <h2>Kaikkien aikojen parhaat pelaajat</h2>
   <ul>
   <?php $c = 0; foreach ( array_slice( $rowData, 0, 12 ) as $row => $tr ) : ?>
     <li><div class="points"><div class="bar">
