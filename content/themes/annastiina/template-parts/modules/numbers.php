@@ -13,7 +13,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
 // Fetch data and set up simple cache
 $numbers_url = 'https://botit.pulina.fi/pulina.html';
 $numbers_cachefile = get_theme_file_path( 'inc/cache/numbers.html' );
-$numbers_cachetime = 28800; // 8 hours
+$numbers_cachetime = 172800; // 48 hours
 
 $peak_url = 'https://botit.pulina.fi/peak.db';
 $peak_cachefile = get_theme_file_path( 'inc/cache/peak.db' );
@@ -71,6 +71,7 @@ $number_total_lines = $matches[1];
 ?>
 
 <div class="cols">
+
   <div class="col">
     <span class="label">
       Paikalla nyt
