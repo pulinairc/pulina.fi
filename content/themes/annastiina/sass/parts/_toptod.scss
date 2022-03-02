@@ -52,6 +52,10 @@ $white: #fff;
     margin: 1rem 0;
     padding: 0;
 
+    .progress {
+      white-space: nowrap;
+    }
+
     &:nth-child(1) .progress::after {
       background-color: lighten(#32b457, 25%);
     }
