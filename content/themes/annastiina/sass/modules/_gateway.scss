@@ -1,0 +1,128 @@
+.block-gateway {
+  background-color: transparent;
+  padding-top: 0;
+
+  .container {
+    overflow: visible;
+    padding-top: 0;
+  }
+
+  .cols {
+    display: grid;
+    grid-gap: 80px;
+    grid-template-columns: 420px 3fr;
+    overflow: visible;
+
+    @media (min-width: 1000px) and (max-width: 1555px) {
+      grid-template-columns: 560px 3fr;
+    }
+
+    @media (min-width: 760px) and (max-width: 1000px) {
+      grid-template-columns: 340px 3fr;
+    }
+
+    @media (max-width: 760px) {
+      display: block;
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 4rem;
+
+    .button {
+      background-color: $color-dark-blue;
+      border: 2px solid $color-white;
+      color: $color-white;
+    }
+
+    .button:hover,
+    .button:focus {
+      animation: none;
+      background-color: $color-retro-green;
+      border-color: $color-retro-green;
+      color: $color-dark-blue;
+    }
+  }
+
+  .col-image > img {
+    max-width: unset;
+    width: 1400px;
+
+    @media (max-width: 1100px) {
+      margin-top: 4rem;
+      width: 800px;
+    }
+  }
+
+  .col-content {
+    margin-bottom: 110px;
+
+    @media (min-width: 1180px) {
+      margin-top: 8rem;
+    }
+  }
+
+  .block-title {
+    align-items: center;
+    background: linear-gradient(-70deg, #fff, #5662f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    display: inline-flex;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.33;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1100px) {
+      font-size: 42px;
+    }
+  }
+
+  p {
+    color: rgba($color-white, .8);
+    font-size: 18px;
+    font-weight: 500;
+
+    &.larger {
+      color: $color-white;
+      font-size: 22px;
+
+      @media (max-width: 1200px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 800px) {
+        font-size: 80px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      font-size: 16px;
+    }
+  }
+}
+
+p.how-to {
+  color: rgba($color-white, .4);
+  margin-top: 4rem;
+  max-width: 400px;
+}
+
+.block .clients {
+  color: rgba($color-white, .4);
+
+  a:hover,
+  a:focus,
+  a {
+    border: none;
+    box-shadow: none;
+    color: rgba($color-white, .4);
+    text-shadow: none;
+  }
+
+  svg {
+    margin-right: 1.2rem;
+  }
+}

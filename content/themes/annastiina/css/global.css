@@ -641,13 +641,12 @@ body.hc-nav-open {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-/* stylelint-disable */
 .hamburger {
   padding: 4rem 1.5rem;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: .15s;
+  transition-duration: 0.15s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -682,7 +681,7 @@ body.hc-nav-open {
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
-    transition-duration: .15s;
+    transition-duration: 0.15s;
     transition-timing-function: ease; }
   .hamburger-inner::before, .hamburger-inner::after {
     content: "";
@@ -730,7 +729,6 @@ body.hc-nav-open {
   .hamburger--3dx-r.is-active .hamburger-inner::after {
     transform: translate3d(0, -0.9rem, 0) rotate(-45deg); }
 
-/* stylelint-disable */
 /*
    * 3DY
    */
@@ -1142,26 +1140,25 @@ body.hc-nav-open {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-/* stylelint-disable */
 /*
    * Spin Reverse
    */
 .hamburger--spin-r .hamburger-inner {
-  transition-duration: .22s;
+  transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .hamburger--spin-r .hamburger-inner::before {
-    transition: top .1s .25s ease-in, opacity .1s ease-in; }
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
   .hamburger--spin-r .hamburger-inner::after {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .hamburger--spin-r.is-active .hamburger-inner {
   transform: rotate(-225deg);
-  transition-delay: .12s;
+  transition-delay: 0.12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   .hamburger--spin-r.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
-    transition: top .1s ease-out, opacity .1s .12s ease-out; }
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
   .hamburger--spin-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(90deg);
@@ -4168,6 +4165,72 @@ p.how-to {
   .block.block-page .answers:hover, .block.block-page .answers:focus {
     opacity: .5; }
 
+.block-gateway {
+  background-color: transparent;
+  padding-top: 0; }
+  .block-gateway .container {
+    overflow: visible;
+    padding-top: 0; }
+  .block-gateway .cols {
+    display: grid;
+    grid-gap: 80px;
+    grid-template-columns: 420px 3fr;
+    overflow: visible; }
+  .block-gateway .button-wrapper {
+    margin-top: 4rem; }
+    .block-gateway .button-wrapper .button {
+      background-color: #0c162d;
+      border: 2px solid #fff;
+      color: #fff; }
+    .block-gateway .button-wrapper .button:hover,
+    .block-gateway .button-wrapper .button:focus {
+      -webkit-animation: none;
+              animation: none;
+      background-color: #20ffa7;
+      border-color: #20ffa7;
+      color: #0c162d; }
+  .block-gateway .col-image > img {
+    max-width: unset;
+    width: 1400px; }
+  .block-gateway .col-content {
+    margin-bottom: 110px; }
+  .block-gateway .block-title {
+    align-items: center;
+    background: linear-gradient(-70deg, #fff, #5662f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    display: inline-flex;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.33;
+    -webkit-text-fill-color: transparent; }
+  .block-gateway p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    font-weight: 500; }
+    .block-gateway p.larger {
+      color: #fff;
+      font-size: 22px; }
+
+p.how-to {
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4rem;
+  max-width: 400px; }
+
+.block .clients {
+  color: rgba(255, 255, 255, 0.4); }
+  .block .clients a:hover,
+  .block .clients a:focus,
+  .block .clients a {
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: none; }
+  .block .clients svg {
+    margin-right: 1.2rem; }
+
 .wp-block.is-style-boxed,
 .is-style-boxed {
   border: 2px solid rgba(255, 255, 255, 0.8);
@@ -4290,7 +4353,9 @@ p.how-to {
         font-size: 32px; }
       .block.block-trivia .trivia {
         margin-bottom: 0;
-        margin-top: 4rem; } }
+        margin-top: 4rem; }
+      .block-gateway .cols {
+        display: block; } }
 
 @media (max-width: 600px) {
     :root {
@@ -4633,7 +4698,11 @@ p.how-to {
       .block.block-trivia p {
         font-size: 16px; }
         .block.block-trivia p.larger {
-          font-size: 80px; } }
+          font-size: 80px; }
+        .block-gateway p.larger {
+          font-size: 80px; }
+      .block-gateway p {
+        font-size: 16px; } }
 
 @media (max-width: 840px) {
     .gutenberg-content {
@@ -4791,6 +4860,8 @@ p.how-to {
       font-size: 60px;
       font-weight: 700; }
         .block.block-trivia p.larger {
+          font-size: 20px; }
+        .block-gateway p.larger {
           font-size: 20px; } }
 
 @media (min-width: 1300px) and (max-width: 1350px) {
@@ -4974,20 +5045,31 @@ p.how-to {
       .block-hall-of-fame .cols {
         grid-template-columns: 340px 3fr; }
       .block.block-trivia .cols {
-        grid-template-columns: 3fr 340px; } }
+        grid-template-columns: 3fr 340px; }
+      .block-gateway .cols {
+        grid-template-columns: 340px 3fr; } }
 
 @media (min-width: 1000px) and (max-width: 1555px) {
       .block-hall-of-fame .cols {
         grid-template-columns: 480px 3fr; }
       .block.block-trivia .cols {
-        grid-template-columns: 3fr 480px; } }
+        grid-template-columns: 3fr 480px; }
+      .block-gateway .cols {
+        grid-template-columns: 560px 3fr; } }
 
 @media (min-width: 1180px) {
       .block-hall-of-fame .col-content {
+        margin-top: 8rem; }
+      .block-gateway .col-content {
         margin-top: 8rem; } }
 
 @media (max-width: 1100px) {
       .block-hall-of-fame .block-title {
+        font-size: 42px; }
+      .block-gateway .col-image > img {
+        margin-top: 4rem;
+        width: 800px; }
+      .block-gateway .block-title {
         font-size: 42px; } }
 
 @media (min-width: 800px) and (max-width: 1500px) {
