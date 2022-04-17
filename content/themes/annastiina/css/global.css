@@ -1712,6 +1712,20 @@ body.hc-nav-open {
   max-width: 100%;
   position: relative; }
 
+.button-wrapper.button-wrapper-ghost {
+  margin-top: 4rem; }
+  .button-wrapper.button-wrapper-ghost .button.button-ghost {
+    background-color: #0c162d;
+    border: 2px solid #fff;
+    color: #fff; }
+  .button-wrapper.button-wrapper-ghost .button.button-ghost:hover,
+  .button-wrapper.button-wrapper-ghost .button.button-ghost:focus {
+    -webkit-animation: none;
+            animation: none;
+    background-color: #20ffa7;
+    border-color: #20ffa7;
+    color: #0c162d; }
+
 .shade {
   background-color: #2a2d3e;
   height: 100%;

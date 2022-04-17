@@ -15,6 +15,25 @@
   position: relative;
 }
 
+// Buttons
+.button-wrapper.button-wrapper-ghost {
+  margin-top: 4rem;
+
+  .button.button-ghost {
+    background-color: $color-dark-blue;
+    border: 2px solid $color-white;
+    color: $color-white;
+  }
+
+  .button.button-ghost:hover,
+  .button.button-ghost:focus {
+    animation: none;
+    background-color: $color-retro-green;
+    border-color: $color-retro-green;
+    color: $color-dark-blue;
+  }
+}
+
 // Default shade on top of blocks
 .shade {
   background-color: $color-main;
