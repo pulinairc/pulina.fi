@@ -77,7 +77,11 @@ $number_total_lines = $matches[1];
       Paikalla nyt
     </span>
     <span class="number">
+      <?php if ( ! empty( $html_numbers->find( '.paikalla' ) ) ) : ?>
       <?php foreach ( $html_numbers->find( '.paikalla' ) as $number_online ) echo wp_kses_post( $number_online ); ?>
+      <?php else : ?>
+        ?
+      <?php endif; ?>
     </span>
   </div>
 
