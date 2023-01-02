@@ -7,7 +7,7 @@
     "@wulechuan/printer-for-errors-of-gulp-plugins": "^1.0.0",
     "autoprefixer": "^10.0.1",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.3.0",
     "babel-preset-airbnb": "^5.0.0",
     "browser-sync": "^2.26.12",
     "eslint": "^7.2.0",
@@ -39,8 +39,8 @@
     "stylelint-value-no-unknown-custom-properties": "^3.0.0",
     "terser-webpack-plugin": "^4.2.3",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.2.6",
-    "webpack-stream": "^6.1.2"
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   },
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
