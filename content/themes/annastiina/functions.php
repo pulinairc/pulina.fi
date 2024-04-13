@@ -156,3 +156,41 @@ require get_theme_file_path( '/inc/template-tags.php' );
 // Run theme setup
 add_action( 'init', __NAMESPACE__ . '\theme_setup' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
+
+/**
+ * Show plugins and other menus for everyone
+ */
+add_action( 'init', function() {
+  remove_filter( 'air_helper_helper_remove_admin_menu_links', 'air_helper_maybe_remove_plugins_from_admin_menu' );
+} );
+
+/**
+ * Allow installing plugins
+ */
+add_action( 'init', function() {
+  remove_action( 'admin_init', 'air_helper_prevent_access_to_plugins' );
+} );
+
+
+/**
+ * Disable airless notice in wp-admin for 3rd party themes
+ *
+ * Finnish notice: "Aktiivinen teema ei näytä olevan Airiin pohjautuva. Kaikki Air helper -lisäosan ominaisuudet eivät välttämättä toimi."
+ */
+add_action( 'init', function() {
+  if ( is_admin() ) {
+    remove_action( 'admin_notices', 'air_helper_we_are_airless' );
+  }
+}, 999 );
+
+/**
+ * Disable "Email delivery is not active or configured. Please contact your agency to fix this issue." notice
+ */
+add_filter( 'air_helper_mail_delivery', '__return_false' );
+
+/**
+ * Show archives
+ */
+add_filter( 'air_helper_disable_views_tag', '__return_false' );
+add_filter( 'air_helper_disable_views_category', '__return_false' );
+add_filter( 'air_helper_disable_views_author', '__return_false' );
