@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
-    "npm-check-updates": "^9.0.3",
+    "npm-check-updates": "^16.7.4",
     "npx": "^10.2.2"
   }
 }
