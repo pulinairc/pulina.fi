@@ -5,9 +5,7 @@
  * @package annastiina
  */
 
-namespace Air_Light;
-
-?>
+namespace Air_Light; ?>
 <section class="block block-hero block-hero-fp">
   <div class="container">
     <div class="cols">
@@ -41,13 +39,21 @@ namespace Air_Light;
 						<button type="submit">/join #pulina</button>
           </form>
 
+          <p>
+            <a style="font-size: 16px;font-weight: 400;color: #aaa;" href="<?php echo esc_url(
+              get_page_link(1852)
+            ); ?>">Haluan irkata omalla tavallani &rarr;</a>
+          </p>
+
         </div>
       </div>
 
       <div class="col">
         <div class="irc-scroller-wrapper">
-          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
-          <?php include get_theme_file_path( '/svg/repo-terminal-glow.svg' ); ?>
+          <iframe src="<?php echo esc_url(
+            get_home_url()
+          ); ?>/irclog.php"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
+          <?php include get_theme_file_path("/svg/repo-terminal-glow.svg"); ?>
         </div>
       </div>
     </div>
