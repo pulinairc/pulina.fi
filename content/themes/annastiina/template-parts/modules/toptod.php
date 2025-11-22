@@ -49,6 +49,12 @@ namespace Air_Light;
             else :
 
             $get_points = explode( '(', $list_item );
+
+            // Check if array key exists before accessing it
+            if ( ! isset( $get_points[1] ) ) {
+              continue;
+            }
+
             $point_raw = explode( ')', $get_points[1] );
             $point_success = explode( ')', $point_raw[0] );
             $points = $point_success[0];
