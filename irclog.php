@@ -1,6 +1,6 @@
 <?php
 /**
- * Builds irclog.json for the static irclog.html scroller from today's irssi log.
+ * Builds irclog.json for the pulina.fi IRC scroller from today's irssi log.
  * CLI only, run by the irclog-json watcher. Usage: php irclog.php [output.json]
  */
 
@@ -45,7 +45,7 @@ function escape( string $text ): string {
 }
 
 function nick_html( string $nick ): string {
-  return '<span class="nick">' . escape( pseudonym( $nick ) ) . '</span>';
+  return '<span class="irc-nick">' . escape( pseudonym( $nick ) ) . '</span>';
 }
 
 /**
@@ -110,16 +110,16 @@ function wrap( string $html, array $state ): string {
   $classes = [];
   foreach ( [ 'b', 'i', 'u', 's', 'r' ] as $flag ) {
     if ( $state[ $flag ] ) {
-      $classes[] = $flag;
+      $classes[] = 'irc-' . $flag;
     }
   }
 
   if ( $state['fg'] !== null ) {
-    $classes[] = 'fg' . $state['fg'];
+    $classes[] = 'irc-fg' . $state['fg'];
   }
 
   if ( $state['bg'] !== null ) {
-    $classes[] = 'bg' . $state['bg'];
+    $classes[] = 'irc-bg' . $state['bg'];
   }
 
   return $classes ? '<span class="' . implode( ' ', $classes ) . '">' . $html . '</span>' : $html;

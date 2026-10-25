@@ -1,0 +1,217 @@
+/* Live #pulina scroller, see js/irc-scroller.js */
+@font-face {
+  font-display: swap;
+  font-family: 'SF Mono';
+  font-weight: 700;
+  src: url('../fonts/sfmono-bold.woff2') format('woff2');
+}
+
+.irc-scroller-wrapper .irc-scroller {
+  --irc-green: #20ffa7;
+  --irc-text: rgba(248, 248, 242, .77);
+  --irc-dim: rgba(98, 114, 164, .5);
+  --irc-bg: #0c162d;
+
+  background: var(--irc-bg);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--irc-text);
+  font: 300 14px/1.6 'SF Mono', Menlo, ui-monospace, monospace;
+  height: auto;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 8px 8px 20px;
+  position: absolute;
+  scrollbar-gutter: stable;
+  width: auto;
+  z-index: 2;
+}
+
+/* Scrollbar stays hidden until the visitor scrolls. Firefox only, Chromium would draw arrow buttons */
+@supports not selector(::-webkit-scrollbar) {
+  .irc-scroller-wrapper .irc-scroller {
+    scrollbar-color: transparent var(--irc-bg);
+    scrollbar-width: thin;
+  }
+
+  .irc-scroller-wrapper .irc-scroller.is-scrolling {
+    scrollbar-color: var(--irc-dim) var(--irc-bg);
+  }
+}
+
+.irc-scroller::-webkit-scrollbar {
+  height: 0;
+  width: 6px;
+}
+
+.irc-scroller::-webkit-scrollbar-track {
+  background: var(--irc-bg);
+}
+
+.irc-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.irc-scroller.is-scrolling::-webkit-scrollbar-thumb {
+  background: var(--irc-dim);
+}
+
+.irc-row {
+  display: flex;
+  margin: 2px 0;
+  padding-right: 10px;
+}
+
+.irc-row.is-new {
+  animation: irc-in .25s ease-out;
+}
+
+.irc-time {
+  color: var(--irc-dim);
+  margin-left: auto;
+  order: 3;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.irc-from {
+  flex: 0 0 125px;
+  font-weight: 700;
+  margin-right: 10px;
+  order: 1;
+  overflow: hidden;
+  text-align: right;
+}
+
+.irc-msg {
+  min-width: 0;
+  order: 2;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.irc-msg a {
+  color: #3498db;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.irc-msg a:hover,
+.irc-msg a:focus {
+  color: #1abc9c;
+  text-decoration: underline;
+}
+
+.irc-bang {
+  color: #454849;
+}
+
+.irc-bang strong {
+  color: #3498db;
+}
+
+.irc-typing {
+  color: var(--irc-dim);
+  font-style: italic;
+}
+
+.irc-typing::after {
+  animation: irc-dots 1.2s infinite;
+  content: '';
+}
+
+.irc-cursor {
+  animation: irc-blink 1s steps(1) infinite;
+  background: var(--irc-green);
+  box-shadow: 0 0 8px var(--irc-green), 0 0 2px var(--irc-green);
+  display: inline-block;
+  height: 1.1em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  width: .55em;
+}
+
+.irc-cursor.is-typing {
+  animation: none;
+}
+
+@keyframes irc-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes irc-dots {
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+}
+
+@keyframes irc-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* mIRC formatting from irclog.php */
+.irc-b { font-weight: 700; }
+.irc-i { font-style: italic; }
+.irc-u { text-decoration: underline; }
+.irc-s { text-decoration: line-through; }
+.irc-r { background: var(--irc-text); color: var(--irc-bg); }
+.irc-fg0 { color: #fff; }
+.irc-fg1 { color: #000; }
+.irc-fg2 { color: #00007f; }
+.irc-fg3 { color: #5ec73e; }
+.irc-fg4 { color: #f00; }
+.irc-fg5 { color: #7f0000; }
+.irc-fg6 { color: #7f007f; }
+.irc-fg7 { color: #ff7f00; }
+.irc-fg8 { color: #ff0; }
+.irc-fg9 { color: #0f0; }
+.irc-fg10 { color: #3f7f7f; }
+.irc-fg11 { color: #0ff; }
+.irc-fg12 { color: #00f; }
+.irc-fg13 { color: #f0f; }
+.irc-fg14 { color: #7f7f7f; }
+.irc-fg15 { color: #bfbfbf; }
+.irc-bg0 { background-color: #fff; }
+.irc-bg1 { background-color: #000; }
+.irc-bg2 { background-color: #00007f; }
+.irc-bg3 { background-color: #5ec73e; }
+.irc-bg4 { background-color: #f00; }
+.irc-bg5 { background-color: #7f0000; }
+.irc-bg6 { background-color: #7f007f; }
+.irc-bg7 { background-color: #ff7f00; }
+.irc-bg8 { background-color: #ff0; }
+.irc-bg9 { background-color: #0f0; }
+.irc-bg10 { background-color: #3f7f7f; }
+.irc-bg11 { background-color: #0ff; }
+.irc-bg12 { background-color: #00f; }
+.irc-bg13 { background-color: #f0f; }
+.irc-bg14 { background-color: #7f7f7f; }
+.irc-bg15 { background-color: #bfbfbf; }
+
+@media (max-width: 760px) {
+  .irc-scroller-wrapper .irc-scroller {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .irc-scroller-wrapper .irc-scroller {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .irc-row.is-new,
+  .irc-cursor,
+  .irc-typing::after {
+    animation: none;
+  }
+}

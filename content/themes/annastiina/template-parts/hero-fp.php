@@ -49,12 +49,7 @@ namespace Air_Light; ?>
       </div>
 
       <div class="col">
-        <div class="irc-scroller-wrapper">
-          <iframe src="<?php echo esc_url(
-            get_home_url()
-          ); ?>/irclog.html"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
-          <?php include get_theme_file_path("/svg/repo-terminal-glow.svg"); ?>
-        </div>
+        <?php get_template_part( 'template-parts/irc-scroller' ); ?>
       </div>
     </div>
   </div>

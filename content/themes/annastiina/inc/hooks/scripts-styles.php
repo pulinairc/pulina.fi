@@ -39,6 +39,10 @@ function enqueue_theme_scripts() {
   wp_enqueue_script( 'jquery-core' );
   wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/dist/front-end.js' ), array(), filemtime( get_theme_file_path( 'js/dist/front-end.js' ) ), true );
 
+  // IRC scroller in every hero, plain files outside the gulp build
+  wp_enqueue_style( 'irc-scroller', get_theme_file_uri( 'css/irc-scroller.css' ), array( 'styles' ), filemtime( get_theme_file_path( 'css/irc-scroller.css' ) ) );
+  wp_enqueue_script( 'irc-scroller', get_theme_file_uri( 'js/irc-scroller.js' ), array(), filemtime( get_theme_file_path( 'js/irc-scroller.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
+
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );

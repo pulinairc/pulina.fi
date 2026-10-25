@@ -25,8 +25,8 @@ check( 'link has rel noopener', str_contains( $html, 'rel="noopener noreferrer n
 
 $html = format_text( "\x02bold \x034red\x02 plain\x0f end \x0399,1x\x03" );
 check( 'balanced spans', substr_count( $html, '<span' ) === substr_count( $html, '</span>' ) );
-check( 'bold red run', str_contains( $html, '<span class="b fg4">red</span>' ) );
-check( 'out of range color ignored', str_contains( $html, '<span class="bg1">x</span>' ) );
+check( 'bold red run', str_contains( $html, '<span class="irc-b irc-fg4">red</span>' ) );
+check( 'out of range color ignored', str_contains( $html, '<span class="irc-bg1">x</span>' ) );
 
 check( 'drops stray control chars', format_text( "a\x01b\x07c" ) === 'abc' );
 check( 'converts latin1', format_text( "\xe4" ) === 'ä' );
@@ -38,7 +38,7 @@ $line = parse_line( '12:00 -!- mode/#pulina [+b *!*@10.0.0.1] by op' );
 check( 'mode hides ban mask', $line !== null && $line[3] === 'sets mode +b' );
 
 $line = parse_line( '12:00 -!- victim was kicked from #pulina by op [bye]' );
-check( 'kick is by op', $line !== null && $line[2] === 'op' && str_contains( $line[3], 'kicked <span class="nick">' ) );
+check( 'kick is by op', $line !== null && $line[2] === 'op' && str_contains( $line[3], 'kicked <span class="irc-nick">' ) );
 
 check( 'privmsg', parse_line( '12:00 <@foo> hello' ) === [ '12:00', 'PRIVMSG', 'foo', 'hello' ] );
 check( 'privmsg without mode', parse_line( '12:00 < foo> hi' )[2] === 'foo' );
