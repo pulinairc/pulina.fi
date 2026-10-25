@@ -31,7 +31,7 @@
 
       <div class="col">
         <div class="irc-scroller-wrapper">
-          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.php"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
+          <iframe src="<?php echo esc_url( get_home_url() ); ?>/irclog.html"   frameborder="0" class="irc-scroller" tabindex="-1"></iframe>
           <?php include get_theme_file_path( '/svg/repo-terminal-glow.svg' ); ?>
         </div>
       </div>

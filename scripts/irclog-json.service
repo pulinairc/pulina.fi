@@ -1,0 +1,16 @@
+# Rebuilds irclog.json whenever irssi writes to the day log.
+# Install: /etc/systemd/system/irclog-json.service, needs inotify-tools.
+[Unit]
+Description=Build pulina.fi irclog.json from IRC logs
+After=network.target
+
+[Service]
+User=rolle
+Group=www-data
+UMask=0002
+ExecStart=/bin/sh -c 'php /var/www/pulina.fi/public_html/irclog.php; inotifywait -mq -e modify,close_write,create --format %%f /var/www/pulina.fi/public_html/pulina-days | while read -r f; do php /var/www/pulina.fi/public_html/irclog.php; done'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

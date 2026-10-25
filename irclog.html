@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>#pulina IrcScroller</title>
+<style>
+@font-face {
+  font-family: 'SF Mono';
+  src: url('fonts/sfmono-regular.woff2') format('woff2'), url('fonts/sfmono-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-weight: 700;
+  src: url('fonts/sfmono-bold.woff2') format('woff2'), url('fonts/sfmono-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-weight: 300;
+  src: url('fonts/sfmono-light.woff2') format('woff2'), url('fonts/sfmono-light.woff') format('woff');
+}
+
+html {
+  background: #0c162d;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+/* Firefox only, Chromium would draw arrow buttons with these */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: transparent #0c162d;
+    scrollbar-width: thin;
+  }
+
+  html.scrolling {
+    scrollbar-color: rgba(98, 114, 164, .5) #0c162d;
+  }
+}
+
+html::-webkit-scrollbar {
+  height: 0;
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0c162d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+html.scrolling::-webkit-scrollbar-thumb {
+  background: rgba(98, 114, 164, .5);
+}
+
+body {
+  color: rgba(248, 248, 242, .77);
+  font: 14px 'SF Mono', Menlo, ui-monospace, monospace;
+  line-height: 1.6;
+  margin: 8px 8px 20px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+a {
+  color: #3498db;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1abc9c;
+  text-decoration: underline;
+}
+
+.timestamp {
+  color: rgba(98, 114, 164, .5);
+}
+
+.work-tr {
+  display: flex;
+  margin: 2px 0;
+  padding-right: 10px;
+}
+
+.time-td {
+  font-weight: 300;
+  margin-left: auto;
+  order: 3;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.nick-td {
+  font-weight: 700;
+  margin-right: 10px;
+  min-width: 125px;
+  order: 1;
+  overflow: hidden;
+  text-align: right;
+  width: 125px;
+}
+
+.msg-td {
+  font-weight: 300;
+  min-width: 0;
+  order: 2;
+}
+
+.msg-td,
+.msg-td span,
+.msg-td a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body>
+<div id="log"></div>
+<script>
+const POLL_MS = 2000;
+const SCROLLBAR_HIDE_MS = 1200;
+const BOTTOM_SLACK_PX = 30;
+const FONT_SETTLE_MS = 1000;
+
+const root = document.documentElement;
+const log = document.getElementById('log');
+const bang = '<span style="color:#454849">-</span><span style="color:#3498db"><strong>!</strong></span><span style="color:#454849">-</span> ';
+let lastKey = null;
+let hideTimer = null;
+let pinned = true;
+let smooth = false;
+
+function nickColor(nick) {
+  let hash = 0;
+  for (const c of nick) {
+    hash = (hash * 31 + c.codePointAt(0)) % 360;
+  }
+  return `hsl(${hash} 60% 65%)`;
+}
+
+function nickSpan(nick) {
+  return `<span style="color:${nickColor(nick)}">${nick}</span>`;
+}
+
+function hhmm(time) {
+  const d = new Date(time * 1000);
+  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+}
+
+function message(line) {
+  switch (line.a) {
+    case 'NICK': return `is now known as ${nickSpan(line.m)}`;
+    case 'PART': return `has left [${line.m}]`;
+    case 'QUIT': return `has quit [${line.m}]`;
+    case 'JOIN': return 'has joined';
+    case 'KICK': return `kicked ${line.m}`;
+    case 'MODE': return `mode [${line.m}] by ${nickSpan(line.n)}`;
+    default: return line.m;
+  }
+}
+
+function row(line) {
+  const el = document.createElement('div');
+  const nick = line.a === 'PRIVMSG' ? `&lt;${line.n}&gt;` : bang + line.n;
+  el.className = 'work-tr';
+  el.innerHTML = `<div class="time-td"><span class="timestamp">${hhmm(line.t)}</span></div>`
+    + `<div class="nick-td" style="color:${nickColor(line.n)}">${nick}</div>`
+    + `<div class="msg-td">${message(line)}</div>`;
+  return el;
+}
+
+async function update() {
+  if (document.hidden) {
+    return;
+  }
+
+  let lines;
+  try {
+    const res = await fetch('irclog.json', { cache: 'no-cache' });
+    if (!res.ok) {
+      return;
+    }
+    lines = await res.json();
+  } catch (e) {
+    return;
+  }
+
+  const keys = lines.map((line) => JSON.stringify(line));
+  const start = keys.lastIndexOf(lastKey) + 1;
+  if (start >= lines.length) {
+    return;
+  }
+
+  lines.slice(start).forEach((line) => log.appendChild(row(line)));
+  lastKey = keys[keys.length - 1];
+
+  // Jump on the first render and while web fonts settle, glide after that
+  setTimeout(() => {
+    smooth = true;
+  }, FONT_SETTLE_MS);
+}
+
+// Show the scrollbar only while the visitor scrolls, not on programmatic scrolls
+function showScrollbar() {
+  root.classList.add('scrolling');
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => root.classList.remove('scrolling'), SCROLLBAR_HIDE_MS);
+}
+
+// Follow new lines unless the visitor has scrolled up to read
+window.addEventListener('scroll', () => {
+  if (root.classList.contains('scrolling')) {
+    pinned = window.innerHeight + window.scrollY >= root.scrollHeight - BOTTOM_SLACK_PX;
+  }
+}, { passive: true });
+
+new ResizeObserver(() => {
+  if (pinned) {
+    window.scrollTo({ top: root.scrollHeight, behavior: smooth ? 'smooth' : 'instant' });
+  }
+}).observe(log);
+
+['wheel', 'touchmove', 'keydown'].forEach((type) => window.addEventListener(type, showScrollbar, { passive: true }));
+document.addEventListener('visibilitychange', update);
+update();
+setInterval(update, POLL_MS);
+</script>
+</body>
+</html>
