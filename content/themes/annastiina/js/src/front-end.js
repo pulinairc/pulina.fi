@@ -107,15 +107,14 @@ annastiina_LazyLoad.update();
   // Document ready start
   $(function () {
 
-    // Toptod polling
+    // Toptod polling, the bot rewrites the list when people talk
     $('#toptod').fadeIn();
-    $("#toptod").load('https://botit.pulina.fi/toptod-content-annastiina.php');
-      var refreshId = setInterval(function() {
-    $("#toptod").load('https://botit.pulina.fi/toptod-content-annastiina.php',
-      function() {
-        $("#content").fadeIn();
+    $('#toptod').load('https://botit.pulina.fi/toptod-content-annastiina.php');
+    setInterval(function () {
+      if (!document.hidden) {
+        $('#toptod').load('https://botit.pulina.fi/toptod-content-annastiina.php');
       }
-    );}, 1000);
+    }, 10000);
 
   });
 })(jQuery);
