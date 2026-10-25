@@ -1,0 +1,19 @@
+# Streams irclog.json to the pulina.fi IRC scroller, nginx proxies /irclog/stream here.
+# Install: /etc/systemd/system/irclog-stream.service, needs inotify-tools.
+[Unit]
+Description=Stream pulina.fi irclog.json over Server-Sent Events
+After=network.target irclog-json.service
+
+[Service]
+User=rolle
+Group=www-data
+ExecStart=/usr/bin/python3 /var/www/pulina.fi/scripts/irclog-stream.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

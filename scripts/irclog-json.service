@@ -9,7 +9,7 @@ User=rolle
 Group=www-data
 UMask=0002
 # Bursts of writes are coalesced into one rebuild
-ExecStart=/bin/bash -c 'php /var/www/pulina.fi/public_html/irclog.php; inotifywait -mq -e modify,close_write,create --format %%f /var/www/pulina.fi/public_html/pulina-days | while read -r f; do while read -r -t 0.2 f; do :; done; php /var/www/pulina.fi/public_html/irclog.php; done'
+ExecStart=/bin/bash -c 'php /var/www/pulina.fi/public_html/irclog.php; inotifywait -mq -e modify,close_write,create --format %%f /var/www/pulina.fi/public_html/pulina-days | while read -r f; do while read -r -t 0.05 f; do :; done; php /var/www/pulina.fi/public_html/irclog.php; done'
 Restart=always
 RestartSec=5
 

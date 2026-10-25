@@ -1,6 +1,6 @@
 /**
- * Live #pulina scroller. Polls the static irclog.json built by irclog.php and types
- * new messages in like a terminal.
+ * Live #pulina scroller. Listens to /irclog/stream (Server-Sent Events from
+ * scripts/irclog-stream.py) and types new messages in like a terminal.
  */
 (() => {
   const scroller = document.querySelector('.irc-scroller');
@@ -8,20 +8,21 @@
     return;
   }
 
-  const POLL_MS = 2000;
   const MAX_ROWS = 200;
   const BOTTOM_SLACK_PX = 30;
   const SCROLLBAR_HIDE_MS = 1200;
-  const TYPING_HINT_MS = 900;
-  const TYPE_MS_PER_CHAR = 28;
-  const TYPE_MAX_MS = 1800;
-  const BACKLOG_INSTANT = 3;
+  const TYPING_HINT_MS = 500;
+  const TYPE_MS_PER_CHAR = 22;
+  const TYPE_MAX_MS = 1200;
+  const SETTLE_MS = 900;
+  const RECONNECT_MS = 10000;
   const TYPED = ['PRIVMSG', 'ACTION'];
 
-  const feed = scroller.dataset.feed;
-  const lines = document.createElement('div');
+  const stream = scroller.dataset.stream;
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lines = document.createElement('div');
   const queue = [];
+  let source = null;
   let lastDay = null;
   let lastOffset = -1;
   let busy = false;
@@ -120,12 +121,14 @@
     stickToBottom();
   }
 
-  // Shows "kirjoittaa viestiä...", then reveals the text one character at a time
+  // "Nimi kirjoittaa viestiä...", then the text types in green behind a pipe cursor,
+  // flashes and settles to normal. Anything waiting in the queue skips ahead.
   async function typeIn(msg, fragment, nick) {
-    const hint = make('span', 'irc-typing', `${nick} kirjoittaa viestiä`);
-    msg.append(hint);
-    stickToBottom();
-    await wait(TYPING_HINT_MS);
+    if (!queue.length) {
+      msg.append(make('span', 'irc-typing', `${nick} kirjoittaa viestiä`));
+      stickToBottom();
+      await wait(TYPING_HINT_MS);
+    }
 
     const walker = document.createTreeWalker(fragment, NodeFilter.SHOW_TEXT);
     const texts = [];
@@ -136,15 +139,15 @@
 
     const total = texts.reduce((sum, t) => sum + t.full.length, 0);
     const perChar = Math.min(TYPE_MS_PER_CHAR, TYPE_MAX_MS / Math.max(total, 1));
-    const cursor = make('span', 'irc-cursor is-typing');
+    const cursor = make('span', 'irc-cursor');
     cursor.setAttribute('aria-hidden', 'true');
-    hint.replaceWith(fragment);
-    msg.append(cursor);
+    msg.replaceChildren(fragment, cursor);
+    msg.classList.add('is-typing');
 
     const start = performance.now();
     await new Promise((resolve) => {
       function frame(now) {
-        let left = Math.min(total, Math.floor((now - start) / perChar));
+        let left = queue.length ? total : Math.min(total, Math.floor((now - start) / perChar));
         texts.forEach((t) => {
           const take = Math.min(left, t.full.length);
           t.node.data = t.full.slice(0, take);
@@ -161,9 +164,9 @@
       requestAnimationFrame(frame);
     });
 
-    cursor.classList.remove('is-typing');
-    await wait(400);
     cursor.remove();
+    msg.classList.replace('is-typing', 'is-typed');
+    setTimeout(() => msg.classList.remove('is-typed'), SETTLE_MS);
   }
 
   async function drain() {
@@ -176,12 +179,11 @@
       const line = queue.shift();
       const { el, msg } = row(line);
       const fragment = messageFragment(line.m);
-      const instant = calm || document.hidden || !inView || queue.length >= BACKLOG_INSTANT || !TYPED.includes(line.a);
 
       el.classList.add('is-new');
       append(el);
 
-      if (instant) {
+      if (calm || document.hidden || !inView || !TYPED.includes(line.a)) {
         msg.append(fragment);
         stickToBottom();
       } else {
@@ -193,22 +195,7 @@
     busy = false;
   }
 
-  async function poll() {
-    if (document.hidden || !inView) {
-      return;
-    }
-
-    let data;
-    try {
-      const res = await fetch(feed, { cache: 'no-cache' });
-      if (!res.ok) {
-        return;
-      }
-      data = await res.json();
-    } catch (e) {
-      return;
-    }
-
+  function receive(data) {
     const first = lastDay === null;
     if (data.day !== lastDay) {
       lastDay = data.day;
@@ -235,6 +222,37 @@
     drain();
   }
 
+  function connect() {
+    if (source || document.hidden || !inView) {
+      return;
+    }
+
+    source = new EventSource(stream);
+    source.onmessage = (event) => {
+      try {
+        receive(JSON.parse(event.data));
+      } catch (e) {
+        // A broken event is skipped, the next one carries the full feed again
+      }
+    };
+
+    // EventSource retries by itself, this covers the cases where it gives up
+    source.onerror = () => {
+      if (source.readyState === EventSource.CLOSED) {
+        source = null;
+        setTimeout(connect, RECONNECT_MS);
+      }
+    };
+  }
+
+  // Hidden or scrolled away scrollers hold no connection, the feed catches up on return
+  function disconnect() {
+    if (source) {
+      source.close();
+      source = null;
+    }
+  }
+
   function showScrollbar() {
     scroller.classList.add('is-scrolling');
     clearTimeout(hideTimer);
@@ -257,10 +275,17 @@
   new IntersectionObserver(([entry]) => {
     inView = entry.isIntersecting;
     if (inView) {
-      poll();
+      connect();
+    } else {
+      disconnect();
     }
   }).observe(scroller);
 
-  document.addEventListener('visibilitychange', poll);
-  setInterval(poll, POLL_MS);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      disconnect();
+    } else {
+      connect();
+    }
+  });
 })();

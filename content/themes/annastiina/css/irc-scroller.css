@@ -11,6 +11,7 @@
   --irc-text: rgba(248, 248, 242, .77);
   --irc-dim: rgba(98, 114, 164, .5);
   --irc-bg: #0c162d;
+  --irc-glow: 0 0 8px rgba(32, 255, 167, .7), 0 0 2px rgba(32, 255, 167, .9);
 
   background: var(--irc-bg);
   border-radius: 6px;
@@ -123,19 +124,31 @@
   content: '';
 }
 
-.irc-cursor {
-  animation: irc-blink 1s steps(1) infinite;
-  background: var(--irc-green);
-  box-shadow: 0 0 8px var(--irc-green), 0 0 2px var(--irc-green);
-  display: inline-block;
-  height: 1.1em;
+.irc-cursor::before {
+  color: var(--irc-green);
+  content: '|';
   margin-left: 1px;
-  vertical-align: text-bottom;
-  width: .55em;
+  text-shadow: var(--irc-glow);
 }
 
-.irc-cursor.is-typing {
-  animation: none;
+/* Text glows green while it types in, flashes once and settles to its own colors */
+.irc-msg.is-typing,
+.irc-msg.is-typing * {
+  color: var(--irc-green) !important;
+  text-shadow: var(--irc-glow);
+}
+
+.irc-msg.is-typed,
+.irc-msg.is-typed * {
+  animation: irc-settle .9s ease-out;
+}
+
+@keyframes irc-settle {
+  0%,
+  20% {
+    color: var(--irc-green);
+    text-shadow: 0 0 12px var(--irc-green), 0 0 3px var(--irc-green);
+  }
 }
 
 @keyframes irc-in {
@@ -149,12 +162,6 @@
   25% { content: '.'; }
   50% { content: '..'; }
   75% { content: '...'; }
-}
-
-@keyframes irc-blink {
-  50% {
-    opacity: 0;
-  }
 }
 
 /* mIRC formatting from irclog.php */
@@ -210,7 +217,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .irc-row.is-new,
-  .irc-cursor,
+  .irc-msg.is-typed,
+  .irc-msg.is-typed *,
   .irc-typing::after {
     animation: none;
   }
