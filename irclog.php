@@ -1,294 +1,259 @@
 <?php
-// phpcs:disable
-// Builds irclog.json for the static irclog.html scroller. CLI only, run by the irclog-json watcher.
+/**
+ * Builds irclog.json for the static irclog.html scroller from today's irssi log.
+ * CLI only, run by the irclog-json watcher. Usage: php irclog.php [output.json]
+ */
+
+declare(strict_types=1);
+
 if ( PHP_SAPI !== 'cli' ) {
-    http_response_code( 404 );
-    exit;
+  http_response_code( 404 );
+  exit;
 }
 
-// array of first names
-define('NAMES', explode("\n", file_get_contents(__DIR__.'/scroller_data/nimilista.txt')));
-// name count minus one to ignore empty name at the end of the name list
-define('NAME_COUNT', count(NAMES) - 1);
+const TAIL_BYTES = 6000;
+const LOG_DIR = __DIR__ . '/pulina-days';
+const NAMES_FILE = __DIR__ . '/scroller_data/nimilista.txt';
+const MAX_COLOR = 15;
 
-// How many bytes are read from the end of the logfile
-define('TAIL_BYTES', 6000);
+// mIRC formatting control codes
+const CODE_BOLD = "\x02";
+const CODE_COLOR = "\x03";
+const CODE_RESET = "\x0f";
+const CODE_REVERSE = "\x16";
+const CODE_ITALIC = "\x1d";
+const CODE_STRIKE = "\x1e";
+const CODE_UNDERLINE = "\x1f";
 
-ini_set( 'date.timezone', 'Europe/Helsinki' );
+const FORMAT_SPLIT = '/(\x03(?:\d{1,2}(?:,\d{1,2})?)?|[\x02\x0f\x11\x16\x1d\x1e\x1f])/';
+const URL_SPLIT = '~(https?://[^\s<>"\']*[^\s<>"\'.,;:!?)\]}])~i';
+const NICK_PREFIX = ' @%+~&';
 
-$logfile = __DIR__.'/pulina-days/pul-'.date('Y-m-d').'.log';
-$outfile = $argv[1] ?? __DIR__.'/irclog.json';
+/**
+ * Real nicks are swapped for a stable first name so the public log stays pseudonymous.
+ */
+function pseudonym( string $nick ): string {
+  static $names = null;
+  $names ??= file( NAMES_FILE, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
 
-// Code from http://www.phpcs.com/codes/COLORISATION-HTML-DES-LOGS-IRC/30393.aspx
-function rgb2html($tablo) {
-    //Le str_pad permet de remplir avec des 0
-    //parce que sinon rgb2html(Array(0,255,255)) retournerai #0ffff<=manque un 0 !
-    return "#".str_pad(dechex(($tablo[0]<<16)|($tablo[1]<<8)|$tablo[2]),6,"0",STR_PAD_LEFT);
+  // Same hash as the original scroller so everyone keeps their old name
+  return $names[ (int) substr( (string) crc32( md5( $nick ) ), 0, 5 ) % count( $names ) ];
 }
 
-function chooseColor($irc){
-    switch($irc){
-        case "0":$color=rgb2html(array(255, 255, 255));break;
-        case "1":$color=rgb2html(array(0, 0, 0));break;
-        case "2":$color=rgb2html(array(0, 0, 127));break;
-        case "3":$color=rgb2html(array(94, 199, 62));break;
-        case "4":$color=rgb2html(array(255, 0, 0));break;
-        case "5":$color=rgb2html(array(127, 0, 0));break;
-        case "6":$color=rgb2html(array(127, 0, 127));break;
-        case "7":$color=rgb2html(array(255, 127, 0));break;
-        case "8":$color=rgb2html(array(255, 255, 0));break;
-        case "9":$color=rgb2html(array(0, 255, 0));break;
-        case "10":$color=rgb2html(array(63, 127, 127));break;
-        case "11":$color=rgb2html(array(0, 255, 255));break;
-        case "12":$color=rgb2html(array(0, 0, 255));break;
-        case "13":$color=rgb2html(array(255, 0, 255));break;
-        case "14":$color=rgb2html(array(127, 127, 127));break;
-        case "15":$color=rgb2html(array(191, 191, 191));break;
-        default:$color=rgb2html(array(0, 0, 0));break;
+function escape( string $text ): string {
+  return htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8' );
+}
+
+function nick_html( string $nick ): string {
+  return '<span class="nick">' . escape( pseudonym( $nick ) ) . '</span>';
+}
+
+/**
+ * Escapes text and links http(s) URLs. Other schemes stay plain text.
+ */
+function linkify( string $text ): string {
+  $parts = preg_split( URL_SPLIT, $text, -1, PREG_SPLIT_DELIM_CAPTURE );
+  $html = '';
+
+  foreach ( $parts as $i => $part ) {
+    $safe = escape( $part );
+    $html .= $i % 2 ? '<a href="' . $safe . '" target="_blank" rel="noopener noreferrer nofollow">' . $safe . '</a>' : $safe;
+  }
+
+  return $html;
+}
+
+function apply_code( string $code, array &$state ): void {
+  switch ( $code[0] ) {
+    case CODE_BOLD:
+      $state['b'] = ! $state['b'];
+      return;
+    case CODE_ITALIC:
+      $state['i'] = ! $state['i'];
+      return;
+    case CODE_UNDERLINE:
+      $state['u'] = ! $state['u'];
+      return;
+    case CODE_STRIKE:
+      $state['s'] = ! $state['s'];
+      return;
+    case CODE_REVERSE:
+      $state['r'] = ! $state['r'];
+      return;
+    case CODE_RESET:
+      $state = new_state();
+      return;
+    case CODE_COLOR:
+      if ( strlen( $code ) === 1 ) {
+        $state['fg'] = null;
+        $state['bg'] = null;
+        return;
+      }
+
+      $colors = explode( ',', substr( $code, 1 ) );
+      $state['fg'] = (int) $colors[0] <= MAX_COLOR ? (int) $colors[0] : null;
+      if ( isset( $colors[1] ) ) {
+        $state['bg'] = (int) $colors[1] <= MAX_COLOR ? (int) $colors[1] : null;
+      }
+  }
+}
+
+function new_state(): array {
+  return [ 'b' => false, 'i' => false, 'u' => false, 's' => false, 'r' => false, 'fg' => null, 'bg' => null ];
+}
+
+function wrap( string $html, array $state ): string {
+  if ( $html === '' ) {
+    return '';
+  }
+
+  $classes = [];
+  foreach ( [ 'b', 'i', 'u', 's', 'r' ] as $flag ) {
+    if ( $state[ $flag ] ) {
+      $classes[] = $flag;
     }
-    return $color;
+  }
+
+  if ( $state['fg'] !== null ) {
+    $classes[] = 'fg' . $state['fg'];
+  }
+
+  if ( $state['bg'] !== null ) {
+    $classes[] = 'bg' . $state['bg'];
+  }
+
+  return $classes ? '<span class="' . implode( ' ', $classes ) . '">' . $html . '</span>' : $html;
 }
 
-function irc2html($texte){
+/**
+ * Turns an IRC message with mIRC formatting into safe HTML. Every run gets its own
+ * span, so the markup is always balanced.
+ */
+function format_text( string $text ): string {
+  if ( ! mb_check_encoding( $text, 'UTF-8' ) ) {
+    $text = mb_convert_encoding( $text, 'UTF-8', 'Windows-1252' );
+  }
 
-    $buffer = "";
+  $parts = preg_split( FORMAT_SPLIT, $text, -1, PREG_SPLIT_DELIM_CAPTURE );
+  $state = new_state();
+  $html = '';
 
-    $is_bold=false;
-    $is_under=false;
-    $is_fg=false;
-    $is_bg=false;
-    $is_space=false;
-
-    $fg=1;
-    $bg=0;
-    for($i=0;$i<strlen($texte);$i++){
-        $chr = substr($texte,$i,1);
-        $ord = ord($chr);
-
-        switch($ord){
-            case "10":
-                if($is_bold) {$buffer.= "</b>";$is_bold=false;}
-                if($is_under) {$buffer.= "</u>";$is_under=false;}
-                if($is_fg) {$buffer.= "</span>";$is_fg=false;}
-                if($is_bg) {$buffer.= "</span>";$is_bg=false;}
-                $is_space=false;
-                break;
-
-            case "2":
-                //->Mettre en gras
-                if($is_bold) {$buffer.= "</b>";$is_bold=false;}
-                else {$buffer.= "<b>";$is_bold=true;}
-
-                break;
-
-            case "3":
-                //->Mettre en couleur
-                $fg1="";$fg2="";$bg1="";$bg2="";
-                $i++;$chr = substr($texte,$i,1);
-                if(preg_match('/[0-9]/', $chr)){
-                    $fg1=$chr;$i++;
-                    $chr=substr($texte,$i,1);
-                    if(preg_match('/[0-9]/', $chr)){
-                        $fg2=$chr;$i++;$chr=substr($texte,$i,1);
-                    }
-
-                    if($chr==","){
-                        $i++;$chr = substr($texte,$i,1);
-                        if(preg_match('/[0-9]/', $chr)){
-                            $bg1 = $chr;$i++;
-                            $chr = substr($texte,$i,1);
-                            if(preg_match('/[0-9]/', $chr)){
-                                $bg2=$chr;
-                            }
-                            else{
-                                $i--;
-                            }
-                        }
-                    }
-                    else{
-                        $i--;
-                    }
-                }
-                else{
-                    $i--;
-                }
-                $fg=(int)($fg1.$fg2);
-                $bg=(int)($bg1.$bg2);
-                if($is_fg){$buffer.= "</span>";$is_fg=false;}
-                if($fg!=0) {$buffer.= "<span style='color:".chooseColor($fg).";'>";$is_fg=true;}
-
-                if($is_bg){$buffer.= "</span>";$is_bg=false;}
-                if($bg!=0) {$buffer.= "<span style='background-color:".chooseColor($bg).";'>";$is_bg=true;}
-
-                break;
-
-            case "15":
-                //->Enlever les couleurs
-                if($is_fg) {$buffer.= "</span>";$is_fg=false;}
-                if($is_bg) {$buffer.= "</span>";$is_bg=false;}
-                if($is_bold) {$buffer.= "</b>";$is_bold=false;}
-                if($is_under) {$buffer.= "</u>";$is_under=false;}
-                break;
-
-            case "22":
-                //->Inverser BG et FG
-                if($is_fg) {$buffer.= "</span>";$is_fg=false;}
-                if($is_bg) {$buffer.= "</span>";$is_bg=false;}
-
-                $temp=$fg;
-                $fg=$bg;
-                $bg=$temp;
-
-                $buffer.= "<span style='color:".chooseColor($fg).";'>";$is_fg=true;
-                $buffer.= "<span style='background-color:".chooseColor($bg).";'>";$is_bg=true;
-
-                break;
-
-            case "31":
-                //->Souligner
-                if($is_under) {$buffer.= "</u>";$is_under=false;}
-                else {$buffer.= "<u>";$is_under=true;}
-                break;
-            case "32":
-                //->Espace
-                if($is_space) {$buffer.= "&nbsp;";$is_space=false;}
-                else {$buffer.=" ";$is_space=true;}
-                break;
-            default:
-                $buffer.=$chr;
-                $is_space=false;
-                break;
-        }
-    }
-    return $buffer;
-}
-
-
-function htmlline($str) {
-    $str = mb_convert_encoding($str, "UTF-8","UTF-8,Windows-1252,ISO-8859-15,ISO-8859-1");
-
-    // Escape before adding markup so chat lines can't inject HTML
-    $str = htmlspecialchars($str, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-
-    $str = irc2html($str);
-
-    $str = preg_replace( "/([[:alnum:]]+):\/\/((?:(?!&quot;|&#039;|&lt;|&gt;)[^[:space:]<])*)([[:alnum:]#?\/=])/i", "<a href=\"\\1://\\2\\3\" target=\"_blank\">\\1://\\2\\3</a>", $str);
-    $str = preg_replace( "/(([a-z0-9_]|\\-|\\.)+@([^[:space:]]*)([[:alnum:]-]))/i", "<a href=\"mailto:\\1%s\" >\\1</a>", $str);
-    return $str;
-}
-
-// Get a first name from the original nickname
-function nickToFirstName($nick){
-  return NAMES[(int)(substr(crc32(md5($nick)), 0, 5)) % NAME_COUNT];
-}
-
-function formatNick($nick) {
-    return htmlentities(nickToFirstName($nick), ENT_QUOTES);
-}
-
-function formatMircTime(&$time) {
-    $times = explode(":", $time);
-    $times = array_slice($times, 0, 3);
-    while(count($times) < 3) {
-        array_push($times, 00);
+  foreach ( $parts as $i => $part ) {
+    if ( $i % 2 ) {
+      apply_code( $part, $state );
+      continue;
     }
 
-    $time = mktime((int) $times[0], (int) $times[1], (int) $times[2]);
+    $part = preg_replace( '/[\x00-\x1f\x7f]/', '', $part );
+    $html .= wrap( linkify( $part ), $state );
+  }
+
+  return $html;
 }
 
-function _parserMessagesIrssi($log) {
+/**
+ * Parses one irssi log line. Returns null for lines the scroller does not show.
+ * Hostmasks and ban masks are never passed on.
+ */
+function parse_line( string $line ): ?array {
+  if ( ! preg_match( '/^(\d\d:\d\d) (.*)$/', $line, $match ) ) {
+    return null;
+  }
 
-    preg_match_all('/^([\d:]*) (.*)$/mU', $log, $match, PREG_PATTERN_ORDER);
+  [ , $time, $rest ] = $match;
 
-    $match = array_slice($match, 1);
+  if ( preg_match( '/^<(.)([^>]+)> (.*)$/', $rest, $m ) && str_contains( NICK_PREFIX, $m[1] ) ) {
+    return [ $time, 'PRIVMSG', $m[2], format_text( $m[3] ) ];
+  }
 
-    $times =& $match[0];
+  if ( preg_match( '/^ \* (\S+) (.*)$/', $rest, $m ) ) {
+    return [ $time, 'ACTION', $m[1], format_text( $m[2] ) ];
+  }
 
-    array_walk($times,'formatMircTime');
+  if ( ! str_starts_with( $rest, '-!- ' ) ) {
+    return null;
+  }
 
-    $results = array();
+  $event = substr( $rest, 4 );
 
-    foreach($match[1] as $key => $val) {
+  if ( preg_match( '/^(\S+) \[[^\]]*\] has joined /', $event, $m ) ) {
+    return [ $time, 'JOIN', $m[1], 'has joined' ];
+  }
 
-        // Is action?
-        if(preg_match('/^-!- (.*) (.*)$/U', $val, $tulitikut)) {
-            $nick =& $tulitikut[1];
-            $act  =& $tulitikut[2];
+  if ( preg_match( '/^(\S+) \[[^\]]*\] has left \S+ \[(.*)\]$/', $event, $m ) ) {
+    return [ $time, 'PART', $m[1], 'has left' . ( $m[2] === '' ? '' : ' [' . format_text( $m[2] ) . ']' ) ];
+  }
 
-            if(preg_match('/^\[([^\]]*)\] has joined/U',$act, $whom)) {
-                $action = "JOIN";
-                $msg    = $whom[1];
-            } elseif(preg_match('/^\[[^\]]*\] has left .* \[([^\]]*)\]$/U',$act, $whom)) {
-                $action = "PART";
-                $msg    = $whom[1];
-            } elseif(preg_match('/^\[[^\]]*\] has quit \[([^\]]*)\]$/U',$act, $whom)) {
-                $action = "QUIT";
-                $msg    = $whom[1];
-            } elseif(preg_match('/^is now known as (.*)$/U',$act, $whom)) {
-                $action = "NICK";
-                $msg    = $whom[1];
-            } elseif(preg_match('/mode\/.* \[([^\]]*)\] by (.*)$/U',$val, $whom)) {
-                $action = "MODE";
-                $msg    = $whom[1];
-                $nick   = $whom[2];
-            } elseif(preg_match('/^was kicked from .* \[([^\]]*)\]/U',$act, $whom)) {
-                $action = "KICK";
-                $msg    = $whom[1];
-            } else {
-                continue;
-            }
+  if ( preg_match( '/^(\S+) \[[^\]]*\] has quit \[(.*)\]$/', $event, $m ) ) {
+    return [ $time, 'QUIT', $m[1], 'has quit [' . format_text( $m[2] ) . ']' ];
+  }
 
-        } elseif (preg_match('/^<([^>]*)> (.*)$/U', $val, $tulitikut)) {
-            $action = "PRIVMSG";
-            // First character in nicks in irssi logs is mode character
-            $nick   = substr($tulitikut[1],1);
-            $msg    = $tulitikut[2];
-        } else {
-            continue;
-        }
-        $results[] = array(
-            'time'     => $times[$key],
-            'action'   => $action,
-            'nick'     => $nick,
-            'msg'      => $msg
-        );
+  if ( preg_match( '/^(\S+) is now known as (\S+)$/', $event, $m ) ) {
+    return [ $time, 'NICK', $m[1], 'is now known as ' . nick_html( $m[2] ) ];
+  }
+
+  if ( preg_match( '/^(\S+) was kicked from \S+ by (\S+) \[(.*)\]$/', $event, $m ) ) {
+    return [ $time, 'KICK', $m[2], 'kicked ' . nick_html( $m[1] ) . ' [' . format_text( $m[3] ) . ']' ];
+  }
+
+  if ( preg_match( '/^(\S+) changed the topic of \S+ to: (.*)$/', $event, $m ) ) {
+    return [ $time, 'TOPIC', $m[1], 'changed the topic to: ' . format_text( $m[2] ) ];
+  }
+
+  if ( preg_match( '/^mode\/\S+ \[([+-][a-zA-Z+-]+)[^\]]*\] by (\S+)$/', $event, $m ) ) {
+    return [ $time, 'MODE', $m[2], 'sets mode ' . escape( $m[1] ) ];
+  }
+
+  return null;
+}
+
+/**
+ * Reads the end of a log file. Each line carries its byte offset so the client can
+ * tell which lines it already shows.
+ */
+function read_lines( string $logfile ): array {
+  if ( ! is_readable( $logfile ) ) {
+    return [];
+  }
+
+  $size = filesize( $logfile );
+  $start = max( 0, $size - TAIL_BYTES );
+  $chunk = file_get_contents( $logfile, false, null, $start );
+
+  // Skip the partial first line when starting mid-file
+  $offset = $start;
+  if ( $start > 0 ) {
+    $cut = strpos( $chunk, "\n" );
+    $chunk = $cut === false ? '' : substr( $chunk, $cut + 1 );
+    $offset += $cut === false ? 0 : $cut + 1;
+  }
+
+  $lines = [];
+  foreach ( explode( "\n", $chunk ) as $raw ) {
+    $parsed = parse_line( rtrim( $raw, "\r" ) );
+    if ( $parsed !== null ) {
+      [ $time, $action, $nick, $html ] = $parsed;
+      $lines[] = [ 'o' => $offset, 't' => $time, 'a' => $action, 'n' => pseudonym( $nick ), 'm' => $html ];
     }
-    return $results;
+    $offset += strlen( $raw ) + 1;
+  }
+
+  return $lines;
 }
 
-function formatMessage($row) {
-    switch($row['action']) {
-        case 'QUIT' :
-        case 'PART' :
-        case 'PRIVMSG' :
-            return htmlline($row['msg']);
-        case 'NICK' :
-            return formatNick($row['msg']);
-        default :
-            return htmlentities($row['msg'], ENT_QUOTES, 'UTF-8');
-    }
+function build( string $outfile ): void {
+  date_default_timezone_set( 'Europe/Helsinki' );
+  $day = date( 'Y-m-d' );
+  $json = json_encode(
+    [ 'day' => $day, 'lines' => read_lines( LOG_DIR . "/pul-{$day}.log" ) ],
+    JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
+  );
+
+  $tmpfile = $outfile . '.tmp';
+  file_put_contents( $tmpfile, $json );
+  rename( $tmpfile, $outfile );
 }
 
-$log = '';
-if ( is_readable( $logfile ) ) {
-    $log = file_get_contents( $logfile, false, null, max( 0, filesize( $logfile ) - TAIL_BYTES ) );
-
-    // Drop the partial first line when reading from the middle of the file
-    if ( filesize( $logfile ) > TAIL_BYTES ) {
-        $log = substr( $log, strpos( $log, "\n" ) + 1 );
-    }
+if ( realpath( $argv[0] ) === __FILE__ ) {
+  build( $argv[1] ?? __DIR__ . '/irclog.json' );
 }
-
-$lines = array();
-foreach ( _parserMessagesIrssi( $log ) as $row ) {
-    $lines[] = array(
-        't' => $row['time'],
-        'a' => $row['action'],
-        'n' => formatNick( $row['nick'] ),
-        'm' => formatMessage( $row ),
-    );
-}
-
-$tmpfile = $outfile.'.tmp';
-file_put_contents( $tmpfile, json_encode( $lines, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE ) );
-rename( $tmpfile, $outfile );

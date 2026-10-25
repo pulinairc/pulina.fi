@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>#pulina IrcScroller</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <style>
 @font-face {
   font-family: 'SF Mono';
@@ -121,6 +122,57 @@ a:hover {
   word-break: break-word;
 }
 
+.msg-td {
+  white-space: pre-wrap;
+}
+
+.bang {
+  color: #454849;
+}
+
+.bang strong {
+  color: #3498db;
+}
+
+/* mIRC formatting */
+.b { font-weight: 700; }
+.i { font-style: italic; }
+.u { text-decoration: underline; }
+.s { text-decoration: line-through; }
+.r { background: rgba(248, 248, 242, .77); color: #0c162d; }
+.fg0 { color: #fff; }
+.fg1 { color: #000; }
+.fg2 { color: #00007f; }
+.fg3 { color: #5ec73e; }
+.fg4 { color: #f00; }
+.fg5 { color: #7f0000; }
+.fg6 { color: #7f007f; }
+.fg7 { color: #ff7f00; }
+.fg8 { color: #ff0; }
+.fg9 { color: #0f0; }
+.fg10 { color: #3f7f7f; }
+.fg11 { color: #0ff; }
+.fg12 { color: #00f; }
+.fg13 { color: #f0f; }
+.fg14 { color: #7f7f7f; }
+.fg15 { color: #bfbfbf; }
+.bg0 { background-color: #fff; }
+.bg1 { background-color: #000; }
+.bg2 { background-color: #00007f; }
+.bg3 { background-color: #5ec73e; }
+.bg4 { background-color: #f00; }
+.bg5 { background-color: #7f0000; }
+.bg6 { background-color: #7f007f; }
+.bg7 { background-color: #ff7f00; }
+.bg8 { background-color: #ff0; }
+.bg9 { background-color: #0f0; }
+.bg10 { background-color: #3f7f7f; }
+.bg11 { background-color: #0ff; }
+.bg12 { background-color: #00f; }
+.bg13 { background-color: #f0f; }
+.bg14 { background-color: #7f7f7f; }
+.bg15 { background-color: #bfbfbf; }
+
 @media (max-width: 760px) {
   body {
     font-size: 13px;
@@ -136,114 +188,6 @@ a:hover {
 </head>
 <body>
 <div id="log"></div>
-<script>
-const POLL_MS = 2000;
-const SCROLLBAR_HIDE_MS = 1200;
-const BOTTOM_SLACK_PX = 30;
-const FONT_SETTLE_MS = 1000;
-
-const root = document.documentElement;
-const log = document.getElementById('log');
-const bang = '<span style="color:#454849">-</span><span style="color:#3498db"><strong>!</strong></span><span style="color:#454849">-</span> ';
-let lastKey = null;
-let hideTimer = null;
-let pinned = true;
-let smooth = false;
-
-function nickColor(nick) {
-  let hash = 0;
-  for (const c of nick) {
-    hash = (hash * 31 + c.codePointAt(0)) % 360;
-  }
-  return `hsl(${hash} 60% 65%)`;
-}
-
-function nickSpan(nick) {
-  return `<span style="color:${nickColor(nick)}">${nick}</span>`;
-}
-
-function hhmm(time) {
-  const d = new Date(time * 1000);
-  return `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
-}
-
-function message(line) {
-  switch (line.a) {
-    case 'NICK': return `is now known as ${nickSpan(line.m)}`;
-    case 'PART': return `has left [${line.m}]`;
-    case 'QUIT': return `has quit [${line.m}]`;
-    case 'JOIN': return 'has joined';
-    case 'KICK': return `kicked ${line.m}`;
-    case 'MODE': return `mode [${line.m}] by ${nickSpan(line.n)}`;
-    default: return line.m;
-  }
-}
-
-function row(line) {
-  const el = document.createElement('div');
-  const nick = line.a === 'PRIVMSG' ? `&lt;${line.n}&gt;` : bang + line.n;
-  el.className = 'work-tr';
-  el.innerHTML = `<div class="time-td"><span class="timestamp">${hhmm(line.t)}</span></div>`
-    + `<div class="nick-td" style="color:${nickColor(line.n)}">${nick}</div>`
-    + `<div class="msg-td">${message(line)}</div>`;
-  return el;
-}
-
-async function update() {
-  if (document.hidden) {
-    return;
-  }
-
-  let lines;
-  try {
-    const res = await fetch('irclog.json', { cache: 'no-cache' });
-    if (!res.ok) {
-      return;
-    }
-    lines = await res.json();
-  } catch (e) {
-    return;
-  }
-
-  const keys = lines.map((line) => JSON.stringify(line));
-  const start = keys.lastIndexOf(lastKey) + 1;
-  if (start >= lines.length) {
-    return;
-  }
-
-  lines.slice(start).forEach((line) => log.appendChild(row(line)));
-  lastKey = keys[keys.length - 1];
-
-  // Jump on the first render and while web fonts settle, glide after that
-  setTimeout(() => {
-    smooth = true;
-  }, FONT_SETTLE_MS);
-}
-
-// Show the scrollbar only while the visitor scrolls, not on programmatic scrolls
-function showScrollbar() {
-  root.classList.add('scrolling');
-  clearTimeout(hideTimer);
-  hideTimer = setTimeout(() => root.classList.remove('scrolling'), SCROLLBAR_HIDE_MS);
-}
-
-// Follow new lines unless the visitor has scrolled up to read
-window.addEventListener('scroll', () => {
-  if (root.classList.contains('scrolling')) {
-    pinned = window.innerHeight + window.scrollY >= root.scrollHeight - BOTTOM_SLACK_PX;
-  }
-}, { passive: true });
-
-new ResizeObserver(() => {
-  if (pinned) {
-    window.scrollTo({ top: root.scrollHeight, behavior: smooth ? 'smooth' : 'instant' });
-  }
-}).observe(log);
-
-['wheel', 'touchmove', 'keydown'].forEach((type) => window.addEventListener(type, showScrollbar, { passive: true }));
-document.addEventListener('visibilitychange', update);
-update();
-setInterval(update, POLL_MS);
-</script>
+<script src="irclog.js?v=1"></script>
 </body>
 </html>
