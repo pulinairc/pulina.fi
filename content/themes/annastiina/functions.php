@@ -199,3 +199,10 @@ add_filter( 'air_helper_disable_views_author', '__return_false' );
  * Serve Autoptimize CSS as a cached file instead of inlining it into every page
  */
 add_filter( 'autoptimize_filter_css_inline', '__return_false' );
+
+/**
+ * Preload the body font so it is ready when the stylesheet asks for it
+ */
+add_action( 'wp_head', function() {
+  echo '<link rel="preload" href="' . esc_url( get_theme_file_uri( 'fonts/allianceno1-regular.woff2' ) ) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+}, 1 );

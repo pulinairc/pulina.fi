@@ -282,68 +282,60 @@ template {
   --heading-line-height: 1.5; }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/allianceno1-regular.eot");
-  src: url("../fonts/allianceno1-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-regular.woff") format("woff"), url("../fonts/allianceno1-regular.woff2") format("woff2"), url("../fonts/allianceno1-regular.ttf") format("truetype"), url("../fonts/allianceno1-regular.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-regular.woff2") format("woff2"), url("../fonts/allianceno1-regular.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: italic;
   font-weight: 400;
-  src: url("../fonts/allianceno1-italic.eot");
-  src: url("../fonts/allianceno1-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-italic.woff") format("woff"), url("../fonts/allianceno1-italic.woff2") format("woff2"), url("../fonts/allianceno1-italic.ttf") format("truetype"), url("../fonts/allianceno1-italic.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-italic.woff2") format("woff2"), url("../fonts/allianceno1-italic.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/allianceno1-semibold.eot");
-  src: url("../fonts/allianceno1-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-semibold.woff") format("woff"), url("../fonts/allianceno1-semibold.woff2") format("woff2"), url("../fonts/allianceno1-semibold.ttf") format("truetype"), url("../fonts/allianceno1-semibold.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-semibold.woff2") format("woff2"), url("../fonts/allianceno1-semibold.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/allianceno1-bold.eot");
-  src: url("../fonts/allianceno1-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-bold.woff") format("woff"), url("../fonts/allianceno1-bold.woff2") format("woff2"), url("../fonts/allianceno1-bold.ttf") format("truetype"), url("../fonts/allianceno1-bold.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-bold.woff2") format("woff2"), url("../fonts/allianceno1-bold.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: normal;
   font-weight: 800;
-  src: url("../fonts/allianceno1-extrabold.eot");
-  src: url("../fonts/allianceno1-extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-extrabold.woff") format("woff"), url("../fonts/allianceno1-extrabold.woff2") format("woff2"), url("../fonts/allianceno1-extrabold.ttf") format("truetype"), url("../fonts/allianceno1-extrabold.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-extrabold.woff2") format("woff2"), url("../fonts/allianceno1-extrabold.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "Alliance No. 1";
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/allianceno1-black.eot");
-  src: url("../fonts/allianceno1-black.eot?#iefix") format("embedded-opentype"), url("../fonts/allianceno1-black.woff") format("woff"), url("../fonts/allianceno1-black.woff2") format("woff2"), url("../fonts/allianceno1-black.ttf") format("truetype"), url("../fonts/allianceno1-black.svg#Alliance No. 1") format("svg"); }
+  src: url("../fonts/allianceno1-black.woff2") format("woff2"), url("../fonts/allianceno1-black.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "SF Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/sfmono-regular.eot");
-  src: url("../fonts/sfmono-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/sfmono-regular.woff") format("woff"), url("../fonts/sfmono-regular.woff2") format("woff2"), url("../fonts/sfmono-regular.ttf") format("truetype"), url("../fonts/sfmono-regular.svg#SF Mono") format("svg"); }
+  src: url("../fonts/sfmono-regular.woff2") format("woff2"), url("../fonts/sfmono-regular.woff") format("woff"); }
 
 @font-face {
-  font-display: auto;
+  font-display: swap;
   font-family: "SF Mono";
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/sfmono-light.eot");
-  src: url("../fonts/sfmono-light.eot?#iefix") format("embedded-opentype"), url("../fonts/sfmono-light.woff") format("woff"), url("../fonts/sfmono-light.woff2") format("woff2"), url("../fonts/sfmono-light.ttf") format("truetype"), url("../fonts/sfmono-light.svg#SF Mono") format("svg"); }
+  src: url("../fonts/sfmono-light.woff2") format("woff2"), url("../fonts/sfmono-light.woff") format("woff"); }
 
 .screen-reader-text, .gform_body .gform_validation_container, .copy span {
   border: 0;
