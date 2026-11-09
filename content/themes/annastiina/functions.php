@@ -194,3 +194,8 @@ add_filter( 'air_helper_mail_delivery', '__return_false' );
 add_filter( 'air_helper_disable_views_tag', '__return_false' );
 add_filter( 'air_helper_disable_views_category', '__return_false' );
 add_filter( 'air_helper_disable_views_author', '__return_false' );
+
+/**
+ * Serve Autoptimize CSS as a cached file instead of inlining it into every page
+ */
+add_filter( 'autoptimize_filter_css_inline', '__return_false' );
