@@ -116,6 +116,23 @@ annastiina_LazyLoad.update();
       }
     }, 10000);
 
+    // Live user count and record from the bot server
+    function updateNumbers() {
+      $.getJSON('https://botit.pulina.fi/paikalla.php', function (data) {
+        if (data.online !== null) {
+          $('.paikalla').text(data.online);
+        }
+        $('.ennatys').text(data.record);
+      });
+    }
+
+    updateNumbers();
+    setInterval(function () {
+      if (!document.hidden) {
+        updateNumbers();
+      }
+    }, 30000);
+
   });
 })(jQuery);
 

@@ -13,7 +13,7 @@ require_once get_theme_file_path( 'inc/includes/simplehtmldom_1_9_1/simple_html_
 // Fetch data and set up simple cache
 $numbers_url = 'https://botit.pulina.fi/pulina.html';
 $numbers_cachefile = get_theme_file_path( 'inc/cache/numbers.html' );
-$numbers_cachetime = 172800; // 48 hours
+$numbers_cachetime = 150; // front-end.js keeps the count live after this
 
 $peak_url = 'https://botit.pulina.fi/peak.db';
 $peak_cachefile = get_theme_file_path( 'inc/cache/peak.db' );
@@ -89,7 +89,7 @@ $number_total_lines = $matches[1];
     <span class="label">
       Yhtäaikainen käyttäjäennätys
     </span>
-    <span class="number">
+    <span class="number ennatys">
       <?php echo wp_kses_post( $number_record ); ?>
     </span>
   </div>
