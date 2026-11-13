@@ -11,7 +11,8 @@ if ( PHP_SAPI !== 'cli' ) {
   exit;
 }
 
-const TAIL_BYTES = 6000;
+const TAIL_BYTES = 65536;
+const SHOWN_LINES = 80;
 const LOG_DIR = __DIR__ . '/pulina-days';
 const NAMES_FILE = __DIR__ . '/scroller_data/nimilista.txt';
 const MAX_COLOR = 15;
@@ -208,10 +209,10 @@ function parse_line( string $line ): ?array {
 }
 
 /**
- * Reads the end of a log file. Each line carries its byte offset so the client can
- * tell which lines it already shows.
+ * Reads the end of a log file. Each line carries its byte offset plus $base so the client
+ * can tell which lines it already shows.
  */
-function read_lines( string $logfile ): array {
+function read_lines( string $logfile, int $base = 0 ): array {
   if ( ! is_readable( $logfile ) ) {
     return [];
   }
@@ -221,7 +222,7 @@ function read_lines( string $logfile ): array {
   $chunk = file_get_contents( $logfile, false, null, $start );
 
   // Skip the partial first line when starting mid-file
-  $offset = $start;
+  $offset = $base + $start;
   if ( $start > 0 ) {
     $cut = strpos( $chunk, "\n" );
     $chunk = $cut === false ? '' : substr( $chunk, $cut + 1 );
@@ -241,11 +242,28 @@ function read_lines( string $logfile ): array {
   return $lines;
 }
 
+/**
+ * The last SHOWN_LINES lines, topped up from yesterday's log so the box is never half empty.
+ * Yesterday's offsets are negative, below every line of today.
+ */
+function feed_lines( string $dir, string $day ): array {
+  $lines = read_lines( "{$dir}/pul-{$day}.log" );
+  if ( count( $lines ) < SHOWN_LINES ) {
+    $previous = date( 'Y-m-d', strtotime( "{$day} -1 day" ) );
+    $logfile = "{$dir}/pul-{$previous}.log";
+    if ( is_readable( $logfile ) ) {
+      $lines = array_merge( read_lines( $logfile, -filesize( $logfile ) ), $lines );
+    }
+  }
+
+  return array_slice( $lines, -SHOWN_LINES );
+}
+
 function build( string $outfile ): void {
   date_default_timezone_set( 'Europe/Helsinki' );
   $day = date( 'Y-m-d' );
   $json = json_encode(
-    [ 'day' => $day, 'lines' => read_lines( LOG_DIR . "/pul-{$day}.log" ) ],
+    [ 'day' => $day, 'lines' => feed_lines( LOG_DIR, $day ) ],
     JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR
   );
 

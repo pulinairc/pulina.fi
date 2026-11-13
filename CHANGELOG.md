@@ -1,3 +1,7 @@
+### Unreleased
+
+* Fix empty space in the live chat box
+
 ### 1.1.0: 2026-11-13
 
 * Add Pulina app downloads to the front page

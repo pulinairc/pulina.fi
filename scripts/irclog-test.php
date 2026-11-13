@@ -45,3 +45,18 @@ check( 'privmsg without mode', parse_line( '12:00 < foo> hi' )[2] === 'foo' );
 check( 'action', parse_line( '12:00  * foo waves' )[1] === 'ACTION' );
 check( 'skips irssi lines', parse_line( '--- Day changed Sun Oct 25 2026' ) === null );
 check( 'stable pseudonym', pseudonym( 'foo' ) === pseudonym( 'foo' ) && pseudonym( 'foo' ) !== '' );
+
+$dir = sys_get_temp_dir() . '/irclog-test-' . getmypid();
+mkdir( $dir );
+$long = str_repeat( 'x', 300 );
+file_put_contents( "$dir/pul-2026-01-01.log", implode( "\n", array_map( fn( $i ) => "23:00 < foo> eilen $i $long", range( 1, 100 ) ) ) . "\n" );
+file_put_contents( "$dir/pul-2026-01-02.log", "--- Log opened\n00:01 < bar> eka\n00:02 < bar> toka\n" );
+$lines = feed_lines( $dir, '2026-01-02' );
+check( 'short day filled from yesterday', count( $lines ) === SHOWN_LINES );
+check( 'today last', end( $lines )['m'] === 'toka' );
+check( 'yesterday offsets stay below today', $lines[0]['o'] < 0 && $lines[ SHOWN_LINES - 2 ]['o'] >= 0 );
+file_put_contents( "$dir/pul-2026-01-02.log", implode( "\n", array_map( fn( $i ) => "12:00 < bar> $i $long", range( 1, 200 ) ) ) . "\n" );
+$lines = feed_lines( $dir, '2026-01-02' );
+check( 'long lines still fill the box', count( $lines ) === SHOWN_LINES && $lines[0]['o'] >= 0 );
+array_map( 'unlink', glob( "$dir/*" ) );
+rmdir( $dir );

@@ -20,7 +20,7 @@
 
   const stream = scroller.dataset.stream;
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const lines = document.createElement('div');
+  const lines = make('div', 'irc-lines');
   const queue = [];
   let source = null;
   let lastDay = null;

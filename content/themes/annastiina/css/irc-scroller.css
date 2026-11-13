@@ -17,6 +17,8 @@
   border-radius: 6px;
   box-sizing: border-box;
   color: var(--irc-text);
+  display: flex;
+  flex-direction: column;
   font: 300 14px/1.6 'SF Mono', Menlo, ui-monospace, monospace;
   height: auto;
   inset: 0;
@@ -39,6 +41,12 @@
   .irc-scroller-wrapper .irc-scroller.is-scrolling {
     scrollbar-color: var(--irc-dim) var(--irc-bg);
   }
+}
+
+/* A short feed sits at the bottom, against the newest line, never above an empty band */
+.irc-lines {
+  flex: none;
+  margin-top: auto;
 }
 
 .irc-scroller::-webkit-scrollbar {
