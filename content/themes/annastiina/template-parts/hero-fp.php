@@ -27,23 +27,7 @@ namespace Air_Light; ?>
                 join: "#pulina",
         }, -->
 
-          <form method="get" action="https://chat.pulina.fi" class="form-join">
-            <input type="hidden" name="name" value="Pulina">
-            <input type="hidden" name="host" value="irc.quakenet.org">
-            <input type="hidden" name="join" value="#pulina">
-            <input type="hidden" name="realname" value="The Lounge User">
-            <input type="hidden" name="rejectUnauthorized" value="false">
-            <input type="hidden" name="tls" value="false">
-            <input type="hidden" name="port" value="6667">
-            <input type="text" class="nick" id="nick" name="nick" value="" placeholder="Nimimerkkisi">
-						<button type="submit">/join #pulina</button>
-          </form>
-
-          <p>
-            <a style="font-size: 16px;font-weight: 400;color: #aaa;" href="<?php echo esc_url(
-              get_page_link(1852)
-            ); ?>">Haluan irkata omalla tavallani &rarr;</a>
-          </p>
+          <?php get_template_part( 'template-parts/app-download' ); ?>
 
         </div>
       </div>

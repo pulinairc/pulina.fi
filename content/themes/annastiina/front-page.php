@@ -18,9 +18,10 @@ get_header(); ?>
 
 <main class="site-main">
   <?php get_template_part( 'template-parts/hero-fp' ); ?>
+  <?php get_template_part( 'template-parts/modules/app-showcase' ); ?>
   <?php get_template_part( 'template-parts/modules/hall-of-fame' ); ?>
   <?php get_template_part( 'template-parts/modules/gateway' ); ?>
-  <?php get_template_part( 'template-parts/modules/trivia' ); ?>
+  <?php //get_template_part( 'template-parts/modules/trivia' ); ?>
   <?php get_template_part( 'template-parts/modules/infographics' ); ?>
 </main>
 

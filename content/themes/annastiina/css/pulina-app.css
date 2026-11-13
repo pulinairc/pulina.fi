@@ -1,0 +1,124 @@
+/* Front page: Pulina app downloads in the hero and the app showcase. Plain CSS outside the gulp build. */
+
+.pa-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.pa-ico { width: 22px; height: 22px; flex: none; }
+.pa-ico-s { width: 15px !important; height: 15px !important; margin-right: 6px; vertical-align: -2px; color: #cdd5e6; }
+
+/* The visitor's own system: one primary button and one "others" line show, phones get macOS. */
+.pa-detect [data-for] { display: none !important; }
+.pa-detect[data-os=mac] [data-for=mac],
+.pa-detect[data-os=win] [data-for=win],
+.pa-detect[data-os=linux] [data-for=linux],
+.pa-detect[data-os=android] [data-for=mac],
+.pa-detect[data-os=ios] [data-for=mac] { display: inline-flex !important; }
+.pa-detect [data-others] { display: none !important; }
+.pa-detect[data-os=mac] [data-others=mac],
+.pa-detect[data-os=win] [data-others=win],
+.pa-detect[data-os=linux] [data-others=linux],
+.pa-detect[data-os=android] [data-others=mac],
+.pa-detect[data-os=ios] [data-others=mac] { display: flex !important; }
+.pa-detect [data-phone] { display: none; }
+.pa-detect[data-pick=ios] [data-phone=ios],
+.pa-detect[data-pick=android] [data-phone=android],
+.pa-detect[data-pick=other] [data-phone=other] { display: flex; }
+
+.pa-btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 22px; border-radius: 12px; font-size: 18px; font-weight: 600; line-height: 1; text-decoration: none !important; transition: transform .15s, box-shadow .15s; }
+.pa-btn-light { background: #fff; color: #060d21 !important; }
+.pa-btn-light:hover { transform: translateY(-1px); box-shadow: 0 10px 30px rgba(151, 200, 246, .25); }
+.pa-own { font-size: 15px; color: #8a94ad !important; }
+
+.pa-badge { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px 8px 10px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .22); background: #000; color: #fff !important; text-decoration: none !important; line-height: 1.15; box-sizing: border-box; transition: border-color .15s, transform .15s; }
+.pa-badge .pa-ico { width: 22px; height: 22px; }
+.pa-badge small { display: block; font-size: 12px; opacity: .75; white-space: nowrap; }
+.pa-badge b { display: block; font-size: 15px; font-weight: 600; white-space: nowrap; }
+a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
+.pa-badge.is-soon { opacity: .6; }
+.pa-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Hero */
+.pa-h { display: flex; flex-direction: column; gap: 24px; margin-top: 3rem; }
+.pa-h,
+.pa-h p { text-align: left !important; }
+.pa-h p { margin: 0 !important; }
+.pa-h .form-join { margin: -12px 0 0 !important; }
+.pa-h .form-join button { white-space: nowrap; }
+.pa-h-label { font-size: 15px !important; color: #8a94ad !important; }
+.pa-h-or { display: flex; align-items: center; gap: 14px; color: #8a94ad; font-size: 15px; }
+.pa-h-or::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, .1); }
+.pa-h-or + * { margin-top: -6px; }
+.pa-h-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+.pa-h-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.pa-h-col:first-child { padding-right: 32px; border-right: 1px solid rgba(255, 255, 255, .1); }
+.pa-h-col + .pa-h-col { padding-left: 32px; }
+.pa-h-col-h { font-size: 13px !important; font-weight: 600; letter-spacing: .02em; color: #cdd5e6 !important; }
+.pa-h-col-more { font-size: 14px !important; line-height: 1.6; color: #8a94ad !important; }
+.pa-h-col-more a { color: #cdd5e6 !important; }
+.pa-phone-v { flex-direction: column; gap: 12px; }
+.pa-others { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px !important; line-height: 1.5; color: #8a94ad !important; }
+.pa-others > * { display: inline; white-space: nowrap; }
+.pa-others .pa-files { white-space: normal; }
+.pa-others a { color: #cdd5e6 !important; text-decoration: none; }
+.pa-others a:hover { color: #20ffa7 !important; }
+.pa-files a { text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 640px) {
+  .pa-h-cols { grid-template-columns: 1fr; }
+  .pa-h-col:first-child { padding: 0 0 24px; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+  .pa-h-col + .pa-h-col { padding: 24px 0 0; }
+  .pa-h-col .pa-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+}
+
+/* Showcase: one measure for the spaces. --sp is above and below the section, --pad inside the stage. */
+.pa-wide { max-width: 1560px; margin: 0 auto; padding-inline: max(20px, 3vw); box-sizing: border-box; }
+.pa-sec2 { --sp: 120px; --pad: 64px; --row: 56px; padding: var(--sp) 0; }
+.pa-sec2 h2 { margin: 0; font-size: 52px; line-height: 1.1; font-weight: 700; text-wrap: balance; background: linear-gradient(-70deg, #97c8f6, #20ffa7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.pa-sec2 h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.3; color: #fff; text-wrap: balance; }
+.pa-sec2 p { margin: 0; text-wrap: balance; }
+.pa-lead { font-size: 20px !important; line-height: 1.55; color: rgba(255, 255, 255, .8); max-width: 620px; }
+.pa-stage { padding: var(--pad); border-radius: 36px; border: 1px solid rgba(255, 255, 255, .08); background: radial-gradient(60% 70% at 70% 40%, rgba(33, 136, 255, .28), transparent 70%), radial-gradient(40% 60% at 15% 70%, rgba(32, 255, 167, .12), transparent 70%), #081129; }
+.pa-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.pa-duo2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3.6fr); gap: 48px; align-items: end; margin-top: var(--pad); }
+.pa-dev { margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.pa-dev figcaption { font-size: 15px; color: #8a94ad; }
+.pa-win { border-radius: 16px; overflow: hidden; background: #060d21; border: 1px solid rgba(255, 255, 255, .12); box-shadow: 0 50px 140px rgba(0, 0, 0, .55); }
+.pa-win-bar { display: flex; gap: 8px; align-items: center; height: 34px; padding: 0 14px; background: #0d1428; }
+.pa-win-bar i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.pa-win-bar i + i { background: #febc2e; }
+.pa-win-bar i + i + i { background: #28c840; }
+.pa-win video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; background: #060d21; }
+.pa-hand { position: relative; padding: 44px 12px 12px; border-radius: 52px; background: #0b0f19; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 50px 140px rgba(0, 0, 0, .6); }
+.pa-hand video { display: block; width: 100%; height: auto; aspect-ratio: 780 / 1688; border-radius: 6px 6px 40px 40px; background: #060d21; }
+.pa-island { position: absolute; top: 12px; left: 50%; width: 30%; height: 24px; margin-left: -15%; border-radius: 20px; background: #000; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06); }
+
+.pa-g { display: grid; column-gap: 48px; row-gap: var(--row); }
+.pa-g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pa-inside { margin-top: var(--pad); }
+.pa-f { position: relative; }
+.pa-f p { font-size: 16px; line-height: 1.55; color: #a3acc2; }
+/* A line halfway between two rows: never over the first row, never under the last. */
+.pa-rules .pa-f::before { content: ""; position: absolute; left: 0; right: 0; top: calc(var(--row) / -2); height: 1px; background: rgba(255, 255, 255, .1); }
+.pa-g4.pa-rules .pa-f:nth-child(-n+4)::before { display: none; }
+
+@media (max-width: 1100px) {
+  .pa-g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pa-g4.pa-rules .pa-f:nth-child(-n+4)::before { display: block; }
+  .pa-rules .pa-f:nth-child(-n+2)::before { display: none !important; }
+  .pa-head { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 900px) {
+  .pa-sec2 { --sp: 72px; --pad: 24px; --row: 40px; }
+  .pa-sec2 h2 { font-size: 36px; }
+  .pa-stage { border-radius: 24px; }
+  .pa-duo2 { grid-template-columns: 1fr; gap: 32px; }
+  .pa-duo2 .pa-dev-phone { width: min(320px, 80%); margin: 0 auto; }
+}
+
+@media (max-width: 640px) {
+  .pa-g4 { grid-template-columns: 1fr; }
+  .pa-rules .pa-f::before { display: block !important; }
+  .pa-rules .pa-f:first-child::before { display: none !important; }
+  .pa-hand { border-radius: 40px; padding: 36px 9px 9px; }
+  .pa-hand video { border-radius: 5px 5px 31px 31px; }
+  .pa-island { top: 10px; height: 19px; }
+}
