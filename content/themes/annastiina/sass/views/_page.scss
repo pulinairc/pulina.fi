@@ -100,8 +100,9 @@
 // Text links
 .block-page,
 .gutenberg-content {
-  li a,
-  p a {
+  // Buttons inside a paragraph keep their own look
+  li a:not(.button),
+  p a:not(.button) {
     border-bottom: 1px solid $color-retro-green;
     box-shadow: inset 0 -.1rem 0 $color-retro-green;
     color: $color-white;
