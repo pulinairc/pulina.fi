@@ -27,6 +27,43 @@
     }
   });
 
+  // The page is cached for long, so point the download links at the newest release here.
+  var RELEASES = 'https://github.com/pulinairc/pulina-app/releases/download/';
+  var LATEST_API = 'https://api.github.com/repos/pulinairc/pulina-app/releases/latest';
+  var FILE_ENDINGS = ['_aarch64.dmg', '_x64-setup.exe', '_amd64.AppImage', '_amd64.deb', '-x86_64.pkg.tar.zst', '_android.apk'];
+  var CACHE_KEY = 'pulina.latest';
+
+  function pointLinks(assets) {
+    document.querySelectorAll('a[href^="' + RELEASES + '"]').forEach(function (a) {
+      var ending = FILE_ENDINGS.filter(function (e) { return a.href.slice(-e.length) === e; })[0];
+      var asset = ending && assets.filter(function (x) { return x.name.slice(-ending.length) === ending; })[0];
+      if (asset) {
+        a.href = asset.url;
+      }
+    });
+  }
+
+  var cached = null;
+  try {
+    cached = JSON.parse(sessionStorage.getItem(CACHE_KEY));
+  } catch (e) {}
+  if (cached) {
+    pointLinks(cached);
+  } else if (window.fetch && document.querySelector('a[href^="' + RELEASES + '"]')) {
+    fetch(LATEST_API).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (release) {
+      if (!release) {
+        return;
+      }
+      var assets = release.assets.map(function (x) { return { name: x.name, url: x.browser_download_url }; });
+      pointLinks(assets);
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(assets));
+      } catch (e) {}
+    }).catch(function () {});
+  }
+
   var SYNC_SLACK_S = 0.15;
   document.querySelectorAll('.pa-sync').forEach(function (group) {
     var videos = [].slice.call(group.querySelectorAll('video'));

@@ -11,7 +11,7 @@ namespace Air_Light;
 const PULINA_STORES_OPEN = false;
 
 const PULINA_APP_RELEASES = 'https://github.com/pulinairc/pulina-app/releases';
-const PULINA_APP_FALLBACK_VERSION = '1.21.2';
+const PULINA_APP_FALLBACK_VERSION = '1.22.0';
 const PULINA_STORE_URLS = array(
   'ios'  => 'https://apps.apple.com/',
   'play' => 'https://play.google.com/store/',
