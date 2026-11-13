@@ -35,13 +35,13 @@ $img = get_template_directory_uri() . '/images/app/';
       <div class="pa-duo2 pa-sync">
         <figure class="pa-dev pa-dev-phone">
           <div class="pa-hand"><span class="pa-btn-side pa-btn-action"></span><span class="pa-btn-side pa-btn-vol"></span><span class="pa-btn-side pa-btn-power"></span>
-            <video src="<?php echo esc_url( $img . 'phone.mp4?v=3' ); ?>" poster="<?php echo esc_url( $img . 'phone.jpg?v=3' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi puhelimessa"></video>
+            <video src="<?php echo esc_url( $img . 'phone.mp4?v=4' ); ?>" poster="<?php echo esc_url( $img . 'phone.jpg?v=4' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi puhelimessa"></video>
           </div>
           <figcaption>Puhelimessa</figcaption>
         </figure>
         <figure class="pa-dev pa-dev-desk">
           <div class="pa-win">
-            <video src="<?php echo esc_url( $img . 'desk.mp4?v=3' ); ?>" poster="<?php echo esc_url( $img . 'desk.jpg?v=3' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi tietokoneella"></video>
+            <video src="<?php echo esc_url( $img . 'desk.mp4?v=4' ); ?>" poster="<?php echo esc_url( $img . 'desk.jpg?v=4' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi tietokoneella"></video>
           </div>
           <figcaption>Tietokoneella</figcaption>
         </figure>
