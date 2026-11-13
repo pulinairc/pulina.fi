@@ -108,6 +108,8 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
 
 @media (max-width: 900px) {
   .pa-sec2 { --sp: 72px; --pad: 24px; --row: 40px; }
+  /* The hero above already ends with its own padding. */
+  .pa-sec2 { padding-top: 0; }
   .pa-sec2 h2 { font-size: 36px; }
   .pa-stage { border-radius: 24px; }
   .pa-duo2 { grid-template-columns: 1fr; gap: 32px; }

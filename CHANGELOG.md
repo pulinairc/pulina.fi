@@ -3,6 +3,7 @@
 * Add Pulina app downloads to the front page
 * Add Pulina app showcase with synced videos
 * Fix front page user count going stale
+* Fix extra space above the app section on phones
 
 ### 1.0.0: 2026-11-09
 
