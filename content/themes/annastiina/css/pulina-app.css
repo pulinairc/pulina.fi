@@ -80,15 +80,16 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
 .pa-duo2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3.6fr); gap: 48px; align-items: end; margin-top: var(--pad); }
 .pa-dev { margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .pa-dev figcaption { font-size: 15px; color: #8a94ad; }
-.pa-win { border-radius: 16px; overflow: hidden; background: #060d21; border: 1px solid rgba(255, 255, 255, .12); box-shadow: 0 50px 140px rgba(0, 0, 0, .55); }
-.pa-win-bar { display: flex; gap: 8px; align-items: center; height: 34px; padding: 0 14px; background: #0d1428; }
-.pa-win-bar i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
-.pa-win-bar i + i { background: #febc2e; }
-.pa-win-bar i + i + i { background: #28c840; }
-.pa-win video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; background: #060d21; }
-.pa-hand { position: relative; padding: 44px 12px 12px; border-radius: 52px; background: #0b0f19; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 50px 140px rgba(0, 0, 0, .6); }
-.pa-hand video { display: block; width: 100%; height: auto; aspect-ratio: 780 / 1688; border-radius: 6px 6px 40px 40px; background: #060d21; }
-.pa-island { position: absolute; top: 12px; left: 50%; width: 30%; height: 24px; margin-left: -15%; border-radius: 20px; background: #000; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06); }
+.pa-win { border-radius: 12px; overflow: hidden; background: #060c21; box-shadow: 0 0 0 1px rgba(255, 255, 255, .14), 0 50px 140px rgba(0, 0, 0, .55); }
+.pa-win video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; background: #060c21; }
+/* iPhone 17 Pro: even bezels, the screen's own round corners, buttons on the sides. Sizes follow the phone's width. */
+.pa-dev-phone { container-type: inline-size; }
+.pa-hand { position: relative; padding: 2.6cqw; border-radius: 15.5cqw; background: linear-gradient(145deg, #3a3d44, #1b1d22 40%, #2c2f35); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16), 0 50px 140px rgba(0, 0, 0, .6); }
+.pa-hand video { display: block; width: 100%; height: auto; aspect-ratio: 804 / 1748; border-radius: 13cqw; background: #060c21; }
+.pa-btn-side { position: absolute; width: 1cqw; border-radius: 1cqw; background: #2c2f35; }
+.pa-btn-action { left: -.8cqw; top: 22%; height: 6%; }
+.pa-btn-vol { left: -.8cqw; top: 31%; height: 13%; }
+.pa-btn-power { right: -.8cqw; top: 29%; height: 16%; }
 
 .pa-g { display: grid; column-gap: 48px; row-gap: var(--row); }
 .pa-g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -120,7 +121,4 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
   .pa-g4 { grid-template-columns: 1fr; }
   .pa-rules .pa-f::before { display: block !important; }
   .pa-rules .pa-f:first-child::before { display: none !important; }
-  .pa-hand { border-radius: 40px; padding: 36px 9px 9px; }
-  .pa-hand video { border-radius: 5px 5px 31px 31px; }
-  .pa-island { top: 10px; height: 19px; }
 }

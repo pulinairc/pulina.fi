@@ -34,13 +34,13 @@ $img = get_template_directory_uri() . '/images/app/';
 
       <div class="pa-duo2 pa-sync">
         <figure class="pa-dev pa-dev-phone">
-          <div class="pa-hand"><span class="pa-island"></span>
+          <div class="pa-hand"><span class="pa-btn-side pa-btn-action"></span><span class="pa-btn-side pa-btn-vol"></span><span class="pa-btn-side pa-btn-power"></span>
             <video src="<?php echo esc_url( $img . 'phone.mp4' ); ?>" poster="<?php echo esc_url( $img . 'phone.jpg' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi puhelimessa"></video>
           </div>
           <figcaption>Puhelimessa</figcaption>
         </figure>
         <figure class="pa-dev pa-dev-desk">
-          <div class="pa-win"><div class="pa-win-bar"><i></i><i></i><i></i></div>
+          <div class="pa-win">
             <video src="<?php echo esc_url( $img . 'desk.mp4' ); ?>" poster="<?php echo esc_url( $img . 'desk.jpg' ); ?>" muted playsinline preload="auto" aria-label="Pulina-appi tietokoneella"></video>
           </div>
           <figcaption>Tietokoneella</figcaption>
