@@ -5,6 +5,8 @@
 * Fix front page user count going stale
 * Fix extra space above the app section on phones
 * Change app videos to a busy, real-looking #pulina
+* Fix download links lagging behind the newest release
+* Fix stray centering on phones and iPads
 
 ### 1.0.0: 2026-11-09
 

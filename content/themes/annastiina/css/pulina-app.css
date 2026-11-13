@@ -61,11 +61,21 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
 .pa-others a:hover { color: #20ffa7 !important; }
 .pa-files a { text-decoration: underline; text-underline-offset: 2px; }
 
-@media (max-width: 640px) {
+/* Too narrow for two download columns side by side: phones, iPads and small laptops. */
+.block-hero-fp .col-content { container-type: inline-size; }
+@container (max-width: 520px) {
   .pa-h-cols { grid-template-columns: 1fr; }
   .pa-h-col:first-child { padding: 0 0 24px; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .1); }
   .pa-h-col + .pa-h-col { padding: 24px 0 0; }
   .pa-h-col .pa-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+  .pa-h .form-join .nick { flex: 1; min-width: 0; }
+}
+
+/* The site centres the hero text on phones; here it lines up with the downloads. */
+@media (max-width: 760px) {
+  .block-hero-fp .cols .col:nth-child(1) { justify-content: flex-start; text-align: left; }
+  .block-hero-fp h1 { text-align: left; }
+  .pa-h .form-join { justify-content: flex-start; }
 }
 
 /* Showcase: one measure for the spaces. --sp is above and below the section, --pad inside the stage. */
@@ -114,7 +124,7 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
   .pa-sec2 h2 { font-size: 36px; }
   .pa-stage { border-radius: 24px; }
   .pa-duo2 { grid-template-columns: 1fr; gap: 32px; }
-  .pa-duo2 .pa-dev-phone { width: min(320px, 80%); margin: 0 auto; }
+  .pa-duo2 .pa-dev-phone { width: min(320px, 80%); }
 }
 
 @media (max-width: 640px) {
