@@ -83,3 +83,63 @@ function pulina_app_badge( $icon, $small, $big, $href = '' ) {
   }
   return '<a class="pa-badge no-external-link-indicator" href="' . esc_url( $href ) . '">' . $inner . '</a>';
 }
+
+// Which file is which, in the order the guide pages list them.
+const PULINA_APP_GUIDE_FILES = array(
+  'mac'      => array( 'apple', 'macOS', 'Mac, jossa on Apple-siru (M1 tai uudempi). Avaa tiedosto ja vedä Pulina Ohjelmat-kansioon. Jos Mac estää avaamisen, valitse Järjestelmäasetukset → Tietosuoja ja suojaus → Avaa silti.' ),
+  'win'      => array( 'windows', 'Windows', 'Asennusohjelma Windows 10:lle ja 11:lle. Jos Windows varoittaa tuntemattomasta julkaisijasta, valitse Lisätietoja → Suorita silti.' ),
+  'appimage' => array( 'linux', 'Linux, mikä tahansa jakelu', 'Ei asennusta: anna tiedostolle suoritusoikeus ja käynnistä se.' ),
+  'deb'      => array( 'linux', 'Ubuntu, Debian ja Linux Mint', 'Asenna tuplaklikkaamalla tai komennolla', 'sudo apt install ./Pulina_*_amd64.deb' ),
+  'arch'     => array( 'linux', 'Arch Linux ja sen johdannaiset', 'Asenna komennolla', 'sudo pacman -U pulina-*-x86_64.pkg.tar.zst' ),
+  'apk'      => array( 'android', 'Android', 'Salli asennus tuntemattomista lähteistä, kun puhelin kysyy.' ),
+);
+
+// The files and big buttons each guide page shows.
+const PULINA_APP_GUIDE_SETS = array(
+  'all'     => array( 'files' => array( 'mac', 'win', 'appimage', 'deb', 'arch', 'apk' ), 'buttons' => array( 'mac', 'win', 'appimage', 'apk' ) ),
+  'mac'     => array( 'files' => array( 'mac' ), 'buttons' => array( 'mac' ) ),
+  'windows' => array( 'files' => array( 'win' ), 'buttons' => array( 'win' ) ),
+  'linux'   => array( 'files' => array( 'appimage', 'deb', 'arch' ), 'buttons' => array( 'appimage' ) ),
+  'phone'   => array( 'files' => array( 'apk' ), 'buttons' => array( 'apk' ) ),
+);
+
+const PULINA_APP_BUTTON_LABELS = array(
+  'mac'      => 'Lataa macOS:lle',
+  'win'      => 'Lataa Windowsille',
+  'appimage' => 'Lataa Linuxille',
+  'apk'      => 'Lataa Androidille',
+);
+
+/**
+ * [pulina_app os="all|mac|windows|linux|phone"]: download buttons from the newest GitHub release
+ * and which file is for which system, for the guide pages.
+ */
+function pulina_app_guide( $atts ) {
+  $atts = shortcode_atts( array( 'os' => 'all' ), $atts, 'pulina_app' );
+  $set = PULINA_APP_GUIDE_SETS[ $atts['os'] ] ?? PULINA_APP_GUIDE_SETS['all'];
+  $dl = pulina_app_downloads();
+
+  $buttons = '';
+  foreach ( $set['buttons'] as $key ) {
+    $icon = PULINA_APP_GUIDE_FILES[ $key ][0];
+    $buttons .= '<a class="pa-btn pa-btn-light no-external-link-indicator" href="' . esc_url( $dl[ $key ] ) . '">' . pulina_app_icon( $icon ) . '<span>' . esc_html( PULINA_APP_BUTTON_LABELS[ $key ] ) . '</span></a>';
+  }
+
+  $rows = '';
+  foreach ( $set['files'] as $key ) {
+    list( $icon, $system, $how ) = PULINA_APP_GUIDE_FILES[ $key ];
+    $command = PULINA_APP_GUIDE_FILES[ $key ][3] ?? '';
+    $how = esc_html( $how ) . ( $command ? ' <code>' . esc_html( $command ) . '</code>' : '' );
+    $name = basename( wp_parse_url( $dl[ $key ], PHP_URL_PATH ) );
+    $rows .= '<li><b>' . pulina_app_icon( $icon, 'pa-ico pa-ico-s' ) . esc_html( $system ) . '</b><span>' . $how . '</span>'
+      . '<a class="no-external-link-indicator" href="' . esc_url( $dl[ $key ] ) . '">' . esc_html( $name ) . '</a></li>';
+  }
+  if ( in_array( $atts['os'], array( 'all', 'phone' ), true ) ) {
+    $rows .= '<li><b>' . pulina_app_icon( 'apple', 'pa-ico pa-ico-s' ) . 'iPhone</b><span>Tulossa App Storeen.</span></li>';
+  }
+
+  return '<div class="pa-guide"><div class="pa-guide-btns">' . $buttons . '</div>'
+    . '<p class="pa-guide-h">Mikä tiedosto minulle?</p><ul class="pa-guide-files">' . $rows . '</ul>'
+    . '<p class="pa-guide-all"><a href="' . esc_url( PULINA_APP_RELEASES . '/latest' ) . '">Kaikki versiot ja muutokset GitHubissa</a></p></div>';
+}
+add_shortcode( 'pulina_app', __NAMESPACE__ . '\pulina_app_guide' );

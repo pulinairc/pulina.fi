@@ -44,7 +44,8 @@ function enqueue_theme_scripts() {
   wp_enqueue_script( 'irc-scroller', get_theme_file_uri( 'js/irc-scroller.js' ), array(), filemtime( get_theme_file_path( 'js/irc-scroller.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 
   // Front page app downloads and showcase, plain files outside the gulp build
-  if ( is_front_page() ) {
+  $guide = is_singular() && has_shortcode( (string) get_post_field( 'post_content' ), 'pulina_app' );
+  if ( is_front_page() || $guide ) {
     wp_enqueue_style( 'pulina-app', get_theme_file_uri( 'css/pulina-app.css' ), array( 'styles' ), filemtime( get_theme_file_path( 'css/pulina-app.css' ) ) );
     wp_enqueue_script( 'pulina-app', get_theme_file_uri( 'js/pulina-app.js' ), array(), filemtime( get_theme_file_path( 'js/pulina-app.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
   }

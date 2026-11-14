@@ -1,6 +1,7 @@
 ### Unreleased
 
 * Fix empty space in the live chat box
+* Add app download buttons to the guide pages
 
 ### 1.1.0: 2026-11-13
 

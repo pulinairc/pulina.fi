@@ -132,3 +132,18 @@ a.pa-badge:hover { border-color: #20ffa7; transform: translateY(-1px); }
   .pa-rules .pa-f::before { display: block !important; }
   .pa-rules .pa-f:first-child::before { display: none !important; }
 }
+
+/* Guide pages: [pulina_app] downloads and which file is which */
+.pa-guide { display: flex; flex-direction: column; gap: 16px; margin: 1.5rem 0 2rem; }
+.pa-guide-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.pa-guide .pa-btn { font-size: 16px; padding: 13px 18px; }
+.pa-guide .pa-btn .pa-ico { width: 20px; height: 20px; }
+.pa-guide-h { margin: 8px 0 0 !important; font-weight: 600; color: #fff; }
+.pa-guide-files { list-style: none; margin: 0 !important; padding: 0 !important; display: grid; gap: 1px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 12px; overflow: hidden; }
+.pa-guide-files li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; margin: 0 !important; padding: 12px 16px !important; background: rgba(255, 255, 255, .03); font-size: 15px; line-height: 1.5; }
+.pa-guide-files li::before { content: none !important; }
+.pa-guide-files b { color: #fff; font-weight: 600; }
+.pa-guide-files span { color: #a3acc2; }
+.pa-guide-files a { justify-self: start; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; color: #20ffa7 !important; overflow-wrap: anywhere; }
+.pa-guide-all { margin: 0 !important; font-size: 15px; }
+.pa-guide-files code { font-size: 13px; padding: 1px 6px; border-radius: 6px; background: rgba(255, 255, 255, .08); color: #e6ebf5; overflow-wrap: anywhere; }

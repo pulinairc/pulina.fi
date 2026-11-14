@@ -39,6 +39,10 @@
       var asset = ending && assets.filter(function (x) { return x.name.slice(-ending.length) === ending; })[0];
       if (asset) {
         a.href = asset.url;
+        // Guide pages show the file name; it follows the newest release too.
+        if (a.textContent.slice(-ending.length) === ending) {
+          a.textContent = asset.name;
+        }
       }
     });
   }
