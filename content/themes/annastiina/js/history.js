@@ -58,7 +58,7 @@
           E('28.2.', 'record', '8 131 riviä päivässä. Niistä 1 649 on Haamun triviaa.'),
           E('4.3.', 'mod', 'Sana "wanha" kielletään, ja sen sanojat saavat automaattisesti kickit. Ensimmäisenä lentää Haamu-botti itse. Topicissa lukee pian: "Sana on (wanhaa lukuunottamatta) vapaa."', [['10:43', 'rolle', 'Haamu: wanha'], ['10:44', 'Haamu', 'rolle: \'Wanha\' sanovat vain idiootit. Älä ole idiootti.'], ['10:44', 'rolle', 'Lol'], ['10:44', 'rolle', 'Piti testata.']]),
           E('30.3.', 'star', 'Kanava valvoo yön yli, kun rollen ja mustikkasopan esikoinen on syntymässä. Illalla topicissa onnitellaan lapsen syntymän johdosta.', [['00:44', 'Nefi-', 'Apuva menkää jo sairaalaan ni pääsen nukkuu :O En malta muuten'], ['00:55', 'Gerry_', 'vauvavalvojaiset,saltsi'], ['00:55', 'rolle', 'Saltsi, Mun tyttö syntyy ehkä kohta o/']]),
-          E('15.4.–31.5.', 'talk', 'Topicissa toistuu, että lapsen nimi paljastetaan kesäkuussa. 30.4. rolle tiukentaa: "tuliko vittu selväksi?" Nimi kerrotaan topicissa 31.5.'),
+          E('15.4.–31.5.', 'talk', 'Topicissa toistuu, että lapsen nimi paljastetaan kesäkuussa. Nimi kerrotaan topicissa 31.5.'),
           E('26.4.', 'site', 'rolle kerää pulinalaisten asuinpaikkoja ja julkaisee kartan. Tarkkoja osoitteita ei julkaista.'),
           E('30.4.', 'site', 'Pulinan uudet sivut osoitteessa peikko.homelinux.org/pulina.'),
           E('12.6.', 'mod', 'wzardd huutaa kanavalle PENIS PENIS PENIS, ja rolle kickaa hänet ja kaksi muuta syyllä "Ei ole triviaa".'),
