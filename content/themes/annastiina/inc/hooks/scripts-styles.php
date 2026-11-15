@@ -45,9 +45,16 @@ function enqueue_theme_scripts() {
 
   // Front page app downloads and showcase, plain files outside the gulp build
   $guide = is_singular() && has_shortcode( (string) get_post_field( 'post_content' ), 'pulina_app' );
-  if ( is_front_page() || $guide ) {
+  $history = is_page_template( 'template-history.php' );
+  if ( is_front_page() || $guide || $history ) {
     wp_enqueue_style( 'pulina-app', get_theme_file_uri( 'css/pulina-app.css' ), array( 'styles' ), filemtime( get_theme_file_path( 'css/pulina-app.css' ) ) );
     wp_enqueue_script( 'pulina-app', get_theme_file_uri( 'js/pulina-app.js' ), array(), filemtime( get_theme_file_path( 'js/pulina-app.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
+  }
+
+  // Channel history page, plain files outside the gulp build
+  if ( $history ) {
+    wp_enqueue_style( 'history', get_theme_file_uri( 'css/history.css' ), array( 'styles', 'irc-scroller', 'pulina-app' ), filemtime( get_theme_file_path( 'css/history.css' ) ) );
+    wp_enqueue_script( 'history', get_theme_file_uri( 'js/history.js' ), array(), filemtime( get_theme_file_path( 'js/history.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
   }
 
   // Required comment-reply script

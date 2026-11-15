@@ -1,5 +1,6 @@
 ### Unreleased
 
+* Add #pulina channel history page
 * Fix empty space in the live chat box
 * Add app download buttons to the guide pages
 
