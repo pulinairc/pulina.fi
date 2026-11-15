@@ -104,7 +104,7 @@
           E('16.5.', 'talk', 'Ronnie James Dio kuolee. Topicissa lukee "R.I.P Dio".'),
           E('24.5.', 'site', 'Toinen paitatilaus alkaa: t-paita maksaa 10–15 €, ja huppari jätetään pois yli 20 euron hinnan takia.'),
           E('25.5.', 'talk', 'Merisiili^ saapuu kanavalle. Kolme päivää myöhemmin hän vaihtaa nickikseen Amelii.', [['22:17', 'Merisiili^', 'onks tää joku yleinen kanava mille saa tulla  :D']]),
-          E('27.5.', 'mod', 'rolle kickaa wzarddia päivän aikana viidesti. Viimeisessä kickissä lukee: "Sun kannattaa lopettaa irkin käyttö".'),
+          E('27.5.', 'mod', 'rolle kickaa wzarddin päivän aikana viidesti. Viimeisessä kickissä lukee: "Sun kannattaa lopettaa irkin käyttö".'),
           E('5.6.', 'site', 'Sivut siirtyvät osoitteeseen pulina.info, ja blogi avataan.'),
           E('9.6.', 'talk', 'j-tek tarjoaa kanavalaisille kissanpentuja ilmaiseksi. Speadfreak täydentää topicia: "IF YOU HESITATE, A KITTEN DIES!"'),
           E('26.6.', 'meet', 'Pienimuotoinen miitti Jyväskylän Pub Katseessa Avaruusnuijan bändin keikalla. Paikalla: Avaruusnuija, mustikkasoppa, Hupakko ja Unksi.'),
@@ -672,21 +672,29 @@
 
   // Nick colours: spaced around the colour wheel in order of first appearance
   const hues = new Map();
-  const colorOf = nick => { const k = nick.replace(/^[@+]/, '').toLowerCase(); if (!hues.has(k)) hues.set(k, Math.round((hues.size * 137.508 + 340) % 360)); return `hsl(${hues.get(k)} 85% 72%)`; };
-  // Every nick that speaks in an excerpt or is named in a "Paikalla" list, plus the founders' long-time names
-  const NICKS = (() => {
-    const set = new Set(['mustikkasoppa', 'kummitu', 'rolle', 'fusil', 'samiy', 'helyes', 'aswang', 'mynta', 'speadfreak', 'firewalker', 'gerrye', 'kiizeli', 'safti', 'nefastos', 'pirta', 'drinn', 'convulvau', 'nicd', 'setsu', 't0iska', 'portsari', 'orvoki', 'amelii', 'merisiili']);
-    DATA.forEach(e => Object.values(e.events).flat().forEach(ev => {
-      (ev.lines || []).forEach(l => set.add(l[1].replace(/^[@+]/, '').toLowerCase()));
-      const m = ev.text.match(/Paikalla(?: mm\.)?:? ([^.]+)\./);
-      if (m) m[1].split(/, | ja /).forEach(n => set.add(n.trim().toLowerCase()));
-    }));
-    return [...set].filter(n => n.length > 2 && !/^pulisija\d/.test(n)).sort((a, b) => b.length - a.length).map(n => n.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&'));
-  })();
-  const nickRe = new RegExp(`(^|[^\\wåäö#])((${NICKS.join('|')})[\\wåäö:]*)`, 'gi');
+  const colorOf = nick => { const k = nick.toLowerCase().replace(/^[^a-z0-9åäö]+|[^a-z0-9åäö]+$/g, ''); if (!hues.has(k)) hues.set(k, Math.round((hues.size * 137.508 + 340) % 360)); return `hsl(${hues.get(k)} 85% 72%)`; };
+  // Every nick named in the texts (from the logs), every excerpt speaker and every "Paikalla"/"Mukana" list
+  const NAMED = 'Abeand Adelphos alajarvela Amelii aniC Anicyna armmm armmmm Aswa Aswang Avantra Avaruusnuija aaaaaa aaaaaaa B52DATABOMBER Bella19 BLah^ blANZEY canfly Carlos1 cccccc chq- comah convulva convulVAU dafis Dahlia_D Damaskox Daraskos Dataaja95 Dilaz Downbeat drinn eDu- elaie Elon_Musk eponyymi Faapio Fannyanniina feq firewalker fusil Gerry gerry_ Gerrye Gerrykone Gocom golffi grinder Guest92 gw Haamu Halko |Halko| Haprog Hekez HelvetinEnkeli helyes Hiiva HippiZip HoocH HoocH_ hoorleekare horlis Hupakko illegalll incidence ivy j-tek Jape` JeGod-Pope666 jent392 Jents jentsi jmh_ jore_ jugde_derdd Jyvae k00pa Kabri kasC Kauhukomedia Kietu kiiZeli Kizi korzu Kottis kummitus kuolematon Kuusamo la_mettrie Lantzi lapyo Leptoni Linda27 Lolita16 Lorien Majesty makekin makinen mann matkum maza- Merisiili Merisiili^ Meteorologi metroidman Metsamies milla Monkee Monster1 motni Muffinssi mustikkasoppa mynta Nasu Nefastos Nefi- Nero Nicd Niffu Nisha Nishae nixari nudke Orvokki PassengeR paveq Pege pekafu pihlaja Pinkkidaa pinsku pirta Portsari Primadonna^ Pulla pulina85 Pythia Q-tio Reijo Reijo- Reijo^ rolle Roose RouVix rsl RTX2080Ti s13ge s13ge4 s13ge6 s13ge9001 Safti samiy Scaha schim schitzophrenia Scrin Setsu siilis Sikanaama sinppa_ sippis sirhoksu snd snowfake Soothe soupy Speadfreak statbot Sweetgirl19 t0iska Tanju tgbot Tinga tira TiTii TuikkA Tukkapoika Unksi Vanitsu wbot whitem WildLily Wotac wzardd Yoa Zaraki zardagbum';
+  const canon = new Map();
+  NAMED.split(' ').forEach(n => canon.set(n.toLowerCase(), n.toLowerCase()));
+  DATA.forEach(e => Object.values(e.events).flat().forEach(ev => {
+    (ev.lines || []).forEach(l => { const n = l[1].replace(/^[@+]/, '').toLowerCase(); if (n.length > 2 && !/^pulisija\d/.test(n)) canon.set(n, n); });
+    const m = ev.text.match(/(?:Paikalla|Mukana)(?: mm\.)?:? ([^.]+)\./);
+    if (m) m[1].split(/, | ja /).forEach(n => { n = n.trim().split(' ').pop().toLowerCase(); canon.set(n, n); });
+  }));
+  canon.delete('rock');
+  // Inflected stems: mustikkasoppa -> mustikkasopan, Orvokki -> Orvokin, kummitus -> kummituksen
+  [...canon.keys()].forEach(n => {
+    const grad = n.replace(/(p|t|k)\1([aeiouyäö])$/, '$1$2');
+    if (grad !== n) canon.set(grad, n);
+    if (/[aeiouyäö]s$/.test(n)) canon.set(n.slice(0, -1) + 'kse', n);
+  });
+  const NICKS = [...canon.keys()].sort((a, b) => b.length - a.length).map(n => n.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&'));
+  const ENDS = '(?::?(?:n|a|ä|ta|tä|lle|lta|ltä|lla|llä|ssa|ssä|sta|stä|ksi|in|ille|ilta|iltä|illa|illä|ista|istä|iä|ia|ja|jä|en|ään|aan|iin|na|nä|t|ni|si|nsa|nsä)(?:kin|kaan|kään)?|kin|kaan|kään)?';
+  const nickRe = new RegExp(`(^|[^\\wåäö#.\\/-])((${NICKS.join('|')})${ENDS})(?![\\wåäö.\\/-]*[\\wåäö])`, 'gi');
   const rich = text => esc(text)
-    .replace(/(^|[^\d.,\wåäö#-])(\d[\d ]*(?:,\d+)?(?:–\d+)?(?: %)?)(?![\d.]*\d|-)/g, (all, pre, num) => /^(19|20)\d\d$/.test(num) ? all : `${pre}<b class="num">${num}</b>`)
-    .replace(nickRe, (all, pre, word, stem) => /web$/i.test(word) ? all : `${pre}<span class="nick" style="--c:${colorOf(stem === 'orvoki' ? 'orvokki' : stem === 'kummitu' ? 'kummitus' : stem)}">${word}</span>`)
+    .replace(/(^|[^\d.,\wåäö#-])(\d[\d ]*(?:,\d+)?(?:–\d+)?(?: %)?)(?![\d.]*\d|-)/g, (all, pre, num) => /^(19|20)\d\d$/.test(num) ? all : `${pre}<b class="num">${num}</b>`)
+    .replace(nickRe, (all, pre, word, stem) => `${pre}<span class="nick" style="--c:${colorOf(canon.get(stem.toLowerCase()) || stem)}">${word}</span>`)
     .replace(/(^|[\s(])(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>');
 
   const ICON = {
