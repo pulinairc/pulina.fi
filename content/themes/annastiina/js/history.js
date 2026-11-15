@@ -180,7 +180,7 @@
           E('1.12.', 'mod', 'Säännöt topiciin.'),
         ],
       } },
-    { years: '2023–', from: 2023, to: 2026, title: 'Säännöt ja uusi alku', color: '#3bf0e4',
+    { years: '2023–', from: 2023, to: 2026, title: 'Uusi moderointi ja tekoälybotit', color: '#3bf0e4',
       paras: [
         'Joulukuussa 2023 otettiin uusi tatsi moderointiin. Puheoikeuden sai pyytämällä opeilta, joiksi tulivat Setsu ja t0iska. Rollen mukaan kanava oli muutamassa päivässä viihtyisämpi kuin edellisen 5 vuoden aikana yhteensä.',
         'Keväällä 2024 kanava avattiin taas kaikille, ja huumepuhe putosi alkuvuosien tasolle. kummituksesta tuli tekoäly. Vuonna 2026 kanavaa alkoi valvoa tekoälyllä toimiva Portsari, ja kanavalle rakennetaan omaa Pulina-appia.',
