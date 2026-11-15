@@ -54,7 +54,7 @@
         2009: [
           E('5.–6.1.', 'record', 'Käyttäjäennätys rikotaan kahtena iltana peräkkäin: 58 ja 61 irkkaajaa.', [['20:50', 'rolle', 'Oho peak rikkoontui.'], ['20:50', 'rolle', 'Peak for #pulina@qnet: 61 (Tue Jan  6 20:19:42 2009)']]),
           E('4.2.', 'talk', 'wzardd liittyy kanavalle kello 4.20 aamuyöllä. Hänestä tulee yksi kanavan ahkerimmista kirjoittajista.', [['04:20', 'wzardd', 'moi!'], ['04:22', 'rolle', 'Moi wzardd!'], ['04:23', 'wzardd', 'katos, täällä sentään on joku hereilläki']]),
-          E('9.–16.2.', 'mod', 'Ensimmäinen opivaali. Kolmannesta ylläpitäjästä annetaan 37 ääntä, ja Kabri ja Speadfreak saavat kumpikin 6. Uusintakierroskin päättyy tasan, joten rolle ratkaisee opin Haamun !battle-komennolla. Speadfreak voittaa.', [['14:01', 'rolle', '6 ääntä taas molemmille :DD'], ['14:01', 'rolle', '!battle Speadfreak,Kabri'], ['14:02', 'rolle', 'Spiidi se on siis.'], ['14:02', 'Speadfreak', 'HAHAHAHAHAHA']]),
+          E('9.–16.2.', 'mod', 'Ensimmäiset vaalit oppien jakamiseksi. Kolmannesta ylläpitäjästä annetaan 37 ääntä, ja Kabri ja Speadfreak saavat kumpikin 6. Uusintakierroskin päättyy tasan, joten rolle ratkaisee opin Haamun !battle-komennolla. Speadfreak voittaa.', [['14:01', 'rolle', '6 ääntä taas molemmille :DD'], ['14:01', 'rolle', '!battle Speadfreak,Kabri'], ['14:02', 'rolle', 'Spiidi se on siis.'], ['14:02', 'Speadfreak', 'HAHAHAHAHAHA']]),
           E('28.2.', 'record', '8 131 riviä päivässä. Niistä 1 649 on Haamun triviaa.'),
           E('4.3.', 'mod', 'Sana "wanha" kielletään, ja sen sanojat saavat automaattisesti kickit. Ensimmäisenä lentää Haamu-botti itse. Topicissa lukee pian: "Sana on (wanhaa lukuunottamatta) vapaa."', [['10:43', 'rolle', 'Haamu: wanha'], ['10:44', 'Haamu', 'rolle: \'Wanha\' sanovat vain idiootit. Älä ole idiootti.'], ['10:44', 'rolle', 'Lol'], ['10:44', 'rolle', 'Piti testata.']]),
           E('30.3.', 'star', 'Kanava valvoo yön yli, kun rollen ja mustikkasopan esikoinen on syntymässä. Illalla topicissa onnitellaan lapsen syntymän johdosta.', [['00:44', 'Nefi-', 'Apuva menkää jo sairaalaan ni pääsen nukkuu :O En malta muuten'], ['00:55', 'Gerry_', 'vauvavalvojaiset,saltsi'], ['00:55', 'rolle', 'Saltsi, Mun tyttö syntyy ehkä kohta o/']]),
@@ -75,7 +75,7 @@
           E('26.8.', 'mod', 'Big Brother -puheet jakavat kanavan. rolle linjaa topicissa, että ne, keitä BB ei kiinnosta, voivat olla hiljaa arkisin klo 21–22.'),
           E('5.9.', 'meet', 'Miitti Helsingin Bruuverissa, järjestäjänä Nefi-. Paikalla: Scrin, Reijo-, Nefi-, hekez ja Hiiva.'),
           E('19.9.', 'meet', 'Miitti Jyväskylän Kauppakadulla, siihen asti suurin. Paikalla: reijo, nudke, scrin, feq, halko, canfly, niffu, schim, fusil, hekez, mustikkasoppa, rolle, makekin, elaie, q-tio, Abeand ja Lorien.', [['00:41', 'Schitzophrenia', 'huomenna miitti yeah'], ['09:50', 'Hupakko', 'meil on jo 1/3 miittii tääl :D'], ['13:31', 'Yangsteri', 'miitti käynnissä jo?!']]),
-          E('5.10.', 'mod', 'Toinen opivaali päättyy tasan Reijo-n ja Hupakon kesken. rolle ajaa !battlen, mutta antaa lopulta opit molemmille.', [['19:32', 'Reijo-', 'rolle nyt molemmat saa @ ku meni tasan?'], ['19:46', 'rolle', '!battle Reijo,Hupakko'], ['19:52', 'Hupakko', 'koska toi battle tuntuu useimmiten olevan aina suosiollinen sille jonka nimi on ekana'], ['19:55', 'rolle', 'No että kaikilla on hyvä mieli.']]),
+          E('5.10.', 'mod', 'Toiset vaalit oppien jakamiseksi päättyvät tasan Reijo-n ja Hupakon kesken. rolle ajaa !battlen, mutta antaa lopulta opit molemmille.', [['19:32', 'Reijo-', 'rolle nyt molemmat saa @ ku meni tasan?'], ['19:46', 'rolle', '!battle Reijo,Hupakko'], ['19:52', 'Hupakko', 'koska toi battle tuntuu useimmiten olevan aina suosiollinen sille jonka nimi on ekana'], ['19:55', 'rolle', 'No että kaikilla on hyvä mieli.']]),
           E('22.10.', 'talk', 'Toinen caps lock -päivä, nyt säännöllä: caps lockia saa käyttää hyvän maun rajoissa ja ilman floodia.'),
           E('3.–7.11.', 'record', 'Käyttäjäennätys 93 irkkaajaa, ja neljä päivää myöhemmin jo 97.'),
           E('5.11.', 'site', 'Pulinaventti eli kanavan oma Ventrilo-palvelin.'),
@@ -693,9 +693,10 @@
   const ENDS = '(?::?(?:n|a|ä|ta|tä|lle|lta|ltä|lla|llä|ssa|ssä|sta|stä|ksi|in|ille|ilta|iltä|illa|illä|ista|istä|iä|ia|ja|jä|en|ään|aan|iin|na|nä|t|ni|si|nsa|nsä)(?:kin|kaan|kään)?|kin|kaan|kään)?';
   const nickRe = new RegExp(`(^|[^\\wåäö#.\\/-])((${NICKS.join('|')})${ENDS})(?![\\wåäö.\\/]*[\\wåäö])`, 'gi');
   const rich = text => esc(text)
-    .replace(/(^|[^\d.,\wåäö#-])(\d[\d ]*(?:,\d+)?(?:–\d+)?(?: %)?)(?![\d.]*\d|-)/g, (all, pre, num) => /^(19|20)\d\d$/.test(num) ? all : `${pre}<b class="num">${num}</b>`)
+    .replace(/(^|[^\d.,\wåäö#-])(\d(?:[\d ]*\d)?(?:,\d+)?(?:–\d+)?(?: %)?)(?![\d.]*\d|-)/g, (all, pre, num) => /^(19|20)\d\d$/.test(num) ? all : `${pre}<b class="num">${num}</b>`)
     .replace(nickRe, (all, pre, word, stem) => `${pre}<span class="nick" style="--c:${colorOf(canon.get(stem.toLowerCase()) || stem)}">${word}</span>`)
-    .replace(/(^|[\s(])(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>');
+    .replace(/(^|[\s(])(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>')
+    .replace(/(<(span|b|code) class="(?:nick|num|cmd)"[^>]*>[^<]*<\/\2>)([.,:;!?)"]+)/g, '<span class="nw">$1$3</span>');
 
   const ICON = {
     meet: '<path d="M12 21s6.5-6.300 6.500-11a6.500 6.500 0 0 0-13 0c0 4.700 6.500 11 6.500 11z"/><circle cx="12" cy="10" r="2.400"/>',
@@ -947,6 +948,7 @@ void main(){
   })();
 
   let shownEra = null, shown = -1;
+  const panel = document.querySelector('.panel'), story = document.getElementById('story');
   const OVERVIEW = -2, last = W[W.length - 1];
 
   // Before the timeline starts the panel shows the whole history; reading then counts it up from the start
@@ -965,6 +967,7 @@ void main(){
   function update() {
     const mid = innerHeight * .45;
     let v = 0;
+    panel.classList.toggle('shown', story.getBoundingClientRect().top <= 0);
     if (eras[0].getBoundingClientRect().top > mid) { overview(); return; }
     const era = eras.find(s => { const r = s.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
     if (era) { const r = era.getBoundingClientRect(); v = +era.dataset.from + (mid - r.top) / r.height * (+era.dataset.to - +era.dataset.from); }

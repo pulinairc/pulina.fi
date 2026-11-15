@@ -50,8 +50,8 @@
 .history .story.is-loading .panel, .history .story.is-loading .timeline { visibility: hidden; }
 .history .loader { display: none; }
 .history .story.is-loading .loader { position: absolute; left: 50%; top: 40px; translate: -50% 0; display: flex; align-items: center; gap: 12px; margin: 0; font-family: var(--mono); font-size: 15px; color: var(--soft); white-space: nowrap; }
-.history .loader-pac { width: 22px; height: 22px; border-radius: 50%; background: var(--green); clip-path: polygon(50% 50%, 100% 50%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 50%); animation: loader-chomp .3s linear infinite; }
-@keyframes loader-chomp { 50% { clip-path: polygon(50% 50%, 100% 12%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 88%); } }
+.history .loader-pac { width: 22px; height: 22px; border-radius: 50%; background: var(--green); clip-path: polygon(50% 50%, 110% 50%, 110% -10%, -10% -10%, -10% 110%, 110% 110%, 110% 50%); animation: loader-chomp .3s linear infinite; }
+@keyframes loader-chomp { 50% { clip-path: polygon(50% 50%, 110% 4.4%, 110% -10%, -10% -10%, -10% 110%, 110% 110%, 110% 95.6%); } }
 .history .loader-dots { width: 60px; height: 8px; background: radial-gradient(circle, var(--green) 3px, transparent 3.5px) 0 0 / 20px 8px repeat-x; animation: loader-dots .6s linear infinite; }
 @keyframes loader-dots { to { background-position: -20px 0; } }
 .history .panel { position: sticky; top: 72px; align-self: start; padding-right: calc(var(--spine) + 56px); }
@@ -89,9 +89,9 @@
 .history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; color: var(--era); }
 .history .chomp { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
 .history .chomp { width: 30px; height: 30px; filter: drop-shadow(0 0 4px var(--era)) drop-shadow(0 0 14px var(--era)); transition: rotate .18s ease; }
-.history .chomp i { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--era); clip-path: polygon(50% 50%, 50% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%); }
+.history .chomp i { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--era); clip-path: polygon(50% 50%, 50% 110%, -10% 110%, -10% -10%, 110% -10%, 110% 110%, 50% 110%); }
 .history .chewing .chomp i { animation: chomp .26s linear infinite; }
-@keyframes chomp { 50% { clip-path: polygon(50% 50%, 6% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 94% 100%); } }
+@keyframes chomp { 50% { clip-path: polygon(50% 50%, -2.8% 110%, -10% 110%, -10% -10%, 110% -10%, 110% 110%, 102.8% 110%); } }
 .history .up .chomp { rotate: 180deg; }
 .history .ghosts { position: fixed; left: 0; top: 0; z-index: 4; pointer-events: none; }
 .history .ghosts span { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; opacity: 0; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), opacity .3s ease; filter: drop-shadow(0 0 8px currentColor); }
@@ -114,8 +114,9 @@
 .history .event::before { content: ""; position: absolute; left: var(--x); top: 24px; width: 12px; height: 12px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--era); transition: transform .25s ease; }
 .history .event.eaten::before { transform: translate(-50%, -50%) scale(0); transition: none; }
 .history .event .label { font-family: var(--mono); font-size: 15px; line-height: 20px; color: var(--soft); white-space: nowrap; }
-.history .kind { display: flex; align-items: center; gap: 8px; color: var(--kind); font-size: 15px; font-weight: 600; line-height: 20px; }
-.history .kind svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.history .nw { white-space: nowrap; }
+.history .kind { display: flex; align-items: flex-start; gap: 8px; color: var(--kind); font-size: 15px; font-weight: 600; line-height: 20px; }
+.history .kind svg { width: 18px; height: 18px; margin-top: 1px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .history .event .text { margin-top: 4px; max-width: 640px; font-size: 18px; line-height: 1.55; }
 
 .history .log { container-type: inline-size; margin: 18px 0 8px; max-width: 640px; background: rgba(3, 7, 18, .86); border: 1px solid rgba(255, 255, 255, .06); border-radius: 8px; }
@@ -172,7 +173,8 @@
 .history .get-lead { max-width: 600px; margin: 20px auto 48px; font-size: 18px; color: var(--soft); }
 @media (max-width: 1100px) {
   .history .story { grid-template-columns: minmax(0, 1fr); }
-  .history .panel { top: 0; z-index: 5; margin-inline: calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r)); padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: start; }
+  .history .panel { position: fixed; top: 0; left: 0; right: 0; z-index: 5; margin: 0; translate: 0 -100%; visibility: hidden; transition: translate .35s ease, visibility 0s .35s; padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: start; }
+  .history .panel.shown { translate: 0 0; visibility: visible; transition: translate .35s ease; }
   .history .p-era { display: block; font-size: 15px; grid-column: 2; }
   .history .p-years { margin: 0; font-size: 22px; grid-row: 1 / 3; grid-column: 1; }
   .history .p-month, .history .weeks, .history .p-talk { display: none; }
@@ -189,6 +191,7 @@
   .history .row { display: block; padding-left: calc(var(--spine) + var(--after)); }
   .history .row > .label { text-align: left; }
   .history .event .label { display: none; }
+  .history .log { margin-left: -3px; }
   .history .year { padding-top: 48px; }
   .history .year .body { font-size: 14px; }
   .history .year .body .num { font-size: 19px; }
@@ -199,6 +202,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   :root, .history .odometer .strip { transition: none; }
+  .history .panel, .history .panel.shown { transition: none; }
   .history .p-era.swap, .history .live-indicator .blink, .history .chewing .chomp i, .history .ghosts svg, .history .loader-pac, .history .loader-dots { animation: none; }
   .history .ghosts { display: none; }
 }
