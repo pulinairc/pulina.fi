@@ -218,6 +218,13 @@
 .history .present .irc-time { order: 0; margin-left: 0; padding-left: 8px; }
 .history .present .irc-from { order: 1; }
 .history .present .irc-msg { order: 2; }
+@media (max-width: 760px) {
+  .history .present .irc-scroller-wrapper { height: 520px; }
+  .history .present .irc-scroller { font-size: 13px; padding: 12px 10px 16px; }
+  .history .present .irc-row { flex-wrap: wrap; margin: 0 0 8px; padding-right: 0; }
+  .history .present .irc-from { flex: 0 1 auto; margin-right: 0; text-align: left; }
+  .history .present .irc-msg { flex: 1 0 100%; }
+}
 
 /* Downloads: the front page block, centred */
 .history .get .pa-h { container-type: inline-size; align-items: center; max-width: 640px; margin: 0 auto; }
