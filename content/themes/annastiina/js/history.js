@@ -385,10 +385,10 @@
     if (now - lastBlip < .07) return;
     lastBlip = now; high = !high;
     const o = audio.createOscillator(), g = audio.createGain(), f = high ? 520 : 380;
-    o.type = 'triangle';
+    o.type = 'square';
     o.frequency.setValueAtTime(f, now); o.frequency.exponentialRampToValueAtTime(f * .55, now + .09);
-    g.gain.setValueAtTime(.0001, now); g.gain.exponentialRampToValueAtTime(.08, now + .01); g.gain.exponentialRampToValueAtTime(.0001, now + .1);
-    o.connect(g).connect(audio.destination); o.start(now); o.stop(now + .11);
+    g.gain.setValueAtTime(.0001, now); g.gain.exponentialRampToValueAtTime(.3, now + .01); g.gain.exponentialRampToValueAtTime(.0001, now + .12);
+    o.connect(g).connect(audio.destination); o.start(now); o.stop(now + .13);
   }
 
   function chomp() {
