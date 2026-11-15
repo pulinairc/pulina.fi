@@ -92,7 +92,6 @@
 .history .chewing .chomp i { animation: chomp .26s linear infinite; }
 @keyframes chomp { 50% { clip-path: polygon(50% 50%, 6% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 94% 100%); } }
 .history .up .chomp { rotate: 180deg; }
-.history .chomp b { position: absolute; left: 64%; top: 30%; width: 4.5px; height: 4.5px; border-radius: 50%; background: #060d21; }
 .history .ghosts { position: fixed; left: 0; top: 0; z-index: 4; pointer-events: none; }
 .history .ghosts span { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; opacity: 0; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), opacity .3s ease; filter: drop-shadow(0 0 8px currentColor); }
 .history .ghosts.chase span { opacity: .95; }
