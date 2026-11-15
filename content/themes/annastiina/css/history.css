@@ -175,10 +175,10 @@
   .history .story { grid-template-columns: minmax(0, 1fr); }
   .history .panel { position: fixed; top: 0; left: 0; right: 0; z-index: 5; margin: 0; translate: 0 -100%; visibility: hidden; transition: translate .35s ease, visibility 0s .35s; padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: start; }
   .history .panel.shown { translate: 0 0; visibility: visible; transition: translate .35s ease; }
-  .history .p-era { display: block; font-size: 15px; grid-column: 2; }
   .history .p-years { margin: 0; font-size: 22px; grid-row: 1 / 3; grid-column: 1; }
-  .history .p-month, .history .weeks, .history .p-talk { display: none; }
+  .history .p-month, .history .weeks { display: none; }
   .history .p-count { margin: 0; font-size: 18px; grid-column: 2; }
+  .history .p-talk { margin-top: 2px; }
   .history .p-progress { display: block; grid-column: 1 / -1; margin-top: 10px; }
   .history .timeline { margin-left: 0; padding-top: 48px; --x: 50%; }
   .history .timeline::before, .history .timeline::after { top: 89px; }
