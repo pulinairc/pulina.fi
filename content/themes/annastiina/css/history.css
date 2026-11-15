@@ -208,7 +208,7 @@
 .history h1, .history h2, .history h3 { color: inherit; font-weight: 700; }
 .history ol { padding-left: 0; }
 .history li { font-size: inherit; line-height: inherit; }
-.history code.cmd { display: inline; margin: 0; line-height: inherit; }
+.history code.cmd { display: inline; margin: 0; line-height: inherit; vertical-align: baseline; }
 .history .hero { padding-top: 160px; }
 
 /* Nykyhetki: the site's live scroller as see-through glass, times first, newest lines only */
