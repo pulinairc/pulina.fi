@@ -40,7 +40,7 @@ get_header(); ?>
 
   <section class="present">
     <div class="frame">
-      <p class="now-live"><span class="live-dot" aria-hidden="true"></span>Live</p>
+      <p class="now-live"><span class="live-indicator-block"><span class="live-indicator"><span class="circle blink" aria-hidden="true"></span>Live</span></span></p>
       <h2>Nykyhetki</h2>
       <?php get_template_part( 'template-parts/irc-scroller' ); ?>
     </div>

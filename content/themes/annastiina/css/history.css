@@ -83,7 +83,7 @@
 
 .history .head { position: sticky; top: 0; z-index: 3; padding-block: 16px 22px; pointer-events: none; }
 .history .head .body { position: relative; }
-.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -16px -200px -56px calc(-1 * var(--after) + 14px); background: rgba(6, 13, 33, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); -webkit-mask-image: linear-gradient(to right, transparent, #000 56px), linear-gradient(#000 calc(100% - 56px), transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 56px), linear-gradient(#000 calc(100% - 56px), transparent); mask-composite: intersect; opacity: 0; transition: opacity .2s ease; }
+.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -16px -40px -56px calc(-1 * var(--after) + 6px); background: color-mix(in srgb, var(--glow) 8%, rgba(6, 13, 33, .7)); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); -webkit-mask-image: linear-gradient(to right, transparent, #000 96px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 96px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); mask-composite: intersect; opacity: 0; transition: opacity .2s ease; }
 .history .head.stuck .body::before { opacity: 1; }
 .history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; }
 .history .chomp { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
@@ -156,9 +156,12 @@
 /* Nykyhetki */
 .history .present { border-top: 1px solid var(--line); padding-block: 120px 120px; }
 .history .present .frame { text-align: center; }
-.history .now-live { display: flex; justify-content: center; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
-.history .live-dot { width: 10px; height: 10px; border-radius: 50%; background: #ea2429; animation: blink 1.4s ease-in-out infinite; }
-@keyframes blink { 50% { opacity: .25; } }
+.history .now-live { display: flex; justify-content: center; }
+.history .live-indicator-block { position: static; display: inline-flex; margin-left: -3px; }
+.history .live-indicator { background: #ea2429; border-radius: 6px; color: #fff; display: inline-block; font-size: 12px; font-weight: 500; line-height: 1; padding: 6px 7px; text-transform: uppercase; vertical-align: middle; }
+.history .live-indicator .blink { animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate; margin-right: 5px; }
+.history .circle { background: #fff; border-radius: 50%; display: inline-block; position: relative; width: 9px; min-width: 9px; height: 9px; }
+@keyframes blinker { to { opacity: 0; } }
 .history .present h2 { margin: 12px 0 40px; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; background: linear-gradient(90deg, var(--green), #8fd9ff); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
 .history .now-chat { max-width: 1000px; margin: 0 auto; text-align: left; background: rgba(12, 22, 45, .28); border: 1px solid rgba(255, 255, 255, .12); border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 30px 80px rgba(0, 0, 0, .35); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); }
 .history .now-chat ol { padding: 32px 36px; font-size: 16px; line-height: 1.85; column-gap: 16px; row-gap: 4px; }
@@ -195,7 +198,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   :root, .history .odometer .strip { transition: none; }
-  .history .p-era.swap, .history .live-dot, .history .chewing .chomp i, .history .ghosts svg, .history .loader-pac, .history .loader-dots { animation: none; }
+  .history .p-era.swap, .history .live-indicator .blink, .history .chewing .chomp i, .history .ghosts svg, .history .loader-pac, .history .loader-dots { animation: none; }
   .history .ghosts { display: none; }
 }
 
