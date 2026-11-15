@@ -10,11 +10,11 @@
   const KIND = {
     meet: ['Miitti', '#ff8fc7'], game: ['Peli-ilta', '#ffb454'], bot: ['Botit', '#5ce1e6'], mod: ['Moderointi', '#ff7b7b'],
     site: ['Sivusto ja palvelut', '#8fb3ff'], record: ['Ennätys', '#7ee081'], talk: ['Kanavalla', '#c9a6ff'],
-    star: ['Kohokohta', '#ffd166'],
+    star: ['Kohokohta', '#ffd166'], memory: ['Muistamme', '#cbd5e1'],
   };
   const LINES = [718541, 1446103, 1356364, 1284393, 1047632, 479020, 536675, 836702, 563801, 289748, 226741, 311037, 621630, 568580, 399882, 371790, 255775, 189595, 287661];
-  const TALKERS = [487, 867, 1160, 884, 928, 717, 737, 912, 751, 469, 378, 345, 419, 465, 483, 653, 223, 481, 438];
-  const KICKS = [0, 73, 283, 111, 78, 127, 112, 132, 90, 44, 29, 9, 136, 58, 27, 153, 53, 32, 38];
+  const TALKERS = [487, 867, 1160, 884, 928, 717, 737, 912, 745, 469, 378, 344, 414, 461, 478, 651, 223, 480, 443];
+  const KICKS = [194, 261, 284, 111, 78, 127, 112, 132, 90, 44, 29, 9, 136, 58, 27, 153, 53, 32, 38];
   const E = (date, kind, text, lines) => ({ date, kind, text, lines });
   const DATA = [
     { years: '2008–2010', from: 2008, to: 2010, title: 'Kaveriporukan kanava', color: '#20ffa7',
@@ -29,7 +29,7 @@
           E('8.4.', 'mod', 'Kanava perustetaan kello 13.11, ja mustikkasoppa saa ensimmäiset opit.', [['13:15', 'Lantzi', 'saanko pyytää kavereita'], ['13:16', 'rolle', 'Lantzi: KAIKKI KAVERIT TÄNNE'], ['13:16', 'mustikkasoppa', 'uiii'], ['13:16', 'rolle', 'Uusia ihmisiä :)'], ['13:16', 'rolle', 'Ja kavereiden kaverit']]),
           E('9.4.', 'record', 'Kanavan toinen päivä: 8 189 riviä.'),
           E('heinäkuu', 'site', 'Pulinan ensimmäiset kotisivut.'),
-          E('10.10.', 'mod', '18 potkua yhden päivän aikana.'),
+          E('10.10.', 'mod', '18 kickiä yhden päivän aikana.'),
           E('joulukuu', 'site', 'Ensimmäinen paitatilaus: t-paita 10,85 €, huppari 26,05 €.'),
         ],
         2009: [
@@ -48,11 +48,15 @@
         2010: [
           E('huhtikuu', 'bot', 'kummitus jakaa voicet aktiivisuuden mukaan.'),
           E('toukokuu', 'meet', 'Miitti Jyväskylän kuurojen kulttuuripäivillä.'),
-          E('kesäkuu', 'site', 'Sivut siirtyvät osoitteeseen pulina.info, ja blogi avataan.'),
-          E('kesäkuu', 'meet', 'Miitti Jyväskylän Pub Katseessa.'),
+          E('5.6.', 'site', 'Sivut siirtyvät osoitteeseen pulina.info, ja blogi avataan.'),
+          E('26.6.', 'meet', 'Pienimuotoinen miitti Jyväskylän Pub Katseessa.'),
+          E('1.8.', 'record', 'Käyttäjäennätys: kanavalla on 112 irkkaajaa yhtä aikaa.'),
+          E('12.8.', 'talk', 'Scrin pääsee uutisotsikoihin trollattuaan kanavalla murtautuneensa EduVantaan kouluverkkoon.'),
           E('14.8.', 'meet', 'Miitti Särkänniemessä.'),
+          E('4.9.', 'meet', 'Minimiitti Lahdessa siiliksen ja Halkon luona.'),
           E('syyskuu', 'mod', 'Topicissa lukee: "Kanava on K-20. Ikärajaa ei valvo kukaan."'),
-          E('3.10.', 'mod', 'Kaikkien aikojen potkuennätys: 30 potkua päivässä.', [['21:33', 'rolle', 'Melkein vois laittaa trigger-kickejä'], ['21:35', 'rolle', 'MIKSI SÄ OTIT BANNIT POIS'], ['22:17', 'tira', 'koht tulee kickbannia ässältä']]),
+          E('5.10.', 'mod', 'kummitus ylennetään valvojaksi: bannit, voicet ja kiellettyjen sanojen lista. Estolista herättää eripuraa.'),
+          E('3.10.', 'mod', 'Kaikkien aikojen kickiennätys: 30 kickiä päivässä.', [['21:33', 'rolle', 'Melkein vois laittaa trigger-kickejä'], ['21:35', 'rolle', 'MIKSI SÄ OTIT BANNIT POIS'], ['22:17', 'tira', 'koht tulee kickbannia ässältä']]),
         ],
       } },
     { years: '2011–2012', from: 2011, to: 2012, title: 'Kanava kasvaa', color: '#5cc8ff',
@@ -63,11 +67,13 @@
       top: [['mustikkasoppa', 164560], ['fusil', 141528], ['samiy', 107226], ['helyes', 93010], ['aswang', 76501]],
       events: {
         2011: [
-          E('tammikuu', 'site', 'Keskustelufoorumi avataan.'),
+          E('24.1.', 'site', 'Keskustelufoorumi avataan.'),
           E('26.2.', 'meet', 'Talvimiitti Jyväskylän Wilhelmiinan konditoriassa.'),
-          E('maaliskuu', 'site', 'Osoitteeksi tulee pulina.fi.'),
-          E('huhtikuu', 'meet', 'Miitti Helsingissä.'),
+          E('10.3.', 'site', 'Osoitteeksi tulee pulina.fi.'),
+          E('15.4.', 'meet', 'Miitti Helsingissä Soothen luona.'),
+          E('19.4.', 'memory', 'Pulinan aktiivinen irkkaaja Amelii, myös Merisiili, on poissa. Topiciin vaihdetaan "rip Amelii", ja blogiin kirjoitetaan muistokirjoitus.'),
           E('25.4.', 'record', '8 186 riviä päivässä.'),
+          E('28.5.', 'meet', 'Tamperemiitti Näsikalliolla.'),
           E('16.7.', 'meet', 'Jyväskylämiitti.'),
         ],
         2012: [
@@ -90,7 +96,8 @@
         2013: [
           E('tammikuu', 'site', 'Facebook-ryhmä perustetaan.'),
           E('tammikuu', 'meet', 'Assembly Summer -ryhmätilaus.'),
-          E('10.7.', 'mod', '23 potkua päivässä.'),
+          E('1.4.', 'talk', 'Aprillipila: topicissa ilmoitetaan, että kanava suljetaan 2.4.2013.'),
+          E('10.7.', 'mod', '23 kickiä päivässä.'),
         ],
         2014: [
           E('tammikuu', 'bot', 'Botit palaavat käyttöön.'),
@@ -102,7 +109,7 @@
         2015: [
           E('1.4.', 'talk', 'Yle Silminnäkijä kuvaa Rollea ja mustikkasoppaa.', [['22:10', 'rolle', 'kiiZeli: Joo Yle Silminnäkijä kävi meillä eilen'], ['22:13', 'kiiZeli', '!muistuta kiiZeli "2015-4-30 16:00" silminnäkijä'], ['22:13', 'kummitus', 'kiiZeli: SINULLE ON LISÄTTY MUISTUTUS. AIKA: 2015-4-30 16:00, AIHE: "silminnäkijä"']]),
           E('toukokuu', 'meet', 'Miitti Tampereen Särkänniemessä.'),
-          E('14.7.', 'mod', '19 potkua päivässä.'),
+          E('14.7.', 'mod', '19 kickiä päivässä.'),
           E('31.7.', 'meet', 'Kesämiitti Helsingissä.', [['10:19', 'fusil', 'no tänää miitti'], ['10:19', 'fusil', '12.30 hki']]),
           E('joulukuu', 'site', 'Pulinan Telegram-ryhmä nousee topiciin.'),
         ],
@@ -113,7 +120,7 @@
       } },
     { years: '2017–2019', from: 2017, to: 2019, title: 'Tuuliset vuodet, huumeluola-pulina', color: '#ff7a59',
       paras: [
-        'Vuonna 2017 rivejä kertyi 289 748, ja ylläpitäjät olivat käytännössä poissa. Potkuja annettiin 44 vuonna 2017, 29 vuonna 2018 ja vain 9 vuonna 2019, vähemmän kuin koskaan ennen tai sen jälkeen.',
+        'Vuonna 2017 rivejä kertyi 289 748, ja ylläpitäjät olivat käytännössä poissa. Kickejä annettiin 44 vuonna 2017, 29 vuonna 2018 ja vain 9 vuonna 2019, vähemmän kuin koskaan ennen tai sen jälkeen.',
         'Kanavasta tuli huumeluola. Päihteistä puhuttiin avoimesti, ja huumeet mainittiin 2 kertaa niin usein kuin alkuvuosina. Moni vanha pulisija koki kanavan ahdistavaksi. Otteissa nimimerkit on vaihdettu.',
       ],
       top: [['mustikkasoppa', 96242], ['drinn', 60174], ['samiy', 46952], ['anicyna', 42251], ['convulvau', 28555]],
@@ -142,7 +149,7 @@
     { years: '2020–2022', from: 2020, to: 2022, title: 'COVID-19, koronavuosien aikainen #pulina', color: '#ffc857',
       paras: [
         'Koronakeväänä 2020 ihmiset palasivat koneiden ääreen, ja rivejä kertyi 621 630, 2 kertaa edellisvuotta enemmän. kummitus oppi komennon !corona, jolla sai maakohtaiset tartunnat, kuolemat ja parantuneet. Sitä käytettiin kanavalla 163 kertaa.',
-        'Potkuja annettiin taas: 136 vuonna 2020, niistä 69 mustikkasoppan antamia. Huumepuhetta oli silti enemmän kuin koskaan. Vuonna 2022 kanava yhdistettiin Telegramiin ja Discordiin, ja säännöt nostettiin topiciin.',
+        'Kickejä annettiin taas: 136 vuonna 2020, niistä 69 mustikkasopan antamia. Huumepuhetta oli silti enemmän kuin koskaan. Vuonna 2022 kanava yhdistettiin Telegramiin ja Discordiin, ja säännöt nostettiin topiciin.',
       ],
       top: [['mustikkasoppa', 269685], ['ivy', 109929], ['sinppa', 89027], ['samiy', 84723], ['lapyo', 55030]],
       events: {
@@ -159,6 +166,7 @@
         ],
         2021: [
           E('helmikuu', 'site', 'Uusi paitatilaus.'),
+          E('20.2.', 'site', 'pulina.fi uudistuu ja saa uuden logon.'),
           E('5.3.', 'game', 'Tietovisa #pulina.trivia alkaa.', [['22:08', '@mustikkasoppa', 'triviaa varmaan kohta?'], ['22:08', '+convulvau', 'miten tää triviahomma skulaa siis'], ['22:09', '@mustikkasoppa', 'toi trivia on #pulina.trivia kanavalla, siel vastataan suomeksi erilaisiin kysymyksiin :D']]),
           E('6.3.', 'bot', '!corona-komento poistetaan käytöstä.'),
           E('20.5.', 'bot', 'Uusia komentoja: !tee, !äijämatto, !randomjuttu, !hali ja !flippaa.'),
@@ -185,7 +193,7 @@
         ],
         2024: [
           E('18.3.', 'mod', 'Kanava avataan taas kaikille.', [['00:37', '+Kietu', 'no mie kirjottelin ilman voicea'], ['00:39', '@rolle', 'Autovoice on pop']]),
-          E('17.10.', 'bot', 'kummituksesta ja Orvokista tulee tekoälyjä.', [['00:00', '@t0iska', 'hyvä kummitus!'], ['00:00', '+kummitus', 't0iska: Hyvä kummitus! Kiitos kehuista! Jos on jotain erityistä mielessäsi, olen täällä auttamassa!'], ['00:00', '@rolle', 'kummitus: Sun piti ottaa kehu vastaan, t0iska koitti kehua sua']]),
+          E('17.10.', 'bot', 'kummitukseen tulee generatiivinen tekoäly. Aluksi se on kuin mikäkin assistentti "aina auttamassa", sittemmin se on saanut kokonaan oman persoonansa oppien irkkaajien toilailuista.', [['00:00', '@t0iska', 'hyvä kummitus!'], ['00:00', '+kummitus', 't0iska: Hyvä kummitus! Kiitos kehuista! Jos on jotain erityistä mielessäsi, olen täällä auttamassa!'], ['00:00', '@rolle', 'kummitus: Sun piti ottaa kehu vastaan, t0iska koitti kehua sua']]),
         ],
         2025: [
           E('3.7.', 'bot', 'kummitus oppii kanavan historian.', [['00:00', '+Nillidan', 'kummitus: oletko sovinistisika'], ['00:00', '+kummitus', 'Nillidan: Haha, enpä ole sovinistisika, vaan yritän vaan käyttää kieltä niin kuin se luonnostaan kulkee!']]),
@@ -238,6 +246,7 @@
     record: '<path d="M5 20V11M10 20V5M15 20v-7M20 20V8"/>',
     talk: '<path d="M5 6h14a1.500 1.500 0 0 1 1.500 1.500v8A1.500 1.500 0 0 1 19 17h-7l-4.500 3.500V17H5a1.500 1.500 0 0 1-1.500-1.500v-8A1.500 1.500 0 0 1 5 6z"/>',
     star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+    memory: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
   };
   const BARS = ['hsl(137 57% 70%)', 'hsl(137 57% 60%)', 'hsl(137 57% 50%)', 'hsl(137 57% 40%)', 'hsl(137 57% 30%)'];
   const lineHTML = ([t, n, x]) => { const mode = /^[@+]/.test(n) ? n[0] : '', name = n.replace(/^[@+]/, ''); return `<li><time>${t}</time><b style="color:${colorOf(name)}">&lt;${mode}${esc(name)}&gt;</b><span>${esc(x).replace(/(^|\s)(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>')}</span></li>`; };
@@ -253,7 +262,7 @@
     let rows = `<div class="row head"><div class="label"></div><div class="body"><h2><span class="chomp" aria-hidden="true"><i></i></span>${esc(e.title)}</h2></div></div><div class="row intro"><div class="label"></div><div class="body">${e.paras.map(p => `<p>${rich(p)}</p>`).join('')}</div></div>`;
     for (let y = e.from; y <= e.to; y++) {
       const i = y - 2008;
-      rows += `<div class="row year"><div class="label">${y}</div><div class="body"><b class="num">${tight(LINES[i])}</b> riviä · <b class="num">${tight(TALKERS[i])}</b> irkkaajaa · <b class="num">${KICKS[i]}</b> potkua</div></div>`;
+      rows += `<div class="row year"><div class="label">${y}</div><div class="body"><b class="num">${tight(LINES[i])}</b> riviä · <b class="num">${tight(TALKERS[i])}</b> irkkaajaa · <b class="num">${KICKS[i]}</b> kickiä</div></div>`;
       (e.events[y] || []).forEach(ev => {
         const [name, color] = KIND[ev.kind];
         rows += `<div class="row event" style="--kind:${color}"><div class="label"></div><div class="body">
@@ -298,7 +307,7 @@
   grid.addEventListener('pointerout', () => { tip.hidden = true; });
   addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
 
-  function odometer(el, digits = 8) {
+  function odometer(el, digits = 8, unit = 'riviä') {
     el.classList.add('odometer');
     el.innerHTML = Array.from({ length: digits }, (_, i) => `${i > 0 && (digits - i) % 3 === 0 ? `<span class="gap" data-before="${i}"></span>` : ''}<span class="slot"><span class="strip">${[...'0123456789'].map(d => `<span>${d}</span>`).join('')}</span></span>`).join('');
     const slots = [...el.querySelectorAll('.slot')], gaps = [...el.querySelectorAll('.gap')];
@@ -311,7 +320,7 @@
       let lead = true;
       slots.forEach((slot, i) => { if (s[i] !== '0' || i === digits - 1) lead = false; slot.classList.toggle('lead', lead); slot.firstChild.style.transform = `translateY(-${s[i]}em)`; });
       gaps.forEach(g => g.classList.toggle('lead', slots[+g.dataset.before - 1].classList.contains('lead')));
-      el.setAttribute('aria-label', `${fmt(v)} riviä`);
+      el.setAttribute('aria-label', `${fmt(v)} ${unit}`);
     };
   }
   function roller(el, length = 9) {
@@ -329,6 +338,8 @@
     };
   }
 
+  const ALL_TALKERS = 8121;
+  const setTalk = odometer(document.querySelector('.odo-talk'), 4, 'irkkaajaa');
   const set = odometer(document.querySelector('.odo')), setYears = roller(document.querySelector('.p-years'));
   const eras = [...timeline.querySelectorAll('.era')], cells = [...document.querySelectorAll('.wk i')], labels = [...document.querySelectorAll('.yr')];
   const eraEl = document.querySelector('.p-era'), monthEl = document.querySelector('.p-month'), prog = document.querySelector('.p-progress span');
@@ -482,7 +493,7 @@ void main(){
   function overview() {
     if (shown === OVERVIEW) return;
     shown = OVERVIEW; shownEra = null;
-    set(TOTAL); setYears(`${W[0].y}–${last.y}`);
+    set(TOTAL); setTalk(ALL_TALKERS); setYears(`${W[0].y}–${last.y}`);
     monthEl.textContent = `${MONTHS[W[0].m]} ${W[0].y} – ${MONTHS[last.m]} ${last.y}`;
     eraEl.textContent = 'Koko historia';
     prog.style.width = '100%';
@@ -510,6 +521,7 @@ void main(){
     for (let k = lo; k <= hi; k++) { cells[k].classList.toggle('future', k > i); cells[k].classList.toggle('now', k === i); }
     shown = i;
     monthEl.textContent = `${MONTHS[w.m]} ${w.y}`;
+    setTalk(TALKERS[w.y - 2008]);
     labels.forEach(t => t.classList.toggle('on', +t.dataset.y === w.y));
   }
   let ticking = false;

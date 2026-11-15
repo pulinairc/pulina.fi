@@ -31,6 +31,7 @@ get_header(); ?>
         <div class="p-years"></div>
         <div class="p-month"></div>
         <div class="p-count"><span class="odo"></span><span class="unit">riviä</span></div>
+        <div class="p-count p-talk"><span class="odo-talk"></span><span class="unit">irkkaajaa</span></div>
         <div id="weeks"></div>
         <div class="p-progress"><span></span></div>
       </aside>

@@ -61,6 +61,7 @@
 .history .p-years { margin-top: 0; font-family: var(--mono); font-weight: 600; font-size: clamp(28px, 2.6vw, 48px); line-height: 1; color: var(--glow); white-space: nowrap; }
 .history .p-month { margin-top: 8px; font-family: var(--mono); font-size: 15px; color: var(--soft); }
 .history .p-count { margin-top: 18px; display: flex; align-items: baseline; gap: 10px; font-size: clamp(24px, 2vw, 32px); }
+.history .p-talk { margin-top: 6px; }
 .history .unit { font-family: var(--mono); font-size: 15px; color: var(--soft); }
 .history .weeks { --row: clamp(10px, calc((100vh - 360px) / 19 - 8px), 18px); margin-top: 28px; display: grid; gap: 8px; }
 .history .yr { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; }
@@ -174,7 +175,7 @@
   .history .panel { top: 0; z-index: 5; margin-inline: calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r)); padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: start; }
   .history .p-era { display: block; font-size: 15px; grid-column: 2; }
   .history .p-years { margin: 0; font-size: 22px; grid-row: 1 / 3; grid-column: 1; }
-  .history .p-month, .history .weeks { display: none; }
+  .history .p-month, .history .weeks, .history .p-talk { display: none; }
   .history .p-count { margin: 0; font-size: 18px; grid-column: 2; }
   .history .p-progress { display: block; grid-column: 1 / -1; margin-top: 10px; }
   .history .timeline { margin-left: 0; padding-top: 48px; --x: 50%; }
