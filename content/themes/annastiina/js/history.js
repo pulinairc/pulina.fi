@@ -193,7 +193,7 @@
         2026: [
           E('11.11.', 'site', 'Pulina-app rakenteilla.'),
           E('12.11.', 'mod', 'Säännöt uudistetaan, mukaan tulee osio opeille.'),
-          E('13.11.', 'mod', 'Portsari aloittaa.', [['00:40', '@rolle', 'Huom opit t0iska mann mustikkasoppa, nimimerkki Portsari on moderoijabotti, joka toimii vähän älykkäämmällä AI:lla kuin kummitus'], ['12:02', '+BuddhaD', 'kummitus: alatko rähisemään ton Portsarin kanssa?'], ['12:02', '@kummitus', 'BuddhaD: Portsarilla on niin huono huumorintaju, ettei se edes huomaisi jos alkaisin sille aukomaan päätäni.']]),
+          E('13.11.', 'mod', 'Portsari-järjestyksenvalvojabotti luodaan tehokkaampaa moderointia varten.', [['00:40', '@rolle', 'Huom opit t0iska mann mustikkasoppa, nimimerkki Portsari on moderoijabotti, joka toimii vähän älykkäämmällä AI:lla kuin kummitus'], ['12:02', '+BuddhaD', 'kummitus: alatko rähisemään ton Portsarin kanssa?'], ['12:02', '@kummitus', 'BuddhaD: Portsarilla on niin huono huumorintaju, ettei se edes huomaisi jos alkaisin sille aukomaan päätäni.']]),
         ],
       } },
   ];
@@ -239,12 +239,12 @@
   const BARS = ['hsl(137 57% 70%)', 'hsl(137 57% 60%)', 'hsl(137 57% 50%)', 'hsl(137 57% 40%)', 'hsl(137 57% 30%)'];
   const lineHTML = ([t, n, x]) => { const mode = /^[@+]/.test(n) ? n[0] : '', name = n.replace(/^[@+]/, ''); return `<li><time>${t}</time><b style="color:${colorOf(name)}">&lt;${mode}${esc(name)}&gt;</b><span>${esc(x).replace(/(^|\s)(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>')}</span></li>`; };
 
-  // "8.4." -> "8. huhtikuuta", "6.–8.4." -> "6.–8. huhtikuuta", "heinäkuu" -> "Heinäkuu"
+  // "8.4." -> "8. huhtikuuta, 2008", "6.–8.4." -> "6.–8. huhtikuuta, 2012", "heinäkuu" -> "Heinäkuu 2008"
   const MONTHS_OF = ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'];
-  const whenOf = d => {
+  const whenOf = (d, y) => {
     const m = d.match(/^(\d+)\.(?:–(\d+)\.)?(\d+)\.$/);
-    if (!m) return d[0].toUpperCase() + d.slice(1);
-    return `${m[1]}.${m[2] ? `–${m[2]}.` : ''} ${MONTHS_OF[m[3] - 1]}`;
+    if (!m) return `${d[0].toUpperCase() + d.slice(1)} ${y}`;
+    return `${m[1]}.${m[2] ? `–${m[2]}.` : ''} ${MONTHS_OF[m[3] - 1]}, ${y}`;
   };
   const eraHTML = e => {
     let rows = `<div class="row head"><div class="label"></div><div class="body"><h2><span class="chomp" aria-hidden="true"><i></i></span>${esc(e.title)}</h2></div></div><div class="row intro"><div class="label"></div><div class="body">${e.paras.map(p => `<p>${rich(p)}</p>`).join('')}</div></div>`;
@@ -254,7 +254,7 @@
       (e.events[y] || []).forEach(ev => {
         const [name, color] = KIND[ev.kind];
         rows += `<div class="row event" style="--kind:${color}"><div class="label"></div><div class="body">
-          <div class="kind"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[ev.kind]}</svg>${whenOf(ev.date)} - ${name}</div>
+          <div class="kind"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[ev.kind]}</svg>${whenOf(ev.date, y)} - ${name}</div>
           <p class="text">${rich(ev.text)}</p>
           ${ev.lines ? `<figure class="log"><ol>${ev.lines.map(lineHTML).join('')}</ol></figure>` : ''}</div></div>`;
       });
@@ -396,10 +396,12 @@
     heads.forEach((h, k) => { const stuck = sticky && tops[k] <= stickTop + 1 && tops[k] > stickTop - h.offsetHeight; if (h.classList.contains('stuck') !== stuck) h.classList.toggle('stuck', stuck); });
     if (!chompOn) { events.forEach(e => e.classList.remove('eaten')); return; }
     const head = heads.filter((h, k) => tops[k] <= stickTop + 1).pop() || heads[0];
-    const r = head.querySelector('.chomp').getBoundingClientRect(), at = r.top + r.height / 2 + scrollY;
+    const r = head.querySelector('.chomp').getBoundingClientRect();
     const dy = scrollY - lastY; lastY = scrollY;
     let ate = false;
-    events.forEach((e, k) => { const eaten = dotsY[k] < at; if (e.classList.contains('eaten') !== eaten) { e.classList.toggle('eaten', eaten); ate = ate || eaten; } });
+    // Eaten as soon as a dot touches the ball; back only once it is well below, where the ghosts are
+    const eatAt = r.bottom + scrollY, backAt = eatAt + 90;
+    events.forEach((e, k) => { const was = e.classList.contains('eaten'), eaten = dotsY[k] < eatAt || (was && dotsY[k] <= backAt); if (was !== eaten) { e.classList.toggle('eaten', eaten); ate = ate || eaten; } });
     if (ate && dy > 0) blip();
     if (dy < 0) { const t = timeline.getBoundingClientRect(); ghostsChase(t.left + parseFloat(getComputedStyle(timeline, '::before').left), r.top + r.height / 2); }
     else if (dy > 0) { clearTimeout(homeTimer); ghostsHome(); }

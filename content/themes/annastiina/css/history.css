@@ -81,11 +81,11 @@
 .history .row > .label { text-align: right; }
 .history .row > .body { min-width: 0; }
 
-.history .head { position: sticky; top: 0; z-index: 3; padding-block: 16px 22px; pointer-events: none; }
+.history .head { position: sticky; top: 56px; z-index: 3; padding-block: 16px 22px; pointer-events: none; }
 .history .head .body { position: relative; }
-.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -16px -40px -56px calc(-1 * var(--after) + 6px); background: color-mix(in srgb, var(--glow) 8%, rgba(6, 13, 33, .7)); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); -webkit-mask-image: linear-gradient(to right, transparent, #000 96px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 96px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); mask-composite: intersect; opacity: 0; transition: opacity .2s ease; }
+.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -72px -40px -56px calc(-1 * var(--after) + 6px); background: color-mix(in srgb, var(--glow) 8%, rgba(6, 13, 33, .7)); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); -webkit-mask-image: linear-gradient(to right, transparent, #000 44px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 44px, #000 calc(100% - 48px), transparent), linear-gradient(#000 calc(100% - 56px), transparent); mask-composite: intersect; opacity: 0; transition: opacity .2s ease; }
 .history .head.stuck .body::before { opacity: 1; }
-.history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; }
+.history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; color: var(--era); }
 .history .chomp { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
 .history .chomp { width: 30px; height: 30px; filter: drop-shadow(0 0 4px var(--era)) drop-shadow(0 0 14px var(--era)); transition: rotate .18s ease; }
 .history .chomp i { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--era); clip-path: polygon(50% 50%, 50% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%); }
@@ -110,8 +110,8 @@
 .history .ts { display: inline-block; width: .3em; }
 
 .history .event { padding-block: 14px; }
-.history .event::before { content: ""; position: absolute; left: var(--x); top: 24px; width: 12px; height: 12px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--era); transition: transform .12s ease; }
-.history .event.eaten::before { transform: translate(-50%, -90%) scale(0); transition-timing-function: ease-in; }
+.history .event::before { content: ""; position: absolute; left: var(--x); top: 24px; width: 12px; height: 12px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--era); transition: transform .25s ease; }
+.history .event.eaten::before { transform: translate(-50%, -50%) scale(0); transition: none; }
 .history .event .label { font-family: var(--mono); font-size: 15px; line-height: 20px; color: var(--soft); white-space: nowrap; }
 .history .kind { display: flex; align-items: center; gap: 8px; color: var(--kind); font-size: 15px; font-weight: 600; line-height: 20px; }
 .history .kind svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
