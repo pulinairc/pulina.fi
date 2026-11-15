@@ -19,7 +19,7 @@
     { years: '2008–2010', from: 2008, to: 2010, title: 'Kaveriporukan kanava', color: '#20ffa7',
       paras: [
         'Rolle ja mustikkasoppa perustivat #pulinan yhdistämällä pikkukanavat #rolleweb, #soppanen ja #kesämaa. Ensimmäiset tulijat olivat kavereita ja kavereiden kavereita: IRL-kavereita, lukiokavereita ja jyväskyläläisiä.',
-        'Kanava eli myös ruudun ulkopuolella. Miittejä pidettiin Jyväskylän Kirkkopuistossa, Kauppakadulla ja Särkänniemessä, ja #pulina-paitoja tilattiin porukalla. Marraskuussa 2009 kanavalle tuli kummitus, botti, joka oppi puhumaan kanavan omista riveistä.',
+        'Kanava eli myös ruudun ulkopuolella. Miittejä pidettiin Jyväskylän Kirkkopuistossa, Kauppakadulla ja Särkänniemessä, ja #pulina-paitoja tilattiin porukalla. Marraskuussa 2009 kanavalle tuli kummitus, botti, joka oppi puhumaan hyödyntäen kanavalle kirjoitettuja juttuja.',
         'Vuonna 2009 kanavalle kirjoitettiin 1 446 103 riviä, lähes 4 000 päivässä. Se on yhä kanavan vilkkain vuosi. Vuonna 2010 kanavalla kirjoitti 1 160 eri ihmistä.',
       ],
       top: [['mustikkasoppa', 461567], ['rolle', 243476], ['marko', 126798], ['fusil', 111018], ['wzardd', 98137]],
@@ -239,17 +239,22 @@
   const BARS = ['hsl(137 57% 70%)', 'hsl(137 57% 60%)', 'hsl(137 57% 50%)', 'hsl(137 57% 40%)', 'hsl(137 57% 30%)'];
   const lineHTML = ([t, n, x]) => { const mode = /^[@+]/.test(n) ? n[0] : '', name = n.replace(/^[@+]/, ''); return `<li><time>${t}</time><b style="color:${colorOf(name)}">&lt;${mode}${esc(name)}&gt;</b><span>${esc(x).replace(/(^|\s)(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>')}</span></li>`; };
 
-  const GHOST = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 22V11a8 8 0 0 1 16 0v11l-2.7-2-2.6 2-2.7-2-2.6 2-2.7-2z"/><circle cx="9" cy="11" r="1.7" fill="#060d21"/><circle cx="15" cy="11" r="1.7" fill="#060d21"/></svg>';
+  // "8.4." -> "8. huhtikuuta", "6.–8.4." -> "6.–8. huhtikuuta", "heinäkuu" -> "Heinäkuu"
+  const MONTHS_OF = ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'];
+  const whenOf = d => {
+    const m = d.match(/^(\d+)\.(?:–(\d+)\.)?(\d+)\.$/);
+    if (!m) return d[0].toUpperCase() + d.slice(1);
+    return `${m[1]}.${m[2] ? `–${m[2]}.` : ''} ${MONTHS_OF[m[3] - 1]}`;
+  };
   const eraHTML = e => {
-    let rows = `<div class="row head"><div class="label"></div><div class="body"><h2><span class="chomp" aria-hidden="true"><i></i></span><span class="ghost" aria-hidden="true">${GHOST}</span>${esc(e.title)}</h2></div></div><div class="row intro"><div class="label"></div><div class="body">${e.paras.map(p => `<p>${rich(p)}</p>`).join('')}</div></div>`;
+    let rows = `<div class="row head"><div class="label"></div><div class="body"><h2><span class="chomp" aria-hidden="true"><i></i><b></b></span>${esc(e.title)}</h2></div></div><div class="row intro"><div class="label"></div><div class="body">${e.paras.map(p => `<p>${rich(p)}</p>`).join('')}</div></div>`;
     for (let y = e.from; y <= e.to; y++) {
       const i = y - 2008;
       rows += `<div class="row year"><div class="label">${y}</div><div class="body"><b class="num">${tight(LINES[i])}</b> riviä · <b class="num">${tight(TALKERS[i])}</b> kirjoittajaa · <b class="num">${KICKS[i]}</b> potkua</div></div>`;
       (e.events[y] || []).forEach(ev => {
         const [name, color] = KIND[ev.kind];
-        const date = /\.$/.test(ev.date) ? ev.date + y : `${ev.date} ${y}`;
-        rows += `<div class="row event" style="--kind:${color}"><time class="label">${esc(date)}</time><div class="body">
-          <div class="kind"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[ev.kind]}</svg>${name}</div>
+        rows += `<div class="row event" style="--kind:${color}"><div class="label"></div><div class="body">
+          <div class="kind"><svg viewBox="0 0 24 24" aria-hidden="true">${ICON[ev.kind]}</svg>${whenOf(ev.date)} - ${name}</div>
           <p class="text">${rich(ev.text)}</p>
           ${ev.lines ? `<figure class="log"><ol>${ev.lines.map(lineHTML).join('')}</ol></figure>` : ''}</div></div>`;
       });
@@ -336,20 +341,68 @@
   }
   // The stuck era ball eats the event dots that pass it; scrolling back up, a ghost brings them back
   const heads = [...timeline.querySelectorAll('.head')], events = [...timeline.querySelectorAll('.event')];
-  let dotsY = [], sticky = false, chompOn = false, lastY = scrollY, chewTimer = null, activeHead = null;
+  let dotsY = [], sticky = false, stickTop = 0, chompOn = false, lastY = scrollY, chewTimer = null, activeHead = null;
   function measureDots() {
     dotsY = events.map(e => e.getBoundingClientRect().top + scrollY + 24);
+    const bar = matchMedia('(max-width: 1100px)').matches ? document.querySelector('.panel').offsetHeight : 0;
+    root.style.setProperty('--bar-h', `${bar}px`);
     sticky = getComputedStyle(heads[0]).position === 'sticky';
+    stickTop = parseFloat(getComputedStyle(heads[0]).top) || 0;
     chompOn = !still && sticky;
   }
+  // Ghosts rise from the bottom of the screen and chase the ball while scrolling back up
+  const GHOST = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 22V11a8 8 0 0 1 16 0v11l-2.7-2-2.6 2-2.7-2-2.6 2-2.7-2z"/><circle cx="9" cy="11" r="2.4" fill="#fff"/><circle cx="15" cy="11" r="2.4" fill="#fff"/><circle cx="9" cy="10" r="1.1" fill="#1b2a6b"/><circle cx="15" cy="10" r="1.1" fill="#1b2a6b"/></svg>';
+  const GHOST_COLORS = ['#ff5f6d', '#ff9ad5', '#5ce1e6', '#ffb454'];
+  const pack = document.createElement('div');
+  pack.className = 'ghosts';
+  pack.setAttribute('aria-hidden', 'true');
+  pack.innerHTML = GHOST_COLORS.map(c => `<span style="color:${c}">${GHOST}</span>`).join('');
+  timeline.append(pack);
+  const ghosts = [...pack.children];
+  let homeTimer = null;
+  function ghostsHome() {
+    ghosts.forEach((g, k) => { g.style.transitionDelay = '0s'; g.style.transform = `translateY(${innerHeight + 60 + k * 40}px)`; });
+  }
+  function ghostsChase(lineX, y) {
+    pack.style.left = `${lineX}px`;
+    pack.classList.add('chase');
+    ghosts.forEach((g, k) => { g.style.transitionDelay = `${k * .12}s`; g.style.transform = `translateY(${y + 48 + k * 40}px)`; });
+    clearTimeout(homeTimer);
+    homeTimer = setTimeout(ghostsHome, 1400);
+  }
+  ghostsHome();
+
+  // A short blip per eaten dot. Browsers allow sound only after a click, tap or key press on the page
+  let audio = null, lastBlip = 0, high = false;
+  const wake = () => {
+    if (!audio) { try { audio = new AudioContext(); } catch (e) { return; } }
+    if (audio.state === 'suspended') audio.resume();
+  };
+  ['pointerdown', 'pointerup', 'touchend', 'keydown'].forEach(t => addEventListener(t, wake, { passive: true }));
+  function blip() {
+    if (!audio || audio.state !== 'running') return;
+    const now = audio.currentTime;
+    if (now - lastBlip < .07) return;
+    lastBlip = now; high = !high;
+    const o = audio.createOscillator(), g = audio.createGain(), f = high ? 520 : 380;
+    o.type = 'triangle';
+    o.frequency.setValueAtTime(f, now); o.frequency.exponentialRampToValueAtTime(f * .55, now + .09);
+    g.gain.setValueAtTime(.0001, now); g.gain.exponentialRampToValueAtTime(.08, now + .01); g.gain.exponentialRampToValueAtTime(.0001, now + .1);
+    o.connect(g).connect(audio.destination); o.start(now); o.stop(now + .11);
+  }
+
   function chomp() {
     const tops = heads.map(h => h.getBoundingClientRect().top);
-    heads.forEach((h, k) => { const stuck = sticky && tops[k] <= 1 && tops[k] > -h.offsetHeight; if (h.classList.contains('stuck') !== stuck) h.classList.toggle('stuck', stuck); });
+    heads.forEach((h, k) => { const stuck = sticky && tops[k] <= stickTop + 1 && tops[k] > stickTop - h.offsetHeight; if (h.classList.contains('stuck') !== stuck) h.classList.toggle('stuck', stuck); });
     if (!chompOn) { events.forEach(e => e.classList.remove('eaten')); return; }
-    const head = heads.filter((h, k) => tops[k] <= 1).pop() || heads[0];
+    const head = heads.filter((h, k) => tops[k] <= stickTop + 1).pop() || heads[0];
     const r = head.querySelector('.chomp').getBoundingClientRect(), at = r.top + r.height / 2 + scrollY;
-    events.forEach((e, k) => { const eaten = dotsY[k] < at; if (e.classList.contains('eaten') !== eaten) e.classList.toggle('eaten', eaten); });
     const dy = scrollY - lastY; lastY = scrollY;
+    let ate = false;
+    events.forEach((e, k) => { const eaten = dotsY[k] < at; if (e.classList.contains('eaten') !== eaten) { e.classList.toggle('eaten', eaten); ate = ate || eaten; } });
+    if (ate && dy > 0) blip();
+    if (dy < 0) { const t = timeline.getBoundingClientRect(); ghostsChase(t.left + parseFloat(getComputedStyle(timeline, '::before').left), r.top + r.height / 2); }
+    else if (dy > 0) { clearTimeout(homeTimer); ghostsHome(); }
     if (activeHead && activeHead !== head) activeHead.classList.remove('chewing', 'up');
     activeHead = head;
     if (!dy) return;
@@ -359,7 +412,9 @@
   }
   paintLine();
   measureDots();
-  new ResizeObserver(() => { paintLine(); measureDots(); }).observe(timeline);
+  const resized = new ResizeObserver(() => { paintLine(); measureDots(); });
+  resized.observe(timeline);
+  resized.observe(document.querySelector('.panel'));
 
   // Watercolour wash: slow noise in the era's colour over the navy ground, 12 frames a second, paused when hidden
   const wash = (() => {
@@ -416,9 +471,25 @@ void main(){
   })();
 
   let shownEra = null, shown = -1;
+  const OVERVIEW = -2, last = W[W.length - 1];
+
+  // Before the timeline starts the panel shows the whole history; reading then counts it up from the start
+  function overview() {
+    if (shown === OVERVIEW) return;
+    shown = OVERVIEW; shownEra = null;
+    set(TOTAL); setYears(`${W[0].y}–${last.y}`);
+    monthEl.textContent = `${MONTHS[W[0].m]} ${W[0].y} – ${MONTHS[last.m]} ${last.y}`;
+    eraEl.textContent = 'Koko historia';
+    prog.style.width = '100%';
+    root.style.setProperty('--glow', DATA[0].color); if (wash) wash.tint(DATA[0].color);
+    cells.forEach(c => c.classList.remove('future', 'now'));
+    labels.forEach(t => t.classList.remove('on'));
+  }
+
   function update() {
     const mid = innerHeight * .45;
     let v = 0;
+    if (eras[0].getBoundingClientRect().top > mid) { overview(); return; }
     const era = eras.find(s => { const r = s.getBoundingClientRect(); return r.top <= mid && r.bottom > mid; });
     if (era) { const r = era.getBoundingClientRect(); v = +era.dataset.from + (mid - r.top) / r.height * (+era.dataset.to - +era.dataset.from); }
     else { const above = eras.filter(s => s.getBoundingClientRect().top <= mid); if (above.length) v = +above[above.length - 1].dataset.to - 1; }
@@ -441,4 +512,5 @@ void main(){
   addEventListener('resize', update);
   update();
   chomp();
+  document.getElementById('story').classList.remove('is-loading');
 })();

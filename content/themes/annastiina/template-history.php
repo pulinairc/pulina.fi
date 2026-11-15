@@ -24,7 +24,8 @@ get_header(); ?>
   </section>
 
   <div class="frame">
-    <div class="story" id="story">
+    <div class="story is-loading" id="story">
+      <p class="loader" role="status"><span class="loader-pac" aria-hidden="true"></span><span class="loader-dots" aria-hidden="true"></span>Ladataan historiaa</p>
       <aside class="panel">
         <h2 class="p-era"></h2>
         <div class="p-years"></div>
@@ -48,7 +49,7 @@ get_header(); ?>
   <section class="get">
     <div class="frame">
       <h2>Lataa Pulina-app ja tule mukaan tekemään Pulinasta parempi paikka</h2>
-      <p class="get-lead">Highlightit, reaktiot, kuvat ja ilmoitukset toimivat suoraan. Kirjoitat nimimerkin, ja olet kanavalla.</p>
+      <p class="get-lead">Highlightit, reaktiot, kuvat ja ilmoitukset toimivat suoraan. App on suunniteltu helppokäyttöiseksi: ei tarvitse kuin valita nimimerkki, ja olet kanavalla.</p>
       <?php get_template_part( 'template-parts/app-download' ); ?>
     </div>
   </section>

@@ -5,6 +5,9 @@
 
 /* The site wrapper hides overflow, which would stop the sticky panel and headings */
 .page-template-template-history .site { overflow: clip; }
+
+/* The page ends with the downloads */
+.page-template-template-history .site-footer { display: none; }
 /* The page is the timeline: a line down the exact middle, a sticky era panel on its left, dated events on its right. */
 @property --glow { syntax: "<color>"; inherits: true; initial-value: #20ffa7; }
 :root {
@@ -42,7 +45,15 @@
 .history .hero p { margin: 24px auto 0; max-width: 640px; font-size: 20px; color: var(--soft); }
 
 /* Two equal halves; the line is the left edge of the right half */
-.history .story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding-block: 0 160px; }
+.history .story { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding-block: 0 160px; }
+.history .story.is-loading { min-height: 60vh; }
+.history .story.is-loading .panel, .history .story.is-loading .timeline { visibility: hidden; }
+.history .loader { display: none; }
+.history .story.is-loading .loader { position: absolute; left: 50%; top: 40px; translate: -50% 0; display: flex; align-items: center; gap: 12px; margin: 0; font-family: var(--mono); font-size: 15px; color: var(--soft); white-space: nowrap; }
+.history .loader-pac { width: 22px; height: 22px; border-radius: 50%; background: var(--green); clip-path: polygon(50% 50%, 100% 50%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 50%); animation: loader-chomp .3s linear infinite; }
+@keyframes loader-chomp { 50% { clip-path: polygon(50% 50%, 100% 12%, 100% 0, 0 0, 0 100%, 100% 100%, 100% 88%); } }
+.history .loader-dots { width: 60px; height: 8px; background: radial-gradient(circle, var(--green) 3px, transparent 3.5px) 0 0 / 20px 8px repeat-x; animation: loader-dots .6s linear infinite; }
+@keyframes loader-dots { to { background-position: -20px 0; } }
 .history .panel { position: sticky; top: 72px; align-self: start; padding-right: calc(var(--spine) + 56px); }
 .history .p-era { display: none; }
 .history .p-era.swap { animation: rise .5s ease; }
@@ -72,19 +83,21 @@
 
 .history .head { position: sticky; top: 0; z-index: 3; padding-block: 16px 22px; pointer-events: none; }
 .history .head .body { position: relative; }
-.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -16px -200px -56px calc(-1 * var(--after) + 22px); background: rgba(6, 13, 33, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); -webkit-mask-image: linear-gradient(#000 calc(100% - 56px), transparent); mask-image: linear-gradient(#000 calc(100% - 56px), transparent); opacity: 0; transition: opacity .2s ease; }
+.history .head .body::before { content: ""; position: absolute; z-index: -1; inset: -16px -200px -56px calc(-1 * var(--after) + 14px); background: rgba(6, 13, 33, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); -webkit-mask-image: linear-gradient(to right, transparent, #000 56px), linear-gradient(#000 calc(100% - 56px), transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 56px), linear-gradient(#000 calc(100% - 56px), transparent); mask-composite: intersect; opacity: 0; transition: opacity .2s ease; }
 .history .head.stuck .body::before { opacity: 1; }
 .history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; }
-.history .chomp, .history .ghost { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
+.history .chomp { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
 .history .chomp { width: 30px; height: 30px; filter: drop-shadow(0 0 4px var(--era)) drop-shadow(0 0 14px var(--era)); transition: rotate .18s ease; }
 .history .chomp i { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--era); clip-path: polygon(50% 50%, 50% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 50% 100%); }
 .history .chewing .chomp i { animation: chomp .26s linear infinite; }
 @keyframes chomp { 50% { clip-path: polygon(50% 50%, 6% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 94% 100%); } }
 .history .up .chomp { rotate: 180deg; }
-.history .ghost { top: calc(.55em + 64px); width: 26px; height: 26px; color: #dfe6ff; opacity: 0; transition: opacity .25s ease, top .25s ease; filter: drop-shadow(0 0 10px rgba(223, 230, 255, .6)); }
-.history .ghost svg { display: block; width: 100%; height: 100%; }
-.history .up.chewing .ghost { opacity: .9; top: calc(.55em + 52px); animation: bob .4s ease-in-out infinite alternate; }
-@keyframes bob { to { translate: -50% calc(-50% - 4px); } }
+.history .chomp b { position: absolute; left: 64%; top: 30%; width: 4.5px; height: 4.5px; border-radius: 50%; background: #060d21; }
+.history .ghosts { position: fixed; left: 0; top: 0; z-index: 4; pointer-events: none; }
+.history .ghosts span { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; opacity: 0; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), opacity .3s ease; filter: drop-shadow(0 0 8px currentColor); }
+.history .ghosts.chase span { opacity: .95; }
+.history .ghosts svg { display: block; width: 100%; height: 100%; animation: bob .32s ease-in-out infinite alternate; }
+@keyframes bob { to { translate: 0 -3px; } }
 .history .intro { padding: 12px 0 40px; }
 .history .intro p { max-width: 640px; margin-bottom: 20px; font-size: 18px; color: var(--soft); }
 .history .num { font-weight: 600; color: #fff; }
@@ -99,13 +112,13 @@
 
 .history .event { padding-block: 14px; }
 .history .event::before { content: ""; position: absolute; left: var(--x); top: 24px; width: 12px; height: 12px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--era); transition: transform .12s ease; }
-.history .event.eaten::before { transform: translate(-50%, -50%) scale(0); }
+.history .event.eaten::before { transform: translate(-50%, -90%) scale(0); transition-timing-function: ease-in; }
 .history .event .label { font-family: var(--mono); font-size: 15px; line-height: 20px; color: var(--soft); white-space: nowrap; }
 .history .kind { display: flex; align-items: center; gap: 8px; color: var(--kind); font-size: 15px; font-weight: 600; line-height: 20px; }
 .history .kind svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .history .event .text { margin-top: 4px; max-width: 640px; font-size: 18px; line-height: 1.55; }
 
-.history .log { container-type: inline-size; margin: 18px 0 8px; max-width: 640px; background: rgba(3, 7, 18, .86); border: 1px solid var(--line); border-radius: 8px; }
+.history .log { container-type: inline-size; margin: 18px 0 8px; max-width: 640px; background: rgba(3, 7, 18, .86); border: 1px solid rgba(255, 255, 255, .06); border-radius: 8px; }
 .history .log ol, .history .now-chat ol { list-style: none; margin: 0; padding: 18px 20px; font-family: var(--mono); font-size: 14px; line-height: 1.75; display: grid; grid-template-columns: auto auto minmax(0, 1fr); column-gap: 14px; row-gap: 2px; }
 .history .log li, .history .now-chat li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: start; }
 .history .log time, .history .now-chat time { color: var(--muted); }
@@ -148,7 +161,7 @@
 .history .live-dot { width: 10px; height: 10px; border-radius: 50%; background: #ea2429; animation: blink 1.4s ease-in-out infinite; }
 @keyframes blink { 50% { opacity: .25; } }
 .history .present h2 { margin: 12px 0 40px; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; background: linear-gradient(90deg, var(--green), #8fd9ff); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
-.history .now-chat { max-width: 1000px; margin: 0 auto; text-align: left; background: rgba(3, 7, 18, .86); border: 1px solid var(--line); border-radius: 10px; }
+.history .now-chat { max-width: 1000px; margin: 0 auto; text-align: left; background: rgba(12, 22, 45, .28); border: 1px solid rgba(255, 255, 255, .12); border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 30px 80px rgba(0, 0, 0, .35); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); }
 .history .now-chat ol { padding: 32px 36px; font-size: 16px; line-height: 1.85; column-gap: 16px; row-gap: 4px; }
 
 .history .get { padding-block: 40px 160px; text-align: center; }
@@ -156,7 +169,7 @@
 .history .get-lead { max-width: 600px; margin: 20px auto 48px; font-size: 18px; color: var(--soft); }
 @media (max-width: 1100px) {
   .history .story { grid-template-columns: minmax(0, 1fr); }
-  .history .panel { top: 0; z-index: 5; margin-inline: calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r)); padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: center; }
+  .history .panel { top: 0; z-index: 5; margin-inline: calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r)); padding: 16px var(--gutter-r) 10px var(--gutter-l); background: rgba(6, 13, 33, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; align-items: start; }
   .history .p-era { display: block; font-size: 15px; grid-column: 2; }
   .history .p-years { margin: 0; font-size: 22px; grid-row: 1 / 3; grid-column: 1; }
   .history .p-month, .history .weeks { display: none; }
@@ -164,8 +177,7 @@
   .history .p-progress { display: block; grid-column: 1 / -1; margin-top: 10px; }
   .history .timeline { margin-left: 0; padding-top: 48px; --x: 50%; }
   .history .timeline::before, .history .timeline::after { top: 89px; }
-  .history .head { position: relative; }
-  .history .head .body::before { content: none; }
+  .history .head { top: var(--bar-h, 0px); }
   .history .row { grid-template-columns: calc(50% - var(--lead)) minmax(0, 1fr); }
 }
 @media (max-width: 760px) {
@@ -173,8 +185,10 @@
   .history .timeline { --x: var(--spine); }
   .history .row { display: block; padding-left: calc(var(--spine) + var(--after)); }
   .history .row > .label { text-align: left; }
-  .history .event .label { margin-bottom: 4px; }
+  .history .event .label { display: none; }
   .history .year { padding-top: 48px; }
+  .history .year .body { font-size: 14px; }
+  .history .year .body .num { font-size: 19px; }
   .history .now-chat ol { display: block; padding: 20px; font-size: 14.5px; }
   .history .now-chat li { display: block; margin-bottom: 10px; }
   .history .now-chat time { margin-right: 8px; }
@@ -182,20 +196,22 @@
 }
 @media (prefers-reduced-motion: reduce) {
   :root, .history .odometer .strip { transition: none; }
-  .history .p-era.swap, .history .live-dot, .history .chewing .chomp i, .history .up.chewing .ghost { animation: none; }
-  .history .ghost { display: none; }
+  .history .p-era.swap, .history .live-dot, .history .chewing .chomp i, .history .ghosts svg, .history .loader-pac, .history .loader-dots { animation: none; }
+  .history .ghosts { display: none; }
 }
 
 /* The theme's element defaults, undone inside the history */
 .history *, .history *::before, .history *::after { box-sizing: border-box; }
 .history h1, .history h2, .history h3 { color: inherit; font-weight: 700; }
 .history ol { padding-left: 0; }
+.history li { font-size: inherit; line-height: inherit; }
 .history code.cmd { display: inline; margin: 0; line-height: inherit; }
 .history .hero { padding-top: 160px; }
 
-/* Nykyhetki: the site's live scroller, times first */
-.history .present .irc-scroller-wrapper { width: auto; max-width: 1000px; height: 600px; margin: 0 auto; text-align: left; }
-.history .present .irc-scroller { font-size: 15px; padding: 16px 12px 20px; }
+/* Nykyhetki: the site's live scroller as see-through glass, times first, newest lines only */
+.history .present .irc-scroller-wrapper { width: auto; max-width: 1000px; height: 600px; margin: 0 auto; text-align: left; background: rgba(12, 22, 45, .28); border: 1px solid rgba(255, 255, 255, .12); border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 30px 80px rgba(0, 0, 0, .35); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); }
+.history .present .repo-terminal-glow { display: none; }
+.history .present .irc-scroller { font-size: 15px; padding: 16px 12px 20px; background: transparent; overflow: hidden; }
 .history .present .irc-time { order: 0; margin-left: 0; padding-left: 8px; }
 .history .present .irc-from { order: 1; }
 .history .present .irc-msg { order: 2; }
