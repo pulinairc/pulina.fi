@@ -230,7 +230,16 @@
   // Nick colours: spaced around the colour wheel in order of first appearance
   const hues = new Map();
   const colorOf = nick => { const k = nick.replace(/^[@+]/, '').toLowerCase(); if (!hues.has(k)) hues.set(k, Math.round((hues.size * 137.508 + 340) % 360)); return `hsl(${hues.get(k)} 85% 72%)`; };
-  const NICKS = ['mustikkasoppa', 'kummitu', 'rolle', 'fusil', 'samiy', 'helyes', 'aswang', 'mynta', 'speadfreak', 'firewalker', 'gerrye', 'kiizeli', 'safti', 'nefastos', 'pirta', 'drinn', 'convulvau', 'nicd', 'setsu', 't0iska', 'portsari', 'orvoki'];
+  // Every nick that speaks in an excerpt or is named in a "Paikalla" list, plus the founders' long-time names
+  const NICKS = (() => {
+    const set = new Set(['mustikkasoppa', 'kummitu', 'rolle', 'fusil', 'samiy', 'helyes', 'aswang', 'mynta', 'speadfreak', 'firewalker', 'gerrye', 'kiizeli', 'safti', 'nefastos', 'pirta', 'drinn', 'convulvau', 'nicd', 'setsu', 't0iska', 'portsari', 'orvoki', 'amelii', 'merisiili']);
+    DATA.forEach(e => Object.values(e.events).flat().forEach(ev => {
+      (ev.lines || []).forEach(l => set.add(l[1].replace(/^[@+]/, '').toLowerCase()));
+      const m = ev.text.match(/Paikalla(?: mm\.)?:? ([^.]+)\./);
+      if (m) m[1].split(/, | ja /).forEach(n => set.add(n.trim().toLowerCase()));
+    }));
+    return [...set].filter(n => n.length > 2 && !/^pulisija\d/.test(n)).sort((a, b) => b.length - a.length).map(n => n.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&'));
+  })();
   const nickRe = new RegExp(`(^|[^\\wåäö#])((${NICKS.join('|')})[\\wåäö:]*)`, 'gi');
   const rich = text => esc(text)
     .replace(/(^|[^\d.,\wåäö#-])(\d[\d ]*(?:,\d+)?(?:–\d+)?(?: %)?)(?![\d.]*\d|-)/g, (all, pre, num) => /^(19|20)\d\d$/.test(num) ? all : `${pre}<b class="num">${num}</b>`)
