@@ -89,11 +89,15 @@
 .history .head h2 { position: relative; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; color: var(--era); }
 .history .chomp { position: absolute; left: calc(-1 * var(--after)); top: .55em; translate: -50% -50%; }
 .history .chomp { width: 30px; height: 30px; transition: rotate .18s ease; }
-/* Glow as a round shadow behind the ball: Safari boxes in a drop-shadow on clipped content */
-.history .chomp::before { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 4px var(--era), 0 0 14px var(--era); }
-.history .chomp i { position: relative; display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--era); clip-path: polygon(50% 50%, 50% 110%, -10% 110%, -10% -10%, 110% -10%, 110% 110%, 50% 110%); }
-.history .chewing .chomp i { animation: chomp .26s linear infinite; }
-@keyframes chomp { 50% { clip-path: polygon(50% 50%, -2.8% 110%, -10% 110%, -10% -10%, 110% -10%, 110% 110%, 102.8% 110%); } }
+/* Two half-disc jaws: no clip-path or filter, so Safari draws the glow along the real shape */
+.history .chomp::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: color-mix(in srgb, var(--era) 12%, #060d21); box-shadow: 0 0 4px var(--era), 0 0 14px var(--era); }
+.history .chomp i { position: absolute; top: 0; width: calc(50% + .5px); height: 100%; background: var(--era); box-shadow: 0 0 3px var(--era); }
+.history .chomp i:first-child { left: 0; border-radius: 15px 0 0 15px; transform-origin: calc(100% - .5px) 50%; }
+.history .chomp i:last-child { right: 0; border-radius: 0 15px 15px 0; transform-origin: .5px 50%; }
+.history .chewing .chomp i:first-child { animation: jaw-l .26s linear infinite; }
+.history .chewing .chomp i:last-child { animation: jaw-r .26s linear infinite; }
+@keyframes jaw-l { 50% { rotate: 38deg; } }
+@keyframes jaw-r { 50% { rotate: -38deg; } }
 .history .up .chomp { rotate: 180deg; }
 .history .ghosts { position: fixed; left: 0; top: 0; z-index: 4; pointer-events: none; }
 .history .ghosts span { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; opacity: 0; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1), opacity .3s ease; filter: drop-shadow(0 0 8px currentColor); }
