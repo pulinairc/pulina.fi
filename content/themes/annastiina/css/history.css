@@ -222,6 +222,7 @@
   .history .present .irc-scroller-wrapper { height: 520px; }
   .history .present .irc-scroller { font-size: 13px; padding: 12px 10px 16px; }
   .history .present .irc-row { flex-wrap: wrap; margin: 0 0 8px; padding-right: 0; }
+  .history .present .irc-time { padding-left: 0; }
   .history .present .irc-from { flex: 0 1 auto; margin-right: 0; text-align: left; }
   .history .present .irc-msg { flex: 1 0 100%; }
 }
