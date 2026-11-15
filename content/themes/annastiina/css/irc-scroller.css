@@ -86,12 +86,16 @@
 }
 
 .irc-from {
-  flex: 0 0 125px;
+  flex: 0 0 auto;
   font-weight: 700;
   margin-right: 10px;
+  max-width: 60%;
+  min-width: 125px;
   order: 1;
   overflow: hidden;
   text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .irc-msg {
