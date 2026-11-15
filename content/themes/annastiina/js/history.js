@@ -10,6 +10,7 @@
   const KIND = {
     meet: ['Miitti', '#ff8fc7'], game: ['Peli-ilta', '#ffb454'], bot: ['Botit', '#5ce1e6'], mod: ['Moderointi', '#ff7b7b'],
     site: ['Sivusto ja palvelut', '#8fb3ff'], record: ['Ennätys', '#7ee081'], talk: ['Kanavalla', '#c9a6ff'],
+    star: ['Kohokohta', '#ffd166'],
   };
   const LINES = [718541, 1446103, 1356364, 1284393, 1047632, 479020, 536675, 836702, 563801, 289748, 226741, 311037, 621630, 568580, 399882, 371790, 255775, 189595, 287661];
   const TALKERS = [487, 867, 1160, 884, 928, 717, 737, 912, 751, 469, 378, 345, 419, 465, 483, 653, 223, 481, 438];
@@ -76,6 +77,7 @@
           E('28.3.', 'meet', 'Hangout-miitti Google+:ssa.'),
           E('5.4.', 'mod', 'Voicen saa vain opin tavannut tai miitissä käynyt.', [['00:14', 'rolle', 'dafis: Ootko muuten käyny miiteissä'], ['00:15', 'rolle', 'Ainoastaan opin tavanneet tai miiteissä käyneet tai pärstäkuvan lapulla lähettäneet saa voicet.']]),
           E('6.–8.4.', 'meet', '4-vuotismiitti Tampereella.', [['00:05', 'firewalker', 'huomenna tampereelle=)'], ['09:10', 'mustikkasoppa', 'Jape_: me mennää kohta tampereelle miittaa näitä pulinalaisia']]),
+          E('2.6.', 'star', 'Machinae Supremacyn laulaja Robert Stjärnström liittyy Pulinan Google+ Hangout -miittiin ja oppii mustikkasopalta viittoman sanalle muumi.', [['01:10', 'incidence', 'Jei robert'], ['01:13', 'mustikkasoppa', 'MaSu laulaja tos meidän kanssa hangouttaa'], ['01:31', 'mustikkasoppa', 'MUUMIN ;D'], ['01:57', 'mustikkasoppa', 'opeta julkkikselle joku viittoma: check'], ['02:04', 'incidence', 'Robert Stjärnström @stjarnstrom: I now know sign language for “moomin” #beatthat']]),
         ],
       } },
     { years: '2013–2016', from: 2013, to: 2016, title: 'Miitit ja Telegram', color: '#a78bfa',
@@ -137,7 +139,7 @@
           E('30.12.', 'game', 'Peli-ilta: Xonotic.'),
         ],
       } },
-    { years: '2020–2022', from: 2020, to: 2022, title: 'COVID-19, #pulina koronavirusvuosina', color: '#ffc857',
+    { years: '2020–2022', from: 2020, to: 2022, title: 'COVID-19, koronavuosien aikainen #pulina', color: '#ffc857',
       paras: [
         'Koronakeväänä 2020 ihmiset palasivat koneiden ääreen, ja rivejä kertyi 621 630, 2 kertaa edellisvuotta enemmän. kummitus oppi komennon !corona, jolla sai maakohtaiset tartunnat, kuolemat ja parantuneet. Sitä käytettiin kanavalla 163 kertaa.',
         'Potkuja annettiin taas: 136 vuonna 2020, niistä 69 mustikkasoppan antamia. Huumepuhetta oli silti enemmän kuin koskaan. Vuonna 2022 kanava yhdistettiin Telegramiin ja Discordiin, ja säännöt nostettiin topiciin.',
@@ -235,6 +237,7 @@
     site: '<circle cx="12" cy="12" r="8.500"/><path d="M3.500 12h17M12 3.500c2.600 2.400 2.600 14.600 0 17M12 3.500c-2.600 2.400-2.600 14.600 0 17"/>',
     record: '<path d="M5 20V11M10 20V5M15 20v-7M20 20V8"/>',
     talk: '<path d="M5 6h14a1.500 1.500 0 0 1 1.500 1.500v8A1.500 1.500 0 0 1 19 17h-7l-4.500 3.500V17H5a1.500 1.500 0 0 1-1.500-1.500v-8A1.500 1.500 0 0 1 5 6z"/>',
+    star: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
   };
   const BARS = ['hsl(137 57% 70%)', 'hsl(137 57% 60%)', 'hsl(137 57% 50%)', 'hsl(137 57% 40%)', 'hsl(137 57% 30%)'];
   const lineHTML = ([t, n, x]) => { const mode = /^[@+]/.test(n) ? n[0] : '', name = n.replace(/^[@+]/, ''); return `<li><time>${t}</time><b style="color:${colorOf(name)}">&lt;${mode}${esc(name)}&gt;</b><span>${esc(x).replace(/(^|\s)(![a-zåäö]+)/g, '$1<code class="cmd">$2</code>')}</span></li>`; };
