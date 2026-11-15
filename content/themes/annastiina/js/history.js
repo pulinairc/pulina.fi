@@ -722,7 +722,7 @@
     let rows = `<div class="row head"><div class="label"></div><div class="body"><h2><span class="chomp" aria-hidden="true"><i></i><i></i></span>${esc(e.title)}</h2></div></div><div class="row intro"><div class="label"></div><div class="body">${e.paras.map(p => `<p>${rich(p)}</p>`).join('')}</div></div>`;
     for (let y = e.from; y <= e.to; y++) {
       const i = y - 2008;
-      rows += `<div class="row year"><div class="label">${y}</div><div class="body"><b class="num">${tight(LINES[i])}</b> riviä · <b class="num">${tight(TALKERS[i])}</b> irkkaajaa · <b class="num">${KICKS[i]}</b> kickiä</div></div>`;
+      rows += `<div class="row year"><div class="label">${y}</div><div class="body"><b class="num">${tight(LINES[i])}</b>&nbsp;riviä&nbsp;· <b class="num">${tight(TALKERS[i])}</b>&nbsp;irkkaajaa&nbsp;· <b class="num">${KICKS[i]}</b>&nbsp;kickiä</div></div>`;
       (e.events[y] || []).forEach(ev => {
         const [name, color] = KIND[ev.kind];
         rows += `<div class="row event" style="--kind:${color}"><div class="label"></div><div class="body">
