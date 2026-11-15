@@ -35,9 +35,9 @@
         2009: [
           E('28.2.', 'record', '8 131 riviä päivässä.'),
           E('24.6.', 'record', '10 299 riviä päivässä, miittiä edeltävänä päivänä.'),
-          E('25.6.', 'meet', 'Ensimmäinen miitti Jyväskylän Kirkkopuistossa.', [['13:39', 'mustikkasoppa', 'Joku miitti kirkkopuistoon?'], ['14:11', 'canfly', 'miittiä pystyyn ja kaikki kirkkopuistoon lusmuilemaan'], ['15:15', 'rolle', 'No nyt oltais kirkkopuistossa.'], ['15:17', 'rolle', 'Nyt kaikki kirkkopuistoon prkl.']]),
-          E('5.9.', 'meet', 'Miitti Helsingissä.'),
-          E('19.9.', 'meet', 'Miitti Jyväskylän Kauppakadulla.', [['00:41', 'Schitzophrenia', 'huomenna miitti yeah'], ['09:50', 'Hupakko', 'meil on jo 1/3 miittii tääl :D'], ['13:31', 'Yangsteri', 'miitti käynnissä jo?!']]),
+          E('25.6.', 'meet', 'Ensimmäinen miitti Jyväskylän Kirkkopuistossa. Paikalla: rolle, mustikkasoppa ja canfly.', [['13:39', 'mustikkasoppa', 'Joku miitti kirkkopuistoon?'], ['14:11', 'canfly', 'miittiä pystyyn ja kaikki kirkkopuistoon lusmuilemaan'], ['15:15', 'rolle', 'No nyt oltais kirkkopuistossa.'], ['15:17', 'rolle', 'Nyt kaikki kirkkopuistoon prkl.']]),
+          E('5.9.', 'meet', 'Miitti Helsingissä. Paikalla mm. Scrin, Nefi, Reijo, hekez ja Hiiva.'),
+          E('19.9.', 'meet', 'Miitti Jyväskylän Kauppakadulla, siihen asti suurin. Paikalla: reijo, nudke, scrin, feq, halko, canfly, niffu, schim, fusil, hekez, mustikkasoppa, rolle, makekin, elaie ja q-tio.', [['00:41', 'Schitzophrenia', 'huomenna miitti yeah'], ['09:50', 'Hupakko', 'meil on jo 1/3 miittii tääl :D'], ['13:31', 'Yangsteri', 'miitti käynnissä jo?!']]),
           E('syyskuu', 'mod', 'Uusi op valitaan äänestämällä.'),
           E('marraskuu', 'meet', 'Miitti Turussa.'),
           E('marraskuu', 'site', 'Pulinaventti eli kanavan oma Ventrilo-palvelin.'),
@@ -53,7 +53,7 @@
           E('1.8.', 'record', 'Käyttäjäennätys: kanavalla on 112 irkkaajaa yhtä aikaa.'),
           E('12.8.', 'talk', 'Scrin pääsee uutisotsikoihin trollattuaan kanavalla murtautuneensa EduVantaan kouluverkkoon.'),
           E('14.8.', 'meet', 'Miitti Särkänniemessä.'),
-          E('4.9.', 'meet', 'Minimiitti Lahdessa siiliksen ja Halkon luona.'),
+          E('4.9.', 'meet', 'Minimiitti Lahdessa siiliksen ja Halkon luona. Paikalla: siilis, Halko, Aswa, Downbeat ja Zaraki.'),
           E('syyskuu', 'mod', 'Topicissa lukee: "Kanava on K-20. Ikärajaa ei valvo kukaan."'),
           E('5.10.', 'mod', 'kummitus ylennetään valvojaksi: bannit, voicet ja kiellettyjen sanojen lista. Estolista herättää eripuraa.'),
           E('3.10.', 'mod', 'Kaikkien aikojen kickiennätys: 30 kickiä päivässä.', [['21:33', 'rolle', 'Melkein vois laittaa trigger-kickejä'], ['21:35', 'rolle', 'MIKSI SÄ OTIT BANNIT POIS'], ['22:17', 'tira', 'koht tulee kickbannia ässältä']]),
@@ -68,12 +68,12 @@
       events: {
         2011: [
           E('24.1.', 'site', 'Keskustelufoorumi avataan.'),
-          E('26.2.', 'meet', 'Talvimiitti Jyväskylän Wilhelmiinan konditoriassa.'),
+          E('26.2.', 'meet', 'Talvimiitti Jyväskylän Wilhelmiinan konditoriassa, 16 ja puoli osallistujaa. Paikalla: eponyymi, schitzophrenia, illegalll, Hupakko, mynta, elaie, firewalker, samiy, pekafu, rolle, mustikkasoppa, anicyna, lorien ja zardagbum.'),
           E('10.3.', 'site', 'Osoitteeksi tulee pulina.fi.'),
-          E('15.4.', 'meet', 'Miitti Helsingissä Soothen luona.'),
-          E('19.4.', 'memory', 'Pulinan aktiivinen irkkaaja Amelii, myös Merisiili, on poissa. Topiciin vaihdetaan "rip Amelii", ja blogiin kirjoitetaan muistokirjoitus.'),
+          E('15.4.', 'meet', 'Miitti Helsingissä Soothen luona. Paikalla mm. Hupakko, Aswang ja Soothe.'),
+          E('19.4.', 'memory', 'Pulinan aktiivinen irkkaaja Amelii, myös Merisiili, menehtyy. Topiciin vaihdetaan "rip Amelii", ja blogiin kirjoitetaan muistokirjoitus.'),
           E('25.4.', 'record', '8 186 riviä päivässä.'),
-          E('28.5.', 'meet', 'Tamperemiitti Näsikalliolla.'),
+          E('28.5.', 'meet', 'Tamperemiitti Näsikalliolla. Paikalla: Aswang, firewalker, samiy ja Vanitsu, j-tek tulossa.'),
           E('16.7.', 'meet', 'Jyväskylämiitti.'),
         ],
         2012: [
@@ -82,7 +82,7 @@
           E('25.2.', 'meet', 'Miitti Helsingissä Assembly Winterin aikaan.'),
           E('28.3.', 'meet', 'Hangout-miitti Google+:ssa.'),
           E('5.4.', 'mod', 'Voicen saa vain opin tavannut tai miitissä käynyt.', [['00:14', 'rolle', 'dafis: Ootko muuten käyny miiteissä'], ['00:15', 'rolle', 'Ainoastaan opin tavanneet tai miiteissä käyneet tai pärstäkuvan lapulla lähettäneet saa voicet.']]),
-          E('6.–8.4.', 'meet', '4-vuotismiitti Tampereella.', [['00:05', 'firewalker', 'huomenna tampereelle=)'], ['09:10', 'mustikkasoppa', 'Jape_: me mennää kohta tampereelle miittaa näitä pulinalaisia']]),
+          E('6.–8.4.', 'meet', '4-vuotismiitti Tampereella. Paikalla: Yoa, samiy, Fannyanniina, rolle, mustikkasoppa, Aswang, j-tek, firewalker, Vanitsu, Soothe, hekez, Monster1, pinsku, fusil, Avaruusnuija ja chq.', [['00:05', 'firewalker', 'huomenna tampereelle=)'], ['09:10', 'mustikkasoppa', 'Jape_: me mennää kohta tampereelle miittaa näitä pulinalaisia']]),
           E('2.6.', 'star', 'Machinae Supremacyn laulaja Robert Stjärnström liittyy Pulinan Google+ Hangout -miittiin ja oppii mustikkasopalta viittoman sanalle muumi.', [['01:10', 'incidence', 'Jei robert'], ['01:13', 'mustikkasoppa', 'MaSu laulaja tos meidän kanssa hangouttaa'], ['01:31', 'mustikkasoppa', 'MUUMIN ;D'], ['01:57', 'mustikkasoppa', 'opeta julkkikselle joku viittoma: check'], ['02:04', 'incidence', 'Robert Stjärnström @stjarnstrom: I now know sign language for “moomin” #beatthat']]),
         ],
       } },
@@ -103,7 +103,7 @@
           E('tammikuu', 'bot', 'Botit palaavat käyttöön.'),
           E('maaliskuu', 'site', 'pulina.fi-osoite uhkaa vanhentua.'),
           E('huhtikuu', 'site', 'pulina.fi uudistuu.'),
-          E('17.5.', 'meet', 'Lahti-miitti.', [['01:32', 'gerry_', 'tulkaa huome irkkimiittivalvojaisiin klo 14 alkae :D'], ['09:08', 'gerry_', 'mä koittasin jossai välis nukkuu ehk ennen miittiä :D']]),
+          E('17.5.', 'meet', 'Lahti-miitti. Paikalla mm. gerrye ja Downbeat.', [['01:32', 'gerry_', 'tulkaa huome irkkimiittivalvojaisiin klo 14 alkae :D'], ['09:08', 'gerry_', 'mä koittasin jossai välis nukkuu ehk ennen miittiä :D']]),
           E('5.7.', 'meet', 'Kesämiitti Helsingissä.'),
         ],
         2015: [
@@ -115,7 +115,7 @@
         ],
         2016: [
           E('6.1.', 'meet', 'Loppiaismiitti Helsingin Kaislassa.'),
-          E('27.1.', 'meet', 'Miitti Helsingin William K:ssa.'),
+          E('27.1.', 'meet', 'Miitti Helsingin William K:ssa. Paikalla: convulVAU, samiy, sirhoksu, Kauhukomedia, nasu, Nefastos, soupy, Daraskos ja HoocH_.'),
         ],
       } },
     { years: '2017–2019', from: 2017, to: 2019, title: 'Tuuliset vuodet, huumeluola-pulina', color: '#ff7a59',
@@ -133,9 +133,9 @@
         ],
         2018: [
           E('26.1.', 'meet', 'Oluthenkinen minimiitti Helsingin keskustassa.'),
-          E('20.3.', 'meet', 'Pikamiitti Helsingin Kaislassa.'),
+          E('20.3.', 'meet', 'Pikamiitti Helsingin Kaislassa, paikalla 6 pulisijaa.'),
           E('8.4.', 'talk', 'Kanava täyttää 10 vuotta.', [['08:43', '@mustikkasoppa', 'Nyt ollaan virallisesti 10v. vanhoja puleja <3']]),
-          E('21.4.', 'meet', '10-vuotisjuhlamiitti Jyväskylän Sohwissa.', [['01:03', 'convulVAU', 'mut nyt ihan kotona tenuttelen ku kato huomenna PULINAMIITTI'], ['12:46', 'mustikkasoppa', 'uuh illal miitti <3']]),
+          E('21.4.', 'meet', '10-vuotisjuhlamiitti Jyväskylän Sohwissa, paikalla 20 pulisijaa.', [['01:03', 'convulVAU', 'mut nyt ihan kotona tenuttelen ku kato huomenna PULINAMIITTI'], ['12:46', 'mustikkasoppa', 'uuh illal miitti <3']]),
           E('9.12.', 'talk', 'Tavallinen ilta kanavalla.', [['22:06', 'pulisija2', 'ei sitä bentsokoukkua kannata huvikseen hommata'], ['22:07', 'pulisija3', 'saatanan narkit'], ['22:07', 'pulisija3', 'oispa pilveä'], ['22:07', 'pulisija4', 'oispa bentsoja'], ['22:07', 'pulisija5', 'oispa sieniä']]),
         ],
         2019: [
@@ -170,7 +170,7 @@
           E('5.3.', 'game', 'Tietovisa #pulina.trivia alkaa.', [['22:08', '@mustikkasoppa', 'triviaa varmaan kohta?'], ['22:08', '+convulvau', 'miten tää triviahomma skulaa siis'], ['22:09', '@mustikkasoppa', 'toi trivia on #pulina.trivia kanavalla, siel vastataan suomeksi erilaisiin kysymyksiin :D']]),
           E('6.3.', 'bot', '!corona-komento poistetaan käytöstä.'),
           E('20.5.', 'bot', 'Uusia komentoja: !tee, !äijämatto, !randomjuttu, !hali ja !flippaa.'),
-          E('7.8.', 'meet', 'Lahti-miitti Pikku-Veskussa.', [['09:41', 'ivy', 'mut kyl mä miittiin raahaudun'], ['11:12', '@samiy', 'hyvää miittiä teille']]),
+          E('7.8.', 'meet', 'Lahti-miitti Pikku-Veskussa, 4 hengen pikamiitti. Paikalla mm. ivy, Halko ja Aswang.', [['09:41', 'ivy', 'mut kyl mä miittiin raahaudun'], ['11:12', '@samiy', 'hyvää miittiä teille']]),
         ],
         2022: [
           E('27.2.', 'talk', 'Topicissa otetaan kantaa Venäjän hyökkäykseen Ukrainaan.'),
